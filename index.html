@@ -1,0 +1,2177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <script type="application/ld+json">
+                {
+            "@context": "https://schema.org",
+            "@type": "BeautySalon",
+            "name": "Beauty Atelier IN",
+            "image": "https://ba-in.com/assets/images/logo.png",
+            "url": "https://ba-in.com",
+            "telephone": "+359893398390",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "ул. Отец Паисий 27",
+                "addressLocality": "Силистра",
+                "postalCode": "7500",
+                "addressCountry": "BG"
+            },
+            "priceRange": "$$",
+            "areaServed": "Силистра",
+            "openingHours": "Mo-Fr 10:00-18:00",
+            "sameAs": [
+                "https://www.facebook.com/IliyanaPhiAcademy/",
+                "https://www.instagram.com/Iliyanailieva.phiacademy/"                                                                   
+            ]
+            }
+        </script>
+
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-4DSP9HGYMB"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-4DSP9HGYMB');
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Beauty Atelier IN | Микроблейдинг, Ламиниране и Естетика Силистра</title>
+    <link rel="canonical" href="https://ba-in.com/">
+
+    <!-- favicons Icons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicons/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicons/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicons/favicon-16x16.png" />
+    <link rel="manifest" href="assets/images/favicons/site.webmanifest" />
+
+    <meta name="description"
+        content="Специализиран център за PhiBrows микроблейдинг в Силистра. Предлагаме професионален микронидлинг, ламиниране на мигли и естетични процедури. Доверете се на сертифициран опит." />
+    <meta name="keywords"
+        content="микроблейдинг силистра, ламиниране на вежди силистра, микронидлинг, фиброуз силистра, естетични процедури" />
+
+
+
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="assets/vendors/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/vendors/bootstrap-select/bootstrap-select.min.css" />
+    <link rel="stylesheet" href="assets/vendors/animate/animate.min.css" />
+    <link rel="stylesheet" href="assets/vendors/fontawesome/css/all.min.css" />
+    <link rel="stylesheet" href="assets/vendors/jquery-ui/jquery-ui.css" />
+    <link rel="stylesheet" href="assets/vendors/jarallax/jarallax.css" />
+    <link rel="stylesheet" href="assets/vendors/jquery-magnific-popup/jquery.magnific-popup.css" />
+    <link rel="stylesheet" href="assets/vendors/nouislider/nouislider.min.css" />
+    <link rel="stylesheet" href="assets/vendors/nouislider/nouislider.pips.css" />
+    <link rel="stylesheet" href="assets/vendors/tiny-slider/tiny-slider.css" />
+    <link rel="stylesheet" href="assets/vendors/mediox-icons/style.css" />
+    <link rel="stylesheet" href="assets/vendors/owl-carousel/css/owl.carousel.min.css" />
+    <link rel="stylesheet" href="assets/vendors/owl-carousel/css/owl.theme.default.min.css" />
+    <link rel="stylesheet" href="assets/vendors/slick/css/slick.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- template styles -->
+    <link rel="stylesheet" href="assets/css/mediox.css?v=2" />
+    <style>
+        /* --- ТЕСТ: ДАЛИ СНИМКАТА СЪЩЕСТВУВА? --- */
+
+        /* 1. Слагаме временен цвят на фона (Тъмно сиво, не черно) */
+        .main-footer,
+        .main-footer__top,
+        .main-footer__bottom {
+            background-color: #222222 !important;
+        }
+
+        /* 2. Зареждаме снимката с МНОГО ЛЕК филтър */
+        .main-footer__bg {
+            /* ВАЖНО: Следи за правилното изписване! */
+            /* Използваме '/' а не '\' */
+            background-image:
+                linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+                /* Само 30% черно */
+                url('assets/images/shapes/services-bg-1-1.webp') !important;
+
+            background-size: cover !important;
+            background-repeat: no-repeat !important;
+            background-position: center center !important;
+
+            opacity: 1 !important;
+            z-index: 0 !important;
+            display: block !important;
+
+            /* Заема цялото място */
+            position: absolute !important;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: 100% !important;
+            height: 100% !important;
+        }
+
+        /* 3. Махаме всичко друго */
+        .main-footer__bg::before {
+            display: none !important;
+        }
+
+        /* --- FIX: Slider buttons hover (index) --- */
+
+        /* Button 1 (filled) */
+        .main-slider-three__button--1 .mediox-btn::before,
+        .main-slider-three__button--1 .mediox-btn::after {
+            background-color: #ffffff !important;
+        }
+
+        .main-slider-three__button--1 .mediox-btn:hover,
+        .main-slider-three__button--1 .mediox-btn:hover .mediox-btn__icon {
+            color: #C49A45 !important;
+        }
+
+        /* Button 2 (outline) - hover: black bg + white text */
+        .main-slider-three__button--2 .mediox-btn {
+            border-color: #C49A45 !important;
+        }
+
+        /* фонът се прави от псевдо-елементите */
+        .main-slider-three__button--2 .mediox-btn::before,
+        .main-slider-three__button--2 .mediox-btn::after {
+            background-color: transparent !important;
+            /* normal state */
+        }
+
+        .main-slider-three__button--2 .mediox-btn:hover::before,
+        .main-slider-three__button--2 .mediox-btn:hover::after {
+            background-color: #E2C279 !important;
+            border-color: #C49A45 !important;
+            /* hover bg */
+        }
+
+        .main-slider-three__button--2 .mediox-btn:hover {
+            border-color: #000000 !important;
+            color: #ffffff !important;
+            /* hover text */
+        }
+
+        .main-slider-three__button--2 .mediox-btn:hover .mediox-btn__icon {
+            color: #ffffff !important;
+            /* hover icon */
+        }
+
+        .main-slider-three__button--2 .mediox-btn {
+            color: #ffffff !important;
+        }
+
+        .main-slider-three__button--2 .mediox-btn .mediox-btn__icon {
+            color: #ffffff !important;
+        }
+    </style>
+</head>
+
+<body class="custom-cursor">
+
+    <div class="custom-cursor__cursor"></div>
+    <div class="custom-cursor__cursor-two"></div>
+
+    <div class="preloader">
+        <div class="preloader__image" style="background-image: url(assets/images/loader.png?v=2);"></div>
+    </div>
+    <!-- /.preloader -->
+    <div class="page-wrapper">
+
+
+        <div class="header-four">
+            <div class="topbar-one">
+                <div class="container-fluid">
+                    <div class="topbar-one__inner">
+                        <ul class="list-unstyled topbar-one__info">
+                            <li>
+                                <span class="topbar-one__info__icon">
+                                    <i class="icon-location"></i>
+                                </span>
+                                <a href="https://maps.app.goo.gl/Lzf67GuUbMHEaHY18">Силистра център, ул. "Отец Паисий"
+                                    27, 7500 Силистра, България </a>
+                            </li>
+                            <li>
+                                <span class="topbar-one__info__icon topbar-one__info__icon--email">
+                                    <i class="icon-email"></i>
+                                </span>
+                                <a href="mailto:info@ba-in.com">info@ba-in.com</a>
+                            </li>
+                            <li>
+                                <span class="topbar-one__info__icon">
+                                    <i class="icon-telephone"></i>
+                                </span>
+                                <a href="tel:+359 89 339 8390">+359 89 339 8390</a>
+                            </li>
+                        </ul><!-- /.list-unstyled topbar-one__info -->
+                        <div class="topbar-one__right">
+                            <div class="social-links">
+                                <a href="https://www.facebook.com/IliyanaPhiAcademy/">
+                                    <i class="fab fa-facebook-f" aria-hidden="true"></i>
+                                    <span class="sr-only">Facebook</span>
+                                </a>
+                                <a href="https://www.instagram.com/Iliyanailieva.phiacademy/">
+                                    <i class="fab fa-instagram" aria-hidden="true"></i>
+                                    <span class="sr-only">Instagram</span>
+                                </a>
+                                <a href="https://www.tiktok.com/@iliqna_ilieva4">
+                                    <i class="fab fa-tiktok" aria-hidden="true"></i>
+                                    <span class="sr-only">Tik Tok</span>
+                                </a>
+                                <a href="https://share.google/LWLt1rNLslWSX71RU">
+                                    <i class="fab fa-google" aria-hidden="true"></i>
+                                    <span class="sr-only">Google</span>
+                                </a>
+                            </div><!-- /.topbar-one__social -->
+                        </div><!-- /.topbar-one__right -->
+                    </div><!-- /.topbar-one__inner -->
+                </div><!-- /.container-fluid -->
+            </div><!-- /.topbar-one -->
+
+            <header class="main-header main-header--four sticky-header sticky-header--normal">
+                <div class="container-fluid">
+                    <div class="main-header__inner">
+                        <div class="main-header__logo logo-retina">
+                            <a href="index.html">
+                                <img src="assets/images/logo-light.png?v=2" alt="Beauty Atelier IN logo" width="164">
+                            </a>
+                        </div><!-- /.main-header__logo -->
+                        <div class="main-header__right">
+                            <div class="main-header__sidebar-btn sidebar-btn__toggler" role="button" tabindex="0"
+                                aria-label="Отвори странично меню">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div><!-- /.sidebar-btn__toggler -->
+                            <nav class="main-header__nav main-menu">
+                                <ul class="main-menu__list">
+
+                                    <li>
+                                        <a href="index.html">Начало</a>
+
+                                    </li>
+
+
+
+                                    <li>
+                                        <a href="Procedures.html">Процедури</a>
+                                    </li>
+
+                                    <li>
+                                        <a href="pricing.html">Ценоразпис</a>
+                                    </li>
+
+                                    <li>
+                                        <a href="about.html">За нас</a>
+                                    </li>
+
+                                    <li>
+                                        <a href="faq.html">ЧЗВ</a>
+                                    </li>
+
+                                    <li>
+                                        <a href="blog-carousel-2.html">Блог</a>
+                                    </li>
+
+
+                                    <li>
+                                        <a href="contact.html">Контакти</a>
+                                    </li>
+                                </ul>
+                            </nav><!-- /.main-header__nav -->
+                            <div class="mobile-nav__btn mobile-nav__toggler" role="button" tabindex="0"
+                                aria-label="Отвори мобилно меню">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div><!-- /.mobile-nav__toggler -->
+
+
+                            </a><!-- /.search-toggler -->
+                            <div class="main-header__call">
+                                <span class="main-header__call__icon">
+                                    <i class="icon-telephone"></i>
+                                </span><!-- /.main-header__call__icon -->
+                                <div class="main-header__call__content">
+                                    <p class="main-header__call__title">Звънни ни</p><!-- /.call__title -->
+                                    <h4 class="main-header__call__number">
+                                        <a href="tel:+359 89 339 8390">+359 89 339 8390</a>
+                                    </h4><!-- /.main-header__call__number -->
+                                </div><!-- /.main-header__call__content -->
+                            </div><!-- /.main-header__call -->
+                            <a href="appointment.html" class="mediox-btn main-header__btn">
+                                <span>Запази час</span>
+                                <span class="mediox-btn__icon"><i class="icon-up-right-arrow"></i></span>
+                            </a><!-- /.mediox-btn -->
+                        </div><!-- /.main-header__right -->
+                    </div><!-- /.main-header__inner -->
+                </div><!-- /.container-fluid -->
+            </header><!-- /.main-header -->
+        </div><!-- /.header-four -->
+
+
+
+        <section class="main-slider-three">
+            <div class="main-slider-three__carousel mediox-slick__carousel" data-slick-options='{
+        "slidesToShow": 1,
+        "slidesToScroll": 1,
+        "fade": true,
+        "asNavFor": ".main-slider-three__carousel-counter",
+        "autoplay": true,
+        "autoplaySpeed": 6000,
+        "speed": 1000,
+        "infinite": true,
+        "dots": false,
+        "arrows": true,
+        "initialSlide": 0,
+        "prevArrow": "<button class=\"main-slider-three__slick-button main-slider-three__slick-button--prev\" aria-label=\"Предишен слайд\"><i class=\"icon-arrow-left\" aria-hidden=\"true\"></i></button>",
+		"nextArrow": "<button class=\"main-slider-three__slick-button main-slider-three__slick-button--next\" aria-label=\"Следващ слайд\"><i class=\"icon-arrow-right\" aria-hidden=\"true\"></i></button>"
+        }'>
+
+                <div class="main-slider-three__item">
+                    <div class="main-slider-three__bg" style="background-image: url(assets/images/backgrounds/main-slider-bg-3-4.jpg?v=2
+                    );">
+                    </div><!-- /.main-slider-three__bg -->
+                    <div class="main-slider-three__container container">
+                        <div class="row">
+                            <div class="col-xxl-10 col-xl-9 mx-auto">
+                                <div class="main-slider-three__content">
+                                    <div class="main-slider-three__top">
+                                        <p class="main-slider-three__sub-title">Beauty Atelier IN</p>
+                                        <!-- /.slider-sub-title -->
+                                    </div><!-- /.main-slider-three__top -->
+                                    <h1 class="main-slider-three__title">
+                                        <span class="main-slider-three__title__inner">Професионален <br> <span
+                                                class="main-slider-three__title__shape">Микроблейдинг</span> в
+                                            Силистра</span>
+                                    </h1><!-- /.slider-title -->
+                                    <div class="main-slider-three__button-group">
+                                        <div class="main-slider-three__button-group__inner">
+                                            <div class="main-slider-three__button main-slider-three__button--1">
+                                                <a href="appointment.html" class="mediox-btn">
+                                                    <span>Запази час</span>
+                                                    <span class="mediox-btn__icon"><i
+                                                            class="icon-up-right-arrow"></i></span>
+                                                </a><!-- /.mediox-btn -->
+                                            </div><!-- /.main-slider-three__button -->
+                                        </div><!-- /.main-slider-three__button__inner -->
+                                        <div class="main-slider-three__button-group__inner">
+                                            <div class="main-slider-three__button main-slider-three__button--2">
+                                                <a href="Procedures.html" class="mediox-btn">
+                                                    <span>Процедури</span>
+                                                    <span class="mediox-btn__icon"><i
+                                                            class="icon-up-right-arrow"></i></span>
+                                                </a><!-- /.mediox-btn -->
+                                            </div><!-- /.main-slider-three__button -->
+                                        </div><!-- /.main-slider-three__button-group__inner -->
+                                    </div><!-- /.main-slider-three__button-group -->
+                                </div><!-- /.main-slider-three__content -->
+                            </div><!-- /.col-xxl-10 col-xl-9 mx-auto -->
+                        </div><!-- /.row -->
+                    </div><!-- /.container -->
+                </div><!-- /.main-slider-three__item -->
+                <div class="main-slider-three__item">
+                    <div class="main-slider-three__bg"
+                        style="background-image: url(assets/images/backgrounds/main-slider-bg-3-1.jpg?v=2);">
+                    </div><!-- /.main-slider-three__bg -->
+                    <div class="main-slider-three__container container">
+                        <div class="row">
+                            <div class="col-xxl-10 col-xl-9 mx-auto">
+                                <div class="main-slider-three__content">
+                                    <div class="main-slider-three__top">
+                                        <p class="main-slider-three__sub-title">Beauty Atelier IN</p>
+                                        <!-- /.slider-sub-title -->
+                                    </div><!-- /.main-slider-three__top -->
+                                    <h2 class="main-slider-three__title">
+                                        <span class="main-slider-three__title__inner">Индивидуален подход <br> към <span
+                                                class="main-slider-three__title__shape">всеки </span> клиент</span>
+                                    </h2><!-- /.slider-title -->
+                                    <div class="main-slider-three__button-group">
+                                        <div class="main-slider-three__button-group__inner">
+                                            <div class="main-slider-three__button main-slider-three__button--1">
+                                                <a href="appointment.html" class="mediox-btn">
+                                                    <span>Запази час</span>
+                                                    <span class="mediox-btn__icon"><i
+                                                            class="icon-up-right-arrow"></i></span>
+                                                </a><!-- /.mediox-btn -->
+                                            </div><!-- /.main-slider-three__button -->
+                                        </div><!-- /.main-slider-three__button__inner -->
+                                        <div class="main-slider-three__button-group__inner">
+                                            <div class="main-slider-three__button main-slider-three__button--2">
+                                                <a href="Procedures.html" class="mediox-btn">
+                                                    <span>Процедури</span>
+                                                    <span class="mediox-btn__icon"><i
+                                                            class="icon-up-right-arrow"></i></span>
+                                                </a><!-- /.mediox-btn -->
+                                            </div><!-- /.main-slider-three__button -->
+                                        </div><!-- /.main-slider-three__button-group__inner -->
+                                    </div><!-- /.main-slider-three__button-group -->
+                                </div><!-- /.main-slider-three__content -->
+                            </div><!-- /.col-xxl-10 col-xl-9 mx-auto -->
+                        </div><!-- /.row -->
+                    </div><!-- /.container -->
+                </div><!-- /.main-slider-three__item -->
+                <div class="main-slider-three__item">
+                    <div class="main-slider-three__bg"
+                        style="background-image: url(assets/images/backgrounds/main-slider-bg-3-2.jpg?v=2);">
+                    </div><!-- /.main-slider-three__bg -->
+                    <div class="main-slider-three__container container">
+                        <div class="row">
+                            <div class="col-xxl-10 col-xl-9 mx-auto">
+                                <div class="main-slider-three__content">
+                                    <div class="main-slider-three__top">
+                                        <p class="main-slider-three__sub-title">Beauty Atelier IN</p>
+                                        <!-- /.slider-sub-title -->
+                                    </div><!-- /.main-slider-three__top -->
+                                    <h2 class="main-slider-three__title">
+                                        <span class="main-slider-three__title__inner">сертифициран <br>Beauty Artist
+                                            <span class="main-slider-three__title__shape"></span></span>
+                                    </h2><!-- /.slider-title -->
+                                    <div class="main-slider-three__button-group">
+                                        <div class="main-slider-three__button-group__inner">
+                                            <div class="main-slider-three__button main-slider-three__button--1">
+                                                <a href="appointment.html" class="mediox-btn">
+                                                    <span>Запази час</span>
+                                                    <span class="mediox-btn__icon"><i
+                                                            class="icon-up-right-arrow"></i></span>
+                                                </a><!-- /.mediox-btn -->
+                                            </div><!-- /.main-slider-three__button -->
+                                        </div><!-- /.main-slider-three__button__inner -->
+                                        <div class="main-slider-three__button-group__inner">
+                                            <div class="main-slider-three__button main-slider-three__button--2">
+                                                <a href="about.html" class="mediox-btn">
+                                                    <span>За нас</span>
+                                                    <span class="mediox-btn__icon"><i
+                                                            class="icon-up-right-arrow"></i></span>
+                                                </a><!-- /.mediox-btn -->
+                                            </div><!-- /.main-slider-three__button -->
+                                        </div><!-- /.main-slider-three__button-group__inner -->
+                                    </div><!-- /.main-slider-three__button-group -->
+                                </div><!-- /.main-slider-three__content -->
+                            </div><!-- /.col-xxl-10 col-xl-9 mx-auto -->
+                        </div><!-- /.row -->
+                    </div><!-- /.container -->
+                </div><!-- /.main-slider-three__item -->
+                <div class="main-slider-three__item">
+                    <div class="main-slider-three__bg"
+                        style="background-image: url(assets/images/backgrounds/main-slider-bg-3-3.jpg?v=2);">
+                    </div><!-- /.main-slider-three__bg -->
+                    <div class="main-slider-three__container container">
+                        <div class="row">
+                            <div class="col-xxl-10 col-xl-9 mx-auto">
+                                <div class="main-slider-three__content">
+                                    <div class="main-slider-three__top">
+                                        <p class="main-slider-three__sub-title">Beauty Atelier IN</p>
+                                        <!-- /.slider-sub-title -->
+                                    </div><!-- /.main-slider-three__top -->
+                                    <h2 class="main-slider-three__title">
+                                        <span class="main-slider-three__title__inner">Стерилна <br> Работна<span
+                                                class="main-slider-three__title__shape"> среда
+
+                                            </span></span>
+                                    </h2><!-- /.slider-title -->
+                                    <div class="main-slider-three__button-group">
+                                        <div class="main-slider-three__button-group__inner">
+                                            <div class="main-slider-three__button main-slider-three__button--1">
+                                                <a href="appointment.html" class="mediox-btn">
+                                                    <span>Запази час</span>
+                                                    <span class="mediox-btn__icon"><i
+                                                            class="icon-up-right-arrow"></i></span>
+                                                </a><!-- /.mediox-btn -->
+                                            </div><!-- /.main-slider-three__button -->
+                                        </div><!-- /.main-slider-three__button__inner -->
+                                        <div class="main-slider-three__button-group__inner">
+                                            <div class="main-slider-three__button main-slider-three__button--2">
+                                                <a href="blog-carousel-2.html" class="mediox-btn">
+                                                    <span>Блог</span>
+                                                    <span class="mediox-btn__icon"><i
+                                                            class="icon-up-right-arrow"></i></span>
+                                                </a><!-- /.mediox-btn -->
+                                            </div><!-- /.main-slider-three__button -->
+                                        </div><!-- /.main-slider-three__button-group__inner -->
+                                    </div><!-- /.main-slider-three__button-group -->
+                                </div><!-- /.main-slider-three__content -->
+                            </div><!-- /.col-xxl-10 col-xl-9 mx-auto -->
+                        </div><!-- /.row -->
+                    </div><!-- /.container -->
+                </div><!-- /.main-slider-three__item -->
+
+            </div><!-- /.main-slider-three__carousel -->
+            <div class="main-slider-three__carousel-counter mediox-slick__carousel" data-slick-options='{
+        "asNavFor": ".main-slider-three__carousel",
+        "slidesToShow": 3,
+        "slidesToScroll": 1,
+        "autoplay": true,
+        "autoplaySpeed": 6000,
+        "infinite": true,
+        "focusOnSelect": true,
+        "dots": false,
+        "arrows": false,
+        "initialSlide": 0
+
+        }'>
+                <div>
+                    <span class="main-slider-three__carousel-counter__text">04</span>
+                </div>
+                <div>
+                    <span class="main-slider-three__carousel-counter__text">01</span>
+                </div>
+                <div>
+                    <span class="main-slider-three__carousel-counter__text">02</span>
+                </div>
+                <div>
+                    <span class="main-slider-three__carousel-counter__text">03</span>
+                </div>
+            </div><!-- /.main-slider-three__carousel-counter -->
+        </section><!-- /.main-slider-three -->
+
+        <section class="about-three section-space">
+            <div class="container">
+                <div class="row gutter-y-50 align-items-center">
+                    <div class="col-lg-6 wow fadeInUp" data-wow-duration="1500ms">
+                        <div class="about-three__image">
+                            <div class="about-three__image__inner">
+                                <div class="about-three__image__bg"
+                                    style="background-image: url(assets/images/shapes/luxury_about_bg_2.png);"></div>
+                                <img src="assets/images/about/about-3-4.png?v=2"
+                                    alt="Илияна Николаева – експерт по микроблейдинг и естетични процедури в Силистра"
+                                    class="about-three__image__one" loading="lazy">
+                                <img src="assets/images/shapes/about-shape-3-1.png?v=2" alt="shape"
+                                    class="about-three__image__shape-1" loading="lazy">
+                            </div><!-- /.about-three__image__inner -->
+                        </div><!-- /.about-three__image -->
+                    </div><!-- /.col-lg-6 -->
+                    <div class="col-lg-6">
+                        <div class="about-three__content">
+                            <div class="sec-title @@extraClassName wow fadeInUp" data-wow-duration="1500ms">
+                                <div class="sec-title__top">
+
+                                    <img src="assets/images/shapes/sec-title-s-1-1.png?v=2"
+                                        alt="Beauty Atelier IN Силистра | Естетични процедури" class="sec-title__img">
+
+
+                                    <h6 class="sec-title__tagline">Сертифициран специалист</h6>
+                                    <!-- /.sec-title__tagline -->
+
+                                </div><!-- /.sec-title__top -->
+                                <h3 class="sec-title__title">Миглопластика <br>и естетични процедури</h3>
+                                <!-- /.sec-title__title -->
+                            </div><!-- /.sec-title -->
+                            <div class="about-three__description wow fadeInUp" data-wow-duration="1500ms">
+                                <h3 class="about-three__sm-title">Открий най-доброто за твоята красота</h3>
+                                <!-- /.about-three__sm-title -->
+                                <p class="about-three__text">С внимание към всеки детайл и индивидуален подход, ние
+                                    създаваме не просто визия, а самочувствие. Специализирани сме в микроблейдинг и
+                                    <strong>ламиниране на вежди и мигли</strong> в Силистра. Доверете се на сертифициран
+                                    професионалист!
+                                </p><!-- /.about-three__text -->
+                            </div><!-- /.about-three__description -->
+                            <ul class="about-three__list list-unstyled wow fadeInUp" data-wow-duration="1500ms">
+                                <li>
+                                    <span class="about-three__list__icon">
+                                        <i class="icon-check"></i>
+                                    </span><!-- /.about-three__list__icon -->
+                                    Микроблейдинг
+                                </li>
+                                <li>
+                                    <span class="about-three__list__icon">
+                                        <i class="icon-check"></i>
+                                    </span><!-- /.about-three__list__icon -->
+                                    Микронидлинг
+                                </li>
+                                <li>
+                                    <span class="about-three__list__icon">
+                                        <i class="icon-check"></i>
+                                    </span><!-- /.about-three__list-icon -->
+                                    Миглопластика
+                                </li>
+                                <li>
+                                    <span class="about-three__list__icon">
+                                        <i class="icon-check"></i>
+                                    </span><!-- /.about-three__list__icon -->
+                                    Пробиване на уши
+                                </li>
+                                <li>
+                                    <span class="about-three__list__icon">
+                                        <i class="icon-check"></i>
+                                    </span><!-- /.about-three__list__icon -->
+                                    Плазма пен
+                                </li>
+
+
+                                <li>
+                                    <span class="about-three__list__icon">
+                                        <i class="icon-check"></i>
+                                    </span><!-- /.about-three__list-icon -->
+                                    Ламиниране
+                                </li>
+                                <li>
+                                    <span class="about-three__list__icon">
+                                        <i class="icon-check"></i>
+                                    </span><!-- /.about-three__list__icon -->
+                                    Премахване на перманентен грим
+                                </li>
+                            </ul><!-- /.about-three__list -->
+                            <div class="about-three__info wow fadeInUp" data-wow-duration="1500ms">
+                                <div class="about-three__info__profile">
+                                    <div class="about-profile">
+                                        <img src="assets/images/about/about-profile-1-1.jpg?v=2"
+                                            alt="Илияна Николаева – сертифициран PhiBrows артист в Силистра"
+                                            class="about-profile__image" loading="lazy">
+                                        <div class="about-profile__info">
+                                            <h4 class="about-profile__name">Илияна Николаева</h4>
+                                            <p class="about-profile__designation">Beauty Artist</p>
+                                        </div><!-- /.about-profile__info -->
+                                    </div><!-- /.about-profile -->
+                                    <img src="assets/images/shapes/about-profile-sign-1-1.png?v=2" alt="sign"
+                                        class="about-three__info__sign" loading="lazy">
+                                </div><!-- /.about-three__info__profile -->
+                                <div class="about-three__info__video"
+                                    style="background-image: url(assets/images/about/about-3-2.jpg?v=2);">
+                                    <a href="https://www.youtube.com/watch?v=9LBrHIxBiV0"
+                                        class="about-three__info__video-btn video-btn-two video-popup"
+                                        aria-label="Гледайте видео за нас">
+                                        <i class="icon-play" aria-hidden="true"></i>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                    </a><!-- /.video-btn -->
+                                </div><!-- /.about-three__info__video -->
+                            </div><!-- /.about-three__info -->
+                            <div class="about-three__button wow fadeInUp" data-wow-duration="1500ms">
+                                <a href="about.html" class="mediox-btn">
+                                    <span>Научи повече</span>
+                                    <span class="mediox-btn__icon"><i class="icon-up-right-arrow"></i></span>
+                                </a><!-- /.mediox-btn -->
+                            </div><!-- /.about-three__button -->
+                        </div><!-- /.about-three__content -->
+                    </div><!-- /.col-lg-6 -->
+                </div><!-- /.row gutter-y-50 -->
+            </div><!-- /.container -->
+        </section><!-- /.about-three section-space -->
+
+        <section class="services-three section-space-two">
+            <div class="services-three__bg"
+                style="background-image: url(assets/images/shapes/services-bg-3-1.png?v=2);"></div>
+            <div class="container">
+                <div class="services-three__top">
+                    <div class="row gutter-y-40 align-items-end">
+                        <div class="col-lg-6">
+                            <div class="sec-title @@extraClassName wow fadeInUp" data-wow-duration="1500ms">
+                                <div class="sec-title__top">
+
+                                    <img src="assets/images/shapes/sec-title-s-1-1.png"
+                                        alt="Как да ви помогнем? Beauty Atelier IN Silistra" class="sec-title__img">
+
+
+                                    <h6 class="sec-title__tagline">Открий най-доброто за твоята красота</h6>
+                                    <!-- /.sec-title__tagline -->
+
+                                </div><!-- /.sec-title__top -->
+                                <h3 class="sec-title__title">нашите процедури</h3><!-- /.sec-title__title -->
+                            </div><!-- /.sec-title -->
+                        </div><!-- /.col-lg-6 -->
+                        <div class="col-lg-6">
+                            <div class="wow fadeInUp" data-wow-duration="1500ms">
+                                <p class="services-three__text">Мястото, където красотата среща прецизността.
+                                    Предлагаме професионални услуги за вежди,
+                                    мигли, кожа и перманентен грим - с внимание
+                                    и индивидуален подход.
+                                </p>
+                                <!-- /.services-three__text -->
+                            </div>
+                        </div><!-- /.col-lg-6 -->
+                    </div><!-- /.row -->
+                </div><!-- /.services-three__top -->
+                <div class="row gutter-y-30">
+                    <div class="col-xl-3 col-md-6 wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="00ms">
+                        <div class="services-three__item">
+                            <div class="services-three__item__bg"
+                                style="background-image: url(assets/images/services/service-3-1.jpg?v=2);"></div>
+                            <div class="services-three__item__content">
+                                <img src="assets/images/shapes/service-item-shape-3-1.png?v=2"
+                                    alt="Микроблейдинг на вежди с естествен резултат в Силистра"
+                                    class="services-three__item__shape" loading="lazy">
+                                <h3 class="services-three__item__title">
+                                    <a href="microblading.html">Микроблейдинг</a>
+                                </h3><!-- /.services-three__item__title -->
+                            </div><!-- /.services-three__item__content -->
+                        </div><!-- /.services-three__item -->
+                    </div><!-- /.col-xl-3 col-md-6 -->
+                    <div class="col-xl-3 col-md-6 wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="100ms">
+                        <div class="services-three__item">
+                            <div class="services-three__item__bg"
+                                style="background-image: url(assets/images/services/service-3-2.jpg?v=2);"></div>
+                            <div class="services-three__item__content">
+                                <img src="assets/images/shapes/service-item-shape-3-2.png?v=2"
+                                    alt="Микронидлинг процедура за подмладяване на кожата в Силистра"
+                                    class="services-three__item__shape" loading="lazy">
+                                <h3 class="services-three__item__title">
+                                    <a href="microneedling.html">Микронидлинг</a>
+                                </h3><!-- /.services-three__item__title -->
+                            </div><!-- /.services-three__item__content -->
+                        </div><!-- /.services-three__item -->
+                    </div><!-- /.col-xl-3 col-md-6 -->
+                    <div class="col-xl-3 col-md-6 wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="200ms">
+                        <div class="services-three__item">
+                            <div class="services-three__item__bg"
+                                style="background-image: url(assets/images/services/service-3-3.jpg?v=2);"></div>
+                            <div class="services-three__item__content">
+                                <img src="assets/images/shapes/service-item-shape-3-3.png?v=2"
+                                    alt="Миглопластика с естествен обем в Силистра" class="services-three__item__shape"
+                                    loading="lazy">
+                                <h3 class="services-three__item__title">
+                                    <a href="lashes.html">Миглопластика</a>
+                                </h3><!-- /.services-three__item__title -->
+                            </div><!-- /.services-three__item__content -->
+                        </div><!-- /.services-three__item -->
+                    </div><!-- /.col-xl-3 col-md-6 -->
+                    <div class="col-xl-3 col-md-6 wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="300ms">
+                        <div class="services-three__item">
+                            <div class="services-three__item__bg"
+                                style="background-image: url(assets/images/services/service-3-4.jpg?v=2);"></div>
+                            <div class="services-three__item__content">
+                                <img src="assets/images/shapes/service-item-shape-3-4.png?v=2"
+                                    alt="Плазма пен процедура за стягане на кожата в Силистра"
+                                    class="services-three__item__shape" loading="lazy">
+                                <h3 class="services-three__item__title">
+                                    <a href="plasma.html">Плазма пен</a>
+                                </h3><!-- /.services-three__item__title -->
+                            </div><!-- /.services-three__item__content -->
+                        </div><!-- /.services-three__item -->
+                    </div><!-- /.col-xl-3 col-md-6 -->
+                </div><!-- /.row gutter-y-30 -->
+                <div class="services-two services-two--home3">
+                    <div class="services-two__carousel mediox-owl__carousel mediox-owl__carousel--with-shadow mediox-owl__carousel--basic-nav owl-carousel owl-theme"
+                        data-owl-options='{
+                    "items": 1,
+                    "margin": 10,
+                    "loop": true,
+                    "smartSpeed": 700,
+                    "nav": true,
+                    "navText": ["<span class=\"icon-arrow-left\"></span>","<span class=\"icon-arrow-right\"></span>"],
+                    "dots": false,
+                    "autoplay": true,
+                    "responsive": {
+                        "0": {
+                            "items": 1,
+                            "margin": 10
+                        },
+                        "768": {
+                            "items": 2,
+                            "margin": 30
+                        }
+                    }
+                }'>
+                        <div class="item wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="00ms">
+                            <div class="service-card-two">
+                                <div class="service-card-two__bg"></div><!-- /.service-card-two__bg -->
+                                <div class="service-card-two__content">
+                                    <img src="assets/images/services/service-2-1.jpg"
+                                        alt="Безопасно пробиване на уши за деца в Силистра"
+                                        class="service-card-two__image">
+                                    <h3 class="service-card-two__title"><a href="piercing.html">Пробиване на уши</a>
+                                    </h3><!-- /.service-card-two__title -->
+                                    <a href="piercing.html" class="service-card-two__link"
+                                        aria-label="Разберете повече за Пробиване на уши">
+                                        <i class="icon-up-right-arrow" aria-hidden="true"></i>
+                                    </a><!-- /.service-card-two__link -->
+                                </div><!-- /.service-card-two__content -->
+                            </div><!-- /.service-card-two -->
+                        </div><!-- /.item -->
+                        <div class="item wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="200ms">
+                            <div class="service-card-two">
+                                <div class="service-card-two__bg"></div><!-- /.service-card-two__bg -->
+                                <div class="service-card-two__content">
+                                    <img src="assets/images/services/service-2-2.jpg"
+                                        alt="Премахване на перманентен грим с щадящ метод"
+                                        class="service-card-two__image">
+                                    <h3 class="service-card-two__title"><a href="perm-makeup-removal.html">Премахване на
+                                            перманентен грим</a></h3><!-- /.service-card-two__title -->
+                                    <a href="perm-makeup-removal.html" class="service-card-two__link"
+                                        aria-label="Разберете повече за Премахване на перманентен грим">
+                                        <i class="icon-up-right-arrow" aria-hidden="true"></i>
+                                    </a><!-- /.service-card-two__link -->
+                                </div><!-- /.service-card-two__content -->
+                            </div><!-- /.service-card-two -->
+                        </div><!-- /.item -->
+                        <div class="item wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="400ms">
+                            <div class="service-card-two">
+                                <div class="service-card-two__bg"></div><!-- /.service-card-two__bg -->
+                                <div class="service-card-two__content">
+                                    <img src="assets/images/services/service-2-3.jpg"
+                                        alt="Професионално ламиниране на вежди и мигли в Силистра за естествен обем и перфектна форма"
+                                        class="service-card-two__image">
+                                    <h3 class="service-card-two__title"><a href="laminirane.html">Ламиниране на вежди и
+                                            мигли</a></h3>
+                                    <!-- /.service-card-two__title -->
+                                    <a href="laminirane.html" class="service-card-two__link"
+                                        aria-label="Разберете повече за Ламиниране на вежди и мигли">
+                                        <i class="icon-up-right-arrow" aria-hidden="true"></i>
+                                    </a><!-- /.service-card-two__link -->
+                                </div><!-- /.service-card-two__content -->
+                            </div><!-- /.service-card-two -->
+                        </div><!-- /.item -->
+
+
+
+                    </div><!-- /.services-two__carousel -->
+                </div><!-- /.services-two section-space-bottom -->
+            </div><!-- /.container -->
+        </section><!-- /.services-three section-space-two -->
+
+        <section class="funfact-one funfact-one--home3">
+            <div class="container">
+                <div class="funfact-one__inner">
+                    <div class="funfact-one__row">
+                        <div class="funfact-one__item wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="00ms">
+                            <h3 class="funfact-one__item__number count-box">
+                                <span class="count-text" data-stop="850" data-speed="1500"></span>
+                                <span>+</span>
+                            </h3>
+                            <p class="funfact-one__item__title">Клиенти</p>
+                        </div><!-- /.funfact-one__item -->
+                        <div class="funfact-one__item wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="100ms">
+                            <h3 class="funfact-one__item__number count-box">
+                                <span class="count-text" data-stop="3500" data-speed="1500"></span>
+                                <span>+</span>
+                            </h3>
+                            <p class="funfact-one__item__title">Процедури</p>
+                        </div><!-- /.funfact-one__item -->
+                        <div class="funfact-one__item wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="200ms">
+                            <h3 class="funfact-one__item__number count-box">
+                                <span class="count-text" data-stop="20" data-speed="1500"></span>
+                                <span></span>
+                            </h3>
+                            <p class="funfact-one__item__title">Видове услуги</p>
+                        </div><!-- /.funfact-one__item -->
+                        <div class="funfact-one__item wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="300ms">
+                            <h3 class="funfact-one__item__number count-box">
+                                <span class="count-text" data-stop="4" data-speed="1500"></span>
+                                <span>+</span>
+                            </h3>
+                            <p class="funfact-one__item__title">Години опит</p>
+                        </div><!-- /.funfact-one__item -->
+                    </div><!-- /funfact-one__row -->
+                </div><!-- /.funfact-one__inner -->
+            </div><!-- /.container -->
+        </section><!-- /.funfact-one -->
+
+        <section class="why-choose-one why-choose-one--home3 section-space-two">
+            <div class="container">
+                <div class="row guter-y-60">
+                    <div class="col-xl-6 wow fadeInLeft" data-wow-duration="1500ms">
+                        <div class="why-choose-one__image">
+                            <img src="assets/images/why-choose/why-choose-3-1.jpg"
+                                alt="Защо да избереш нас? Beauty Atelier In Silistra"
+                                class="why-choose-one__image__one">
+                            <div class="why-choose-one__image__two">
+                                <img src="assets/images/why-choose/why-choose-3-2.jpg"
+                                    alt="Защо да избереш нас? Beauty Atelier In Silistra">
+                            </div><!-- /.why-choose-one__image__two -->
+                            <div class="why-choose-one__shape why-choose-one__shape--1"></div>
+                            <!-- /.why-choose-one__shape -->
+                            <div class="why-choose-one__shape why-choose-one__shape--2"></div>
+                            <!-- /.why-choose-one__shape -->
+                        </div><!-- /.why-choose-one__image -->
+                    </div><!-- /.col-xl-6 -->
+                    <div class="col-xl-6">
+                        <div class="why-choose-one__content">
+                            <div class="sec-title @@extraClassName wow fadeInUp" data-wow-duration="1500ms">
+                                <div class="sec-title__top">
+
+                                    <img src="assets/images/shapes/sec-title-s-1-1.png?v=2"
+                                        alt="Защо да избереш нас? Beauty Atelier In Silistra" class="sec-title__img">
+
+
+                                    <h6 class="sec-title__tagline">Перфектният резултат започва с професионален подход.
+                                    </h6><!-- /.sec-title__tagline -->
+
+                                </div><!-- /.sec-title__top -->
+                                <h3 class="sec-title__title">Фокус върху<br> естествената красота</h3>
+                                <!-- /.sec-title__title -->
+                            </div><!-- /.sec-title -->
+                            <div class="why-choose-one__inner">
+                                <div class="why-choose-one__item wow fadeInUp" data-wow-duration="1500ms">
+                                    <span class="why-choose-one__item__icon">
+                                        <i class="icon-doctor-2"></i>
+                                    </span><!-- /.why-choose-one__item__icon -->
+                                    <div class="why-choose-one__item__content">
+                                        <h4 class="why-choose-one__item__title">Професионализъм & Сертифицирани Техники
+                                        </h4>
+                                        <p class="why-choose-one__item__text">Работя със световно признати методи като
+                                            PhiBrows и Bold Brows, което гарантира прецизност, симетрия и естествен
+                                            завършек на всяка процедура.</p>
+                                    </div><!-- /.why-choose-one__item__content -->
+                                </div><!-- /.why-choose-one__item -->
+                                <div class="why-choose-one__item wow fadeInUp" data-wow-duration="1500ms">
+                                    <span class="why-choose-one__item__icon">
+                                        <i class="fa-solid fa-syringe"></i>
+                                    </span><!-- /.why-choose-one__item__icon -->
+                                    <div class="why-choose-one__item__content">
+                                        <h4 class="why-choose-one__item__title">Висококачествени Продукти и Медицинска
+                                            Хигиена</h4>
+                                        <p class="why-choose-one__item__text">Работя само с професионални пигменти,
+                                            сертифицирани консумативи и стерилни инструменти, за да осигуря напълно
+                                            безопасна процедура.</p>
+                                    </div><!-- /.why-choose-one__item__content -->
+                                </div><!-- /.why-choose-one__item -->
+                                <div class="why-choose-one__item wow fadeInUp" data-wow-duration="1500ms">
+                                    <span class="why-choose-one__item__icon">
+                                        <i class="icon-medical"></i>
+                                    </span><!-- /.why-choose-one__item__icon -->
+                                    <div class="why-choose-one__item__content">
+                                        <h4 class="why-choose-one__item__title">Индивидуален Подход към Всеки Клиент
+                                        </h4>
+                                        <p class="why-choose-one__item__text">Всяко лице е уникално. Затова правя
+                                            персонална консултация, анализирам чертите и подбирам най-подходящата
+                                            техника, за да подчертая естествената красота.</p>
+                                    </div><!-- /.why-choose-one__item__content -->
+                                </div><!-- /.why-choose-one__item -->
+                            </div><!-- /.why-choose-one__inner -->
+                        </div><!-- /.why-choose-one__content -->
+                    </div><!-- /.col-xl-6 -->
+                </div><!-- /.row guter-y-60 -->
+            </div><!-- /.container -->
+            <div class="why-choose-one__shape why-choose-one__shape--3"></div><!-- /.why-choose-one__shape -->
+            <div class="why-choose-one__shape why-choose-one__shape--4"></div><!-- /.why-choose-one__shape -->
+        </section><!-- /.why-choose-one section-space-two -->
+
+        <section class="multiple-section section-space-top">
+            <div class="multiple-section__bg" style="background-image: url(assets/images/shapes/multiple-sec-bg.webp);">
+            </div>
+            <section class="faq-two section-space-bottom">
+                <div class="container">
+                    <div class="faq-two__inner">
+                        <div class="faq-two__inner__bg"
+                            style="background-image: url(assets/images/backgrounds/faq-bg-3-1.webp);"></div>
+                        <div class="faq-two__content">
+                            <div class="sec-title @@extraClassName wow fadeInUp" data-wow-duration="1500ms">
+                                <div class="sec-title__top">
+
+                                    <img src="assets/images/shapes/sec-title-s-1-2.png?v=2"
+                                        alt="Често Задавани Въпроси за естетични процедури Силистра Beauty Atelier In"
+                                        class="sec-title__img">
+
+
+                                    <h6 class="sec-title__tagline">FAQ’S</h6><!-- /.sec-title__tagline -->
+
+                                </div><!-- /.sec-title__top -->
+                                <h3 class="sec-title__title">Често задавани <br> въпроси</h3><!-- /.sec-title__title -->
+                            </div><!-- /.sec-title -->
+                            <div class="faq-two__accordion">
+                                <div class="faq-accordion mediox-accordion" data-grp-name="mediox-accordion">
+                                    <div class="accordion active wow fadeInUp" data-wow-duration="1500ms"
+                                        data-wow-delay="00ms">
+                                        <div class="accordion-title">
+                                            <h4>
+                                                Микроблейдингът боли ли?
+                                                <span
+                                                    class="accordion-title__icon"></span><!-- /.accordion-title__icon -->
+                                            </h4>
+                                        </div><!-- /.accordion-title -->
+                                        <div class="accordion-content">
+                                            <div class="inner">
+                                                <p>Болката е минимална, т.е. самата процедура се извършва в най-горния
+                                                    слой на кожата – епидермиса.</p>
+                                            </div><!-- /.inner -->
+                                        </div><!-- /.accordion-content -->
+                                    </div><!-- /.accordion-item -->
+                                    <div class="accordion wow fadeInUp" data-wow-duration="1500ms"
+                                        data-wow-delay="50ms">
+                                        <div class="accordion-title">
+                                            <h4>
+                                                Колко време се задържа микроблейдинг “косъм по косъм” върху кожата?
+                                                <span
+                                                    class="accordion-title__icon"></span><!-- /.accordion-title__icon -->
+                                            </h4>
+                                        </div><!-- /.accordion-title -->
+                                        <div class="accordion-content">
+                                            <div class="inner">
+                                                <p>При нормална до суха кожа, резултатът се задържа около 1,5/2 години.
+                                                    При по-пореста и мазна кожа, резултатът се задържа до 1-1,5 година и
+                                                    при него се налага по-честа поддръжка.</p>
+                                            </div><!-- /.inner -->
+                                        </div><!-- /.accordion-content -->
+                                    </div><!-- /.accordion-item -->
+                                    <div class="accordion wow fadeInUp" data-wow-duration="1500ms"
+                                        data-wow-delay="100ms">
+                                        <div class="accordion-title">
+                                            <h4>
+                                                Може ли да се прави през лятото микроблейдинг?
+                                                <span
+                                                    class="accordion-title__icon"></span><!-- /.accordion-title__icon -->
+                                            </h4>
+                                        </div><!-- /.accordion-title -->
+                                        <div class="accordion-content">
+                                            <div class="inner">
+                                                <p>Може, да! После грижата за веждите е една и съща през всеки сезон,
+                                                    само лятото препоръчваме да се мажат по-често със слънцезащита и
+                                                    кремове със защита за пигмент.</p>
+                                            </div><!-- /.inner -->
+                                        </div><!-- /.accordion-content -->
+                                    </div><!-- /.accordion-item -->
+                                </div><!-- /.faq-accordion -->
+                            </div><!-- /.faq-two__accordion -->
+                        </div><!-- /.faq-two__content -->
+                        <div class="faq-two__shape"></div><!-- /.faq-two__shape -->
+                    </div><!-- /.faq-two__inner -->
+                </div><!-- /.container -->
+            </section><!-- /.faq-two section-space-bottom -->
+
+            <section class="work-process-one work-process-one--home3 section-space-bottom">
+                <div class="container">
+                    <div class="sec-title sec-title--center wow fadeInUp" data-wow-duration="1500ms">
+                        <div class="sec-title__top">
+
+                            <img src="assets/images/shapes/sec-title-s-1-3.png?v=2"
+                                alt="Как протуча нашата процедура Beauty Atelier In Silistra" class="sec-title__img">
+
+
+                            <h6 class="sec-title__tagline">От първата консултация до перфектния резултат – всичко е ясно
+                                и лесно.</h6><!-- /.sec-title__tagline -->
+
+                        </div><!-- /.sec-title__top -->
+                        <h3 class="sec-title__title">Как протича процедурата при нас</h3><!-- /.sec-title__title -->
+                    </div><!-- /.sec-title -->
+                    <div class="work-process-one__inner wow fadeInUp" data-wow-duration="1500ms">
+                        <div class="row gutter-y-40">
+                            <div class="col-xl-3 col-md-6">
+                                <div class="work-process-one__item">
+                                    <span class="work-process-one__item__icon">
+                                        <i class="fa-solid fa-eye"></i>
+                                        <span class="work-process-one__item__number"></span>
+                                    </span><!-- /.work-process-one__item__icon -->
+                                    <div class="work-process-one__item__content">
+                                        <h3 class="work-process-one__item__title">Изберете процедура</h3>
+                                        <!-- /.work-process-one__item__title -->
+                                        <p class="work-process-one__item__text">Избирате желаната услуга. Ако се
+                                            колебаете, ще ви помогнем да изберете най-подходящото за вас.</p>
+                                        <!-- /.work-process-one__item__text -->
+                                    </div><!-- /.work-process-one__item__content -->
+                                </div><!-- /.work-process-one__item -->
+                            </div><!-- /.col-xl-3 col-md-6 -->
+                            <div class="col-xl-3 col-md-6">
+                                <div class="work-process-one__item work-process-one__item--reverse">
+                                    <span class="work-process-one__item__icon">
+                                        <i class="fa-solid fa-calendar-check"></i>
+                                        <span class="work-process-one__item__number"></span>
+                                    </span><!-- /.work-process-one__item__icon -->
+                                    <div class="work-process-one__item__content">
+                                        <h3 class="work-process-one__item__title">Запишете час</h3>
+                                        <!-- /.work-process-one__item__title -->
+                                        <p class="work-process-one__item__text">Свързвате се и потвърждаваме удобен ден
+                                            и час за консултация или процедура.</p>
+                                        <!-- /.work-process-one__item__text -->
+                                    </div><!-- /.work-process-one__item__content -->
+                                </div><!-- /.work-process-one__item -->
+                            </div><!-- /.col-xl-3 col-md-6 -->
+                            <div class="col-xl-3 col-md-6">
+                                <div class="work-process-one__item">
+                                    <span class="work-process-one__item__icon">
+                                        <i class="fa-solid fa-comments"></i>
+                                        <span class="work-process-one__item__number"></span>
+                                    </span><!-- /.work-process-one__item__icon -->
+                                    <div class="work-process-one__item__content">
+                                        <h3 class="work-process-one__item__title">Консултация и планиране</h3>
+                                        <!-- /.work-process-one__item__title -->
+                                        <p class="work-process-one__item__text">На място обсъждаме вашите желания и
+                                            очаквания, анализираме и изготвяме персонален план за работа.</p>
+                                        <!-- /.work-process-one__item__text -->
+                                    </div><!-- /.work-process-one__item__content -->
+                                </div><!-- /.work-process-one__item -->
+                            </div><!-- /.col-xl-3 col-md-6 -->
+                            <div class="col-xl-3 col-md-6">
+                                <div class="work-process-one__item work-process-one__item--reverse">
+                                    <span class="work-process-one__item__icon">
+                                        <i class="fa-solid fa-wand-magic-sparkles"></i>
+                                        <span class="work-process-one__item__number"></span>
+                                    </span><!-- /.work-process-one__item__icon -->
+                                    <div class="work-process-one__item__content">
+                                        <h3 class="work-process-one__item__title">Процедура и поддръжка</h3>
+                                        <!-- /.work-process-one__item__title -->
+                                        <p class="work-process-one__item__text">Извършваме процедурата при стриктна
+                                            хигиена и с висококачествени продукти.</p>
+                                        <!-- /.work-process-one__item__text -->
+                                    </div><!-- /.work-process-one__item__content -->
+                                </div><!-- /.work-process-one__item -->
+                            </div><!-- /.col-xl-3 col-md-6 -->
+                        </div><!-- /.row gutter-y-40 -->
+                        <img src="assets/images/shapes/work-process-shape-1-1?v=2" alt="shape"
+                            class="work-process-one__shape">
+                    </div><!-- /.work-process-one__inner -->
+                </div><!-- /.container -->
+            </section><!-- /.work-process-one section-space-bottom -->
+        </section><!-- /.multiple-section section-space-top -->
+
+        <section class="appointment-one section-space-bottom">
+            <div class="appointment-one__bg mediox-jarallax" data-jarallax data-speed="0.3s"
+                style="background-image: url(assets/images/backgrounds/appointment-bg.webp);">
+                <div class="appointment-one__bg__inner"
+                    style="background-image: url(assets/images/shapes/appointment-shape-bg.png?v=2);"></div>
+                <div class="appointment-one__bg__shape">
+                    <div class="appointment-one__bg__shape__1">
+                        <div class="appointment-one__bg__shape__2"></div><!-- /.appointment-one__bg__shape__2 -->
+                    </div><!-- /.appointment-one__bg__shape__1 -->
+                </div><!-- /.appointment-one__bg__shape -->
+            </div><!-- /.appointment-one__bg -->
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="appointment-one__content">
+                            <h3 class="appointment-one__title">Запази час</h3><!-- /.appointment-one__title -->
+                            <form action="assets/inc/sendemail.php" method="post"
+                                class="appointment-one__form contact-form-validated form-one wow fadeInUp"
+                                data-wow-duration="1500ms">
+
+                                <div class="form-one__group">
+
+                                    <div class="form-one__control">
+                                        <input type="text" name="name" placeholder="Име*">
+                                    </div>
+
+                                    <div class="form-one__control">
+                                        <input type="email" name="email" placeholder="Имейл*">
+                                    </div>
+
+                                    <div class="form-one__control">
+                                        <!-- FIX: name="phone", not number -->
+                                        <input type="tel" name="phone" placeholder="Телефонен номер">
+                                    </div>
+
+                                    <div class="form-one__control appointment-one__form__date">
+                                        <input type="text" name="date" placeholder="Изберете дата*" id="datepicker"
+                                            class="mediox-datepicker">
+                                        <span class="appointment-one__form__date__arrow">
+                                            <i class="icon-caret-down"></i>
+                                        </span>
+                                    </div>
+
+                                    <div class="form-one__control">
+                                        <!-- FIX: Add name="services" -->
+                                        <select class="selectpicker" name="services" aria-label="Type of Service">
+                                            <option value="" selected>Изберете процедура</option>
+                                            <option value="Микроблейдинг">Микроблейдинг</option>
+                                            <option value="Микронидлинг">Микронидлинг</option>
+                                            <option value="Миглопластика">Миглопластика</option>
+                                            <option value="Плазма пен">Плазма пен</option>
+                                            <option value="Ламиниране">Ламиниране</option>
+                                            <option value="Пробиване на уши">Пробиване на уши</option>
+                                            <option value="Премахване на перманентен грим">Премахване на перманентен
+                                                грим</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="form-one__control">
+                                        <!-- FIX: Add name="doctor" -->
+                                        <select class="selectpicker" name="doctor" aria-label="Name a Doctor">
+                                            <option value="" selected>Вашият специалист</option>
+                                            <option value="Илияна Николаева">Илияна Николаева</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="form-one__control form-one__control--full">
+                                        <textarea name="message" placeholder="Пишете тук..."></textarea>
+                                    </div>
+
+                                    <div class="form-one__control form-one__control--full">
+                                        <button type="submit" class="mediox-btn">
+                                            <span>Запази час</span>
+                                            <span class="mediox-btn__icon"><i class="icon-up-right-arrow"></i></span>
+                                        </button>
+                                    </div>
+                                </div>
+
+                            </form>
+                            <div class="result"></div><!-- /.result -->
+                        </div><!-- /.appointment-one__content -->
+                    </div><!-- /.col-xl-12 -->
+                </div><!-- /.row -->
+            </div><!-- /.container -->
+            <img src="assets/images/shapes/appointment-shape-1-1.png?v=2" alt="shape" class="appointment-one__shape-1">
+            <img src="assets/images/shapes/appointment-shape-1-2.png?v=2" alt="shape" class="appointment-one__shape-2">
+            <img src="assets/images/shapes/appointment-shape-1-3.png?v=2" alt="shape" class="appointment-one__shape-3">
+        </section><!-- /.appointment-one section-space-bottom -->
+
+
+        <section class="gallery-page section-space">
+            <div class="container">
+                <div class="row gutter-y-30 fitRow-layout">
+                    <div class="col-md-6">
+                        <div class="gallery-page__card">
+                            <img src="assets/images/gallery/gallery-1-1.jpg?v=2"
+                                alt="Галерия Beauty Atelier In Silistra">
+                            <div class="gallery-page__card__hover">
+                                <a href="assets/images/gallery/gallery-1-1.jpg?v=2" class="img-popup">
+                                    <span class="gallery-page__card__icon"></span>
+                                </a>
+                                <span class="gallery-page__card__hover__box gallery-page__card__hover__box--1"></span>
+                                <span class="gallery-page__card__hover__box gallery-page__card__hover__box--2"></span>
+                                <span class="gallery-page__card__hover__box gallery-page__card__hover__box--3"></span>
+                                <span class="gallery-page__card__hover__box gallery-page__card__hover__box--4"></span>
+                            </div><!-- /.gallery-page__card__hover -->
+                        </div><!-- /.gallery-page__card -->
+                    </div><!-- /.col-md-6 -->
+                    <div class="col-md-6">
+                        <div class="gallery-page__card">
+                            <img src="assets/images/gallery/gallery-1-2.jpg?v=2"
+                                alt="Галерия Beauty Atelier In Silistra">
+                            <div class="gallery-page__card__hover">
+                                <a href="assets/images/gallery/gallery-1-2.jpg?v=2" class="img-popup">
+                                    <span class="gallery-page__card__icon"></span>
+                                </a>
+                                <span class="gallery-page__card__hover__box gallery-page__card__hover__box--1"></span>
+                                <span class="gallery-page__card__hover__box gallery-page__card__hover__box--2"></span>
+                                <span class="gallery-page__card__hover__box gallery-page__card__hover__box--3"></span>
+                                <span class="gallery-page__card__hover__box gallery-page__card__hover__box--4"></span>
+                            </div><!-- /.gallery-page__card__hover -->
+                        </div><!-- /.gallery-page__card -->
+                    </div><!-- /.col-md-6 -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="gallery-page__card">
+                            <img src="assets/images/gallery/gallery-1-3.jpg?v=2"
+                                alt="gallery Beauty Atelier In Silistra">
+                            <div class="gallery-page__card__hover">
+                                <a href="assets/images/gallery/gallery-1-3.jpg" class="img-popup">
+                                    <span class="gallery-page__card__icon"></span>
+                                </a>
+                                <span class="gallery-page__card__hover__box gallery-page__card__hover__box--1"></span>
+                                <span class="gallery-page__card__hover__box gallery-page__card__hover__box--2"></span>
+                                <span class="gallery-page__card__hover__box gallery-page__card__hover__box--3"></span>
+                                <span class="gallery-page__card__hover__box gallery-page__card__hover__box--4"></span>
+                            </div><!-- /.gallery-page__card__hover -->
+                        </div><!-- /.gallery-page__card -->
+                    </div><!-- /.col-md-6 col-lg-4 -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="gallery-page__card">
+                            <img src="assets/images/gallery/gallery-1-4.jpg" alt="gallery Beauty Atelier In Silistra">
+                            <div class="gallery-page__card__hover">
+                                <a href="assets/images/gallery/gallery-1-4.jpg" class="img-popup">
+                                    <span class="gallery-page__card__icon"></span>
+                                </a>
+                                <span class="gallery-page__card__hover__box gallery-page__card__hover__box--1"></span>
+                                <span class="gallery-page__card__hover__box gallery-page__card__hover__box--2"></span>
+                                <span class="gallery-page__card__hover__box gallery-page__card__hover__box--3"></span>
+                                <span class="gallery-page__card__hover__box gallery-page__card__hover__box--4"></span>
+                            </div><!-- /.gallery-page__card__hover -->
+                        </div><!-- /.gallery-page__card -->
+                    </div><!-- /.col-md-6 col-lg-4 -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="gallery-page__card">
+                            <img src="assets/images/gallery/gallery-1-5.jpg" alt="gallery Beauty Atelier In Silistra">
+                            <div class="gallery-page__card__hover">
+                                <a href="assets/images/gallery/gallery-1-5.jpg" class="img-popup">
+                                    <span class="gallery-page__card__icon"></span>
+                                </a>
+                                <span class="gallery-page__card__hover__box gallery-page__card__hover__box--1"></span>
+                                <span class="gallery-page__card__hover__box gallery-page__card__hover__box--2"></span>
+                                <span class="gallery-page__card__hover__box gallery-page__card__hover__box--3"></span>
+                                <span class="gallery-page__card__hover__box gallery-page__card__hover__box--4"></span>
+                            </div><!-- /.gallery-page__card__hover -->
+                        </div><!-- /.gallery-page__card -->
+                    </div><!-- /.col-md-6 col-lg-4 -->
+                    <div class="col-md-6">
+                        <div class="gallery-page__card">
+                            <img src="assets/images/gallery/gallery-1-6.jpg" alt="gallery Beauty Atelier In Silistra">
+                            <div class="gallery-page__card__hover">
+                                <a href="assets/images/gallery/gallery-1-6.jpg" class="img-popup">
+                                    <span class="gallery-page__card__icon"></span>
+                                </a>
+                                <span class="gallery-page__card__hover__box gallery-page__card__hover__box--1"></span>
+                                <span class="gallery-page__card__hover__box gallery-page__card__hover__box--2"></span>
+                                <span class="gallery-page__card__hover__box gallery-page__card__hover__box--3"></span>
+                                <span class="gallery-page__card__hover__box gallery-page__card__hover__box--4"></span>
+                            </div><!-- /.gallery-page__card__hover -->
+                        </div><!-- /.gallery-page__card -->
+                    </div><!-- /.col-md-6 -->
+                    <div class="col-md-6">
+                        <div class="gallery-page__card">
+                            <img src="assets/images/gallery/gallery-1-7.jpg" alt="gallery Beauty Atelier In Силистра">
+                            <div class="gallery-page__card__hover">
+                                <a href="assets/images/gallery/gallery-1-7.jpg" class="img-popup">
+                                    <span class="gallery-page__card__icon"></span>
+                                </a>
+                                <span class="gallery-page__card__hover__box gallery-page__card__hover__box--1"></span>
+                                <span class="gallery-page__card__hover__box gallery-page__card__hover__box--2"></span>
+                                <span class="gallery-page__card__hover__box gallery-page__card__hover__box--3"></span>
+                                <span class="gallery-page__card__hover__box gallery-page__card__hover__box--4"></span>
+                            </div><!-- /.gallery-page__card__hover -->
+                        </div><!-- /.gallery-page__card -->
+                    </div><!-- /.col-md-6 -->
+                </div><!-- /.row -->
+            </div><!-- /.container -->
+        </section><!-- /.gallery-page section-space -->
+
+
+
+
+        <section class="testimonials-three section-space-two">
+            <div class="testimonials-three__bg"
+                style="background-image: url(assets/images/backgrounds/testimonials-bg-3-1.jpg?v=2);"></div>
+            <!-- /.testimonials-three__bg -->
+            <div class="container">
+                <div class="row gutter-y-60">
+                    <div class="col-xl-5 col-lg-6">
+                        <div class="testimonials-three__content">
+                            <div class="sec-title @@extraClassName wow fadeInUp" data-wow-duration="1500ms">
+                                <div class="sec-title__top">
+
+                                    <img src="assets/images/shapes/sec-title-s-1-1.png?v=2"
+                                        alt="препоръки от нашите клиенти Beauty Atelier In Силистра"
+                                        class="sec-title__img">
+
+
+                                    <h6 class="sec-title__tagline">Какво Казват Нашите Клиенти</h6>
+                                    <!-- /.sec-title__tagline -->
+
+                                </div><!-- /.sec-title__top -->
+                                <h3 class="sec-title__title">Нашите Клиенти <br>Споделят</h3><!-- /.sec-title__title -->
+                            </div><!-- /.sec-title -->
+                            <div class="testimonials-three__image wow fadeInUp" data-wow-duration="1500ms">
+                                <div class="testimonials-three__image__inner">
+                                    <img src="assets/images/testimonials/testimonial-quote-3-1.jpg?v=2"
+                                        alt="препоръки от нашите клиенти Beauty Atelier In Силистра">
+                                </div><!-- /.testimonials-three__image__inner -->
+                                <div class="testimonials-three__image__inner">
+                                    <img src="assets/images/testimonials/testimonial-quote-3-2.jpg?v=2"
+                                        alt="препоръки от нашите клиенти Beauty Atelier In Силистра">
+                                </div><!-- /.testimonials-three__image__inner -->
+                            </div><!-- /.testimonials-three__image -->
+                        </div><!-- /.testimonials-three__content -->
+                    </div><!-- /.col-xl-5 col-lg-6 -->
+                    <div class="col-xl-7 col-lg-6">
+                        <div class="testimonials-three__card">
+                            <div class="testimonials-three__card__bg"
+                                style="background-image: url(assets/images/shapes/testimonial-card-bg-3-1.png?v=2);">
+                            </div>
+                            <div class="testimonials-three__card__inner">
+                                <div class="testimonials-three__thumb mediox-owl__carousel owl-carousel owl-theme"
+                                    data-owl-options='{
+                        "items": 1,
+                        "margin": 50,
+                        "loop": true,
+                        "smartSpeed": 400,
+                        "nav": false,
+                        "URLhashListener": true,
+                        "navText": ["<span class=\"icon-arrow-left\"></span>","<span class=\"icon-arrow-right\"></span>"],
+                        "dots": false,
+                        "autoplay": true,
+                        "center": true,
+                        "responsive": {
+                            "0": {
+                                "items": 3,
+                                "margin": 30
+                            },
+                            "1800": {
+                                "items": 3,
+                                "margin": 50
+                            }
+                        }
+                    }'>
+                                    <a href="#item1" class="item" data-hash="item1">
+                                        <span class="testimonials-three__thumb__image">
+                                            <img src="assets/images/testimonials/testimonial-thumb-3-1.jpg"
+                                                alt="препоръки от нашите клиенти Beauty Atelier In Силистра">
+                                        </span><!-- /.testimonials-three__thumb__image -->
+                                    </a><!-- /.item -->
+                                    <a href="#item2" class="item" data-hash="item2">
+                                        <span class="testimonials-three__thumb__image">
+                                            <img src="assets/images/testimonials/testimonial-thumb-3-2.jpg"
+                                                alt="препоръки от нашите клиенти Beauty Atelier In Силистра">
+                                        </span><!-- /.testimonials-three__thumb__image -->
+                                    </a><!-- /.item -->
+                                    <a href="#item3" class="item" data-hash="item3">
+                                        <span class="testimonials-three__thumb__image">
+                                            <img src="assets/images/testimonials/testimonial-thumb-3-3.jpg"
+                                                alt="препоръки от нашите клиенти Beauty Atelier In Силистра">
+                                        </span><!-- /.testimonials-three__thumb__image -->
+                                    </a><!-- /.item -->
+                                </div><!-- /.testimonials-three__thumb -->
+                                <div class="testimonials-three__carousel mediox-owl__carousel mediox-owl__carousel--basic-nav owl-carousel owl-theme"
+                                    data-owl-options='{
+                            "items": 1,
+                            "margin": 10,
+                            "loop": true,
+                            "smartSpeed": 400,
+                            "nav": false,
+                            "URLhashListener": true,
+                            "navText": ["<span class=\"icon-arrow-left\"></span>","<span class=\"icon-arrow-right\"></span>"],
+                            "dots": true,
+                            "autoplay": true
+                        }'>
+                                    <div class="item" data-hash="item1">
+                                        <div class="testimonial-card-three">
+                                            <div class="testimonial-card-three__ratings">
+                                                <div class="mediox-ratings">
+                                                    <span class="mediox-ratings__icon">
+                                                        <i class="icon-star"></i>
+                                                    </span><!-- /.mediox-ratings__icon -->
+                                                    <span class="mediox-ratings__icon">
+                                                        <i class="icon-star"></i>
+                                                    </span><!-- /.mediox-ratings__icon -->
+                                                    <span class="mediox-ratings__icon">
+                                                        <i class="icon-star"></i>
+                                                    </span><!-- /.mediox-ratings__icon -->
+                                                    <span class="mediox-ratings__icon">
+                                                        <i class="icon-star"></i>
+                                                    </span><!-- /.mediox-ratings__icon -->
+                                                    <span class="mediox-ratings__icon">
+                                                        <i class="icon-star"></i>
+                                                    </span><!-- /.mediox-ratings__icon -->
+                                                </div><!-- /.product-ratings -->
+                                            </div><!-- /.testimonial-card-three__ratings -->
+                                            <p class="testimonial-card-three__quote">Very good and professional
+                                                attitude, I was extremely satisfied!</p>
+                                            <!-- /.testimonial-card-three__quote -->
+                                            <div class="testimonial-card-three__identity">
+                                                <h4 class="testimonial-card-three__name">Maria Chavdarova</h4>
+                                                <!-- /.testimonial-card-three__name -->
+                                                <p class="testimonial-card-three__designation">client</p>
+                                                <!-- /.testimonial-card-three__designation -->
+                                            </div><!-- /.testimonial-card-three__identity -->
+                                        </div><!-- /.testimonial-card-three -->
+                                    </div><!-- /.item -->
+                                    <div class="item" data-hash="item2">
+                                        <div class="testimonial-card-three">
+                                            <div class="testimonial-card-three__ratings">
+                                                <div class="mediox-ratings">
+                                                    <span class="mediox-ratings__icon">
+                                                        <i class="icon-star"></i>
+                                                    </span><!-- /.mediox-ratings__icon -->
+                                                    <span class="mediox-ratings__icon">
+                                                        <i class="icon-star"></i>
+                                                    </span><!-- /.mediox-ratings__icon -->
+                                                    <span class="mediox-ratings__icon">
+                                                        <i class="icon-star"></i>
+                                                    </span><!-- /.mediox-ratings__icon -->
+                                                    <span class="mediox-ratings__icon">
+                                                        <i class="icon-star"></i>
+                                                    </span><!-- /.mediox-ratings__icon -->
+                                                    <span class="mediox-ratings__icon">
+                                                        <i class="icon-star"></i>
+                                                    </span><!-- /.mediox-ratings__icon -->
+                                                </div><!-- /.product-ratings -->
+                                            </div><!-- /.testimonial-card-three__ratings -->
+                                            <p class="testimonial-card-three__quote">Атмосферата е уютна, безупречно
+                                                чиста и изпълнена с положителна енергия. Кара те да се да чувстваш добре
+                                                дошъл от самото начало, а отношението е толкова персонализирано, че с
+                                                удоволствие се връщаш отново.</p>
+                                            <!-- /.testimonial-card-three__quote -->
+                                            <div class="testimonial-card-three__identity">
+                                                <h4 class="testimonial-card-three__name">Dian Veselinov</h4>
+                                                <!-- /.testimonial-card-three__name -->
+                                                <p class="testimonial-card-three__designation">client</p>
+                                                <!-- /.testimonial-card-three__designation -->
+                                            </div><!-- /.testimonial-card-three__identity -->
+                                        </div><!-- /.testimonial-card-three -->
+                                    </div><!-- /.item -->
+                                    <div class="item" data-hash="item3">
+                                        <div class="testimonial-card-three">
+                                            <div class="testimonial-card-three__ratings">
+                                                <div class="mediox-ratings">
+                                                    <span class="mediox-ratings__icon">
+                                                        <i class="icon-star"></i>
+                                                    </span><!-- /.mediox-ratings__icon -->
+                                                    <span class="mediox-ratings__icon">
+                                                        <i class="icon-star"></i>
+                                                    </span><!-- /.mediox-ratings__icon -->
+                                                    <span class="mediox-ratings__icon">
+                                                        <i class="icon-star"></i>
+                                                    </span><!-- /.mediox-ratings__icon -->
+                                                    <span class="mediox-ratings__icon">
+                                                        <i class="icon-star"></i>
+                                                    </span><!-- /.mediox-ratings__icon -->
+                                                    <span class="mediox-ratings__icon">
+                                                        <i class="icon-star"></i>
+                                                    </span><!-- /.mediox-ratings__icon -->
+                                                </div><!-- /.product-ratings -->
+                                            </div><!-- /.testimonial-card-three__ratings -->
+                                            <p class="testimonial-card-three__quote">Каквото и да кажа няма да е
+                                                достатъчно за да изразя колко доволна останах! Удивена съм! Благодаря за
+                                                невероятната трансформация! Възхищавам се на професионализма и
+                                                изключителното внимание към клиента! Благодаря ти отново!</p>
+                                            <!-- /.testimonial-card-three__quote -->
+                                            <div class="testimonial-card-three__identity">
+                                                <h4 class="testimonial-card-three__name">Mihaela Kishisheva</h4>
+                                                <!-- /.testimonial-card-three__name -->
+                                                <p class="testimonial-card-three__designation">client</p>
+                                                <!-- /.testimonial-card-three__designation -->
+                                            </div><!-- /.testimonial-card-three__identity -->
+                                        </div><!-- /.testimonial-card-three -->
+                                    </div><!-- /.item -->
+
+                                </div><!-- /.testimonials-three__carousel -->
+                            </div><!-- /.testimonials-three__card__inner -->
+                        </div><!-- /.testimonials-three__card -->
+                    </div><!-- /.col-xl-7 col-lg-6 -->
+                </div><!-- /.row -->
+            </div><!-- /.container -->
+        </section><!-- /.testimonials-three section-space-two -->
+
+        <section class="blog-three section-space-top-two">
+            <div class="container">
+                <div class="blog-three__top">
+                    <div class="row gutter-y-40 align-items-end">
+                        <div class="col-xl-9 col-lg-8">
+                            <div class="sec-title @@extraClassName wow fadeInUp" data-wow-duration="1500ms">
+                                <div class="sec-title__top">
+
+                                    <img src="assets/images/shapes/sec-title-s-1-1.png?v=2"
+                                        alt="Блог и Новини Beauty Atelier In Силистра" class="sec-title__img">
+
+
+                                    <h6 class="sec-title__tagline">последни новини</h6><!-- /.sec-title__tagline -->
+
+                                </div><!-- /.sec-title__top -->
+                                <h3 class="sec-title__title">Блог & новини</h3><!-- /.sec-title__title -->
+                            </div><!-- /.sec-title -->
+                        </div><!-- /.col-xl-9 col-lg-8 -->
+                        <div class="col-xl-3 col-lg-4">
+                            <div class="blog-three__custome-navs"></div><!-- /.blog-three__cutome-navs -->
+                        </div><!-- /.col-xl-3 col-lg-4 -->
+                    </div><!-- /.row -->
+                </div><!-- /.blog-three__top -->
+            </div><!-- /.container -->
+            <div class="blog-three__container container">
+                <div class="blog-three__carousel mediox-owl__carousel mediox-owl__carousel--basic-nav owl-carousel owl-theme"
+                    data-owl-options='{
+            "items": 1,
+            "margin": 10,
+            "loop": true,
+            "smartSpeed": 1000,
+            "navContainer": ".blog-three__custome-navs",
+            "nav": true,
+            "navText": ["<span class=\"icon-arrow-left\"></span>","<span class=\"icon-arrow-right\"></span>"],
+            "dots": false,
+            "autoplay": true,
+            "responsive": {
+                "0": {
+                    "items": 1,
+                    "margin": 10
+                },
+                "768": {
+                    "items": 2,
+                    "margin": 30
+                },
+                "992": {
+                    "items": 2,
+                    "margin": 30
+                },
+                "1200": {
+                    "items": 3,
+                    "margin": 30
+                },
+                "1600": {
+                    "items": 4,
+                    "margin": 30
+                }
+            }
+    }'>
+                    <div class="item">
+                        <div class="blog-card-two blog-card-two--home3 wow fadeInUp" data-wow-duration='1500ms'
+                            data-wow-delay='000ms'>
+                            <div class="blog-card-two__image">
+                                <a href="beauty-inspiring.html" class="blog-card-two__image__item">
+                                    <img src="assets/images/blog/blog-s-3-1.jpg?v=2"
+                                        alt="Блог и Новини Beauty Atelier In Силистра">
+                                    <img src="assets/images/blog/blog-3-1.jpg?v=2"
+                                        alt="Блог и Новини  Beauty Atelier In Силистра">
+                                </a><!-- /.blog-card-two__image__item -->
+                                <div class="blog-card-two__date">
+                                    <span class="blog-card-two__date__day">01</span>
+                                    <span class="blog-card-two__date__month">Декември</span>
+                                </div><!-- /.blog-card-two__date -->
+                            </div><!-- /.blog-card-two__image -->
+                            <div class="blog-card-two__content">
+                                <ul class="list-unstyled blog-card-two__meta">
+                                    <li>
+                                        <a href="about.html">
+                                            <span class="blog-card-two__meta__icon">
+                                                <i class="icon-user"></i>
+                                            </span>
+                                            от И. Николаева
+                                        </a>
+                                    </li>
+                                    <li>
+
+                                    </li>
+                                </ul><!-- /.list-unstyled blog-card-two__meta -->
+                                <h3 class="blog-card-two__title"><a href="beauty-inspiring.html">Красотата &
+                                        Вдъхновението: Малките ритуали, които ни променят</a></h3>
+                                <!-- /.blog-card-two__title -->
+                                <a href="beauty-inspiring.html" class="blog-card-two__btn">
+                                    <span class="icon-double-arrow"></span>
+                                </a><!-- /.blog-card-two__btn -->
+                            </div><!-- /.blog-card-two__content -->
+                        </div><!-- /.blog-card-two -->
+                    </div><!-- /.item -->
+                    <div class="item">
+                        <div class="blog-card-two blog-card-two--home3 wow fadeInUp" data-wow-duration='1500ms'
+                            data-wow-delay='100ms'>
+                            <div class="blog-card-two__image">
+                                <a href="beauty-secrets.html" class="blog-card-two__image__item">
+                                    <img src="assets/images/blog/blog-s-3-2.jpg?v=2"
+                                        alt="Блог и Новини Beauty Atelier In Силистра">
+                                    <img src="assets/images/blog/blog-3-2.jpg?v=2"
+                                        alt="Блог и Новини Beauty Atelier In Силистра">
+                                </a><!-- /.blog-card-two__image__item -->
+                                <div class="blog-card-two__date">
+                                    <span class="blog-card-two__date__day">02</span>
+                                    <span class="blog-card-two__date__month">Декември</span>
+                                </div><!-- /.blog-card-two__date -->
+                            </div><!-- /.blog-card-two__image -->
+                            <div class="blog-card-two__content">
+                                <ul class="list-unstyled blog-card-two__meta">
+                                    <li>
+                                        <a href="about.html">
+                                            <span class="blog-card-two__meta__icon">
+                                                <i class="icon-user"></i>
+                                            </span>
+                                            И. Николаева
+                                        </a>
+                                    </li>
+                                    <li>
+
+                                    </li>
+                                </ul><!-- /.list-unstyled blog-card-two__meta -->
+                                <h3 class="blog-card-two__title"><a href="beauty-secrets.html">Тайната на Естествената
+                                        Красота: Как Професионалните Процедури</a></h3><!-- /.blog-card-two__title -->
+                                <a href="beauty-inspiring.html" class="blog-card-two__btn">
+                                    <span class="icon-double-arrow"></span>
+                                </a><!-- /.blog-card-two__btn -->
+                            </div><!-- /.blog-card-two__content -->
+                        </div><!-- /.blog-card-two -->
+                    </div><!-- /.item -->
+
+                    <div class="item">
+                        <div class="blog-card-two blog-card-two--home3 wow fadeInUp" data-wow-duration='1500ms'
+                            data-wow-delay='100ms'>
+                            <div class="blog-card-two__image">
+                                <a href="microblading-for-all-ages.html" class="blog-card-two__image__item">
+                                    <img src="assets/images/blog/blog-s-3-5.jpg?v=2"
+                                        alt="Блог и Новини Beauty Atelier In Силистра">
+                                    <img src="assets/images/blog/blog-3-9.jpg?v=2"
+                                        alt="Блог и Новини Beauty Atelier In Силистра">
+                                </a><!-- /.blog-card-two__image__item -->
+                                <div class="blog-card-two__date">
+                                    <span class="blog-card-two__date__day">05</span>
+                                    <span class="blog-card-two__date__month">Януари</span>
+                                </div><!-- /.blog-card-two__date -->
+                            </div><!-- /.blog-card-two__image -->
+                            <div class="blog-card-two__content">
+                                <ul class="list-unstyled blog-card-two__meta">
+                                    <li>
+                                        <a href="about.html">
+                                            <span class="blog-card-two__meta__icon">
+                                                <i class="icon-user"></i>
+                                            </span>
+                                            И. Николаева
+                                        </a>
+                                    </li>
+                                    <li>
+
+                                    </li>
+                                </ul><!-- /.list-unstyled blog-card-two__meta -->
+                                <h3 class="blog-card-two__title"><a href="microblading-for-all-ages.html">Microblading -
+                                        Eстествени и прецизни вежди за хармонично излъчване</a></h3>
+                                <!-- /.blog-card-two__title -->
+                                <a href="microblading-for-all-ages.html" class="blog-card-two__btn">
+                                    <span class="icon-double-arrow"></span>
+                                </a><!-- /.blog-card-two__btn -->
+                            </div><!-- /.blog-card-two__content -->
+                        </div><!-- /.blog-card-two -->
+                    </div><!-- /.item -->
+
+                    <div class="item">
+                        <div class="blog-card-two blog-card-two--home3 wow fadeInUp" data-wow-duration='1500ms'
+                            data-wow-delay='200ms'>
+                            <div class="blog-card-two__image">
+                                <a href="microblading-guide.html" class="blog-card-two__image__item">
+                                    <img src="assets/images/blog/blog-s-3-3.jpg?v=2"
+                                        alt="Тайната на Естествената Красота: Как Професионалните Процедури Beauty Atelier In Силистра">
+                                    <img src="assets/images/blog/blog-3-3.jpg?v=2"
+                                        alt="Тайната на Естествената Красота: Как Професионалните Процедури Beauty Atelier In Силистра">
+                                </a><!-- /.blog-card-two__image__item -->
+                                <div class="blog-card-two__date">
+                                    <span class="blog-card-two__date__day">03</span>
+                                    <span class="blog-card-two__date__month">Декември</span>
+                                </div><!-- /.blog-card-two__date -->
+                            </div><!-- /.blog-card-two__image -->
+                            <div class="blog-card-two__content">
+                                <ul class="list-unstyled blog-card-two__meta">
+                                    <li>
+                                        <a href="about.html">
+                                            <span class="blog-card-two__meta__icon">
+                                                <i class="icon-user"></i>
+                                            </span>
+                                            И. Николаева
+                                        </a>
+                                    </li>
+
+                                </ul><!-- /.list-unstyled blog-card-two__meta -->
+                                <h3 class="blog-card-two__title"><a href="microblading-guide.html">Всичко, което трябва
+                                        да знаете за микроблейдинга – пълно ръководство</a></h3>
+                                <!-- /.blog-card-two__title -->
+                                <a href="microblading-guide.html" class="blog-card-two__btn">
+                                    <span class="icon-double-arrow"></span>
+                                </a><!-- /.blog-card-two__btn -->
+                            </div><!-- /.blog-card-two__content -->
+                        </div><!-- /.blog-card-two -->
+                    </div><!-- /.item -->
+                    <div class="item">
+                        <div class="blog-card-two blog-card-two--home3 wow fadeInUp" data-wow-duration='1500ms'
+                            data-wow-delay='300ms'>
+                            <div class="blog-card-two__image">
+                                <a href="aftertreatment.html" class="blog-card-two__image__item">
+                                    <img src="assets/images/blog/blog-s-3-4.jpg?v=2"
+                                        alt="Всичко, което трябва да знаете за микроблейдинга – пълно ръководство Beauty Atelier In Силистра">
+                                    <img src="assets/images/blog/blog-3-4.jpg?v=2"
+                                        alt="Всичко, което трябва да знаете за микроблейдинга – пълно ръководство Beauty Atelier In Силистра">
+                                </a><!-- /.blog-card-two__image__item -->
+                                <div class="blog-card-two__date">
+                                    <span class="blog-card-two__date__day">07</span>
+                                    <span class="blog-card-two__date__month">Декември</span>
+                                </div><!-- /.blog-card-two__date -->
+                            </div><!-- /.blog-card-two__image -->
+                            <div class="blog-card-two__content">
+                                <ul class="list-unstyled blog-card-two__meta">
+                                    <li>
+                                        <a href="about.html">
+                                            <span class="blog-card-two__meta__icon">
+                                                <i class="icon-user"></i>
+                                            </span>
+                                            И. Николаева
+                                        </a>
+                                    </li>
+
+                                </ul><!-- /.list-unstyled blog-card-two__meta -->
+                                <h3 class="blog-card-two__title"><a href="aftertreatment.html">Следпроцедурна грижа: Как
+                                        да удължите трайността на микроблейдинга</a></h3><!-- /.blog-card-two__title -->
+                                <a href="aftertreatment.html" class="blog-card-two__btn">
+                                    <span class="icon-double-arrow"></span>
+                                </a><!-- /.blog-card-two__btn -->
+                            </div><!-- /.blog-card-two__content -->
+                        </div><!-- /.blog-card-two -->
+                    </div><!-- /.item -->
+                </div><!-- /.blog-three__carousel -->
+            </div><!-- /.blog-three__container container -->
+        </section><!-- /.blog-three section-space-top-two -->
+
+        <div class="client-carousel @@extraClassName">
+            <div class="container">
+                <div class="client-carousel__one mediox-owl__carousel owl-theme owl-carousel" data-owl-options='{
+            "items": 5,
+            "margin": 65,
+            "smartSpeed": 700,
+            "loop":true,
+            "autoplay": 6000,
+            "nav":false,
+            "dots":false,
+            "navText": ["<span class=\"icon-left-arrow\"></span>","<span class=\"icon-right-arrow\"></span>"],
+            "responsive":{
+                "0":{
+                    "items": 1,
+                    "margin": 30
+                },
+                "361":{
+                    "items": 2,
+                    "margin": 40
+                },
+                "576":{
+                    "items": 3,
+                    "margin": 60
+                },
+                "768":{
+                    "items": 4,
+                    "margin": 60
+                },
+                "992":{
+                    "items": 5,
+                    "margin": 60
+                },
+                "1200":{
+                    "items": 5,
+                    "margin": 80
+                }
+            }
+            }'>
+                    <div class="client-carousel__one__item">
+                        <img src="assets/images/brand/brand-1-1.png" alt="Beauty Atelier In Силистра"
+                            class="client-carousel__one__image">
+                    </div><!-- /.owl-slide-item-->
+                    <div class="client-carousel__one__item">
+                        <img src="assets/images/brand/brand-1-2.png" alt="Beauty Atelier In Силистра"
+                            class="client-carousel__one__image">
+                    </div><!-- /.owl-slide-item-->
+                    <div class="client-carousel__one__item">
+                        <img src="assets/images/brand/brand-1-3.png" alt="Beauty Atelier In Силистра"
+                            class="client-carousel__one__image">
+                    </div><!-- /.owl-slide-item-->
+                    <div class="client-carousel__one__item">
+                        <img src="assets/images/brand/brand-1-4.png" alt="Beauty Atelier In Силистра"
+                            class="client-carousel__one__image">
+                    </div><!-- /.owl-slide-item-->
+                    <div class="client-carousel__one__item">
+                        <img src="assets/images/brand/brand-1-5.png" alt="Beauty Atelier In Силистра"
+                            class="client-carousel__one__image">
+                    </div><!-- /.owl-slide-item-->
+                </div><!-- /.thm-owl__slider -->
+            </div><!-- /.container -->
+        </div><!-- /.client-carousel -->
+
+        <footer class="main-footer section-space-top">
+            <div class="main-footer__bg" style="background-image: url(assets/images/shapes/footer-bg.png?v=2);"></div>
+            <!-- /.main-footer__bg -->
+            <div class="container">
+                <div class="row gutter-y-40">
+                    <div class="col-xl-4 col-lg-6 col-md-7 wow fadeInUp" data-wow-duration="1500ms"
+                        data-wow-delay="00ms">
+                        <div class="footer-widget footer-widget--about">
+                            <div class="footer-widget__logo logo-retina">
+                                <a href="index.html">
+                                    <img src="assets/images/logo-light.png" alt="Beauty Atelier In Силистра"
+                                        width="164">
+                                </a>
+                            </div><!-- /.footer-widget__logo -->
+                            <p class="footer-widget__about-text">Мястото, където красотата среща прецизността!</p>
+                            <p class="footer-widget__about-text">Beauty Atelier IN - Iliyana Nikolaeva, Silistra</p>
+                            <!-- /.footer-widget__about-text -->
+                            <a href="appointment.html" class="footer-widget__btn">
+                                <span>свържи се с нас</span>
+                                <span class="footer-widget__btn__icon"><i class="icon-up-right-arrow"></i></span>
+                            </a><!-- /.footer-widget__btn -->
+                            <div class="social-links">
+                                <a href="https://www.facebook.com/IliyanaPhiAcademy/">
+                                    <i class="fab fa-facebook-f" aria-hidden="true"></i>
+                                    <span class="sr-only">Facebook</span>
+                                </a>
+
+                                <a href="https://www.instagram.com/Iliyanailieva.phiacademy/">
+                                    <i class="fab fa-instagram" aria-hidden="true"></i>
+                                    <span class="sr-only">Instagram</span>
+                                </a>
+
+                                <a href="https://www.tiktok.com/@iliqna_ilieva4">
+                                    <i class="fab fa-tiktok" aria-hidden="true"></i>
+                                    <span class="sr-only">Tiktok</span>
+                                </a>
+
+                                <a href="https://share.google/LWLt1rNLslWSX71RU">
+                                    <i class="fab fa-google" aria-hidden="true"></i>
+                                    <span class="sr-only">Google</span>
+                                </a>
+                            </div>
+                        </div><!-- /.footer-widget -->
+                    </div><!-- /.col-xl-4 -->
+                    <div class="col-xl-2 col-lg-3 col-md-5 wow fadeInUp" data-wow-duration="1500ms"
+                        data-wow-delay="100ms">
+                        <div class="footer-widget footer-widget--links">
+                            <h2 class="footer-widget__title">Нашите <span>Процедури</span></h2>
+                            <!-- /.footer-widget__title -->
+                            <ul class="list-unstyled footer-widget__links">
+                                <li><a href="microblading.html">Микроблейдинг</a></li>
+                                <li><a href="microneedling.html">Микронидлинг</a></li>
+                                <li><a href="lashes.html">Миглопластика</a></li>
+                                <li><a href="plasma.html">Плазма пен</a></li>
+                                <li><a href="laminirane.html">Ламиниране</a></li>
+                                <li><a href="piercing.html">Пробиване на уши</a></li>
+                                <li><a href="perm-makeup-removal.html">Премахване на перманентен грим</a></li>
+                            </ul><!-- /.list-unstyled footer-widget__links -->
+                        </div><!-- /.footer-widget -->
+                    </div><!-- /.col-xl-2 -->
+                    <div class="col-xl-2 col-lg-3 col-md-5 wow fadeInUp" data-wow-duration="1500ms"
+                        data-wow-delay="200ms">
+                        <div class="footer-widget footer-widget--links">
+                            <h2 class="footer-widget__title">Бързи <span>връзки</span></h2>
+                            <!-- /.footer-widget__title -->
+                            <ul class="list-unstyled footer-widget__links">
+                                <li><a href="about.html">За нас</a></li>
+                                <li><a href="Procedures.html">Процедури</a></li>
+                                <li><a href="pricing.html">Ценоразпис</a></li>
+                                <li><a href="blog-carousel-2.html">Блог</a></li>
+                                <li><a href="appointment.html">Запази час</a></li>
+                                <li><a href="faq.html">Често Задавани Въпроси</a></li>
+                                <li><a href="contact.html">Контакти</a></li>
+                            </ul><!-- /.list-unstyled footer-widget__links -->
+                        </div><!-- /.footer-widget -->
+                    </div><!-- /.col-xl-2 -->
+                    <div class="col-xl-4 col-lg-6 col-md-7 wow fadeInUp" data-wow-duration="1500ms"
+                        data-wow-delay="300ms">
+                        <div class="footer-widget footer-widget--blog">
+                            <h2 class="footer-widget__title">блог & <span>новини</span></h2>
+                            <!-- /.footer-widget__title -->
+                            <ul class="footer-widget__posts list-unstyled">
+                                <li class="footer-widget__posts__item">
+                                    <div class="footer-widget__posts__image">
+                                        <img src="assets/images/blog/footer-rp-1-1.jpg?v=2"
+                                            alt="Последни новини Beauty Atelier In Силистра">
+                                    </div><!-- /.footer-widget__posts__image -->
+                                    <div class="footer-widget__posts__content">
+                                        <div class="footer-widget__posts__meta">
+                                            <a href="about.html">
+                                                <span class="footer-widget__posts__meta__icon">
+                                                    <i class="icon-user"></i>
+                                                </span><!-- /.footer-widget__posts__meta__icon -->
+                                                от И. Николаева
+                                            </a>
+
+                                        </div><!-- /.footer-widget__posts__meta -->
+                                        <h4 class="footer-widget__posts__title">
+                                            <a href="microblading-for-all-ages.html">Хармонично Излъчване</a>
+                                        </h4><!-- /.footer-widget__posts__title -->
+                                    </div><!-- /.footer-widget__posts__content -->
+                                </li>
+                                <li class="footer-widget__posts__item">
+                                    <div class="footer-widget__posts__image">
+                                        <img src="assets/images/blog/footer-rp-1-2.jpg?v=2" alt="Последни новини">
+                                    </div><!-- /.footer-widget__posts__image -->
+                                    <div class="footer-widget__posts__content">
+                                        <div class="footer-widget__posts__meta">
+                                            <a href="about.html">
+                                                <span class="footer-widget__posts__meta__icon">
+                                                    <i class="icon-user"></i>
+                                                </span><!-- /.footer-widget__posts__meta__icon -->
+                                                от И. Николаева
+                                            </a>
+
+                                        </div><!-- /.footer-widget__posts__meta -->
+                                        <h4 class="footer-widget__posts__title">
+                                            <a href="beauty-inspiring.html">Красотата & Вдъхновението</a>
+                                        </h4><!-- /.footer-widget__posts__title -->
+                                    </div><!-- /.footer-widget__posts__content -->
+                                </li>
+                            </ul><!-- /.footer-widget__posts list-unstyled -->
+                        </div><!-- /.footer-widget -->
+                    </div><!-- /.col-xl-4 -->
+                </div><!-- /.row -->
+                <div class="main-footer__bottom">
+                    <div class="main-footer__info">
+                        <div class="main-footer__info__bg"
+                            style="background-image: url(assets/images/backgrounds/footer-contact-bg.webp);"></div>
+                        <!-- /.main-footer__info__bg -->
+                        <div class="row main-footer__info__row gutter-y-40">
+                            <div class="main-footer__info__col-1 wow fadeInUp" data-wow-duration="1500ms"
+                                data-wow-delay="00ms">
+                                <div class="main-footer__contact">
+                                    <span class="main-footer__contact__icon">
+                                        <i class="icon-location"></i>
+                                    </span><!-- /.main-footer__contact__icon -->
+                                    <div class="main-footer__contact__content">
+                                        <p class="main-footer__contact__title">Адрес</p>
+                                        <h4 class="main-footer__contact__text">
+                                            <a href="https://maps.app.goo.gl/1E4jb3951zqGQFux7">Силистра център, ул.
+                                                "Отец Паисий" 27, 7500 Силистра, България</a>
+                                        </h4>
+                                    </div><!-- /.main-footer__contact__content -->
+                                </div><!-- /.main-footer__contact -->
+                            </div><!-- /.main-footer__info__col-1 -->
+                            <div class="main-footer__info__col-2 wow fadeInUp" data-wow-duration="1500ms"
+                                data-wow-delay="100ms">
+                                <div class="main-footer__contact">
+                                    <span class="main-footer__contact__icon">
+                                        <i class="icon-email"></i>
+                                    </span><!-- /.main-footer__contact__icon -->
+                                    <div class="main-footer__contact__content">
+                                        <p class="main-footer__contact__title">Изпрати ни имейл</p>
+                                        <h4 class="main-footer__contact__text">
+                                            <a href="mailto:info@ba-in.com">info@ba-in.com</a>
+                                        </h4>
+                                    </div><!-- /.main-footer__contact__content -->
+                                </div><!-- /.main-footer__contact -->
+                            </div><!-- /.main-footer__info__col-2 -->
+                            <div class="main-footer__info__col-3 wow fadeInUp" data-wow-duration="1500ms"
+                                data-wow-delay="200ms">
+                                <div class="main-footer__contact">
+                                    <span class="main-footer__contact__icon">
+                                        <i class="icon-telephone"></i>
+                                    </span><!-- /.main-footer__contact__icon -->
+                                    <div class="main-footer__contact__content">
+                                        <p class="main-footer__contact__title">Звънни ни</p>
+                                        <h4 class="main-footer__contact__text">
+                                            <a href="tel:+359893398390">+359893398390</a>
+                                        </h4>
+                                    </div><!-- /.main-footer__contact__content -->
+                                </div><!-- /.main-footer__contact -->
+                            </div><!-- /.main-footer__info__col-3 -->
+                        </div><!-- /.row main-footer__info__row -->
+                    </div><!-- /.main-footer__info -->
+                    <p class="main-footer__copyright">
+                        &copy; Copyright <span class="dynamic-year"></span> Beauty Atelier IN. - <a
+                            href="Privacy-policy.html"> Privacy Policy || <a href="termsandconditions.html">Terms &
+                                Conditions </a>
+                    </p>
+                </div><!-- /.main-footer__bottom -->
+            </div><!-- /.container -->
+        </footer><!-- /.main-footer section-space-top -->
+
+    </div><!-- /.page-wrapper -->
+
+    <div class="mobile-nav__wrapper">
+        <div class="mobile-nav__overlay mobile-nav__toggler"></div>
+        <!-- /.mobile-nav__overlay -->
+        <div class="mobile-nav__content">
+            <span class="mobile-nav__close mobile-nav__toggler"><i class="icon-close"></i></span>
+
+            <div class="logo-box logo-retina">
+                <a href="index.html" aria-label="logo image"><img src="assets/images/logo-light.png?v=2" width="164"
+                        alt="Beauty Atelier In Силистра лого" /></a>
+            </div>
+            <!-- /.logo-box -->
+            <div class="mobile-nav__container"></div>
+            <!-- /.mobile-nav__container -->
+
+            <ul class="mobile-nav__contact list-unstyled">
+                <li>
+                    <span class="mobile-nav__contact__icon">
+                        <i class="fa fa-envelope"></i>
+                    </span>
+                    <a href="mailto:info@ba-in.com">info@ba-in.com</a>
+                </li>
+                <li>
+                    <span class="mobile-nav__contact__icon">
+                        <i class="fa fa-phone-alt"></i>
+                    </span>
+                    <a href="tel:+359 89 339 8390">+359 89 339 8390</a>
+                </li>
+            </ul><!-- /.mobile-nav__contact -->
+            <div class="social-links">
+                <a href="https://www.facebook.com/IliyanaPhiAcademy/">
+                    <i class="fab fa-facebook-f" aria-hidden="true"></i>
+                    <span class="sr-only">Facebook</span> </a> <a
+                    href="https://www.instagram.com/Iliyanailieva.phiacademy/">
+
+                    <i class="fab fa-instagram" aria-hidden="true"></i>
+
+                    <span class="sr-only">Instagram</span>
+                </a> <a href="https://www.tiktok.com/@iliqna_ilieva4">
+                    <i class="fab fa-tiktok" aria-hidden="true"></i>
+
+                    <span class="sr-only">Tik Tok</span> </a> <a href="https://share.google/LWLt1rNLslWSX71RU">
+                    <i class="fab fa-google" aria-hidden="true"></i> <span class="sr-only">Google</span> </a>
+            </div><!-- /.social-links -->
+        </div>
+        <!-- /.mobile-nav__content -->
+    </div>
+    <!-- /.mobile-nav__wrapper -->
+    <div class="search-popup">
+        <div class="search-popup__overlay search-toggler"></div>
+        <!-- /.search-popup__overlay -->
+        <div class="search-popup__content">
+            <form role="search" method="get" class="search-popup__form" action="javascript:void(0)">
+                <input type="text" id="search" placeholder="Search Here..." />
+                <button type="submit" aria-label="search submit" class="mediox-btn">
+                    <i class="icon-search"></i>
+                </button>
+            </form>
+        </div>
+        <!-- /.search-popup__content -->
+    </div>
+    <!-- /.search-popup -->
+    <aside class="sidebar-one">
+        <div class="sidebar-one__overlay sidebar-btn__toggler"></div><!-- /.siderbar-ovarlay -->
+        <div class="sidebar-one__content">
+            <span class="sidebar-one__close sidebar-btn__toggler"><i class="icon-close"></i></span>
+            <div class="sidebar-one__logo sidebar-one__item logo-retina">
+                <a href="index.html" aria-label="logo image"><img src="assets/images/logo-light.png?v=2" width="164"
+                        alt="Beauty Atelier In Силистра лого" />
+                </a>
+            </div><!-- /.sidebar-one__logo -->
+            <div class="sidebar-one__about sidebar-one__item">
+                <p class="sidebar-one__about__text"> С внимание към всеки детайл и индивидуален подход към всеки клиент,
+                    ние създаваме не просто визия, а самочувствие. Довери се на сертифициран професионалист с опит!</p>
+            </div><!-- /.sidebar-one__about -->
+            <div class="sidebar-one__info sidebar-one__item">
+                <h4 class="sidebar-one__title">Contact</h4>
+                <ul class="sidebar-one__info__list">
+                    <li>
+                        <span class="sidebar-one__info__icon sidebar-one__info__icon--location">
+                            <i class="icon-location"></i>
+                        </span>
+                        <address>Силистра център, ул. "Отец Паисий" 27, 7500 Силистра, България</address>
+                    </li>
+                    <li>
+                        <span class="sidebar-one__info__icon">
+                            <i class="icon-paper-plane"></i>
+                        </span>
+                        <a href="mailto:info@ba-in.com">info@ba-in.com</a>
+                    </li>
+                    <li>
+                        <span class="sidebar-one__info__icon">
+                            <i class="icon-telephone"></i>
+                        </span>
+                        <a href="tel:+359 89 339 8390">+359 89 339 8390</a>
+                    </li>
+                </ul><!-- /.sidebar-one__info__list -->
+            </div><!-- /.sidebar-one__info -->
+            <div class="social-links sidebar-one__item">
+                <a href="https://www.facebook.com/IliyanaPhiAcademy/">
+                    <i class="fab fa-facebook-f" aria-hidden="true"></i>
+                    <span class="sr-only">Facebook</span>
+                </a>
+                <a href="https://www.instagram.com/Iliyanailieva.phiacademy/">
+                    <i class="fab fa-instagram" aria-hidden="true"></i>
+                    <span class="sr-only">Instagram</span>
+                </a>
+                <a href="https://www.tiktok.com/@iliqna_ilieva4">
+                    <i class="fab fa-tiktok" aria-hidden="true"></i>
+                    <span class="sr-only">Tik Tok</span>
+                </a>
+                <a href="https://share.google/LWLt1rNLslWSX71RU">
+                    <i class="fab fa-google" aria-hidden="true"></i>
+                    <span class="sr-only">Google</span>
+                </a>
+            </div><!-- /sidebar-one__social -->
+            <div class="sidebar-one__newsletter sidebar-one__item">
+                <label class="sidebar-one__title" for="sidebar-email"> новини и промоции</label>
+                <form action="#" class="sidebar-one__newsletter__inner mc-form"
+                    data-url="https://chimpstatic.com/mcjs-connected/js/users/1abfa449aa1046d4856948589/477d40922746e4f1cdcaa8e9e.js">
+                    <input type="email" name="EMAIL" id="sidebar-email" class="sidebar-one__newsletter__input"
+                        placeholder="Email Address">
+                    <button type="submit" class="sidebar-one__newsletter__btn"><span class="icon-email"
+                            aria-hidden="true"></span></button>
+                </form>
+                <div class="mc-form__response"></div><!-- /.mc-form__response -->
+            </div><!-- /.sidebar-one__form -->
+        </div><!-- /.sidebar__content -->
+    </aside><!-- /.sidebar-one -->
+
+    <a href="#" data-target="html" class="scroll-to-target scroll-to-top">
+        <span class="scroll-to-top__text">Начало</span>
+        <span class="scroll-to-top__wrapper"><span class="scroll-to-top__inner"></span></span>
+    </a>
+
+    <script src="assets/vendors/jquery/jquery-3.7.0.min.js"></script>
+    <script src="assets/vendors/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendors/bootstrap-select/bootstrap-select.min.js"></script>
+    <script src="assets/vendors/jarallax/jarallax.min.js"></script>
+    <script src="assets/vendors/jquery-ui/jquery-ui.js"></script>
+    <script src="assets/vendors/jquery-ajaxchimp/jquery.ajaxchimp.min.js"></script>
+    <script src="assets/vendors/jquery-appear/jquery.appear.min.js"></script>
+    <script src="assets/vendors/jquery-circle-progress/jquery.circle-progress.min.js"></script>
+    <script src="assets/vendors/jquery-magnific-popup/jquery.magnific-popup.min.js"></script>
+    <script src="assets/vendors/jquery-validate/jquery.validate.min.js"></script>
+    <script src="assets/vendors/nouislider/nouislider.min.js"></script>
+    <script src="assets/vendors/tiny-slider/tiny-slider.js"></script>
+    <script src="assets/vendors/wnumb/wNumb.min.js"></script>
+    <script src="assets/vendors/owl-carousel/js/owl.carousel.min.js"></script>
+    <script src="assets/vendors/slick/js/slick.min.js"></script>
+    <script src="assets/vendors/wow/wow.js"></script>
+    <script src="assets/vendors/imagesloaded/imagesloaded.min.js"></script>
+    <script src="assets/vendors/isotope/isotope.js"></script>
+    <script src="assets/vendors/countdown/countdown.min.js"></script>
+    <script src="assets/vendors/jquery-circleType/jquery.circleType.js"></script>
+    <script src="assets/vendors/jquery-lettering/jquery.lettering.min.js"></script>
+    <!-- template js -->
+    <script src="assets/js/mediox.js"></script>
+
+</body>
+
+</html>
