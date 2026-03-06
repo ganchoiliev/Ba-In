@@ -1,4 +1,4 @@
-name: Deploy to Hostinger via SFTP
+name: Deploy to Hostinger
 
 on:
   push:
@@ -6,20 +6,20 @@ on:
       - main
 
 jobs:
-  deploy:
+  build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Get latest code
-        uses: actions/checkout@v4
+    - name: Get latest code
+      uses: actions/checkout@v3
 
-      - name: Deploy via SFTP
-        uses: wlixcc/SFTP-Deploy-Action@v1.2.4
-        with:
-          server: ${{ secrets.FTP_SERVER }}
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          local_path: './*'
-          remote_path: ${{ secrets.FTP_REMOTE_PATH }}
-          sftp_only: true
-          args: '-r'
+    - name: Deploy to Hostinger
+      uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+      with:
+        server: ${{ secrets.FTP_SERVER }}
+        username: ${{ secrets.FTP_USERNAME }}
+        password: ${{ secrets.FTP_PASSWORD }}
+        server-dir: ${{ secrets.FTP_REMOTE_PATH }}
+        protocol: ftps
+        port: 21
+        timeout: 180000
