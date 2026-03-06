@@ -74,6 +74,7 @@
 
     <!-- AI Chatbot styles -->
     <link rel="stylesheet" href="assets/css/ai-chat.css" />
+    <link rel="stylesheet" href="assets/css/i18n.css" />
 </head>
 
 <body class="custom-cursor">
@@ -110,7 +111,12 @@
                             <a href="tel:+359893398390">+359 89 339 8390</a>
                         </li>
                     </ul><div class="topbar-one__right">
-                        <div class="social-links">
+                <button class="lang-toggle" id="lang-toggle" data-i18n-aria="shared.aria.lang_switch" aria-label="Смени езика">
+                    <span class="lang-toggle__option active" data-lang="bg">БГ</span>
+                    <span class="lang-toggle__divider">|</span>
+                    <span class="lang-toggle__option" data-lang="en">EN</span>
+                </button>
+                <div class="social-links">
                             <a href="https://www.facebook.com/IliyanaPhiAcademy">
                                 <i class="fab fa-facebook-f" aria-hidden="true"></i>
                                <span class="sr-only">Facebook</span>
@@ -448,6 +454,12 @@
                 <a href="index.html" aria-label="logo image"><img src="assets/images/logo-light.png" width="164" alt="Beauty Atelier In Силистра лого" /></a>
             </div>
             <div class="mobile-nav__container"></div>
+            <div class="mobile-nav__lang">
+                <button class="lang-toggle" aria-label="Switch language">
+                    <span class="lang-toggle__option active" data-lang="bg">БГ</span>
+                    <span class="lang-toggle__option" data-lang="en">EN</span>
+                </button>
+            </div>
             <ul class="mobile-nav__contact list-unstyled">
                 <li>
                     <span class="mobile-nav__contact__icon">
@@ -567,6 +579,8 @@
 
     <!-- AI Chatbot script -->
     <script src="assets/js/ai-chat-v2.js"></script>
+    <script src="assets/js/translations.js"></script>
+    <script src="assets/js/i18n.js"></script>
 </body>
 
 </html>
