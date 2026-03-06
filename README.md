@@ -31,6 +31,20 @@ The website has recently undergone a comprehensive audit and optimization pass t
 - **Canonical Tags:** Added missing `<link rel="canonical">` tags to every HTML page, helping Google easily understand the master version of pages and preventing duplicate content indexing errors.
 - **Alt Text:** Fixed template placeholder `alt` texts on critical images (like the Appointment page logo) to proper descriptions ("Beauty Atelier IN logo").
 
+### 5. 🌐 Bilingual BG/EN Language Support (i18n)
+- **Custom i18n Engine:** Built a lightweight language switcher (`assets/js/i18n.js`) that reads from a central `translations.js` file and applies translations via `data-i18n`, `data-i18n-html`, `data-i18n-ph`, and `data-i18n-aria` HTML attributes — no external libraries required.
+- **Full Site Coverage:** All 25 pages now have the BG|EN toggle wired up. Translated content covers: navigation, footer, hero sections, about page, contact form, appointment booking form, pricing cards, FAQ (10 Q&A pairs), blog listing cards, and shared UI elements.
+- **Persistent Preference:** The selected language is saved to `localStorage` so it persists across page loads and visits.
+- **Bootstrap Select Sync:** Added automatic `selectpicker('refresh')` call after every language switch so appointment form dropdowns visually update correctly.
+- **Removed Duplicate Toggle:** Eliminated a redundant BG|EN button that appeared inside the mobile hamburger drawer on all pages, keeping only the clean topbar toggle.
+
+### 6. 📞 Contact Widget Repositioning
+- **Fixed Overlap with AI Chat FAB:** The WhatsApp/Viber floating widget was hidden behind the AI chat button on desktop. Repositioned it to stack directly above the AI chat FAB (`bottom: 96px`) so both are always visible and accessible.
+- **Mobile Responsive:** Added separate breakpoints so the widget sits at the correct height on tablet (≤768px) and mobile (≤480px) screens, accounting for the smaller FAB size on small screens.
+
+### 7. ⭐ Google Reviews CTA
+- **Reviews Strip:** Added a "Leave a Google Review" call-to-action section on the homepage and about page, featuring the Google "G" logo, 5-star rating display, and a styled gold button linking to the Google Business review page.
+
 ---
 
 ## 🛠️ Built With
