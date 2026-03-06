@@ -1,25 +1,25 @@
-name: Deploy to Hostinger
+name: Deploy to Hostinger via SFTP
 
 on:
   push:
     branches:
-      - main # Runs this script every time you push to 'main'
+      - main
 
 jobs:
-  build-and-deploy:
+  deploy:
     runs-on: ubuntu-latest
-    
-    steps:
-    - name: Get latest code
-      uses: actions/checkout@v3
 
-    - name: Deploy to Hostinger
-      uses: SamKirkland/FTP-Deploy-Action@v4.3.4
-      with:
-        server: ${{ secrets.FTP_SERVER }}
-        username: ${{ secrets.FTP_USERNAME }}
-        password: ${{ secrets.FTP_PASSWORD }}
-        server-dir: ./
-        protocol: ftps
-        port: 21
-        timeout: 120000
+    steps:
+      - name: Get latest code
+        uses: actions/checkout@v4
+
+      - name: Deploy via SFTP
+        uses: wlixcc/SFTP-Deploy-Action@v1.2.4
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local_path: './*'
+          remote_path: ${{ secrets.FTP_REMOTE_PATH }}
+          sftp_only: true
+          args: '-r'
