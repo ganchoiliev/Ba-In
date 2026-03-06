@@ -5,8 +5,8 @@
 
 .contact-widget {
     position: fixed;
-    bottom: 28px;
-    right: 96px;   /* offset right of AI chat FAB (60px wide at right:24px) */
+    bottom: 96px;  /* sit above AI chat FAB (60px tall at bottom:24px + 12px gap) */
+    right: 24px;
     z-index: 9990;
     display: flex;
     flex-direction: column;
@@ -151,7 +151,7 @@
 /* Keep above cookie banner */
 @media (max-width: 600px) {
     .contact-widget {
-        bottom: 80px;
-        right: 16px;  /* on mobile AI chat shifts or stacks, so no offset needed */
+        bottom: 148px; /* above cookie banner (80px) + AI chat FAB */
+        right: 16px;
     }
 }
