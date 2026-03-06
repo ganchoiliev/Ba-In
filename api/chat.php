@@ -3,13 +3,21 @@
 header('Content-Type: application/json; charset=utf-8');
 
 // Load API key from config file outside the web root
-$config_path = 'C:\\xampp\\ba-in-config.php';
-if (!file_exists($config_path)) {
+$config_path_local = 'C:\\xampp\\ba-in-config.php';
+$config_path_prod = dirname($_SERVER['DOCUMENT_ROOT']) . '/ba-in-config.php';
+$config_path_fallback = __DIR__ . '/ba-in-config.php';
+
+if (file_exists($config_path_local)) {
+    require_once $config_path_local;
+} elseif (file_exists($config_path_prod)) {
+    require_once $config_path_prod;
+} elseif (file_exists($config_path_fallback)) {
+    require_once $config_path_fallback;
+} else {
     http_response_code(500);
-    echo json_encode(['error' => 'Server configuration error.']);
+    echo json_encode(['error' => 'Server configuration error. API key file is missing. Please create ba-in-config.php on the server.']);
     exit;
 }
-require_once $config_path;
 $api_key = OPENAI_API_KEY;
 
 // Only allow POST requests
