@@ -1,0 +1,8 @@
+# Block direct browser access to PHP files in this folder.
+# Only server-side PHP execution is allowed (via form/fetch calls).
+<FilesMatch "\.php$">
+    Order Deny,Allow
+    Deny from all
+    Allow from 127.0.0.1
+    Allow from ::1
+</FilesMatch>

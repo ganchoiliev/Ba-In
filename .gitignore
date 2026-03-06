@@ -1,0 +1,8 @@
+# Config files with secrets — never commit these
+/ba-in-config.php
+C:\xampp\ba-in-config.php
+
+# PHP environment/local config
+*.env
+.env
+config.local.php
