@@ -98,9 +98,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const bubbleDiv = document.createElement('div');
         bubbleDiv.className = 'ai-message-bubble';
 
-        // Very basic simple markdown bolding **text** to <strong>text</strong> (optional enhancement)
-        const formattedContent = content.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
-        bubbleDiv.innerHTML = formattedContent.replace(/\n/g, '<br>');
+        bubbleDiv.innerHTML = formatMessage(content);
 
         msgDiv.appendChild(avatarDiv);
         msgDiv.appendChild(bubbleDiv);
@@ -108,6 +106,49 @@ document.addEventListener('DOMContentLoaded', () => {
 
         scrollToBottom();
     }
+
+    // Convert plain text to rich HTML with clickable links
+    function formatMessage(text) {
+        // 1. Escape HTML to prevent XSS before we add our own safe tags
+        let safe = text
+            .replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;');
+
+        // 2. Bold: **text**
+        safe = safe.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+
+        // 3. Phone numbers – Bulgarian mobile/landline formats → tel: link
+        safe = safe.replace(
+            /(\+359[\s\d]{9,13}|0\d[\s\-]?\d{3}[\s\-]?\d{4})/g,
+            (match) => {
+                const digits = match.replace(/\s|-/g, '');
+                return `<a href="tel:${digits}" style="color:var(--chat-primary);text-decoration:underline;">${match}</a>`;
+            }
+        );
+
+        // 4. Salon address → Google Maps link
+        safe = safe.replace(
+            /(ул\.?\s*[""„]?Отец Паисий[""„]?\s*27[^<]*)/g,
+            `<a href="https://maps.google.com/?q=ул.+Отец+Паисий+27,+Силистра,+България" target="_blank" rel="noopener" style="color:var(--chat-primary);text-decoration:underline;">$1</a>`
+        );
+
+        // 5. URLs → clickable links (must run after phone/address to avoid double-wrapping)
+        safe = safe.replace(
+            /(https?:\/\/[^\s<]+)/g,
+            (url) => {
+                // Friendly label: strip https://ba-in.com prefix for cleanliness
+                const label = url.replace('https://ba-in.com', 'ba-in.com');
+                return `<a href="${url}" target="_blank" rel="noopener" style="color:var(--chat-primary);text-decoration:underline;">${label}</a>`;
+            }
+        );
+
+        // 6. Newlines → <br>
+        safe = safe.replace(/\n/g, '<br>');
+
+        return safe;
+    }
+
 
     // Typing indicator
     function showTyping() {
