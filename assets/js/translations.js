@@ -61,6 +61,30 @@ const TRANSLATIONS = {
         'shared.footer.link.contact':      'Контакти',
 
 
+
+        /* ---- About page ---- */
+        'about.experience_text': 'Професионални <br> обучения <br> и сертификати',
+        'about.who_we_are': 'Кои сме ние',
+        'about.about_text': 'Предлагаме професионални естетични и козметични процедури, създадени да подчертаят естествената красота с прецизност, безопасност и внимание към детайла. Специалист с над 4 години опит в микроблейдинга и сертифициран Beauty Artist към PhiAcademy по техниките Bold Brows и PhiBrows, аз изграждам персонални решения за всеки клиент, според структурата на лицето, вида на кожата и индивидуалните особености.',
+        'about.funfact1': 'Повишена<br>увереност',
+        'about.funfact2': 'Индивидуален <br> Подход',
+        'about.skills_tagline': 'Защо клиентите ни избират',
+        'about.skills_title': 'Водещи в Красотата<br> и Естетичните Процедури',
+        'about.skills_text': 'Работим със сертифицирани техники, висококачествени материали и индивидуален подход за постигане на реалистични и устойчиви резултати.',
+        'about.progress1': 'Клиенти се връщат за поддръжка',
+        'about.progress2': 'Естествен резултат при всяка процедура',
+        'about.award_text': '2023 <br> Сертифициран <br> Артист',
+        'about.faq_tagline': 'ЧЗВ',
+        'about.faq_title': 'Често задавани <br>въпроси',
+        'about.faq1_q': 'Какво отличава вашите процедури от останалите в Силистра?',
+        'about.faq1_a': 'Работя с международно сертифицирани техники от PhiAcademy, високо качество на материалите и индивидуален подход към всеки клиент. Комбинацията от опит, прецизност и персонално отношение гарантира естествени и устойчиви резултати.',
+        'about.faq2_q': 'Болезнени ли са процедурите?',
+        'about.faq2_a': 'Всички процедури се извършват с максимален комфорт за клиента – използвам щадящи техники и висококачествени продукти. Възстановяването обикновено е кратко и минимално, в зависимост от конкретната услуга (микроблейдинг, микронийдлинг, ламиниране и др.).',
+        'about.faq3_q': 'Как да избера подходящата процедура за мен?',
+        'about.faq3_a': 'На всяка първоначална консултация анализирам кожата, формата на веждите, естествените черти и личните цели на клиента. Така препоръчвам най-подходящата процедура, която да подчертае индивидуалната красота и да даде най-добър резултат.',
+        'about.testimonials_tagline': 'Какво Казват Нашите Клиенти',
+        'about.testimonials_title': 'Нашите Клиенти <br> Споделят',
+
         /* ---- Breadcrumb page titles ---- */
         'aftertreatment.page_title': 'Следпроцедурна Грижа',
         'appointment.page_title': 'Запази час',
@@ -374,6 +398,29 @@ const TRANSLATIONS = {
         'shared.footer.link.appointment':  'Book Now',
         'shared.footer.link.faq':          'FAQ',
         'shared.footer.link.contact':      'Contact',
+
+        /* ---- About page ---- */
+        'about.experience_text': 'Professional <br> Training <br> &amp; Certificates',
+        'about.who_we_are': 'Who We Are',
+        'about.about_text': 'We offer professional aesthetic and cosmetic treatments designed to enhance natural beauty with precision, safety and attention to detail. A specialist with over 4 years of experience in microblading and a certified Beauty Artist with PhiAcademy in Bold Brows and PhiBrows techniques, I build personalised solutions for each client based on facial structure, skin type and individual characteristics.',
+        'about.funfact1': 'Boosted<br>Confidence',
+        'about.funfact2': 'Individual <br> Approach',
+        'about.skills_tagline': 'Why Clients Choose Us',
+        'about.skills_title': 'Leading in Beauty<br> and Aesthetic Treatments',
+        'about.skills_text': 'We work with certified techniques, high-quality materials and a personalised approach to achieve realistic and lasting results.',
+        'about.progress1': 'Clients return for maintenance',
+        'about.progress2': 'Natural results with every treatment',
+        'about.award_text': '2023 <br> Certified <br> Artist',
+        'about.faq_tagline': 'FAQ',
+        'about.faq_title': 'Frequently Asked <br>Questions',
+        'about.faq1_q': 'What sets your treatments apart from others in Silistra?',
+        'about.faq1_a': 'I work with internationally certified techniques from PhiAcademy, high-quality materials and a personalised approach. The combination of experience, precision and personal attention guarantees natural and lasting results.',
+        'about.faq2_q': 'Are the treatments painful?',
+        'about.faq2_a': 'All treatments are performed with maximum comfort – I use gentle techniques and high-quality products. Recovery is usually short and minimal, depending on the specific service (microblading, microneedling, lamination, etc.).',
+        'about.faq3_q': 'How do I choose the right treatment for me?',
+        'about.faq3_a': 'At every initial consultation I analyse your skin, brow shape, natural features and personal goals, then recommend the most suitable treatment to highlight your individual beauty and deliver the best result.',
+        'about.testimonials_tagline': 'What Our Clients Say',
+        'about.testimonials_title': 'Our Clients <br> Share',
 
         /* ---- Breadcrumb page titles ---- */
         'aftertreatment.page_title': 'Post-Treatment Care',
