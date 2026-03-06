@@ -109,7 +109,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Convert plain text to rich HTML with clickable links
     function formatMessage(text) {
-        // 1. Escape HTML to prevent XSS before we add our own safe tags
+        // 1. Escape HTML to prevent XSS
         let safe = text
             .replace(/&/g, '&amp;')
             .replace(/</g, '&lt;')
@@ -118,36 +118,43 @@ document.addEventListener('DOMContentLoaded', () => {
         // 2. Bold: **text**
         safe = safe.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
 
-        // 3. Phone numbers – Bulgarian mobile/landline formats → tel: link
+        // 3. Emails → mailto: links (before URL regex so they don't get double-matched)
+        safe = safe.replace(
+            /([a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,})/g,
+            '<a href="mailto:$1" style="color:var(--chat-primary);text-decoration:underline;">$1</a>'
+        );
+
+        // 4. Phone numbers → tel: links
         safe = safe.replace(
             /(\+359[\s\d]{9,13}|0\d[\s\-]?\d{3}[\s\-]?\d{4})/g,
             (match) => {
-                const digits = match.replace(/\s|-/g, '');
+                const digits = match.replace(/[\s\-]/g, '');
                 return `<a href="tel:${digits}" style="color:var(--chat-primary);text-decoration:underline;">${match}</a>`;
             }
         );
 
-        // 4. Salon address → Google Maps link
+        // 5. URLs → clickable links (BEFORE address so we don't re-wrap the Google Maps URL we'll insert next)
         safe = safe.replace(
-            /(ул\.?\s*[""„]?Отец Паисий[""„]?\s*27[^<]*)/g,
-            `<a href="https://maps.google.com/?q=ул.+Отец+Паисий+27,+Силистра,+България" target="_blank" rel="noopener" style="color:var(--chat-primary);text-decoration:underline;">$1</a>`
-        );
-
-        // 5. URLs → clickable links (must run after phone/address to avoid double-wrapping)
-        safe = safe.replace(
-            /(https?:\/\/[^\s<]+)/g,
+            /(https?:\/\/[^\s<"]+)/g,
             (url) => {
-                // Friendly label: strip https://ba-in.com prefix for cleanliness
                 const label = url.replace('https://ba-in.com', 'ba-in.com');
                 return `<a href="${url}" target="_blank" rel="noopener" style="color:var(--chat-primary);text-decoration:underline;">${label}</a>`;
             }
         );
 
-        // 6. Newlines → <br>
+        // 6. Address → Google Maps link (LAST so the injected URL isn't re-processed by step 5)
+        //    Only match the address itself, not everything that follows.
+        safe = safe.replace(
+            /ул\.?\s*[""„]?Отец Паисий[""„]?\s*\d+/g,
+            (match) => `<a href="https://maps.google.com/?q=ул.+Отец+Паисий+27,+Силистра,+България" target="_blank" rel="noopener" style="color:var(--chat-primary);text-decoration:underline;">${match}</a>`
+        );
+
+        // 7. Newlines → <br>
         safe = safe.replace(/\n/g, '<br>');
 
         return safe;
     }
+
 
 
     // Typing indicator
