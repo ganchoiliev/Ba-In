@@ -110,6 +110,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Convert plain text to rich HTML with clickable links
     function formatMessage(text) {
+        // 0. Strip any HTML tags the AI may have accidentally generated (e.g. <a href="...">)
+        text = text.replace(/<[^>]*>/g, '');
+
         // 1. Escape HTML to prevent XSS
         let safe = text
             .replace(/&/g, '&amp;')
