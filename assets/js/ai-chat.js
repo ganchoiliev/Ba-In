@@ -1,4 +1,4 @@
-// ai-chat.js v2.1 — Beauty Atelier IN
+// ai-chat.js v2.2 — Beauty Atelier IN
 document.addEventListener('DOMContentLoaded', () => {
     // SVGs
     const iconBot = `<svg viewBox="0 0 24 24"><path d="M12 2a2 2 0 0 1 2 2c0 .74-.4 1.39-1 1.73V7h1a7 7 0 0 1 7 7v5a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1v-5a7 7 0 0 1 7-7h1V5.73A2 2 0 1 1 12 2zm-3 10a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm6 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4z"/></svg>`;
@@ -110,8 +110,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Convert plain text to rich HTML with clickable links
     function formatMessage(text) {
-        // 0. Strip any HTML tags the AI may have accidentally generated (e.g. <a href="...">)
+        // 0. Strip any HTML tags the AI may have accidentally generated
         text = text.replace(/<[^>]*>/g, '');
+        // Also remove orphaned maps.google.com URLs and trailing attribute junk that survive broken partial tags
+        text = text.replace(/https?:\/\/maps\.google\.com\S*"[^"]*/gi, '');
+        text = text.replace(/\s*(?:target|rel|style)="[^"]*"/gi, '');
+
 
         // 1. Escape HTML to prevent XSS
         let safe = text
