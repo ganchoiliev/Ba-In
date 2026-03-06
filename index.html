@@ -1952,8 +1952,7 @@
                 </a>
             </div><!-- /.sidebar-one__logo -->
             <div class="sidebar-one__about sidebar-one__item">
-                <p class="sidebar-one__about__text"> С внимание към всеки детайл и индивидуален подход към всеки клиент,
-                    ние създаваме не просто визия, а самочувствие. Довери се на сертифициран професионалист с опит!</p>
+                <p class="sidebar-one__about__text" data-i18n="shared.sidebar.about_text">С внимание към всеки детайл и индивидуален подход към всеки клиент, ние създаваме не просто визия, а самочувствие. Довери се на сертифициран професионалист с опит!</p>
             </div><!-- /.sidebar-one__about -->
             <div class="sidebar-one__info sidebar-one__item">
                 <h4 class="sidebar-one__title">Contact</h4>
@@ -1997,7 +1996,7 @@
                 </a>
             </div><!-- /sidebar-one__social -->
             <div class="sidebar-one__newsletter sidebar-one__item">
-                <label class="sidebar-one__title" for="sidebar-email"> новини и промоции</label>
+                <label class="sidebar-one__title" for="sidebar-email" data-i18n="shared.sidebar.newsletter_label">новини и промоции</label>
                 <form action="#" class="sidebar-one__newsletter__inner mc-form"
                     data-url="https://chimpstatic.com/mcjs-connected/js/users/1abfa449aa1046d4856948589/477d40922746e4f1cdcaa8e9e.js">
                     <input type="email" name="EMAIL" id="sidebar-email" class="sidebar-one__newsletter__input"
@@ -2041,6 +2040,10 @@
 
     <!-- AI Chatbot script -->
     <script src="assets/js/ai-chat-v2.js"></script>
+
+    <!-- i18n: translations must load before engine -->
+    <script src="assets/js/translations.js"></script>
+    <script src="assets/js/i18n.js"></script>
 </body>
 
 </html>
