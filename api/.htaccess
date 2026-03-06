@@ -1,2 +1,6 @@
 # Allow external access to PHP files in this folder (needed for the AI chat API).
 Options -Indexes
+
+<FilesMatch "\.txt$">
+    Require all denied
+</FilesMatch>

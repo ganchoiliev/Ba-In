@@ -206,8 +206,31 @@ $ai_message = strip_tags($ai_message);
 $ai_message = preg_replace('/https?:\/\/maps\.google\.com\S*"[^"]*/i', '', $ai_message);
 $ai_message = preg_replace('/\s*(?:target|rel|style)="[^"]*"/i', '', $ai_message);
 
+// --- Запис на разговорите (Logging) ---
+$last_user_message = '';
+if (isset($data['messages']) && is_array($data['messages'])) {
+   foreach (array_reverse($data['messages']) as $msg) {
+      if (isset($msg['role']) && $msg['role'] === 'user') {
+         $last_user_message = $msg['content'];
+         break;
+      }
+   }
+}
+
+if (!empty($last_user_message)) {
+   // Времето в Силистра (Източна Европа)
+   $date = new DateTime('now', new DateTimeZone('Europe/Sofia'));
+   $log_entry = $date->format('Y-m-d H:i:s') . "\n";
+   $log_entry .= "USER: " . $last_user_message . "\n";
+   $log_entry .= "BOT:  " . $ai_message . "\n";
+   $log_entry .= str_repeat("-", 50) . "\n";
+
+   // Запазваме в текстов файл в същата папка
+   @file_put_contents(__DIR__ . '/chat_logs.txt', $log_entry, FILE_APPEND);
+}
+// ---------------------------------------
+
 // Return the clean text to the frontend
 echo json_encode([
    'message' => $ai_message
 ]);
-
