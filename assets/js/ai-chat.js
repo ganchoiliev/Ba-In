@@ -146,14 +146,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         );
 
-        // 6. Address → Google Maps link (LAST - inserted URL won't be re-processed by step 5)
-        //    Match ул. Отец Паисий + house number, regardless of quote style around the street name.
-        safe = safe.replace(
-            /ул\.?\s*["\u201c\u201e]?Отец Паисий["\u201d\u201e]?\s*\d+/gi,
-            (match) => `<a href="https://maps.google.com/?q=${encodeURIComponent('ул. Отец Паисий 27, Силистра, България')}" target="_blank" rel="noopener" style="color:var(--chat-primary);text-decoration:underline;">${match}</a>`
-        );
-
-        // 7. Newlines → <br>
+        // 6. Newlines → <br>
         safe = safe.replace(/\n/g, '<br>');
 
         return safe;
