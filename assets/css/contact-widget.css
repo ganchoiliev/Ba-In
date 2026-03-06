@@ -132,6 +132,10 @@
     box-shadow: 0 2px 8px rgba(115, 96, 242, 0.4);
 }
 
+.contact-widget__option--viber svg {
+    fill-rule: evenodd;
+}
+
 /* Pulse animation on the main button when collapsed */
 .contact-widget:not(.is-open) .contact-widget__toggle::after {
     content: '';
