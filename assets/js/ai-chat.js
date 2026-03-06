@@ -184,7 +184,7 @@ document.addEventListener('DOMContentLoaded', () => {
         } catch (error) {
             console.error('AI Chat Error:', error);
             hideTyping();
-            addMessage('assistant', 'Съжалявам, възникна грешка при свързването. Моля, опитайте малко по-късно или се обадете на тел: +359 89 339 8390.');
+            addMessage('assistant', 'Съжалявам, възникна грешка при свързването: ' + error.message + ' Моля, опитайте малко по-късно или се обадете на тел: +359 89 339 8390.');
             // Remove the failed user message from history so they can try again if wanted
             conversationHistory.pop();
         } finally {
