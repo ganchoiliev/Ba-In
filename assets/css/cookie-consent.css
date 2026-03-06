@@ -1,0 +1,110 @@
+/* ============================================================
+   cookie-consent.css — GDPR Cookie Banner for Beauty Atelier IN
+   ============================================================ */
+
+.cookie-banner {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 99999;
+    background: #1a1a2e;
+    border-top: 2px solid rgba(var(--mediox-primary-rgb, 180, 130, 100), 0.4);
+    padding: 18px 24px;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    box-shadow: 0 -4px 24px rgba(0, 0, 0, 0.35);
+}
+
+.cookie-banner.is-visible {
+    display: flex;
+}
+
+.cookie-banner__icon {
+    font-size: 22px;
+    flex-shrink: 0;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.cookie-banner__text {
+    flex: 1;
+    min-width: 220px;
+}
+
+.cookie-banner__text p {
+    margin: 0;
+    font-size: 13px;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.cookie-banner__text a {
+    color: rgba(255, 255, 255, 0.95);
+    text-decoration: underline;
+    white-space: nowrap;
+}
+
+.cookie-banner__text a:hover {
+    color: #fff;
+}
+
+.cookie-banner__actions {
+    display: flex;
+    gap: 10px;
+    flex-shrink: 0;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.cookie-btn {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    padding: 9px 20px;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    transition: opacity 0.2s ease, transform 0.15s ease;
+    font-family: inherit;
+    white-space: nowrap;
+}
+
+.cookie-btn:hover {
+    opacity: 0.88;
+    transform: translateY(-1px);
+}
+
+.cookie-btn--accept {
+    background: #d4a96a;
+    color: #1a1a2e;
+}
+
+.cookie-btn--decline {
+    background: transparent;
+    color: rgba(255, 255, 255, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.cookie-btn--decline:hover {
+    color: rgba(255, 255, 255, 0.9);
+    border-color: rgba(255, 255, 255, 0.45);
+}
+
+@media (max-width: 600px) {
+    .cookie-banner {
+        padding: 16px;
+        gap: 14px;
+    }
+
+    .cookie-banner__actions {
+        width: 100%;
+    }
+
+    .cookie-btn {
+        flex: 1;
+        text-align: center;
+    }
+}

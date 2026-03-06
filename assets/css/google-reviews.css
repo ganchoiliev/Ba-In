@@ -1,0 +1,110 @@
+/* =========================================================
+   Google Reviews CTA strip
+   ========================================================= */
+
+.google-reviews {
+    padding: 48px 0;
+    background: #f9f5f0;
+}
+
+.google-reviews__inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+    flex-wrap: wrap;
+}
+
+.google-reviews__badge {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.google-reviews__logo {
+    width: 36px;
+    height: 36px;
+    flex-shrink: 0;
+}
+
+.google-reviews__info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.google-reviews__rating {
+    font-size: 22px;
+    font-weight: 800;
+    color: #1a1a2e;
+    line-height: 1;
+}
+
+.google-reviews__stars {
+    color: #f4b400;
+    font-size: 16px;
+    letter-spacing: 1px;
+}
+
+.google-reviews__label {
+    font-size: 12px;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.google-reviews__divider {
+    width: 1px;
+    height: 48px;
+    background: rgba(0,0,0,0.12);
+}
+
+.google-reviews__cta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.google-reviews__btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 24px;
+    background: #d4a96a;
+    color: #1a1a2e;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.4px;
+    text-decoration: none;
+    transition: opacity 0.2s ease, transform 0.15s ease;
+}
+
+.google-reviews__btn:hover {
+    opacity: 0.85;
+    transform: translateY(-2px);
+    color: #1a1a2e;
+}
+
+.google-reviews__see-all {
+    font-size: 12px;
+    color: #888;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    transition: color 0.2s ease;
+}
+
+.google-reviews__see-all:hover {
+    color: #d4a96a;
+}
+
+@media (max-width: 576px) {
+    .google-reviews__divider {
+        display: none;
+    }
+
+    .google-reviews__inner {
+        gap: 20px;
+    }
+}

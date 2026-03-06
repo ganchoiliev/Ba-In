@@ -60,6 +60,45 @@ const TRANSLATIONS = {
         'shared.footer.link.faq':          'Често Задавани Въпроси',
         'shared.footer.link.contact':      'Контакти',
 
+
+        /* ---- Breadcrumb page titles ---- */
+        'aftertreatment.page_title': 'Следпроцедурна Грижа',
+        'appointment.page_title': 'Запази час',
+        'blog_inspiring.page_title': 'Красотата и Вдъхновението',
+        'blog_secrets.page_title': 'Тайните на Красотата',
+        'blog.page_title': 'Блог',
+        'blog_choosing.page_title': 'Как да избереш процедура за лице',
+        'laminirane.page_title': 'Ламиниране',
+        'lashes.page_title': 'Миглопластика',
+        'blog_mb_mistakes.page_title': '5 грешки при микроблейдинг',
+        'blog_mb_myths.page_title': '5 Мита за Микроблейдинга',
+        'blog_mb_ages.page_title': 'Хармонично Излъчване',
+        'blog_mb_guide.page_title': 'Пълно ръководство за микроблейдинг',
+        'microblading.page_title': 'Микроблейдинг',
+        'microneedling.page_title': 'Микронидлинг',
+        'perm_removal.page_title': 'Премахване на PMU',
+        'piercing.page_title': 'Пробиване на уши',
+        'plasma.page_title': 'Плазма пен',
+        'privacy.page_title': 'Политика за поверителност',
+        'procedures.page_title': 'Естетични Процедури в Силистра',
+        'terms.page_title': 'Общи условия',
+
+
+        /* ---- Cookie consent ---- */
+        'cookie.text':       'Използваме бисквитки за анализ на трафика (Google Analytics), за да подобряваме сайта.',
+        'cookie.accept':     'Приемам',
+        'cookie.decline':    'Отказвам',
+        'cookie.learn_more': 'Поверителност',
+
+        /* ---- WhatsApp / Viber widget ---- */
+        'widget.whatsapp': 'WhatsApp',
+        'widget.viber':    'Viber',
+
+        /* ---- Google Reviews ---- */
+        'reviews.google_label': 'Google Reviews',
+        'reviews.write_review': 'Напиши отзив',
+        'reviews.see_all':      'Виж всички отзиви',
+
         /* ---- Shared: Scroll to top ---- */
         'shared.scroll_top': 'Начало',
 
@@ -214,8 +253,9 @@ const TRANSLATIONS = {
         /* ========================================================
            PRICING.HTML
            ======================================================== */
-        'pricing.title':     'Цени на естетични процедури в Силистра | Beauty Atelier IN',
-        'pricing.meta_desc': 'Вижте нашите цени за микроблейдинг, микронидлинг, ламиниране и други процедури. Индивидуален подход и прозрачно ценообразуване.',
+        'pricing.title':      'Цени на естетични процедури в Силистра | Beauty Atelier IN',
+        'pricing.meta_desc':  'Вижте нашите цени за микроблейдинг, микронидлинг, ламиниране и други процедури. Индивидуален подход и прозрачно ценообразуване.',
+        'pricing.page_title': 'Ценоразпис',
 
         /* ========================================================
            PROCEDURES.HTML
@@ -334,6 +374,43 @@ const TRANSLATIONS = {
         'shared.footer.link.appointment':  'Book Now',
         'shared.footer.link.faq':          'FAQ',
         'shared.footer.link.contact':      'Contact',
+
+        /* ---- Breadcrumb page titles ---- */
+        'aftertreatment.page_title': 'Post-Treatment Care',
+        'appointment.page_title': 'Book an Appointment',
+        'blog_inspiring.page_title': 'Beauty & Inspiration',
+        'blog_secrets.page_title': 'The Secrets of Beauty',
+        'blog.page_title': 'Blog',
+        'blog_choosing.page_title': 'How to Choose the Right Treatment',
+        'laminirane.page_title': 'Lamination',
+        'lashes.page_title': 'Lash Extensions',
+        'blog_mb_mistakes.page_title': '5 Microblading Mistakes',
+        'blog_mb_myths.page_title': '5 Microblading Myths',
+        'blog_mb_ages.page_title': 'A Harmonious Look',
+        'blog_mb_guide.page_title': 'The Complete Microblading Guide',
+        'microblading.page_title': 'Microblading',
+        'microneedling.page_title': 'Microneedling',
+        'perm_removal.page_title': 'PMU Removal',
+        'piercing.page_title': 'Ear Piercing',
+        'plasma.page_title': 'Plasma Pen',
+        'privacy.page_title': 'Privacy Policy',
+        'procedures.page_title': 'Aesthetic Procedures in Silistra',
+        'terms.page_title': 'Terms & Conditions',
+
+        /* ---- Cookie consent ---- */
+        'cookie.text':       'We use cookies for traffic analysis (Google Analytics) to improve the website.',
+        'cookie.accept':     'Accept',
+        'cookie.decline':    'Decline',
+        'cookie.learn_more': 'Privacy',
+
+        /* ---- WhatsApp / Viber widget ---- */
+        'widget.whatsapp': 'WhatsApp',
+        'widget.viber':    'Viber',
+
+        /* ---- Google Reviews ---- */
+        'reviews.google_label': 'Google Reviews',
+        'reviews.write_review': 'Write a Review',
+        'reviews.see_all':      'See all reviews',
 
         /* ---- Shared: Scroll to top ---- */
         'shared.scroll_top': 'Top',
