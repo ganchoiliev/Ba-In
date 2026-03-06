@@ -10,6 +10,25 @@ const TRANSLATIONS = {
    /* ===================== BULGARIAN ===================== */
    bg: {
 
+      /* ---- New dynamically added ---- */
+      'sidebar.cat.microblading': 'Микроблейдинг',
+      'sidebar.cat.microneedling': 'Микронидлинг',
+      'sidebar.cat.lashes': 'Миглопластика',
+      'sidebar.cat.skincare': 'Грижа за Кожата',
+      'sidebar.cat.aesthetic': 'Естетични Процедури',
+      'sidebar.search_placeholder': 'Търсене...',
+      'shared.proc.probiwane': 'Пробиване на уши',
+      'shared.proc.probiwane_desc': 'Безопасно и едновременно пробиване на уши.',
+      'shared.proc.plasma': 'Плазма Пен',
+      'shared.proc.plasma_desc': 'Неинвазивно стягане и подмладяване на кожата.',
+      'shared.proc.lamination': 'Ламиниране',
+      'shared.proc.lamination_desc': 'Ламиниране за естествен обем и красиво подчертан поглед.',
+      'blog.category.microblading': 'микроблейдинг',
+      'blog.category.age': 'възраст',
+      'blog.tag.blog': 'блог',
+      'blog.tag.lifting': 'лифтинг',
+
+
       /* ---- Shared: Topbar ---- */
       'shared.topbar.address': 'Силистра център, ул. "Отец Паисий" 27, 7500 Силистра, България',
 
@@ -555,6 +574,25 @@ const TRANSLATIONS = {
 
    /* ===================== ENGLISH ===================== */
    en: {
+
+      /* ---- New dynamically added ---- */
+      'sidebar.cat.microblading': 'Microblading',
+      'sidebar.cat.microneedling': 'Microneedling',
+      'sidebar.cat.lashes': 'Lashes',
+      'sidebar.cat.skincare': 'Skin Care',
+      'sidebar.cat.aesthetic': 'Aesthetic Procedures',
+      'sidebar.search_placeholder': 'Search...',
+      'shared.proc.probiwane': 'Ear Piercing',
+      'shared.proc.probiwane_desc': 'Safe and simultaneous ear piercing.',
+      'shared.proc.plasma': 'Plasma Pen',
+      'shared.proc.plasma_desc': 'Non-invasive skin tightening and rejuvenation.',
+      'shared.proc.lamination': 'Lamination',
+      'shared.proc.lamination_desc': 'Lamination for natural volume and a beautifully defined look.',
+      'blog.category.microblading': 'microblading',
+      'blog.category.age': 'age',
+      'blog.tag.blog': 'blog',
+      'blog.tag.lifting': 'lifting',
+
 
       /* ---- Shared: Topbar ---- */
       'shared.topbar.address': 'City centre, 27 Otets Paisiy St, 7500 Silistra, Bulgaria',
