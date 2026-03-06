@@ -143,7 +143,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // 5. URLs → clickable links (BEFORE address so we don't re-wrap the Google Maps URL we'll insert next)
         safe = safe.replace(
-            /(https?:\/\/[^\s<"]+)/g,
+            /(https?:\/\/[^\s<"]+?)(?=[.,!?]*(?:\s|$|<))/g,
             (url) => {
                 const label = url.replace('https://ba-in.com', 'ba-in.com');
                 return `<a href="${url}" target="_blank" rel="noopener" style="color:var(--chat-primary);text-decoration:underline;">${label}</a>`;
