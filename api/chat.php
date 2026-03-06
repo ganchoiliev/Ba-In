@@ -65,6 +65,13 @@ $system_prompt_text = <<<PROMPT
 - Следпроцедурна грижа: https://ba-in.com/aftertreatment.html
 - Политика за поверителност: https://ba-in.com/Privacy-policy.html
 
+=== СОЦИАЛНИ МРЕЖИ ===
+- Facebook: https://www.facebook.com/IliyanaPhiAcademy/
+- Instagram: https://www.instagram.com/Iliyanailieva.phiacademy/
+- TikTok: https://www.tiktok.com/@iliqna_ilieva4
+- Google Профил (Ревюта): https://share.google/LWLt1rNLslWSX71RU
+При запитване за социални мрежи, предостави съответните линкове.
+
 === ПРОЦЕДУРИ (подробно) ===
 
 1. МИКРОБЛЕЙДИНГ - https://ba-in.com/microblading.html
