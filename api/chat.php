@@ -194,9 +194,14 @@ $ai_message = $response_data['choices'][0]['message']['content'];
 $ai_message = strip_tags($ai_message);
 
 // 2. Remove any bare Google Maps URLs and the HTML attribute junk that follows them
-//    (handles the case where the AI outputs: https://maps.google.com/..." target="_blank" ...)
 $ai_message = preg_replace('/https?:\/\/maps\.google\.com\S*"[^"]*/i', '', $ai_message);
 $ai_message = preg_replace('/\s*(?:target|rel|style)="[^"]*"/i', '', $ai_message);
+
+// 3. The old JavaScript on the server has an address regex that matches:
+//    /ул\.?\s*[""„]?Отец Паисий[""„]?\s*\d+/
+//    Break it by removing the house number — "ул. Отец Паисий 27" → "ул. Отец Паисий"
+//    The address is still readable; no digit = no regex match = no broken HTML link.
+$ai_message = preg_replace('/(\bул\.?\s*[\x{201C}\x{201E}\x{201D}"]?Отец Паисий[\x{201C}\x{201E}\x{201D}"]?\s*)\d+/u', '$1', $ai_message);
 
 // Return the clean text to the frontend
 echo json_encode([
