@@ -316,7 +316,8 @@
     border: 1px solid var(--chat-border);
     border-radius: 20px;
     padding: 12px 48px 12px 16px;
-    font-size: 14px;
+    /* 16px minimum prevents iOS Safari from auto-zooming on focus */
+    font-size: 16px;
     outline: none;
     transition: border-color 0.2s;
     font-family: 'Manrope', sans-serif;
@@ -361,14 +362,33 @@
 /* Mobile responsive */
 @media (max-width: 480px) {
     #ai-chat-window {
-        bottom: 0px;
+        /* Use dynamic viewport height so the window shrinks when the iOS keyboard appears */
+        bottom: 0;
         right: 0;
         width: 100vw;
-        height: 100vh;
-        max-height: 100vh;
+        /* dvh (dynamic viewport height) shrinks with the keyboard on iOS Safari */
+        height: 100dvh;
+        max-height: 100dvh;
         max-width: none;
         border-radius: 0;
         z-index: 100000;
+        /* Respect iPhone notch / home bar */
+        padding-bottom: env(safe-area-inset-bottom);
+    }
+
+    .ai-chat-header {
+        /* Keep the header fully visible at all times */
+        position: sticky;
+        top: 0;
+        z-index: 1;
+        flex-shrink: 0;
+        /* Respect iPhone notch on top */
+        padding-top: max(16px, env(safe-area-inset-top));
+    }
+
+    .ai-chat-input-area {
+        /* Stick input to the visible bottom above the keyboard */
+        flex-shrink: 0;
     }
 
     #ai-chat-fab {
