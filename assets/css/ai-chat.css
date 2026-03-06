@@ -13,7 +13,7 @@
 #ai-chat-fab {
     position: fixed;
     bottom: 24px;
-    left: 24px;
+    right: 24px;
     width: 60px;
     height: 60px;
     background-color: var(--chat-primary);
@@ -51,7 +51,7 @@
 #ai-chat-window {
     position: fixed;
     bottom: 24px;
-    left: 24px;
+    right: 24px;
     width: calc(100vw - 48px);
     max-width: 380px;
     height: 550px;
@@ -63,7 +63,7 @@
     flex-direction: column;
     z-index: 10000;
     transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-    transform-origin: bottom left;
+    transform-origin: bottom right;
     border: 1px solid var(--chat-border);
     overflow: hidden;
     font-family: 'Manrope', sans-serif;
@@ -362,7 +362,7 @@
 @media (max-width: 480px) {
     #ai-chat-window {
         bottom: 0px;
-        left: 0;
+        right: 0;
         width: 100vw;
         height: 100vh;
         max-height: 100vh;
