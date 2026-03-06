@@ -189,6 +189,97 @@ const TRANSLATIONS = {
         'index.blog.post3_title':    'Microblading - Естествени и прецизни вежди за хармонично излъчване',
         'index.blog.post4_title':    'Всичко, което трябва да знаете за микроблейдинга – пълно ръководство',
         'index.blog.post5_title':    'Следпроцедурна грижа: Как да удължите трайността на микроблейдинга',
+
+        /* ========================================================
+           ABOUT.HTML
+           ======================================================== */
+        'about.title':      'За нас | Beauty Atelier IN – Сертифициран PhiBrows специалист в Силистра',
+        'about.meta_desc':  'Beauty Atelier IN е сертифицирано студио в Силистра, предлагащо професионални естетични процедури с индивидуален подход и естествени резултати.',
+        'about.page_title': 'За Нас',
+
+        /* ========================================================
+           CONTACT.HTML
+           ======================================================== */
+        'contact.title':      'Контакти | Beauty Atelier IN – Свържете се с нас',
+        'contact.meta_desc':  'Свържете се с Beauty Atelier IN Силистра. Адрес: ул. Отец Паисий 27. Телефон: 089 339 8390. Запазете час за микроблейдинг и естетични процедури.',
+        'contact.page_title': 'Контакти',
+
+        /* ========================================================
+           FAQ.HTML
+           ======================================================== */
+        'faq.title':      'Често Задавани Въпроси | Beauty Atelier IN - Силистра',
+        'faq.meta_desc':  'Отговори на най-често задаваните въпроси за микроблейдинг, микронидлинг и естетични процедури.',
+        'faq.page_title': 'ЧЗВ',
+
+        /* ========================================================
+           PRICING.HTML
+           ======================================================== */
+        'pricing.title':     'Цени на естетични процедури в Силистра | Beauty Atelier IN',
+        'pricing.meta_desc': 'Вижте нашите цени за микроблейдинг, микронидлинг, ламиниране и други процедури. Индивидуален подход и прозрачно ценообразуване.',
+
+        /* ========================================================
+           PROCEDURES.HTML
+           ======================================================== */
+        'procedures.title':     'Микроблейдинг и Естетични Процедури Силистра | Beauty Atelier IN',
+        'procedures.meta_desc': 'Разгледайте нашите професионални процедури в Силистра: PhiBrows микроблейдинг, подмладяващ микронидлинг, ламиниране на мигли и премахване на перманентен грим.',
+
+        /* ========================================================
+           APPOINTMENT.HTML
+           ======================================================== */
+        'appointment.title':     'Запази час | Beauty Atelier IN – Силистра',
+        'appointment.meta_desc': 'Запазете час онлайн за микроблейдинг, микронидлинг и естетични процедури в Beauty Atelier IN – Силистра.',
+
+        /* ========================================================
+           AFTERTREATMENT.HTML
+           ======================================================== */
+        'aftertreatment.title':     'Следпроцедурна грижа | Beauty Atelier IN Силистра',
+        'aftertreatment.meta_desc': 'Научете каква е правилната следпроцедурна грижа след микроблейдинг и други естетични процедури.',
+
+        /* ========================================================
+           PROCEDURE PAGES
+           ======================================================== */
+        'microblading.title':     'Микроблейдинг в Силистра | PhiBrows – Beauty Atelier IN',
+        'microblading.meta_desc': 'Професионален микроблейдинг по PhiBrows и Bold Brows в Силистра. Естествен ефект, прецизност и дълготраен резултат.',
+        'microneedling.title':     'Микронидлинг в Силистра | Подмладяване на кожата – Beauty Atelier IN',
+        'microneedling.meta_desc': 'Микронидлинг за подмладяване и освежаване на кожата в Силистра. Подобрява текстурата, свива порите и изглажда.',
+        'lashes.title':     'Миглопластика в Силистра | Обемни и естествени мигли – Beauty Atelier IN',
+        'lashes.meta_desc': 'Професионална миглопластика в Силистра – класически, хибридни и обемни мигли с естествен и дълготраен резултат.',
+        'plasma.title':     'Плазма пен в Силистра | Неинвазивно подмладяване – Beauty Atelier IN',
+        'plasma.meta_desc': 'Плазма пен процедури в Силистра за подмладяване и стягане на кожата без хирургична намеса.',
+        'laminirane.title':     'Ламиниране на вежди и мигли в Силистра | Beauty Atelier IN',
+        'laminirane.meta_desc': 'Ламиниране на вежди и мигли в Силистра за подчертан и поддържан външен вид.',
+        'piercing.title':     'Пробиване на уши в Силистра | За деца и възрастни – Beauty Atelier IN',
+        'piercing.meta_desc': 'Безопасно и бързо пробиване на уши за деца и възрастни в Силистра с професионална система STUDEX.',
+        'perm_removal.title':     'Премахване на перманентен грим в Силистра | Безопасно и Ефективно – Beauty Atelier IN',
+        'perm_removal.meta_desc': 'Безопасно премахване на стар или нежелан перманентен грим в Силистра. Ефективно изсветляване на пигмент.',
+
+        /* ========================================================
+           BLOG PAGES
+           ======================================================== */
+        'blog.title':     'Нашият Блог | Съвети за Красота от Beauty Atelier IN',
+        'blog.meta_desc': 'Полезни съвети за микроблейдинг, грижа за кожата и естетични процедури. Четете блога на Beauty Atelier IN.',
+        'blog_inspiring.title':     'Красотата и Вдъхновението | Блог на Beauty Atelier IN',
+        'blog_inspiring.meta_desc': 'Открийте как естетичните процедури влияят на самочувствието и вътрешната хармония.',
+        'blog_secrets.title':     'Тайните на Красотата | Блог на Beauty Atelier IN',
+        'blog_secrets.meta_desc': 'Разберете защо професионалната грижа за лице и тяло е инвестиция в самочувствието.',
+        'blog_choosing.title':     'Как да избереш правилната процедура за лице | Beauty Atelier IN',
+        'blog_choosing.meta_desc': 'Как да избереш правилната процедура за лице без да се подлъжеш по трендовете. Научете 5 ключови принципа.',
+        'blog_mb_guide.title':     'Микроблейдинг – Пълно ръководство | Beauty Atelier IN',
+        'blog_mb_guide.meta_desc': 'Пълно ръководство за микроблейдинг: Какво представлява процедурата, как протича, боли ли и как да се грижите след нея.',
+        'blog_mb_myths.title':     '5 Мита за Микроблейдинга | Истината от Beauty Atelier IN',
+        'blog_mb_myths.meta_desc': 'Боли ли микроблейдингът? Траен ли е завинаги? Разбиваме 5-те най-популярни мита за процедурата.',
+        'blog_mb_mistakes.title':     '5 грешки при микроблейдинг, които да избягвате | Beauty Atelier IN',
+        'blog_mb_mistakes.meta_desc': 'Научете кои са най-честите грешки при микроблейдинг и как да ги избегнете.',
+        'blog_mb_ages.title':     'Хармонично Излъчване: Микроблейдинг за Всяка Възраст | Beauty Atelier IN',
+        'blog_mb_ages.meta_desc': 'Разберете как микроблейдингът може да върне младостта и да подобри симетрията на лицето.',
+
+        /* ========================================================
+           LEGAL PAGES
+           ======================================================== */
+        'privacy.title':     'Политика за поверителност | Beauty Atelier IN Силистра',
+        'privacy.meta_desc': 'Политика за поверителност на Beauty Atelier IN. Научете как събираме, използваме и защитаваме вашите лични данни.',
+        'terms.title':     'Общи условия | Beauty Atelier IN Силистра',
+        'terms.meta_desc': 'Общи условия за ползване на услугите и уебсайта на Beauty Atelier IN - Силистра.',
     },
 
     /* ===================== ENGLISH ===================== */
@@ -373,5 +464,96 @@ const TRANSLATIONS = {
         'index.blog.post3_title':    'Microblading — Natural, Precise Brows for a Harmonious Look',
         'index.blog.post4_title':    'Everything You Need to Know About Microblading — The Complete Guide',
         'index.blog.post5_title':    'Post-Treatment Care: How to Extend the Longevity of Your Microblading',
+
+        /* ========================================================
+           ABOUT.HTML
+           ======================================================== */
+        'about.title':      'About Us | Beauty Atelier IN – Certified PhiBrows Specialist in Silistra',
+        'about.meta_desc':  'Beauty Atelier IN is a certified studio in Silistra offering professional aesthetic treatments with a personalised approach and natural results.',
+        'about.page_title': 'About Us',
+
+        /* ========================================================
+           CONTACT.HTML
+           ======================================================== */
+        'contact.title':      'Contact | Beauty Atelier IN – Get in Touch',
+        'contact.meta_desc':  'Contact Beauty Atelier IN in Silistra. Address: 27 Otets Paisiy St. Phone: +359 89 339 8390. Book your microblading or aesthetic treatment.',
+        'contact.page_title': 'Contact',
+
+        /* ========================================================
+           FAQ.HTML
+           ======================================================== */
+        'faq.title':      'Frequently Asked Questions | Beauty Atelier IN – Silistra',
+        'faq.meta_desc':  'Answers to the most frequently asked questions about microblading, microneedling and aesthetic treatments.',
+        'faq.page_title': 'FAQ',
+
+        /* ========================================================
+           PRICING.HTML
+           ======================================================== */
+        'pricing.title':     'Treatment Prices in Silistra | Beauty Atelier IN',
+        'pricing.meta_desc': 'View our prices for microblading, microneedling, lamination and other treatments. Personalised approach and transparent pricing.',
+
+        /* ========================================================
+           PROCEDURES.HTML
+           ======================================================== */
+        'procedures.title':     'Microblading & Aesthetic Procedures Silistra | Beauty Atelier IN',
+        'procedures.meta_desc': 'Explore our professional treatments in Silistra: PhiBrows microblading, rejuvenating microneedling, lash lamination and permanent makeup removal.',
+
+        /* ========================================================
+           APPOINTMENT.HTML
+           ======================================================== */
+        'appointment.title':     'Book an Appointment | Beauty Atelier IN – Silistra',
+        'appointment.meta_desc': 'Book online for microblading, microneedling and aesthetic treatments at Beauty Atelier IN – Silistra.',
+
+        /* ========================================================
+           AFTERTREATMENT.HTML
+           ======================================================== */
+        'aftertreatment.title':     'Post-Treatment Care | Beauty Atelier IN Silistra',
+        'aftertreatment.meta_desc': 'Learn the correct aftercare following microblading and other aesthetic treatments.',
+
+        /* ========================================================
+           PROCEDURE PAGES
+           ======================================================== */
+        'microblading.title':     'Microblading in Silistra | PhiBrows – Beauty Atelier IN',
+        'microblading.meta_desc': 'Professional PhiBrows and Bold Brows microblading in Silistra. Natural effect, precision and long-lasting results.',
+        'microneedling.title':     'Microneedling in Silistra | Skin Rejuvenation – Beauty Atelier IN',
+        'microneedling.meta_desc': 'Microneedling for skin rejuvenation in Silistra. Improves texture, minimises pores and smooths skin.',
+        'lashes.title':     'Lash Extensions in Silistra | Volume & Natural Look – Beauty Atelier IN',
+        'lashes.meta_desc': 'Professional lash extensions in Silistra – classic, hybrid and volume lashes with a natural, long-lasting finish.',
+        'plasma.title':     'Plasma Pen in Silistra | Non-Invasive Rejuvenation – Beauty Atelier IN',
+        'plasma.meta_desc': 'Plasma pen treatments in Silistra for skin tightening and rejuvenation without surgery.',
+        'laminirane.title':     'Eyebrow & Lash Lamination in Silistra | Beauty Atelier IN',
+        'laminirane.meta_desc': 'Eyebrow and lash lamination in Silistra for a defined, well-groomed look.',
+        'piercing.title':     'Ear Piercing in Silistra | Adults & Children – Beauty Atelier IN',
+        'piercing.meta_desc': 'Safe and quick ear piercing for adults and children in Silistra using the professional STUDEX system.',
+        'perm_removal.title':     'Permanent Makeup Removal in Silistra | Safe & Effective – Beauty Atelier IN',
+        'perm_removal.meta_desc': 'Safe removal of old or unwanted permanent makeup in Silistra. Effective pigment lightening.',
+
+        /* ========================================================
+           BLOG PAGES
+           ======================================================== */
+        'blog.title':     'Our Blog | Beauty Tips from Beauty Atelier IN',
+        'blog.meta_desc': 'Helpful tips on microblading, skincare and aesthetic treatments. Read the Beauty Atelier IN blog.',
+        'blog_inspiring.title':     'Beauty & Inspiration | Beauty Atelier IN Blog',
+        'blog_inspiring.meta_desc': 'Discover how aesthetic treatments affect confidence and inner harmony.',
+        'blog_secrets.title':     'The Secrets of Beauty | Beauty Atelier IN Blog',
+        'blog_secrets.meta_desc': 'Find out why professional skincare and body care is an investment in your confidence.',
+        'blog_choosing.title':     'How to Choose the Right Facial Treatment | Beauty Atelier IN',
+        'blog_choosing.meta_desc': 'How to choose the right facial treatment without following trends. Learn 5 key principles.',
+        'blog_mb_guide.title':     'Microblading – The Complete Guide | Beauty Atelier IN',
+        'blog_mb_guide.meta_desc': 'The complete guide to microblading: what the procedure involves, how it works, whether it hurts and how to care for your brows afterwards.',
+        'blog_mb_myths.title':     '5 Myths About Microblading | The Truth from Beauty Atelier IN',
+        'blog_mb_myths.meta_desc': 'Does microblading hurt? Is it permanent? We debunk the 5 most popular myths about the procedure.',
+        'blog_mb_mistakes.title':     '5 Microblading Mistakes to Avoid | Beauty Atelier IN',
+        'blog_mb_mistakes.meta_desc': 'Learn the most common microblading mistakes and how to avoid them.',
+        'blog_mb_ages.title':     'A Harmonious Look: Microblading for Every Age | Beauty Atelier IN',
+        'blog_mb_ages.meta_desc': 'Discover how microblading can restore a youthful look and improve facial symmetry.',
+
+        /* ========================================================
+           LEGAL PAGES
+           ======================================================== */
+        'privacy.title':     'Privacy Policy | Beauty Atelier IN Silistra',
+        'privacy.meta_desc': 'Privacy Policy of Beauty Atelier IN. Learn how we collect, use and protect your personal data.',
+        'terms.title':     'Terms & Conditions | Beauty Atelier IN Silistra',
+        'terms.meta_desc': 'Terms and conditions for using the services and website of Beauty Atelier IN – Silistra.',
     }
 };
