@@ -349,6 +349,7 @@ const TRANSLATIONS = {
       /* ---- WhatsApp / Viber widget ---- */
       'widget.whatsapp': 'WhatsApp',
       'widget.viber': 'Viber',
+      'widget.messenger': 'Messenger',
 
       /* ---- Google Reviews ---- */
       'reviews.google_label': 'Google Reviews',
@@ -915,6 +916,7 @@ const TRANSLATIONS = {
       /* ---- WhatsApp / Viber widget ---- */
       'widget.whatsapp': 'WhatsApp',
       'widget.viber': 'Viber',
+      'widget.messenger': 'Messenger',
 
       /* ---- Google Reviews ---- */
       'reviews.google_label': 'Google Reviews',

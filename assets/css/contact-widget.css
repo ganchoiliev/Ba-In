@@ -133,6 +133,11 @@
     box-shadow: 0 2px 8px rgba(115, 96, 242, 0.4);
 }
 
+.contact-widget__option--messenger .contact-widget__option__icon {
+    background: linear-gradient(83.84deg, #0088FF -6.87%, #A033FF 26.54%, #FF5C87 58.58%);
+    box-shadow: 0 2px 8px rgba(0, 136, 255, 0.4);
+}
+
 
 /* Pulse animation on the main button when collapsed */
 .contact-widget:not(.is-open) .contact-widget__toggle::after {
