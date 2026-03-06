@@ -1,3 +1,4 @@
+// ai-chat.js v2.1 — Beauty Atelier IN
 document.addEventListener('DOMContentLoaded', () => {
     // SVGs
     const iconBot = `<svg viewBox="0 0 24 24"><path d="M12 2a2 2 0 0 1 2 2c0 .74-.4 1.39-1 1.73V7h1a7 7 0 0 1 7 7v5a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1v-5a7 7 0 0 1 7-7h1V5.73A2 2 0 1 1 12 2zm-3 10a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm6 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4z"/></svg>`;
@@ -142,11 +143,11 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         );
 
-        // 6. Address → Google Maps link (LAST so the injected URL isn't re-processed by step 5)
-        //    Only match the address itself, not everything that follows.
+        // 6. Address → Google Maps link (LAST - inserted URL won't be re-processed by step 5)
+        //    Match ул. Отец Паисий + house number, regardless of quote style around the street name.
         safe = safe.replace(
-            /ул\.?\s*[""„]?Отец Паисий[""„]?\s*\d+/g,
-            (match) => `<a href="https://maps.google.com/?q=ул.+Отец+Паисий+27,+Силистра,+България" target="_blank" rel="noopener" style="color:var(--chat-primary);text-decoration:underline;">${match}</a>`
+            /ул\.?\s*["\u201c\u201e]?Отец Паисий["\u201d\u201e]?\s*\d+/gi,
+            (match) => `<a href="https://maps.google.com/?q=${encodeURIComponent('ул. Отец Паисий 27, Силистра, България')}" target="_blank" rel="noopener" style="color:var(--chat-primary);text-decoration:underline;">${match}</a>`
         );
 
         // 7. Newlines → <br>
