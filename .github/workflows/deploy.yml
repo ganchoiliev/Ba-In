@@ -23,3 +23,7 @@ jobs:
         protocol: ftps
         port: 21
         timeout: 180000
+        log-level: verbose
+        exclude: |
+          **/.git*
+          **/.git*/**
