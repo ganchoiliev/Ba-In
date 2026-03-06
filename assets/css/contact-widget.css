@@ -149,9 +149,17 @@
 }
 
 /* Keep above cookie banner */
-@media (max-width: 600px) {
+/* Tablet — AI chat FAB unchanged, just tighten right margin */
+@media (max-width: 768px) {
     .contact-widget {
-        bottom: 148px; /* above cookie banner (80px) + AI chat FAB */
+        right: 16px;
+    }
+}
+
+/* Mobile — AI chat FAB is 50px tall at bottom:16px, so top is at 66px */
+@media (max-width: 480px) {
+    .contact-widget {
+        bottom: 78px; /* 66px (FAB top) + 12px gap */
         right: 16px;
     }
 }
