@@ -141,12 +141,13 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         );
 
-        // 5. URLs → clickable links (BEFORE address so we don't re-wrap the Google Maps URL we'll insert next)
+        // 5. URLs → clickable links (handled both 'https://ba-in.com' and bare 'ba-in.com')
         safe = safe.replace(
-            /(https?:\/\/[^\s<"]*[^\s<".,!?;\-'])/g,
+            /(?:https?:\/\/)?(?:www\.)?ba-in\.com[^\s<"]*[^\s<".,!?;\-']|https?:\/\/[^\s<"]*[^\s<".,!?;\-']/gi,
             (url) => {
-                const label = url.replace('https://ba-in.com', 'ba-in.com');
-                return `<a href="${url}" target="_blank" rel="noopener" style="color:var(--chat-primary);text-decoration:underline;">${label}</a>`;
+                const href = url.startsWith('http') ? url : `https://${url}`;
+                const label = url.replace(/^https?:\/\//i, '');
+                return `<a href="${href}" target="_blank" rel="noopener" style="color:var(--chat-primary);text-decoration:underline;">${label}</a>`;
             }
         );
 
