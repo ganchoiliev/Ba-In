@@ -4,7 +4,7 @@
 
 The platform provides clients with detailed information about services, pricing, blog guides, and an easy-to-use Appointment Booking system.
 
-🌐 **Live Website:** [ba-in.eu](https://ba-in.com)
+🌐 **Live Website:** [ba-in.com](https://ba-in.com)
 
 ---
 
