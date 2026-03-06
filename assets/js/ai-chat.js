@@ -169,7 +169,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 body: JSON.stringify({ messages: conversationHistory })
             });
 
-            const data = await response.json();
+            const rawText = await response.text();
+            let data;
+            try {
+                data = JSON.parse(rawText);
+            } catch (parseErr) {
+                throw new Error('Server returned non-JSON response: ' + rawText.substring(0, 300));
+            }
 
             if (!response.ok) {
                 throw new Error(data.error || 'Възникна грешка в сървъра.');
