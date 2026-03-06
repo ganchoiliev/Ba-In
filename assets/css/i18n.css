@@ -1,0 +1,55 @@
+/* ============================================================
+   i18n.css — Language toggle styles for Beauty Atelier IN
+   ============================================================ */
+
+/* ---- Language Toggle Button ---- */
+.lang-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    margin-left: 18px;
+    line-height: 1;
+    vertical-align: middle;
+}
+
+.lang-toggle__option {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    color: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: color 0.25s ease;
+    text-transform: uppercase;
+    line-height: 1;
+    padding: 2px 0;
+    background: none;
+    border: none;
+}
+
+.lang-toggle__option.active {
+    color: #fff;
+}
+
+.lang-toggle__option:hover {
+    color: #fff;
+}
+
+.lang-toggle__divider {
+    font-size: 10px;
+    color: rgba(255, 255, 255, 0.3);
+    line-height: 1;
+    pointer-events: none;
+}
+
+/* ---- Smooth content transition on language switch ---- */
+body {
+    transition: opacity 0.15s ease;
+}
+
+body.lang-switching {
+    opacity: 0;
+}
