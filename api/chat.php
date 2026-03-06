@@ -185,7 +185,21 @@ if ($http_status !== 200) {
    exit;
 }
 
-// Return only the text of the AI response back to the frontend
+// Sanitize the AI response before sending to the browser.
+// This strips any HTML tags or Maps URLs the AI accidentally generates,
+// so the output is always clean plain text regardless of JS version on the client.
+$ai_message = $response_data['choices'][0]['message']['content'];
+
+// 1. Strip any HTML tags (e.g. <a href="...">)
+$ai_message = strip_tags($ai_message);
+
+// 2. Remove any bare Google Maps URLs and the HTML attribute junk that follows them
+//    (handles the case where the AI outputs: https://maps.google.com/..." target="_blank" ...)
+$ai_message = preg_replace('/https?:\/\/maps\.google\.com\S*"[^"]*/i', '', $ai_message);
+$ai_message = preg_replace('/\s*(?:target|rel|style)="[^"]*"/i', '', $ai_message);
+
+// Return the clean text to the frontend
 echo json_encode([
-   'message' => $response_data['choices'][0]['message']['content']
+   'message' => $ai_message
 ]);
+
