@@ -304,7 +304,7 @@
                 <div class="row">
                     <div class="col-xl-12">
                         <div class="appointment-one__content">
-                            <h3 class="appointment-one__title">Запази час</h3>
+                            <h3 class="appointment-one__title" data-i18n="appointment.page_title">Запази час</h3>
 
                             <form action="assets/inc/sendemail.php" method="post"
                                 class="appointment-one__form contact-form-validated form-one wow fadeInUp"
@@ -318,19 +318,19 @@
                                 <div class="form-one__group">
 
                                     <div class="form-one__control">
-                                        <input type="text" name="name" placeholder="Име*">
+                                        <input type="text" name="name" placeholder="Ime*" data-i18n-ph="shared.form.name_ph">
                                     </div>
 
                                     <div class="form-one__control">
-                                        <input type="email" name="email" placeholder="Имейл*">
+                                        <input type="email" name="email" placeholder="Имейл*" data-i18n-ph="shared.form.email_ph">
                                     </div>
 
                                     <div class="form-one__control">
-                                        <input type="tel" name="phone" placeholder="Телефонен номер">
+                                        <input type="tel" name="phone" placeholder="Телефонен номер" data-i18n-ph="shared.form.phone_ph">
                                     </div>
 
                                     <div class="form-one__control appointment-one__form__date">
-                                        <input type="text" name="date" placeholder="Изберете дата*" id="datepicker"
+                                        <input type="text" name="date" placeholder="Изберете дата*" id="datepicker" data-i18n-ph="shared.form.date_ph"
                                             class="mediox-datepicker">
                                         <span class="appointment-one__form__date__arrow">
                                             <i class="icon-caret-down"></i>
@@ -339,13 +339,13 @@
 
                                     <div class="form-one__control">
                                         <select class="selectpicker" name="services" aria-label="Type of Service">
-                                            <option value="" selected>Изберете процедура</option>
-                                            <option value="Микроблейдинг">Микроблейдинг</option>
-                                            <option value="Микронидлинг">Микронидлинг</option>
-                                            <option value="Миглопластика">Миглопластика</option>
-                                            <option value="Плазма пен">Плазма пен</option>
-                                            <option value="Ламиниране">Ламиниране</option>
-                                            <option value="Пробиване на уши">Пробиване на уши</option>
+                                            <option value="" selected data-i18n="shared.form.service_default">Изберете процедура</option>
+                                            <option value="Микроблейдинг" data-i18n="shared.form.microblading">Микроблейдинг</option>
+                                            <option value="Микронидлинг" data-i18n="shared.form.microneedling">Микронидлинг</option>
+                                            <option value="Миглопластика" data-i18n="shared.form.lashes">Миглопластика</option>
+                                            <option value="Плазма пен" data-i18n="shared.form.plasma">Плазма пен</option>
+                                            <option value="Ламиниране" data-i18n="shared.form.lamination">Ламиниране</option>
+                                            <option value="Пробиване на уши" data-i18n="shared.form.piercing">Пробиване на уши</option>
                                             <option value="Премахване на пермаментен грим">Премахване на пермаментен
                                                 грим</option>
                                         </select>
@@ -353,18 +353,18 @@
 
                                     <div class="form-one__control">
                                         <select class="selectpicker" name="doctor" aria-label="Name a Doctor">
-                                            <option value="" selected>Вашият специалист</option>
+                                            <option value="" selected data-i18n="shared.form.doctor_default">Вашият специалист</option>
                                             <option value="Илияна Николаева">Илияна Николаева</option>
                                         </select>
                                     </div>
 
                                     <div class="form-one__control form-one__control--full">
-                                        <textarea name="message" placeholder="Пишете тук..."></textarea>
+                                        <textarea name="message" placeholder="Пишете тук..." data-i18n-ph="shared.form.message_ph"></textarea>
                                     </div>
 
                                     <div class="form-one__control form-one__control--full">
                                         <button type="submit" class="mediox-btn">
-                                            <span>Запази час</span>
+                                            <span data-i18n="shared.form.submit">Запази час</span>
                                             <span class="mediox-btn__icon"><i class="icon-up-right-arrow"></i></span>
                                         </button>
                                     </div>

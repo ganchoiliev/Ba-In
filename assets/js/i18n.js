@@ -67,6 +67,11 @@
         document.querySelectorAll('.lang-toggle__option').forEach(function (btn) {
             btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
         });
+
+        /* 9. Refresh Bootstrap Select (selectpicker) if present */
+        if (typeof $ !== 'undefined' && $.fn && $.fn.selectpicker) {
+            $('.selectpicker').selectpicker('refresh');
+        }
     }
 
     function switchLang(newLang) {

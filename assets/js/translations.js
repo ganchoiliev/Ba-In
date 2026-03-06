@@ -85,6 +85,17 @@ const TRANSLATIONS = {
         'about.testimonials_tagline': 'Какво Казват Нашите Клиенти',
         'about.testimonials_title': 'Нашите Клиенти <br> Споделят',
 
+
+        /* ---- Contact page ---- */
+        'contact.tagline': 'Свържете се с Нас',
+        'contact.headline': 'Кажете <span>„Здравей!"</span>',
+        'contact.call_now': 'Обадете се сега',
+        'contact.email_label': 'Имейл',
+        'contact.address_label': 'Адрес',
+        'contact.happy_clients': '1.1k Щастливи Клиенти',
+        'contact.msg_ph': 'Напишете съобщение...',
+        'contact.send_message': 'Изпрати съобщение',
+
         /* ---- Breadcrumb page titles ---- */
         'aftertreatment.page_title': 'Следпроцедурна Грижа',
         'appointment.page_title': 'Запази час',
@@ -398,6 +409,16 @@ const TRANSLATIONS = {
         'shared.footer.link.appointment':  'Book Now',
         'shared.footer.link.faq':          'FAQ',
         'shared.footer.link.contact':      'Contact',
+
+        /* ---- Contact page ---- */
+        'contact.tagline': 'Get in Touch',
+        'contact.headline': 'Say <span>"Hello!"</span>',
+        'contact.call_now': 'Call Us Now',
+        'contact.email_label': 'Email',
+        'contact.address_label': 'Address',
+        'contact.happy_clients': '1.1k Happy Clients',
+        'contact.msg_ph': 'Write a message...',
+        'contact.send_message': 'Send Message',
 
         /* ---- About page ---- */
         'about.experience_text': 'Professional <br> Training <br> &amp; Certificates',
