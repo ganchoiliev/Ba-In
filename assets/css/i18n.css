@@ -150,3 +150,73 @@ body.lang-switching {
         font-size: 12px;
     }
 }
+
+/* ============================================================
+   Mobile background fixes — Appointment & FAQ sections
+   ============================================================ */
+
+/* -- Appointment "Запази час" section --
+   Jarallax uses position:fixed internally which gets clipped by
+   overflow:hidden on iOS. On mobile we fall back to a static cover. */
+@media (max-width: 767px) {
+    .appointment-one {
+        overflow: visible;
+    }
+
+    /* Jarallax container: switch to absolute so it isn't clipped */
+    .appointment-one__bg .jarallax-container {
+        position: absolute !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+    }
+
+    .appointment-one__bg .jarallax-container img,
+    .appointment-one__bg .jarallax-container video {
+        position: absolute !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+        object-position: center !important;
+        transform: none !important;
+    }
+
+    /* Ensure the bg div itself fills the section */
+    .appointment-one__bg {
+        position: absolute !important;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-size: cover !important;
+        background-position: center !important;
+        background-attachment: scroll !important;
+    }
+}
+
+/* -- FAQ section (faq-two) --
+   Multiple conflicting filter/blend-mode !important rules in
+   mediox.css fight each other on mobile. Simplify to a clean render. */
+@media (max-width: 767px) {
+    .faq-two__inner__bg {
+        filter: brightness(0.55) !important;
+        mix-blend-mode: multiply !important;
+        opacity: 1 !important;
+    }
+
+    .faq-two__inner__bg::before {
+        background: rgba(0, 0, 0, 0.35) !important;
+        mix-blend-mode: normal !important;
+        opacity: 1 !important;
+    }
+
+    /* Ensure text stays readable on top */
+    .faq-two__content,
+    .faq-two .sec-title {
+        position: relative;
+        z-index: 2;
+    }
+}
