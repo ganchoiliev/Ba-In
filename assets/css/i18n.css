@@ -220,3 +220,80 @@ body.lang-switching {
         z-index: 2;
     }
 }
+
+/* ============================================================
+   Comprehensive mobile fixes — Beauty Atelier IN
+   ============================================================ */
+
+/* ---- Footer contact info card (gold strip) ---- */
+@media (max-width: 575px) {
+    /* Tighten the gold strip padding */
+    .main-footer__info {
+        padding: 28px 18px;
+        border-radius: 14px;
+    }
+
+    /* Stack icon + text vertically on small phones */
+    .main-footer__contact {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    /* Reduce oversized contact text (stays 18px until 575px) */
+    .main-footer__contact__text,
+    .main-footer__contact__text a {
+        font-size: 15px;
+    }
+
+    /* Reduce label above contact text */
+    .main-footer__contact__title {
+        font-size: 12px;
+    }
+}
+
+/* ---- Footer copyright — remove nowrap on tiny phones ---- */
+@media (max-width: 420px) {
+    .footer-cr__copy,
+    .footer-cr__credit {
+        white-space: normal;
+        text-align: center;
+    }
+
+    .footer-cr__links {
+        white-space: normal;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+/* ---- Page header (breadcrumb banner) — tighter padding on mobile ---- */
+@media (max-width: 480px) {
+    .page-header__inner {
+        padding-top: 58px;
+        padding-bottom: 60px;
+    }
+}
+
+/* ---- Section spacing — extra step at 480px ---- */
+@media (max-width: 480px) {
+    .section-space {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+
+    .section-space-top {
+        padding-top: 60px;
+    }
+
+    .section-space-bottom {
+        padding-bottom: 60px;
+    }
+}
+
+/* ---- Footer bottom margin ---- */
+@media (max-width: 575px) {
+    .main-footer__bottom {
+        margin-top: 24px;
+    }
+}
