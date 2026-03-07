@@ -86,6 +86,7 @@
     <link rel="stylesheet" href="assets/css/ai-chat.css" />
     <link rel="stylesheet" href="assets/css/cookie-consent.css" />
     <link rel="stylesheet" href="assets/css/contact-widget.css" />
+    <link rel="stylesheet" href="assets/css/pricing-table.css" />
     <link rel="stylesheet" href="assets/css/i18n.css" />
 </head>
 
@@ -217,60 +218,275 @@
                                     <a href="index.html" data-i18n="shared.nav.home">Начало</a>
                                 </li>
                                 <li><span>Ценоразпис</span></li>
-                            </ul></div></div></div></div></section><section class="pricing-one section-space-bottom">
+                            </ul></div></div></div></div></section><section class="pt-section section-space-bottom">
             <div class="container">
-                <div class="text-center" style="max-width:700px;margin:0 auto 56px;">
-                    <h3 class="pricing-one__title" data-i18n="pricing.section_title">Частна консултация</h3>
-                    <p class="pricing-one__text" data-i18n="pricing.intro_text">
-                        В момента не публикуваме фиксирани цени — всяка процедура се оценява индивидуално,
-                        спрямо твоите нужди, кожа и желан резултат. Запази частна консултация и ще получиш
-                        персонализирана препоръка и точна цена.
-                    </p>
+
+                <!-- Header -->
+                <div class="pt-header">
+                    <h3 class="pt-header__title" data-i18n-html="pricing.section_title_html">Нашият <span>Ценоразпис</span></h3>
+                    <p class="pt-header__text" data-i18n="pricing.intro_text">Актуални цени за всички процедури в Beauty Atelier IN. За въпроси или индивидуална оферта — свържете се с нас.</p>
                 </div>
 
-                <div style="max-width:580px;margin:0 auto;background:#fff;border-radius:16px;box-shadow:0 8px 40px rgba(0,0,0,0.10);padding:48px 40px;text-align:center;">
-                    <div style="width:72px;height:72px;border-radius:50%;background:linear-gradient(135deg,#f8e8f0,#e8d5f0);display:flex;align-items:center;justify-content:center;margin:0 auto 28px;">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#9b59b6" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
-                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-                            <line x1="16" y1="2" x2="16" y2="6"></line>
-                            <line x1="8" y1="2" x2="8" y2="6"></line>
-                            <line x1="3" y1="10" x2="21" y2="10"></line>
-                        </svg>
+                <!-- Category tabs -->
+                <div class="pt-tabs" role="tablist">
+                    <button class="pt-tab is-active" data-panel="mb" role="tab" aria-selected="true">
+                        <i class="pt-tab__icon fas fa-magic"></i>
+                        <span data-i18n="pricing.cat.microblading">Микроблейдинг</span>
+                    </button>
+                    <button class="pt-tab" data-panel="mn" role="tab">
+                        <i class="pt-tab__icon fas fa-syringe"></i>
+                        <span data-i18n="pricing.cat.microneedling">Микронидлинг</span>
+                    </button>
+                    <button class="pt-tab" data-panel="pi" role="tab">
+                        <i class="pt-tab__icon fas fa-gem"></i>
+                        <span data-i18n="pricing.cat.piercing">Пробиване</span>
+                    </button>
+                    <button class="pt-tab" data-panel="pp" role="tab">
+                        <i class="pt-tab__icon fas fa-bolt"></i>
+                        <span data-i18n="pricing.cat.plasma">Плазма пен</span>
+                    </button>
+                    <button class="pt-tab" data-panel="cl" role="tab">
+                        <i class="pt-tab__icon fas fa-spa"></i>
+                        <span data-i18n="pricing.cat.cleaning">Почистване</span>
+                    </button>
+                    <button class="pt-tab" data-panel="pe" role="tab">
+                        <i class="pt-tab__icon fas fa-leaf"></i>
+                        <span data-i18n="pricing.cat.peeling">Пилинг</span>
+                    </button>
+                </div>
+
+                <!-- MICROBLADING -->
+                <div class="pt-panel is-active" id="pt-mb">
+                    <div class="pt-panel__inner">
+                        <div class="pt-panel__label">
+                            <div class="pt-panel__label-icon"><i class="fas fa-magic"></i></div>
+                            <span class="pt-panel__label-text" data-i18n="pricing.cat.microblading">Микроблейдинг</span>
+                        </div>
+                        <div class="pt-row">
+                            <span class="pt-row__name">Bold Brows</span>
+                            <span class="pt-row__price">
+                                <span class="pt-row__eur">204.52 €</span>
+                                <span class="pt-row__sep">/</span>
+                                <span class="pt-row__bgn">400 лв.</span>
+                            </span>
+                        </div>
+                        <div class="pt-row">
+                            <span class="pt-row__name">Phi Removal</span>
+                            <span class="pt-row__price">
+                                <span class="pt-row__eur">66.47 €</span>
+                                <span class="pt-row__sep">/</span>
+                                <span class="pt-row__bgn">130 лв.</span>
+                            </span>
+                        </div>
+                        <div class="pt-row">
+                            <span class="pt-row__name" data-i18n="pricing.svc.tattoos">Татуировки</span>
+                            <span class="pt-row__range">
+                                <span class="pt-row__range-label" data-i18n="pricing.from_to">от – до</span>
+                                <span class="pt-row__range-eur">66.47 – 92.03 €</span>
+                                <span class="pt-row__range-bgn">130 – 180 лв.</span>
+                            </span>
+                        </div>
                     </div>
+                </div>
 
-                    <h4 style="font-size:22px;font-weight:700;margin-bottom:20px;" data-i18n="pricing.consult_why_title">Какво включва консултацията?</h4>
+                <!-- MICRONEEDLING -->
+                <div class="pt-panel" id="pt-mn">
+                    <div class="pt-panel__inner">
+                        <div class="pt-panel__label">
+                            <div class="pt-panel__label-icon"><i class="fas fa-syringe"></i></div>
+                            <span class="pt-panel__label-text" data-i18n="pricing.cat.microneedling">Микронидлинг</span>
+                        </div>
+                        <div class="pt-row">
+                            <span class="pt-row__name" data-i18n="pricing.svc.face">Лице</span>
+                            <span class="pt-row__price">
+                                <span class="pt-row__eur">100 €</span>
+                                <span class="pt-row__sep">/</span>
+                                <span class="pt-row__bgn">195 лв.</span>
+                            </span>
+                        </div>
+                        <div class="pt-row">
+                            <span class="pt-row__name" data-i18n="pricing.svc.face_neck">Лице + Шия</span>
+                            <span class="pt-row__price">
+                                <span class="pt-row__eur">130 €</span>
+                                <span class="pt-row__sep">/</span>
+                                <span class="pt-row__bgn">254 лв.</span>
+                            </span>
+                        </div>
+                        <div class="pt-row">
+                            <span class="pt-row__name" data-i18n="pricing.svc.scalp">Скалп</span>
+                            <span class="pt-row__price">
+                                <span class="pt-row__eur">55 €</span>
+                                <span class="pt-row__sep">/</span>
+                                <span class="pt-row__bgn">108 лв.</span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
 
-                    <ul style="list-style:none;padding:0;margin:0 0 36px;text-align:left;display:inline-block;">
-                        <li style="padding:8px 0;display:flex;align-items:center;gap:12px;">
-                            <span style="color:#9b59b6;font-size:18px;">✔</span>
-                            <span data-i18n="pricing.consult_f1">Оценка на кожата и индивидуалните ти нужди</span>
-                        </li>
-                        <li style="padding:8px 0;display:flex;align-items:center;gap:12px;">
-                            <span style="color:#9b59b6;font-size:18px;">✔</span>
-                            <span data-i18n="pricing.consult_f2">Персонализирана препоръка за процедура</span>
-                        </li>
-                        <li style="padding:8px 0;display:flex;align-items:center;gap:12px;">
-                            <span style="color:#9b59b6;font-size:18px;">✔</span>
-                            <span data-i18n="pricing.consult_f3">Точна и прозрачна цена без изненади</span>
-                        </li>
-                        <li style="padding:8px 0;display:flex;align-items:center;gap:12px;">
-                            <span style="color:#9b59b6;font-size:18px;">✔</span>
-                            <span data-i18n="pricing.consult_f4">Отговор на всички твои въпроси</span>
-                        </li>
-                    </ul>
+                <!-- PIERCING -->
+                <div class="pt-panel" id="pt-pi">
+                    <div class="pt-panel__inner">
+                        <div class="pt-panel__label">
+                            <div class="pt-panel__label-icon"><i class="fas fa-gem"></i></div>
+                            <span class="pt-panel__label-text" data-i18n="pricing.cat.piercing">Пробиване на уши</span>
+                        </div>
+                        <div class="pt-row">
+                            <span class="pt-row__name" data-i18n="pricing.svc.one_earring">Една обеца</span>
+                            <span class="pt-row__price">
+                                <span class="pt-row__eur">25.56 €</span>
+                                <span class="pt-row__sep">/</span>
+                                <span class="pt-row__bgn">50 лв.</span>
+                            </span>
+                        </div>
+                        <div class="pt-row">
+                            <span class="pt-row__name" data-i18n="pricing.svc.nose_ring">Обеца на носа</span>
+                            <span class="pt-row__price">
+                                <span class="pt-row__eur">51.13 €</span>
+                                <span class="pt-row__sep">/</span>
+                                <span class="pt-row__bgn">100 лв.</span>
+                            </span>
+                        </div>
+                        <div class="pt-row">
+                            <span class="pt-row__name" data-i18n="pricing.svc.cartilage">На хрущяла на ухото</span>
+                            <span class="pt-row__price">
+                                <span class="pt-row__eur">51.13 €</span>
+                                <span class="pt-row__sep">/</span>
+                                <span class="pt-row__bgn">100 лв.</span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
 
-                    <a href="appointment.html" class="mediox-btn" style="display:inline-flex;">
-                        <span data-i18n="pricing.book_consult">Запази консултация</span>
+                <!-- PLASMA PEN -->
+                <div class="pt-panel" id="pt-pp">
+                    <div class="pt-panel__inner">
+                        <div class="pt-panel__label">
+                            <div class="pt-panel__label-icon"><i class="fas fa-bolt"></i></div>
+                            <span class="pt-panel__label-text" data-i18n="pricing.cat.plasma">Плазма пен</span>
+                        </div>
+                        <div class="pt-row">
+                            <span class="pt-row__name" data-i18n="pricing.svc.upper_eyelids">Горни клепачи</span>
+                            <span class="pt-row__price">
+                                <span class="pt-row__eur">200 €</span>
+                                <span class="pt-row__sep">/</span>
+                                <span class="pt-row__bgn">391 лв.</span>
+                            </span>
+                        </div>
+                        <div class="pt-row">
+                            <span class="pt-row__name" data-i18n="pricing.svc.lower_eyelids">Долни клепачи</span>
+                            <span class="pt-row__price">
+                                <span class="pt-row__eur">150 €</span>
+                                <span class="pt-row__sep">/</span>
+                                <span class="pt-row__bgn">293 лв.</span>
+                            </span>
+                        </div>
+                        <div class="pt-row">
+                            <span class="pt-row__name" data-i18n="pricing.svc.crows_feet">Пачи крак</span>
+                            <span class="pt-row__price">
+                                <span class="pt-row__eur">150 €</span>
+                                <span class="pt-row__sep">/</span>
+                                <span class="pt-row__bgn">293 лв.</span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CLEANING -->
+                <div class="pt-panel" id="pt-cl">
+                    <div class="pt-panel__inner">
+                        <div class="pt-panel__label">
+                            <div class="pt-panel__label-icon"><i class="fas fa-spa"></i></div>
+                            <span class="pt-panel__label-text" data-i18n="pricing.cat.cleaning">Почистване</span>
+                        </div>
+                        <div class="pt-row">
+                            <span class="pt-row__name" data-i18n="pricing.svc.hydra">Комбо Hydra</span>
+                            <span class="pt-row__price">
+                                <span class="pt-row__eur">51 €</span>
+                                <span class="pt-row__sep">/</span>
+                                <span class="pt-row__bgn">100 лв.</span>
+                            </span>
+                        </div>
+                        <div class="pt-row">
+                            <span class="pt-row__name" data-i18n="pricing.svc.bio_combo">Комбо Biorepeelcl3</span>
+                            <span class="pt-row__price">
+                                <span class="pt-row__eur">112 €</span>
+                                <span class="pt-row__sep">/</span>
+                                <span class="pt-row__bgn">220 лв.</span>
+                            </span>
+                        </div>
+                        <div class="pt-row">
+                            <span class="pt-row__name" data-i18n="pricing.svc.men_cleaning">Мъжко почистване</span>
+                            <span class="pt-row__price">
+                                <span class="pt-row__eur">38 €</span>
+                                <span class="pt-row__sep">/</span>
+                                <span class="pt-row__bgn">75 лв.</span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PEELING -->
+                <div class="pt-panel" id="pt-pe">
+                    <div class="pt-panel__inner">
+                        <div class="pt-panel__label">
+                            <div class="pt-panel__label-icon"><i class="fas fa-leaf"></i></div>
+                            <span class="pt-panel__label-text" data-i18n="pricing.cat.peeling">Пилинг</span>
+                        </div>
+                        <div class="pt-row">
+                            <span class="pt-row__name">Biorepeelcl3</span>
+                            <span class="pt-row__price">
+                                <span class="pt-row__eur">61 €</span>
+                                <span class="pt-row__sep">/</span>
+                                <span class="pt-row__bgn">120 лв.</span>
+                            </span>
+                        </div>
+                        <div class="pt-row">
+                            <span class="pt-row__name">3 × Biorepeelcl3</span>
+                            <span class="pt-row__price">
+                                <span class="pt-row__eur">153 €</span>
+                                <span class="pt-row__sep">/</span>
+                                <span class="pt-row__bgn">300 лв.</span>
+                            </span>
+                        </div>
+                        <div class="pt-row">
+                            <span class="pt-row__name">Skinderma Salycil</span>
+                            <span class="pt-row__price">
+                                <span class="pt-row__eur">51 €</span>
+                                <span class="pt-row__sep">/</span>
+                                <span class="pt-row__bgn">100 лв.</span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CTA -->
+                <div class="pt-cta">
+                    <a href="appointment.html" class="mediox-btn">
+                        <span data-i18n="pricing.book_consult">Запази час</span>
                         <span class="mediox-btn__icon"><i class="icon-up-right-arrow"></i></span>
                     </a>
                 </div>
+                <p class="pt-note" data-i18n="pricing.note">Цените са в евро и лева. За въпроси или индивидуална оферта се свържете с нас.</p>
 
-                <div style="margin-top:32px;text-align:center;opacity:.7;">
-                    <small>
-                        <span data-i18n="pricing.note">Консултацията може да се проведе на място или по съобщение — изберете каквото ви е удобно.</span>
-                    </small>
-                </div>
             </div>
+
+            <!-- Tab switching script -->
+            <script>
+                (function () {
+                    var tabs = document.querySelectorAll('.pt-tab');
+                    var panels = document.querySelectorAll('.pt-panel');
+                    tabs.forEach(function (tab) {
+                        tab.addEventListener('click', function () {
+                            tabs.forEach(function (t) { t.classList.remove('is-active'); t.setAttribute('aria-selected', 'false'); });
+                            panels.forEach(function (p) { p.classList.remove('is-active'); });
+                            tab.classList.add('is-active');
+                            tab.setAttribute('aria-selected', 'true');
+                            var panel = document.getElementById('pt-' + tab.dataset.panel);
+                            if (panel) panel.classList.add('is-active');
+                        });
+                    });
+                })();
+            </script>
         </section>
 
 
