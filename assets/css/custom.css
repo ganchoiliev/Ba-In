@@ -1,0 +1,651 @@
+/* ======================================================
+   CUSTOM OVERRIDES - Beauty Atelier IN
+   ====================================================== */
+
+/* ---- Blog card home3: fix uniform image height ---- */
+/* Make all blog carousel cards the same height regardless of source image aspect ratio */
+.blog-card-two--home3 .blog-card-two__image__item {
+  display: block;
+  height: 220px;
+  overflow: hidden;
+  position: relative;
+}
+
+.blog-card-two--home3 .blog-card-two__image__item img:last-child {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transform: none !important;
+  position: relative;
+}
+
+/* On hover restore the animation but keep it contained */
+.blog-card-two--home3:hover .blog-card-two__image__item img:last-child {
+  transform: scale(1.05) !important;
+  transition: transform 400ms ease;
+}
+
+/* Hide the floating small image thumbnail on hover (first img) */
+.blog-card-two--home3 .blog-card-two__image__item img:first-child {
+  display: none !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .blog-card-two--home3 .blog-card-two__image__item {
+    height: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .blog-card-two--home3 .blog-card-two__image__item {
+    height: 180px;
+  }
+}
+
+/* ---- Footer & Sidebar blog post images: standardize ---- */
+.footer-widget__posts__image img,
+.sidebar__posts__image img {
+  width: 70px !important;
+  height: 70px !important;
+  object-fit: cover !important;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
+/* ================================================================
+   MICRONEEDLING RESULTS GALLERY — Premium Design
+   ================================================================ */
+
+.mn-results-section {
+  margin-top: 50px;
+  margin-bottom: 10px;
+}
+
+/* --- Section Header --- */
+.mn-results-header {
+  text-align: center;
+  margin-bottom: 36px;
+}
+
+.mn-results-badge {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #b8923a;
+  background: linear-gradient(135deg, #fef7e6 0%, #fdecd0 100%);
+  border: 1px solid #e8c882;
+  border-radius: 50px;
+  padding: 6px 18px;
+  margin-bottom: 14px;
+}
+
+.mn-results-title {
+  font-size: 30px;
+  font-weight: 800;
+  line-height: 1.25;
+  color: #1a1a2e;
+  margin-bottom: 10px;
+  letter-spacing: -0.01em;
+}
+
+.mn-results-title span {
+  color: #b8923a;
+}
+
+.mn-results-subtitle {
+  font-size: 15px;
+  color: #6b7280;
+  max-width: 480px;
+  margin: 0 auto 20px;
+  line-height: 1.6;
+}
+
+.mn-results-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.mn-results-divider span {
+  display: block;
+  height: 1px;
+  width: 60px;
+  background: linear-gradient(90deg, transparent, #e8c882);
+}
+
+.mn-results-divider span:last-child {
+  background: linear-gradient(90deg, #e8c882, transparent);
+}
+
+.mn-results-divider i {
+  font-style: normal;
+  font-size: 12px;
+  color: #b8923a;
+}
+
+/* --- Featured Full-Width Result --- */
+.mn-result-featured {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  margin-bottom: 20px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+  cursor: zoom-in;
+}
+
+.mn-result-featured__img-wrap {
+  position: relative;
+  overflow: hidden;
+  max-height: 500px;
+}
+
+.mn-result-featured__img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+  display: block;
+  transition: transform 0.6s ease;
+}
+
+.mn-result-featured:hover .mn-result-featured__img-wrap img {
+  transform: scale(1.03);
+}
+
+.mn-result-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.72) 0%, rgba(0, 0, 0, 0) 100%);
+  padding: 30px 24px 20px;
+  display: flex;
+  align-items: flex-end;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.mn-result-featured:hover .mn-result-overlay {
+  opacity: 1;
+}
+
+.mn-result-overlay__inner {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.mn-result-num {
+  font-size: 38px;
+  font-weight: 900;
+  color: #e8c882;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+  opacity: 0.85;
+}
+
+.mn-result-label {
+  font-size: 14px;
+  color: #fff;
+  font-weight: 500;
+  line-height: 1.4;
+  opacity: 0.9;
+}
+
+.mn-result-featured__badge {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  align-items: flex-end;
+}
+
+/* --- Badge Pills --- */
+.mn-badge {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  padding: 4px 12px;
+  border-radius: 50px;
+  text-transform: uppercase;
+  white-space: nowrap;
+  backdrop-filter: blur(8px);
+}
+
+.mn-badge--skin {
+  background: rgba(184, 146, 58, 0.92);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.mn-badge--sessions {
+  background: rgba(255, 255, 255, 0.92);
+  color: #1a1a2e;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.mn-badge--zone {
+  background: rgba(26, 26, 46, 0.85);
+  color: #e8c882;
+  border: 1px solid rgba(232, 200, 130, 0.3);
+}
+
+/* --- Results Grid (3 or 2 col) --- */
+.mn-results-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-bottom: 28px;
+}
+
+/* --- Result Card --- */
+.mn-result-card {
+  background: #fff;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.mn-result-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.14);
+}
+
+.mn-result-card__img-wrap {
+  position: relative;
+  overflow: hidden;
+  height: 240px;
+}
+
+.mn-result-card__img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.mn-result-card:hover .mn-result-card__img-wrap img {
+  transform: scale(1.07);
+}
+
+.mn-result-card__overlay {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+}
+
+.mn-card-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: rgba(184, 146, 58, 0.9);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 800;
+  border-radius: 50%;
+  backdrop-filter: blur(4px);
+  border: 2px solid rgba(255, 255, 255, 0.4);
+}
+
+.mn-result-card__body {
+  padding: 14px 16px 16px;
+}
+
+.mn-card-badges {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-bottom: 8px;
+}
+
+.mn-card-desc {
+  font-size: 13px;
+  color: #555;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* --- Trust Strip --- */
+.mn-trust-strip {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  padding: 18px 24px;
+  background: linear-gradient(135deg, #fef7e6 0%, #fdf3da 100%);
+  border-radius: 12px;
+  border: 1px solid #f0dfa0;
+  flex-wrap: wrap;
+}
+
+.mn-trust-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #4a3c1a;
+}
+
+.mn-trust-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  background: #b8923a;
+  color: #fff;
+  border-radius: 50%;
+  font-size: 11px;
+  flex-shrink: 0;
+}
+
+/* ===================== RESPONSIVE ===================== */
+@media (max-width: 900px) {
+  .mn-results-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .mn-results-title {
+    font-size: 24px;
+  }
+
+  .mn-result-featured__img-wrap {
+    max-height: 320px;
+  }
+
+  .mn-results-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .mn-result-card__img-wrap {
+    height: 200px;
+  }
+
+  .mn-trust-strip {
+    gap: 16px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 400px) {
+  .mn-result-featured__img-wrap {
+    max-height: 260px;
+  }
+}
+
+/* ================================================================
+   "MORE CLIENTS" COMPACT MOSAIC STRIP
+   ================================================================ */
+
+.mn-more-clients {
+  margin-top: 28px;
+}
+
+/* Decorative header row */
+.mn-more-clients__header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 16px;
+}
+
+.mn-more-divider {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #e0c97a, transparent);
+}
+
+.mn-more-label {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #9a7b30;
+  white-space: nowrap;
+}
+
+/* 5-column mosaic grid */
+.mn-mosaic {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+}
+
+/* Each tile */
+.mn-mosaic__item {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  aspect-ratio: 3 / 4;
+  background: #f3f3f3;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.10);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.mn-mosaic__item:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.16);
+}
+
+.mn-mosaic__item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 20%;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.mn-mosaic__item:hover img {
+  transform: scale(1.06);
+}
+
+/* Small zone badge */
+.mn-mosaic__badge {
+  position: absolute;
+  bottom: 8px;
+  left: 8px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #fff;
+  background: rgba(184, 146, 58, 0.88);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 50px;
+  padding: 3px 9px;
+  white-space: nowrap;
+  line-height: 1.5;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .mn-mosaic {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 500px) {
+  .mn-mosaic {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+
+  .mn-more-label {
+    font-size: 11px;
+    letter-spacing: 0.1em;
+  }
+}
+
+/* ================================================================
+   MEET YOUR SPECIALIST CARD
+   ================================================================ */
+
+.mn-specialist-card {
+  display: flex;
+  align-items: stretch;
+  border-radius: 18px;
+  overflow: hidden;
+  background: #1a1a2e;
+  box-shadow: 0 16px 50px rgba(0, 0, 0, 0.18);
+  margin: 40px 0 44px;
+}
+
+/* Left: photo */
+.mn-specialist-card__img {
+  flex: 0 0 42%;
+  max-width: 42%;
+  position: relative;
+  overflow: hidden;
+}
+
+.mn-specialist-card__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  transition: transform 0.6s ease;
+}
+
+.mn-specialist-card:hover .mn-specialist-card__img img {
+  transform: scale(1.03);
+}
+
+/* Right: content */
+.mn-specialist-card__body {
+  flex: 1;
+  padding: 36px 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 14px;
+}
+
+.mn-specialist-card__badge {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #e8c882;
+  margin-bottom: 2px;
+}
+
+.mn-specialist-card__name {
+  font-size: 28px;
+  font-weight: 800;
+  color: #fff;
+  line-height: 1.15;
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+.mn-specialist-card__title {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.65);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Certification badges */
+.mn-specialist-card__certs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 4px 0;
+}
+
+.mn-cert-badge {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 5px 14px;
+  border-radius: 50px;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.mn-cert-badge--green {
+  background: rgba(40, 140, 60, 0.25);
+  border-color: rgba(80, 180, 80, 0.4);
+  color: #7fe49c;
+}
+
+.mn-cert-badge--gold {
+  background: rgba(184, 146, 58, 0.25);
+  border-color: rgba(232, 200, 130, 0.4);
+  color: #e8c882;
+}
+
+/* Quote */
+.mn-specialist-card__quote {
+  font-size: 14px;
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.75);
+  line-height: 1.7;
+  margin: 4px 0 0;
+  padding-left: 14px;
+  border-left: 3px solid #e8c882;
+}
+
+/* ===================== RESPONSIVE ===================== */
+@media (max-width: 768px) {
+  .mn-specialist-card {
+    flex-direction: column;
+  }
+
+  .mn-specialist-card__img {
+    flex: none;
+    max-width: 100%;
+    height: 280px;
+  }
+
+  .mn-specialist-card__body {
+    padding: 24px 20px;
+    gap: 12px;
+  }
+
+  .mn-specialist-card__name {
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 480px) {
+  .mn-specialist-card__img {
+    height: 220px;
+  }
+
+  .mn-specialist-card__body {
+    padding: 20px 16px;
+  }
+
+  .mn-specialist-card__name {
+    font-size: 20px;
+  }
+
+  .mn-specialist-card__quote {
+    font-size: 13px;
+  }
+}

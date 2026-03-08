@@ -69,7 +69,7 @@ const TRANSLATIONS = {
       'shared.footer.designed_by': 'Дизайн и разработка от',
       'shared.footer.by_author': 'от И. Николаева',
       'shared.footer.blog1_title': 'Правилна процедура',
-      'shared.footer.blog2_title': 'Красотата & Вдъхновението',
+      'shared.footer.blog2_title': 'Микронидлинг',
 
       /* Footer procedure links */
       'shared.footer.proc.microblading': 'Микроблейдинг',
@@ -661,7 +661,7 @@ const TRANSLATIONS = {
       'shared.footer.designed_by': 'Designed & developed by',
       'shared.footer.by_author': 'by I. Nikolaeva',
       'shared.footer.blog1_title': 'The Right Procedure',
-      'shared.footer.blog2_title': 'Beauty & Inspiration',
+      'shared.footer.blog2_title': 'Microneedling',
 
       /* Footer procedure links */
       'shared.footer.proc.microblading': 'Microblading',
