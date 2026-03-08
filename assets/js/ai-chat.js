@@ -143,8 +143,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // 5. URLs → clickable links (handled both 'https://ba-in.com' and bare 'ba-in.com')
         safe = safe.replace(
-            /(?:https?:\/\/)?(?:www\.)?ba-in\.com[^\s<"]*[^\s<".,!?;\-']|https?:\/\/[^\s<"]*[^\s<".,!?;\-']/gi,
+            /(?:https?:\/\/)?(?:www\.)?ba-in\.com[^\s<"]*[^\s<".,!?;\-')\]]|https?:\/\/[^\s<"]*[^\s<".,!?;\-')\]]/gi,
             (url) => {
+                // Strip any remaining trailing punctuation the regex may have allowed through
+                url = url.replace(/[.,!?;)\]]+$/, '');
                 const href = url.startsWith('http') ? url : `https://${url}`;
                 const label = url.replace(/^https?:\/\//i, '');
                 return `<a href="${href}" target="_blank" rel="noopener" style="color:var(--chat-primary);text-decoration:underline;">${label}</a>`;
