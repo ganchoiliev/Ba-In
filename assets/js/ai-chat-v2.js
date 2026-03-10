@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         ${iconBot}
                     </div>
                     <div class="ai-chat-title">
-                        <h3>Beauty Atelier Асистент</h3>
+                        <h3>AI Assistant</h3>
                         <p><span class="ai-chat-status-dot"></span> На линия</p>
                     </div>
                 </div>
