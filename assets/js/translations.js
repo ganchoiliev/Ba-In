@@ -49,9 +49,10 @@ const TRANSLATIONS = {
 
       /* ---- Shared: Header call / CTA ---- */
       'shared.header.call_label': 'Звънни ни',
-      'shared.header.book_btn': 'Запази час',
+      'shared.header.book_btn': 'Безплатна Консултация',
 
       /* ---- Shared: Sidebar ---- */
+      'shared.sidebar.contact_title': 'Контакти',
       'shared.sidebar.about_text': 'С внимание към всеки детайл и индивидуален подход към всеки клиент, ние създаваме не просто визия, а самочувствие. Довери се на сертифициран професионалист с опит!',
       'shared.sidebar.newsletter_label': 'новини и промоции',
 
@@ -94,14 +95,14 @@ const TRANSLATIONS = {
       'about.experience_text': 'Професионални <br> обучения <br> и сертификати',
       'about.who_we_are': 'Кои сме ние',
       'about.about_text': 'Предлагаме професионални естетични и козметични процедури, създадени да подчертаят естествената красота с прецизност, безопасност и внимание към детайла. Специалист с над 4 години опит в микроблейдинга и сертифициран Beauty Artist към PhiAcademy по техниките Bold Brows и PhiBrows, аз изграждам персонални решения за всеки клиент, според структурата на лицето, вида на кожата и индивидуалните особености.',
-      'about.funfact1': 'Повишена<br>увереност',
+      'about.funfact1': 'Google<br> рейтинг',
       'about.funfact2': 'Индивидуален <br> Подход',
       'about.skills_tagline': 'Защо клиентите ни избират',
       'about.skills_title': 'Водещи в Красотата<br> и Естетичните Процедури',
       'about.skills_text': 'Работим със сертифицирани техники, висококачествени материали и индивидуален подход за постигане на реалистични и устойчиви резултати.',
       'about.progress1': 'Клиенти се връщат за поддръжка',
       'about.progress2': 'Естествен резултат при всяка процедура',
-      'about.award_text': '2023 <br> Сертифициран <br> Артист',
+      'about.award_text': 'Сертифициран <br> PhiBrows <br> Артист',
       'about.faq_tagline': 'ЧЗВ',
       'about.faq_title': 'Често задавани <br>въпроси',
       'about.faq1_q': 'Какво отличава вашите процедури от останалите в Силистра?',
@@ -116,28 +117,42 @@ const TRANSLATIONS = {
 
       /* ---- Contact page ---- */
       'contact.tagline': 'Свържете се с Нас',
-      'contact.headline': 'Кажете <span>„Здравей!"</span>',
+      'contact.headline': 'Запазете Безплатна <span>Консултация</span>',
+      'contact.form_subtitle': 'Отговаряме в рамките на 2 часа. Без ангажимент.',
       'contact.call_now': 'Обадете се сега',
       'contact.email_label': 'Имейл',
       'contact.address_label': 'Адрес',
-      'contact.happy_clients': '1.1k Щастливи Клиенти',
+      'contact.happy_clients': 'Google оценка 5.0 ★ от 24+ отзива',
       'contact.msg_ph': 'Напишете съобщение...',
-      'contact.send_message': 'Изпрати съобщение',
+      'contact.send_message': 'Запази Консултация →',
+      'contact.microcopy': 'Безплатно • Без ангажимент • Отговор до 2 часа',
 
 
       /* ---- Pricing ---- */
+      'pricing.page_title': 'Прозрачни цени, премиум резултати',
+      'pricing.header_subtitle': 'Сертифициран специалист · Оригинални продукти · Без скрити такси',
       'pricing.section_title_html': 'Нашият <span>Ценоразпис</span>',
-      'pricing.intro_text': 'Актуални цени за всички процедури в Beauty Atelier IN. За въпроси или индивидуална оферта — свържете се с нас.',
+      'pricing.intro_text': 'Всяка процедура включва персонална консултация и проследяване. Работим само с оригинални PhiBrows и Biorepeel продукти — без компромиси с качеството.',
+      'pricing.meta_desc': 'Актуални цени за микроблейдинг, микронидлинг, плазма пен и още в Beauty Atelier IN, Силистра. Прозрачно ценообразуване, без скрити такси. Запазете безплатна консултация.',
+      'pricing.trust.cert': 'PhiBrows сертификация',
+      'pricing.trust.clients': '500+ доволни клиенти',
+      'pricing.trust.google': '5.0 Google рейтинг',
       'pricing.cat.microblading': 'Микроблейдинг',
       'pricing.cat.microneedling': 'Микронидлинг',
+      'pricing.cat.lashes': 'Мигли & Вежди',
       'pricing.cat.piercing': 'Пробиване',
       'pricing.cat.plasma': 'Плазма пен',
       'pricing.cat.cleaning': 'Почистване',
       'pricing.cat.peeling': 'Пилинг',
+      'pricing.svc.bold_brows': 'Bold Brows (перфектни вежди)',
+      'pricing.svc.phi_removal': 'Phi Removal (премахване)',
       'pricing.svc.tattoos': 'Татуировки',
       'pricing.svc.face': 'Лице',
       'pricing.svc.face_neck': 'Лице + Шия',
       'pricing.svc.scalp': 'Скалп',
+      'pricing.svc.lash_lift': 'Миглопластика (Lash Lift)',
+      'pricing.svc.brow_lamination': 'Ламиниране на вежди',
+      'pricing.svc.lash_brow_combo': 'Ламиниране мигли + вежди',
       'pricing.svc.one_earring': 'Една обеца',
       'pricing.svc.nose_ring': 'Обеца на носа',
       'pricing.svc.cartilage': 'На хрущяла на ухото',
@@ -147,8 +162,11 @@ const TRANSLATIONS = {
       'pricing.svc.hydra': 'Комбо Hydra',
       'pricing.svc.bio_combo': 'Комбо Biorepeelcl3',
       'pricing.svc.men_cleaning': 'Мъжко почистване',
+      'pricing.svc.bio_3x': '3 × Biorepeelcl3',
       'pricing.from_to': 'от – до',
-      'pricing.book_consult': 'Запази час',
+      'pricing.book_consult': 'Запази безплатна консултация',
+      'pricing.cta_lead': 'Не сте сигурни коя процедура е за вас?',
+      'pricing.cta_micro': 'Без ангажимент · Отговаряме до 24ч',
       'pricing.note': 'Цените са в евро и лева. За въпроси или индивидуална оферта се свържете с нас.',
       'faq.tagline': 'Отговори на вашите въпроси',
       'faq.q1': 'Болезнен ли е микроблейдингът?',
@@ -386,7 +404,7 @@ const TRANSLATIONS = {
       'shared.aria.lang_switch': 'Смени езика',
 
       /* ---- Shared: Form fields ---- */
-      'shared.form.name_ph': 'Име*',
+      'shared.form.name_ph': 'Вашето Име*',
       'shared.form.email_ph': 'Имейл*',
       'shared.form.phone_ph': 'Телефонен номер',
       'shared.form.date_ph': 'Изберете дата*',
@@ -513,28 +531,34 @@ const TRANSLATIONS = {
          ======================================================== */
       'about.title': 'За нас | Beauty Atelier IN – Сертифициран PhiBrows специалист в Силистра',
       'about.meta_desc': 'Beauty Atelier IN е сертифицирано студио в Силистра, предлагащо професионални естетични процедури с индивидуален подход и естествени резултати.',
-      'about.page_title': 'За Нас',
+      'about.page_title': 'Илияна Николаева — Сертифициран PhiBrows специалист в Силистра',
+      'about.cta_book': 'Запази безплатна консултация',
 
       /* ========================================================
          CONTACT.HTML
          ======================================================== */
       'contact.title': 'Контакти | Beauty Atelier IN – Свържете се с нас',
       'contact.meta_desc': 'Свържете се с Beauty Atelier IN Силистра. Адрес: ул. Отец Паисий 27. Телефон: 089 339 8390. Запазете час за микроблейдинг и естетични процедури.',
-      'contact.page_title': 'Контакти',
+      'contact.page_title': 'Свържете Се с Beauty Atelier IN — Силистра',
+      'contact.page_subtitle': 'Запазете Безплатна Консултация или Ни Посетете в Салона',
 
       /* ========================================================
          FAQ.HTML
          ======================================================== */
       'faq.title': 'Често Задавани Въпроси | Beauty Atelier IN - Силистра',
       'faq.meta_desc': 'Отговори на най-често задаваните въпроси за микроблейдинг, микронидлинг и естетични процедури.',
-      'faq.page_title': 'ЧЗВ',
+      'faq.page_title': 'Микроблейдинг и естетични процедури — Въпроси и отговори',
+      'faq.section_title': 'Полезно за Вашите <br> Процедури',
+      'faq.cta_title': 'Не намерихте отговор на въпроса си?',
+      'faq.cta_text': 'Запазете безплатна консултация и ще обсъдим индивидуално вашите нужди.',
+      'faq.cta_btn': 'Запази безплатна консултация',
 
       /* ========================================================
          PRICING.HTML
          ======================================================== */
-      'pricing.title': 'Цени на естетични процедури в Силистра | Beauty Atelier IN',
-      'pricing.meta_desc': 'Вижте нашите цени за микроблейдинг, микронидлинг, ламиниране и други процедури. Индивидуален подход и прозрачно ценообразуване.',
-      'pricing.page_title': 'Ценоразпис',
+      'pricing.title': '\u0426\u0435\u043d\u0438 \u043d\u0430 \u0435\u0441\u0442\u0435\u0442\u0438\u0447\u043d\u0438 \u043f\u0440\u043e\u0446\u0435\u0434\u0443\u0440\u0438 \u0432 \u0421\u0438\u043b\u0438\u0441\u0442\u0440\u0430 | Beauty Atelier IN',
+      'pricing.meta_desc': '\u0410\u043a\u0442\u0443\u0430\u043b\u043d\u0438 \u0446\u0435\u043d\u0438 \u0437\u0430 \u043c\u0438\u043a\u0440\u043e\u0431\u043b\u0435\u0439\u0434\u0438\u043d\u0433, \u043c\u0438\u043a\u0440\u043e\u043d\u0438\u0434\u043b\u0438\u043d\u0433, \u043f\u043b\u0430\u0437\u043c\u0430 \u043f\u0435\u043d \u0438 \u043e\u0449\u0435 \u0432 Beauty Atelier IN, \u0421\u0438\u043b\u0438\u0441\u0442\u0440\u0430. \u041f\u0440\u043e\u0437\u0440\u0430\u0447\u043d\u043e \u0446\u0435\u043d\u043e\u043e\u0431\u0440\u0430\u0437\u0443\u0432\u0430\u043d\u0435, \u0431\u0435\u0437 \u0441\u043a\u0440\u0438\u0442\u0438 \u0442\u0430\u043a\u0441\u0438. \u0417\u0430\u043f\u0430\u0437\u0435\u0442\u0435 \u0431\u0435\u0437\u043f\u043b\u0430\u0442\u043d\u0430 \u043a\u043e\u043d\u0441\u0443\u043b\u0442\u0430\u0446\u0438\u044f.',
+      'pricing.page_title': 'Прозрачни цени, премиум резултати',
 
       /* ========================================================
          PROCEDURES.HTML
@@ -547,6 +571,12 @@ const TRANSLATIONS = {
          ======================================================== */
       'appointment.title': 'Запази час | Beauty Atelier IN – Силистра',
       'appointment.meta_desc': 'Запазете час онлайн за микроблейдинг, микронидлинг и естетични процедури в Beauty Atelier IN – Силистра.',
+      'appointment.page_title': 'Запазете Час в Beauty Atelier IN — Силистра',
+      'appointment.page_subtitle': 'Микроблейдинг, Микронидлинг и Естетични Процедури • Безплатна Консултация',
+      'appointment.form_title': 'Запазете Безплатна Консултация',
+      'appointment.form_subtitle': 'Отговаряме в рамките на 2 часа. Без ангажимент.',
+      'appointment.form_submit': 'Запази Консултация →',
+      'appointment.form_microcopy': 'Безплатно • Без ангажимент • Отговор до 2 часа',
 
       /* ========================================================
          AFTERTREATMENT.HTML
@@ -599,6 +629,57 @@ const TRANSLATIONS = {
       'privacy.meta_desc': 'Политика за поверителност на Beauty Atelier IN. Научете как събираме, използваме и защитаваме вашите лични данни.',
       'terms.title': 'Общи условия | Beauty Atelier IN Силистра',
       'terms.meta_desc': 'Общи условия за ползване на услугите и уебсайта на Beauty Atelier IN - Силистра.',
+
+      /* ========================================================
+         PROCEDURES PAGE
+         ======================================================== */
+      'procedures.title': 'Процедури за красота | Beauty Atelier IN Силистра',
+      'procedures.meta_desc': 'Разгледайте нашите процедури — микроблейдинг, микронидлинг, плазма пен, ламиниране и други. Сертифициран специалист в Силистра.',
+      'procedures.page_title': 'Процедури за красота, съобразени с вас',
+      'procedures.page_subtitle': 'Естетични процедури в Силистра · Beauty Atelier IN',
+      'procedures.intro.trust_pill': '5.0 в Google · 24 отзива',
+      'procedures.intro.text': 'Всяка процедура е съобразена с вашите индивидуални нужди и извършена от сертифициран специалист в стерилна среда. Разгледайте нашите услуги и изберете подходящата за вас.',
+      'procedures.trust.certified': 'Сертифициран PhiBrows артист',
+      'procedures.trust.clients': '250+ доволни клиента',
+      'procedures.trust.sterile': '100% стерилна среда',
+      'procedures.badge.popular': 'Най-търсена',
+      'procedures.badge.rejuvenating': 'Подмладяваща',
+      'procedures.badge.volume': 'Обем & поглед',
+      'procedures.badge.painless': 'Без болка',
+      'procedures.badge.lifting': 'Лифтинг ефект',
+      'procedures.badge.new': 'Нова',
+      'procedures.badge.safe': 'Безопасна',
+      'procedures.card.microblading_desc': 'Естествени вежди, косъм по косъм с PhiBrows техника. Резултатът трае до 18 месеца.',
+      'procedures.card.microblading_price': 'от 400 лв',
+      'procedures.card.microneedling_desc': 'Стимулира колагена за сияйна, млада кожа. Видим резултат след 1 процедура.',
+      'procedures.card.microneedling_price': 'от 195 лв',
+      'procedures.card.lashes_desc': 'Обемни мигли за магнетичен поглед. Бързо, безболезнено и с натурален ефект.',
+      'procedures.card.piercing_desc': 'Безопасно пробиване със стерилна система Studex. Подходящо за деца и възрастни.',
+      'procedures.card.piercing_price': 'от 50 лв',
+      'procedures.card.plasma_desc': 'Нехирургичен лифтинг за по-стегната, гладка кожа. Без скалпел, без престой.',
+      'procedures.card.plasma_price': 'от 293 лв',
+      'procedures.card.lamination_desc': 'Трайно извиване и оформяне на мигли и вежди. Естествен, поддържан вид до 6 седмици.',
+      'procedures.card.removal_desc': 'Безопасно премахване с PhiRemoval технология. Ефективно и без белези.',
+      'procedures.card.removal_price': 'от 130 лв',
+      'procedures.card.see_pricing': 'Вижте ценоразпис',
+      'procedures.faq.title': 'Често задавани въпроси',
+      'procedures.faq.subtitle': 'Отговори на най-честите въпроси за нашите процедури',
+      'procedures.faq.q1': 'Колко струва микроблейдинг в Силистра?',
+      'procedures.faq.a1': 'Процедурата Bold Brows започва от 400 лв. Цената включва консултация, процедура и контролен преглед. За детайлен ценоразпис, посетете нашата страница с цени.',
+      'procedures.faq.q2': 'Болезнен ли е микронидлинг?',
+      'procedures.faq.a2': 'Преди процедурата нанасяме анестетичен крем, който минимизира дискомфорта. Повечето клиенти описват усещането като леко щипване. Процедурата е напълно поносима.',
+      'procedures.faq.q3': 'Колко дълго трае резултатът от микроблейдинг?',
+      'procedures.faq.a3': 'Резултатът от микроблейдинг трае между 12 и 18 месеца, в зависимост от типа кожа и грижата след процедурата. Препоръчваме освежаване веднъж годишно.',
+      'procedures.faq.q4': 'Безопасен ли е плазма пен?',
+      'procedures.faq.a4': 'Да, плазма пен е напълно безопасна нехирургична процедура. Работим в стерилна среда с професионално оборудване. Процедурата не изисква престой и възстановяването е бързо.',
+      'procedures.faq.q5': 'Нужна ли е консултация преди процедура?',
+      'procedures.faq.a5': 'Препоръчваме безплатна консултация преди всяка процедура, за да обсъдим вашите очаквания и да изберем най-подходящия подход. Консултацията е без ангажимент.',
+      'procedures.cta.title': 'Готови ли сте за промяна?',
+      'procedures.cta.text': 'Запазете безплатна консултация и ние ще ви помогнем да изберете най-подходящата процедура за вас.',
+      'procedures.cta.btn_book': 'Запази безплатна консултация',
+      'procedures.cta.btn_pricing': 'Вижте ценоразпис',
+      'procedures.cta.micro': 'Без ангажимент · Отговаряме до 1 час',
+      'procedures.sticky.btn': 'Запази безплатна консултация',
    },
 
    /* ===================== ENGLISH ===================== */
@@ -643,9 +724,10 @@ const TRANSLATIONS = {
 
       /* ---- Shared: Header call / CTA ---- */
       'shared.header.call_label': 'Call Us',
-      'shared.header.book_btn': 'Book Now',
+      'shared.header.book_btn': 'Free Consultation',
 
       /* ---- Shared: Sidebar ---- */
+      'shared.sidebar.contact_title': 'Contact',
       'shared.sidebar.about_text': 'With meticulous attention to detail and a personalised approach, we create more than just a look — we create confidence. Trust a certified professional with experience!',
       'shared.sidebar.newsletter_label': 'News & Promotions',
 
@@ -683,18 +765,30 @@ const TRANSLATIONS = {
       'shared.footer.link.contact': 'Contact',
 
       /* ---- Pricing ---- */
+      'pricing.page_title': 'Transparent prices, premium results',
+      'pricing.header_subtitle': 'Certified specialist · Original products · No hidden fees',
       'pricing.section_title_html': 'Our <span>Price List</span>',
-      'pricing.intro_text': 'Current prices for all treatments at Beauty Atelier IN. For questions or a personalised quote, get in touch.',
+      'pricing.intro_text': 'Every treatment includes a personal consultation and follow-up. We use only original PhiBrows and Biorepeel products — no compromises on quality.',
+      'pricing.meta_desc': 'Current prices for microblading, microneedling, plasma pen and more at Beauty Atelier IN, Silistra. Transparent pricing, no hidden fees. Book a free consultation.',
+      'pricing.trust.cert': 'PhiBrows certified',
+      'pricing.trust.clients': '500+ happy clients',
+      'pricing.trust.google': '5.0 Google rating',
       'pricing.cat.microblading': 'Microblading',
       'pricing.cat.microneedling': 'Microneedling',
+      'pricing.cat.lashes': 'Lashes & Brows',
       'pricing.cat.piercing': 'Piercing',
       'pricing.cat.plasma': 'Plasma Pen',
       'pricing.cat.cleaning': 'Facial Cleaning',
       'pricing.cat.peeling': 'Peeling',
+      'pricing.svc.bold_brows': 'Bold Brows (perfect brows)',
+      'pricing.svc.phi_removal': 'Phi Removal',
       'pricing.svc.tattoos': 'Tattoos',
       'pricing.svc.face': 'Face',
       'pricing.svc.face_neck': 'Face + Neck',
       'pricing.svc.scalp': 'Scalp',
+      'pricing.svc.lash_lift': 'Lash Lift',
+      'pricing.svc.brow_lamination': 'Brow Lamination',
+      'pricing.svc.lash_brow_combo': 'Lash + Brow Lamination',
       'pricing.svc.one_earring': 'One earring',
       'pricing.svc.nose_ring': 'Nose ring',
       'pricing.svc.cartilage': 'Ear cartilage',
@@ -704,8 +798,11 @@ const TRANSLATIONS = {
       'pricing.svc.hydra': 'Combo Hydra',
       'pricing.svc.bio_combo': 'Combo Biorepeelcl3',
       'pricing.svc.men_cleaning': "Men's cleaning",
+      'pricing.svc.bio_3x': '3 × Biorepeelcl3',
       'pricing.from_to': 'from – to',
-      'pricing.book_consult': 'Book Now',
+      'pricing.book_consult': 'Book free consultation',
+      'pricing.cta_lead': 'Not sure which treatment is right for you?',
+      'pricing.cta_micro': 'No commitment · We respond within 24h',
       'pricing.note': 'Prices are shown in euros and Bulgarian lev. For questions or a personalised quote, contact us.',
       'faq.tagline': 'Answers to Your Questions',
       'faq.q1': 'Is microblading painful?',
@@ -752,26 +849,28 @@ const TRANSLATIONS = {
 
       /* ---- Contact page ---- */
       'contact.tagline': 'Get in Touch',
-      'contact.headline': 'Say <span>"Hello!"</span>',
+      'contact.headline': 'Book a Free <span>Consultation</span>',
+      'contact.form_subtitle': 'We respond within 2 hours. No commitment.',
       'contact.call_now': 'Call Us Now',
       'contact.email_label': 'Email',
       'contact.address_label': 'Address',
-      'contact.happy_clients': '1.1k Happy Clients',
+      'contact.happy_clients': 'Google rating 5.0 ★ from 24+ reviews',
       'contact.msg_ph': 'Write a message...',
-      'contact.send_message': 'Send Message',
+      'contact.send_message': 'Book Consultation →',
+      'contact.microcopy': 'Free • No commitment • Response within 2 hours',
 
       /* ---- About page ---- */
       'about.experience_text': 'Professional <br> Training <br> &amp; Certificates',
       'about.who_we_are': 'Who We Are',
       'about.about_text': 'We offer professional aesthetic and cosmetic treatments designed to enhance natural beauty with precision, safety and attention to detail. A specialist with over 4 years of experience in microblading and a certified Beauty Artist with PhiAcademy in Bold Brows and PhiBrows techniques, I build personalised solutions for each client based on facial structure, skin type and individual characteristics.',
-      'about.funfact1': 'Boosted<br>Confidence',
+      'about.funfact1': 'Google<br>Rating',
       'about.funfact2': 'Individual <br> Approach',
       'about.skills_tagline': 'Why Clients Choose Us',
       'about.skills_title': 'Leading in Beauty<br> and Aesthetic Treatments',
       'about.skills_text': 'We work with certified techniques, high-quality materials and a personalised approach to achieve realistic and lasting results.',
       'about.progress1': 'Clients return for maintenance',
       'about.progress2': 'Natural results with every treatment',
-      'about.award_text': '2023 <br> Certified <br> Artist',
+      'about.award_text': 'Certified <br> PhiBrows <br> Artist',
       'about.faq_tagline': 'FAQ',
       'about.faq_title': 'Frequently Asked <br>Questions',
       'about.faq1_q': 'What sets your treatments apart from others in Silistra?',
@@ -785,7 +884,12 @@ const TRANSLATIONS = {
 
       /* ---- Breadcrumb page titles ---- */
       'aftertreatment.page_title': 'Post-Treatment Care',
-      'appointment.page_title': 'Book an Appointment',
+      'appointment.page_title': 'Book an Appointment at Beauty Atelier IN — Silistra',
+      'appointment.page_subtitle': 'Microblading, Microneedling & Aesthetic Procedures • Free Consultation',
+      'appointment.form_title': 'Book a Free Consultation',
+      'appointment.form_subtitle': 'We respond within 2 hours. No commitment.',
+      'appointment.form_submit': 'Book Consultation →',
+      'appointment.form_microcopy': 'Free • No commitment • Response within 2 hours',
       'blog_inspiring.page_title': 'Beauty & Inspiration',
       'blog_secrets.page_title': 'The Secrets of Beauty',
       'blog.page_title': 'Blog',
@@ -1102,27 +1206,33 @@ const TRANSLATIONS = {
          ======================================================== */
       'about.title': 'About Us | Beauty Atelier IN – Certified PhiBrows Specialist in Silistra',
       'about.meta_desc': 'Beauty Atelier IN is a certified studio in Silistra offering professional aesthetic treatments with a personalised approach and natural results.',
-      'about.page_title': 'About Us',
+      'about.page_title': 'Iliyana Nikolaeva — Certified PhiBrows Specialist in Silistra',
+      'about.cta_book': 'Book free consultation',
 
       /* ========================================================
          CONTACT.HTML
          ======================================================== */
       'contact.title': 'Contact | Beauty Atelier IN – Get in Touch',
       'contact.meta_desc': 'Contact Beauty Atelier IN in Silistra. Address: 27 Otets Paisiy St. Phone: +359 89 339 8390. Book your microblading or aesthetic treatment.',
-      'contact.page_title': 'Contact',
+      'contact.page_title': 'Contact Beauty Atelier IN — Silistra',
+      'contact.page_subtitle': 'Book a Free Consultation or Visit Our Salon',
 
       /* ========================================================
          FAQ.HTML
          ======================================================== */
       'faq.title': 'Frequently Asked Questions | Beauty Atelier IN – Silistra',
       'faq.meta_desc': 'Answers to the most frequently asked questions about microblading, microneedling and aesthetic treatments.',
-      'faq.page_title': 'FAQ',
+      'faq.page_title': 'Microblading & Aesthetic Treatments — Questions & Answers',
+      'faq.section_title': 'Useful for Your <br> Treatments',
+      'faq.cta_title': 'Didn\'t find your answer?',
+      'faq.cta_text': 'Book a free consultation and we\'ll discuss your needs individually.',
+      'faq.cta_btn': 'Book free consultation',
 
       /* ========================================================
          PRICING.HTML
          ======================================================== */
       'pricing.title': 'Treatment Prices in Silistra | Beauty Atelier IN',
-      'pricing.meta_desc': 'View our prices for microblading, microneedling, lamination and other treatments. Personalised approach and transparent pricing.',
+      'pricing.meta_desc': 'Current prices for microblading, microneedling, plasma pen and more at Beauty Atelier IN, Silistra. Transparent pricing, no hidden fees. Book a free consultation.',
 
       /* ========================================================
          PROCEDURES.HTML
@@ -1187,5 +1297,56 @@ const TRANSLATIONS = {
       'privacy.meta_desc': 'Privacy Policy of Beauty Atelier IN. Learn how we collect, use and protect your personal data.',
       'terms.title': 'Terms & Conditions | Beauty Atelier IN Silistra',
       'terms.meta_desc': 'Terms and conditions for using the services and website of Beauty Atelier IN – Silistra.',
+
+      /* ========================================================
+         PROCEDURES PAGE
+         ======================================================== */
+      'procedures.title': 'Beauty Procedures | Beauty Atelier IN Silistra',
+      'procedures.meta_desc': 'Explore our procedures — microblading, microneedling, plasma pen, lamination and more. Certified specialist in Silistra.',
+      'procedures.page_title': 'Beauty procedures tailored to you',
+      'procedures.page_subtitle': 'Aesthetic treatments in Silistra · Beauty Atelier IN',
+      'procedures.intro.trust_pill': '5.0 on Google · 24 reviews',
+      'procedures.intro.text': 'Every procedure is tailored to your individual needs, performed by a certified specialist in a sterile environment. Browse our services and find the right one for you.',
+      'procedures.trust.certified': 'Certified PhiBrows artist',
+      'procedures.trust.clients': '250+ happy clients',
+      'procedures.trust.sterile': '100% sterile environment',
+      'procedures.badge.popular': 'Most popular',
+      'procedures.badge.rejuvenating': 'Rejuvenating',
+      'procedures.badge.volume': 'Volume & look',
+      'procedures.badge.painless': 'Painless',
+      'procedures.badge.lifting': 'Lifting effect',
+      'procedures.badge.new': 'New',
+      'procedures.badge.safe': 'Safe',
+      'procedures.card.microblading_desc': 'Natural brows, hair by hair with PhiBrows technique. Results last up to 18 months.',
+      'procedures.card.microblading_price': 'from 400 BGN',
+      'procedures.card.microneedling_desc': 'Stimulates collagen for radiant, youthful skin. Visible results after 1 session.',
+      'procedures.card.microneedling_price': 'from 195 BGN',
+      'procedures.card.lashes_desc': 'Voluminous lashes for a magnetic look. Quick, painless and natural effect.',
+      'procedures.card.piercing_desc': 'Safe piercing with sterile Studex system. Suitable for children and adults.',
+      'procedures.card.piercing_price': 'from 50 BGN',
+      'procedures.card.plasma_desc': 'Non-surgical lifting for tighter, smoother skin. No scalpel, no downtime.',
+      'procedures.card.plasma_price': 'from 293 BGN',
+      'procedures.card.lamination_desc': 'Long-lasting curling and shaping of lashes and brows. Natural, maintained look for up to 6 weeks.',
+      'procedures.card.removal_desc': 'Safe removal with PhiRemoval technology. Effective and scar-free.',
+      'procedures.card.removal_price': 'from 130 BGN',
+      'procedures.card.see_pricing': 'View pricing',
+      'procedures.faq.title': 'Frequently asked questions',
+      'procedures.faq.subtitle': 'Answers to the most common questions about our procedures',
+      'procedures.faq.q1': 'How much does microblading cost in Silistra?',
+      'procedures.faq.a1': 'The Bold Brows procedure starts from 400 BGN. The price includes consultation, procedure and follow-up appointment. For a detailed price list, visit our pricing page.',
+      'procedures.faq.q2': 'Is microneedling painful?',
+      'procedures.faq.a2': 'Before the procedure, we apply an anesthetic cream that minimizes discomfort. Most clients describe the sensation as a slight pinch. The procedure is completely tolerable.',
+      'procedures.faq.q3': 'How long do microblading results last?',
+      'procedures.faq.a3': 'Microblading results last between 12 and 18 months, depending on skin type and aftercare. We recommend a touch-up once a year.',
+      'procedures.faq.q4': 'Is plasma pen safe?',
+      'procedures.faq.a4': 'Yes, plasma pen is a completely safe non-surgical procedure. We work in a sterile environment with professional equipment. The procedure requires no downtime and recovery is fast.',
+      'procedures.faq.q5': 'Is a consultation needed before a procedure?',
+      'procedures.faq.a5': 'We recommend a free consultation before every procedure to discuss your expectations and choose the most suitable approach. The consultation is non-binding.',
+      'procedures.cta.title': 'Ready for a change?',
+      'procedures.cta.text': 'Book a free consultation and we will help you choose the most suitable procedure for you.',
+      'procedures.cta.btn_book': 'Book free consultation',
+      'procedures.cta.btn_pricing': 'View pricing',
+      'procedures.cta.micro': 'No commitment · We respond within 1 hour',
+      'procedures.sticky.btn': 'Book free consultation',
    }
 };

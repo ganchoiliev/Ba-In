@@ -16,6 +16,9 @@ RewriteEngine On
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^(.*)/$ /$1 [L,R=301]
 
+# Blog page rename redirect
+RewriteRule ^blog-carousel-2\.html$ /blog.html [L,R=301]
+
 # Security headers
 <IfModule mod_headers.c>
     Header always set X-Content-Type-Options "nosniff"

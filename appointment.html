@@ -3,7 +3,7 @@
 
 <head>
     <script type="application/ld+json">
-                {
+        {
             "@context": "https://schema.org",
             "@type": "BeautySalon",
             "name": "Beauty Atelier IN",
@@ -22,10 +22,94 @@
             "openingHours": "Mo-Fr 10:00-18:00",
             "sameAs": [
                 "https://www.facebook.com/IliyanaPhiAcademy/",
-                "https://www.instagram.com/Iliyanailieva.phiacademy/"                                                                   
-            ]
+                "https://www.instagram.com/Iliyanailieva.phiacademy/"
+            ],
+            "contactPoint": {
+                "@type": "ContactPoint",
+                "telephone": "+359893398390",
+                "email": "info@ba-in.com",
+                "contactType": "reservations",
+                "availableLanguage": ["Bulgarian", "English"]
+            },
+            "hasOfferCatalog": {
+                "@type": "OfferCatalog",
+                "name": "Естетични процедури",
+                "itemListElement": [
+                    {
+                        "@type": "Offer",
+                        "itemOffered": {
+                            "@type": "Service",
+                            "name": "Микроблейдинг",
+                            "description": "PhiBrows микроблейдинг за естествени, красиви вежди"
+                        }
+                    },
+                    {
+                        "@type": "Offer",
+                        "itemOffered": {
+                            "@type": "Service",
+                            "name": "Микронидлинг",
+                            "description": "Подмладяване и регенерация на кожата чрез микронидлинг"
+                        }
+                    },
+                    {
+                        "@type": "Offer",
+                        "itemOffered": {
+                            "@type": "Service",
+                            "name": "Миглопластика",
+                            "description": "Професионална миглопластика за обемен и естествен поглед"
+                        }
+                    },
+                    {
+                        "@type": "Offer",
+                        "itemOffered": {
+                            "@type": "Service",
+                            "name": "Плазма пен",
+                            "description": "Неинвазивно стягане и подмладяване на кожата"
+                        }
+                    },
+                    {
+                        "@type": "Offer",
+                        "itemOffered": {
+                            "@type": "Service",
+                            "name": "Ламиниране",
+                            "description": "Ламиниране на вежди и мигли за естествен обем"
+                        }
+                    },
+                    {
+                        "@type": "Offer",
+                        "itemOffered": {
+                            "@type": "Service",
+                            "name": "Пробиване на уши",
+                            "description": "Безопасно пробиване на уши за деца и възрастни"
+                        }
+                    },
+                    {
+                        "@type": "Offer",
+                        "itemOffered": {
+                            "@type": "Service",
+                            "name": "Премахване на перманентен грим",
+                            "description": "Безопасно премахване на стар или нежелан перманентен грим"
+                        }
+                    }
+                ]
+            },
+            "potentialAction": {
+                "@type": "ReserveAction",
+                "target": {
+                    "@type": "EntryPoint",
+                    "urlTemplate": "https://ba-in.com/appointment.html",
+                    "actionPlatform": [
+                        "http://schema.org/DesktopWebPlatform",
+                        "http://schema.org/MobileWebPlatform"
+                    ]
+                },
+                "result": {
+                    "@type": "Reservation",
+                    "name": "Запазване на час за процедура"
+                }
             }
-        </script>
+        }
+    </script>
 
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-4DSP9HGYMB"></script>
     <script>
@@ -42,6 +126,7 @@
         <link rel="alternate" hreflang="bg" href="https://ba-in.com/appointment.html" />
     <link rel="alternate" hreflang="en" href="https://ba-in.com/appointment.html" />
     <link rel="alternate" hreflang="x-default" href="https://ba-in.com/appointment.html" />
+    <link rel="canonical" href="https://ba-in.com/appointment.html" />
     <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicons/apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicons/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicons/favicon-16x16.png" />
@@ -54,13 +139,13 @@
     <meta property="og:url" content="https://ba-in.com/appointment.html" />
     <meta property="og:title" content="Запази час | Beauty Atelier IN – Силистра" />
     <meta property="og:description" content="Запазете час онлайн за микроблейдинг, микронидлинг и естетични процедури в Beauty Atelier IN – Силистра. Бързо и лесно записване." />
-    <meta property="og:image" content="https://ba-in.com/assets/images/resources/about-1-1.jpg" />
+    <meta property="og:image" content="https://ba-in.com/assets/images/backgrounds/appointment-og.png" />
     <meta property="og:locale" content="bg_BG" />
     <meta property="og:locale:alternate" content="en_US" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Запази час | Beauty Atelier IN – Силистра" />
     <meta name="twitter:description" content="Запазете час онлайн за микроблейдинг, микронидлинг и естетични процедури в Beauty Atelier IN – Силистра. Бързо и лесно записване." />
-    <meta name="twitter:image" content="https://ba-in.com/assets/images/resources/about-1-1.jpg" />
+    <meta name="twitter:image" content="https://ba-in.com/assets/images/backgrounds/appointment-og.png" />
     <meta name="keywords"
         content="запази час силистра, микроблейдинг час, онлайн резервация салон, beauty atelier in контакти, козметик силистра" />
 
@@ -165,7 +250,7 @@
                             <span class="topbar-one__info__icon">
                                 <i class="icon-telephone"></i>
                             </span>
-                            <a href="tel:+359 89 339 8390">+359 89 339 8390</a>
+                            <a href="tel:+359893398390">+359 89 339 8390</a>
                         </li>
                     </ul>
                     <div class="topbar-one__right">
@@ -175,7 +260,7 @@
                     <span class="lang-toggle__option" data-lang="en">EN</span>
                 </button>
                 <div class="social-links">
-                            <a href="https://facebook.com">
+                            <a href="https://www.facebook.com/IliyanaPhiAcademy/">
                                 <i class="fab fa-facebook-f" aria-hidden="true"></i>
                                 <span class="sr-only">Facebook</span>
                             </a>
@@ -201,7 +286,7 @@
                 <div class="main-header__inner">
                     <div class="main-header__logo logo-retina">
                         <a href="index.html">
-                            <img src="assets/images/logo-dark.png" alt="Mediox HTML" width="164">
+                            <img src="assets/images/logo-dark.png" alt="Beauty Atelier IN — Силистра" width="164">
                         </a>
                     </div>
                     <div class="main-header__right">
@@ -221,7 +306,7 @@
 
 
                                 <li>
-                                    <a href="Procedures.html" data-i18n="shared.nav.procedures">Процедури</a>
+                                    <a href="procedures.html" data-i18n="shared.nav.procedures">Процедури</a>
                                 </li>
 
                                 <li>
@@ -237,7 +322,7 @@
                                 </li>
 
                                 <li>
-                                    <a href="blog-carousel-2.html" data-i18n="shared.nav.blog">Блог</a>
+                                    <a href="blog.html" data-i18n="shared.nav.blog">Блог</a>
                                 </li>
 
 
@@ -258,11 +343,11 @@
                             <div class="main-header__call__content">
                                 <p class="main-header__call__title" data-i18n="shared.header.call_label">Звънни ни</p>
                                 <h4 class="main-header__call__number">
-                                    <a href="tel:+359 89 339 8390">+359 89 339 8390</a>
+                                    <a href="tel:+359893398390">+359 89 339 8390</a>
                                 </h4>
                             </div>
-                        </div><a href="appointment.html" class="mediox-btn main-header__btn">
-                            <span data-i18n="shared.header.book_btn">Запази час</span>
+                        </div><a href="#appointment-form" class="mediox-btn main-header__btn">
+                            <span data-i18n="shared.header.book_btn">Безплатна Консултация</span>
                             <span class="mediox-btn__icon"><i class="icon-up-right-arrow"></i></span>
                         </a>
                     </div>
@@ -273,10 +358,11 @@
             <div class="container-fluid">
                 <div class="page-header__inner">
                     <div class="page-header__bg"
-                        style="background-image: url(assets/images/backgrounds/page-header-bg.jpg);"></div>
+                        style="background-image: url(assets/images/backgrounds/appointment-header-bg.png);"></div>
                     <div class="container">
                         <div class="page-header__content">
-                            <h1 class="page-header__title" data-i18n="appointment.page_title">Запази час</h1>
+                            <h1 class="page-header__title" data-i18n="appointment.page_title">Запазете Час в Beauty Atelier IN — Силистра</h1>
+                            <h2 class="page-header__subtitle" data-i18n="appointment.page_subtitle" style="font-size: 1.15rem; font-weight: 400; color: rgba(255,255,255,0.85); margin-top: 0.5rem;">Микроблейдинг, Микронидлинг и Естетични Процедури • Безплатна Консултация</h2>
                             <ul class="mediox-breadcrumb list-unstyled">
                                 <li>
                                     <span class="mediox-breadcrumb__icon"><i class="icon-home"></i></span>
@@ -304,8 +390,9 @@
             <div class="container">
                 <div class="row">
                     <div class="col-xl-12">
-                        <div class="appointment-one__content">
-                            <h3 class="appointment-one__title" data-i18n="appointment.page_title">Запази час</h3>
+                        <div class="appointment-one__content" id="appointment-form">
+                            <h2 class="appointment-one__title" data-i18n="appointment.form_title">Запазете Безплатна Консултация</h2>
+                            <p class="appointment-one__subtitle" data-i18n="appointment.form_subtitle" style="color: rgba(255,255,255,0.8); font-size: 1rem; margin-bottom: 1.5rem;">Отговаряме в рамките на 2 часа. Без ангажимент.</p>
 
                             <form action="assets/inc/sendemail.php" method="post"
                                 class="appointment-one__form contact-form-validated form-one wow fadeInUp"
@@ -319,7 +406,7 @@
                                 <div class="form-one__group">
 
                                     <div class="form-one__control">
-                                        <input type="text" name="name" placeholder="Ime*" data-i18n-ph="shared.form.name_ph">
+                                        <input type="text" name="name" placeholder="Вашето Име*" data-i18n-ph="shared.form.name_ph">
                                     </div>
 
                                     <div class="form-one__control">
@@ -347,8 +434,7 @@
                                             <option value="Плазма пен" data-i18n="shared.form.plasma">Плазма пен</option>
                                             <option value="Ламиниране" data-i18n="shared.form.lamination">Ламиниране</option>
                                             <option value="Пробиване на уши" data-i18n="shared.form.piercing">Пробиване на уши</option>
-                                            <option value="Премахване на пермаментен грим">Премахване на пермаментен
-                                                грим</option>
+                                            <option value="Премахване на перманентен грим" data-i18n="shared.form.perm_removal">Премахване на перманентен грим</option>
                                         </select>
                                     </div>
 
@@ -365,9 +451,10 @@
 
                                     <div class="form-one__control form-one__control--full">
                                         <button type="submit" class="mediox-btn">
-                                            <span data-i18n="shared.form.submit">Запази час</span>
+                                            <span data-i18n="appointment.form_submit">Запази Консултация →</span>
                                             <span class="mediox-btn__icon"><i class="icon-up-right-arrow"></i></span>
                                         </button>
+                                        <p class="appointment-one__microcopy" data-i18n="appointment.form_microcopy" style="text-align:center; font-size: 0.85rem; color: rgba(255,255,255,0.7); margin-top: 0.75rem;">Безплатно • Без ангажимент • Отговор до 2 часа</p>
                                     </div>
                                 </div>
 
@@ -400,8 +487,8 @@
                             </div>
                             <p class="footer-widget__about-text" data-i18n="shared.footer.tagline">Мястото, където красотата среща прецизността!</p>
                             <p class="footer-widget__about-text">Beauty Atelier IN - Iliyana Nikolaeva, Silistra</p><a
-                                href="appointment.html" class="footer-widget__btn">
-                                <span>свържи се с нас</span>
+                                href="#appointment-form" class="footer-widget__btn">
+                                <span data-i18n="shared.footer.contact_us">свържи се с нас</span>
                                 <span class="footer-widget__btn__icon"><i class="icon-up-right-arrow"></i></span>
                             </a>
                             <div class="social-links">
@@ -430,7 +517,7 @@
                     <div class="col-xl-2 col-lg-3 col-md-5 wow fadeInUp" data-wow-duration="1500ms"
                         data-wow-delay="100ms">
                         <div class="footer-widget footer-widget--links">
-                            <h2 class="footer-widget__title" data-i18n-html="shared.footer.procedures_title">Нашите <span>Процедури</span></h2>
+                            <h3 class="footer-widget__title" data-i18n-html="shared.footer.procedures_title">Нашите <span>Процедури</span></h3>
                             <ul class="list-unstyled footer-widget__links">
                                 <li><a href="microblading.html" data-i18n="shared.footer.proc.microblading">Микроблейдинг</a></li>
                                 <li><a href="microneedling.html" data-i18n="shared.footer.proc.microneedling">Микронидлинг</a></li>
@@ -445,12 +532,12 @@
                     <div class="col-xl-2 col-lg-3 col-md-5 wow fadeInUp" data-wow-duration="1500ms"
                         data-wow-delay="200ms">
                         <div class="footer-widget footer-widget--links">
-                            <h2 class="footer-widget__title" data-i18n-html="shared.footer.quick_links_title">Бързи <span>връзки</span></h2>
+                            <h3 class="footer-widget__title" data-i18n-html="shared.footer.quick_links_title">Бързи <span>връзки</span></h3>
                             <ul class="list-unstyled footer-widget__links">
                                 <li><a href="about.html" data-i18n="shared.nav.about">За нас</a></li>
-                                <li><a href="Procedures.html" data-i18n="shared.nav.procedures">Процедури</a></li>
+                                <li><a href="procedures.html" data-i18n="shared.nav.procedures">Процедури</a></li>
                                 <li><a href="pricing.html" data-i18n="shared.nav.pricing">Ценоразпис</a></li>
-                                <li><a href="blog-carousel-2.html" data-i18n="shared.nav.blog">Блог</a></li>
+                                <li><a href="blog.html" data-i18n="shared.nav.blog">Блог</a></li>
                                 <li><a href="appointment.html" data-i18n="shared.footer.link.appointment">Запази час</a></li>
                                 <li><a href="faq.html" data-i18n="shared.footer.link.faq">Често Задавани Въпроси</a></li>
                                 <li><a href="contact.html" data-i18n="shared.nav.contact">Контакти</a></li>
@@ -460,7 +547,7 @@
                     <div class="col-xl-4 col-lg-6 col-md-7 wow fadeInUp" data-wow-duration="1500ms"
                         data-wow-delay="300ms">
                         <div class="footer-widget footer-widget--blog">
-                            <h2 class="footer-widget__title" data-i18n-html="shared.footer.blog_title">блог & <span>новини</span></h2>
+                            <h3 class="footer-widget__title" data-i18n-html="shared.footer.blog_title">блог & <span>новини</span></h3>
                             <ul class="footer-widget__posts list-unstyled">
                                 <li class="footer-widget__posts__item">
                                     <div class="footer-widget__posts__image">
@@ -597,7 +684,7 @@
                     <span class="mobile-nav__contact__icon">
                         <i class="fa fa-phone-alt"></i>
                     </span>
-                    <a href="tel:+359 89 339 8390">+359 89 339 8390</a>
+                    <a href="tel:+359893398390">+359 89 339 8390</a>
                 </li>
             </ul>
             <div class="social-links">
@@ -642,7 +729,7 @@
                     ние създаваме не просто визия, а самочувствие. Довери се на сертифициран професионалист с опит!</p>
             </div>
             <div class="sidebar-one__info sidebar-one__item">
-                <h4 class="sidebar-one__title">Contact</h4>
+                <h4 class="sidebar-one__title" data-i18n="shared.sidebar.contact_title">Контакти</h4>
                 <ul class="sidebar-one__info__list">
                     <li>
                         <span class="sidebar-one__info__icon sidebar-one__info__icon--location">
@@ -660,7 +747,7 @@
                         <span class="sidebar-one__info__icon">
                             <i class="icon-telephone"></i>
                         </span>
-                        <a href="tel:+359 89 339 8390">+359 89 339 8390</a>
+                        <a href="tel:+359893398390">+359 89 339 8390</a>
                     </li>
                 </ul>
             </div>

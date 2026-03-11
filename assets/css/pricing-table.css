@@ -387,3 +387,188 @@
         margin-top: 36px;
     }
 }
+
+/* ---- Trust strip ---- */
+.pt-trust-strip {
+    display: flex;
+    justify-content: center;
+    gap: 28px;
+    flex-wrap: wrap;
+    margin-bottom: 38px;
+}
+
+.pt-trust-strip__item {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--mediox-text, #5C554D);
+    letter-spacing: 0.1px;
+}
+
+.pt-trust-strip__item i {
+    color: var(--mediox-base, #C49A45);
+    font-size: 14px;
+}
+
+@media (max-width: 480px) {
+    .pt-trust-strip {
+        gap: 16px;
+    }
+    .pt-trust-strip__item {
+        font-size: 12px;
+        gap: 6px;
+    }
+}
+
+/* ---- CTA lead + micro ---- */
+.pt-cta__lead {
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--mediox-primary, #111);
+    margin-bottom: 18px;
+    letter-spacing: -0.2px;
+}
+
+.pt-cta__micro {
+    margin-top: 14px;
+    font-size: 12.5px;
+    font-weight: 500;
+    color: var(--mediox-text, #5C554D);
+    opacity: 0.65;
+    letter-spacing: 0.3px;
+}
+
+/* ---- Gold CTA button ---- */
+.mediox-btn--gold {
+    background: linear-gradient(135deg, #C49A45 0%, #D4AE5A 100%);
+    color: #fff;
+    border-color: #C49A45;
+    box-shadow: 0 4px 24px rgba(196, 154, 69, 0.35);
+    transition: all 0.25s ease;
+}
+
+.mediox-btn--gold:hover {
+    background: linear-gradient(135deg, #b38a3a 0%, #C49A45 100%);
+    box-shadow: 0 6px 32px rgba(196, 154, 69, 0.5);
+    transform: translateY(-2px);
+    color: #fff;
+}
+
+/* ================================================================
+   PRICING PAGE HEADER — Premium Treatment
+   ================================================================ */
+
+/* Override the base light overlay with a dark cinematic gradient */
+.page-header--pricing .page-header__bg::before {
+    background: linear-gradient(
+        180deg,
+        rgba(10, 10, 30, 0.70) 0%,
+        rgba(10, 10, 30, 0.60) 40%,
+        rgba(10, 10, 30, 0.75) 100%
+    ) !important;
+}
+
+/* Warm gold radial glow for depth */
+.page-header--pricing .page-header__bg::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(ellipse at 30% 50%, rgba(201, 169, 110, 0.15) 0%, transparent 65%),
+        radial-gradient(ellipse at 70% 60%, rgba(184, 146, 58, 0.08) 0%, transparent 55%);
+    pointer-events: none;
+    border-radius: inherit;
+}
+
+/* Extra vertical breathing room */
+.page-header--pricing .page-header__inner {
+    padding-top: 130px;
+    padding-bottom: 130px;
+}
+
+@media (max-width: 575px) {
+    .page-header--pricing .page-header__inner {
+        padding-top: 100px;
+        padding-bottom: 100px;
+    }
+}
+
+/* Title refinement */
+.page-header--pricing .page-header__title {
+    font-size: 48px;
+    font-weight: 800;
+    letter-spacing: -0.015em;
+    color: #fff !important;
+    text-shadow: 0 2px 20px rgba(0, 0, 0, 0.25);
+    margin-bottom: 14px;
+    line-height: 1.18;
+}
+
+@media (max-width: 767px) {
+    .page-header--pricing .page-header__title {
+        font-size: 36px;
+    }
+}
+
+@media (max-width: 430px) {
+    .page-header--pricing .page-header__title {
+        font-size: 28px;
+        letter-spacing: -0.01em;
+    }
+}
+
+/* Subtitle — value tagline beneath H1 */
+.page-header--pricing .page-header__subtitle {
+    display: block;
+    color: rgba(255, 255, 255, 0.65);
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 0.4px;
+    margin-bottom: 22px;
+}
+
+@media (max-width: 575px) {
+    .page-header--pricing .page-header__subtitle {
+        font-size: 14px;
+        margin-bottom: 18px;
+    }
+}
+
+/* Gold accent divider between title/subtitle and breadcrumbs */
+.page-header--pricing .page-header__accent-line {
+    display: block;
+    width: 48px;
+    height: 3px;
+    background: linear-gradient(90deg, #c9a96e, #e0c78f);
+    border-radius: 2px;
+    margin: 0 auto 22px;
+}
+
+/* Breadcrumbs — white text on dark bg */
+.page-header--pricing .mediox-breadcrumb li {
+    color: rgba(255, 255, 255, 0.80);
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.page-header--pricing .mediox-breadcrumb li:not(:last-of-type)::after {
+    color: rgba(255, 255, 255, 0.40);
+}
+
+.page-header--pricing .mediox-breadcrumb li:not(:first-child) span {
+    color: #e0c78f;
+}
+
+.page-header--pricing .mediox-breadcrumb__icon {
+    color: #c9a96e;
+}
+
+.page-header--pricing .mediox-breadcrumb li a {
+    color: rgba(255, 255, 255, 0.80);
+}
+
+.page-header--pricing .mediox-breadcrumb li a:hover {
+    color: #e0c78f;
+}
