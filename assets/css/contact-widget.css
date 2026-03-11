@@ -171,14 +171,30 @@
 @media (max-width: 768px) {
     .contact-widget {
         right: 16px;
+        bottom: 100px; /* higher to avoid overlapping CTA buttons */
+    }
+    .contact-widget__toggle {
+        width: 48px;
+        height: 48px;
+    }
+    .contact-widget__toggle svg {
+        width: 24px;
+        height: 24px;
     }
 }
 
-/* Mobile — AI chat FAB is 50px tall at bottom:16px, so top is at 66px */
+/* Mobile — push even higher to avoid sticky CTA bars and form fields */
 @media (max-width: 480px) {
     .contact-widget {
-        bottom: 78px;
-        /* 66px (FAB top) + 12px gap */
-        right: 16px;
+        bottom: 84px;
+        right: 12px;
+    }
+    .contact-widget__toggle {
+        width: 44px;
+        height: 44px;
+    }
+    .contact-widget__toggle svg {
+        width: 22px;
+        height: 22px;
     }
 }
