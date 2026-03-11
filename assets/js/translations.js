@@ -407,18 +407,19 @@ const TRANSLATIONS = {
          ======================================================== */
 
       /* Page meta */
-      'index.title': 'Beauty Atelier IN | Микроблейдинг, Ламиниране и Естетика Силистра',
+      'index.title': 'Beauty Atelier IN | Микроблейдинг и естетични процедури в Силистра',
       'index.meta_desc': 'Специализиран център за PhiBrows микроблейдинг в Силистра. Предлагаме професионален микронидлинг, ламиниране на мигли и естетични процедури. Доверете се на сертифициран опит.',
 
-      /* Hero slides */
-      'index.hero1.title': 'Професионален <br><span class="main-slider-three__title__shape">Микроблейдинг</span> в Силистра',
-      'index.hero2.title': 'Индивидуален подход <br>към <span class="main-slider-three__title__shape">всеки</span> клиент',
-      'index.hero3.title': 'Сертифициран <br>Beauty Artist<span class="main-slider-three__title__shape"></span>',
-      'index.hero4.title': 'Стерилна <br>Работна<span class="main-slider-three__title__shape"> среда</span>',
-      'index.hero.btn_book': 'Запази час',
+      /* Hero — static */
+      'index.hero.trust_qualifier': '5.0 в Google · 24 отзива',
+      'index.hero.title': 'Перфектните вежди, които <br><span class="hero-static__title--accent">винаги сте искали</span>',
+      'index.hero.subtitle': 'Микроблейдинг и естетични процедури · Силистра',
+      'index.hero.btn_book': 'Запази безплатна консултация',
       'index.hero.btn_procedures': 'Процедури',
-      'index.hero.btn_about': 'За нас',
-      'index.hero.btn_blog': 'Блог',
+      'index.hero.microcopy': 'Без ангажимент · Отговаряме до 1 час',
+      'index.hero.trust1': 'Сертифициран артист',
+      'index.hero.trust2': 'Индивидуален подход',
+      'index.hero.trust3': '100% стерилно',
 
       /* About section */
       'index.about.tagline': 'Сертифициран специалист',
@@ -484,7 +485,8 @@ const TRANSLATIONS = {
       'index.process.step4_text': 'Извършваме процедурата при стриктна хигиена и с висококачествени продукти.',
 
       /* Appointment form section */
-      'index.appointment.title': 'Запази час',
+      'index.appointment.title': 'Свободни часове тази седмица',
+      'index.appointment.subtitle': 'Местата се запълват бързо — резервирайте навреме',
 
       /* Testimonials section */
       'index.testimonials.tagline': 'Какво Казват Нашите Клиенти',
@@ -994,18 +996,19 @@ const TRANSLATIONS = {
          ======================================================== */
 
       /* Page meta */
-      'index.title': 'Beauty Atelier IN | Microblading, Lamination & Aesthetics Silistra',
+      'index.title': 'Beauty Atelier IN | Microblading & Aesthetic Treatments in Silistra',
       'index.meta_desc': 'Specialist centre for PhiBrows microblading in Silistra. Professional microneedling, lash lamination and aesthetic treatments. Trust certified expertise.',
 
-      /* Hero slides */
-      'index.hero1.title': 'Professional <br><span class="main-slider-three__title__shape">Microblading</span> in Silistra',
-      'index.hero2.title': 'A personalised approach <br>for <span class="main-slider-three__title__shape">every</span> client',
-      'index.hero3.title': 'Certified <br>Beauty Artist<span class="main-slider-three__title__shape"></span>',
-      'index.hero4.title': 'Sterile <br>Working<span class="main-slider-three__title__shape"> Environment</span>',
-      'index.hero.btn_book': 'Book Now',
+      /* Hero — static */
+      'index.hero.trust_qualifier': '5.0 on Google · 24 reviews',
+      'index.hero.title': 'The perfect brows <br><span class="hero-static__title--accent">you\'ve always wanted</span>',
+      'index.hero.subtitle': 'Microblading & aesthetic treatments · Silistra',
+      'index.hero.btn_book': 'Book a free consultation',
       'index.hero.btn_procedures': 'Procedures',
-      'index.hero.btn_about': 'About Us',
-      'index.hero.btn_blog': 'Blog',
+      'index.hero.microcopy': 'No commitment · We reply within 1 hour',
+      'index.hero.trust1': 'Certified artist',
+      'index.hero.trust2': 'Personalised approach',
+      'index.hero.trust3': '100% sterile',
 
       /* About section */
       'index.about.tagline': 'Certified Specialist',
@@ -1071,7 +1074,8 @@ const TRANSLATIONS = {
       'index.process.step4_text': 'The treatment is carried out to the highest hygiene standards using premium-quality products.',
 
       /* Appointment form section */
-      'index.appointment.title': 'Book an Appointment',
+      'index.appointment.title': 'Slots available this week',
+      'index.appointment.subtitle': 'Spots fill up fast — book yours in time',
 
       /* Testimonials section */
       'index.testimonials.tagline': 'What Our Clients Say',

@@ -754,3 +754,323 @@
     font-size: 18px;
   }
 }
+
+/* ================================================================
+   STATIC HERO — replaces carousel
+   ================================================================ */
+
+.hero-static {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.hero-static__bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transform: scale(1.05);
+  animation: heroZoom 20s ease-in-out infinite alternate;
+}
+
+@keyframes heroZoom {
+  0% { transform: scale(1.05); }
+  100% { transform: scale(1.15); }
+}
+
+.hero-static__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(10, 10, 30, 0.55) 0%,
+    rgba(10, 10, 30, 0.7) 50%,
+    rgba(10, 10, 30, 0.8) 100%
+  );
+  z-index: 1;
+}
+
+.hero-static .container {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-static__content {
+  text-align: center;
+  padding: 220px 0 80px;
+}
+
+/* --- Trust qualifier (Google rating) --- */
+.hero-static__trust-qualifier {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 100px;
+  padding: 8px 22px;
+  margin-bottom: 28px;
+}
+
+.hero-static__stars {
+  color: #f5c518;
+  font-size: 16px;
+  letter-spacing: 3px;
+}
+
+.hero-static__rating-text {
+  color: rgba(255, 255, 255, 0.92);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+/* --- H1 title --- */
+.hero-static__title {
+  font-family: var(--mediox-font, "Manrope", sans-serif);
+  font-size: 62px;
+  font-weight: 800;
+  color: #fff;
+  line-height: 1.15;
+  margin: 0 0 18px;
+  letter-spacing: -0.02em;
+  text-transform: none;
+}
+
+.hero-static__title--accent {
+  color: var(--mediox-base, #c9a84c);
+  position: relative;
+}
+
+/* Decorative underline on the accent text */
+.hero-static__title--accent::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, var(--mediox-base, #c9a84c), transparent);
+  border-radius: 2px;
+}
+
+/* --- SEO subtitle --- */
+.hero-static__subtitle {
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.75);
+  font-weight: 500;
+  margin: 0 0 36px;
+  letter-spacing: 0.04em;
+}
+
+/* --- CTA group --- */
+.hero-static__cta-group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 14px;
+}
+
+.hero-static__cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-family: var(--mediox-font, "Manrope", sans-serif);
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 100px;
+  padding: 14px 32px;
+  cursor: pointer;
+  transition: all 400ms ease;
+  text-decoration: none;
+  line-height: 1.75;
+}
+
+/* Primary CTA — solid gold */
+.hero-static__cta--primary {
+  background: linear-gradient(135deg, #c9a84c 0%, #b8923a 50%, #a07d2e 100%);
+  color: #fff;
+  border: 2px solid transparent;
+  box-shadow: 0 6px 24px rgba(184, 146, 58, 0.4);
+}
+
+.hero-static__cta--primary:hover {
+  background: linear-gradient(135deg, #d4b55e 0%, #c9a84c 50%, #b8923a 100%);
+  box-shadow: 0 8px 32px rgba(184, 146, 58, 0.55);
+  transform: translateY(-2px);
+  color: #fff;
+}
+
+.hero-static__cta--primary .mediox-btn__icon {
+  color: #fff;
+  transition: transform 400ms ease;
+}
+
+.hero-static__cta--primary:hover .mediox-btn__icon {
+  transform: rotate(45deg);
+}
+
+/* Secondary CTA — ghost/outline */
+.hero-static__cta--secondary {
+  background: transparent;
+  color: #fff;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+}
+
+.hero-static__cta--secondary:hover {
+  border-color: #fff;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.hero-static__cta--secondary .mediox-btn__icon {
+  color: rgba(255, 255, 255, 0.7);
+  transition: all 400ms ease;
+}
+
+.hero-static__cta--secondary:hover .mediox-btn__icon {
+  color: #fff;
+  transform: rotate(45deg);
+}
+
+/* --- Micro-copy --- */
+.hero-static__microcopy {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.55);
+  font-weight: 500;
+  margin: 0 0 40px;
+  letter-spacing: 0.03em;
+}
+
+/* --- Trust icon bar --- */
+.hero-static__trust-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+.hero-static__trust-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.hero-static__trust-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: rgba(184, 146, 58, 0.25);
+  border: 1px solid rgba(184, 146, 58, 0.4);
+  color: #e8c882;
+  border-radius: 50%;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+/* ===================== HERO RESPONSIVE ===================== */
+@media (max-width: 1200px) {
+  .hero-static__title {
+    font-size: 52px;
+  }
+}
+
+@media (max-width: 991px) {
+  .hero-static__content {
+    padding: 140px 0 60px;
+  }
+  .hero-static__title {
+    font-size: 44px;
+  }
+}
+
+@media (max-width: 767px) {
+  .hero-static {
+    min-height: auto;
+  }
+  .hero-static__content {
+    padding: 130px 0 50px;
+  }
+  .hero-static__title {
+    font-size: 36px;
+  }
+  .hero-static__subtitle {
+    font-size: 16px;
+    margin-bottom: 28px;
+  }
+  .hero-static__cta {
+    padding: 12px 24px;
+    font-size: 14px;
+  }
+  .hero-static__trust-bar {
+    gap: 18px;
+  }
+  .hero-static__trust-item {
+    font-size: 13px;
+  }
+  .hero-static__trust-icon {
+    width: 30px;
+    height: 30px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 575px) {
+  .hero-static__content {
+    padding: 120px 0 40px;
+  }
+  .hero-static__title {
+    font-size: 30px;
+  }
+  .hero-static__trust-qualifier {
+    padding: 6px 16px;
+  }
+  .hero-static__stars {
+    font-size: 14px;
+  }
+  .hero-static__rating-text {
+    font-size: 12px;
+  }
+  .hero-static__cta-group {
+    flex-direction: column;
+    gap: 12px;
+  }
+  .hero-static__cta {
+    width: 100%;
+    justify-content: center;
+  }
+  .hero-static__trust-bar {
+    flex-direction: column;
+    gap: 14px;
+    align-items: center;
+  }
+  .hero-static__microcopy {
+    font-size: 12px;
+    margin-bottom: 28px;
+  }
+}
+
+@media (max-width: 360px) {
+  .hero-static__title {
+    font-size: 26px;
+  }
+  .hero-static__subtitle {
+    font-size: 14px;
+  }
+}
