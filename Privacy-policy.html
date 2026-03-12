@@ -28,13 +28,20 @@
         }
     </script>
 
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-4DSP9HGYMB"></script>
+
+    <!-- Google Consent Mode v2 (default deny) -->
     <script>
         window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-
-        gtag('config', 'G-4DSP9HGYMB');
+        function gtag(){dataLayer.push(arguments);}
+        gtag('consent','default',{
+            analytics_storage:'denied',
+            ad_storage:'denied',
+            ad_user_data:'denied',
+            ad_personalization:'denied',
+            wait_for_update:500
+        });
+        gtag('set','ads_data_redaction',true);
+        gtag('set','url_passthrough',true);
     </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -246,16 +253,16 @@
                 <p>* Маркетингови и статистически цели (само при дадено съгласие)</p>
             </div></div><div class="pricing-one__top">
             <div class="pricing-one__content">
-                <h3 class="pricing-one__title">5. Cookies (бисквитки)</h3><p class="pricing-one__text">Сайтът използва cookies, за да осигури по-добро потребителско изживяване.</p><br>
+                <h3 class="pricing-one__title">5. Cookies (бисквитки)</h3><p class="pricing-one__text">Сайтът използва cookies, за да осигури по-добро потребителско изживяване. Прилагаме Google Consent Mode v2 — никакви данни не се събират преди изричното Ви съгласие.</p><br>
                 <p>Използваме:</p>
-                <p>* Задължителни cookies – необходими за нормалната работа на сайта</p>
-                <p>* Аналитични cookies – чрез Google Analytics (само при съгласие)</p>
-                <p>* Маркетингови cookies – за Google Ads и ремаркетинг (само при съгласие)</p>
-                <p>Можете да управлявате или оттеглите съгласието си чрез cookie банера.</p>
+                <p>* Задължителни cookies – необходими за нормалната работа на сайта (езикови предпочитания и др.)</p>
+                <p>* Аналитични cookies – чрез Google Analytics 4 (само при изрично съгласие)</p>
+                <p>* Маркетингови cookies – за бъдещи рекламни кампании (само при изрично съгласие, понастоящем не се използват)</p>
+                <p>Можете да управлявате или оттеглите съгласието си по всяко време чрез връзката „Настройки за бисквитки" в долната част на сайта. Съгласието е валидно за 12 месеца, след което ще бъдете помолени отново.</p>
             </div></div><div class="pricing-one__top">
             <div class="pricing-one__content">
-                <h3 class="pricing-one__title">6. Google Analytics и Google Ads</h3><p class="pricing-one__text">Този сайт използва:</p><p>* Google Analytics – за анализ на трафика</p>
-                <p>* Google Ads – за рекламни и маркетингови цели</p>
+                <h3 class="pricing-one__title">6. Google Analytics</h3><p class="pricing-one__text">Този сайт използва:</p><p>* Google Analytics 4 – за анализ на трафика (само при дадено съгласие)</p>
+                <p>Маркетингови услуги (напр. Google Ads) понастоящем не са активирани. При бъдещо въвеждане ще бъдете предварително информирани и ще бъде необходимо допълнително съгласие.</p>
                 <p>Google може да обработва анонимизирани данни съгласно собствената си Политика за поверителност:</p>
                 <p><a href="https://policies.google.com/privacy">https://policies.google.com/privacy</a></p>
             </div></div><div class="pricing-one__top">
@@ -279,7 +286,7 @@
             <div class="pricing-one__content">
                 <h3 class="pricing-one__title">9. Сигурност на данните</h3><p class="pricing-one__text">Прилагаме подходящи технически и организационни мерки за защита на личните ви данни от неоторизиран достъп, загуба или злоупотреба.</p></div></div><div class="pricing-one__top">
             <div class="pricing-one__content">
-                <h3 class="pricing-one__title">10. Промени в политиката</h3><p class="pricing-one__text">Beauty Atelier IN си запазва правото да актуализира настоящата Политика за поверителност. Всички промени ще бъдат публикувани на тази страница. <br><br>Последна актуализация: 2025 г.</p></div></div><footer class="main-footer section-space-top">
+                <h3 class="pricing-one__title">10. Промени в политиката</h3><p class="pricing-one__text">Beauty Atelier IN си запазва правото да актуализира настоящата Политика за поверителност. Всички промени ще бъдат публикувани на тази страница. <br><br>Последна актуализация: март 2026 г.</p></div></div><footer class="main-footer section-space-top">
             <div class="main-footer__bg" style="background-image: url(assets/images/shapes/footer-bg.png);"></div>
             <div class="container">
                 <div class="footer-divider"></div>
@@ -410,6 +417,8 @@
                             <a href="Privacy-policy.html" data-i18n="shared.footer.privacy">Поверителност</a>
                             <span class="footer-cr__sep">|</span>
                             <a href="termsandconditions.html" data-i18n="shared.footer.terms">Общи условия</a>
+                            <span class="footer-cr__sep">|</span>
+                            <a href="#" id="manage-cookies" data-i18n="cookie.manage">Настройки за бисквитки</a>
                         </span>
                         <span class="footer-cr__credit">
                             <span data-i18n="shared.footer.designed_by">Дизайн и разработка от</span>
@@ -553,20 +562,7 @@
     <!-- AI Chatbot script -->
     <script src="assets/js/ai-chat-v2.js"></script>
 
-    <!-- GDPR Cookie Banner -->
-    <div id="cookie-banner" class="cookie-banner" role="dialog" aria-label="Cookie consent">
-        <span class="cookie-banner__icon" aria-hidden="true">&#127850;</span>
-        <div class="cookie-banner__text">
-            <p data-i18n="cookie.text">Използваме бисквитки за анализ на трафика (Google Analytics), за да подобряваме сайта.</p>
-            &nbsp;<a href="Privacy-policy.html" data-i18n="cookie.learn_more">Поверителност</a>
-        </div>
-        <div class="cookie-banner__actions">
-            <button id="cookie-accept" class="cookie-btn cookie-btn--accept" data-i18n="cookie.accept">Приемам</button>
-            <button id="cookie-decline" class="cookie-btn cookie-btn--decline" data-i18n="cookie.decline">Отказвам</button>
-        </div>
-    </div>
-
-    <!-- WhatsApp / Viber Contact Widget -->
+<!-- WhatsApp / Viber Contact Widget -->
     <div class="contact-widget" id="contact-widget">
         <div class="contact-widget__options">
             <a href="https://wa.me/359893398390?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D0%B5%D0%B9%D1%82%D0%B5%2C%20%D0%B1%D0%B8%D1%85%20%D0%B8%D1%81%D0%BA%D0%B0%D0%BB%D0%B0%20%D0%B4%D0%B0%20%D0%B7%D0%B0%D0%BF%D0%B8%D1%88%D0%B0%20%D1%87%D0%B0%D1%81."
@@ -602,11 +598,12 @@
             <span class="icon-close-widget">&#10005;</span>
         </button>
     </div>
+    <script src="assets/js/translations.js"></script>
+    <script src="assets/js/i18n.js"></script>
+
 
     <script src="assets/js/cookie-consent.js"></script>
     <script src="assets/js/contact-widget.js"></script>
-    <script src="assets/js/translations.js"></script>
-    <script src="assets/js/i18n.js"></script>
 </body>
 
 </html>
