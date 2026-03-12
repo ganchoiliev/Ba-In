@@ -1,6 +1,9 @@
 /* ============================================================
-   cookie-consent.css — GDPR Cookie Banner for Beauty Atelier IN
+   cookie-consent.css — GDPR Cookie Banner & Preferences Modal
+   Beauty Atelier IN
    ============================================================ */
+
+/* ---------- Banner ---------- */
 
 .cookie-banner {
     display: none;
@@ -58,6 +61,8 @@
     flex-wrap: wrap;
 }
 
+/* ---------- Shared button styles ---------- */
+
 .cookie-btn {
     font-size: 12px;
     font-weight: 700;
@@ -93,6 +98,147 @@
     border-color: rgba(255, 255, 255, 0.45);
 }
 
+.cookie-btn--customize {
+    background: transparent;
+    color: rgba(255, 255, 255, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.cookie-btn--customize:hover {
+    color: #fff;
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+/* ---------- Preferences Modal ---------- */
+
+.cookie-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 100000;
+    align-items: center;
+    justify-content: center;
+}
+
+.cookie-modal.is-visible {
+    display: flex;
+}
+
+.cookie-modal__overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.cookie-modal__panel {
+    position: relative;
+    background: #1a1a2e;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 28px 32px;
+    max-width: 480px;
+    width: 90%;
+    max-height: 85vh;
+    overflow-y: auto;
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.5);
+}
+
+.cookie-modal__title {
+    margin: 0 0 20px;
+    font-size: 18px;
+    font-weight: 700;
+    color: #fff;
+}
+
+.cookie-modal__actions {
+    margin-top: 24px;
+    text-align: right;
+}
+
+/* ---------- Category rows ---------- */
+
+.cookie-category {
+    padding: 14px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.cookie-category:last-of-type {
+    border-bottom: none;
+}
+
+.cookie-category__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 6px;
+}
+
+.cookie-category__title {
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+}
+
+.cookie-category__desc {
+    margin: 0;
+    font-size: 12px;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.55);
+}
+
+/* ---------- Toggle switch ---------- */
+
+.cookie-toggle {
+    position: relative;
+    display: inline-block;
+    width: 44px;
+    height: 24px;
+    flex-shrink: 0;
+    cursor: pointer;
+}
+
+.cookie-toggle input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+    position: absolute;
+}
+
+.cookie-toggle__slider {
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 24px;
+    transition: background 0.25s ease;
+}
+
+.cookie-toggle__slider::before {
+    content: '';
+    position: absolute;
+    left: 3px;
+    top: 3px;
+    width: 18px;
+    height: 18px;
+    background: #fff;
+    border-radius: 50%;
+    transition: transform 0.25s ease;
+}
+
+.cookie-toggle input:checked + .cookie-toggle__slider {
+    background: #d4a96a;
+}
+
+.cookie-toggle input:checked + .cookie-toggle__slider::before {
+    transform: translateX(20px);
+}
+
+.cookie-toggle--disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* ---------- Responsive ---------- */
+
 @media (max-width: 600px) {
     .cookie-banner {
         padding: 16px;
@@ -106,5 +252,10 @@
     .cookie-btn {
         flex: 1;
         text-align: center;
+    }
+
+    .cookie-modal__panel {
+        padding: 20px;
+        border-radius: 8px;
     }
 }

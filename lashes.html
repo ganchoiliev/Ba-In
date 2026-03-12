@@ -28,13 +28,20 @@
         }
     </script>
 
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-4DSP9HGYMB"></script>
+
+    <!-- Google Consent Mode v2 (default deny) -->
     <script>
         window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-
-        gtag('config', 'G-4DSP9HGYMB');
+        function gtag(){dataLayer.push(arguments);}
+        gtag('consent','default',{
+            analytics_storage:'denied',
+            ad_storage:'denied',
+            ad_user_data:'denied',
+            ad_personalization:'denied',
+            wait_for_update:500
+        });
+        gtag('set','ads_data_redaction',true);
+        gtag('set','url_passthrough',true);
     </script>
 
     <meta charset="UTF-8" />
@@ -533,6 +540,8 @@
                             <a href="Privacy-policy.html" data-i18n="shared.footer.privacy">Поверителност</a>
                             <span class="footer-cr__sep">|</span>
                             <a href="termsandconditions.html" data-i18n="shared.footer.terms">Общи условия</a>
+                            <span class="footer-cr__sep">|</span>
+                            <a href="#" id="manage-cookies" data-i18n="cookie.manage">Настройки за бисквитки</a>
                         </span>
                         <span class="footer-cr__credit">
                             <span data-i18n="shared.footer.designed_by">Дизайн и разработка от</span>
@@ -676,20 +685,7 @@
     <!-- AI Chatbot script -->
     <script src="assets/js/ai-chat-v2.js"></script>
 
-    <!-- GDPR Cookie Banner -->
-    <div id="cookie-banner" class="cookie-banner" role="dialog" aria-label="Cookie consent">
-        <span class="cookie-banner__icon" aria-hidden="true">&#127850;</span>
-        <div class="cookie-banner__text">
-            <p data-i18n="cookie.text">Използваме бисквитки за анализ на трафика (Google Analytics), за да подобряваме сайта.</p>
-            &nbsp;<a href="Privacy-policy.html" data-i18n="cookie.learn_more">Поверителност</a>
-        </div>
-        <div class="cookie-banner__actions">
-            <button id="cookie-accept" class="cookie-btn cookie-btn--accept" data-i18n="cookie.accept">Приемам</button>
-            <button id="cookie-decline" class="cookie-btn cookie-btn--decline" data-i18n="cookie.decline">Отказвам</button>
-        </div>
-    </div>
-
-    <!-- WhatsApp / Viber Contact Widget -->
+<!-- WhatsApp / Viber Contact Widget -->
     <div class="contact-widget" id="contact-widget">
         <div class="contact-widget__options">
             <a href="https://wa.me/359893398390?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D0%B5%D0%B9%D1%82%D0%B5%2C%20%D0%B1%D0%B8%D1%85%20%D0%B8%D1%81%D0%BA%D0%B0%D0%BB%D0%B0%20%D0%B4%D0%B0%20%D0%B7%D0%B0%D0%BF%D0%B8%D1%88%D0%B0%20%D1%87%D0%B0%D1%81."
@@ -725,11 +721,12 @@
             <span class="icon-close-widget">&#10005;</span>
         </button>
     </div>
+    <script src="assets/js/translations.js"></script>
+    <script src="assets/js/i18n.js"></script>
+
 
     <script src="assets/js/cookie-consent.js"></script>
     <script src="assets/js/contact-widget.js"></script>
-    <script src="assets/js/translations.js"></script>
-    <script src="assets/js/i18n.js"></script>
 </body>
 
 </html>
