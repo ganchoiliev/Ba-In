@@ -1745,31 +1745,51 @@
   color: #D4AF37 !important;
 }
 
-/* ---- 10. WORKING HOURS BLOCK ---- */
-.main-footer__info__col-4 {
-  flex: 0 0 auto;
-  width: 25%;
+/* ---- 10. WORKING HOURS BLOCK: 4-column grid ---- */
+.main-footer .main-footer__info__row {
+  display: grid !important;
+  grid-template-columns: 1.2fr 0.9fr 0.95fr 0.95fr;
+  gap: 20px !important;
+  --bs-gutter-x: 0 !important;
+  align-items: start !important;
 }
 
-/* When 4 columns: adjust others */
-.main-footer__info__col-4 ~ .main-footer__info__col-1,
-.main-footer .main-footer__info__row:has(.main-footer__info__col-4) .main-footer__info__col-1 {
-  width: 30% !important;
+/* Reset all column flex/width — grid handles sizing */
+.main-footer .main-footer__info__row > [class*="main-footer__info__col"] {
+  width: 100% !important;
+  flex: unset !important;
+  max-width: none !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
 }
-.main-footer .main-footer__info__row:has(.main-footer__info__col-4) .main-footer__info__col-2,
-.main-footer .main-footer__info__row:has(.main-footer__info__col-4) .main-footer__info__col-3 {
-  width: 22% !important;
+
+/* Override mediox.css tablet flex-direction rule */
+@media (min-width: 768px) and (max-width: 991px) {
+  .main-footer .main-footer__info__row {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 28px 20px !important;
+    align-items: start !important;
+  }
+  .main-footer__contact {
+    flex-direction: row !important;
+    align-items: center !important;
+  }
+  .main-footer__contact__content {
+    text-align: left !important;
+  }
 }
 
 @media (max-width: 1199px) {
-  .main-footer__info__col-4 {
-    width: 33.333%;
+  .main-footer .main-footer__info__row {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 28px 24px !important;
   }
 }
 
 @media (max-width: 767px) {
-  .main-footer__info__col-4 {
-    width: 100%;
+  .main-footer .main-footer__info__row {
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
   }
 }
 
@@ -1848,19 +1868,6 @@
   .main-footer .main-footer__contact__text {
     font-size: 15px !important;
   }
-
-  .main-footer .main-footer__info__col-1 {
-    width: 50% !important;
-  }
-  .main-footer .main-footer__info__col-2 {
-    width: 50% !important;
-  }
-  .main-footer .main-footer__info__col-3 {
-    width: 50% !important;
-  }
-  .main-footer__info__col-4 {
-    width: 50% !important;
-  }
 }
 
 @media (max-width: 991px) {
@@ -1877,13 +1884,6 @@
   .main-footer .main-footer__info {
     padding: 24px 20px !important;
     border-radius: 12px !important;
-  }
-
-  .main-footer .main-footer__info__col-1,
-  .main-footer .main-footer__info__col-2,
-  .main-footer .main-footer__info__col-3,
-  .main-footer__info__col-4 {
-    width: 100% !important;
   }
 
   .main-footer .main-footer__contact {
