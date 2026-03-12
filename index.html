@@ -79,32 +79,38 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="assets/vendors/bootstrap/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="assets/vendors/bootstrap-select/bootstrap-select.min.css" />
-    <link rel="stylesheet" href="assets/vendors/animate/animate.min.css" />
-    <link rel="stylesheet" href="assets/vendors/fontawesome/css/all.min.css" />
-    <link rel="stylesheet" href="assets/vendors/jquery-ui/jquery-ui.css" />
-    <link rel="stylesheet" href="assets/vendors/jarallax/jarallax.css" />
-    <link rel="stylesheet" href="assets/vendors/jquery-magnific-popup/jquery.magnific-popup.css" />
-    <link rel="stylesheet" href="assets/vendors/nouislider/nouislider.min.css" />
-    <link rel="stylesheet" href="assets/vendors/nouislider/nouislider.pips.css" />
-    <link rel="stylesheet" href="assets/vendors/mediox-icons/style.css" />
-    <link rel="stylesheet" href="assets/vendors/owl-carousel/css/owl.carousel.min.css" />
-    <link rel="stylesheet" href="assets/vendors/owl-carousel/css/owl.theme.default.min.css" />
-    <link rel="stylesheet" href="assets/vendors/slick/css/slick.css" />
+    <!-- Preload LCP hero image for faster mobile rendering -->
+    <link rel="preload" as="image" type="image/webp" href="assets/images/backgrounds/hero-static-bg.webp">
 
-    <!-- template styles -->
-    <link rel="stylesheet" href="assets/css/mediox.css?v=2" />
+    <!-- Critical CSS inlined for instant first paint -->
+    <link rel="stylesheet" href="assets/css/critical.css">
 
-    <!-- AI Chatbot styles -->
-    <link rel="stylesheet" href="assets/css/ai-chat.css" />
-    <link rel="stylesheet" href="assets/css/cookie-consent.css" />
-    <link rel="stylesheet" href="assets/css/contact-widget.css" />
-    <link rel="stylesheet" href="assets/css/google-reviews.css" />
-
-    <!-- i18n language switcher styles -->
-    <link rel="stylesheet" href="assets/css/i18n.css" />
-    <link rel="stylesheet" href="assets/css/custom.css">
+    <!-- Non-critical CSS loaded asynchronously -->
+    <link rel="stylesheet" href="assets/vendors/bootstrap/css/bootstrap.min.css" media="print" onload="this.media='all'" />
+    <link rel="stylesheet" href="assets/vendors/animate/animate.min.css" media="print" onload="this.media='all'" />
+    <link rel="stylesheet" href="assets/vendors/fontawesome/css/all.min.css" media="print" onload="this.media='all'" />
+    <link rel="stylesheet" href="assets/vendors/jarallax/jarallax.css" media="print" onload="this.media='all'" />
+    <link rel="stylesheet" href="assets/vendors/jquery-magnific-popup/jquery.magnific-popup.css" media="print" onload="this.media='all'" />
+    <link rel="stylesheet" href="assets/vendors/mediox-icons/style.css" media="print" onload="this.media='all'" />
+    <link rel="stylesheet" href="assets/vendors/owl-carousel/css/owl.carousel.min.css" media="print" onload="this.media='all'" />
+    <link rel="stylesheet" href="assets/vendors/owl-carousel/css/owl.theme.default.min.css" media="print" onload="this.media='all'" />
+    <link rel="stylesheet" href="assets/vendors/slick/css/slick.css" media="print" onload="this.media='all'" />
+    <link rel="stylesheet" href="assets/css/mediox.css?v=3" media="print" onload="this.media='all'" />
+    <link rel="stylesheet" href="assets/css/custom.css?v=3" media="print" onload="this.media='all'" />
+    <link rel="stylesheet" href="assets/css/ai-chat.css" media="print" onload="this.media='all'" />
+    <link rel="stylesheet" href="assets/css/cookie-consent.css" media="print" onload="this.media='all'" />
+    <link rel="stylesheet" href="assets/css/contact-widget.css" media="print" onload="this.media='all'" />
+    <link rel="stylesheet" href="assets/css/google-reviews.css" media="print" onload="this.media='all'" />
+    <link rel="stylesheet" href="assets/css/i18n.css" media="print" onload="this.media='all'" />
+    <link rel="stylesheet" href="assets/vendors/jquery-ui/jquery-ui.css" media="print" onload="this.media='all'" />
+    <link rel="stylesheet" href="assets/vendors/bootstrap-select/bootstrap-select.min.css" media="print" onload="this.media='all'" />
+    <!-- Noscript fallback for users without JS -->
+    <noscript>
+        <link rel="stylesheet" href="assets/vendors/bootstrap/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="assets/vendors/fontawesome/css/all.min.css" />
+        <link rel="stylesheet" href="assets/css/mediox.css?v=3" />
+        <link rel="stylesheet" href="assets/css/custom.css?v=3" />
+    </noscript>
 </head>
 
 <body class="custom-cursor">
@@ -260,7 +266,7 @@
 
 
         <section class="hero-static" id="hero-static">
-            <div class="hero-static__bg" style="background-image: url(assets/images/backgrounds/hero-static-bg.png);"></div>
+            <div class="hero-static__bg" style="background-image: url(assets/images/backgrounds/hero-static-bg.webp);"></div>
             <div class="hero-static__overlay"></div>
             <div class="container">
                 <div class="row">
@@ -325,11 +331,11 @@
                         <div class="about-three__image">
                             <div class="about-three__image__inner">
                                 <div class="about-three__image__bg"
-                                    style="background-image: url(assets/images/shapes/luxury_about_bg_2.png);"></div>
-                                <img src="assets/images/about/about-3-4.png?v=2"
+                                    style="background-image: url(assets/images/shapes/luxury_about_bg_2.webp);"></div>
+                                <img loading="lazy" src="assets/images/about/about-3-4.webp" width="570" height="570"
                                     alt="Илияна Николаева – експерт по микроблейдинг и естетични процедури в Силистра"
                                     class="about-three__image__one" loading="lazy">
-                                <img src="assets/images/shapes/about-shape-3-1.png?v=2" alt="shape"
+                                <img loading="lazy" src="assets/images/shapes/about-shape-3-1.png?v=2" alt="shape"
                                     class="about-three__image__shape-1" loading="lazy">
                             </div><!-- /.about-three__image__inner -->
                         </div><!-- /.about-three__image -->
@@ -339,7 +345,7 @@
                             <div class="sec-title wow fadeInUp" data-wow-duration="1500ms">
                                 <div class="sec-title__top">
 
-                                    <img src="assets/images/shapes/sec-title-s-1-1.png?v=2"
+                                    <img loading="lazy" src="assets/images/shapes/sec-title-s-1-1.png?v=2"
                                         alt="Beauty Atelier IN Силистра | Естетични процедури" class="sec-title__img">
 
 
@@ -412,7 +418,7 @@
                             <div class="about-three__info wow fadeInUp" data-wow-duration="1500ms">
                                 <div class="about-three__info__profile">
                                     <div class="about-profile">
-                                        <img src="assets/images/about/about-profile-1-1.jpg?v=2"
+                                        <img loading="lazy" src="assets/images/about/about-profile-1-1.jpg?v=2"
                                             alt="Илияна Николаева – сертифициран PhiBrows артист в Силистра"
                                             class="about-profile__image" loading="lazy">
                                         <div class="about-profile__info">
@@ -420,7 +426,7 @@
                                             <p class="about-profile__designation">Beauty Artist</p>
                                         </div><!-- /.about-profile__info -->
                                     </div><!-- /.about-profile -->
-                                    <img src="assets/images/shapes/about-profile-sign-1-1.png?v=2" alt="sign"
+                                    <img loading="lazy" src="assets/images/shapes/about-profile-sign-1-1.png?v=2" alt="sign"
                                         class="about-three__info__sign" loading="lazy">
                                 </div><!-- /.about-three__info__profile -->
                                 <div class="about-three__info__video"
@@ -450,7 +456,7 @@
 
         <section class="services-three section-space-two">
             <div class="services-three__bg"
-                style="background-image: url(assets/images/shapes/services-bg-3-1.png?v=2);"></div>
+                style="background-image: url(assets/images/shapes/services-bg-3-1.webp);"></div>
             <div class="container">
                 <div class="services-three__top">
                     <div class="row gutter-y-40 align-items-end">
@@ -458,7 +464,7 @@
                             <div class="sec-title wow fadeInUp" data-wow-duration="1500ms">
                                 <div class="sec-title__top">
 
-                                    <img src="assets/images/shapes/sec-title-s-1-1.png"
+                                    <img loading="lazy" src="assets/images/shapes/sec-title-s-1-1.png"
                                         alt="Как да ви помогнем? Beauty Atelier IN Silistra" class="sec-title__img">
 
 
@@ -487,7 +493,7 @@
                             <div class="services-three__item__bg"
                                 style="background-image: url(assets/images/services/service-3-1.jpg?v=2);"></div>
                             <div class="services-three__item__content">
-                                <img src="assets/images/shapes/service-item-shape-3-1.png?v=2"
+                                <img loading="lazy" src="assets/images/shapes/service-item-shape-3-1.png?v=2"
                                     alt="Микроблейдинг на вежди с естествен резултат в Силистра"
                                     class="services-three__item__shape" loading="lazy">
                                 <h3 class="services-three__item__title">
@@ -502,7 +508,7 @@
                             <div class="services-three__item__bg"
                                 style="background-image: url(assets/images/services/service-3-2.jpg?v=2);"></div>
                             <div class="services-three__item__content">
-                                <img src="assets/images/shapes/service-item-shape-3-2.png?v=2"
+                                <img loading="lazy" src="assets/images/shapes/service-item-shape-3-2.png?v=2"
                                     alt="Microneedling skin rejuvenation in Silistra"
                                     class="services-three__item__shape" loading="lazy">
                                 <h3 class="services-three__item__title">
@@ -517,7 +523,7 @@
                             <div class="services-three__item__bg"
                                 style="background-image: url(assets/images/services/service-3-3.jpg?v=2);"></div>
                             <div class="services-three__item__content">
-                                <img src="assets/images/shapes/service-item-shape-3-3.png?v=2"
+                                <img loading="lazy" src="assets/images/shapes/service-item-shape-3-3.png?v=2"
                                     alt="Lash extensions in Silistra" class="services-three__item__shape"
                                     loading="lazy">
                                 <h3 class="services-three__item__title">
@@ -531,7 +537,7 @@
                             <div class="services-three__item__bg"
                                 style="background-image: url(assets/images/services/service-3-4.jpg?v=2);"></div>
                             <div class="services-three__item__content">
-                                <img src="assets/images/shapes/service-item-shape-3-4.png?v=2"
+                                <img loading="lazy" src="assets/images/shapes/service-item-shape-3-4.png?v=2"
                                     alt="Plasma pen skin tightening in Silistra" class="services-three__item__shape"
                                     loading="lazy">
                                 <h3 class="services-three__item__title">
@@ -567,7 +573,7 @@
                             <div class="service-card-two">
                                 <div class="service-card-two__bg"></div><!-- /.service-card-two__bg -->
                                 <div class="service-card-two__content">
-                                    <img src="assets/images/services/service-2-1.jpg"
+                                    <img loading="lazy" src="assets/images/services/service-2-1.jpg"
                                         alt="Безопасно пробиване на уши за деца в Силистра"
                                         class="service-card-two__image">
                                     <h3 class="service-card-two__title"><a href="piercing.html"
@@ -584,7 +590,7 @@
                             <div class="service-card-two">
                                 <div class="service-card-two__bg"></div><!-- /.service-card-two__bg -->
                                 <div class="service-card-two__content">
-                                    <img src="assets/images/services/service-2-2.jpg"
+                                    <img loading="lazy" src="assets/images/services/service-2-2.jpg"
                                         alt="Премахване на перманентен грим с щадящ метод"
                                         class="service-card-two__image">
                                     <h3 class="service-card-two__title"><a href="perm-makeup-removal.html"
@@ -601,7 +607,7 @@
                             <div class="service-card-two">
                                 <div class="service-card-two__bg"></div><!-- /.service-card-two__bg -->
                                 <div class="service-card-two__content">
-                                    <img src="assets/images/services/service-2-3.jpg"
+                                    <img loading="lazy" src="assets/images/services/service-2-3.jpg"
                                         alt="Професионално ламиниране на вежди и мигли в Силистра за естествен обем и перфектна форма"
                                         class="service-card-two__image">
                                     <h3 class="service-card-two__title"><a href="laminirane.html"
@@ -664,11 +670,11 @@
                 <div class="row guter-y-60">
                     <div class="col-xl-6 wow fadeInLeft" data-wow-duration="1500ms">
                         <div class="why-choose-one__image">
-                            <img src="assets/images/why-choose/why-choose-3-1.jpg"
+                            <img loading="lazy" src="assets/images/why-choose/why-choose-3-1.jpg"
                                 alt="Защо да избереш нас? Beauty Atelier In Silistra"
                                 class="why-choose-one__image__one">
                             <div class="why-choose-one__image__two">
-                                <img src="assets/images/why-choose/why-choose-3-2.jpg"
+                                <img loading="lazy" src="assets/images/why-choose/why-choose-3-2.jpg"
                                     alt="Защо да избереш нас? Beauty Atelier In Silistra">
                             </div><!-- /.why-choose-one__image__two -->
                             <div class="why-choose-one__shape why-choose-one__shape--1"></div>
@@ -682,7 +688,7 @@
                             <div class="sec-title wow fadeInUp" data-wow-duration="1500ms">
                                 <div class="sec-title__top">
 
-                                    <img src="assets/images/shapes/sec-title-s-1-1.png?v=2"
+                                    <img loading="lazy" src="assets/images/shapes/sec-title-s-1-1.png?v=2"
                                         alt="Защо да избереш нас? Beauty Atelier In Silistra" class="sec-title__img">
 
 
@@ -752,7 +758,7 @@
                             <div class="sec-title wow fadeInUp" data-wow-duration="1500ms">
                                 <div class="sec-title__top">
 
-                                    <img src="assets/images/shapes/sec-title-s-1-2.png?v=2"
+                                    <img loading="lazy" src="assets/images/shapes/sec-title-s-1-2.png?v=2"
                                         alt="Често Задавани Въпроси за естетични процедури Силистра Beauty Atelier In"
                                         class="sec-title__img">
 
@@ -831,7 +837,7 @@
                     <div class="sec-title sec-title--center wow fadeInUp" data-wow-duration="1500ms">
                         <div class="sec-title__top">
 
-                            <img src="assets/images/shapes/sec-title-s-1-3.png?v=2"
+                            <img loading="lazy" src="assets/images/shapes/sec-title-s-1-3.png?v=2"
                                 alt="Как протуча нашата процедура Beauty Atelier In Silistra" class="sec-title__img">
 
 
@@ -913,7 +919,7 @@
                                 </div><!-- /.work-process-one__item -->
                             </div><!-- /.col-xl-3 col-md-6 -->
                         </div><!-- /.row gutter-y-40 -->
-                        <img src="assets/images/shapes/work-process-shape-1-1.png?v=2" alt="shape"
+                        <img loading="lazy" src="assets/images/shapes/work-process-shape-1-1.png?v=2" alt="shape"
                             class="work-process-one__shape">
                     </div><!-- /.work-process-one__inner -->
                 </div><!-- /.container -->
@@ -924,7 +930,7 @@
             <div class="appointment-one__bg mediox-jarallax" data-jarallax data-speed="0.3s"
                 style="background-image: url(assets/images/backgrounds/appointment-bg.webp);">
                 <div class="appointment-one__bg__inner"
-                    style="background-image: url(assets/images/shapes/appointment-shape-bg.png?v=2);"></div>
+                    style="background-image: url(assets/images/shapes/appointment-shape-bg.webp);"></div>
                 <div class="appointment-one__bg__shape">
                     <div class="appointment-one__bg__shape__1">
                         <div class="appointment-one__bg__shape__2"></div><!-- /.appointment-one__bg__shape__2 -->
@@ -1018,9 +1024,9 @@
                     </div><!-- /.col-xl-12 -->
                 </div><!-- /.row -->
             </div><!-- /.container -->
-            <img src="assets/images/shapes/appointment-shape-1-1.png?v=2" alt="shape" class="appointment-one__shape-1">
-            <img src="assets/images/shapes/appointment-shape-1-2.png?v=2" alt="shape" class="appointment-one__shape-2">
-            <img src="assets/images/shapes/appointment-shape-1-3.png?v=2" alt="shape" class="appointment-one__shape-3">
+            <img loading="lazy" src="assets/images/shapes/appointment-shape-1-1.png?v=2" alt="shape" class="appointment-one__shape-1">
+            <img loading="lazy" src="assets/images/shapes/appointment-shape-1-2.png?v=2" alt="shape" class="appointment-one__shape-2">
+            <img loading="lazy" src="assets/images/shapes/appointment-shape-1-3.png?v=2" alt="shape" class="appointment-one__shape-3">
         </section><!-- /.appointment-one section-space-bottom -->
 
 
@@ -1029,7 +1035,7 @@
                 <div class="row gutter-y-30 fitRow-layout">
                     <div class="col-md-6">
                         <div class="gallery-page__card">
-                            <img src="assets/images/gallery/gallery-1-1.jpg?v=2"
+                            <img loading="lazy" src="assets/images/gallery/gallery-1-1.jpg?v=2"
                                 alt="Галерия Beauty Atelier In Silistra">
                             <div class="gallery-page__card__hover">
                                 <a href="assets/images/gallery/gallery-1-1.jpg?v=2" class="img-popup">
@@ -1044,7 +1050,7 @@
                     </div><!-- /.col-md-6 -->
                     <div class="col-md-6">
                         <div class="gallery-page__card">
-                            <img src="assets/images/gallery/gallery-1-2.jpg?v=2"
+                            <img loading="lazy" src="assets/images/gallery/gallery-1-2.jpg?v=2"
                                 alt="Галерия Beauty Atelier In Silistra">
                             <div class="gallery-page__card__hover">
                                 <a href="assets/images/gallery/gallery-1-2.jpg?v=2" class="img-popup">
@@ -1059,7 +1065,7 @@
                     </div><!-- /.col-md-6 -->
                     <div class="col-md-6 col-lg-4">
                         <div class="gallery-page__card">
-                            <img src="assets/images/gallery/gallery-1-3.jpg?v=2"
+                            <img loading="lazy" src="assets/images/gallery/gallery-1-3.jpg?v=2"
                                 alt="gallery Beauty Atelier In Silistra">
                             <div class="gallery-page__card__hover">
                                 <a href="assets/images/gallery/gallery-1-3.jpg" class="img-popup">
@@ -1074,7 +1080,7 @@
                     </div><!-- /.col-md-6 col-lg-4 -->
                     <div class="col-md-6 col-lg-4">
                         <div class="gallery-page__card">
-                            <img src="assets/images/gallery/gallery-1-4.jpg" alt="gallery Beauty Atelier In Silistra">
+                            <img loading="lazy" src="assets/images/gallery/gallery-1-4.jpg" alt="gallery Beauty Atelier In Silistra">
                             <div class="gallery-page__card__hover">
                                 <a href="assets/images/gallery/gallery-1-4.jpg" class="img-popup">
                                     <span class="gallery-page__card__icon"></span>
@@ -1088,7 +1094,7 @@
                     </div><!-- /.col-md-6 col-lg-4 -->
                     <div class="col-md-6 col-lg-4">
                         <div class="gallery-page__card">
-                            <img src="assets/images/gallery/gallery-1-5.jpg" alt="gallery Beauty Atelier In Silistra">
+                            <img loading="lazy" src="assets/images/gallery/gallery-1-5.jpg" alt="gallery Beauty Atelier In Silistra">
                             <div class="gallery-page__card__hover">
                                 <a href="assets/images/gallery/gallery-1-5.jpg" class="img-popup">
                                     <span class="gallery-page__card__icon"></span>
@@ -1102,7 +1108,7 @@
                     </div><!-- /.col-md-6 col-lg-4 -->
                     <div class="col-md-6">
                         <div class="gallery-page__card">
-                            <img src="assets/images/gallery/gallery-1-6.jpg" alt="gallery Beauty Atelier In Silistra">
+                            <img loading="lazy" src="assets/images/gallery/gallery-1-6.jpg" alt="gallery Beauty Atelier In Silistra">
                             <div class="gallery-page__card__hover">
                                 <a href="assets/images/gallery/gallery-1-6.jpg" class="img-popup">
                                     <span class="gallery-page__card__icon"></span>
@@ -1116,7 +1122,7 @@
                     </div><!-- /.col-md-6 -->
                     <div class="col-md-6">
                         <div class="gallery-page__card">
-                            <img src="assets/images/gallery/gallery-1-7.jpg" alt="gallery Beauty Atelier In Силистра">
+                            <img loading="lazy" src="assets/images/gallery/gallery-1-7.jpg" alt="gallery Beauty Atelier In Силистра">
                             <div class="gallery-page__card__hover">
                                 <a href="assets/images/gallery/gallery-1-7.jpg" class="img-popup">
                                     <span class="gallery-page__card__icon"></span>
@@ -1146,7 +1152,7 @@
                             <div class="sec-title wow fadeInUp" data-wow-duration="1500ms">
                                 <div class="sec-title__top">
 
-                                    <img src="assets/images/shapes/sec-title-s-1-1.png?v=2"
+                                    <img loading="lazy" src="assets/images/shapes/sec-title-s-1-1.png?v=2"
                                         alt="препоръки от нашите клиенти Beauty Atelier In Силистра"
                                         class="sec-title__img">
 
@@ -1162,11 +1168,11 @@
                             </div><!-- /.sec-title -->
                             <div class="testimonials-three__image wow fadeInUp" data-wow-duration="1500ms">
                                 <div class="testimonials-three__image__inner">
-                                    <img src="assets/images/testimonials/testimonial-quote-3-1.jpg?v=2"
+                                    <img loading="lazy" src="assets/images/testimonials/testimonial-quote-3-1.jpg?v=2"
                                         alt="препоръки от нашите клиенти Beauty Atelier In Силистра">
                                 </div><!-- /.testimonials-three__image__inner -->
                                 <div class="testimonials-three__image__inner">
-                                    <img src="assets/images/testimonials/testimonial-quote-3-2.jpg?v=2"
+                                    <img loading="lazy" src="assets/images/testimonials/testimonial-quote-3-2.jpg?v=2"
                                         alt="препоръки от нашите клиенти Beauty Atelier In Силистра">
                                 </div><!-- /.testimonials-three__image__inner -->
                             </div><!-- /.testimonials-three__image -->
@@ -1175,7 +1181,7 @@
                     <div class="col-xl-7 col-lg-6">
                         <div class="testimonials-three__card">
                             <div class="testimonials-three__card__bg"
-                                style="background-image: url(assets/images/shapes/testimonial-card-bg-3-1.png?v=2);">
+                                style="background-image: url(assets/images/shapes/testimonial-card-bg-3-1.webp);">
                             </div>
                             <div class="testimonials-three__card__inner">
                                 <div class="testimonials-three__thumb mediox-owl__carousel owl-carousel owl-theme"
@@ -1204,19 +1210,19 @@
                     }'>
                                     <a href="#item1" class="item" data-hash="item1">
                                         <span class="testimonials-three__thumb__image">
-                                            <img src="assets/images/testimonials/testimonial-thumb-3-1.jpg"
+                                            <img loading="lazy" src="assets/images/testimonials/testimonial-thumb-3-1.jpg"
                                                 alt="препоръки от нашите клиенти Beauty Atelier In Силистра">
                                         </span><!-- /.testimonials-three__thumb__image -->
                                     </a><!-- /.item -->
                                     <a href="#item2" class="item" data-hash="item2">
                                         <span class="testimonials-three__thumb__image">
-                                            <img src="assets/images/testimonials/testimonial-thumb-3-2.jpg"
+                                            <img loading="lazy" src="assets/images/testimonials/testimonial-thumb-3-2.jpg"
                                                 alt="препоръки от нашите клиенти Beauty Atelier In Силистра">
                                         </span><!-- /.testimonials-three__thumb__image -->
                                     </a><!-- /.item -->
                                     <a href="#item3" class="item" data-hash="item3">
                                         <span class="testimonials-three__thumb__image">
-                                            <img src="assets/images/testimonials/testimonial-thumb-3-3.jpg"
+                                            <img loading="lazy" src="assets/images/testimonials/testimonial-thumb-3-3.jpg"
                                                 alt="препоръки от нашите клиенти Beauty Atelier In Силистра">
                                         </span><!-- /.testimonials-three__thumb__image -->
                                     </a><!-- /.item -->
@@ -1393,7 +1399,7 @@
                             <div class="sec-title wow fadeInUp" data-wow-duration="1500ms">
                                 <div class="sec-title__top">
 
-                                    <img src="assets/images/shapes/sec-title-s-1-1.png?v=2"
+                                    <img loading="lazy" src="assets/images/shapes/sec-title-s-1-1.png?v=2"
                                         alt="Блог и Новини Beauty Atelier In Силистра" class="sec-title__img">
 
 
@@ -1452,9 +1458,9 @@
                             <div class="blog-card-two__image">
                                 <a href="microneedling-deep-dive.html" class="blog-card-two__image__item"
                                     aria-label="Прочетете статията: Микронидлинг – Пълен Наръчник">
-                                    <img src="assets/images/blog/microneedling-preview.png"
+                                    <img loading="lazy" src="assets/images/blog/microneedling-preview.webp"
                                         alt="Микронидлинг процедура за лице – регенерация на кожата Beauty Atelier IN">
-                                    <img src="assets/images/blog/microneedling-preview.png"
+                                    <img loading="lazy" src="assets/images/blog/microneedling-preview.webp"
                                         alt="Микронидлинг – колаген и подмладяване">
                                 </a><!-- /.blog-card-two__image__item -->
                                 <div class="blog-card-two__date">
@@ -1490,9 +1496,9 @@
                             <div class="blog-card-two__image">
                                 <a href="choosing-right-facial.html" class="blog-card-two__image__item"
                                     aria-label="Прочетете статията: Как да избереш процедура за лице">
-                                    <img src="assets/images/blog/1-s.jpg"
+                                    <img loading="lazy" src="assets/images/blog/1-s.jpg"
                                         alt="Снимка на жена с предпазна маска по време на козметична процедура за лице">
-                                    <img src="assets/images/blog/1.jpg" alt="Детайл от козметична процедура за лице">
+                                    <img loading="lazy" src="assets/images/blog/1.jpg" alt="Детайл от козметична процедура за лице">
                                 </a><!-- /.blog-card-two__image__item -->
                                 <div class="blog-card-two__date">
                                     <span class="blog-card-two__date__day">01</span>
@@ -1529,9 +1535,9 @@
                             data-wow-delay='100ms'>
                             <div class="blog-card-two__image">
                                 <a href="beauty-secrets.html" class="blog-card-two__image__item">
-                                    <img src="assets/images/blog/blog-s-3-2.jpg?v=2"
+                                    <img loading="lazy" src="assets/images/blog/blog-s-3-2.jpg?v=2"
                                         alt="Блог и Новини Beauty Atelier In Силистра">
-                                    <img src="assets/images/blog/blog-3-2.jpg?v=2"
+                                    <img loading="lazy" src="assets/images/blog/blog-3-2.jpg?v=2"
                                         alt="Блог и Новини Beauty Atelier In Силистра">
                                 </a><!-- /.blog-card-two__image__item -->
                                 <div class="blog-card-two__date">
@@ -1569,9 +1575,9 @@
                             data-wow-delay='100ms'>
                             <div class="blog-card-two__image">
                                 <a href="microblading-for-all-ages.html" class="blog-card-two__image__item">
-                                    <img src="assets/images/blog/blog-s-3-5.jpg?v=2"
+                                    <img loading="lazy" src="assets/images/blog/blog-s-3-5.jpg?v=2"
                                         alt="Блог и Новини Beauty Atelier In Силистра">
-                                    <img src="assets/images/blog/blog-3-9.jpg?v=2"
+                                    <img loading="lazy" src="assets/images/blog/blog-3-9.jpg?v=2"
                                         alt="Блог и Новини Beauty Atelier In Силистра">
                                 </a><!-- /.blog-card-two__image__item -->
                                 <div class="blog-card-two__date">
@@ -1610,9 +1616,9 @@
                             data-wow-delay='200ms'>
                             <div class="blog-card-two__image">
                                 <a href="microblading-guide.html" class="blog-card-two__image__item">
-                                    <img src="assets/images/blog/blog-s-3-3.jpg?v=2"
+                                    <img loading="lazy" src="assets/images/blog/blog-s-3-3.jpg?v=2"
                                         alt="Тайната на Естествената Красота: Как Професионалните Процедури Beauty Atelier In Силистра">
-                                    <img src="assets/images/blog/blog-3-3.jpg?v=2"
+                                    <img loading="lazy" src="assets/images/blog/blog-3-3.jpg?v=2"
                                         alt="Тайната на Естествената Красота: Как Професионалните Процедури Beauty Atelier In Силистра">
                                 </a><!-- /.blog-card-two__image__item -->
                                 <div class="blog-card-two__date">
@@ -1647,9 +1653,9 @@
                             data-wow-delay='300ms'>
                             <div class="blog-card-two__image">
                                 <a href="aftertreatment.html" class="blog-card-two__image__item">
-                                    <img src="assets/images/blog/blog-s-3-4.jpg?v=2"
+                                    <img loading="lazy" src="assets/images/blog/blog-s-3-4.jpg?v=2"
                                         alt="Всичко, което трябва да знаете за микроблейдинга – пълно ръководство Beauty Atelier In Силистра">
-                                    <img src="assets/images/blog/blog-3-4.jpg?v=2"
+                                    <img loading="lazy" src="assets/images/blog/blog-3-4.jpg?v=2"
                                         alt="Всичко, което трябва да знаете за микроблейдинга – пълно ръководство Beauty Atelier In Силистра">
                                 </a><!-- /.blog-card-two__image__item -->
                                 <div class="blog-card-two__date">
@@ -1721,23 +1727,23 @@
             }
             }'>
                     <div class="client-carousel__one__item">
-                        <img src="assets/images/brand/premium-logo-1.png" alt="Beauty Atelier In Силистра"
+                        <img loading="lazy" src="assets/images/brand/premium-logo-1.webp" alt="Beauty Atelier In Силистра"
                             class="client-carousel__one__image">
                     </div><!-- /.owl-slide-item-->
                     <div class="client-carousel__one__item">
-                        <img src="assets/images/brand/premium-logo-2.png" alt="Beauty Atelier In Силистра"
+                        <img loading="lazy" src="assets/images/brand/premium-logo-2.webp" alt="Beauty Atelier In Силистра"
                             class="client-carousel__one__image">
                     </div><!-- /.owl-slide-item-->
                     <div class="client-carousel__one__item">
-                        <img src="assets/images/brand/premium-logo-3.png" alt="Beauty Atelier In Силистра"
+                        <img loading="lazy" src="assets/images/brand/premium-logo-3.webp" alt="Beauty Atelier In Силистра"
                             class="client-carousel__one__image">
                     </div><!-- /.owl-slide-item-->
                     <div class="client-carousel__one__item">
-                        <img src="assets/images/brand/premium-logo-4.png" alt="Beauty Atelier In Силистра"
+                        <img loading="lazy" src="assets/images/brand/premium-logo-4.webp" alt="Beauty Atelier In Силистра"
                             class="client-carousel__one__image">
                     </div><!-- /.owl-slide-item-->
                     <div class="client-carousel__one__item">
-                        <img src="assets/images/brand/premium-logo-5.png" alt="Beauty Atelier In Силистра"
+                        <img loading="lazy" src="assets/images/brand/premium-logo-5.webp" alt="Beauty Atelier In Силистра"
                             class="client-carousel__one__image">
                     </div><!-- /.owl-slide-item-->
                 </div><!-- /.thm-owl__slider -->
@@ -1745,7 +1751,7 @@
         </div><!-- /.client-carousel -->
 
         <footer class="main-footer section-space-top">
-            <div class="main-footer__bg" style="background-image: url(assets/images/shapes/footer-bg.png?v=2);"></div>
+            <div class="main-footer__bg" style="background-image: url(assets/images/shapes/footer-bg.webp);"></div>
             <!-- /.main-footer__bg -->
             <div class="container">
                 <div class="footer-divider"></div>
@@ -1755,7 +1761,7 @@
                         <div class="footer-widget footer-widget--about">
                             <div class="footer-widget__logo logo-retina">
                                 <a href="index.html">
-                                    <img src="assets/images/logo-light.png" alt="Beauty Atelier In Силистра"
+                                    <img loading="lazy" src="assets/images/logo-light.png" alt="Beauty Atelier In Силистра"
                                         width="164">
                                 </a>
                             </div><!-- /.footer-widget__logo -->
@@ -1844,7 +1850,7 @@
                             <ul class="footer-widget__posts list-unstyled">
                                 <li class="footer-widget__posts__item">
                                     <div class="footer-widget__posts__image">
-                                        <img src="assets/images/blog/1.jpg"
+                                        <img loading="lazy" src="assets/images/blog/1.jpg"
                                             style="width: 70px; height: 70px; object-fit: cover;"
                                             alt="Правилната процедура за лице">
                                     </div><!-- /.footer-widget__posts__image -->
@@ -1865,7 +1871,7 @@
                                 </li>
                                 <li class="footer-widget__posts__item">
                                     <div class="footer-widget__posts__image">
-                                        <img src="assets/images/blog/microneedling-preview.png"
+                                        <img loading="lazy" src="assets/images/blog/microneedling-preview.webp"
                                             style="width: 70px; height: 70px; object-fit: cover;"
                                             alt="Микронидлинг – Пълен Наръчник">
                                     </div><!-- /.footer-widget__posts__image -->
@@ -1980,7 +1986,7 @@
             <span class="mobile-nav__close mobile-nav__toggler"><i class="icon-close"></i></span>
 
             <div class="logo-box logo-retina">
-                <a href="index.html" aria-label="logo image"><img src="assets/images/logo-light.png?v=2" width="164"
+                <a href="index.html" aria-label="logo image"><img loading="lazy" src="assets/images/logo-light.png?v=2" width="164"
                         alt="Beauty Atelier In Силистра лого" /></a>
             </div>
             <!-- /.logo-box -->
@@ -2046,7 +2052,7 @@
         <div class="sidebar-one__content">
             <span class="sidebar-one__close sidebar-btn__toggler"><i class="icon-close"></i></span>
             <div class="sidebar-one__logo sidebar-one__item logo-retina">
-                <a href="index.html" aria-label="logo image"><img src="assets/images/logo-light.png?v=2" width="164"
+                <a href="index.html" aria-label="logo image"><img loading="lazy" src="assets/images/logo-light.png?v=2" width="164"
                         alt="Beauty Atelier In Силистра лого" />
                 </a>
             </div><!-- /.sidebar-one__logo -->
@@ -2140,8 +2146,8 @@
     <script src="assets/js/mediox.js"></script>
 
 
-    <!-- AI Chatbot script -->
-    <script src="assets/js/ai-chat-v2.js"></script>
+    <!-- AI Chatbot script (deferred) -->
+    <script src="assets/js/ai-chat-v2.js" defer></script>
 
     <!-- i18n: translations must load before engine -->
 
@@ -2205,10 +2211,10 @@
         </button>
     </div>
 
-    <script src="assets/js/cookie-consent.js"></script>
-    <script src="assets/js/contact-widget.js"></script>
-    <script src="assets/js/translations.js"></script>
-    <script src="assets/js/i18n.js"></script>
+    <script src="assets/js/cookie-consent.js" defer></script>
+    <script src="assets/js/contact-widget.js" defer></script>
+    <script src="assets/js/translations.js" defer></script>
+    <script src="assets/js/i18n.js" defer></script>
 </body>
 
 </html>
