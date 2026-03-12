@@ -6,24 +6,20 @@ on:
       - main
 
 jobs:
-  build-and-deploy:
+  deploy:
     runs-on: ubuntu-latest
 
     steps:
     - name: Get latest code
       uses: actions/checkout@v3
 
-    - name: Deploy to Hostinger
-      uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+    - name: Deploy via rsync over SSH
+      uses: burnett01/rsync-deployments@6.0.0
       with:
-        server: ${{ secrets.FTP_SERVER }}
-        username: ${{ secrets.FTP_USERNAME }}
-        password: ${{ secrets.FTP_PASSWORD }}
-        server-dir: ${{ secrets.FTP_REMOTE_PATH }}
-        protocol: ftps
-        port: 21
-        timeout: 300000
-        log-level: standard
-        exclude: |
-          **/.git*
-          **/.git*/**
+        switches: -avzr --delete --exclude='.git*'
+        path: ./
+        remote_path: ${{ secrets.SSH_REMOTE_PATH }}
+        remote_host: ${{ secrets.SSH_HOST }}
+        remote_port: ${{ secrets.SSH_PORT }}
+        remote_user: ${{ secrets.SSH_USERNAME }}
+        remote_key: ${{ secrets.SSH_PRIVATE_KEY }}
