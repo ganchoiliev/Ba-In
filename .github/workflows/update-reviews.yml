@@ -1,0 +1,34 @@
+name: Update Google Reviews
+
+on:
+  schedule:
+    # Every Monday at 06:00 UTC  (09:00 Bulgaria time)
+    - cron: '0 6 * * 1'
+  workflow_dispatch: # Allow manual trigger from Actions tab
+
+jobs:
+  update-reviews:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Fetch review count and update files
+        id: update
+        run: |
+          chmod +x scripts/update-review-count.sh
+          if scripts/update-review-count.sh "${{ secrets.GOOGLE_PLACES_API_KEY }}" "${{ secrets.GOOGLE_PLACE_ID }}"; then
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Commit and push changes
+        if: steps.update.outputs.changed == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "chore: auto-update Google review count"
+          git push

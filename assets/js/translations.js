@@ -440,7 +440,7 @@ const TRANSLATIONS = {
       'index.meta_desc': 'Специализиран център за PhiBrows микроблейдинг в Силистра. Предлагаме професионален микронидлинг, ламиниране на мигли и естетични процедури. Доверете се на сертифициран опит.',
 
       /* Hero — static */
-      'index.hero.trust_qualifier': '5.0 в Google · 24 отзива',
+      'index.hero.trust_qualifier': '5.0 в Google · 26 отзива',
       'index.hero.title': 'Перфектните вежди, които <br><span class="hero-static__title--accent">винаги сте искали</span>',
       'index.hero.subtitle': 'Микроблейдинг и естетични процедури · Силистра',
       'index.hero.btn_book': 'Запази безплатна консултация',
@@ -648,7 +648,7 @@ const TRANSLATIONS = {
       'procedures.meta_desc': 'Разгледайте нашите процедури — микроблейдинг, микронидлинг, плазма пен, ламиниране и други. Сертифициран специалист в Силистра.',
       'procedures.page_title': 'Процедури за красота, съобразени с вас',
       'procedures.page_subtitle': 'Естетични процедури в Силистра · Beauty Atelier IN',
-      'procedures.intro.trust_pill': '5.0 в Google · 24 отзива',
+      'procedures.intro.trust_pill': '5.0 в Google · 26 отзива',
       'procedures.intro.text': 'Всяка процедура е съобразена с вашите индивидуални нужди и извършена от сертифициран специалист в стерилна среда. Разгледайте нашите услуги и изберете подходящата за вас.',
       'procedures.trust.certified': 'Сертифициран PhiBrows артист',
       'procedures.trust.clients': '250+ доволни клиента',
