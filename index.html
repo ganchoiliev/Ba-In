@@ -2308,6 +2308,16 @@ ul,ol{margin:0;padding:0;list-style:none}
     <!-- AI Chatbot script -->
     <script defer src="assets/js/ai-chat-v2.js"></script>
 
+    <!-- Accessibility: label OWL carousel nav buttons after they initialize -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        setTimeout(function() {
+            document.querySelectorAll('.owl-prev').forEach(function(b) { b.setAttribute('aria-label', 'Previous slide'); });
+            document.querySelectorAll('.owl-next').forEach(function(b) { b.setAttribute('aria-label', 'Next slide'); });
+        }, 2000);
+    });
+    </script>
+
     <!-- i18n: translations must load before engine -->
 
 <!-- WhatsApp / Viber Contact Widget -->
