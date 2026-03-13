@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -218,14 +218,14 @@ ul,ol{margin:0;padding:0;list-style:none}
 .hero-static__title{font-family:var(--mediox-font,"Manrope",sans-serif);font-size:62px;font-weight:800;color:#fff;line-height:1.15;margin:0 0 18px;letter-spacing:-.02em;text-transform:none}
 .hero-static__title--accent{color:var(--mediox-base,#c9a84c);position:relative}
 .hero-static__title--accent::after{content:'';position:absolute;bottom:-4px;left:0;width:100%;height:4px;background:linear-gradient(90deg,var(--mediox-base,#c9a84c),transparent);border-radius:2px}
-.hero-static__subtitle{font-size:18px;color:rgba(255,255,255,.75);font-weight:500;margin:0 0 36px;letter-spacing:.04em}
+.hero-static__subtitle{font-size:18px;color:rgba(255,255,255,.85);font-weight:500;margin:0 0 36px;letter-spacing:.04em}
 .hero-static__cta-group{display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap;margin-bottom:14px}
 .hero-static__cta{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-family:var(--mediox-font,"Manrope",sans-serif);font-size:16px;font-weight:600;border-radius:100px;padding:14px 32px;cursor:pointer;transition:all 400ms ease;text-decoration:none;line-height:1.75}
 .hero-static__cta--primary{background:linear-gradient(135deg,#c9a84c 0%,#b8923a 50%,#a07d2e 100%);color:#fff;border:2px solid transparent;box-shadow:0 6px 24px rgba(184,146,58,.4)}
 .hero-static__cta--primary:hover{background:linear-gradient(135deg,#d4b55e 0%,#c9a84c 50%,#b8923a 100%);box-shadow:0 8px 32px rgba(184,146,58,.55);transform:translateY(-2px);color:#fff}
 .hero-static__cta--secondary{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.5)}
 .hero-static__cta--secondary:hover{border-color:#fff;background:rgba(255,255,255,.1);color:#fff;transform:translateY(-2px)}
-.hero-static__microcopy{font-size:13px;color:rgba(255,255,255,.55);font-weight:500;margin:0 0 40px;letter-spacing:.03em}
+.hero-static__microcopy{font-size:13px;color:rgba(255,255,255,.75);font-weight:500;margin:0 0 40px;letter-spacing:.03em}
 .hero-static__trust-bar{display:flex;align-items:center;justify-content:center;gap:32px;flex-wrap:wrap}
 .hero-static__trust-item{display:flex;align-items:center;gap:10px;color:rgba(255,255,255,.85);font-size:14px;font-weight:600}
 .hero-static__trust-icon{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;background:rgba(184,146,58,.25);border:1px solid rgba(184,146,58,.4);color:#e8c882;border-radius:50%;font-size:14px;flex-shrink:0}
@@ -236,6 +236,14 @@ ul,ol{margin:0;padding:0;list-style:none}
 @media(max-width:575px){.hero-static__content{padding:120px 0 40px}.hero-static__title{font-size:30px}.hero-static__trust-qualifier{padding:6px 16px}.hero-static__stars{font-size:14px}.hero-static__rating-text{font-size:12px}.hero-static__cta-group{flex-direction:column;gap:12px}.hero-static__cta{width:100%;justify-content:center}.hero-static__trust-bar{flex-direction:column;gap:14px;align-items:center}.hero-static__microcopy{font-size:12px;margin-bottom:28px}}
 @media(max-width:360px){.hero-static__title{font-size:26px}.hero-static__subtitle{font-size:14px}}
 .wow{visibility:hidden}
+@keyframes heroFadeIn{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+@keyframes heroFadeDown{from{opacity:0;transform:translateY(-20px)}to{opacity:1;transform:translateY(0)}}
+.hero-static__trust-qualifier{animation:heroFadeDown .8s ease-out both}
+.hero-static__title{animation:heroFadeIn 1s ease-out .15s both}
+.hero-static__subtitle{animation:heroFadeIn 1s ease-out .3s both}
+.hero-static__cta-group{animation:heroFadeIn 1s ease-out .45s both}
+.hero-static__microcopy{animation:heroFadeIn 1s ease-out .55s both}
+.hero-static__trust-bar{animation:heroFadeIn 1s ease-out .65s both}
 .logo-retina img{image-rendering:-webkit-optimize-contrast;image-rendering:crisp-edges}
 .language-switcher{position:relative;display:inline-flex;align-items:center;margin-left:20px;cursor:pointer}
 .language-switcher__current{display:flex;align-items:center;gap:6px;padding:6px 12px;border-radius:100px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);color:var(--mediox-white,#fff);font-size:14px;font-weight:600;transition:all 300ms ease}
@@ -297,10 +305,7 @@ ul,ol{margin:0;padding:0;list-style:none}
     <div class="custom-cursor__cursor"></div>
     <div class="custom-cursor__cursor-two"></div>
 
-    <div class="preloader">
-        <div class="preloader__image" style="background-image: url(assets/images/loader.webp?v=2);"></div>
-    </div>
-    <!-- /.preloader -->
+    <!-- preloader removed for performance (blocked LCP until window.onload) -->
     <div class="page-wrapper">
 
 
@@ -427,9 +432,9 @@ ul,ol{margin:0;padding:0;list-style:none}
                                 <div class="main-header__call__content">
                                     <p class="main-header__call__title" data-i18n="shared.header.call_label">Звънни ни
                                     </p><!-- /.call__title -->
-                                    <h4 class="main-header__call__number">
-                                        <a href="tel:+359 89 339 8390">+359 89 339 8390</a>
-                                    </h4><!-- /.main-header__call__number -->
+                                    <p class="main-header__call__number">
+                                        <a href="tel:+359893398390">+359 89 339 8390</a>
+                                    </p><!-- /.main-header__call__number -->
                                 </div><!-- /.main-header__call__content -->
                             </div><!-- /.main-header__call -->
                             <a href="appointment.html" class="mediox-btn main-header__btn">
@@ -452,22 +457,22 @@ ul,ol{margin:0;padding:0;list-style:none}
                     <div class="col-xxl-10 col-xl-9 mx-auto">
                         <div class="hero-static__content">
                             <!-- Trust qualifier — replaces redundant brand label -->
-                            <div class="hero-static__trust-qualifier wow fadeInDown" data-wow-duration="800ms">
+                            <div class="hero-static__trust-qualifier">
                                 <span class="hero-static__stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
                                 <span class="hero-static__rating-text" data-i18n="index.hero.trust_qualifier">5.0 в Google · 24 отзива</span>
                             </div>
 
                             <!-- Outcome-led H1 -->
-                            <h1 class="hero-static__title wow fadeInUp" data-wow-duration="1000ms">
+                            <h1 class="hero-static__title">
                                 <span data-i18n-html="index.hero.title">Перфектните вежди, които <br><span class="hero-static__title--accent">винаги сте искали</span></span>
                             </h1>
 
                             <!-- SEO subtitle -->
-                            <p class="hero-static__subtitle wow fadeInUp" data-wow-duration="1000ms"
+                            <p class="hero-static__subtitle"
                                 data-i18n="index.hero.subtitle">Микроблейдинг и естетични процедури · Силистра</p>
 
                             <!-- CTAs with clear hierarchy -->
-                            <div class="hero-static__cta-group wow fadeInUp" data-wow-duration="1000ms">
+                            <div class="hero-static__cta-group">
                                 <a href="appointment.html" class="hero-static__cta hero-static__cta--primary">
                                     <span data-i18n="index.hero.btn_book">Запази безплатна консултация</span>
                                     <span class="mediox-btn__icon"><i class="icon-up-right-arrow"></i></span>
@@ -479,11 +484,11 @@ ul,ol{margin:0;padding:0;list-style:none}
                             </div>
 
                             <!-- Micro-copy reassurance -->
-                            <p class="hero-static__microcopy wow fadeInUp" data-wow-duration="1000ms"
+                            <p class="hero-static__microcopy"
                                 data-i18n="index.hero.microcopy">Без ангажимент · Отговаряме до 1 час</p>
 
                             <!-- Trust icon bar -->
-                            <div class="hero-static__trust-bar wow fadeInUp" data-wow-duration="1000ms">
+                            <div class="hero-static__trust-bar">
                                 <div class="hero-static__trust-item">
                                     <span class="hero-static__trust-icon"><i class="fas fa-certificate"></i></span>
                                     <span data-i18n="index.hero.trust1">Сертифициран артист</span>
@@ -528,13 +533,13 @@ ul,ol{margin:0;padding:0;list-style:none}
                                         alt="Beauty Atelier IN Силистра | Естетични процедури" class="sec-title__img" loading="lazy">
 
 
-                                    <h6 class="sec-title__tagline" data-i18n="index.about.tagline">Сертифициран
-                                        специалист</h6>
+                                    <span class="sec-title__tagline" data-i18n="index.about.tagline">Сертифициран
+                                        специалист</span>
                                     <!-- /.sec-title__tagline -->
 
                                 </div><!-- /.sec-title__top -->
-                                <h3 class="sec-title__title" data-i18n-html="index.about.title">Миглопластика <br>и
-                                    естетични процедури</h3>
+                                <h2 class="sec-title__title" data-i18n-html="index.about.title">Миглопластика <br>и
+                                    естетични процедури</h2>
                                 <!-- /.sec-title__title -->
                             </div><!-- /.sec-title -->
                             <div class="about-three__description">
@@ -647,12 +652,12 @@ ul,ol{margin:0;padding:0;list-style:none}
                                         alt="Как да ви помогнем? Beauty Atelier IN Silistra" class="sec-title__img" loading="lazy">
 
 
-                                    <h6 class="sec-title__tagline" data-i18n="index.services.tagline">Открий най-доброто
-                                        за твоята красота</h6>
+                                    <span class="sec-title__tagline" data-i18n="index.services.tagline">Открий най-доброто
+                                        за твоята красота</span>
                                     <!-- /.sec-title__tagline -->
 
                                 </div><!-- /.sec-title__top -->
-                                <h3 class="sec-title__title" data-i18n="index.services.title">нашите процедури</h3>
+                                <h2 class="sec-title__title" data-i18n="index.services.title">нашите процедури</h2>
                                 <!-- /.sec-title__title -->
                             </div><!-- /.sec-title -->
                         </div><!-- /.col-lg-6 -->
@@ -871,12 +876,12 @@ ul,ol{margin:0;padding:0;list-style:none}
                                         alt="Защо да избереш нас? Beauty Atelier In Silistra" class="sec-title__img" loading="lazy">
 
 
-                                    <h6 class="sec-title__tagline" data-i18n="index.why.tagline">Перфектният резултат
-                                        започва с професионален подход.</h6><!-- /.sec-title__tagline -->
+                                    <span class="sec-title__tagline" data-i18n="index.why.tagline">Перфектният резултат
+                                        започва с професионален подход.</span><!-- /.sec-title__tagline -->
 
                                 </div><!-- /.sec-title__top -->
-                                <h3 class="sec-title__title" data-i18n-html="index.why.title">Фокус
-                                    върху<br>естествената красота</h3>
+                                <h2 class="sec-title__title" data-i18n-html="index.why.title">Фокус
+                                    върху<br>естествената красота</h2>
                                 <!-- /.sec-title__title -->
                             </div><!-- /.sec-title -->
                             <div class="why-choose-one__inner">
@@ -942,11 +947,11 @@ ul,ol{margin:0;padding:0;list-style:none}
                                         class="sec-title__img" loading="lazy">
 
 
-                                    <h6 class="sec-title__tagline">FAQ’S</h6><!-- /.sec-title__tagline -->
+                                    <span class="sec-title__tagline">FAQ'S</span><!-- /.sec-title__tagline -->
 
                                 </div><!-- /.sec-title__top -->
-                                <h3 class="sec-title__title" data-i18n-html="index.faq.title">Често задавани <br>въпроси
-                                </h3><!-- /.sec-title__title -->
+                                <h2 class="sec-title__title" data-i18n-html="index.faq.title">Често задавани <br>въпроси
+                                </h2><!-- /.sec-title__title -->
                             </div><!-- /.sec-title -->
                             <div class="faq-two__accordion">
                                 <div class="faq-accordion mediox-accordion" data-grp-name="mediox-accordion">
@@ -1017,12 +1022,12 @@ ul,ol{margin:0;padding:0;list-style:none}
                                 alt="Как протуча нашата процедура Beauty Atelier In Silistra" class="sec-title__img" loading="lazy">
 
 
-                            <h6 class="sec-title__tagline" data-i18n="index.process.tagline">От първата консултация до
-                                перфектния резултат – всичко е ясно и лесно.</h6><!-- /.sec-title__tagline -->
+                            <span class="sec-title__tagline" data-i18n="index.process.tagline">От първата консултация до
+                                перфектния резултат – всичко е ясно и лесно.</span><!-- /.sec-title__tagline -->
 
                         </div><!-- /.sec-title__top -->
-                        <h3 class="sec-title__title" data-i18n="index.process.title">Как протича процедурата при нас
-                        </h3><!-- /.sec-title__title -->
+                        <h2 class="sec-title__title" data-i18n="index.process.title">Как протича процедурата при нас
+                        </h2><!-- /.sec-title__title -->
                     </div><!-- /.sec-title -->
                     <div class="work-process-one__inner wow fadeInUp" data-wow-duration="1500ms">
                         <div class="row gutter-y-40">
@@ -1214,7 +1219,7 @@ ul,ol{margin:0;padding:0;list-style:none}
                             <img src="assets/images/gallery/gallery-1-1.webp?v=2"
                                 alt="Галерия Beauty Atelier In Silistra" loading="lazy">
                             <div class="gallery-page__card__hover">
-                                <a href="assets/images/gallery/gallery-1-1.webp?v=2" class="img-popup">
+                                <a href="assets/images/gallery/gallery-1-1.webp?v=2" class="img-popup" aria-label="Увеличи снимка 1">
                                     <span class="gallery-page__card__icon"></span>
                                 </a>
                                 <span class="gallery-page__card__hover__box gallery-page__card__hover__box--1"></span>
@@ -1229,7 +1234,7 @@ ul,ol{margin:0;padding:0;list-style:none}
                             <img src="assets/images/gallery/gallery-1-2.webp?v=2"
                                 alt="Галерия Beauty Atelier In Silistra" loading="lazy">
                             <div class="gallery-page__card__hover">
-                                <a href="assets/images/gallery/gallery-1-2.webp?v=2" class="img-popup">
+                                <a href="assets/images/gallery/gallery-1-2.webp?v=2" class="img-popup" aria-label="Увеличи снимка 2">
                                     <span class="gallery-page__card__icon"></span>
                                 </a>
                                 <span class="gallery-page__card__hover__box gallery-page__card__hover__box--1"></span>
@@ -1244,7 +1249,7 @@ ul,ol{margin:0;padding:0;list-style:none}
                             <img src="assets/images/gallery/gallery-1-3.webp?v=2"
                                 alt="gallery Beauty Atelier In Silistra" loading="lazy">
                             <div class="gallery-page__card__hover">
-                                <a href="assets/images/gallery/gallery-1-3.webp" class="img-popup">
+                                <a href="assets/images/gallery/gallery-1-3.webp" class="img-popup" aria-label="Увеличи снимка 3">
                                     <span class="gallery-page__card__icon"></span>
                                 </a>
                                 <span class="gallery-page__card__hover__box gallery-page__card__hover__box--1"></span>
@@ -1258,7 +1263,7 @@ ul,ol{margin:0;padding:0;list-style:none}
                         <div class="gallery-page__card">
                             <img src="assets/images/gallery/gallery-1-4.webp" alt="gallery Beauty Atelier In Silistra" loading="lazy">
                             <div class="gallery-page__card__hover">
-                                <a href="assets/images/gallery/gallery-1-4.webp" class="img-popup">
+                                <a href="assets/images/gallery/gallery-1-4.webp" class="img-popup" aria-label="Увеличи снимка 4">
                                     <span class="gallery-page__card__icon"></span>
                                 </a>
                                 <span class="gallery-page__card__hover__box gallery-page__card__hover__box--1"></span>
@@ -1272,7 +1277,7 @@ ul,ol{margin:0;padding:0;list-style:none}
                         <div class="gallery-page__card">
                             <img src="assets/images/gallery/gallery-1-5.webp" alt="gallery Beauty Atelier In Silistra" loading="lazy">
                             <div class="gallery-page__card__hover">
-                                <a href="assets/images/gallery/gallery-1-5.webp" class="img-popup">
+                                <a href="assets/images/gallery/gallery-1-5.webp" class="img-popup" aria-label="Увеличи снимка 5">
                                     <span class="gallery-page__card__icon"></span>
                                 </a>
                                 <span class="gallery-page__card__hover__box gallery-page__card__hover__box--1"></span>
@@ -1286,7 +1291,7 @@ ul,ol{margin:0;padding:0;list-style:none}
                         <div class="gallery-page__card">
                             <img src="assets/images/gallery/gallery-1-6.webp" alt="gallery Beauty Atelier In Silistra" loading="lazy">
                             <div class="gallery-page__card__hover">
-                                <a href="assets/images/gallery/gallery-1-6.webp" class="img-popup">
+                                <a href="assets/images/gallery/gallery-1-6.webp" class="img-popup" aria-label="Увеличи снимка 6">
                                     <span class="gallery-page__card__icon"></span>
                                 </a>
                                 <span class="gallery-page__card__hover__box gallery-page__card__hover__box--1"></span>
@@ -1300,7 +1305,7 @@ ul,ol{margin:0;padding:0;list-style:none}
                         <div class="gallery-page__card">
                             <img src="assets/images/gallery/gallery-1-7.webp" alt="gallery Beauty Atelier In Силистра" loading="lazy">
                             <div class="gallery-page__card__hover">
-                                <a href="assets/images/gallery/gallery-1-7.webp" class="img-popup">
+                                <a href="assets/images/gallery/gallery-1-7.webp" class="img-popup" aria-label="Увеличи снимка 7">
                                     <span class="gallery-page__card__icon"></span>
                                 </a>
                                 <span class="gallery-page__card__hover__box gallery-page__card__hover__box--1"></span>
@@ -1333,14 +1338,14 @@ ul,ol{margin:0;padding:0;list-style:none}
                                         class="sec-title__img" loading="lazy">
 
 
-                                    <h6 class="sec-title__tagline" data-i18n="index.testimonials.tagline">Какво Казват
-                                        Нашите Клиенти</h6>
+                                    <span class="sec-title__tagline" data-i18n="index.testimonials.tagline">Какво Казват
+                                        Нашите Клиенти</span>
                                     <!-- /.sec-title__tagline -->
 
                                 </div><!-- /.sec-title__top -->
-                                <h3 class="sec-title__title" data-i18n-html="index.testimonials.title">Нашите Клиенти
+                                <h2 class="sec-title__title" data-i18n-html="index.testimonials.title">Нашите Клиенти
                                     <br>Споделят
-                                </h3><!-- /.sec-title__title -->
+                                </h2><!-- /.sec-title__title -->
                             </div><!-- /.sec-title -->
                             <div class="testimonials-three__image wow fadeInUp" data-wow-duration="1500ms">
                                 <div class="testimonials-three__image__inner">
@@ -1579,11 +1584,11 @@ ul,ol{margin:0;padding:0;list-style:none}
                                         alt="Блог и Новини Beauty Atelier In Силистра" class="sec-title__img" loading="lazy">
 
 
-                                    <h6 class="sec-title__tagline" data-i18n="index.blog.tagline">последни новини</h6>
+                                    <span class="sec-title__tagline" data-i18n="index.blog.tagline">последни новини</span>
                                     <!-- /.sec-title__tagline -->
 
                                 </div><!-- /.sec-title__top -->
-                                <h3 class="sec-title__title" data-i18n="index.blog.title">Блог & новини</h3>
+                                <h2 class="sec-title__title" data-i18n="index.blog.title">Блог & новини</h2>
                                 <!-- /.sec-title__title -->
                             </div><!-- /.sec-title -->
                         </div><!-- /.col-xl-9 col-lg-8 -->
@@ -1660,7 +1665,7 @@ ul,ol{margin:0;padding:0;list-style:none}
                                 <h3 class="blog-card-two__title"><a href="microneedling-deep-dive.html">Микронидлинг:
                                         Тайната за гладка, млада и сияйна кожа</a></h3>
                                 <!-- /.blog-card-two__title -->
-                                <a href="microneedling-deep-dive.html" class="blog-card-two__btn">
+                                <a href="microneedling-deep-dive.html" class="blog-card-two__btn" aria-label="Прочети повече за Микронидлинг">
                                     <span class="icon-double-arrow"></span>
                                 </a><!-- /.blog-card-two__btn -->
                             </div><!-- /.blog-card-two__content -->
@@ -1700,7 +1705,7 @@ ul,ol{margin:0;padding:0;list-style:none}
                                         data-i18n="index.blog.post1_title">Как да избереш процедура за лице (без
                                         трендове)</a></h3>
                                 <!-- /.blog-card-two__title -->
-                                <a href="choosing-right-facial.html" class="blog-card-two__btn">
+                                <a href="choosing-right-facial.html" class="blog-card-two__btn" aria-label="Прочети повече за избор на процедура">
                                     <span class="icon-double-arrow"></span>
                                 </a><!-- /.blog-card-two__btn -->
                             </div><!-- /.blog-card-two__content -->
@@ -1739,7 +1744,7 @@ ul,ol{margin:0;padding:0;list-style:none}
                                 <h3 class="blog-card-two__title"><a href="beauty-secrets.html"
                                         data-i18n="index.blog.post2_title">Тайната на Естествената Красота: Как
                                         Професионалните Процедури</a></h3><!-- /.blog-card-two__title -->
-                                <a href="beauty-inspiring.html" class="blog-card-two__btn">
+                                <a href="beauty-inspiring.html" class="blog-card-two__btn" aria-label="Прочети повече за естествената красота">
                                     <span class="icon-double-arrow"></span>
                                 </a><!-- /.blog-card-two__btn -->
                             </div><!-- /.blog-card-two__content -->
@@ -1780,7 +1785,7 @@ ul,ol{margin:0;padding:0;list-style:none}
                                         data-i18n="index.blog.post3_title">Microblading - Естествени и прецизни вежди за
                                         хармонично излъчване</a></h3>
                                 <!-- /.blog-card-two__title -->
-                                <a href="microblading-for-all-ages.html" class="blog-card-two__btn">
+                                <a href="microblading-for-all-ages.html" class="blog-card-two__btn" aria-label="Прочети повече за микроблейдинг">
                                     <span class="icon-double-arrow"></span>
                                 </a><!-- /.blog-card-two__btn -->
                             </div><!-- /.blog-card-two__content -->
@@ -1818,7 +1823,7 @@ ul,ol{margin:0;padding:0;list-style:none}
                                         data-i18n="index.blog.post4_title">Всичко, което трябва да знаете за
                                         микроблейдинга – пълно ръководство</a></h3>
                                 <!-- /.blog-card-two__title -->
-                                <a href="microblading-guide.html" class="blog-card-two__btn">
+                                <a href="microblading-guide.html" class="blog-card-two__btn" aria-label="Прочети ръководство за микроблейдинг">
                                     <span class="icon-double-arrow"></span>
                                 </a><!-- /.blog-card-two__btn -->
                             </div><!-- /.blog-card-two__content -->
@@ -1854,7 +1859,7 @@ ul,ol{margin:0;padding:0;list-style:none}
                                 <h3 class="blog-card-two__title"><a href="aftertreatment.html"
                                         data-i18n="index.blog.post5_title">Следпроцедурна грижа: Как да удължите
                                         трайността на микроблейдинга</a></h3><!-- /.blog-card-two__title -->
-                                <a href="aftertreatment.html" class="blog-card-two__btn">
+                                <a href="aftertreatment.html" class="blog-card-two__btn" aria-label="Прочети повече за следпроцедурна грижа">
                                     <span class="icon-double-arrow"></span>
                                 </a><!-- /.blog-card-two__btn -->
                             </div><!-- /.blog-card-two__content -->
@@ -2300,19 +2305,16 @@ ul,ol{margin:0;padding:0;list-style:none}
     <script defer src="assets/vendors/jquery-ui/jquery-ui.js"></script>
     <script defer src="assets/vendors/jquery-ajaxchimp/jquery.ajaxchimp.min.js"></script>
     <script defer src="assets/vendors/jquery-appear/jquery.appear.min.js"></script>
-    <script defer src="assets/vendors/jquery-circle-progress/jquery.circle-progress.min.js"></script>
+    <!-- removed: jquery-circle-progress (not used on this page) -->
     <script defer src="assets/vendors/jquery-magnific-popup/jquery.magnific-popup.min.js"></script>
     <script defer src="assets/vendors/jquery-validate/jquery.validate.min.js"></script>
-    <script defer src="assets/vendors/nouislider/nouislider.min.js"></script>
-    <script defer src="assets/vendors/wnumb/wNumb.min.js"></script>
+    <!-- removed: nouislider + wNumb (not used on this page) -->
     <script defer src="assets/vendors/owl-carousel/js/owl.carousel.min.js"></script>
     <script defer src="assets/vendors/slick/js/slick.min.js"></script>
     <script defer src="assets/vendors/wow/wow.js"></script>
     <script defer src="assets/vendors/imagesloaded/imagesloaded.min.js"></script>
     <script defer src="assets/vendors/isotope/isotope.js"></script>
-    <script defer src="assets/vendors/countdown/countdown.min.js"></script>
-    <script defer src="assets/vendors/jquery-circleType/jquery.circleType.js"></script>
-    <script defer src="assets/vendors/jquery-lettering/jquery.lettering.min.js"></script>
+    <!-- removed: countdown, circleType, lettering (not used on this page) -->
     <!-- template js -->
     <script defer src="assets/js/mediox.js"></script>
 
