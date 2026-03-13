@@ -128,9 +128,7 @@ ul,ol{margin:0;padding:0;list-style:none}
 .preloader{position:fixed;background-color:var(--mediox-black,#000);top:0;left:0;right:0;bottom:0;z-index:9991;display:flex;justify-content:center;align-items:center}
 .preloader__image{animation:flipInY 2s infinite;background-repeat:no-repeat;background-position:center;background-size:60px auto;width:100%;height:100%}
 @keyframes flipInY{0%{transform:perspective(400px) rotateY(90deg);opacity:0}40%{transform:perspective(400px) rotateY(-20deg)}60%{transform:perspective(400px) rotateY(10deg);opacity:1}80%{transform:perspective(400px) rotateY(-5deg)}100%{transform:perspective(400px) rotateY(0);opacity:1}}
-.custom-cursor__cursor{width:25px;height:25px;border-radius:100%;border:1px solid var(--mediox-base,#C49A45);transition:all 200ms ease-out;position:fixed;pointer-events:none;left:0;top:0;transform:translate(calc(-50% + 5px),-50%);z-index:999991}
-.custom-cursor__cursor-two{width:10px;height:10px;border-radius:100%;background-color:var(--mediox-base,#C49A45);opacity:.3;position:fixed;transform:translate(-50%,-50%);pointer-events:none;transition:width .3s,height .3s,opacity .3s;z-index:999991}
-@media(max-width:991px){.custom-cursor__cursor,.custom-cursor__cursor-two{display:none}}
+
 .header-four{width:100%;position:absolute;top:0;left:0;z-index:99}
 .main-header{position:relative;background-color:var(--mediox-white,#fff);z-index:99}
 .main-header .container-fluid{position:relative;z-index:1;max-width:1830px}
@@ -301,10 +299,8 @@ ul,ol{margin:0;padding:0;list-style:none}
     </noscript>
 </head>
 
-<body class="custom-cursor">
+<body>
 
-    <div class="custom-cursor__cursor"></div>
-    <div class="custom-cursor__cursor-two"></div>
 
     <!-- preloader removed for performance (blocked LCP until window.onload) -->
     <div class="page-wrapper">
