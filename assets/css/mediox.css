@@ -2577,7 +2577,7 @@ h6 {
   padding: 7px 5px;
   width: 100%;
   display: block;
-  color: var(--mediox-white, #FFFFFF);
+  color: var(--mediox-black, #0A2241);
   background-color: var(--mediox-base, #33C1ED);
   border-radius: inherit;
 }
@@ -2815,7 +2815,7 @@ h6 {
   padding: 7px 5px;
   width: 100%;
   display: block;
-  color: var(--mediox-white, #FFFFFF);
+  color: var(--mediox-black, #0A2241);
   background-color: var(--mediox-base, #33C1ED);
   border-radius: inherit;
 }

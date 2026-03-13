@@ -48,7 +48,7 @@
 
 .google-reviews__label {
     font-size: 12px;
-    color: #888;
+    color: #5a5a5a;
     text-transform: uppercase;
     letter-spacing: 0.5px;
 }
@@ -89,7 +89,7 @@
 
 .google-reviews__see-all {
     font-size: 12px;
-    color: #888;
+    color: #5a5a5a;
     text-decoration: underline;
     text-underline-offset: 3px;
     transition: color 0.2s ease;
