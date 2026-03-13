@@ -288,6 +288,7 @@ body {
   font-weight: 500;
   line-height: 1.875;
   background-color: var(--mediox-white, #FFFFFF);
+  opacity: 1;
 }
 
 body.locked {
@@ -374,7 +375,6 @@ h6 {
   width: 100%;
   min-width: 300px;
   overflow: hidden;
-  opacity: 1;
 }
 
 .section-space {
