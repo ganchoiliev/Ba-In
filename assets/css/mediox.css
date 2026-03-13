@@ -11788,7 +11788,34 @@ body.megamenu-popup-active .mobile-nav__content {
   background-color: var(--mediox-primary, #2C51A3);
 }
 
+/* CSS Grid gallery – replaces Isotope fitRows */
+.fitRow-layout {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+
+.fitRow-layout > [class*="col-"] {
+  width: 100%;
+  max-width: 100%;
+  padding: 0;
+  flex: none;
+}
+
+@media (min-width: 992px) {
+  .fitRow-layout {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 767px) {
+  .fitRow-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
 .gallery-page__card {
+
   position: relative;
   overflow: hidden;
   background-color: var(--mediox-black, #0A2241);
