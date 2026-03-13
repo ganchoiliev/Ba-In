@@ -20042,6 +20042,3 @@ button[type="submit"]:hover span {
 .main-footer__bg::before {
   display: none !important;
 }
-
-/* FOUC prevention: reveal body after all layout rules above are applied */
-body { opacity: 1; }

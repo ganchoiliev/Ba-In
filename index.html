@@ -88,7 +88,7 @@
     <!-- ═══ Performance: inline critical CSS (above-the-fold) ═══ -->
     <style>
 /* Critical CSS — above-the-fold styles for ba-in.com */
-body{opacity:0}
+.mobile-nav__wrapper,.sidebar-one,.search-popup{visibility:hidden;opacity:0}
 *,*::before,*::after{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%;-webkit-tap-highlight-color:transparent}
 body{margin:0;font-family:var(--mediox-font,"Manrope",sans-serif);font-size:16px;font-weight:500;line-height:1.875;color:var(--mediox-text,#707882);background-color:var(--mediox-white,#fff)}
@@ -234,15 +234,7 @@ ul,ol{margin:0;padding:0;list-style:none}
 @media(max-width:767px){.hero-static{min-height:auto}.hero-static__content{padding:130px 0 50px}.hero-static__title{font-size:36px}.hero-static__subtitle{font-size:16px;margin-bottom:28px}.hero-static__cta{padding:12px 24px;font-size:14px}.hero-static__trust-bar{gap:18px}.hero-static__trust-item{font-size:13px}.hero-static__trust-icon{width:30px;height:30px;font-size:12px}}
 @media(max-width:575px){.hero-static__content{padding:120px 0 40px}.hero-static__title{font-size:30px}.hero-static__trust-qualifier{padding:6px 16px}.hero-static__stars{font-size:14px}.hero-static__rating-text{font-size:12px}.hero-static__cta-group{flex-direction:column;gap:12px}.hero-static__cta{width:100%;justify-content:center}.hero-static__trust-bar{flex-direction:column;gap:14px;align-items:center}.hero-static__microcopy{font-size:12px;margin-bottom:28px}}
 @media(max-width:360px){.hero-static__title{font-size:26px}.hero-static__subtitle{font-size:14px}}
-.wow{visibility:hidden}
-@keyframes heroFadeIn{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
-@keyframes heroFadeDown{from{opacity:0;transform:translateY(-20px)}to{opacity:1;transform:translateY(0)}}
-.hero-static__trust-qualifier{animation:heroFadeDown .8s ease-out both}
-.hero-static__title{animation:heroFadeIn 1s ease-out .15s both}
-.hero-static__subtitle{animation:heroFadeIn 1s ease-out .3s both}
-.hero-static__cta-group{animation:heroFadeIn 1s ease-out .45s both}
-.hero-static__microcopy{animation:heroFadeIn 1s ease-out .55s both}
-.hero-static__trust-bar{animation:heroFadeIn 1s ease-out .65s both}
+
 .logo-retina img{image-rendering:-webkit-optimize-contrast;image-rendering:crisp-edges}
 .language-switcher{position:relative;display:inline-flex;align-items:center;margin-left:20px;cursor:pointer}
 .language-switcher__current{display:flex;align-items:center;gap:6px;padding:6px 12px;border-radius:100px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);color:var(--mediox-white,#fff);font-size:14px;font-weight:600;transition:all 300ms ease}
@@ -522,7 +514,7 @@ ul,ol{margin:0;padding:0;list-style:none}
                     </div><!-- /.col-lg-6 -->
                     <div class="col-lg-6">
                         <div class="about-three__content">
-                            <div class="sec-title wow fadeInUp" data-wow-duration="1500ms">
+                            <div class="sec-title">
                                 <div class="sec-title__top">
 
                                     <img src="assets/images/shapes/sec-title-s-1-1.webp?v=2"
@@ -641,7 +633,7 @@ ul,ol{margin:0;padding:0;list-style:none}
                 <div class="services-three__top">
                     <div class="row gutter-y-40 align-items-end">
                         <div class="col-lg-6">
-                            <div class="sec-title wow fadeInUp" data-wow-duration="1500ms">
+                            <div class="sec-title">
                                 <div class="sec-title__top">
 
                                     <img src="assets/images/shapes/sec-title-s-1-1.webp"
@@ -865,7 +857,7 @@ ul,ol{margin:0;padding:0;list-style:none}
                     </div><!-- /.col-xl-6 -->
                     <div class="col-xl-6">
                         <div class="why-choose-one__content">
-                            <div class="sec-title wow fadeInUp" data-wow-duration="1500ms">
+                            <div class="sec-title">
                                 <div class="sec-title__top">
 
                                     <img src="assets/images/shapes/sec-title-s-1-1.webp?v=2"
@@ -935,7 +927,7 @@ ul,ol{margin:0;padding:0;list-style:none}
                         <div class="faq-two__inner__bg"
                             style="background-image: url(assets/images/backgrounds/faq-bg-3-1.webp);"></div>
                         <div class="faq-two__content">
-                            <div class="sec-title wow fadeInUp" data-wow-duration="1500ms">
+                            <div class="sec-title">
                                 <div class="sec-title__top">
 
                                     <img src="assets/images/shapes/sec-title-s-1-2.webp?v=2"
@@ -1011,7 +1003,7 @@ ul,ol{margin:0;padding:0;list-style:none}
 
             <section class="work-process-one work-process-one--home3 section-space-bottom">
                 <div class="container">
-                    <div class="sec-title sec-title--center wow fadeInUp" data-wow-duration="1500ms">
+                    <div class="sec-title sec-title--center">
                         <div class="sec-title__top">
 
                             <img src="assets/images/shapes/sec-title-s-1-3.webp?v=2"
@@ -1025,7 +1017,7 @@ ul,ol{margin:0;padding:0;list-style:none}
                         <h2 class="sec-title__title" data-i18n="index.process.title">Как протича процедурата при нас
                         </h2><!-- /.sec-title__title -->
                     </div><!-- /.sec-title -->
-                    <div class="work-process-one__inner wow fadeInUp" data-wow-duration="1500ms">
+                    <div class="work-process-one__inner">
                         <div class="row gutter-y-40">
                             <div class="col-xl-3 col-md-6">
                                 <div class="work-process-one__item">
@@ -1122,8 +1114,8 @@ ul,ol{margin:0;padding:0;list-style:none}
                             <!-- /.appointment-one__title -->
                             <p class="appointment-one__subtitle" data-i18n="index.appointment.subtitle" style="color: rgba(255,255,255,0.8); font-size: 16px; margin-bottom: 20px; font-weight: 500;">Местата се запълват бързо — резервирайте навреме</p>
                             <form action="assets/inc/sendemail.php" method="post"
-                                class="appointment-one__form contact-form-validated form-one wow fadeInUp"
-                                data-wow-duration="1500ms">
+                                class="appointment-one__form contact-form-validated form-one"
+                               >
 
                                 <div class="form-one__group">
 
@@ -1319,7 +1311,7 @@ ul,ol{margin:0;padding:0;list-style:none}
                 <div class="row gutter-y-60">
                     <div class="col-xl-5 col-lg-6">
                         <div class="testimonials-three__content">
-                            <div class="sec-title wow fadeInUp" data-wow-duration="1500ms">
+                            <div class="sec-title">
                                 <div class="sec-title__top">
 
                                     <img src="assets/images/shapes/sec-title-s-1-1.webp?v=2"
@@ -1336,7 +1328,7 @@ ul,ol{margin:0;padding:0;list-style:none}
                                     <br>Споделят
                                 </h2><!-- /.sec-title__title -->
                             </div><!-- /.sec-title -->
-                            <div class="testimonials-three__image wow fadeInUp" data-wow-duration="1500ms">
+                            <div class="testimonials-three__image">
                                 <div class="testimonials-three__image__inner">
                                     <img src="assets/images/testimonials/testimonial-quote-3-1.webp?v=2"
                                         alt="препоръки от нашите клиенти Beauty Atelier In Силистра" loading="lazy">
@@ -1361,7 +1353,7 @@ ul,ol{margin:0;padding:0;list-style:none}
                         "loop": true,
                         "smartSpeed": 800,
                         "nav": false,
-                        "URLhashListener": true,
+                        
                         "navText": ["<span class=\"icon-arrow-left\"></span>","<span class=\"icon-arrow-right\"></span>"],
                         "autoplay": true,
                         "autoplayTimeout": 12000,
@@ -1378,19 +1370,19 @@ ul,ol{margin:0;padding:0;list-style:none}
                             }
                         }
                     }'>
-                                    <a href="#item1" class="item" data-hash="item1">
+                                    <a class="item">
                                         <span class="testimonials-three__thumb__image">
                                             <img src="assets/images/testimonials/testimonial-thumb-3-1.webp"
                                                 alt="препоръки от нашите клиенти Beauty Atelier In Силистра" loading="lazy">
                                         </span><!-- /.testimonials-three__thumb__image -->
                                     </a><!-- /.item -->
-                                    <a href="#item2" class="item" data-hash="item2">
+                                    <a class="item">
                                         <span class="testimonials-three__thumb__image">
                                             <img src="assets/images/testimonials/testimonial-thumb-3-2.webp"
                                                 alt="препоръки от нашите клиенти Beauty Atelier In Силистра" loading="lazy">
                                         </span><!-- /.testimonials-three__thumb__image -->
                                     </a><!-- /.item -->
-                                    <a href="#item3" class="item" data-hash="item3">
+                                    <a class="item">
                                         <span class="testimonials-three__thumb__image">
                                             <img src="assets/images/testimonials/testimonial-thumb-3-3.webp"
                                                 alt="препоръки от нашите клиенти Beauty Atelier In Силистра" loading="lazy">
@@ -1404,14 +1396,14 @@ ul,ol{margin:0;padding:0;list-style:none}
                             "loop": true,
                             "smartSpeed": 800,
                             "nav": false,
-                            "URLhashListener": true,
+                            
                             "navText": ["<span class=\"icon-arrow-left\"></span>","<span class=\"icon-arrow-right\"></span>"],
                             "dots": true,
                             "autoplay": true,
                             "autoplayTimeout": 12000,
                             "autoplayHoverPause": true
                         }'>
-                                    <div class="item" data-hash="item1">
+                                    <div class="item">
                                         <div class="testimonial-card-three">
                                             <div class="testimonial-card-three__ratings">
                                                 <div class="mediox-ratings">
@@ -1443,7 +1435,7 @@ ul,ol{margin:0;padding:0;list-style:none}
                                             </div><!-- /.testimonial-card-three__identity -->
                                         </div><!-- /.testimonial-card-three -->
                                     </div><!-- /.item -->
-                                    <div class="item" data-hash="item2">
+                                    <div class="item">
                                         <div class="testimonial-card-three">
                                             <div class="testimonial-card-three__ratings">
                                                 <div class="mediox-ratings">
@@ -1478,7 +1470,7 @@ ul,ol{margin:0;padding:0;list-style:none}
                                             </div><!-- /.testimonial-card-three__identity -->
                                         </div><!-- /.testimonial-card-three -->
                                     </div><!-- /.item -->
-                                    <div class="item" data-hash="item3">
+                                    <div class="item">
                                         <div class="testimonial-card-three">
                                             <div class="testimonial-card-three__ratings">
                                                 <div class="mediox-ratings">
@@ -1566,7 +1558,7 @@ ul,ol{margin:0;padding:0;list-style:none}
                 <div class="blog-three__top">
                     <div class="row gutter-y-40 align-items-end">
                         <div class="col-xl-9 col-lg-8">
-                            <div class="sec-title wow fadeInUp" data-wow-duration="1500ms">
+                            <div class="sec-title">
                                 <div class="sec-title__top">
 
                                     <img src="assets/images/shapes/sec-title-s-1-1.webp?v=2"
@@ -1623,8 +1615,8 @@ ul,ol{margin:0;padding:0;list-style:none}
             }
     }'>
                     <div class="item">
-                        <div class="blog-card-two blog-card-two--home3 wow fadeInUp" data-wow-duration='1500ms'
-                            data-wow-delay='000ms'>
+                        <div class="blog-card-two blog-card-two--home3"
+                           >
                             <div class="blog-card-two__image">
                                 <a href="microneedling-deep-dive.html" class="blog-card-two__image__item"
                                     aria-label="Прочетете статията: Микронидлинг – Пълен Наръчник">
@@ -1661,8 +1653,8 @@ ul,ol{margin:0;padding:0;list-style:none}
                         </div><!-- /.blog-card-two -->
                     </div><!-- /.item -->
                     <div class="item">
-                        <div class="blog-card-two blog-card-two--home3 wow fadeInUp" data-wow-duration='1500ms'
-                            data-wow-delay='000ms'>
+                        <div class="blog-card-two blog-card-two--home3"
+                           >
                             <div class="blog-card-two__image">
                                 <a href="choosing-right-facial.html" class="blog-card-two__image__item"
                                     aria-label="Прочетете статията: Как да избереш процедура за лице">
@@ -1701,8 +1693,8 @@ ul,ol{margin:0;padding:0;list-style:none}
                         </div><!-- /.blog-card-two -->
                     </div><!-- /.item -->
                     <div class="item">
-                        <div class="blog-card-two blog-card-two--home3 wow fadeInUp" data-wow-duration='1500ms'
-                            data-wow-delay='100ms'>
+                        <div class="blog-card-two blog-card-two--home3"
+                           >
                             <div class="blog-card-two__image">
                                 <a href="beauty-secrets.html" class="blog-card-two__image__item">
                                     <img src="assets/images/blog/blog-s-3-2.webp?v=2"
@@ -1741,8 +1733,8 @@ ul,ol{margin:0;padding:0;list-style:none}
                     </div><!-- /.item -->
 
                     <div class="item">
-                        <div class="blog-card-two blog-card-two--home3 wow fadeInUp" data-wow-duration='1500ms'
-                            data-wow-delay='100ms'>
+                        <div class="blog-card-two blog-card-two--home3"
+                           >
                             <div class="blog-card-two__image">
                                 <a href="microblading-for-all-ages.html" class="blog-card-two__image__item">
                                     <img src="assets/images/blog/blog-s-3-5.webp?v=2"
@@ -1782,8 +1774,8 @@ ul,ol{margin:0;padding:0;list-style:none}
                     </div><!-- /.item -->
 
                     <div class="item">
-                        <div class="blog-card-two blog-card-two--home3 wow fadeInUp" data-wow-duration='1500ms'
-                            data-wow-delay='200ms'>
+                        <div class="blog-card-two blog-card-two--home3"
+                           >
                             <div class="blog-card-two__image">
                                 <a href="microblading-guide.html" class="blog-card-two__image__item">
                                     <img src="assets/images/blog/blog-s-3-3.webp?v=2"
@@ -1819,8 +1811,8 @@ ul,ol{margin:0;padding:0;list-style:none}
                         </div><!-- /.blog-card-two -->
                     </div><!-- /.item -->
                     <div class="item">
-                        <div class="blog-card-two blog-card-two--home3 wow fadeInUp" data-wow-duration='1500ms'
-                            data-wow-delay='300ms'>
+                        <div class="blog-card-two blog-card-two--home3"
+                           >
                             <div class="blog-card-two__image">
                                 <a href="aftertreatment.html" class="blog-card-two__image__item">
                                     <img src="assets/images/blog/blog-s-3-4.webp?v=2"
@@ -1926,7 +1918,7 @@ ul,ol{margin:0;padding:0;list-style:none}
             <div class="container">
                 <div class="footer-divider"></div>
                 <div class="row gutter-y-40">
-                    <div class="col-xl-4 col-lg-6 col-md-7 wow fadeInUp" data-wow-duration="1500ms">
+                    <div class="col-xl-4 col-lg-6 col-md-7">
                         <div class="footer-widget footer-widget--about">
                             <div class="footer-widget__logo logo-retina">
                                 <a href="index.html">
@@ -1965,7 +1957,7 @@ ul,ol{margin:0;padding:0;list-style:none}
                             </div>
                         </div><!-- /.footer-widget -->
                     </div><!-- /.col-xl-4 -->
-                    <div class="col-xl-2 col-lg-3 col-md-5 wow fadeInUp" data-wow-duration="1500ms">
+                    <div class="col-xl-2 col-lg-3 col-md-5">
                         <div class="footer-widget footer-widget--links">
                             <h2 class="footer-widget__title" data-i18n-html="shared.footer.procedures_title">Нашите
                                 <span>Процедури</span>
@@ -1988,7 +1980,7 @@ ul,ol{margin:0;padding:0;list-style:none}
                             </ul><!-- /.list-unstyled footer-widget__links -->
                         </div><!-- /.footer-widget -->
                     </div><!-- /.col-xl-2 -->
-                    <div class="col-xl-2 col-lg-3 col-md-5 wow fadeInUp" data-wow-duration="1500ms">
+                    <div class="col-xl-2 col-lg-3 col-md-5">
                         <div class="footer-widget footer-widget--links">
                             <h2 class="footer-widget__title" data-i18n-html="shared.footer.quick_links_title">Бързи
                                 <span>връзки</span>
@@ -2007,7 +1999,7 @@ ul,ol{margin:0;padding:0;list-style:none}
                             </ul><!-- /.list-unstyled footer-widget__links -->
                         </div><!-- /.footer-widget -->
                     </div><!-- /.col-xl-2 -->
-                    <div class="col-xl-4 col-lg-6 col-md-7 wow fadeInUp" data-wow-duration="1500ms">
+                    <div class="col-xl-4 col-lg-6 col-md-7">
                         <div class="footer-widget footer-widget--blog">
                             <h2 class="footer-widget__title" data-i18n-html="shared.footer.blog_title">блог &
                                 <span>новини</span>
@@ -2065,7 +2057,7 @@ ul,ol{margin:0;padding:0;list-style:none}
                             style="background-image: url(assets/images/backgrounds/footer-contact-bg.webp);"></div>
                         <!-- /.main-footer__info__bg -->
                         <div class="row main-footer__info__row gutter-y-40">
-                            <div class="main-footer__info__col-1 wow fadeInUp" data-wow-duration="1500ms">
+                            <div class="main-footer__info__col-1">
                                 <div class="main-footer__contact">
                                     <span class="main-footer__contact__icon">
                                         <i class="icon-location"></i>
@@ -2080,7 +2072,7 @@ ul,ol{margin:0;padding:0;list-style:none}
                                     </div><!-- /.main-footer__contact__content -->
                                 </div><!-- /.main-footer__contact -->
                             </div><!-- /.main-footer__info__col-1 -->
-                            <div class="main-footer__info__col-2 wow fadeInUp" data-wow-duration="1500ms">
+                            <div class="main-footer__info__col-2">
                                 <div class="main-footer__contact">
                                     <span class="main-footer__contact__icon">
                                         <i class="icon-email"></i>
@@ -2094,7 +2086,7 @@ ul,ol{margin:0;padding:0;list-style:none}
                                     </div><!-- /.main-footer__contact__content -->
                                 </div><!-- /.main-footer__contact -->
                             </div><!-- /.main-footer__info__col-2 -->
-                            <div class="main-footer__info__col-3 wow fadeInUp" data-wow-duration="1500ms">
+                            <div class="main-footer__info__col-3">
                                 <div class="main-footer__contact">
                                     <span class="main-footer__contact__icon">
                                         <i class="icon-telephone"></i>
@@ -2108,7 +2100,7 @@ ul,ol{margin:0;padding:0;list-style:none}
                                     </div><!-- /.main-footer__contact__content -->
                                 </div><!-- /.main-footer__contact -->
                             </div><!-- /.main-footer__info__col-3 -->
-                            <div class="main-footer__info__col-4 wow fadeInUp" data-wow-duration="1500ms">
+                            <div class="main-footer__info__col-4">
                                 <div class="main-footer__contact">
                                     <span class="main-footer__contact__icon">
                                         <i class="icon-hours"></i>
@@ -2297,7 +2289,7 @@ ul,ol{margin:0;padding:0;list-style:none}
     <script defer src="assets/vendors/jquery-validate/jquery.validate.min.js"></script>
     <script defer src="assets/vendors/owl-carousel/js/owl.carousel.min.js"></script>
     <!-- removed: slick.js (unused — OWL Carousel handles all carousels) -->
-    <script defer src="assets/vendors/wow/wow.js"></script>    <!-- template js -->
+
     <script defer src="assets/js/mediox.js"></script>
 
 
