@@ -288,7 +288,6 @@ body {
   font-weight: 500;
   line-height: 1.875;
   background-color: var(--mediox-white, #FFFFFF);
-  opacity: 1;
 }
 
 body.locked {
@@ -20043,3 +20042,6 @@ button[type="submit"]:hover span {
 .main-footer__bg::before {
   display: none !important;
 }
+
+/* FOUC prevention: reveal body after all layout rules above are applied */
+body { opacity: 1; }
