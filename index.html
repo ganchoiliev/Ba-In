@@ -257,6 +257,25 @@ ul,ol{margin:0;padding:0;list-style:none}
 .main-header__call__title{font-size:12px;color:rgba(255,255,255,.7);margin:0;font-weight:500}
 .main-header__call__number{margin:0}
 .main-header__call__number a{color:var(--mediox-white,#fff);font-size:16px;font-weight:700}
+/* === MOBILE TOUCH FIX: prevent double-tap on buttons === */
+@media(hover:none){
+  /* Gallery card: make overlay transparent to taps so the <a> inside fires immediately */
+  .gallery-page__card__hover{opacity:1 !important;visibility:visible !important;pointer-events:auto !important}
+  .gallery-page__card__hover__box{display:none !important}
+  .gallery-page__card__hover a{display:flex;align-items:center;justify-content:center;position:absolute;inset:0;width:100%;height:100%}
+  /* Service cards: disable hover-dependent transforms */
+  .service-card-two:hover,.service-card-three:hover{transform:none !important}
+  /* Blog cards */
+  .blog-card-two:hover .blog-card-two__image__item img{transform:none !important}
+  /* Why-choose */
+  .why-choose-one__image:hover img{transform:none !important}
+  /* General: disable translateY hover on cards */
+  [class*="__card"]:hover{transform:none !important}
+}
+/* === CLS FIX: reserve space for Owl Carousel containers === */
+.mediox-owl__carousel{min-height:300px}
+.testimonials-three .mediox-owl__carousel{min-height:320px}
+.service-three .mediox-owl__carousel{min-height:420px}
     </style>
 
     <!-- ═══ Performance: async-load all non-critical CSS ═══ -->
