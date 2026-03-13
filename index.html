@@ -79,8 +79,7 @@
 
 
 
-    <!-- ═══ Performance: preload LCP hero image ═══ -->
-    <link rel="preload" as="image" href="assets/images/backgrounds/hero-static-bg.webp" fetchpriority="high">
+    <!-- Hero image now uses <img fetchpriority="high"> — no preload needed -->
 
     <!-- ═══ Performance: preconnect to font origin ═══ -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -207,7 +206,8 @@ ul,ol{margin:0;padding:0;list-style:none}
 .topbar-one__social a{display:flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:50%;font-size:13px;color:var(--mediox-white,#fff);background:rgba(255,255,255,.1);transition:all 500ms ease}
 .topbar-one__social a:hover{background:var(--mediox-base,#C49A45);color:var(--mediox-white,#fff)}
 .hero-static{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden}
-.hero-static__bg{position:absolute;inset:0;background-size:cover;background-position:center;background-repeat:no-repeat;transform:scale(1.05);animation:heroZoom 20s ease-in-out infinite alternate}
+.hero-static__bg{position:absolute;inset:0;overflow:hidden}
+.hero-static__bg img{width:100%;height:100%;object-fit:cover;object-position:center;transform:scale(1.05);animation:heroZoom 20s ease-in-out infinite alternate}
 @keyframes heroZoom{0%{transform:scale(1.05)}100%{transform:scale(1.15)}}
 .hero-static__overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,10,30,.55) 0%,rgba(10,10,30,.7) 50%,rgba(10,10,30,.8) 100%);z-index:1}
 .hero-static .container{position:relative;z-index:2}
@@ -280,7 +280,7 @@ ul,ol{margin:0;padding:0;list-style:none}
     <link rel="stylesheet" href="assets/vendors/mediox-icons/style.css" media="print" onload="this.media='all'" />
     <link rel="stylesheet" href="assets/vendors/owl-carousel/css/owl.carousel.min.css" media="print" onload="this.media='all'" />
     <link rel="stylesheet" href="assets/vendors/owl-carousel/css/owl.theme.default.min.css" media="print" onload="this.media='all'" />
-    <link rel="stylesheet" href="assets/vendors/slick/css/slick.css" media="print" onload="this.media='all'" />
+    <!-- slick CSS removed (unused — OWL Carousel handles all carousels) -->
 
     <!-- Template + custom styles -->
     <link rel="stylesheet" href="assets/css/mediox.css?v=2" media="print" onload="this.media='all'" />
@@ -450,7 +450,7 @@ ul,ol{margin:0;padding:0;list-style:none}
 
 
         <section class="hero-static" id="hero-static">
-            <div class="hero-static__bg" style="background-image: url(assets/images/backgrounds/hero-static-bg.webp);"></div>
+            <div class="hero-static__bg"><img src="assets/images/backgrounds/hero-static-bg.webp" alt="" width="1920" height="1080" fetchpriority="high"></div>
             <div class="hero-static__overlay"></div>
             <div class="container">
                 <div class="row">
@@ -2305,16 +2305,13 @@ ul,ol{margin:0;padding:0;list-style:none}
     <script defer src="assets/vendors/jquery-ui/jquery-ui.js"></script>
     <script defer src="assets/vendors/jquery-ajaxchimp/jquery.ajaxchimp.min.js"></script>
     <script defer src="assets/vendors/jquery-appear/jquery.appear.min.js"></script>
-    <!-- removed: jquery-circle-progress (not used on this page) -->
     <script defer src="assets/vendors/jquery-magnific-popup/jquery.magnific-popup.min.js"></script>
     <script defer src="assets/vendors/jquery-validate/jquery.validate.min.js"></script>
-    <!-- removed: nouislider + wNumb (not used on this page) -->
     <script defer src="assets/vendors/owl-carousel/js/owl.carousel.min.js"></script>
-    <script defer src="assets/vendors/slick/js/slick.min.js"></script>
+    <!-- removed: slick.js (unused — OWL Carousel handles all carousels) -->
     <script defer src="assets/vendors/wow/wow.js"></script>
     <script defer src="assets/vendors/imagesloaded/imagesloaded.min.js"></script>
     <script defer src="assets/vendors/isotope/isotope.js"></script>
-    <!-- removed: countdown, circleType, lettering (not used on this page) -->
     <!-- template js -->
     <script defer src="assets/js/mediox.js"></script>
 
