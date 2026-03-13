@@ -895,23 +895,24 @@
   line-height: 1.75;
 }
 
-/* Primary CTA — solid gold */
+/* Primary CTA — crisp white (high contrast, conversion-optimised) */
 .hero-static__cta--primary {
-  background: linear-gradient(135deg, #c9a84c 0%, #b8923a 50%, #a07d2e 100%);
-  color: #fff;
-  border: 2px solid transparent;
-  box-shadow: 0 6px 24px rgba(184, 146, 58, 0.4);
+  background: #FFFFFF;
+  color: #1A1A1A;
+  border: 2px solid #FFFFFF;
+  box-shadow: 0 6px 24px rgba(255, 255, 255, 0.25);
 }
 
 .hero-static__cta--primary:hover {
-  background: linear-gradient(135deg, #d4b55e 0%, #c9a84c 50%, #b8923a 100%);
-  box-shadow: 0 8px 32px rgba(184, 146, 58, 0.55);
+  background: #F5F0E8;
+  box-shadow: 0 8px 32px rgba(255, 255, 255, 0.4);
   transform: translateY(-2px);
-  color: #fff;
+  color: #1A1A1A;
+  border-color: #F5F0E8;
 }
 
 .hero-static__cta--primary .mediox-btn__icon {
-  color: #fff;
+  color: #1A1A1A;
   transition: transform 400ms ease;
 }
 
