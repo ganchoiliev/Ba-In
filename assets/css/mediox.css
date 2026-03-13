@@ -11826,6 +11826,8 @@ body.megamenu-popup-active .mobile-nav__content {
   transform: scale(1);
   display: block;
   width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
   transition: transform 500ms ease, opacity 500ms ease;
   opacity: 1;
   border-radius: inherit;
