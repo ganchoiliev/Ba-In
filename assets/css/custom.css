@@ -24,6 +24,15 @@
   overflow: hidden !important;
 }
 
+/* === APPOINTMENT BG FIX: Jarallax overrides position:absolute with inline
+   position:relative, collapsing the background container to 0px height === */
+.appointment-one__bg.mediox-jarallax {
+  position: absolute !important;
+  inset: 0 !important;
+  height: 100% !important;
+  width: 100% !important;
+}
+
 /* Accordion: hide non-active content by default (JS will toggle) */
 .mediox-accordion .accordion:not(.active) .accordion-content,
 .faq-accordion .accordion:not(.active) .accordion-content {
