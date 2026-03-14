@@ -2,6 +2,34 @@
    CUSTOM OVERRIDES - Beauty Atelier IN
    ====================================================== */
 
+/* Bootstrap 5 removed .sr-only — re-add for screen-reader-only text */
+.sr-only {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  clip-path: inset(50%) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+/* Prevent social-link text labels from overflowing the icon container */
+.social-links a {
+  overflow: hidden !important;
+}
+.main-footer .social-links a {
+  overflow: hidden !important;
+}
+
+/* Accordion: hide non-active content by default (JS will toggle) */
+.mediox-accordion .accordion:not(.active) .accordion-content,
+.faq-accordion .accordion:not(.active) .accordion-content {
+  display: none;
+}
+
 /* ---- Blog card home3: fix uniform image height ---- */
 /* Make all blog carousel cards the same height regardless of source image aspect ratio */
 .blog-card-two--home3 .blog-card-two__image__item {
@@ -942,6 +970,18 @@
 .hero-static__cta--secondary:hover .mediox-btn__icon {
   color: #fff;
   transform: rotate(45deg);
+}
+
+/* Touch devices: disable hover transforms so buttons fire on first tap */
+@media (hover: none) {
+  .hero-static__cta--primary:hover,
+  .hero-static__cta--secondary:hover {
+    transform: none;
+  }
+  .hero-static__cta--primary:hover .mediox-btn__icon,
+  .hero-static__cta--secondary:hover .mediox-btn__icon {
+    transform: none;
+  }
 }
 
 /* --- Micro-copy --- */
@@ -2435,5 +2475,46 @@
   #ai-chat-fab svg {
     width: 22px;
     height: 22px;
+  }
+}
+
+/* --- Fix work-process section: dark background on all screen sizes --- */
+.work-process-one.work-process-one--home3 {
+  background-color: var(--mediox-primary, #111111) !important;
+}
+
+/* --- Native select styling (bootstrap-select removed for performance) --- */
+.form-one select {
+  display: block;
+  width: 100%;
+  height: 55px;
+  padding: 0 20px;
+  font-family: var(--mediox-font, "Manrope", sans-serif);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--mediox-text, #707882);
+  background-color: var(--mediox-white2, #ECF0F5);
+  border: 0;
+  border-radius: 10px;
+  cursor: pointer;
+  -webkit-appearance: auto;
+  appearance: auto;
+}
+
+.appointment-one__form select {
+  height: 60px;
+  font-size: 16px;
+  background-color: var(--mediox-white, #FFFFFF);
+  border: 1px solid transparent;
+}
+
+/* --- Fix hero CTA double-tap on mobile (hover triggers transform) --- */
+@media (hover: none) {
+  .mediox-btn:hover::before,
+  .mediox-btn:hover::after {
+    width: 0;
+  }
+  .mediox-btn:hover .mediox-btn__icon {
+    transform: none;
   }
 }
