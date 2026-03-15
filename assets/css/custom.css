@@ -24,6 +24,12 @@
   overflow: hidden !important;
 }
 
+/* Accordion: hide non-active content by default (JS will toggle) */
+.mediox-accordion .accordion:not(.active) .accordion-content,
+.faq-accordion .accordion:not(.active) .accordion-content {
+  display: none;
+}
+
 /* === APPOINTMENT BG FIX: Jarallax overrides position:absolute with inline
    position:relative, collapsing the background container to 0px height === */
 .appointment-one__bg.mediox-jarallax {
@@ -1724,17 +1730,20 @@
   background-size: 100% 1px !important;
 }
 
-/* ---- 9. CONTACT BAR: Glassmorphism redesign ---- */
+/* ---- 9. CONTACT BAR: Premium glassmorphism redesign ---- */
 .main-footer .main-footer__info {
-  background: rgba(255, 255, 255, 0.03) !important;
-  border: 1px solid rgba(255, 255, 255, 0.06) !important;
+  background: rgba(255, 255, 255, 0.05) !important;
+  border: 1px solid rgba(212, 175, 55, 0.12) !important;
   border-radius: 16px !important;
-  padding: 32px 36px !important;
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  padding: 36px 40px !important;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   position: relative;
   overflow: hidden;
   margin-bottom: 0 !important;
+  box-shadow:
+    0 4px 24px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
 }
 
 .main-footer .main-footer__info__bg {
@@ -1742,27 +1751,28 @@
   display: none !important;
 }
 
-/* Subtle gold top-edge glow on contact bar */
+/* Gold top-edge glow on contact bar */
 .main-footer .main-footer__info::before {
   content: "";
   position: absolute;
   top: 0;
-  left: 10%;
-  right: 10%;
+  left: 5%;
+  right: 5%;
   height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.4), transparent);
+  background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.5), rgba(232, 200, 130, 0.6), rgba(212, 175, 55, 0.5), transparent);
 }
 
-/* Contact icons: Refined circles */
+/* Contact icons: Refined rounded squares */
 .main-footer .main-footer__contact__icon {
-  width: 44px !important;
-  height: 44px !important;
+  width: 48px !important;
+  height: 48px !important;
   border-radius: 12px !important;
-  background: linear-gradient(135deg, rgba(212, 175, 55, 0.12), rgba(212, 175, 55, 0.06)) !important;
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.15), rgba(212, 175, 55, 0.06)) !important;
   color: #D4AF37 !important;
-  border: 1px solid rgba(212, 175, 55, 0.2);
-  font-size: 16px !important;
+  border: 1px solid rgba(212, 175, 55, 0.25);
+  font-size: 17px !important;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  flex-shrink: 0;
 }
 
 .main-footer .main-footer__contact__icon::after {
@@ -1778,22 +1788,23 @@
 
 /* Contact labels */
 .main-footer .main-footer__contact__title {
-  font-size: 11px !important;
-  font-weight: 600 !important;
-  letter-spacing: 0.12em !important;
+  font-size: 10px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.14em !important;
   text-transform: uppercase !important;
-  color: rgba(255, 255, 255, 0.4) !important;
-  margin-bottom: 4px !important;
+  color: rgba(212, 175, 55, 0.6) !important;
+  margin-bottom: 6px !important;
 }
 
 .main-footer .main-footer__contact__text {
-  font-size: 16px !important;
-  font-weight: 600 !important;
-  color: #ffffff !important;
+  font-size: 15px !important;
+  font-weight: 500 !important;
+  color: rgba(255, 255, 255, 0.9) !important;
+  line-height: 1.4 !important;
 }
 
 .main-footer .main-footer__contact__text a {
-  color: #ffffff !important;
+  color: rgba(255, 255, 255, 0.9) !important;
   transition: color 0.3s ease !important;
 }
 
@@ -1801,13 +1812,33 @@
   color: #D4AF37 !important;
 }
 
-/* ---- 10. WORKING HOURS BLOCK: 4-column grid ---- */
+/* Vertical dividers between contact items on desktop */
+.main-footer .main-footer__info__row > [class*="main-footer__info__col"] {
+  position: relative;
+}
+
+.main-footer .main-footer__info__row > [class*="main-footer__info__col"]::after {
+  content: "";
+  position: absolute;
+  top: 4px;
+  bottom: 4px;
+  right: -1px;
+  width: 1px;
+  background: linear-gradient(180deg, transparent, rgba(212, 175, 55, 0.25), rgba(212, 175, 55, 0.15), transparent);
+}
+
+/* No divider on the last item */
+.main-footer .main-footer__info__row > [class*="main-footer__info__col"]:last-child::after {
+  display: none;
+}
+
+/* ---- 10. CONTACT BAR GRID: Adaptive proportions ---- */
 .main-footer .main-footer__info__row {
   display: grid !important;
-  grid-template-columns: 1.2fr 0.9fr 0.95fr 0.95fr;
-  gap: 20px !important;
+  grid-template-columns: 1.3fr 1fr 1fr 1fr;
+  gap: 0 32px !important;
   --bs-gutter-x: 0 !important;
-  align-items: start !important;
+  align-items: center !important;
 }
 
 /* Reset all column flex/width — grid handles sizing */
@@ -1819,34 +1850,9 @@
   padding-right: 0 !important;
 }
 
-/* Override mediox.css tablet flex-direction rule */
-@media (min-width: 768px) and (max-width: 991px) {
-  .main-footer .main-footer__info__row {
-    grid-template-columns: 1fr 1fr !important;
-    gap: 28px 20px !important;
-    align-items: start !important;
-  }
-  .main-footer__contact {
-    flex-direction: row !important;
-    align-items: center !important;
-  }
-  .main-footer__contact__content {
-    text-align: left !important;
-  }
-}
-
-@media (max-width: 1199px) {
-  .main-footer .main-footer__info__row {
-    grid-template-columns: 1fr 1fr !important;
-    gap: 28px 24px !important;
-  }
-}
-
-@media (max-width: 767px) {
-  .main-footer .main-footer__info__row {
-    grid-template-columns: 1fr !important;
-    gap: 24px !important;
-  }
+/* 3-column fallback: when col-4 doesn't exist, use even thirds */
+.main-footer .main-footer__info__row:not(:has(.main-footer__info__col-4)) {
+  grid-template-columns: 1.2fr 1fr 1fr;
 }
 
 /* ---- 11. COPYRIGHT: Modern minimal strip ---- */
@@ -1912,17 +1918,49 @@
 }
 
 /* ---- 13. RESPONSIVE REFINEMENTS ---- */
+
+/* Tablet landscape / medium screens */
 @media (max-width: 1199px) {
   .main-footer .main-footer__info {
-    padding: 28px 28px !important;
+    padding: 30px 28px !important;
+  }
+
+  .main-footer .main-footer__info__row {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 24px 28px !important;
+  }
+
+  .main-footer .main-footer__info__row:not(:has(.main-footer__info__col-4)) {
+    grid-template-columns: 1fr 1fr !important;
+  }
+
+  /* Hide vertical dividers, show a subtle bottom border instead */
+  .main-footer .main-footer__info__row > [class*="main-footer__info__col"]::after {
+    display: none;
   }
 
   .main-footer .main-footer__contact {
-    gap: 16px !important;
+    gap: 14px !important;
   }
 
   .main-footer .main-footer__contact__text {
-    font-size: 15px !important;
+    font-size: 14px !important;
+  }
+}
+
+/* Tablet portrait */
+@media (min-width: 768px) and (max-width: 991px) {
+  .main-footer .main-footer__info__row {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 24px 28px !important;
+    align-items: start !important;
+  }
+  .main-footer__contact {
+    flex-direction: row !important;
+    align-items: center !important;
+  }
+  .main-footer__contact__content {
+    text-align: left !important;
   }
 }
 
@@ -1936,14 +1974,56 @@
   }
 }
 
+/* Mobile */
 @media (max-width: 767px) {
   .main-footer .main-footer__info {
     padding: 24px 20px !important;
     border-radius: 12px !important;
   }
 
+  .main-footer .main-footer__info__row {
+    grid-template-columns: 1fr !important;
+    gap: 0 !important;
+  }
+
+  .main-footer .main-footer__info__row:not(:has(.main-footer__info__col-4)) {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Hide vertical dividers */
+  .main-footer .main-footer__info__row > [class*="main-footer__info__col"]::after {
+    display: none;
+  }
+
+  /* Horizontal separators between stacked items */
+  .main-footer .main-footer__info__row > [class*="main-footer__info__col"] {
+    padding: 16px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  .main-footer .main-footer__info__row > [class*="main-footer__info__col"]:first-child {
+    padding-top: 0;
+  }
+
+  .main-footer .main-footer__info__row > [class*="main-footer__info__col"]:last-child {
+    padding-bottom: 0;
+    border-bottom: none;
+  }
+
   .main-footer .main-footer__contact {
     gap: 14px !important;
+    flex-direction: row !important;
+    align-items: center !important;
+  }
+
+  .main-footer .main-footer__contact__content {
+    text-align: left !important;
+  }
+
+  .main-footer .main-footer__contact__icon {
+    width: 42px !important;
+    height: 42px !important;
+    font-size: 15px !important;
   }
 
   .main-footer .main-footer__contact__text {
