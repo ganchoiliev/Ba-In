@@ -82,11 +82,12 @@
     <!-- Hero image now uses <img fetchpriority="high"> — no preload needed -->
 
     <!-- ═══ Performance: preconnect to font origin ═══ -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <!-- ═══ Performance: inline critical CSS (above-the-fold) ═══ -->
+<!-- ═══ Performance: inline critical CSS (above-the-fold) ═══ -->
     <style>
+/* Manrope self-hosted */
+@font-face{font-family:'Manrope';font-style:normal;font-weight:200 800;font-display:swap;src:url('assets/fonts/manrope/manrope-cyrillic.woff2') format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+@font-face{font-family:'Manrope';font-style:normal;font-weight:200 800;font-display:swap;src:url('assets/fonts/manrope/manrope-latin-ext.woff2') format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:'Manrope';font-style:normal;font-weight:200 800;font-display:swap;src:url('assets/fonts/manrope/manrope-latin.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
 /* Critical CSS — above-the-fold styles for ba-in.com */
 .mobile-nav__wrapper,.sidebar-one,.search-popup{visibility:hidden;opacity:0}
 *,*::before,*::after{box-sizing:border-box}
@@ -274,19 +275,29 @@ ul,ol{margin:0;padding:0;list-style:none}
 }
 /* === CLS FIX: reserve space for Owl Carousel containers === */
 .mediox-owl__carousel{min-height:300px}
-.testimonials-three .mediox-owl__carousel{min-height:320px}
+.testimonials-three__carousel.mediox-owl__carousel{min-height:320px}
+.testimonials-three__thumb.mediox-owl__carousel{min-height:auto}
+@media(max-width:991px){
+  .mediox-owl__carousel{min-height:200px}
+  .testimonials-three__carousel.mediox-owl__carousel{min-height:200px}
+  .testimonials-three__thumb{margin-bottom:20px}
+}
 .service-three .mediox-owl__carousel{min-height:420px}
+.multiple-section{background-color:#111111 !important}
+.work-process-one.work-process-one--home3{background-color:#111111 !important}
+/* === APPOINTMENT BG FIX: prevent white gap on wide viewports === */
+/* Jarallax miscalculates container on wide screens; use CSS background as baseline */
+.appointment-one{position:relative;background:#1a1a2e url('assets/images/backgrounds/appointment-bg.webp') no-repeat center/cover !important;overflow:hidden}
+.appointment-one__bg{top:-100px !important;bottom:-100px !important}
+.appointment-one .jarallax-container{top:-100px !important;bottom:-100px !important}
     </style>
 
     <!-- ═══ Performance: async-load all non-critical CSS ═══ -->
-    <!-- Fonts (already has display=swap) -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&display=swap" media="print" onload="this.media='all'">
-
-    <!-- Vendors -->
+<!-- Vendors -->
     <link rel="stylesheet" href="assets/vendors/bootstrap/css/bootstrap.min.css" media="print" onload="this.media='all'" />
-    <!-- bootstrap-select CSS removed (native selects are better on mobile) -->
+    <link rel="stylesheet" href="assets/vendors/bootstrap-select/bootstrap-select.min.css" media="print" onload="this.media='all'" />
     <!-- animate.min.css removed (WOW.js was already removed) -->
-    <link rel="stylesheet" href="assets/vendors/fontawesome/css/all.min.css" media="print" onload="this.media='all'" />
+    <link rel="stylesheet" href="assets/vendors/fontawesome/css/fa-subset.min.css" media="print" onload="this.media='all'" />
     <link rel="stylesheet" href="assets/vendors/jarallax/jarallax.css" media="print" onload="this.media='all'" />
     <link rel="stylesheet" href="assets/vendors/jquery-magnific-popup/jquery.magnific-popup.css" media="print" onload="this.media='all'" />
     <!-- nouislider CSS removed (no range sliders used) -->
@@ -296,19 +307,19 @@ ul,ol{margin:0;padding:0;list-style:none}
     <!-- slick CSS removed (unused — OWL Carousel handles all carousels) -->
 
     <!-- Template + custom styles -->
-    <link rel="stylesheet" href="assets/css/mediox.css?v=2" media="print" onload="this.media='all'" />
-    <link rel="stylesheet" href="assets/css/ai-chat.css" media="print" onload="this.media='all'" />
-    <link rel="stylesheet" href="assets/css/cookie-consent.css" media="print" onload="this.media='all'" />
-    <link rel="stylesheet" href="assets/css/contact-widget.css" media="print" onload="this.media='all'" />
-    <link rel="stylesheet" href="assets/css/google-reviews.css" media="print" onload="this.media='all'" />
+    <link rel="stylesheet" href="assets/css/mediox.css?v=6" media="print" onload="this.media='all'" />
+    <link rel="stylesheet" href="assets/css/ai-chat.css" />
+    <link rel="stylesheet" href="assets/css/cookie-consent.css" />
+    <link rel="stylesheet" href="assets/css/contact-widget.css" />
+    <link rel="stylesheet" href="assets/css/google-reviews.css" />
     <link rel="stylesheet" href="assets/css/i18n.css" media="print" onload="this.media='all'" />
     <link rel="stylesheet" href="assets/css/custom.css" media="print" onload="this.media='all'">
 
     <!-- Fallback for no-JS -->
     <noscript>
         <link rel="stylesheet" href="assets/vendors/bootstrap/css/bootstrap.min.css" />
-        <link rel="stylesheet" href="assets/vendors/fontawesome/css/all.min.css" />
-        <link rel="stylesheet" href="assets/css/mediox.css?v=2" />
+        <link rel="stylesheet" href="assets/vendors/fontawesome/css/fa-subset.min.css" />
+        <link rel="stylesheet" href="assets/css/mediox.css?v=6" />
         <link rel="stylesheet" href="assets/css/custom.css" />
     </noscript>
 </head>
@@ -1024,7 +1035,7 @@ ul,ol{margin:0;padding:0;list-style:none}
                 </div><!-- /.container -->
             </section><!-- /.faq-two section-space-bottom -->
 
-            <section class="work-process-one work-process-one--home3 section-space-bottom">
+            <section class="work-process-one work-process-one--home3 section-space-bottom" style="background-color: #111111 !important;">
                 <div class="container">
                     <div class="sec-title sec-title--center">
                         <div class="sec-title__top">
@@ -2304,7 +2315,7 @@ ul,ol{margin:0;padding:0;list-style:none}
 
     <script defer src="assets/vendors/jquery/jquery-3.7.0.min.js"></script>
     <script defer src="assets/vendors/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <!-- bootstrap-select JS removed -->
+    <script defer src="assets/vendors/bootstrap-select/bootstrap-select.min.js"></script>
     <script defer src="assets/vendors/jarallax/jarallax.min.js"></script>
     <!-- jquery-ajaxchimp restored (used by newsletter form in mediox.js) -->
     <script defer src="assets/vendors/jquery-ajaxchimp/jquery.ajaxchimp.min.js"></script>
@@ -2383,6 +2394,38 @@ ul,ol{margin:0;padding:0;list-style:none}
 
     <script defer src="assets/js/cookie-consent.js"></script>
     <script defer src="assets/js/contact-widget.js"></script>
+    <script>
+    /* Sync testimonials thumb ↔ text carousels */
+    window.addEventListener('load', function(){
+      var $thumb = jQuery('.testimonials-three__thumb');
+      var $text  = jQuery('.testimonials-three__carousel');
+      if(!$thumb.length || !$text.length) return;
+      var syncing = false;
+      $thumb.on('changed.owl.carousel', function(e){
+        if(syncing) return;
+        syncing = true;
+        var idx = e.item.index - e.relatedTarget.clones().length / 2;
+        var count = e.item.count;
+        idx = ((idx % count) + count) % count;
+        $text.trigger('to.owl.carousel', [idx, 300, true]);
+        syncing = false;
+      });
+      $text.on('changed.owl.carousel', function(e){
+        if(syncing) return;
+        syncing = true;
+        var idx = e.item.index - e.relatedTarget.clones().length / 2;
+        var count = e.item.count;
+        idx = ((idx % count) + count) % count;
+        $thumb.trigger('to.owl.carousel', [idx, 300, true]);
+        syncing = false;
+      });
+      /* Click on a thumb item → go to that slide */
+      $thumb.on('click', '.owl-item', function(){
+        var idx = jQuery(this).index();
+        $thumb.trigger('to.owl.carousel', [idx, 300, true]);
+      });
+    });
+    </script>
 </body>
 
 </html>

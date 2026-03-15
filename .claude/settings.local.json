@@ -1,7 +1,8 @@
 {
   "permissions": {
     "allow": [
-      "Bash(ls *.php api/)"
+      "Bash(ls *.php api/)",
+      "WebFetch(domain:fonts.googleapis.com)"
     ]
   }
 }

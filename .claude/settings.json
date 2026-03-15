@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cp assets/css/custom.css assets/css/custom.original.css)",
+      "Bash(npx cssnano-cli assets/css/custom.css assets/css/custom.min.css)"
+    ]
+  }
+}
