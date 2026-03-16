@@ -16,6 +16,8 @@ jobs:
             -X POST \
             "${{ secrets.SUPABASE_URL }}/functions/v1/generate-blog-draft" \
             -H "Content-Type: application/json" \
+            -H "Authorization: Bearer ${{ secrets.SUPABASE_ANON_KEY }}" \
+            -H "apikey: ${{ secrets.SUPABASE_ANON_KEY }}" \
             -d '{}')
           
           http_code=$(echo "$response" | tail -1)
