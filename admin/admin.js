@@ -1060,7 +1060,7 @@ document.getElementById('btn-generate-ai-image').addEventListener('click', async
         return;
     }
 
-    showLoading('Генериране на изображение с DALL·E 3... (15-30 секунди)');
+    showLoading('Генериране на изображение с Gemini... (15-30 секунди)');
     try {
         const result = await callEdgeFunction('update-published-post', { 
             action: 'regenerate-hero', 
