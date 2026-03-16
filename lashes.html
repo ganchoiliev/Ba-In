@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="bg">
 
 <head>
@@ -278,35 +278,38 @@
                                         </ul></div><div class="col-xl-6 col-lg-12 col-md-6 wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="100ms">
                                         <img src="assets/images/services/service-d-list-1.webp" alt="Миглопластика процес" class="service-details__info__image">
                                     </div></div></div><p class="service-details__text-two wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="00ms" data-i18n="lashes.summary">Миглопластиката е идеалният начин да постигнете впечатляващ и поддържан поглед без усилие.</p><div class="service-details__faq">
-                                <h3 class="service-details__faq__title service-details__sub-title" data-i18n="service.faq_title">Имате въпроси? Ние сме тук, за да помогнем</h3><div class="faq-accordion mediox-accordion" data-grp-name="mediox-accordion">
-                                    <div class="accordion active wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="00ms">
-                                        <div class="accordion-title">
-                                            <h4>
-                                                <span data-i18n="lashes.q1">Колко време издържат поставените мигли?</span>
-                                                <span class="accordion-title__icon"></span></h4>
-                                        </div><div class="accordion-content">
-                                            <div class="inner">
-                                                <p data-i18n="lashes.a1">Обикновено миглопластиката издържа между 4 и 6 седмици, в зависимост от естествения растеж на миглите и последващата грижа. 
+                                <h3 class="service-details__faq__title service-details__sub-title" data-i18n="service.faq_title">Имате въпроси? Ние сме тук, за да помогнем</h3><div class="proc-faq__list">
+                    <div class="proc-faq__item wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="0ms">
+                        <button class="proc-faq__question" aria-expanded="false">
+                            <span data-i18n="lashes.q1">Колко време издържат поставените мигли?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="proc-faq__answer">
+                            <p data-i18n="lashes.a1">Обикновено миглопластиката издържа между 4 и 6 седмици, в зависимост от естествения растеж на миглите и последващата грижа. 
                                                     За поддържан и плътен вид се препоръчва поддръжка на всеки 3–4 седмици.</p>
-                                            </div></div></div><div class="accordion wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="50ms">
-                                        <div class="accordion-title">
-                                            <h4>
-                                                <span data-i18n="lashes.q2">Вредни ли са миглите за естествените ми мигли?</span>
-                                                <span class="accordion-title__icon"></span></h4>
-                                        </div><div class="accordion-content">
-                                            <div class="inner">
-                                                <p data-i18n="lashes.a2">Не, когато процедурата се прави правилно и с качествени материали. Леките и хипоалергенни косъмчета
+                        </div>
+                    </div>
+                    <div class="proc-faq__item wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="100ms">
+                        <button class="proc-faq__question" aria-expanded="false">
+                            <span data-i18n="lashes.q2">Вредни ли са миглите за естествените ми мигли?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="proc-faq__answer">
+                            <p data-i18n="lashes.a2">Не, когато процедурата се прави правилно и с качествени материали. Леките и хипоалергенни косъмчета
                                                      не утежняват миглите и не нарушават техния естествен цикъл на растеж.</p>
-                                            </div></div></div><div class="accordion wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="100ms">
-                                        <div class="accordion-title">
-                                            <h4>
-                                                <span data-i18n="lashes.q3">Мога ли да мокря миглите след процедурата?</span>
-                                                <span class="accordion-title__icon"></span></h4>
-                                        </div><div class="accordion-content">
-                                            <div class="inner">
-                                                <p data-i18n="lashes.a3">Първите 24 часа е важно да избягвате вода, пара, потене и козметични продукти около очите. След това можете да се къпете и тренирате нормално,
+                        </div>
+                    </div>
+                    <div class="proc-faq__item wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="200ms">
+                        <button class="proc-faq__question" aria-expanded="false">
+                            <span data-i18n="lashes.q3">Мога ли да мокря миглите след процедурата?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="proc-faq__answer">
+                            <p data-i18n="lashes.a3">Първите 24 часа е важно да избягвате вода, пара, потене и козметични продукти около очите. След това можете да се къпете и тренирате нормално,
                                                      като избягвате мазни продукти около зоната.</p>
-                                            </div></div></div></div></div></div></div></div></div></section><section class="services-four section-space-two">
+                        </div>
+                    </div>
+                </div></div></div></div></div></div></section><section class="services-four section-space-two">
             <div class="container">
                 <div class="services-four__top">
                     <div class="row gutter-y-40 align-items-end">
@@ -705,6 +708,25 @@
 
     <script defer src="assets/js/cookie-consent.js"></script>
     <script defer src="assets/js/contact-widget.js"></script>
+<!-- proc-faq accordion toggle -->
+<script>
+(function(){
+    document.querySelectorAll('.proc-faq__question').forEach(function(btn){
+        btn.addEventListener('click', function(){
+            var item = btn.closest('.proc-faq__item');
+            var isOpen = item.classList.contains('is-open');
+            document.querySelectorAll('.proc-faq__item.is-open').forEach(function(el){
+                el.classList.remove('is-open');
+                el.querySelector('.proc-faq__question').setAttribute('aria-expanded','false');
+            });
+            if(!isOpen){
+                item.classList.add('is-open');
+                btn.setAttribute('aria-expanded','true');
+            }
+        });
+    });
+})();
+</script>
 </body>
 
 </html>

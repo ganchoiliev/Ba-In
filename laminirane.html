@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="bg">
 
 <head>
@@ -278,35 +278,38 @@
                                         <img src="assets/images/services/service-d-list-1.webp" alt="Процес на ламиниране" class="service-details__info__image">
                                     </div></div></div><p class="service-details__text-two wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="00ms" data-i18n="lam.summary">Ламинирането на вежди и мигли е перфектното решение за клиенти, които търсят естествена красота и поддържан външен вид без грим. 
                                 Процедурата е бърза, безопасна и осигурява впечатляващи резултати за седмици напред.</p><div class="service-details__faq">
-                                <h3 class="service-details__faq__title service-details__sub-title" data-i18n="lam.faq_title">Често задавани въпроси и отговори (FAQ)</h3><div class="faq-accordion mediox-accordion" data-grp-name="mediox-accordion">
-                                    <div class="accordion active wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="00ms">
-                                        <div class="accordion-title">
-                                            <h4>
-                                                <span data-i18n="lam.q1">Колко време издържа ламинирането?</span>
-                                                <span class="accordion-title__icon"></span></h4>
-                                        </div><div class="accordion-content">
-                                            <div class="inner">
-                                                <p data-i18n="lam.a1">Ефектът при вежди трае около 4–6 седмици, а при мигли – 6–8 седмици,
+                                <h3 class="service-details__faq__title service-details__sub-title" data-i18n="lam.faq_title">Често задавани въпроси и отговори (FAQ)</h3><div class="proc-faq__list">
+                    <div class="proc-faq__item wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="0ms">
+                        <button class="proc-faq__question" aria-expanded="false">
+                            <span data-i18n="lam.q1">Колко време издържа ламинирането?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="proc-faq__answer">
+                            <p data-i18n="lam.a1">Ефектът при вежди трае около 4–6 седмици, а при мигли – 6–8 седмици,
                                                      в зависимост от структурата на косъма и грижата след процедурата.</p>
-                                            </div></div></div><div class="accordion wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="50ms">
-                                        <div class="accordion-title">
-                                            <h4>
-                                                <span data-i18n="lam.q2">Вредно ли е ламинирането за косъмчетата?</span>
-                                                <span class="accordion-title__icon"></span></h4>
-                                        </div><div class="accordion-content">
-                                            <div class="inner">
-                                                <p data-i18n="lam.a2">Не. Процедурата включва кератинова терапия и подхранващи формули,
+                        </div>
+                    </div>
+                    <div class="proc-faq__item wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="100ms">
+                        <button class="proc-faq__question" aria-expanded="false">
+                            <span data-i18n="lam.q2">Вредно ли е ламинирането за косъмчетата?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="proc-faq__answer">
+                            <p data-i18n="lam.a2">Не. Процедурата включва кератинова терапия и подхранващи формули,
                                                      които укрепват косъма и подобряват неговата структура при правилна техника.</p>
-                                            </div></div></div><div class="accordion wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="100ms">
-                                        <div class="accordion-title">
-                                            <h4>
-                                                <span data-i18n="lam.q3">Подходящо ли е ламинирането за къси или прави мигли?</span>
-                                                <span class="accordion-title__icon"></span></h4>
-                                        </div><div class="accordion-content">
-                                            <div class="inner">
-                                                <p data-i18n="lam.a3">Да. Процедурата е идеална именно за клиенти с прави, къси или неоформени мигли, 
+                        </div>
+                    </div>
+                    <div class="proc-faq__item wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="200ms">
+                        <button class="proc-faq__question" aria-expanded="false">
+                            <span data-i18n="lam.q3">Подходящо ли е ламинирането за къси или прави мигли?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="proc-faq__answer">
+                            <p data-i18n="lam.a3">Да. Процедурата е идеална именно за клиенти с прави, къси или неоформени мигли, 
                                                     тъй като повдига косъмчето от основата и визуално удължава дължината му.</p>
-                                            </div></div></div></div></div></div></div></div></div></section><section class="services-four section-space-two">
+                        </div>
+                    </div>
+                </div></div></div></div></div></div></section><section class="services-four section-space-two">
             <div class="container">
                 <div class="services-four__top">
                     <div class="row gutter-y-40 align-items-end">
@@ -705,6 +708,25 @@
 
     <script defer src="assets/js/cookie-consent.js"></script>
     <script defer src="assets/js/contact-widget.js"></script>
+<!-- proc-faq accordion toggle -->
+<script>
+(function(){
+    document.querySelectorAll('.proc-faq__question').forEach(function(btn){
+        btn.addEventListener('click', function(){
+            var item = btn.closest('.proc-faq__item');
+            var isOpen = item.classList.contains('is-open');
+            document.querySelectorAll('.proc-faq__item.is-open').forEach(function(el){
+                el.classList.remove('is-open');
+                el.querySelector('.proc-faq__question').setAttribute('aria-expanded','false');
+            });
+            if(!isOpen){
+                item.classList.add('is-open');
+                btn.setAttribute('aria-expanded','true');
+            }
+        });
+    });
+})();
+</script>
 </body>
 
 </html>

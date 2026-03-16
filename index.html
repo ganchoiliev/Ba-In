@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -976,58 +976,42 @@ ul,ol{margin:0;padding:0;list-style:none}
                                 </h2><!-- /.sec-title__title -->
                             </div><!-- /.sec-title -->
                             <div class="faq-two__accordion">
-                                <div class="faq-accordion mediox-accordion" data-grp-name="mediox-accordion">
-                                    <div class="accordion active">
-                                        <div class="accordion-title">
-                                            <h4>
-                                                <span data-i18n="index.faq.q1">Микроблейдингът боли ли?</span>
-                                                <span
-                                                    class="accordion-title__icon"></span><!-- /.accordion-title__icon -->
-                                            </h4>
-                                        </div><!-- /.accordion-title -->
-                                        <div class="accordion-content">
-                                            <div class="inner">
-                                                <p data-i18n="index.faq.a1">Болката е минимална, т.е. самата процедура
+                                <div class="proc-faq__list">
+                    <div class="proc-faq__item wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="0ms">
+                        <button class="proc-faq__question" aria-expanded="false">
+                            <span data-i18n="index.faq.q1">Микроблейдингът боли ли?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="proc-faq__answer">
+                            <p data-i18n="index.faq.a1">Болката е минимална, т.е. самата процедура
                                                     се извършва в най-горния слой на кожата – епидермиса.</p>
-                                            </div><!-- /.inner -->
-                                        </div><!-- /.accordion-content -->
-                                    </div><!-- /.accordion-item -->
-                                    <div class="accordion">
-                                        <div class="accordion-title">
-                                            <h4>
-                                                <span data-i18n="index.faq.q2">Колко време се задържа микроблейдинг
+                        </div>
+                    </div>
+                    <div class="proc-faq__item wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="100ms">
+                        <button class="proc-faq__question" aria-expanded="false">
+                            <span data-i18n="index.faq.q2">Колко време се задържа микроблейдинг
                                                     „косъм по косъм" върху кожата?</span>
-                                                <span
-                                                    class="accordion-title__icon"></span><!-- /.accordion-title__icon -->
-                                            </h4>
-                                        </div><!-- /.accordion-title -->
-                                        <div class="accordion-content">
-                                            <div class="inner">
-                                                <p data-i18n="index.faq.a2">При нормална до суха кожа, резултатът се
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="proc-faq__answer">
+                            <p data-i18n="index.faq.a2">При нормална до суха кожа, резултатът се
                                                     задържа около 1,5/2 години. При по-пореста и мазна кожа, резултатът
-                                                    се задържа до 1-1,5 година и при него се налага по-честа поддръжка.
-                                                </p>
-                                            </div><!-- /.inner -->
-                                        </div><!-- /.accordion-content -->
-                                    </div><!-- /.accordion-item -->
-                                    <div class="accordion">
-                                        <div class="accordion-title">
-                                            <h4>
-                                                <span data-i18n="index.faq.q3">Може ли да се прави през лятото
+                                                    се задържа до 1-1,5 година и при него се налага по-честа поддръжка.</p>
+                        </div>
+                    </div>
+                    <div class="proc-faq__item wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="200ms">
+                        <button class="proc-faq__question" aria-expanded="false">
+                            <span data-i18n="index.faq.q3">Може ли да се прави през лятото
                                                     микроблейдинг?</span>
-                                                <span
-                                                    class="accordion-title__icon"></span><!-- /.accordion-title__icon -->
-                                            </h4>
-                                        </div><!-- /.accordion-title -->
-                                        <div class="accordion-content">
-                                            <div class="inner">
-                                                <p data-i18n="index.faq.a3">Може, да! После грижата за веждите е една и
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="proc-faq__answer">
+                            <p data-i18n="index.faq.a3">Може, да! После грижата за веждите е една и
                                                     съща през всеки сезон, само лятото препоръчваме да се мажат по-често
                                                     със слънцезащита и кремове със защита за пигмент.</p>
-                                            </div><!-- /.inner -->
-                                        </div><!-- /.accordion-content -->
-                                    </div><!-- /.accordion-item -->
-                                </div><!-- /.faq-accordion -->
+                        </div>
+                    </div>
+                </div><!-- /.faq-accordion -->
                             </div><!-- /.faq-two__accordion -->
                         </div><!-- /.faq-two__content -->
                         <div class="faq-two__shape"></div><!-- /.faq-two__shape -->
@@ -2484,6 +2468,25 @@ ul,ol{margin:0;padding:0;list-style:none}
       });
     });
     </script>
+<!-- proc-faq accordion toggle -->
+<script>
+(function(){
+    document.querySelectorAll('.proc-faq__question').forEach(function(btn){
+        btn.addEventListener('click', function(){
+            var item = btn.closest('.proc-faq__item');
+            var isOpen = item.classList.contains('is-open');
+            document.querySelectorAll('.proc-faq__item.is-open').forEach(function(el){
+                el.classList.remove('is-open');
+                el.querySelector('.proc-faq__question').setAttribute('aria-expanded','false');
+            });
+            if(!isOpen){
+                item.classList.add('is-open');
+                btn.setAttribute('aria-expanded','true');
+            }
+        });
+    });
+})();
+</script>
 </body>
 
 </html>

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="bg">
 
 <head>
@@ -482,62 +482,47 @@
                                 </h2>
                             </div>
                             <div class="faq-one__accordion">
-                                <div class="faq-accordion mediox-accordion" data-grp-name="mediox-accordion">
-                                    <div class="accordion active wow fadeInUp" data-wow-duration="1500ms"
-                                        data-wow-delay="00ms">
-                                        <div class="accordion-title">
-                                            <h4>
-                                                <span data-i18n="about.faq1_q">Какво отличава вашите процедури от
+                                <div class="proc-faq__list">
+                    <div class="proc-faq__item wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="0ms">
+                        <button class="proc-faq__question" aria-expanded="false">
+                            <span data-i18n="about.faq1_q">Какво отличава вашите процедури от
                                                     останалите в Силистра?</span>
-                                                <span class="accordion-title__icon"></span>
-                                            </h4>
-                                        </div>
-                                        <div class="accordion-content">
-                                            <div class="inner">
-                                                <p data-i18n="about.faq1_a">Работя с международно сертифицирани техники
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="proc-faq__answer">
+                            <p data-i18n="about.faq1_a">Работя с международно сертифицирани техники
                                                     от PhiAcademy, високо качество на материалите и индивидуален подход
                                                     към всеки клиент. Комбинацията от опит, прецизност и персонално
                                                     отношение гарантира естествени и устойчиви резултати.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="accordion wow fadeInUp" data-wow-duration="1500ms"
-                                        data-wow-delay="50ms">
-                                        <div class="accordion-title">
-                                            <h4>
-                                                <span data-i18n="about.faq2_q">Болезнени ли са процедурите?</span>
-                                                <span class="accordion-title__icon"></span>
-                                            </h4>
-                                        </div>
-                                        <div class="accordion-content">
-                                            <div class="inner">
-                                                <p data-i18n="about.faq2_a">Всички процедури се извършват с максимален
+                        </div>
+                    </div>
+                    <div class="proc-faq__item wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="100ms">
+                        <button class="proc-faq__question" aria-expanded="false">
+                            <span data-i18n="about.faq2_q">Болезнени ли са процедурите?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="proc-faq__answer">
+                            <p data-i18n="about.faq2_a">Всички процедури се извършват с максимален
                                                     комфорт за клиента – използвам щадящи техники и висококачествени
                                                     продукти. Възстановяването обикновено е кратко и минимално, в
                                                     зависимост от конкретната услуга (микроблейдинг, микронийдлинг,
                                                     ламиниране и др.).</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="accordion wow fadeInUp" data-wow-duration="1500ms"
-                                        data-wow-delay="100ms">
-                                        <div class="accordion-title">
-                                            <h4>
-                                                <span data-i18n="about.faq3_q">Как да избера подходящата процедура за
+                        </div>
+                    </div>
+                    <div class="proc-faq__item wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="200ms">
+                        <button class="proc-faq__question" aria-expanded="false">
+                            <span data-i18n="about.faq3_q">Как да избера подходящата процедура за
                                                     мен?</span>
-                                                <span class="accordion-title__icon"></span>
-                                            </h4>
-                                        </div>
-                                        <div class="accordion-content">
-                                            <div class="inner">
-                                                <p data-i18n="about.faq3_a">На всяка първоначална консултация анализирам
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="proc-faq__answer">
+                            <p data-i18n="about.faq3_a">На всяка първоначална консултация анализирам
                                                     кожата, формата на веждите, естествените черти и личните цели на
                                                     клиента. Така препоръчвам най-подходящата процедура, която да
                                                     подчертае индивидуалната красота и да даде най-добър резултат.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                        </div>
+                    </div>
+                </div>
                             </div>
                         </div>
                     </div>
@@ -1354,6 +1339,25 @@
 
     <script defer src="assets/js/cookie-consent.js"></script>
     <script defer src="assets/js/contact-widget.js"></script>
+<!-- proc-faq accordion toggle -->
+<script>
+(function(){
+    document.querySelectorAll('.proc-faq__question').forEach(function(btn){
+        btn.addEventListener('click', function(){
+            var item = btn.closest('.proc-faq__item');
+            var isOpen = item.classList.contains('is-open');
+            document.querySelectorAll('.proc-faq__item.is-open').forEach(function(el){
+                el.classList.remove('is-open');
+                el.querySelector('.proc-faq__question').setAttribute('aria-expanded','false');
+            });
+            if(!isOpen){
+                item.classList.add('is-open');
+                btn.setAttribute('aria-expanded','true');
+            }
+        });
+    });
+})();
+</script>
 </body>
 
 </html>

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="bg">
 
 <head>
@@ -296,36 +296,39 @@
                                 Доверете се на сертифициран екип и модерна технология за най-добрия резултат.</p>
                                    <p data-i18n="piercing.home_visit"> 🏠 Възможност за посещение по домовете – спокойствие, комфорт и сигурност, особено за най-малките.</p>
                                 <div class="service-details__faq">
-                                <h3 class="service-details__faq__title service-details__sub-title" data-i18n="service.faq_title">Имате въпроси? Ние сме тук, за да помогнем</h3><div class="faq-accordion mediox-accordion" data-grp-name="mediox-accordion">
-                                    <div class="accordion active wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="00ms">
-                                        <div class="accordion-title">
-                                            <h4>
-                                                <span data-i18n="piercing.q1">Болезнено ли е пробиването на уши при деца?</span>
-                                                <span class="accordion-title__icon"></span></h4>
-                                        </div><div class="accordion-content">
-                                            <div class="inner">
-                                                <p data-i18n="piercing.a1">Процедурата със STUDEX System75 е почти безболезнена. Устройството е много тихо и пробиването е мигновено,
+                                <h3 class="service-details__faq__title service-details__sub-title" data-i18n="service.faq_title">Имате въпроси? Ние сме тук, за да помогнем</h3><div class="proc-faq__list">
+                    <div class="proc-faq__item wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="0ms">
+                        <button class="proc-faq__question" aria-expanded="false">
+                            <span data-i18n="piercing.q1">Болезнено ли е пробиването на уши при деца?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="proc-faq__answer">
+                            <p data-i18n="piercing.a1">Процедурата със STUDEX System75 е почти безболезнена. Устройството е много тихо и пробиването е мигновено,
                                                      а когато двама козметици пробият ушите едновременно, детето усеща минимален дискомфорт.</p>
-                                            </div></div></div><div class="accordion wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="50ms">
-                                        <div class="accordion-title">
-                                            <h4>
-                                                <span data-i18n="piercing.q2">Подходящо ли е пробиването за малки деца?</span>
-                                                <span class="accordion-title__icon"></span></h4>
-                                        </div><div class="accordion-content">
-                                            <div class="inner">
-                                                <p data-i18n="piercing.a2">Да, системата е напълно подходяща и безопасна за деца дори на много ранна възраст. Работим със стерилни,
+                        </div>
+                    </div>
+                    <div class="proc-faq__item wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="100ms">
+                        <button class="proc-faq__question" aria-expanded="false">
+                            <span data-i18n="piercing.q2">Подходящо ли е пробиването за малки деца?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="proc-faq__answer">
+                            <p data-i18n="piercing.a2">Да, системата е напълно подходяща и безопасна за деца дори на много ранна възраст. Работим със стерилни,
                                                      хипоалергенни обеци и внимаваме всяка стъпка да бъде възможно най-нежна за детските ушички.</p>
-                                            </div></div></div><div class="accordion wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="100ms">
-                                        <div class="accordion-title">
-                                            <h4>
-                                                <span data-i18n="piercing.q3">Как да се грижим за ушите след пробиването?</span>
-                                                <span class="accordion-title__icon"></span></h4>
-                                        </div><div class="accordion-content">
-                                            <div class="inner">
-                                                <p data-i18n="piercing.a3">Препоръчва се почистване на зоната два пъти дневно със специален разтвор
+                        </div>
+                    </div>
+                    <div class="proc-faq__item wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="200ms">
+                        <button class="proc-faq__question" aria-expanded="false">
+                            <span data-i18n="piercing.q3">Как да се грижим за ушите след пробиването?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="proc-faq__answer">
+                            <p data-i18n="piercing.a3">Препоръчва се почистване на зоната два пъти дневно със специален разтвор
                                                      и избягване на пипане с мръсни ръце. Лечението обикновено трае 4–6 седмици, 
                                                      а обеците не трябва да се свалят през този период.</p>
-                                            </div></div></div></div></div></div></div></div></div></section><section class="services-four section-space-two">
+                        </div>
+                    </div>
+                </div></div></div></div></div></div></section><section class="services-four section-space-two">
             <div class="container">
                 <div class="services-four__top">
                     <div class="row gutter-y-40 align-items-end">
@@ -724,6 +727,25 @@
 
     <script defer src="assets/js/cookie-consent.js"></script>
     <script defer src="assets/js/contact-widget.js"></script>
+<!-- proc-faq accordion toggle -->
+<script>
+(function(){
+    document.querySelectorAll('.proc-faq__question').forEach(function(btn){
+        btn.addEventListener('click', function(){
+            var item = btn.closest('.proc-faq__item');
+            var isOpen = item.classList.contains('is-open');
+            document.querySelectorAll('.proc-faq__item.is-open').forEach(function(el){
+                el.classList.remove('is-open');
+                el.querySelector('.proc-faq__question').setAttribute('aria-expanded','false');
+            });
+            if(!isOpen){
+                item.classList.add('is-open');
+                btn.setAttribute('aria-expanded','true');
+            }
+        });
+    });
+})();
+</script>
 </body>
 
 </html>

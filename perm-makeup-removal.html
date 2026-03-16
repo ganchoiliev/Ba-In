@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="bg">
 
 <head>
@@ -274,32 +274,35 @@
                                         </ul></div><div class="col-xl-6 col-lg-12 col-md-6 wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="100ms">
                                         <img src="assets/images/services/service-d-list-1.webp" alt="Резултати от премахване на грим" class="service-details__info__image">
                                     </div></div></div><p class="service-details__text-two wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="00ms" data-i18n="pmu.summary">Премахването на перманентен грим е безопасно и ефективно решение за възвръщане на естествената визия.</p><div class="service-details__faq">
-                                <h3 class="service-details__faq__title service-details__sub-title" data-i18n="service.faq_title">Имате въпроси? Ние сме тук, за да помогнем</h3><div class="faq-accordion mediox-accordion" data-grp-name="mediox-accordion">
-                                    <div class="accordion active wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="00ms">
-                                        <div class="accordion-title">
-                                            <h4>
-                                                <span data-i18n="pmu.q1">Болезнена ли е процедурата по премахване?</span>
-                                                <span class="accordion-title__icon"></span></h4>
-                                        </div><div class="accordion-content">
-                                            <div class="inner">
-                                                <p data-i18n="pmu.a1">Усещането е сходно с това при поставяне на перманентен грим. Преди процедурата се нанася локален анестетик (обезболяващ крем), за да се осигури максимален комфорт.</p>
-                                            </div></div></div><div class="accordion wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="50ms">
-                                        <div class="accordion-title">
-                                            <h4>
-                                                <span data-i18n="pmu.q2">Колко процедури са необходими за пълно премахване?</span>
-                                                <span class="accordion-title__icon"></span></h4>
-                                        </div><div class="accordion-content">
-                                            <div class="inner">
-                                                <p data-i18n="pmu.a2">Броят на сесиите зависи от наситеността на стария пигмент, дълбочината на поставяне и типа кожа. Обикновено са необходими от 2 до 5 процедури за оптимален резултат.</p>
-                                            </div></div></div><div class="accordion wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="100ms">
-                                        <div class="accordion-title">
-                                            <h4>
-                                                <span data-i18n="pmu.q3">Остават ли белези след процедурата?</span>
-                                                <span class="accordion-title__icon"></span></h4>
-                                        </div><div class="accordion-content">
-                                            <div class="inner">
-                                                <p data-i18n="pmu.a3">При правилно изпълнение и спазване на инструкциите за домашна грижа, рискът от белези е минимален. Използваните методи са щадящи и целят да запазят целостта на кожата.</p>
-                                            </div></div></div></div></div></div></div></div></div></section><section class="services-four section-space-two">
+                                <h3 class="service-details__faq__title service-details__sub-title" data-i18n="service.faq_title">Имате въпроси? Ние сме тук, за да помогнем</h3><div class="proc-faq__list">
+                    <div class="proc-faq__item wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="0ms">
+                        <button class="proc-faq__question" aria-expanded="false">
+                            <span data-i18n="pmu.q1">Болезнена ли е процедурата по премахване?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="proc-faq__answer">
+                            <p data-i18n="pmu.a1">Усещането е сходно с това при поставяне на перманентен грим. Преди процедурата се нанася локален анестетик (обезболяващ крем), за да се осигури максимален комфорт.</p>
+                        </div>
+                    </div>
+                    <div class="proc-faq__item wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="100ms">
+                        <button class="proc-faq__question" aria-expanded="false">
+                            <span data-i18n="pmu.q2">Колко процедури са необходими за пълно премахване?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="proc-faq__answer">
+                            <p data-i18n="pmu.a2">Броят на сесиите зависи от наситеността на стария пигмент, дълбочината на поставяне и типа кожа. Обикновено са необходими от 2 до 5 процедури за оптимален резултат.</p>
+                        </div>
+                    </div>
+                    <div class="proc-faq__item wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="200ms">
+                        <button class="proc-faq__question" aria-expanded="false">
+                            <span data-i18n="pmu.q3">Остават ли белези след процедурата?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="proc-faq__answer">
+                            <p data-i18n="pmu.a3">При правилно изпълнение и спазване на инструкциите за домашна грижа, рискът от белези е минимален. Използваните методи са щадящи и целят да запазят целостта на кожата.</p>
+                        </div>
+                    </div>
+                </div></div></div></div></div></div></section><section class="services-four section-space-two">
             <div class="container">
                 <div class="services-four__top">
                     <div class="row gutter-y-40 align-items-end">
@@ -698,6 +701,25 @@
 
     <script defer src="assets/js/cookie-consent.js"></script>
     <script defer src="assets/js/contact-widget.js"></script>
+<!-- proc-faq accordion toggle -->
+<script>
+(function(){
+    document.querySelectorAll('.proc-faq__question').forEach(function(btn){
+        btn.addEventListener('click', function(){
+            var item = btn.closest('.proc-faq__item');
+            var isOpen = item.classList.contains('is-open');
+            document.querySelectorAll('.proc-faq__item.is-open').forEach(function(el){
+                el.classList.remove('is-open');
+                el.querySelector('.proc-faq__question').setAttribute('aria-expanded','false');
+            });
+            if(!isOpen){
+                item.classList.add('is-open');
+                btn.setAttribute('aria-expanded','true');
+            }
+        });
+    });
+})();
+</script>
 </body>
 
 </html>
