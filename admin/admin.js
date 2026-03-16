@@ -23,6 +23,14 @@ let quillEditor = null;
 let calendarDate = new Date();
 let currentView = 'grid'; // 'grid' | 'calendar'
 let originalPostSnapshot = null; // for diff
+let heroImageCacheBust = Date.now(); // bust browser cache after image regeneration
+
+// ─── Cache-Bust Helper ──────────────────────
+function cacheBustUrl(url) {
+    if (!url) return url;
+    const sep = url.includes('?') ? '&' : '?';
+    return url + sep + 'v=' + heroImageCacheBust;
+}
 
 // ─── Auth-aware Supabase REST helpers ───────
 async function getAccessToken() {
@@ -301,7 +309,7 @@ function renderPosts() {
                 <input type="checkbox" ${isSelected ? 'checked' : ''} data-select-id="${post.id}">
             </label>
             <img class="post-card__hero" 
-                 src="${post.hero_image_url || '../assets/images/blog/lp-1-1.webp'}" 
+                 src="${cacheBustUrl(post.hero_image_url) || '../assets/images/blog/lp-1-1.webp'}" 
                  alt="${post.title}"
                  onerror="this.src='../assets/images/blog/lp-1-1.webp'">
             <div class="post-card__body">
@@ -732,7 +740,7 @@ function openModal(id) {
 
     // Hero
     const heroImg = document.getElementById('modal-hero-img');
-    heroImg.src = post.hero_image_url || '../assets/images/blog/lp-1-1.webp';
+    heroImg.src = cacheBustUrl(post.hero_image_url) || '../assets/images/blog/lp-1-1.webp';
     heroImg.alt = post.title;
     document.getElementById('modal-edit-hero-url').value = post.hero_image_url || '';
 
@@ -1067,8 +1075,9 @@ document.getElementById('btn-generate-ai-image').addEventListener('click', async
             draft_id: currentDraftId,
             custom_prompt: prompt
         });
-        const cacheBust = result.hero_image_url + '?t=' + Date.now();
-        document.getElementById('modal-hero-img').src = cacheBust;
+        // Bump cache bust so all image references pick up the new file
+        heroImageCacheBust = Date.now();
+        document.getElementById('modal-hero-img').src = cacheBustUrl(result.hero_image_url);
         document.getElementById('modal-edit-hero-url').value = result.hero_image_url;
         showToast('Изображението е генерирано! Натиснете "Обнови на Живо" за да го публикувате.');
         await loadPosts();
@@ -1087,8 +1096,9 @@ document.getElementById('btn-regenerate-hero').addEventListener('click', async (
     showLoading('Генериране на ново hero изображение... (15-30 секунди)');
     try {
         const result = await callEdgeFunction('update-published-post', { action: 'regenerate-hero', draft_id: currentDraftId });
-        const cacheBust = result.hero_image_url + '?t=' + Date.now();
-        document.getElementById('modal-hero-img').src = cacheBust;
+        // Bump cache bust so all image references pick up the new file
+        heroImageCacheBust = Date.now();
+        document.getElementById('modal-hero-img').src = cacheBustUrl(result.hero_image_url);
         document.getElementById('modal-edit-hero-url').value = result.hero_image_url;
         showToast('Нов hero image генериран! Натиснете "Обнови на Живо" за да го публикувате.');
         await loadPosts();
