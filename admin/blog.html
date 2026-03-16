@@ -19,7 +19,8 @@
             <h2>Blog Admin</h2>
             <p class="auth-subtitle">Въведете парола за достъп</p>
             <form id="auth-form">
-                <input type="password" id="auth-password" placeholder="Парола..." autocomplete="current-password">
+                <input type="email" id="auth-email" placeholder="Имейл..." autocomplete="email" required>
+                <input type="password" id="auth-password" placeholder="Парола..." autocomplete="current-password" required>
                 <button type="submit">Вход</button>
             </form>
             <p id="auth-error" class="auth-error" hidden>Грешна парола</p>
@@ -43,6 +44,10 @@
                 <button id="btn-refresh" class="btn btn--ghost">
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 4v6h-6M1 20v-6h6"/><path d="M3.51 9a9 9 0 0114.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0020.49 15"/></svg>
                     Обнови
+                </button>
+                <button id="btn-logout" class="btn btn--ghost" title="Изход">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4"/><polyline points="16,17 21,12 16,7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+                    Изход
                 </button>
             </div>
         </header>
@@ -185,6 +190,7 @@
         <span id="toast-text"></span>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script src="admin.js"></script>
 </body>
 </html>

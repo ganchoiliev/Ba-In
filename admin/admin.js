@@ -1,24 +1,40 @@
 /**
  * Blog Admin Dashboard — Client Logic
  * Beauty Atelier IN
+ * 
+ * Authentication: Supabase Auth (email/password)
+ * All edge function calls include JWT Authorization header
  */
 
 // ─── Config ─────────────────────────────────
 const SUPABASE_URL = 'https://hovzlyvvvmmvgzbdmkyz.supabase.co';
 const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImhvdnpseXZ2dm1tdmd6YmRta3l6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzMwNjgzNDIsImV4cCI6MjA4ODY0NDM0Mn0.EdP9Ozwh2HSgH7XZetPwwobdFu5ytVanLR1QXV7oI8E';
-const ADMIN_PASS_HASH = '5b9fe95f2cc09ae79d81c6cf730b9b11f233d46cda718fa7d41ce8d5c5c1b50c'; // sha256 of 'Nikol84!'
+
+// Initialize Supabase client
+const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
 // ─── State ──────────────────────────────────
 let posts = [];
 let currentFilter = 'all';
 let currentDraftId = null;
 
-// ─── Supabase REST helpers ──────────────────
+// ─── Auth-aware Supabase REST helpers ───────
+async function getAccessToken() {
+    const { data: { session } } = await supabaseClient.auth.getSession();
+    if (!session) {
+        showToast('Сесията е изтекла. Моля, влезте отново.', true);
+        logout();
+        throw new Error('No active session');
+    }
+    return session.access_token;
+}
+
 async function supabaseGet(table, query = '') {
+    const token = await getAccessToken();
     const res = await fetch(`${SUPABASE_URL}/rest/v1/${table}?${query}&order=created_at.desc`, {
         headers: {
             'apikey': SUPABASE_ANON_KEY,
-            'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
+            'Authorization': `Bearer ${token}`,
         },
     });
     if (!res.ok) throw new Error(`Supabase GET error: ${res.status}`);
@@ -26,11 +42,12 @@ async function supabaseGet(table, query = '') {
 }
 
 async function supabasePatch(table, id, data) {
+    const token = await getAccessToken();
     const res = await fetch(`${SUPABASE_URL}/rest/v1/${table}?id=eq.${id}`, {
         method: 'PATCH',
         headers: {
             'apikey': SUPABASE_ANON_KEY,
-            'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
+            'Authorization': `Bearer ${token}`,
             'Content-Type': 'application/json',
             'Prefer': 'return=representation',
         },
@@ -41,21 +58,24 @@ async function supabasePatch(table, id, data) {
 }
 
 async function supabaseDelete(table, id) {
+    const token = await getAccessToken();
     const res = await fetch(`${SUPABASE_URL}/rest/v1/${table}?id=eq.${id}`, {
         method: 'DELETE',
         headers: {
             'apikey': SUPABASE_ANON_KEY,
-            'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
+            'Authorization': `Bearer ${token}`,
         },
     });
     if (!res.ok) throw new Error(`Supabase DELETE error: ${res.status}`);
 }
 
 async function callEdgeFunction(name, body = {}) {
+    const token = await getAccessToken();
     const res = await fetch(`${SUPABASE_URL}/functions/v1/${name}`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
+            'Authorization': `Bearer ${token}`,
         },
         body: JSON.stringify(body),
     });
@@ -64,41 +84,56 @@ async function callEdgeFunction(name, body = {}) {
     return data;
 }
 
-// ─── SHA-256 helper ─────────────────────────
-async function sha256(message) {
-    const msgBuffer = new TextEncoder().encode(message);
-    const hashBuffer = await crypto.subtle.digest('SHA-256', msgBuffer);
-    const hashArray = Array.from(new Uint8Array(hashBuffer));
-    return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
-}
-
 // ─── Auth ───────────────────────────────────
 const authGate = document.getElementById('auth-gate');
 const dashboard = document.getElementById('dashboard');
 const authForm = document.getElementById('auth-form');
 const authError = document.getElementById('auth-error');
 
-function checkAuth() {
-    const authed = sessionStorage.getItem('blog-admin-auth');
-    if (authed === 'true') {
+async function checkAuth() {
+    const { data: { session } } = await supabaseClient.auth.getSession();
+    if (session) {
         authGate.style.display = 'none';
         dashboard.style.display = 'block';
         loadPosts();
     }
 }
 
+async function logout() {
+    await supabaseClient.auth.signOut();
+    authGate.style.display = '';
+    dashboard.style.display = 'none';
+    authError.style.display = 'none';
+}
+
 authForm.addEventListener('submit', async (e) => {
     e.preventDefault();
+    const email = document.getElementById('auth-email').value;
     const pass = document.getElementById('auth-password').value;
-    const hash = await sha256(pass);
-    if (hash === ADMIN_PASS_HASH) {
-        sessionStorage.setItem('blog-admin-auth', 'true');
+    
+    const { data, error } = await supabaseClient.auth.signInWithPassword({
+        email: email,
+        password: pass,
+    });
+
+    if (error) {
+        authError.style.display = 'block';
+        authError.textContent = 'Грешен имейл или парола';
+    } else {
         authGate.style.display = 'none';
         dashboard.style.display = 'block';
         loadPosts();
-    } else {
-        authError.style.display = 'block';
-        authError.textContent = 'Грешна парола';
+    }
+});
+
+// Logout button
+document.getElementById('btn-logout').addEventListener('click', logout);
+
+// Listen for auth state changes (session expiry, etc.)
+supabaseClient.auth.onAuthStateChange((event, session) => {
+    if (event === 'SIGNED_OUT') {
+        authGate.style.display = '';
+        dashboard.style.display = 'none';
     }
 });
 
@@ -428,16 +463,15 @@ document.getElementById('hero-file-upload').addEventListener('change', async (e)
 
     showLoading('Качване на изображение...');
     try {
+        const token = await getAccessToken();
         const fileName = `${post.slug}-hero.${file.name.split('.').pop()}`;
-        const formData = new FormData();
-        formData.append('', file);
 
         // Upload to Supabase Storage via REST
         const uploadRes = await fetch(`${SUPABASE_URL}/storage/v1/object/blog-images/${fileName}`, {
             method: 'POST',
             headers: {
                 'apikey': SUPABASE_ANON_KEY,
-                'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
+                'Authorization': `Bearer ${token}`,
                 'x-upsert': 'true',
             },
             body: file,
