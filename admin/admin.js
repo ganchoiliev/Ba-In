@@ -1067,7 +1067,8 @@ document.getElementById('btn-generate-ai-image').addEventListener('click', async
             draft_id: currentDraftId,
             custom_prompt: prompt
         });
-        document.getElementById('modal-hero-img').src = result.hero_image_url;
+        const cacheBust = result.hero_image_url + '?t=' + Date.now();
+        document.getElementById('modal-hero-img').src = cacheBust;
         document.getElementById('modal-edit-hero-url').value = result.hero_image_url;
         showToast('Изображението е генерирано! Натиснете "Обнови на Живо" за да го публикувате.');
         await loadPosts();
@@ -1086,7 +1087,8 @@ document.getElementById('btn-regenerate-hero').addEventListener('click', async (
     showLoading('Генериране на ново hero изображение... (15-30 секунди)');
     try {
         const result = await callEdgeFunction('update-published-post', { action: 'regenerate-hero', draft_id: currentDraftId });
-        document.getElementById('modal-hero-img').src = result.hero_image_url;
+        const cacheBust = result.hero_image_url + '?t=' + Date.now();
+        document.getElementById('modal-hero-img').src = cacheBust;
         document.getElementById('modal-edit-hero-url').value = result.hero_image_url;
         showToast('Нов hero image генериран! Натиснете "Обнови на Живо" за да го публикувате.');
         await loadPosts();
