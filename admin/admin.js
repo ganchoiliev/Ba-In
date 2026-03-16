@@ -81,8 +81,8 @@ const authError = document.getElementById('auth-error');
 function checkAuth() {
     const authed = sessionStorage.getItem('blog-admin-auth');
     if (authed === 'true') {
-        authGate.hidden = true;
-        dashboard.hidden = false;
+        authGate.style.display = 'none';
+        dashboard.style.display = 'block';
         loadPosts();
     }
 }
@@ -93,11 +93,11 @@ authForm.addEventListener('submit', async (e) => {
     const hash = await sha256(pass);
     if (hash === ADMIN_PASS_HASH) {
         sessionStorage.setItem('blog-admin-auth', 'true');
-        authGate.hidden = true;
-        dashboard.hidden = false;
+        authGate.style.display = 'none';
+        dashboard.style.display = 'block';
         loadPosts();
     } else {
-        authError.hidden = false;
+        authError.style.display = 'block';
         authError.textContent = 'Грешна парола';
     }
 });
@@ -107,19 +107,18 @@ function showToast(message, isError = false) {
     const toast = document.getElementById('toast');
     const text = document.getElementById('toast-text');
     text.textContent = message;
-    toast.className = isError ? 'toast toast--error' : 'toast';
-    toast.hidden = false;
-    setTimeout(() => { toast.hidden = true; }, 4000);
+    toast.className = isError ? 'toast toast--error is-visible' : 'toast is-visible';
+    setTimeout(() => { toast.classList.remove('is-visible'); }, 4000);
 }
 
 // ─── Loading ────────────────────────────────
 function showLoading(text = 'Зареждане...') {
     document.getElementById('loading-text').textContent = text;
-    document.getElementById('loading-overlay').hidden = false;
+    document.getElementById('loading-overlay').classList.add('is-visible');
 }
 
 function hideLoading() {
-    document.getElementById('loading-overlay').hidden = true;
+    document.getElementById('loading-overlay').classList.remove('is-visible');
 }
 
 // ─── Load Posts ─────────────────────────────
@@ -153,11 +152,11 @@ function renderPosts() {
 
     if (filtered.length === 0) {
         grid.innerHTML = '';
-        empty.hidden = false;
+        empty.style.display = 'block';
         return;
     }
 
-    empty.hidden = true;
+    empty.style.display = 'none';
     grid.innerHTML = filtered.map(post => `
         <div class="post-card" data-id="${post.id}">
             <img class="post-card__hero" 
@@ -224,13 +223,13 @@ function openModal(id) {
     document.getElementById('modal-edit-content').value = post.content_html || '';
 
     // Preview
-    document.getElementById('content-preview').hidden = true;
+    document.getElementById('content-preview').style.display = 'none';
 
     // Button visibility based on status
-    document.getElementById('btn-approve').hidden = post.status !== 'draft';
-    document.getElementById('btn-publish').hidden = post.status !== 'approved';
-    document.getElementById('btn-save').hidden = post.status === 'published';
-    document.getElementById('btn-delete').hidden = post.status === 'published';
+    document.getElementById('btn-approve').style.display = post.status === 'draft' ? '' : 'none';
+    document.getElementById('btn-publish').style.display = post.status === 'approved' ? '' : 'none';
+    document.getElementById('btn-save').style.display = post.status === 'published' ? 'none' : '';
+    document.getElementById('btn-delete').style.display = post.status === 'published' ? 'none' : '';
 
     // Disable editing for published
     const inputs = modal.querySelectorAll('.modal__input, .modal__textarea');
@@ -238,12 +237,12 @@ function openModal(id) {
         input.disabled = post.status === 'published';
     });
 
-    modal.hidden = false;
+    modal.classList.add('is-visible');
     document.body.style.overflow = 'hidden';
 }
 
 function closeModal() {
-    modal.hidden = true;
+    modal.classList.remove('is-visible');
     currentDraftId = null;
     document.body.style.overflow = '';
 }
@@ -252,18 +251,18 @@ document.getElementById('modal-close').addEventListener('click', closeModal);
 modal.querySelector('.modal__backdrop').addEventListener('click', closeModal);
 
 document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && !modal.hidden) closeModal();
+    if (e.key === 'Escape' && modal.classList.contains('is-visible')) closeModal();
 });
 
 // ─── Preview Toggle ─────────────────────────
 document.getElementById('btn-toggle-preview').addEventListener('click', () => {
     const preview = document.getElementById('content-preview');
     const content = document.getElementById('modal-edit-content').value;
-    if (preview.hidden) {
+    if (preview.style.display === 'none' || !preview.style.display) {
         preview.innerHTML = content;
-        preview.hidden = false;
+        preview.style.display = 'block';
     } else {
-        preview.hidden = true;
+        preview.style.display = 'none';
     }
 });
 

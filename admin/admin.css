@@ -408,12 +408,16 @@ body {
     position: fixed;
     inset: 0;
     background: rgba(10, 10, 15, 0.85);
-    display: flex;
+    display: none;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     z-index: 1000;
     backdrop-filter: blur(4px);
+}
+
+.loading-overlay.is-visible {
+    display: flex;
 }
 
 .loader {
@@ -438,17 +442,24 @@ body {
     position: fixed;
     inset: 0;
     z-index: 900;
-    display: flex;
+    display: none;
     align-items: flex-start;
     justify-content: center;
     padding: 40px 20px;
     overflow-y: auto;
 }
 
-.modal[hidden] { display: none !important; }
-.loading-overlay[hidden] { display: none !important; }
-.toast[hidden] { display: none !important; }
-[hidden] { display: none !important; }
+.modal.is-visible {
+    display: flex;
+}
+
+.toast {
+    display: none;
+}
+
+.toast.is-visible {
+    display: block;
+}
 
 .modal__backdrop {
     position: fixed;
@@ -604,7 +615,7 @@ body {
 }
 
 /* ─── Toast ─────────────────────────────────── */
-.toast {
+.toast.is-visible {
     position: fixed;
     bottom: 28px;
     left: 50%;
