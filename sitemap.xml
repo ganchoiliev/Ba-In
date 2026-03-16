@@ -145,7 +145,7 @@
 
   <url>
     <loc>https://ba-in.com/blog.html</loc>
-    <lastmod>2026-03-11</lastmod>
+        <lastmod>2026-03-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.4</priority>
   </url>
@@ -165,6 +165,13 @@
     <url>
         <loc>https://ba-in.com/pmu-removal-guide.html</loc>
         <lastmod>2026-03-15</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://ba-in.com/proletna-kozha-obnovjavanje.html</loc>
+        <lastmod>2026-03-16</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
