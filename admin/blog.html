@@ -226,15 +226,31 @@
                     <label>Hero Image URL</label>
                     <div class="modal__hero-input-row">
                         <input type="text" id="modal-edit-hero-url" class="modal__input" placeholder="https://...">
-                        <button class="btn btn--ghost btn--small" id="btn-regenerate-hero" title="Регенерирай с AI">
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 4v6h-6M1 20v-6h6"/><path d="M3.51 9a9 9 0 0114.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0020.49 15"/></svg>
-                            AI Hero
+                        <button class="btn btn--ghost btn--small" id="btn-toggle-ai-prompt" title="Генерирай с AI промпт">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v18M3 12h18"/></svg>
+                            AI
                         </button>
                         <label class="btn btn--ghost btn--small" for="hero-file-upload" title="Качи снимка от компютъра">
                             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17,8 12,3 7,8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
                             Качи
                         </label>
                         <input type="file" id="hero-file-upload" accept="image/*" style="display:none;">
+                    </div>
+                </div>
+                <!-- AI Image Prompt Panel -->
+                <div class="ai-prompt-panel" id="ai-prompt-panel" style="display:none;">
+                    <label>AI Image Prompt <span class="text-muted">(опиши какво изображение искаш)</span></label>
+                    <textarea id="ai-image-prompt" class="modal__textarea" rows="3" 
+                        placeholder="Напр: Елегантна жена с перфектни вежди в модерен козметичен салон, меки пастелни тонове, професионално осветление..."></textarea>
+                    <div class="ai-prompt-panel__actions">
+                        <button class="btn btn--accent btn--small" id="btn-generate-ai-image">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 4v6h-6M1 20v-6h6"/><path d="M3.51 9a9 9 0 0114.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0020.49 15"/></svg>
+                            Генерирай с DALL·E 3
+                        </button>
+                        <button class="btn btn--ghost btn--small" id="btn-regenerate-hero" title="Автоматичен промпт от заглавието">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 4v6h-6M1 20v-6h6"/><path d="M3.51 9a9 9 0 0114.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0020.49 15"/></svg>
+                            Авто генерирай
+                        </button>
                     </div>
                 </div>
             </div>

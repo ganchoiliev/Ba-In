@@ -1045,10 +1045,43 @@ document.getElementById('diff-confirm').addEventListener('click', async () => {
     }
 });
 
-// ─── Regenerate Hero Image ──────────────────
+// ─── Toggle AI Prompt Panel ─────────────────
+document.getElementById('btn-toggle-ai-prompt').addEventListener('click', () => {
+    const panel = document.getElementById('ai-prompt-panel');
+    panel.style.display = panel.style.display === 'none' ? 'block' : 'none';
+});
+
+// ─── Generate Hero with Custom Prompt ───────
+document.getElementById('btn-generate-ai-image').addEventListener('click', async () => {
+    if (!currentDraftId) return;
+    const prompt = document.getElementById('ai-image-prompt').value.trim();
+    if (!prompt) {
+        showToast('Моля, въведете описание на изображението.', true);
+        return;
+    }
+
+    showLoading('Генериране на изображение с DALL·E 3... (15-30 секунди)');
+    try {
+        const result = await callEdgeFunction('update-published-post', { 
+            action: 'regenerate-hero', 
+            draft_id: currentDraftId,
+            custom_prompt: prompt
+        });
+        document.getElementById('modal-hero-img').src = result.hero_image_url;
+        document.getElementById('modal-edit-hero-url').value = result.hero_image_url;
+        showToast('Изображението е генерирано! Натиснете "Обнови на Живо" за да го публикувате.');
+        await loadPosts();
+    } catch (err) {
+        showToast('Грешка при генериране: ' + err.message, true);
+    } finally {
+        hideLoading();
+    }
+});
+
+// ─── Regenerate Hero (auto prompt from title) ─
 document.getElementById('btn-regenerate-hero').addEventListener('click', async () => {
     if (!currentDraftId) return;
-    if (!confirm('Това ще генерира ново AI изображение. Продължи?')) return;
+    if (!confirm('Това ще генерира ново AI изображение автоматично от заглавието. Продължи?')) return;
 
     showLoading('Генериране на ново hero изображение... (15-30 секунди)');
     try {
