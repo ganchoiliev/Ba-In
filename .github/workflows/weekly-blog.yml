@@ -1,0 +1,32 @@
+name: Weekly Blog Draft Generation
+
+on:
+  schedule:
+    # Every Monday at 9:00 AM UTC
+    - cron: '0 9 * * 1'
+  workflow_dispatch: # Allow manual trigger
+
+jobs:
+  generate-draft:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Generate Blog Draft
+        run: |
+          response=$(curl -s -w "\n%{http_code}" \
+            -X POST \
+            "${{ secrets.SUPABASE_URL }}/functions/v1/generate-blog-draft" \
+            -H "Content-Type: application/json" \
+            -d '{}')
+          
+          http_code=$(echo "$response" | tail -1)
+          body=$(echo "$response" | head -n -1)
+          
+          echo "Status: $http_code"
+          echo "Response: $body"
+          
+          if [ "$http_code" != "200" ]; then
+            echo "::error::Draft generation failed with status $http_code"
+            exit 1
+          fi
+          
+          echo "✅ Blog draft generated successfully!"

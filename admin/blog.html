@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Admin | Beauty Atelier IN</title>
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/images/favicons/favicon-32x32.png">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+    <!-- Auth Gate -->
+    <div id="auth-gate" class="auth-gate">
+        <div class="auth-card">
+            <div class="auth-logo">
+                <img src="../assets/images/logo-dark.webp" alt="Beauty Atelier IN" width="140">
+            </div>
+            <h2>Blog Admin</h2>
+            <p class="auth-subtitle">Въведете парола за достъп</p>
+            <form id="auth-form">
+                <input type="password" id="auth-password" placeholder="Парола..." autocomplete="current-password">
+                <button type="submit">Вход</button>
+            </form>
+            <p id="auth-error" class="auth-error" hidden>Грешна парола</p>
+        </div>
+    </div>
+
+    <!-- Main Dashboard -->
+    <div id="dashboard" class="dashboard" hidden>
+        <!-- Header -->
+        <header class="dash-header">
+            <div class="dash-header__left">
+                <img src="../assets/images/logo-dark.webp" alt="Beauty Atelier IN" width="120">
+                <span class="dash-header__divider"></span>
+                <h1>Blog Admin</h1>
+            </div>
+            <div class="dash-header__right">
+                <button id="btn-generate" class="btn btn--primary">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v18M3 12h18"/></svg>
+                    Генерирай Нов Пост
+                </button>
+                <button id="btn-refresh" class="btn btn--ghost">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 4v6h-6M1 20v-6h6"/><path d="M3.51 9a9 9 0 0114.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0020.49 15"/></svg>
+                    Обнови
+                </button>
+            </div>
+        </header>
+
+        <!-- Stats Bar -->
+        <div class="stats-bar">
+            <div class="stat-card">
+                <span class="stat-card__number" id="stat-drafts">0</span>
+                <span class="stat-card__label">Чернови</span>
+            </div>
+            <div class="stat-card stat-card--approved">
+                <span class="stat-card__number" id="stat-approved">0</span>
+                <span class="stat-card__label">Одобрени</span>
+            </div>
+            <div class="stat-card stat-card--published">
+                <span class="stat-card__number" id="stat-published">0</span>
+                <span class="stat-card__label">Публикувани</span>
+            </div>
+            <div class="stat-card stat-card--total">
+                <span class="stat-card__number" id="stat-total">0</span>
+                <span class="stat-card__label">Общо</span>
+            </div>
+        </div>
+
+        <!-- Filter Tabs -->
+        <div class="filter-tabs">
+            <button class="filter-tab active" data-filter="all">Всички</button>
+            <button class="filter-tab" data-filter="draft">Чернови</button>
+            <button class="filter-tab" data-filter="approved">Одобрени</button>
+            <button class="filter-tab" data-filter="published">Публикувани</button>
+        </div>
+
+        <!-- Posts Grid -->
+        <div id="posts-grid" class="posts-grid">
+            <!-- Cards injected by JS -->
+        </div>
+
+        <!-- Empty State -->
+        <div id="empty-state" class="empty-state" hidden>
+            <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#666" stroke-width="1.5"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14,2 14,8 20,8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10,9 9,9 8,9"/></svg>
+            <h3>Няма постове</h3>
+            <p>Натиснете "Генерирай Нов Пост" за да започнете</p>
+        </div>
+
+        <!-- Loading Overlay -->
+        <div id="loading-overlay" class="loading-overlay" hidden>
+            <div class="loader"></div>
+            <p id="loading-text">Зареждане...</p>
+        </div>
+    </div>
+
+    <!-- Detail Modal -->
+    <div id="detail-modal" class="modal" hidden>
+        <div class="modal__backdrop"></div>
+        <div class="modal__content">
+            <button class="modal__close" id="modal-close">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            </button>
+            <div class="modal__header">
+                <div class="modal__status-badge" id="modal-status"></div>
+                <h2 id="modal-title" class="modal__title"></h2>
+                <p id="modal-meta" class="modal__meta"></p>
+            </div>
+            <div class="modal__hero">
+                <img id="modal-hero-img" src="" alt="">
+            </div>
+            <div class="modal__body">
+                <div class="modal__field">
+                    <label>Заглавие</label>
+                    <input type="text" id="modal-edit-title" class="modal__input">
+                </div>
+                <div class="modal__field">
+                    <label>Мета описание</label>
+                    <textarea id="modal-edit-meta-desc" class="modal__textarea" rows="2"></textarea>
+                </div>
+                <div class="modal__field">
+                    <label>Ключови думи</label>
+                    <input type="text" id="modal-edit-keywords" class="modal__input">
+                </div>
+                <div class="modal__field">
+                    <label>Извадка (Excerpt)</label>
+                    <textarea id="modal-edit-excerpt" class="modal__textarea" rows="2"></textarea>
+                </div>
+                <div class="modal__field">
+                    <label>Съдържание (HTML)</label>
+                    <textarea id="modal-edit-content" class="modal__textarea modal__textarea--tall" rows="12"></textarea>
+                </div>
+                <div class="modal__preview-toggle">
+                    <button class="btn btn--ghost btn--small" id="btn-toggle-preview">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                        Преглед
+                    </button>
+                </div>
+                <div id="content-preview" class="modal__content-preview" hidden></div>
+            </div>
+            <div class="modal__actions">
+                <button class="btn btn--save" id="btn-save">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21H5a2 2 0 01-2-2V5a2 2 0 012-2h11l5 5v11a2 2 0 01-2 2z"/><polyline points="17,21 17,13 7,13 7,21"/><polyline points="7,3 7,8 15,8"/></svg>
+                    Запази
+                </button>
+                <button class="btn btn--approve" id="btn-approve">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20,6 9,17 4,12"/></svg>
+                    Одобри
+                </button>
+                <button class="btn btn--publish" id="btn-publish">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12v8a2 2 0 002 2h12a2 2 0 002-2v-8"/><polyline points="16,6 12,2 8,6"/><line x1="12" y1="2" x2="12" y2="15"/></svg>
+                    Публикувай
+                </button>
+                <button class="btn btn--danger" id="btn-delete">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3,6 5,6 21,6"/><path d="M19 6v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6m3 0V4a2 2 0 012-2h4a2 2 0 012 2v2"/></svg>
+                    Изтрий
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast -->
+    <div id="toast" class="toast" hidden>
+        <span id="toast-text"></span>
+    </div>
+
+    <script src="admin.js"></script>
+</body>
+</html>
