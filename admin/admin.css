@@ -225,7 +225,24 @@ body {
 }
 .btn--danger:hover { border-color: var(--red); }
 
+.btn--update {
+    background: rgba(168, 85, 247, 0.1);
+    border-color: #a855f7;
+    color: #a855f7;
+}
+.btn--update:hover { background: rgba(168, 85, 247, 0.2); }
+
 .btn:disabled { opacity: 0.5; cursor: not-allowed; transform: none !important; }
+
+/* ─── Hero Controls ────────────────────────── */
+.modal__hero-controls { padding: 0 28px 8px; }
+.modal__hero-input-row {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+.modal__hero-input-row .modal__input { flex: 1; }
+.modal__hero-input-row .btn { flex-shrink: 0; }
 
 /* ─── Stats Bar ────────────────────────────── */
 .stats-bar {

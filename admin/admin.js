@@ -215,6 +215,9 @@ function openModal(id) {
     heroImg.src = post.hero_image_url || '../assets/images/blog/lp-1-1.webp';
     heroImg.alt = post.title;
 
+    // Hero URL field
+    document.getElementById('modal-edit-hero-url').value = post.hero_image_url || '';
+
     // Edit fields
     document.getElementById('modal-edit-title').value = post.title;
     document.getElementById('modal-edit-meta-desc').value = post.meta_description || '';
@@ -228,13 +231,14 @@ function openModal(id) {
     // Button visibility based on status
     document.getElementById('btn-approve').style.display = post.status === 'draft' ? '' : 'none';
     document.getElementById('btn-publish').style.display = post.status === 'approved' ? '' : 'none';
-    document.getElementById('btn-save').style.display = post.status === 'published' ? 'none' : '';
-    document.getElementById('btn-delete').style.display = post.status === 'published' ? 'none' : '';
+    document.getElementById('btn-save').style.display = post.status !== 'published' ? '' : 'none';
+    document.getElementById('btn-update-live').style.display = post.status === 'published' ? '' : 'none';
+    document.getElementById('btn-delete').style.display = ''; // Always show delete
 
-    // Disable editing for published
+    // All fields are always editable
     const inputs = modal.querySelectorAll('.modal__input, .modal__textarea');
     inputs.forEach(input => {
-        input.disabled = post.status === 'published';
+        input.disabled = false;
     });
 
     modal.classList.add('is-visible');
@@ -333,18 +337,97 @@ document.getElementById('btn-publish').addEventListener('click', async () => {
 // ─── Delete ─────────────────────────────────
 document.getElementById('btn-delete').addEventListener('click', async () => {
     if (!currentDraftId) return;
-    if (!confirm('Сигурни ли сте, че искате да изтриете тази чернова?')) return;
+    const post = posts.find(p => p.id === currentDraftId);
+    const isPublished = post && post.status === 'published';
 
-    showLoading('Изтриване...');
+    const msg = isPublished
+        ? 'ВНИМАНИЕ: Това ще изтрие поста от живия сайт (GitHub), Supabase и hero изображението. Това е необратимо! Продължи?'
+        : 'Сигурни ли сте, че искате да изтриете тази чернова?';
+
+    if (!confirm(msg)) return;
+
+    if (isPublished) {
+        showLoading('Изтриване от живия сайт... (10-15 секунди)');
+        try {
+            const result = await callEdgeFunction('update-published-post', { action: 'delete', draft_id: currentDraftId });
+            showToast(result.message);
+            await loadPosts();
+            closeModal();
+        } catch (err) {
+            showToast('Грешка при изтриване: ' + err.message, true);
+        } finally {
+            hideLoading();
+        }
+    } else {
+        showLoading('Изтриване...');
+        try {
+            await supabaseDelete('blog_drafts', currentDraftId);
+            showToast('Черновата е изтрита');
+            await loadPosts();
+            closeModal();
+        } catch (err) {
+            showToast('Грешка: ' + err.message, true);
+        } finally {
+            hideLoading();
+        }
+    }
+});
+
+// ─── Update Live (published posts) ──────────
+document.getElementById('btn-update-live').addEventListener('click', async () => {
+    if (!currentDraftId) return;
+    if (!confirm('Това ще обнови поста на живия сайт. Продължи?')) return;
+
+    showLoading('Запазване и обновяване на живия сайт... (10-15 секунди)');
     try {
-        await supabaseDelete('blog_drafts', currentDraftId);
-        showToast('Черновата е изтрита');
+        // First save changes to Supabase
+        const heroUrl = document.getElementById('modal-edit-hero-url').value;
+        await supabasePatch('blog_drafts', currentDraftId, {
+            title: document.getElementById('modal-edit-title').value,
+            meta_description: document.getElementById('modal-edit-meta-desc').value,
+            keywords: document.getElementById('modal-edit-keywords').value,
+            excerpt: document.getElementById('modal-edit-excerpt').value,
+            content_html: document.getElementById('modal-edit-content').value,
+            hero_image_url: heroUrl,
+        });
+
+        // Then re-commit to GitHub
+        const result = await callEdgeFunction('update-published-post', { action: 'update', draft_id: currentDraftId });
+        showToast(`Обновено! ${result.url}`);
         await loadPosts();
         closeModal();
     } catch (err) {
-        showToast('Грешка: ' + err.message, true);
+        showToast('Грешка при обновяване: ' + err.message, true);
     } finally {
         hideLoading();
+    }
+});
+
+// ─── Regenerate Hero Image ──────────────────
+document.getElementById('btn-regenerate-hero').addEventListener('click', async () => {
+    if (!currentDraftId) return;
+    if (!confirm('Това ще генерира ново AI изображение. Продължи?')) return;
+
+    showLoading('Генериране на ново hero изображение... (15-30 секунди)');
+    try {
+        const result = await callEdgeFunction('update-published-post', { action: 'regenerate-hero', draft_id: currentDraftId });
+        // Update the modal image and URL field
+        document.getElementById('modal-hero-img').src = result.hero_image_url;
+        document.getElementById('modal-edit-hero-url').value = result.hero_image_url;
+        showToast('Нов hero image генериран! Натиснете "Обнови на Живо" за да го публикувате.');
+        await loadPosts();
+    } catch (err) {
+        showToast('Грешка при генериране: ' + err.message, true);
+    } finally {
+        hideLoading();
+    }
+});
+
+// ─── Hero URL live preview ──────────────────
+document.getElementById('modal-edit-hero-url').addEventListener('change', () => {
+    const url = document.getElementById('modal-edit-hero-url').value;
+    if (url) {
+        document.getElementById('modal-hero-img').src = url;
     }
 });
 
