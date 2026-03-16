@@ -6,7 +6,7 @@
 // ─── Config ─────────────────────────────────
 const SUPABASE_URL = 'https://hovzlyvvvmmvgzbdmkyz.supabase.co';
 const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImhvdnpseXZ2dm1tdmd6YmRta3l6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzMwNjgzNDIsImV4cCI6MjA4ODY0NDM0Mn0.EdP9Ozwh2HSgH7XZetPwwobdFu5ytVanLR1QXV7oI8E';
-const ADMIN_PASS_HASH = '5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8'; // sha256 of 'password' — change this
+const ADMIN_PASS_HASH = '5b9fe95f2cc09ae79d81c6cf730b9b11f233d46cda718fa7d41ce8d5c5c11b50c'; // sha256 of 'Nikol84!'
 
 // ─── State ──────────────────────────────────
 let posts = [];
