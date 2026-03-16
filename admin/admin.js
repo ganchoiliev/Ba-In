@@ -346,30 +346,16 @@ document.getElementById('btn-delete').addEventListener('click', async () => {
 
     if (!confirm(msg)) return;
 
-    if (isPublished) {
-        showLoading('Изтриване от живия сайт... (10-15 секунди)');
-        try {
-            const result = await callEdgeFunction('update-published-post', { action: 'delete', draft_id: currentDraftId });
-            showToast(result.message);
-            await loadPosts();
-            closeModal();
-        } catch (err) {
-            showToast('Грешка при изтриване: ' + err.message, true);
-        } finally {
-            hideLoading();
-        }
-    } else {
-        showLoading('Изтриване...');
-        try {
-            await supabaseDelete('blog_drafts', currentDraftId);
-            showToast('Черновата е изтрита');
-            await loadPosts();
-            closeModal();
-        } catch (err) {
-            showToast('Грешка: ' + err.message, true);
-        } finally {
-            hideLoading();
-        }
+    showLoading(isPublished ? 'Изтриване от живия сайт... (10-15 секунди)' : 'Изтриване...');
+    try {
+        const result = await callEdgeFunction('update-published-post', { action: 'delete', draft_id: currentDraftId });
+        showToast(result.message || 'Изтрито успешно');
+        await loadPosts();
+        closeModal();
+    } catch (err) {
+        showToast('Грешка при изтриване: ' + err.message, true);
+    } finally {
+        hideLoading();
     }
 });
 
@@ -428,6 +414,56 @@ document.getElementById('modal-edit-hero-url').addEventListener('change', () => 
     const url = document.getElementById('modal-edit-hero-url').value;
     if (url) {
         document.getElementById('modal-hero-img').src = url;
+    }
+});
+
+// ─── Manual Hero Image Upload ───────────────
+document.getElementById('hero-file-upload').addEventListener('change', async (e) => {
+    const file = e.target.files[0];
+    if (!file) return;
+    if (!currentDraftId) return;
+
+    const post = posts.find(p => p.id === currentDraftId);
+    if (!post) return;
+
+    showLoading('Качване на изображение...');
+    try {
+        const fileName = `${post.slug}-hero.${file.name.split('.').pop()}`;
+        const formData = new FormData();
+        formData.append('', file);
+
+        // Upload to Supabase Storage via REST
+        const uploadRes = await fetch(`${SUPABASE_URL}/storage/v1/object/blog-images/${fileName}`, {
+            method: 'POST',
+            headers: {
+                'apikey': SUPABASE_ANON_KEY,
+                'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
+                'x-upsert': 'true',
+            },
+            body: file,
+        });
+
+        if (!uploadRes.ok) {
+            const errText = await uploadRes.text();
+            throw new Error('Upload failed: ' + errText);
+        }
+
+        const publicUrl = `${SUPABASE_URL}/storage/v1/object/public/blog-images/${fileName}`;
+
+        // Update the UI
+        document.getElementById('modal-hero-img').src = publicUrl;
+        document.getElementById('modal-edit-hero-url').value = publicUrl;
+
+        // Save to DB
+        await supabasePatch('blog_drafts', currentDraftId, { hero_image_url: publicUrl });
+
+        showToast('Изображението е качено! Натиснете "Обнови на Живо" за да го публикувате.');
+        await loadPosts();
+    } catch (err) {
+        showToast('Грешка при качване: ' + err.message, true);
+    } finally {
+        hideLoading();
+        e.target.value = ''; // Reset file input
     }
 });
 
