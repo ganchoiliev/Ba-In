@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -313,7 +313,7 @@ ul,ol{margin:0;padding:0;list-style:none}
     <link rel="stylesheet" href="assets/css/contact-widget.css" />
     <link rel="stylesheet" href="assets/css/google-reviews.css" />
     <link rel="stylesheet" href="assets/css/i18n.css" media="print" onload="this.media='all'" />
-    <link rel="stylesheet" href="assets/css/custom.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="assets/css/custom.css?v=5">
 
     <!-- Fallback for no-JS -->
     <noscript>
@@ -2355,24 +2355,39 @@ ul,ol{margin:0;padding:0;list-style:none}
         <span class="scroll-to-top__wrapper"><span class="scroll-to-top__inner"></span></span>
     </a>
 
-    <script defer src="assets/vendors/jquery/jquery-3.7.0.min.js"></script>
-    <script defer src="assets/vendors/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script defer src="assets/vendors/bootstrap-select/bootstrap-select.min.js"></script>
-    <script defer src="assets/vendors/jarallax/jarallax.min.js"></script>
+    <script src="assets/vendors/jquery/jquery-3.7.0.min.js"></script>
+    <script src="assets/vendors/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendors/bootstrap-select/bootstrap-select.min.js"></script>
+    <script src="assets/vendors/jarallax/jarallax.min.js"></script>
     <!-- jquery-ajaxchimp restored (used by newsletter form in mediox.js) -->
-    <script defer src="assets/vendors/jquery-ajaxchimp/jquery.ajaxchimp.min.js"></script>
+    <script src="assets/vendors/jquery-ajaxchimp/jquery.ajaxchimp.min.js"></script>
     <!-- jquery-appear restored (used by counter animation in mediox.js) -->
-    <script defer src="assets/vendors/jquery-appear/jquery.appear.min.js"></script>
-    <script defer src="assets/vendors/jquery-magnific-popup/jquery.magnific-popup.min.js"></script>
-    <script defer src="assets/vendors/jquery-validate/jquery.validate.min.js"></script>
-    <script defer src="assets/vendors/owl-carousel/js/owl.carousel.min.js"></script>
+    <script src="assets/vendors/jquery-appear/jquery.appear.min.js"></script>
+    <script src="assets/vendors/jquery-magnific-popup/jquery.magnific-popup.min.js"></script>
+    <script src="assets/vendors/jquery-validate/jquery.validate.min.js"></script>
+    <script src="assets/vendors/owl-carousel/js/owl.carousel.min.js"></script>
     <!-- removed: slick.js (unused — OWL Carousel handles all carousels) -->
 
-    <script defer src="assets/js/mediox.js"></script>
+    <script src="assets/js/mediox.js"></script>
+
+    <!-- Fallback: re-init Owl Carousels if mediox.js missed the load event -->
+    <script>
+    (function($){
+        function initOwl(){
+            $('.mediox-owl__carousel').not('.owl-loaded').each(function(){
+                var $el=$(this), opts=$el.data('owl-options');
+                if(opts) $el.owlCarousel(typeof opts==='object'?opts:JSON.parse(opts));
+            });
+        }
+        if(document.readyState==='complete') initOwl();
+        else $(window).on('load',function(){setTimeout(initOwl,100);});
+        setTimeout(initOwl,2500);
+    })(jQuery);
+    </script>
 
 
     <!-- AI Chatbot script -->
-    <script defer src="assets/js/ai-chat-v2.js"></script>
+    <script src="assets/js/ai-chat-v2.js"></script>
 
     <!-- Accessibility: label OWL carousel nav buttons after they initialize -->
     <script>
@@ -2430,12 +2445,12 @@ ul,ol{margin:0;padding:0;list-style:none}
             <span class="icon-close-widget">&#10005;</span>
         </button>
     </div>
-    <script defer src="assets/js/translations.js"></script>
-    <script defer src="assets/js/i18n.js"></script>
+    <script src="assets/js/translations.js"></script>
+    <script src="assets/js/i18n.js"></script>
 
 
-    <script defer src="assets/js/cookie-consent.js"></script>
-    <script defer src="assets/js/contact-widget.js"></script>
+    <script src="assets/js/cookie-consent.js"></script>
+    <script src="assets/js/contact-widget.js"></script>
     <script>
     /* Sync testimonials thumb ↔ text carousels */
     window.addEventListener('load', function(){

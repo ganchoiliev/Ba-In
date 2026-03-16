@@ -1335,6 +1335,31 @@
   margin: 0;
 }
 
+/* ---- Dark-theme overrides: proc-faq inside faq-one / faq-two ---- */
+.faq-one .proc-faq__item,
+.faq-two .proc-faq__item {
+  border-color: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.04);
+}
+.faq-one .proc-faq__item:hover,
+.faq-two .proc-faq__item:hover {
+  border-color: #c9a96e;
+}
+.faq-one .proc-faq__item.is-open,
+.faq-two .proc-faq__item.is-open {
+  border-color: #c9a96e;
+  box-shadow: 0 4px 20px rgba(201, 169, 110, 0.18);
+  background: rgba(255, 255, 255, 0.06);
+}
+.faq-one .proc-faq__question,
+.faq-two .proc-faq__question {
+  color: #ffffff;
+}
+.faq-one .proc-faq__answer p,
+.faq-two .proc-faq__answer p {
+  color: rgba(255, 255, 255, 0.7);
+}
+
 /* CTA Banner */
 .proc-cta {
   position: relative;
