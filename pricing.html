@@ -280,6 +280,10 @@
                         <span data-i18n="pricing.trust.cert">PhiBrows сертификация</span>
                     </span>
                     <span class="pt-trust-strip__item">
+                        <i class="fas fa-shield-alt"></i>
+                        <span data-i18n="pricing.trust.products">Оригинални продукти</span>
+                    </span>
+                    <span class="pt-trust-strip__item">
                         <i class="fas fa-users"></i>
                         <span data-i18n="pricing.trust.clients">500+ доволни клиенти</span>
                     </span>
@@ -293,31 +297,28 @@
                 <div class="pt-tabs" role="tablist">
                     <button class="pt-tab is-active" id="tab-mb" data-panel="mb" role="tab" aria-selected="true" aria-controls="pt-mb">
                         <i class="pt-tab__icon fas fa-magic"></i>
-                        <span data-i18n="pricing.cat.microblading">Микроблейдинг</span>
+                        <span>Микроблейдинг</span>
+                        <span class="pt-tab__badge">ТОП</span>
                     </button>
-                    <button class="pt-tab" id="tab-mn" data-panel="mn" role="tab" aria-selected="false" aria-controls="pt-mn">
-                        <i class="pt-tab__icon fas fa-syringe"></i>
-                        <span data-i18n="pricing.cat.microneedling">Микронидлинг</span>
+                    <button class="pt-tab" id="tab-rem" data-panel="rem" role="tab" aria-selected="false" aria-controls="pt-rem">
+                        <i class="pt-tab__icon fas fa-eraser"></i>
+                        <span>Премахване</span>
                     </button>
                     <button class="pt-tab" id="tab-la" data-panel="la" role="tab" aria-selected="false" aria-controls="pt-la">
-                        <i class="pt-tab__icon fas fa-eye"></i>
-                        <span data-i18n="pricing.cat.lashes">Мигли & Вежди</span>
-                    </button>
-                    <button class="pt-tab" id="tab-pi" data-panel="pi" role="tab" aria-selected="false" aria-controls="pt-pi">
                         <i class="pt-tab__icon fas fa-gem"></i>
-                        <span data-i18n="pricing.cat.piercing">Пробиване</span>
+                        <span>Оформяне и ламиниране</span>
                     </button>
                     <button class="pt-tab" id="tab-pp" data-panel="pp" role="tab" aria-selected="false" aria-controls="pt-pp">
                         <i class="pt-tab__icon fas fa-bolt"></i>
-                        <span data-i18n="pricing.cat.plasma">Плазма пен</span>
+                        <span>Плазма пен и лифтинг</span>
                     </button>
-                    <button class="pt-tab" id="tab-cl" data-panel="cl" role="tab" aria-selected="false" aria-controls="pt-cl">
-                        <i class="pt-tab__icon fas fa-spa"></i>
-                        <span data-i18n="pricing.cat.cleaning">Почистване</span>
+                    <button class="pt-tab" id="tab-mn" data-panel="mn" role="tab" aria-selected="false" aria-controls="pt-mn">
+                        <i class="pt-tab__icon fas fa-syringe"></i>
+                        <span>Микронидлинг</span>
                     </button>
-                    <button class="pt-tab" id="tab-pe" data-panel="pe" role="tab" aria-selected="false" aria-controls="pt-pe">
-                        <i class="pt-tab__icon fas fa-leaf"></i>
-                        <span data-i18n="pricing.cat.peeling">Пилинг</span>
+                    <button class="pt-tab" id="tab-pi" data-panel="pi" role="tab" aria-selected="false" aria-controls="pt-pi">
+                        <i class="pt-tab__icon fas fa-gem"></i>
+                        <span>Пиърсинг</span>
                     </button>
                 </div>
 
@@ -326,133 +327,157 @@
                     <div class="pt-panel__inner">
                         <div class="pt-panel__label">
                             <div class="pt-panel__label-icon"><i class="fas fa-magic"></i></div>
-                            <span class="pt-panel__label-text" data-i18n="pricing.cat.microblading">Микроблейдинг</span>
+                            <span class="pt-panel__label-text">Микроблейдинг</span>
                         </div>
                         <div class="pt-row">
-                            <span class="pt-row__name" data-i18n="pricing.svc.bold_brows">Bold Brows (перфектни вежди)</span>
-                            <span class="pt-row__price">
-                                <span class="pt-row__eur">≈ 205 €</span>
-                                <span class="pt-row__sep">/</span>
-                                <span class="pt-row__bgn">400 лв.</span>
-                            </span>
-                        </div>
-                        <div class="pt-row">
-                            <span class="pt-row__name" data-i18n="pricing.svc.phi_removal">Phi Removal (премахване)</span>
-                            <span class="pt-row__price">
-                                <span class="pt-row__eur">≈ 66 €</span>
-                                <span class="pt-row__sep">/</span>
-                                <span class="pt-row__bgn">130 лв.</span>
-                            </span>
-                        </div>
-                        <div class="pt-row">
-                            <span class="pt-row__name" data-i18n="pricing.svc.tattoos">Татуировки</span>
-                            <span class="pt-row__range">
-                                <span class="pt-row__range-label" data-i18n="pricing.from_to">от – до</span>
-                                <span class="pt-row__range-eur">≈ 66 – 92 €</span>
-                                <span class="pt-row__range-bgn">130 – 180 лв.</span>
-                            </span>
+                            <div class="pt-row__info">
+                                <span class="pt-row__name">Bold Brows</span>
+                                <span class="pt-row__desc">Перманентно оформяне на вежди с PhiBrows техника</span>
+                            </div>
+                            <div class="pt-row__right">
+                                <span class="pt-row__duration"><i class="icon-hours"></i> ~2ч</span>
+                                <span class="pt-row__price">
+                                    <span class="pt-row__eur">209 €</span>
+                                </span>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- MICRONEEDLING -->
-                <div class="pt-panel" id="pt-mn" role="tabpanel" aria-labelledby="tab-mn">
+                <!-- PREMAHVANE -->
+                <div class="pt-panel" id="pt-rem" role="tabpanel" aria-labelledby="tab-rem">
                     <div class="pt-panel__inner">
                         <div class="pt-panel__label">
-                            <div class="pt-panel__label-icon"><i class="fas fa-syringe"></i></div>
-                            <span class="pt-panel__label-text" data-i18n="pricing.cat.microneedling">Микронидлинг</span>
+                            <div class="pt-panel__label-icon"><i class="fas fa-eraser"></i></div>
+                            <span class="pt-panel__label-text">Премахване на перманентен грим</span>
+                        </div>
+                        <div class="pt-row pt-row--subtitle">
+                            <span class="pt-row__name">Phi Removal</span>
                         </div>
                         <div class="pt-row">
-                            <span class="pt-row__name" data-i18n="pricing.svc.face">Лице</span>
-                            <span class="pt-row__price">
-                                <span class="pt-row__eur">≈ 100 €</span>
-                                <span class="pt-row__sep">/</span>
-                                <span class="pt-row__bgn">195 лв.</span>
-                            </span>
+                            <div class="pt-row__info">
+                                <span class="pt-row__name">Вежди</span>
+                            </div>
+                            <div class="pt-row__right">
+                                <span class="pt-row__duration"><i class="icon-hours"></i> ~1ч</span>
+                                <span class="pt-row__price"><span class="pt-row__eur">79 €</span></span>
+                            </div>
                         </div>
                         <div class="pt-row">
-                            <span class="pt-row__name" data-i18n="pricing.svc.face_neck">Лице + Шия</span>
-                            <span class="pt-row__price">
-                                <span class="pt-row__eur">≈ 130 €</span>
-                                <span class="pt-row__sep">/</span>
-                                <span class="pt-row__bgn">254 лв.</span>
-                            </span>
+                            <div class="pt-row__info">
+                                <span class="pt-row__name">Устни</span>
+                            </div>
+                            <div class="pt-row__right">
+                                <span class="pt-row__duration"><i class="icon-hours"></i> ~1ч</span>
+                                <span class="pt-row__price"><span class="pt-row__eur">79 €</span></span>
+                            </div>
                         </div>
                         <div class="pt-row">
-                            <span class="pt-row__name" data-i18n="pricing.svc.scalp">Скалп</span>
-                            <span class="pt-row__price">
-                                <span class="pt-row__eur">≈ 55 €</span>
-                                <span class="pt-row__sep">/</span>
-                                <span class="pt-row__bgn">108 лв.</span>
-                            </span>
+                            <div class="pt-row__info">
+                                <span class="pt-row__name">Очна линия</span>
+                            </div>
+                            <div class="pt-row__right">
+                                <span class="pt-row__duration"><i class="icon-hours"></i> ~1ч</span>
+                                <span class="pt-row__price"><span class="pt-row__eur">79 €</span></span>
+                            </div>
+                        </div>
+                        <div class="pt-panel__label" style="border-top: 1px solid rgba(196, 154, 69, 0.12);">
+                            <div class="pt-panel__label-icon"><i class="fas fa-eraser"></i></div>
+                            <span class="pt-panel__label-text">Премахване на татуировки</span>
+                        </div>
+                        <div class="pt-row">
+                            <div class="pt-row__info">
+                                <span class="pt-row__name">Малка</span>
+                                <span class="pt-row__desc">До 5 см</span>
+                            </div>
+                            <div class="pt-row__right">
+                                <span class="pt-row__price"><span class="pt-row__eur">69 €</span></span>
+                            </div>
+                        </div>
+                        <div class="pt-row">
+                            <div class="pt-row__info">
+                                <span class="pt-row__name">Средна</span>
+                                <span class="pt-row__desc">5–15 см</span>
+                            </div>
+                            <div class="pt-row__right">
+                                <span class="pt-row__price"><span class="pt-row__eur">109 €</span></span>
+                            </div>
+                        </div>
+                        <div class="pt-row">
+                            <div class="pt-row__info">
+                                <span class="pt-row__name">Голяма</span>
+                                <span class="pt-row__desc">Над 15 см</span>
+                            </div>
+                            <div class="pt-row__right">
+                                <span class="pt-row__price"><span class="pt-row__eur">179 €</span></span>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- LASHES & BROWS (Ламиниране + Миглопластика) -->
+                <!-- LASHES & BROWS -->
                 <div class="pt-panel" id="pt-la" role="tabpanel" aria-labelledby="tab-la">
                     <div class="pt-panel__inner">
                         <div class="pt-panel__label">
                             <div class="pt-panel__label-icon"><i class="fas fa-eye"></i></div>
-                            <span class="pt-panel__label-text" data-i18n="pricing.cat.lashes">Мигли & Вежди</span>
+                            <span class="pt-panel__label-text">Оформяне и ламиниране</span>
                         </div>
                         <div class="pt-row">
-                            <span class="pt-row__name" data-i18n="pricing.svc.lash_lift">Миглопластика (Lash Lift)</span>
-                            <span class="pt-row__price">
-                                <span class="pt-row__eur">≈ 41 €</span>
-                                <span class="pt-row__sep">/</span>
-                                <span class="pt-row__bgn">80 лв.</span>
-                            </span>
+                            <div class="pt-row__info">
+                                <span class="pt-row__name">Оформяне на вежди</span>
+                            </div>
+                            <div class="pt-row__right">
+                                <span class="pt-row__duration"><i class="icon-hours"></i> ~20мин</span>
+                                <span class="pt-row__price"><span class="pt-row__eur">10 €</span></span>
+                            </div>
                         </div>
                         <div class="pt-row">
-                            <span class="pt-row__name" data-i18n="pricing.svc.brow_lamination">Ламиниране на вежди</span>
-                            <span class="pt-row__price">
-                                <span class="pt-row__eur">≈ 41 €</span>
-                                <span class="pt-row__sep">/</span>
-                                <span class="pt-row__bgn">80 лв.</span>
-                            </span>
+                            <div class="pt-row__info">
+                                <span class="pt-row__name">Оформяне на вежди + боя</span>
+                            </div>
+                            <div class="pt-row__right">
+                                <span class="pt-row__duration"><i class="icon-hours"></i> ~30мин</span>
+                                <span class="pt-row__price"><span class="pt-row__eur">13 €</span></span>
+                            </div>
                         </div>
                         <div class="pt-row">
-                            <span class="pt-row__name" data-i18n="pricing.svc.lash_brow_combo">Ламиниране мигли + вежди</span>
-                            <span class="pt-row__price">
-                                <span class="pt-row__eur">≈ 72 €</span>
-                                <span class="pt-row__sep">/</span>
-                                <span class="pt-row__bgn">140 лв.</span>
-                            </span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- PIERCING -->
-                <div class="pt-panel" id="pt-pi" role="tabpanel" aria-labelledby="tab-pi">
-                    <div class="pt-panel__inner">
-                        <div class="pt-panel__label">
-                            <div class="pt-panel__label-icon"><i class="fas fa-gem"></i></div>
-                            <span class="pt-panel__label-text" data-i18n="pricing.cat.piercing">Пробиване на уши</span>
+                            <div class="pt-row__info">
+                                <span class="pt-row__name">Ламиниране на вежди</span>
+                                <span class="pt-row__desc">Ефект до 6-8 седмици</span>
+                            </div>
+                            <div class="pt-row__right">
+                                <span class="pt-row__duration"><i class="icon-hours"></i> ~45мин</span>
+                                <span class="pt-row__price"><span class="pt-row__eur">29 €</span></span>
+                            </div>
                         </div>
                         <div class="pt-row">
-                            <span class="pt-row__name" data-i18n="pricing.svc.one_earring">Една обеца</span>
-                            <span class="pt-row__price">
-                                <span class="pt-row__eur">≈ 26 €</span>
-                                <span class="pt-row__sep">/</span>
-                                <span class="pt-row__bgn">50 лв.</span>
-                            </span>
+                            <div class="pt-row__info">
+                                <span class="pt-row__name">Ламиниране на мигли</span>
+                                <span class="pt-row__desc">Ефект до 6-8 седмици</span>
+                            </div>
+                            <div class="pt-row__right">
+                                <span class="pt-row__duration"><i class="icon-hours"></i> ~1ч</span>
+                                <span class="pt-row__price"><span class="pt-row__eur">35 €</span></span>
+                            </div>
                         </div>
                         <div class="pt-row">
-                            <span class="pt-row__name" data-i18n="pricing.svc.nose_ring">Обеца на носа</span>
-                            <span class="pt-row__price">
-                                <span class="pt-row__eur">≈ 51 €</span>
-                                <span class="pt-row__sep">/</span>
-                                <span class="pt-row__bgn">100 лв.</span>
-                            </span>
+                            <div class="pt-row__info">
+                                <span class="pt-row__name">Мигли + Вежди</span>
+                                <span class="pt-row__desc">Комбинирана процедура с отстъпка</span>
+                            </div>
+                            <div class="pt-row__right">
+                                <span class="pt-row__duration"><i class="icon-hours"></i> ~1.5ч</span>
+                                <span class="pt-row__price"><span class="pt-row__eur">59 €</span></span>
+                            </div>
                         </div>
                         <div class="pt-row">
-                            <span class="pt-row__name" data-i18n="pricing.svc.cartilage">На хрущяла на ухото</span>
-                            <span class="pt-row__price">
-                                <span class="pt-row__eur">≈ 51 €</span>
-                                <span class="pt-row__sep">/</span>
-                                <span class="pt-row__bgn">100 лв.</span>
-                            </span>
+                            <div class="pt-row__info">
+                                <span class="pt-row__name">Епилация на горна устна с кола маска</span>
+                            </div>
+                            <div class="pt-row__right">
+                                <span class="pt-row__duration"><i class="icon-hours"></i> ~10мин</span>
+                                <span class="pt-row__price"><span class="pt-row__eur">5 €</span></span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -462,113 +487,274 @@
                     <div class="pt-panel__inner">
                         <div class="pt-panel__label">
                             <div class="pt-panel__label-icon"><i class="fas fa-bolt"></i></div>
-                            <span class="pt-panel__label-text" data-i18n="pricing.cat.plasma">Плазма пен</span>
+                            <span class="pt-panel__label-text">Плазма пен и лифтинг</span>
                         </div>
                         <div class="pt-row">
-                            <span class="pt-row__name" data-i18n="pricing.svc.upper_eyelids">Горни клепачи</span>
-                            <span class="pt-row__price">
-                                <span class="pt-row__eur">≈ 200 €</span>
-                                <span class="pt-row__sep">/</span>
-                                <span class="pt-row__bgn">391 лв.</span>
-                            </span>
+                            <div class="pt-row__info">
+                                <span class="pt-row__name">Чело / Скули / Шия</span>
+                            </div>
+                            <div class="pt-row__right">
+                                <span class="pt-row__duration"><i class="icon-hours"></i> ~1.5ч</span>
+                                <span class="pt-row__price"><span class="pt-row__eur">179 €</span></span>
+                            </div>
                         </div>
                         <div class="pt-row">
-                            <span class="pt-row__name" data-i18n="pricing.svc.lower_eyelids">Долни клепачи</span>
-                            <span class="pt-row__price">
-                                <span class="pt-row__eur">≈ 150 €</span>
-                                <span class="pt-row__sep">/</span>
-                                <span class="pt-row__bgn">293 лв.</span>
-                            </span>
+                            <div class="pt-row__info">
+                                <span class="pt-row__name">Горни клепачи</span>
+                                <span class="pt-row__desc">Non-surgical блефаропластика</span>
+                            </div>
+                            <div class="pt-row__right">
+                                <span class="pt-row__duration"><i class="icon-hours"></i> ~1ч</span>
+                                <span class="pt-row__price"><span class="pt-row__eur">179 €</span></span>
+                            </div>
                         </div>
                         <div class="pt-row">
-                            <span class="pt-row__name" data-i18n="pricing.svc.crows_feet">Пачи крак</span>
-                            <span class="pt-row__price">
-                                <span class="pt-row__eur">≈ 150 €</span>
-                                <span class="pt-row__sep">/</span>
-                                <span class="pt-row__bgn">293 лв.</span>
-                            </span>
+                            <div class="pt-row__info">
+                                <span class="pt-row__name">Долни клепачи</span>
+                            </div>
+                            <div class="pt-row__right">
+                                <span class="pt-row__duration"><i class="icon-hours"></i> ~1ч</span>
+                                <span class="pt-row__price"><span class="pt-row__eur">159 €</span></span>
+                            </div>
+                        </div>
+                        <div class="pt-row">
+                            <div class="pt-row__info">
+                                <span class="pt-row__name">Пачи крак</span>
+                            </div>
+                            <div class="pt-row__right">
+                                <span class="pt-row__duration"><i class="icon-hours"></i> ~45мин</span>
+                                <span class="pt-row__price"><span class="pt-row__eur">159 €</span></span>
+                            </div>
+                        </div>
+                        <div class="pt-row">
+                            <div class="pt-row__info">
+                                <span class="pt-row__name">Назолабиални</span>
+                            </div>
+                            <div class="pt-row__right">
+                                <span class="pt-row__duration"><i class="icon-hours"></i> ~30мин</span>
+                                <span class="pt-row__price"><span class="pt-row__eur">69 €</span></span>
+                            </div>
+                        </div>
+                        <div class="pt-row">
+                            <div class="pt-row__info">
+                                <span class="pt-row__name">Пушачески бръчки</span>
+                            </div>
+                            <div class="pt-row__right">
+                                <span class="pt-row__duration"><i class="icon-hours"></i> ~30мин</span>
+                                <span class="pt-row__price"><span class="pt-row__eur">69 €</span></span>
+                            </div>
+                        </div>
+                        <div class="pt-row">
+                            <div class="pt-row__info">
+                                <span class="pt-row__name">Гневна бръчка</span>
+                            </div>
+                            <div class="pt-row__right">
+                                <span class="pt-row__duration"><i class="icon-hours"></i> ~20мин</span>
+                                <span class="pt-row__price"><span class="pt-row__eur">49 €</span></span>
+                            </div>
+                        </div>
+                        <div class="pt-row">
+                            <div class="pt-row__info">
+                                <span class="pt-row__name">Корем</span>
+                                <span class="pt-row__desc">Стягане и подмладяване на кожата</span>
+                            </div>
+                            <div class="pt-row__right">
+                                <span class="pt-row__duration"><i class="icon-hours"></i> ~2ч</span>
+                                <span class="pt-row__price"><span class="pt-row__eur">289 €</span></span>
+                            </div>
+                        </div>
+                        <div class="pt-row">
+                            <div class="pt-row__info">
+                                <span class="pt-row__name">Фиброми / Милиуми</span>
+                                <span class="pt-row__desc">Цената е за 1 брой</span>
+                            </div>
+                            <div class="pt-row__right">
+                                <span class="pt-row__price"><span class="pt-row__eur">19 €</span></span>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- CLEANING -->
-                <div class="pt-panel" id="pt-cl" role="tabpanel" aria-labelledby="tab-cl">
+                <!-- MICRONEEDLING -->
+                <div class="pt-panel" id="pt-mn" role="tabpanel" aria-labelledby="tab-mn">
                     <div class="pt-panel__inner">
                         <div class="pt-panel__label">
-                            <div class="pt-panel__label-icon"><i class="fas fa-spa"></i></div>
-                            <span class="pt-panel__label-text" data-i18n="pricing.cat.cleaning">Почистване</span>
+                            <div class="pt-panel__label-icon"><i class="fas fa-syringe"></i></div>
+                            <span class="pt-panel__label-text">Микронидлинг</span>
                         </div>
                         <div class="pt-row">
-                            <span class="pt-row__name" data-i18n="pricing.svc.hydra">Комбо Hydra</span>
-                            <span class="pt-row__price">
-                                <span class="pt-row__eur">≈ 51 €</span>
-                                <span class="pt-row__sep">/</span>
-                                <span class="pt-row__bgn">100 лв.</span>
-                            </span>
+                            <div class="pt-row__info">
+                                <span class="pt-row__name">Лице</span>
+                            </div>
+                            <div class="pt-row__right">
+                                <span class="pt-row__duration"><i class="icon-hours"></i> ~1ч</span>
+                                <span class="pt-row__price"><span class="pt-row__eur">89 €</span></span>
+                            </div>
                         </div>
                         <div class="pt-row">
-                            <span class="pt-row__name" data-i18n="pricing.svc.bio_combo">Комбо Biorepeelcl3</span>
-                            <span class="pt-row__price">
-                                <span class="pt-row__eur">≈ 112 €</span>
-                                <span class="pt-row__sep">/</span>
-                                <span class="pt-row__bgn">220 лв.</span>
-                            </span>
+                            <div class="pt-row__info">
+                                <span class="pt-row__name">BioRePeel + Лице</span>
+                                <span class="pt-row__desc">Химичен пилинг + микронидлинг</span>
+                            </div>
+                            <div class="pt-row__right">
+                                <span class="pt-row__duration"><i class="icon-hours"></i> ~45мин</span>
+                                <span class="pt-row__price"><span class="pt-row__eur">49 €</span></span>
+                            </div>
                         </div>
                         <div class="pt-row">
-                            <span class="pt-row__name" data-i18n="pricing.svc.men_cleaning">Мъжко почистване</span>
-                            <span class="pt-row__price">
-                                <span class="pt-row__eur">≈ 38 €</span>
-                                <span class="pt-row__sep">/</span>
-                                <span class="pt-row__bgn">75 лв.</span>
-                            </span>
+                            <div class="pt-row__info">
+                                <span class="pt-row__name">Фракционен пилинг</span>
+                                <span class="pt-row__desc">Дълбока регенерация на кожата</span>
+                            </div>
+                            <div class="pt-row__right">
+                                <span class="pt-row__duration"><i class="icon-hours"></i> ~1.5ч</span>
+                                <span class="pt-row__price"><span class="pt-row__eur">159 €</span></span>
+                            </div>
+                        </div>
+                        <div class="pt-row">
+                            <div class="pt-row__info">
+                                <span class="pt-row__name">Лице + Шия</span>
+                            </div>
+                            <div class="pt-row__right">
+                                <span class="pt-row__duration"><i class="icon-hours"></i> ~1.5ч</span>
+                                <span class="pt-row__price"><span class="pt-row__eur">119 €</span></span>
+                            </div>
+                        </div>
+                        <div class="pt-row">
+                            <div class="pt-row__info">
+                                <span class="pt-row__name">Лице + Шия + Деколте</span>
+                            </div>
+                            <div class="pt-row__right">
+                                <span class="pt-row__duration"><i class="icon-hours"></i> ~2ч</span>
+                                <span class="pt-row__price"><span class="pt-row__eur">149 €</span></span>
+                            </div>
+                        </div>
+                        <div class="pt-row pt-row--subtitle">
+                            <span class="pt-row__name">Допълнителни зони</span>
+                        </div>
+                        <div class="pt-row">
+                            <div class="pt-row__info">
+                                <span class="pt-row__name">Скалп</span>
+                                <span class="pt-row__desc">Стимулира растежа на косата</span>
+                            </div>
+                            <div class="pt-row__right">
+                                <span class="pt-row__price"><span class="pt-row__eur">49 €</span></span>
+                            </div>
+                        </div>
+                        <div class="pt-row">
+                            <div class="pt-row__info">
+                                <span class="pt-row__name">Белези</span>
+                            </div>
+                            <div class="pt-row__right">
+                                <span class="pt-row__price"><span class="pt-row__eur">49 €</span></span>
+                            </div>
+                        </div>
+                        <div class="pt-row">
+                            <div class="pt-row__info">
+                                <span class="pt-row__name">Стрии</span>
+                            </div>
+                            <div class="pt-row__right">
+                                <span class="pt-row__price"><span class="pt-row__eur">49 €</span></span>
+                            </div>
+                        </div>
+                        <div class="pt-row pt-row--highlight">
+                            <span class="pt-row__name"><i class="fas fa-star"></i> ПАКЕТ ОТ 3 ПРОЦЕДУРИ -20% ОТСТЪПКА</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- PEELING -->
-                <div class="pt-panel" id="pt-pe" role="tabpanel" aria-labelledby="tab-pe">
+                <!-- PIERCING -->
+                <div class="pt-panel" id="pt-pi" role="tabpanel" aria-labelledby="tab-pi">
                     <div class="pt-panel__inner">
                         <div class="pt-panel__label">
-                            <div class="pt-panel__label-icon"><i class="fas fa-leaf"></i></div>
-                            <span class="pt-panel__label-text" data-i18n="pricing.cat.peeling">Пилинг</span>
+                            <div class="pt-panel__label-icon"><i class="fas fa-gem"></i></div>
+                            <span class="pt-panel__label-text">Пиърсинг</span>
                         </div>
                         <div class="pt-row">
-                            <span class="pt-row__name">Biorepeelcl3</span>
-                            <span class="pt-row__price">
-                                <span class="pt-row__eur">≈ 61 €</span>
-                                <span class="pt-row__sep">/</span>
-                                <span class="pt-row__bgn">120 лв.</span>
-                            </span>
+                            <div class="pt-row__info">
+                                <span class="pt-row__name">Пробиване на уши Studex</span>
+                                <span class="pt-row__desc">Медицинска система, хипоалергенни обеци</span>
+                            </div>
+                            <div class="pt-row__right">
+                                <span class="pt-row__duration"><i class="icon-hours"></i> ~15мин</span>
+                                <span class="pt-row__price"><span class="pt-row__eur">59 €</span></span>
+                            </div>
                         </div>
                         <div class="pt-row">
-                            <span class="pt-row__name" data-i18n="pricing.svc.bio_3x">3 × Biorepeelcl3</span>
-                            <span class="pt-row__price">
-                                <span class="pt-row__eur">≈ 153 €</span>
-                                <span class="pt-row__sep">/</span>
-                                <span class="pt-row__bgn">300 лв.</span>
-                            </span>
+                            <div class="pt-row__info">
+                                <span class="pt-row__name">Поставяне на обеца</span>
+                            </div>
+                            <div class="pt-row__right">
+                                <span class="pt-row__duration"><i class="icon-hours"></i> ~10мин</span>
+                                <span class="pt-row__price"><span class="pt-row__eur">25 €</span></span>
+                            </div>
                         </div>
                         <div class="pt-row">
-                            <span class="pt-row__name">Skinderma Salycil</span>
-                            <span class="pt-row__price">
-                                <span class="pt-row__eur">≈ 51 €</span>
-                                <span class="pt-row__sep">/</span>
-                                <span class="pt-row__bgn">100 лв.</span>
-                            </span>
+                            <div class="pt-row__info">
+                                <span class="pt-row__name">Поставяне на обеца на носа</span>
+                            </div>
+                            <div class="pt-row__right">
+                                <span class="pt-row__duration"><i class="icon-hours"></i> ~15мин</span>
+                                <span class="pt-row__price"><span class="pt-row__eur">45 €</span></span>
+                            </div>
+                        </div>
+                        <div class="pt-row">
+                            <div class="pt-row__info">
+                                <span class="pt-row__name">Поставяне на обеца на хрущяла на ухото</span>
+                            </div>
+                            <div class="pt-row__right">
+                                <span class="pt-row__duration"><i class="icon-hours"></i> ~15мин</span>
+                                <span class="pt-row__price"><span class="pt-row__eur">49 €</span></span>
+                            </div>
+                        </div>
+                        <div class="pt-row">
+                            <div class="pt-row__info">
+                                <span class="pt-row__name">Поставяне на обеци за бебета по домовете</span>
+                                <span class="pt-row__desc">Удобство и комфорт в домашна обстановка</span>
+                            </div>
+                            <div class="pt-row__right">
+                                <span class="pt-row__price"><span class="pt-row__eur">20 €</span></span>
+                            </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- CTA -->
                 <div class="pt-cta">
-                    <p class="pt-cta__lead" data-i18n="pricing.cta_lead">Не сте сигурни коя процедура е за вас?</p>
+                    <p class="pt-cta__lead">Не сте сигурни коя процедура е за вас?</p>
+                    <p class="pt-cta__sub">Запазете безплатна консултация и ще ви помогнем да изберете най-подходящата процедура за вашите нужди.</p>
                     <a href="appointment.html" class="mediox-btn mediox-btn--gold">
-                        <span data-i18n="pricing.book_consult">Запази безплатна консултация</span>
+                        <span>Запази безплатна консултация</span>
                         <span class="mediox-btn__icon"><i class="icon-up-right-arrow"></i></span>
                     </a>
-                    <p class="pt-cta__micro" data-i18n="pricing.cta_micro">Без ангажимент · Отговаряме до 24ч</p>
+                    <p class="pt-cta__micro"><i class="fas fa-user-check"></i> Без ангажимент · Отговаряме до 24ч</p>
                 </div>
-                <p class="pt-note" data-i18n="pricing.note">Цените са в евро и лева. За въпроси или индивидуална оферта се свържете с нас.</p>
+
+                <!-- Guarantees -->
+                <div class="pt-guarantees">
+                    <div class="pt-guarantee">
+                        <div class="pt-guarantee__icon"><i class="fas fa-certificate"></i></div>
+                        <span class="pt-guarantee__title">Сертифициран специалист</span>
+                        <span class="pt-guarantee__text">PhiBrows Master</span>
+                    </div>
+                    <div class="pt-guarantee">
+                        <div class="pt-guarantee__icon"><i class="fas fa-shield-alt"></i></div>
+                        <span class="pt-guarantee__title">Оригинални продукти</span>
+                        <span class="pt-guarantee__text">Без компромис с качеството</span>
+                    </div>
+                    <div class="pt-guarantee">
+                        <div class="pt-guarantee__icon"><i class="fas fa-spa"></i></div>
+                        <span class="pt-guarantee__title">Персонален подход</span>
+                        <span class="pt-guarantee__text">Индивидуална консултация</span>
+                    </div>
+                    <div class="pt-guarantee">
+                        <div class="pt-guarantee__icon"><i class="fas fa-calendar-check"></i></div>
+                        <span class="pt-guarantee__title">Проследяване</span>
+                        <span class="pt-guarantee__text">Грижа след процедурата</span>
+                    </div>
+                </div>
+
+                <p class="pt-note">Цените са в евро. За въпроси или индивидуална оферта се свържете с нас.</p>
 
             </div>
 
