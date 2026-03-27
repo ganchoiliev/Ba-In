@@ -16,9 +16,17 @@ function categorizeImage(filename) {
     if (f.startsWith('plasmapen') || f.startsWith('beloflastika') || f.includes('skin_tags')) return 'plasma';
     if (f.includes('piercing')) return 'piercing';
     if (f.includes('perpement_makeup') || f.includes('perm_makeup')) return 'pmu-removal';
-    if (f.includes('eyelashesh') || f.includes('lashesh') || f.includes('cateye') || f === 'eyelashes.png' || f === 'eyelashes_eyebrows.png') return 'lashes';
+
+    // True lash extensions (миглопластика) — thick, voluminous individual extensions
+    var trueLashes = ['eyelashesh15.jpg','eyelashesh16.jpg','lashesh2.jpg','lashesh3.jpg',
+                      'eyelashes.png','eyelashes_eyebrows.png','old_image_lashesh_and_brows.jpg'];
+    if (trueLashes.indexOf(f) !== -1) return 'lashes';
+
+    // Lash lift / lamination — natural lashes lifted and curled
+    if (f.includes('eyelashesh') || f.includes('lashesh') || f.includes('cateye')
+        || f === 'brows_lashesh.jpg') return 'lamination';
+
     if (f.includes('lamination') || f.includes('laminirane')) return 'lamination';
-    if (f === 'brows_lashesh.jpg' || f === 'old_image_lashesh_and_brows.jpg') return 'lashes';
     if (f.includes('cleaning') || f.includes('eyebrows') || f.includes('eyevrows') || f.includes('first_time_eyebrows')) return 'microblading';
     if (f === 'retush.jpg') return 'microblading';
     return 'studio';
