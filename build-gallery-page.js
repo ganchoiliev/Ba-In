@@ -19,7 +19,7 @@ function categorizeImage(filename) {
 
     // True lash extensions (миглопластика) — thick, voluminous individual extensions
     var trueLashes = ['eyelashesh15.jpg','eyelashesh16.jpg','lashesh2.jpg','lashesh3.jpg',
-                      'eyelashes.png','old_image_lashesh_and_brows.jpg',
+                      'old_image_lashesh_and_brows.jpg','lashesh.jpg',
                       'cateye_eyelashesh.jpg','lashesh_3d.jpg'];
     if (trueLashes.indexOf(f) !== -1) return 'lashes';
 
@@ -30,8 +30,9 @@ function categorizeImage(filename) {
     if (f.includes('lamination') || f.includes('laminirane')) return 'lamination';
     // Eyebrow cleaning/shaping = brow lamination, not microblading
     if (f.includes('cleaning') || f.includes('eyevrows') || f.includes('first_time_eyebrows') || f === 'eyebrows14.jpg') return 'lamination';
-    // eyebrows3.png is actual microblading (before/after with pigment)
-    if (f === 'eyebrows3.png' || f === 'retush.jpg') return 'microblading';
+    // eyebrows3.png is lamination, retush.jpg is microblading retouch
+    if (f === 'eyebrows3.png') return 'lamination';
+    if (f === 'retush.jpg') return 'microblading';
     return 'studio';
 }
 
