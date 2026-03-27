@@ -3788,11 +3788,11 @@
             }
 
             function onMove(e) {
-                // Never hijack touch when user is scrubbing video
-                if (onVideo) return;
                 var t = e.touches[0];
                 distX = t.pageX - startX;
                 distY = t.pageY - startY;
+                // On video: only track vertical swipes (to close), ignore horizontal (scrubbing)
+                if (onVideo && Math.abs(distX) > Math.abs(distY)) return;
                 if (Math.abs(distX) > 10 || Math.abs(distY) > 10) {
                     swiping = true;
                     e.preventDefault();
@@ -3801,7 +3801,14 @@
             }
 
             function onEnd(e) {
-                if (onVideo || !swiping) return;
+                if (!swiping) return;
+                // On video: only allow vertical swipe to close, not horizontal nav
+                if (onVideo) {
+                    if (Math.abs(distY) >= threshold && Math.abs(distX) < restraint) {
+                        $.magnificPopup.close();
+                    }
+                    return;
+                }
                 if (Math.abs(distX) >= threshold && Math.abs(distY) < restraint) {
                     if (distX < 0) {
                         $.magnificPopup.instance.next();
@@ -3809,7 +3816,6 @@
                         $.magnificPopup.instance.prev();
                     }
                 } else if (Math.abs(distY) >= threshold && Math.abs(distX) < restraint) {
-                    // Swipe up OR down to close
                     $.magnificPopup.close();
                 }
             }
