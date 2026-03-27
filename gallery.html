@@ -3645,10 +3645,23 @@
         $loadMoreBtn.attr('data-i18n-done', 'Няма повече');
         $loadMoreBtn.on('click', function(){ showPage(false); });
 
+        // Reveal all filtered items at once (used when opening lightbox)
+        function loadAll() {
+            var $filtered = getFiltered();
+            var total = $filtered.length;
+            $filtered.removeClass('is-hidden');
+            currentShown = total;
+            $shownEl.text(total);
+            $totalEl.text(total);
+            $loadMoreBtn.prop('disabled', true).text($loadMoreBtn.attr('data-i18n-done') || 'Няма повече');
+        }
+
         // ── Unified lightbox: images + videos in one gallery ──
+        // Build items from ALL filtered items (not just visible)
+        // so lightbox can navigate the full set
         function buildItems() {
             var items = [];
-            getVisible().each(function(){
+            getFiltered().each(function(){
                 var $card = $(this);
                 var isVideo = $card.find('.gallery-card--video').length > 0;
                 if (isVideo) {
@@ -3666,9 +3679,13 @@
         $('#galleryGrid').on('click', '.gallery-card', function(e){
             e.preventDefault();
             var $item = $(this).closest('.gallery-item');
-            var $visible = getVisible();
-            var idx = $visible.index($item);
+            // Index within ALL filtered items (not just visible)
+            var $filtered = getFiltered();
+            var idx = $filtered.index($item);
             if (idx < 0) idx = 0;
+
+            // Reveal all items so lightbox navigation is seamless
+            loadAll();
 
             var items = buildItems();
 
