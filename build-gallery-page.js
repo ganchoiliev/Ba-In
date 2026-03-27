@@ -104,16 +104,13 @@ function imageCards() {
 function videoCards() {
     let html = '';
     videos.forEach((file, i) => {
-        const src = `assets/images/videos/${encodeURIComponent(file)}`;
         const rawSrc = `assets/images/videos/${file}`;
         const id = `gallery-vid-${i}`;
         html += `
                     <div class="gallery-item" data-category="videos">
                         <div class="gallery-card gallery-card--video">
                             <div class="gallery-card__img">
-                                <video muted preload="metadata" loading="lazy">
-                                    <source src="${rawSrc}" type="video/mp4">
-                                </video>
+                                <div class="gallery-card__vid-placeholder"></div>
                             </div>
                             <div class="gallery-card__overlay gallery-card__overlay--video">
                                 <a href="#${id}" class="gallery-video-popup" aria-label="Пусни видео">
@@ -124,10 +121,8 @@ function videoCards() {
                             </div>
                         </div>
                         <div id="${id}" class="mfp-hide">
-                            <div class="gallery-video-inline">
-                                <video controls playsinline preload="none">
-                                    <source src="${rawSrc}" type="video/mp4">
-                                </video>
+                            <div class="gallery-video-inline" data-video-src="${rawSrc}">
+                                <div class="gallery-video-loader"></div>
                             </div>
                         </div>
                     </div>

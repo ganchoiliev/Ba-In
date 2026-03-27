@@ -2870,6 +2870,36 @@
   z-index: 3;
 }
 
+/* Video placeholder (no <video> in grid = zero network requests) */
+.gallery-card__vid-placeholder {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #1a1a2e 100%);
+}
+
+/* Loading spinner for video in lightbox */
+.gallery-video-loader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 300px;
+  color: #fff;
+}
+
+.gallery-video-loader::after {
+  content: '';
+  width: 40px;
+  height: 40px;
+  border: 3px solid rgba(255,255,255,0.15);
+  border-top-color: var(--mediox-base, #C49A45);
+  border-radius: 50%;
+  animation: gallery-spin 0.7s linear infinite;
+}
+
+@keyframes gallery-spin {
+  to { transform: rotate(360deg); }
+}
+
 /* ---- Gallery item transitions ---- */
 .gallery-item {
   transition: opacity 0.4s ease, transform 0.4s ease;
