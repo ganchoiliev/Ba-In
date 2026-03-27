@@ -212,6 +212,7 @@ function videoCards() {
                             <div class="gallery-video-inline" data-video-src="${rawSrc}">
                                 <div class="gallery-video-loader"></div>
                             </div>
+                            ${desc ? '<div class="gallery-video-desc">' + desc + '</div>' : ''}
                         </div>
                     </div>
 `;

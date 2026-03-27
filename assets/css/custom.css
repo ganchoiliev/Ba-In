@@ -2842,9 +2842,12 @@
 }
 
 @media (max-width: 767px) {
-  .gallery-card__desc { display: none; }
-  .gallery-card__info { padding: 20px 8px 8px; }
-  .gallery-card__cat { font-size: 9px; }
+  .gallery-card__desc {
+    -webkit-line-clamp: 1;
+    font-size: 10px;
+  }
+  .gallery-card__info { padding: 20px 8px 6px; }
+  .gallery-card__cat { font-size: 9px; margin-bottom: 3px; }
 }
 
 /* ---- Video play button ---- */
@@ -3157,22 +3160,30 @@
   .mfp-arrow-custom.mfp-arrow-right { right: 8px !important; }
 }
 
-/* ---- Counter ---- */
+/* ---- Counter: top-left pill ---- */
 .mfp-counter-custom {
   position: fixed;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
+  top: 20px;
+  left: 20px;
   font-family: var(--mediox-font, "Manrope", sans-serif);
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 600;
-  letter-spacing: 0.1em;
-  color: rgba(255, 255, 255, 0.7);
+  letter-spacing: 0.08em;
+  color: rgba(255, 255, 255, 0.8);
   background: rgba(0, 0, 0, 0.4);
   backdrop-filter: blur(6px);
-  padding: 6px 18px;
+  padding: 5px 14px;
   border-radius: 20px;
   z-index: 9999;
+}
+
+@media (max-width: 767px) {
+  .mfp-counter-custom {
+    top: 14px;
+    left: 14px;
+    font-size: 11px;
+    padding: 4px 12px;
+  }
 }
 
 /* ---- Image in lightbox ---- */
@@ -3189,7 +3200,7 @@
   font-weight: 500;
   color: rgba(255, 255, 255, 0.85);
   text-align: center;
-  padding: 12px 20px 0;
+  padding: 10px 20px 0;
   line-height: 1.5;
   max-width: 600px;
   margin: 0 auto;
@@ -3197,16 +3208,42 @@
 
 @media (max-width: 767px) {
   .mfp-gallery-custom .mfp-title {
-    font-size: 12px;
-    padding: 8px 16px 0;
+    font-size: 11px;
+    padding: 6px 40px 0;
+    line-height: 1.4;
+    max-width: 100%;
   }
 }
 
 /* ---- Video in lightbox ---- */
 .mfp-gallery-custom .gallery-video-inline {
   max-width: min(900px, 92vw);
-  border-radius: 12px;
+  border-radius: 12px 12px 0 0;
   box-shadow: 0 8px 40px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+}
+
+/* Video description bar below player */
+.gallery-video-desc {
+  background: rgba(17, 17, 17, 0.95);
+  padding: 14px 20px;
+  border-radius: 0 0 12px 12px;
+  text-align: center;
+  font-family: var(--mediox-font, "Manrope", sans-serif);
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.85);
+  max-width: min(900px, 92vw);
+  margin: 0 auto;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.5);
+}
+
+@media (max-width: 767px) {
+  .gallery-video-desc {
+    font-size: 11px;
+    padding: 10px 16px;
+  }
 }
 
 .mfp-gallery-custom .gallery-video-inline video {
