@@ -105,12 +105,14 @@ function videoCards() {
     let html = '';
     videos.forEach((file, i) => {
         const rawSrc = `assets/images/videos/${file}`;
+        const thumbName = `vid-thumb-${String(i).padStart(2, '0')}.jpg`;
+        const thumbSrc = `assets/images/video-thumbs/${thumbName}`;
         const id = `gallery-vid-${i}`;
         html += `
                     <div class="gallery-item" data-category="videos">
                         <div class="gallery-card gallery-card--video">
                             <div class="gallery-card__img">
-                                <div class="gallery-card__vid-placeholder"></div>
+                                <img src="${thumbSrc}" alt="Видео – Beauty Atelier IN" loading="lazy">
                             </div>
                             <div class="gallery-card__overlay gallery-card__overlay--video">
                                 <a href="#${id}" class="gallery-video-popup" aria-label="Пусни видео">
