@@ -70,10 +70,67 @@ const videos = fs.readdirSync(vidDir)
     .filter(f => /\.mp4$/i.test(f) && !f.includes('(1)'))
     .sort();
 
-// ── Count per category ──
+// ── Video categories and descriptions ──
+const videoMeta = {
+    0:  { cat: 'microblading', desc: 'Микроблейдинг \u2014 прецизна техника косъм по косъм' },
+    1:  { cat: 'microblading', desc: 'PhiBrows микроблейдинг \u2014 естествени косъмчета' },
+    2:  { cat: 'lashes', desc: 'Обемни мигли \u2014 класика, обем или мега обем' },
+    3:  { cat: 'lashes', desc: 'Мигли преди и след \u2014 впечатляващ резултат' },
+    4:  { cat: 'studio', desc: 'Beauty Atelier IN \u2014 подготовка на новото студио' },
+    5:  { cat: 'studio', desc: 'Beauty Atelier IN \u2014 красота и вдъхновение' },
+    6:  { cat: 'studio', desc: 'Благодаря на приятели \u2014 празнично настроение' },
+    7:  { cat: 'microneedling', desc: 'Микронидлинг PhiLings \u2014 стимулация на колагена' },
+    8:  { cat: 'lashes', desc: 'Поставяне на мигли \u2014 подчертан и изразителен поглед' },
+    9:  { cat: 'plasma', desc: 'Плазма пен \u2014 отзиви и реални резултати' },
+    10: { cat: 'plasma', desc: 'Плазма пен PhiIon \u2014 процедура в действие' },
+    11: { cat: 'studio', desc: 'С колеги \u2014 споделени моменти и приятелство' },
+    12: { cat: 'lashes', desc: 'Мигли преди и след \u2014 видима трансформация' },
+    13: { cat: 'microblading', desc: 'Микроблейдинг \u2014 готов резултат' },
+    14: { cat: 'studio', desc: 'Beauty Atelier IN \u2014 студио за красота, Силистра' },
+    15: { cat: 'lashes', desc: 'Обемни мигли \u2014 колаж от резултати' },
+    16: { cat: 'lamination', desc: 'Ламиниране \u2014 подготовка за процедурата' },
+    17: { cat: 'lamination', desc: 'Ламиниране на вежди \u2014 преди и след' },
+    18: { cat: 'piercing', desc: 'Бебешки обици \u2014 нежно и безопасно поставяне' },
+    19: { cat: 'microblading', desc: 'Микроблейдинг \u2014 процес на работа' },
+    20: { cat: 'lashes', desc: 'Поставяне на мигли \u2014 елегантен резултат' },
+    21: { cat: 'plasma', desc: 'Плазма пен \u2014 нехирургична блефаропластика' },
+    22: { cat: 'lashes', desc: 'Мигли \u2014 преди и след поставянето' },
+    23: { cat: 'lashes', desc: 'Обемни мигли \u2014 плътност и дълбочина' },
+    24: { cat: 'piercing', desc: 'Пробиване на уши \u2014 безболезнен метод' },
+    25: { cat: 'microneedling', desc: 'Микронидлинг \u2014 процедура за подмладяване' },
+    26: { cat: 'lashes', desc: 'Мигли \u2014 артистичен поглед' },
+    27: { cat: 'studio', desc: 'Beauty Atelier IN \u2014 зад кулисите' },
+    28: { cat: 'lashes', desc: 'Поставяне на мигли \u2014 естествен обем' },
+    29: { cat: 'studio', desc: 'Сертификат за ламиниране и ботокс терапия' },
+    30: { cat: 'lashes', desc: 'Мигли \u2014 мек и женствен ефект' },
+    31: { cat: 'microneedling', desc: 'Микронидлинг \u2014 сияйна и обновена кожа' },
+    32: { cat: 'lashes', desc: 'Поставяне на мигли \u2014 финален резултат' },
+    33: { cat: 'microblading', desc: 'Микроблейдинг \u2014 всяка жена заслужава красиви вежди' },
+    34: { cat: 'studio', desc: 'Beauty Atelier IN \u2014 промоция и грижа' },
+    35: { cat: 'lashes', desc: 'Обемни мигли \u2014 драматичен ефект' },
+    36: { cat: 'lamination', desc: 'Ламиниране на мигли \u2014 процес и резултат' },
+    37: { cat: 'lashes', desc: 'Мигли \u2014 красота в детайлите' },
+    38: { cat: 'microneedling', desc: 'Микронидлинг \u2014 регенерация и хидратация' },
+    39: { cat: 'lamination', desc: 'Ламиниране на вежди \u2014 пълна трансформация' },
+    40: { cat: 'piercing', desc: 'Бебешки обици \u2014 с грижа и любов' },
+    41: { cat: 'microblading', desc: 'Микроблейдинг \u2014 финална визия' },
+    42: { cat: 'plasma', desc: 'Плазма пен PhiIon \u2014 третиране на клепачи' },
+    43: { cat: 'microneedling', desc: 'Микронидлинг \u2014 реални отзиви и резултати' },
+    44: { cat: 'lashes', desc: 'Обемни мигли \u2014 максимална плътност' },
+    45: { cat: 'plasma', desc: 'Плазма пен \u2014 подмладяване на кожата около очите' },
+    46: { cat: 'lamination', desc: 'Ламиниране на вежди \u2014 преди и след' },
+    47: { cat: 'microblading', desc: 'Микроблейдинг \u2014 работа с клиент' },
+    48: { cat: 'microblading', desc: 'Микроблейдинг \u2014 естествен резултат' }
+};
+
+// ── Count per category (images + videos that belong to each) ──
 const categoryOrder = ['microblading', 'lashes', 'lamination', 'microneedling', 'plasma', 'piercing', 'pmu-removal', 'studio'];
 const counts = { all: images.length + videos.length };
-categoryOrder.forEach(c => { counts[c] = (groups[c] || []).length; });
+categoryOrder.forEach(c => {
+    const imgCount = (groups[c] || []).length;
+    const vidCount = videos.filter((f, i) => (videoMeta[i] || {}).cat === c).length;
+    counts[c] = imgCount + vidCount;
+});
 counts['videos'] = videos.length;
 
 // ── Generate filter buttons ──
@@ -128,11 +185,14 @@ function videoCards() {
         const thumbName = `vid-thumb-${String(i).padStart(2, '0')}.jpg`;
         const thumbSrc = `assets/images/video-thumbs/${thumbName}`;
         const id = `gallery-vid-${i}`;
+        const meta = videoMeta[i] || { cat: 'studio', desc: '' };
+        const cats = `videos ${meta.cat}`;
+        const desc = meta.desc;
         html += `
-                    <div class="gallery-item" data-category="videos">
+                    <div class="gallery-item" data-category="${cats}" data-desc="${desc.replace(/"/g, '&quot;')}">
                         <div class="gallery-card gallery-card--video">
                             <div class="gallery-card__img">
-                                <img src="${thumbSrc}" alt="Видео – Beauty Atelier IN" loading="lazy">
+                                <img src="${thumbSrc}" alt="${desc || 'Видео \u2014 Beauty Atelier IN'}" loading="lazy">
                             </div>
                             <div class="gallery-card__overlay gallery-card__overlay--video">
                                 <a href="#${id}" class="gallery-video-popup" aria-label="Пусни видео">
