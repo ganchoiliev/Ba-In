@@ -3723,9 +3723,11 @@
 
             // Lazy-load: create <video> element on first open
             if (!$video.length && videoSrc) {
-                $video = $('<video controls playsinline preload="auto"><source src="' + videoSrc + '" type="video/mp4"></video>');
+                var $v = $('<video controls playsinline webkit-playsinline preload="auto"></video>');
+                $v.append('<source src="' + videoSrc + '" type="video/mp4">');
                 $wrapper.find('.gallery-video-loader').remove();
-                $wrapper.append($video);
+                $wrapper.append($v);
+                $video = $v;
             }
 
             if ($video.length) {
@@ -3741,48 +3743,66 @@
             });
         }
 
-        // ── Swipe gestures for mobile ──
+        // ── Swipe gestures for mobile (uses native listeners for iOS Safari) ──
+        var swipeCleanup = null;
         function attachSwipe() {
-            var $wrap = $('.mfp-container');
-            if (!$wrap.length) return;
+            // Clean up previous listeners
+            if (swipeCleanup) swipeCleanup();
+
+            var wrap = document.querySelector('.mfp-container');
+            if (!wrap) return;
+
             var startX = 0, startY = 0, distX = 0, distY = 0;
-            var threshold = 50;
-            var restraint = 100;
+            var threshold = 40;
+            var restraint = 80;
+            var swiping = false;
 
-            $wrap.off('touchstart.gallery touchmove.gallery touchend.gallery');
-
-            $wrap.on('touchstart.gallery', function(e){
-                var t = e.originalEvent.touches[0];
+            function onStart(e) {
+                var t = e.touches[0];
                 startX = t.pageX;
                 startY = t.pageY;
                 distX = 0;
                 distY = 0;
-            });
+                swiping = false;
+            }
 
-            $wrap.on('touchmove.gallery', function(e){
-                var t = e.originalEvent.touches[0];
+            function onMove(e) {
+                var t = e.touches[0];
                 distX = t.pageX - startX;
                 distY = t.pageY - startY;
-                // Prevent page scroll while swiping in lightbox
+                // Once we detect a swipe direction, prevent scroll
                 if (Math.abs(distX) > 10 || Math.abs(distY) > 10) {
+                    swiping = true;
                     e.preventDefault();
+                    e.stopPropagation();
                 }
-            });
+            }
 
-            $wrap.on('touchend.gallery', function(e){
-
+            function onEnd(e) {
+                if (!swiping) return;
                 if (Math.abs(distX) >= threshold && Math.abs(distY) < restraint) {
-                    // Horizontal swipe
                     if (distX < 0) {
                         $.magnificPopup.instance.next();
                     } else {
                         $.magnificPopup.instance.prev();
                     }
-                } else if (Math.abs(distY) >= threshold && Math.abs(distX) < restraint && distY < 0) {
-                    // Swipe up to close
+                } else if (Math.abs(distY) >= threshold && Math.abs(distX) < restraint) {
+                    // Swipe up OR down to close
                     $.magnificPopup.close();
                 }
-            });
+            }
+
+            // {passive: false} is critical for iOS Safari to allow preventDefault
+            wrap.addEventListener('touchstart', onStart, {passive: true});
+            wrap.addEventListener('touchmove', onMove, {passive: false});
+            wrap.addEventListener('touchend', onEnd, {passive: true});
+
+            swipeCleanup = function() {
+                wrap.removeEventListener('touchstart', onStart);
+                wrap.removeEventListener('touchmove', onMove);
+                wrap.removeEventListener('touchend', onEnd);
+                swipeCleanup = null;
+            };
         }
 
         // ── Keyboard: arrow keys ──
