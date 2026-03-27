@@ -166,8 +166,10 @@ function imageCards() {
                                 <a href="${src}" class="gallery-popup-trigger" aria-label="Увеличи снимка">
                                     <span class="gallery-card__zoom"><i class="icon-search"></i></span>
                                 </a>
+                            </div>
+                            <div class="gallery-card__info">
                                 <span class="gallery-card__cat">${label}</span>
-                                ${desc ? '<span class="gallery-card__desc">' + desc + '</span>' : ''}
+                                ${desc ? '<div class="gallery-card__desc">' + desc + '</div>' : ''}
                             </div>
                         </div>
                     </div>
@@ -200,6 +202,10 @@ function videoCards() {
                                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                                     </span>
                                 </a>
+                            </div>
+                            <div class="gallery-card__info">
+                                <span class="gallery-card__cat">${catLabels[meta.cat] || 'Видео'}</span>
+                                ${desc ? '<div class="gallery-card__desc">' + desc + '</div>' : ''}
                             </div>
                         </div>
                         <div id="${id}" class="mfp-hide">
