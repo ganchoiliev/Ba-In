@@ -44,6 +44,7 @@ const TRANSLATIONS = {
       'shared.nav.pricing': 'Ценоразпис',
       'shared.nav.about': 'За нас',
       'shared.nav.faq': 'ЧЗВ',
+      'shared.nav.gallery': 'Галерия',
       'shared.nav.blog': 'Блог',
       'shared.nav.contact': 'Контакти',
 
@@ -87,9 +88,29 @@ const TRANSLATIONS = {
       'shared.footer.link.blog': 'Блог',
       'shared.footer.link.appointment': 'Запази час',
       'shared.footer.link.faq': 'Често Задавани Въпроси',
+      'shared.footer.link.gallery': 'Галерия',
       'shared.footer.link.contact': 'Контакти',
 
-
+      /* ---- Gallery page ---- */
+      'gallery.title': 'Галерия | Beauty Atelier IN – Снимки и видео от процедури в Силистра',
+      'gallery.meta_desc': 'Разгледайте снимки и видео от процедури в Beauty Atelier IN – микроблейдинг, миглопластика, ламиниране, микронидлинг и плазма пен в Силистра.',
+      'gallery.page_title': 'Галерия',
+      'gallery.breadcrumb': 'Галерия',
+      'gallery.section_title': 'Нашата <span>Галерия</span>',
+      'gallery.section_tagline': 'Резултати от процедури',
+      'gallery.filter.all': 'Всички',
+      'gallery.filter.microblading': 'Микроблейдинг',
+      'gallery.filter.lashes': 'Миглопластика',
+      'gallery.filter.lamination': 'Ламиниране',
+      'gallery.filter.microneedling': 'Микронидлинг',
+      'gallery.filter.plasma': 'Плазма Пен',
+      'gallery.filter.piercing': 'Пробиване',
+      'gallery.filter.pmu-removal': 'Премахване на ПМГ',
+      'gallery.filter.studio': 'Студио',
+      'gallery.filter.videos': 'Видеа',
+      'gallery.load_more': 'Зареди още',
+      'gallery.no_more': 'Няма повече снимки',
+      'gallery.count': 'снимки',
 
       /* ---- About page ---- */
       'about.experience_text': 'Професионални <br> обучения <br> и сертификати',
@@ -482,6 +503,11 @@ const TRANSLATIONS = {
       'index.funfact.services': 'Видове услуги',
       'index.funfact.experience': 'Години опит',
 
+      /* Gallery section */
+      'index.gallery.tagline': 'Вижте нашите резултати',
+      'index.gallery.title': 'Нашата <span>Галерия</span>',
+      'index.gallery.cta': 'Разгледай цялата галерия',
+
       /* Why choose us */
       'index.why.tagline': 'Перфектният резултат започва с професионален подход.',
       'index.why.title': 'Фокус върху<br>естествената красота',
@@ -730,6 +756,7 @@ const TRANSLATIONS = {
       'shared.nav.pricing': 'Pricing',
       'shared.nav.about': 'About Us',
       'shared.nav.faq': 'FAQ',
+      'shared.nav.gallery': 'Gallery',
       'shared.nav.blog': 'Blog',
       'shared.nav.contact': 'Contact',
 
@@ -773,7 +800,29 @@ const TRANSLATIONS = {
       'shared.footer.link.blog': 'Blog',
       'shared.footer.link.appointment': 'Book Now',
       'shared.footer.link.faq': 'FAQ',
+      'shared.footer.link.gallery': 'Gallery',
       'shared.footer.link.contact': 'Contact',
+
+      /* ---- Gallery page ---- */
+      'gallery.title': 'Gallery | Beauty Atelier IN – Photos & Videos from Procedures in Silistra',
+      'gallery.meta_desc': 'Browse photos and videos from procedures at Beauty Atelier IN – microblading, lash extensions, lamination, microneedling and plasma pen in Silistra.',
+      'gallery.page_title': 'Gallery',
+      'gallery.breadcrumb': 'Gallery',
+      'gallery.section_title': 'Our <span>Gallery</span>',
+      'gallery.section_tagline': 'Procedure Results',
+      'gallery.filter.all': 'All',
+      'gallery.filter.microblading': 'Microblading',
+      'gallery.filter.lashes': 'Lash Extensions',
+      'gallery.filter.lamination': 'Lamination',
+      'gallery.filter.microneedling': 'Microneedling',
+      'gallery.filter.plasma': 'Plasma Pen',
+      'gallery.filter.piercing': 'Piercing',
+      'gallery.filter.pmu-removal': 'PMU Removal',
+      'gallery.filter.studio': 'Studio',
+      'gallery.filter.videos': 'Videos',
+      'gallery.load_more': 'Load More',
+      'gallery.no_more': 'No more photos',
+      'gallery.count': 'photos',
 
       /* ---- Pricing ---- */
       'pricing.page_title': 'Transparent prices, premium results',
@@ -1167,6 +1216,11 @@ const TRANSLATIONS = {
       'index.funfact.procedures': 'Procedures',
       'index.funfact.services': 'Service Types',
       'index.funfact.experience': 'Years of Experience',
+
+      /* Gallery section */
+      'index.gallery.tagline': 'See our results',
+      'index.gallery.title': 'Our <span>Gallery</span>',
+      'index.gallery.cta': 'View full gallery',
 
       /* Why choose us */
       'index.why.tagline': 'The perfect result starts with a professional approach.',
