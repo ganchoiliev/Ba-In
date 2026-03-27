@@ -47,6 +47,12 @@ const catLabels = {
     'videos': 'Видеа'
 };
 
+// ── Load descriptions ──
+const descriptions = JSON.parse(fs.readFileSync('c:/xampp/htdocs/ba-in/assets/data/gallery-descriptions.json', 'utf-8'));
+function getDesc(file) {
+    return descriptions[file] || descriptions[file.toLowerCase()] || '';
+}
+
 // ── Read and categorize images ──
 const images = fs.readdirSync(imgDir)
     .filter(f => /\.(jpg|jpeg|png|webp)$/i.test(f))
@@ -91,17 +97,20 @@ function imageCards() {
         groups[cat].forEach(file => {
             const src = `assets/images/gallery-page/${file}`;
             const label = catLabels[cat];
+            const desc = getDesc(file);
+            const altText = desc || (label + ' – Beauty Atelier IN');
             html += `
-                    <div class="gallery-item" data-category="${cat}">
+                    <div class="gallery-item" data-category="${cat}" data-desc="${desc.replace(/"/g, '&quot;')}">
                         <div class="gallery-card">
                             <div class="gallery-card__img">
-                                <img src="${src}" alt="${label} – Beauty Atelier IN" loading="lazy">
+                                <img src="${src}" alt="${altText}" loading="lazy">
                             </div>
                             <div class="gallery-card__overlay">
                                 <a href="${src}" class="gallery-popup-trigger" aria-label="Увеличи снимка">
                                     <span class="gallery-card__zoom"><i class="icon-search"></i></span>
                                 </a>
                                 <span class="gallery-card__cat">${label}</span>
+                                ${desc ? '<span class="gallery-card__desc">' + desc + '</span>' : ''}
                             </div>
                         </div>
                     </div>
