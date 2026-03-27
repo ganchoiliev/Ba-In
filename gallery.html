@@ -93,7 +93,7 @@
     <link rel="stylesheet" href="assets/css/contact-widget.css" />
     <link rel="stylesheet" href="assets/css/google-reviews.css" />
     <link rel="stylesheet" href="assets/css/i18n.css" />
-    <link rel="stylesheet" href="assets/css/custom.css?v=5">
+    <link rel="stylesheet" href="assets/css/custom.css?v=6">
 </head>
 
 <body>
@@ -4353,9 +4353,6 @@
             var idx = $filtered.index($item);
             if (idx < 0) idx = 0;
 
-            // Reveal all items so lightbox navigation is seamless
-            loadAll();
-
             var items = buildItems();
 
             $.magnificPopup.open({
@@ -4390,8 +4387,15 @@
                     },
                     close: function(){
                         pauseAllVideos();
-                        // Unlock body scroll
                         $('body').css('overflow', '');
+                        // Sync grid: reveal items up to where user navigated
+                        var lastIdx = $.magnificPopup.instance.index || 0;
+                        if (lastIdx >= currentShown) {
+                            var target = Math.ceil((lastIdx + 1) / ITEMS_PER_PAGE) * ITEMS_PER_PAGE;
+                            while (currentShown < target) {
+                                showPage(false);
+                            }
+                        }
                     }
                 }
             }, idx);
