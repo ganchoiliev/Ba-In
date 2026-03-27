@@ -27,8 +27,10 @@ function categorizeImage(filename) {
         || f === 'brows_lashesh.jpg') return 'lamination';
 
     if (f.includes('lamination') || f.includes('laminirane')) return 'lamination';
-    if (f.includes('cleaning') || f.includes('eyebrows') || f.includes('eyevrows') || f.includes('first_time_eyebrows')) return 'microblading';
-    if (f === 'retush.jpg') return 'microblading';
+    // Eyebrow cleaning/shaping = brow lamination, not microblading
+    if (f.includes('cleaning') || f.includes('eyevrows') || f.includes('first_time_eyebrows') || f === 'eyebrows14.jpg') return 'lamination';
+    // eyebrows3.png is actual microblading (before/after with pigment)
+    if (f === 'eyebrows3.png' || f === 'retush.jpg') return 'microblading';
     return 'studio';
 }
 
