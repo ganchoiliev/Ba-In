@@ -19,12 +19,13 @@ function categorizeImage(filename) {
 
     // True lash extensions (миглопластика) — thick, voluminous individual extensions
     var trueLashes = ['eyelashesh15.jpg','eyelashesh16.jpg','lashesh2.jpg','lashesh3.jpg',
-                      'eyelashes.png','eyelashes_eyebrows.png','old_image_lashesh_and_brows.jpg'];
+                      'eyelashes.png','old_image_lashesh_and_brows.jpg',
+                      'cateye_eyelashesh.jpg','lashesh_3d.jpg'];
     if (trueLashes.indexOf(f) !== -1) return 'lashes';
 
     // Lash lift / lamination — natural lashes lifted and curled
-    if (f.includes('eyelashesh') || f.includes('lashesh') || f.includes('cateye')
-        || f === 'brows_lashesh.jpg') return 'lamination';
+    if (f.includes('eyelashesh') || f.includes('lashesh')
+        || f === 'brows_lashesh.jpg' || f === 'eyelashes_eyebrows.png') return 'lamination';
 
     if (f.includes('lamination') || f.includes('laminirane')) return 'lamination';
     // Eyebrow cleaning/shaping = brow lamination, not microblading
