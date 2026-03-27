@@ -3891,6 +3891,8 @@
                         pauseAllVideos();
                         playCurrentVideo(this);
                         attachSwipe();
+                        // Lock body scroll
+                        $('body').css('overflow', 'hidden');
                     },
                     change: function(){
                         pauseAllVideos();
@@ -3898,6 +3900,8 @@
                     },
                     close: function(){
                         pauseAllVideos();
+                        // Unlock body scroll
+                        $('body').css('overflow', '');
                     }
                 }
             }, idx);
@@ -3943,11 +3947,13 @@
                 var t = e.originalEvent.touches[0];
                 distX = t.pageX - startX;
                 distY = t.pageY - startY;
+                // Prevent page scroll while swiping in lightbox
+                if (Math.abs(distX) > 10 || Math.abs(distY) > 10) {
+                    e.preventDefault();
+                }
             });
 
             $wrap.on('touchend.gallery', function(e){
-                // Don't hijack swipe if user is interacting with video controls
-                if ($(e.target).closest('video, .gallery-video-inline').length && Math.abs(distX) < threshold) return;
 
                 if (Math.abs(distX) >= threshold && Math.abs(distY) < restraint) {
                     // Horizontal swipe
