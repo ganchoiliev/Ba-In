@@ -3773,6 +3773,7 @@
             var threshold = 40;
             var restraint = 80;
             var swiping = false;
+            var onVideo = false;
 
             function onStart(e) {
                 var t = e.touches[0];
@@ -3781,13 +3782,17 @@
                 distX = 0;
                 distY = 0;
                 swiping = false;
+                // Check if touch started on video or its controls
+                var el = e.target;
+                onVideo = !!(el && (el.tagName === 'VIDEO' || el.closest('.gallery-video-inline')));
             }
 
             function onMove(e) {
+                // Never hijack touch when user is scrubbing video
+                if (onVideo) return;
                 var t = e.touches[0];
                 distX = t.pageX - startX;
                 distY = t.pageY - startY;
-                // Once we detect a swipe direction, prevent scroll
                 if (Math.abs(distX) > 10 || Math.abs(distY) > 10) {
                     swiping = true;
                     e.preventDefault();
@@ -3796,7 +3801,7 @@
             }
 
             function onEnd(e) {
-                if (!swiping) return;
+                if (onVideo || !swiping) return;
                 if (Math.abs(distX) >= threshold && Math.abs(distY) < restraint) {
                     if (distX < 0) {
                         $.magnificPopup.instance.next();
