@@ -31,7 +31,11 @@ if [[ "$HTTP_CODE" -ne 200 ]]; then
 fi
 
 COUNT=$(echo "$BODY" | jq -r '.userRatingCount // empty')
+# Ensure rating always has one decimal (e.g. 5 → 5.0)
 RATING=$(echo "$BODY" | jq -r '.rating // empty')
+if [[ -n "$RATING" && "$RATING" != *.* ]]; then
+  RATING="${RATING}.0"
+fi
 
 if [[ -z "$COUNT" ]]; then
   echo "::error::Could not extract userRatingCount from API response"
