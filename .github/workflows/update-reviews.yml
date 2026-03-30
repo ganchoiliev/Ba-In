@@ -22,6 +22,7 @@ jobs:
             echo "changed=true" >> "$GITHUB_OUTPUT"
           else
             echo "changed=false" >> "$GITHUB_OUTPUT"
+            echo "::warning::Script exited with non-zero — either no changes or API error (check logs above)"
           fi
 
       - name: Commit and push changes
