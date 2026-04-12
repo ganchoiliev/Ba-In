@@ -152,7 +152,7 @@
 
   <url>
     <loc>https://ba-in.com/blog.html</loc>
-        <lastmod>2026-03-24</lastmod>
+        <lastmod>2026-04-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.4</priority>
   </url>
@@ -194,6 +194,13 @@
     <url>
         <loc>https://ba-in.com/laminirane-vezhdi-migli.html</loc>
         <lastmod>2026-03-24</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://ba-in.com/spf-zashtita-vseki-den.html</loc>
+        <lastmod>2026-04-12</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
