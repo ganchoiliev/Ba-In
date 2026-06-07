@@ -464,7 +464,7 @@ const TRANSLATIONS = {
       'pmu.q3': 'Остават ли белези след процедурата?',
       'pmu.a3': 'При правилно изпълнение и спазване на инструкциите, рискът от белези е минимален.',
       /* ---- Service & Blog sidebars ---- */
-      'service.sidebar.hours': 'ПОН-СЪБ 9:00-19:00',
+      'service.sidebar.hours': 'ПОН-ПЕТ 10:00-18:00 · СЪБ по уговорка',
       'service.sidebar.connect': 'Свържи се с нас',
       'service.sidebar.laminirane': 'Ламиниране на вежди и мигли',
       'service.more_tagline': 'Още процедури',
@@ -1312,7 +1312,7 @@ const TRANSLATIONS = {
       'pmu.q3': 'Is there scarring after the procedure?',
       'pmu.a3': 'With correct technique and proper aftercare, the risk of scarring is minimal.',
       /* ---- Service & Blog sidebars ---- */
-      'service.sidebar.hours': 'MON-SAT 9:00-19:00',
+      'service.sidebar.hours': 'MON-FRI 10:00-18:00 · SAT by appointment',
       'service.sidebar.connect': 'Contact Us',
       'service.sidebar.laminirane': 'Brow & Lash Lamination',
       'service.more_tagline': 'More Procedures',
