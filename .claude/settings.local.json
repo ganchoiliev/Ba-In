@@ -2,7 +2,27 @@
   "permissions": {
     "allow": [
       "Bash(ls *.php api/)",
-      "WebFetch(domain:fonts.googleapis.com)"
+      "WebFetch(domain:fonts.googleapis.com)",
+      "Bash(grep -l \"blog\" /Users/ZapEc/Desktop/Ba-In/assets/css/*.css)",
+      "Bash(ls -lh /Users/ZapEc/Desktop/Ba-In/*blog*.html /Users/ZapEc/Desktop/Ba-In/microblading*.html /Users/ZapEc/Desktop/Ba-In/lashes.html /Users/ZapEc/Desktop/Ba-In/plasma.html)",
+      "WebFetch(domain:ba-in.com)",
+      "Bash(git pull:*)",
+      "WebSearch",
+      "Bash(git add:*)",
+      "Bash(git commit -m ':*)",
+      "Bash(git push:*)",
+      "Bash(cat)",
+      "Read(//tmp/**)",
+      "Bash(curl -sI \"https://hovzlyvvvmmvgzbdmkyz.supabase.co/storage/v1/object/public/blog-images/spf-zashtita-vseki-den-hero.png\")",
+      "Bash(curl -sv \"https://hovzlyvvvmmvgzbdmkyz.supabase.co/storage/v1/object/public/blog-images/spf-zashtita-vseki-den-hero.png\" -o /dev/null)",
+      "Bash(python3 -c \"from PIL import Image; print\\('Pillow available'\\)\")",
+      "Bash(find /tmp -name \"*.png\" -o -name \"*.jpg\" -o -name \"*.jpeg\" -o -name \"*.webp\" 2>/dev/null | head -20)",
+      "Bash(git -C /Users/ZapEc/Desktop/Ba-In add assets/images/blog/laminirane-vezhdi-migli-hero.jpg blog.html index.html laminirane-vezhdi-migli.html)",
+      "Bash(git -C /Users/ZapEc/Desktop/Ba-In commit -m ' *)",
+      "Bash(git -C /Users/ZapEc/Desktop/Ba-In push)",
+      "Bash(git commit -m ' *)",
+      "Bash(python3 -c ' *)",
+      "Bash(git stash *)"
     ]
   }
 }
