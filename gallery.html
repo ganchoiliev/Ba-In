@@ -46,9 +46,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title data-i18n="gallery.title">Галерия | Beauty Atelier IN – Снимки и видео от процедури в Силистра</title>
     <link rel="canonical" href="https://ba-in.com/gallery.html">
-    <link rel="alternate" hreflang="bg" href="https://ba-in.com/gallery.html" />
-    <link rel="alternate" hreflang="en" href="https://ba-in.com/gallery.html" />
-    <link rel="alternate" hreflang="x-default" href="https://ba-in.com/gallery.html" />
     <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicons/apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicons/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicons/favicon-16x16.png" />
@@ -4327,287 +4324,284 @@
         <span class="scroll-to-top__wrapper"><span class="scroll-to-top__inner"></span></span>
     </a>
 
-    <script src="assets/vendors/jquery/jquery-3.7.0.min.js"></script>
-    <script src="assets/vendors/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/vendors/bootstrap-select/bootstrap-select.min.js"></script>
-    <script src="assets/vendors/jarallax/jarallax.min.js"></script>
-    <script src="assets/vendors/jquery-ajaxchimp/jquery.ajaxchimp.min.js"></script>
-    <script src="assets/vendors/jquery-appear/jquery.appear.min.js"></script>
-    <script src="assets/vendors/jquery-magnific-popup/jquery.magnific-popup.min.js"></script>
-    <script src="assets/vendors/jquery-validate/jquery.validate.min.js"></script>
-    <script src="assets/vendors/owl-carousel/js/owl.carousel.min.js"></script>
-    <script src="assets/vendors/wow/wow.js"></script>
-    <script src="assets/js/mediox.js"></script>
+    <script defer src="assets/vendors/jquery/jquery-3.7.0.min.js"></script>
+    <script defer src="assets/vendors/jquery-ajaxchimp/jquery.ajaxchimp.min.js"></script>
+    <script defer src="assets/vendors/jquery-magnific-popup/jquery.magnific-popup.min.js"></script>
+    <script defer src="assets/vendors/wow/wow.js"></script>
+    <script defer src="assets/js/mediox.js"></script>
 
     <!-- Gallery: filter, load-more, unified lightbox with swipe -->
     <script>
+/* deferred bundle: wait for jQuery before running */
+document.addEventListener('DOMContentLoaded', function () {
     (function($){
-        var ITEMS_PER_PAGE = 12;
-        var $allItems = $('#galleryGrid .gallery-item');
-        var $filterBtns = $('#galleryFilter .gallery-filter__btn');
-        var $loadMoreBtn = $('#galleryLoadMore');
-        var $shownEl = $('#galleryShown');
-        var $totalEl = $('#galleryTotal');
-        var currentFilter = 'all';
-        var currentShown = 0;
+            var ITEMS_PER_PAGE = 12;
+            var $allItems = $('#galleryGrid .gallery-item');
+            var $filterBtns = $('#galleryFilter .gallery-filter__btn');
+            var $loadMoreBtn = $('#galleryLoadMore');
+            var $shownEl = $('#galleryShown');
+            var $totalEl = $('#galleryTotal');
+            var currentFilter = 'all';
+            var currentShown = 0;
 
-        function getFiltered() {
-            if (currentFilter === 'all') return $allItems;
-            return $allItems.filter(function(){
-                var cats = ' ' + ($(this).attr('data-category') || '') + ' ';
-                return cats.indexOf(' ' + currentFilter + ' ') !== -1;
-            });
-        }
-
-        function getVisible() {
-            return getFiltered().not('.is-hidden');
-        }
-
-        function showPage(reset) {
-            var $filtered = getFiltered();
-            var total = $filtered.length;
-
-            if (reset) {
-                currentShown = 0;
-                $allItems.addClass('is-hidden');
+            function getFiltered() {
+                if (currentFilter === 'all') return $allItems;
+                return $allItems.filter(function(){
+                    var cats = ' ' + ($(this).attr('data-category') || '') + ' ';
+                    return cats.indexOf(' ' + currentFilter + ' ') !== -1;
+                });
             }
 
-            var end = Math.min(currentShown + ITEMS_PER_PAGE, total);
-            $filtered.slice(currentShown, end).removeClass('is-hidden');
-            currentShown = end;
-
-            $shownEl.text(currentShown);
-            $totalEl.text(total);
-
-            if (currentShown >= total) {
-                $loadMoreBtn.prop('disabled', true).text($loadMoreBtn.attr('data-i18n-done') || 'Няма повече');
-            } else {
-                $loadMoreBtn.prop('disabled', false).text($loadMoreBtn.attr('data-i18n-text') || 'Зареди още');
+            function getVisible() {
+                return getFiltered().not('.is-hidden');
             }
-        }
 
-        // Filter click
-        $filterBtns.on('click', function(){
-            $filterBtns.removeClass('active');
-            $(this).addClass('active');
-            currentFilter = $(this).attr('data-filter');
-            showPage(true);
-        });
+            function showPage(reset) {
+                var $filtered = getFiltered();
+                var total = $filtered.length;
 
-        // Load More
-        $loadMoreBtn.attr('data-i18n-text', $loadMoreBtn.text());
-        $loadMoreBtn.attr('data-i18n-done', 'Няма повече');
-        $loadMoreBtn.on('click', function(){ showPage(false); });
-
-        // Reveal all filtered items at once (used when opening lightbox)
-        function loadAll() {
-            var $filtered = getFiltered();
-            var total = $filtered.length;
-            $filtered.removeClass('is-hidden');
-            currentShown = total;
-            $shownEl.text(total);
-            $totalEl.text(total);
-            $loadMoreBtn.prop('disabled', true).text($loadMoreBtn.attr('data-i18n-done') || 'Няма повече');
-        }
-
-        // ── Unified lightbox: images + videos in one gallery ──
-        // Build items from ALL filtered items (not just visible)
-        // so lightbox can navigate the full set
-        function buildItems() {
-            var items = [];
-            getFiltered().each(function(){
-                var $card = $(this);
-                var desc = $card.attr('data-desc') || '';
-                var isVideo = $card.find('.gallery-card--video').length > 0;
-                if (isVideo) {
-                    var vidId = $card.find('.gallery-video-popup').attr('href');
-                    items.push({ type: 'inline', src: vidId, title: desc });
-                } else {
-                    var imgSrc = $card.find('.gallery-popup-trigger').attr('href');
-                    items.push({ type: 'image', src: imgSrc, title: desc });
+                if (reset) {
+                    currentShown = 0;
+                    $allItems.addClass('is-hidden');
                 }
+
+                var end = Math.min(currentShown + ITEMS_PER_PAGE, total);
+                $filtered.slice(currentShown, end).removeClass('is-hidden');
+                currentShown = end;
+
+                $shownEl.text(currentShown);
+                $totalEl.text(total);
+
+                if (currentShown >= total) {
+                    $loadMoreBtn.prop('disabled', true).text($loadMoreBtn.attr('data-i18n-done') || 'Няма повече');
+                } else {
+                    $loadMoreBtn.prop('disabled', false).text($loadMoreBtn.attr('data-i18n-text') || 'Зареди още');
+                }
+            }
+
+            // Filter click
+            $filterBtns.on('click', function(){
+                $filterBtns.removeClass('active');
+                $(this).addClass('active');
+                currentFilter = $(this).attr('data-filter');
+                showPage(true);
             });
-            return items;
-        }
 
-        // Click handler: whole card opens lightbox
-        $('#galleryGrid').on('click', '.gallery-card', function(e){
-            e.preventDefault();
-            var $item = $(this).closest('.gallery-item');
-            // Index within ALL filtered items (not just visible)
-            var $filtered = getFiltered();
-            var idx = $filtered.index($item);
-            if (idx < 0) idx = 0;
+            // Load More
+            $loadMoreBtn.attr('data-i18n-text', $loadMoreBtn.text());
+            $loadMoreBtn.attr('data-i18n-done', 'Няма повече');
+            $loadMoreBtn.on('click', function(){ showPage(false); });
 
-            var items = buildItems();
+            // Reveal all filtered items at once (used when opening lightbox)
+            function loadAll() {
+                var $filtered = getFiltered();
+                var total = $filtered.length;
+                $filtered.removeClass('is-hidden');
+                currentShown = total;
+                $shownEl.text(total);
+                $totalEl.text(total);
+                $loadMoreBtn.prop('disabled', true).text($loadMoreBtn.attr('data-i18n-done') || 'Няма повече');
+            }
 
-            $.magnificPopup.open({
-                items: items,
-                type: 'image',
-                mainClass: 'mfp-gallery-custom mfp-fade',
-                removalDelay: 350,
-                closeBtnInside: false,
-                closeMarkup: '<button title="Close" type="button" class="mfp-close mfp-close-custom">&times;</button>',
-                gallery: {
-                    enabled: true,
-                    navigateByImgClick: true,
-                    preload: [1, 1],
-                    arrowMarkup: '<button title="%title%" type="button" class="mfp-arrow mfp-arrow-%dir% mfp-arrow-custom"></button>',
-                    tCounter: '<span class="mfp-counter-custom">%curr% / %total%</span>'
-                },
-                image: {
-                    verticalFit: true,
-                    titleSrc: function(item){ return item.title || ''; }
-                },
-                callbacks: {
-                    open: function(){
-                        pauseAllVideos();
-                        playCurrentVideo(this);
-                        attachSwipe();
-                        // Lock body scroll
-                        $('body').css('overflow', 'hidden');
+            // ── Unified lightbox: images + videos in one gallery ──
+            // Build items from ALL filtered items (not just visible)
+            // so lightbox can navigate the full set
+            function buildItems() {
+                var items = [];
+                getFiltered().each(function(){
+                    var $card = $(this);
+                    var desc = $card.attr('data-desc') || '';
+                    var isVideo = $card.find('.gallery-card--video').length > 0;
+                    if (isVideo) {
+                        var vidId = $card.find('.gallery-video-popup').attr('href');
+                        items.push({ type: 'inline', src: vidId, title: desc });
+                    } else {
+                        var imgSrc = $card.find('.gallery-popup-trigger').attr('href');
+                        items.push({ type: 'image', src: imgSrc, title: desc });
+                    }
+                });
+                return items;
+            }
+
+            // Click handler: whole card opens lightbox
+            $('#galleryGrid').on('click', '.gallery-card', function(e){
+                e.preventDefault();
+                var $item = $(this).closest('.gallery-item');
+                // Index within ALL filtered items (not just visible)
+                var $filtered = getFiltered();
+                var idx = $filtered.index($item);
+                if (idx < 0) idx = 0;
+
+                var items = buildItems();
+
+                $.magnificPopup.open({
+                    items: items,
+                    type: 'image',
+                    mainClass: 'mfp-gallery-custom mfp-fade',
+                    removalDelay: 350,
+                    closeBtnInside: false,
+                    closeMarkup: '<button title="Close" type="button" class="mfp-close mfp-close-custom">&times;</button>',
+                    gallery: {
+                        enabled: true,
+                        navigateByImgClick: true,
+                        preload: [1, 1],
+                        arrowMarkup: '<button title="%title%" type="button" class="mfp-arrow mfp-arrow-%dir% mfp-arrow-custom"></button>',
+                        tCounter: '<span class="mfp-counter-custom">%curr% / %total%</span>'
                     },
-                    change: function(){
-                        pauseAllVideos();
-                        playCurrentVideo(this);
+                    image: {
+                        verticalFit: true,
+                        titleSrc: function(item){ return item.title || ''; }
                     },
-                    close: function(){
-                        pauseAllVideos();
-                        $('body').css('overflow', '');
-                        // Sync grid: reveal items up to where user navigated
-                        var lastIdx = $.magnificPopup.instance.index || 0;
-                        if (lastIdx >= currentShown) {
-                            var target = Math.ceil((lastIdx + 1) / ITEMS_PER_PAGE) * ITEMS_PER_PAGE;
-                            while (currentShown < target) {
-                                showPage(false);
+                    callbacks: {
+                        open: function(){
+                            pauseAllVideos();
+                            playCurrentVideo(this);
+                            attachSwipe();
+                            // Lock body scroll
+                            $('body').css('overflow', 'hidden');
+                        },
+                        change: function(){
+                            pauseAllVideos();
+                            playCurrentVideo(this);
+                        },
+                        close: function(){
+                            pauseAllVideos();
+                            $('body').css('overflow', '');
+                            // Sync grid: reveal items up to where user navigated
+                            var lastIdx = $.magnificPopup.instance.index || 0;
+                            if (lastIdx >= currentShown) {
+                                var target = Math.ceil((lastIdx + 1) / ITEMS_PER_PAGE) * ITEMS_PER_PAGE;
+                                while (currentShown < target) {
+                                    showPage(false);
+                                }
                             }
                         }
                     }
-                }
-            }, idx);
-        });
-
-        function playCurrentVideo(mfp) {
-            var $content = mfp.content;
-            if (!$content) return;
-
-            var $wrapper = $content.find('.gallery-video-inline');
-            if (!$wrapper.length) return;
-
-            var videoSrc = $wrapper.attr('data-video-src');
-            var $video = $wrapper.find('video');
-
-            // Lazy-load: create <video> element on first open
-            if (!$video.length && videoSrc) {
-                var $v = $('<video controls playsinline webkit-playsinline preload="auto"></video>');
-                $v.append('<source src="' + videoSrc + '" type="video/mp4">');
-                $wrapper.find('.gallery-video-loader').remove();
-                $wrapper.append($v);
-                $video = $v;
-            }
-
-            if ($video.length) {
-                $video[0].currentTime = 0;
-                $video[0].play().catch(function(){});
-            }
-        }
-
-        function pauseAllVideos() {
-            $('.gallery-video-inline video, .mfp-content video').each(function(){
-                this.pause();
-                this.currentTime = 0;
+                }, idx);
             });
-        }
 
-        // ── Swipe gestures for mobile (uses native listeners for iOS Safari) ──
-        var swipeCleanup = null;
-        function attachSwipe() {
-            // Clean up previous listeners
-            if (swipeCleanup) swipeCleanup();
+            function playCurrentVideo(mfp) {
+                var $content = mfp.content;
+                if (!$content) return;
 
-            var wrap = document.querySelector('.mfp-container');
-            if (!wrap) return;
+                var $wrapper = $content.find('.gallery-video-inline');
+                if (!$wrapper.length) return;
 
-            var startX = 0, startY = 0, distX = 0, distY = 0;
-            var threshold = 40;
-            var restraint = 80;
-            var swiping = false;
-            var onVideo = false;
+                var videoSrc = $wrapper.attr('data-video-src');
+                var $video = $wrapper.find('video');
 
-            function onStart(e) {
-                var t = e.touches[0];
-                startX = t.pageX;
-                startY = t.pageY;
-                distX = 0;
-                distY = 0;
-                swiping = false;
-                // Check if touch started on video or its controls
-                var el = e.target;
-                onVideo = !!(el && (el.tagName === 'VIDEO' || el.closest('.gallery-video-inline')));
-            }
+                // Lazy-load: create <video> element on first open
+                if (!$video.length && videoSrc) {
+                    var $v = $('<video controls playsinline webkit-playsinline preload="auto"></video>');
+                    $v.append('<source src="' + videoSrc + '" type="video/mp4">');
+                    $wrapper.find('.gallery-video-loader').remove();
+                    $wrapper.append($v);
+                    $video = $v;
+                }
 
-            function onMove(e) {
-                var t = e.touches[0];
-                distX = t.pageX - startX;
-                distY = t.pageY - startY;
-                // On video: only track vertical swipes (to close), ignore horizontal (scrubbing)
-                if (onVideo && Math.abs(distX) > Math.abs(distY)) return;
-                if (Math.abs(distX) > 10 || Math.abs(distY) > 10) {
-                    swiping = true;
-                    e.preventDefault();
-                    e.stopPropagation();
+                if ($video.length) {
+                    $video[0].currentTime = 0;
+                    $video[0].play().catch(function(){});
                 }
             }
 
-            function onEnd(e) {
-                if (!swiping) return;
-                // On video: only allow vertical swipe to close, not horizontal nav
-                if (onVideo) {
-                    if (Math.abs(distY) >= threshold && Math.abs(distX) < restraint) {
+            function pauseAllVideos() {
+                $('.gallery-video-inline video, .mfp-content video').each(function(){
+                    this.pause();
+                    this.currentTime = 0;
+                });
+            }
+
+            // ── Swipe gestures for mobile (uses native listeners for iOS Safari) ──
+            var swipeCleanup = null;
+            function attachSwipe() {
+                // Clean up previous listeners
+                if (swipeCleanup) swipeCleanup();
+
+                var wrap = document.querySelector('.mfp-container');
+                if (!wrap) return;
+
+                var startX = 0, startY = 0, distX = 0, distY = 0;
+                var threshold = 40;
+                var restraint = 80;
+                var swiping = false;
+                var onVideo = false;
+
+                function onStart(e) {
+                    var t = e.touches[0];
+                    startX = t.pageX;
+                    startY = t.pageY;
+                    distX = 0;
+                    distY = 0;
+                    swiping = false;
+                    // Check if touch started on video or its controls
+                    var el = e.target;
+                    onVideo = !!(el && (el.tagName === 'VIDEO' || el.closest('.gallery-video-inline')));
+                }
+
+                function onMove(e) {
+                    var t = e.touches[0];
+                    distX = t.pageX - startX;
+                    distY = t.pageY - startY;
+                    // On video: only track vertical swipes (to close), ignore horizontal (scrubbing)
+                    if (onVideo && Math.abs(distX) > Math.abs(distY)) return;
+                    if (Math.abs(distX) > 10 || Math.abs(distY) > 10) {
+                        swiping = true;
+                        e.preventDefault();
+                        e.stopPropagation();
+                    }
+                }
+
+                function onEnd(e) {
+                    if (!swiping) return;
+                    // On video: only allow vertical swipe to close, not horizontal nav
+                    if (onVideo) {
+                        if (Math.abs(distY) >= threshold && Math.abs(distX) < restraint) {
+                            $.magnificPopup.close();
+                        }
+                        return;
+                    }
+                    if (Math.abs(distX) >= threshold && Math.abs(distY) < restraint) {
+                        if (distX < 0) {
+                            $.magnificPopup.instance.next();
+                        } else {
+                            $.magnificPopup.instance.prev();
+                        }
+                    } else if (Math.abs(distY) >= threshold && Math.abs(distX) < restraint) {
                         $.magnificPopup.close();
                     }
-                    return;
                 }
-                if (Math.abs(distX) >= threshold && Math.abs(distY) < restraint) {
-                    if (distX < 0) {
-                        $.magnificPopup.instance.next();
-                    } else {
-                        $.magnificPopup.instance.prev();
-                    }
-                } else if (Math.abs(distY) >= threshold && Math.abs(distX) < restraint) {
-                    $.magnificPopup.close();
-                }
+
+                // {passive: false} is critical for iOS Safari to allow preventDefault
+                wrap.addEventListener('touchstart', onStart, {passive: true});
+                wrap.addEventListener('touchmove', onMove, {passive: false});
+                wrap.addEventListener('touchend', onEnd, {passive: true});
+
+                swipeCleanup = function() {
+                    wrap.removeEventListener('touchstart', onStart);
+                    wrap.removeEventListener('touchmove', onMove);
+                    wrap.removeEventListener('touchend', onEnd);
+                    swipeCleanup = null;
+                };
             }
 
-            // {passive: false} is critical for iOS Safari to allow preventDefault
-            wrap.addEventListener('touchstart', onStart, {passive: true});
-            wrap.addEventListener('touchmove', onMove, {passive: false});
-            wrap.addEventListener('touchend', onEnd, {passive: true});
+            // ── Keyboard: arrow keys ──
+            $(document).on('keydown', function(e){
+                if (!$.magnificPopup.instance.isOpen) return;
+                if (e.key === 'ArrowLeft') $.magnificPopup.instance.prev();
+                if (e.key === 'ArrowRight') $.magnificPopup.instance.next();
+            });
 
-            swipeCleanup = function() {
-                wrap.removeEventListener('touchstart', onStart);
-                wrap.removeEventListener('touchmove', onMove);
-                wrap.removeEventListener('touchend', onEnd);
-                swipeCleanup = null;
-            };
-        }
+            // Initial load
+            showPage(true);
 
-        // ── Keyboard: arrow keys ──
-        $(document).on('keydown', function(e){
-            if (!$.magnificPopup.instance.isOpen) return;
-            if (e.key === 'ArrowLeft') $.magnificPopup.instance.prev();
-            if (e.key === 'ArrowRight') $.magnificPopup.instance.next();
-        });
-
-        // Initial load
-        showPage(true);
-
-        // Videos are lazy-loaded on click — no preloading needed
-    })(jQuery);
-    </script>
+            // Videos are lazy-loaded on click — no preloading needed
+        })(jQuery);
+});
+</script>
 
     <!-- AI Chatbot script -->
-    <script src="assets/js/ai-chat-v2.js"></script>
+    <script defer src="assets/js/ai-chat-v2.js"></script>
 
 <!-- WhatsApp / Viber Contact Widget -->
     <div class="contact-widget" id="contact-widget">
@@ -4650,11 +4644,10 @@
             <span class="icon-close-widget">&#10005;</span>
         </button>
     </div>
-    <script src="assets/js/translations.js"></script>
-    <script src="assets/js/i18n.js"></script>
+    <script defer src="assets/js/i18n.js"></script>
 
-    <script src="assets/js/cookie-consent.js"></script>
-    <script src="assets/js/contact-widget.js"></script>
+    <script defer src="assets/js/cookie-consent.js"></script>
+    <script defer src="assets/js/contact-widget.js"></script>
 </body>
 
 </html>
