@@ -144,7 +144,7 @@ const TRANSLATIONS = {
       'contact.call_now': 'Обадете се сега',
       'contact.email_label': 'Имейл',
       'contact.address_label': 'Адрес',
-      'contact.happy_clients': 'Google оценка 5.0 ★ от 31+ отзива',
+      'contact.happy_clients': 'Google оценка 5.0 ★ от 34+ отзива',
       'contact.msg_ph': 'Напишете съобщение...',
       'contact.send_message': 'Запази Консултация →',
       'contact.microcopy': 'Безплатно • Без ангажимент • Отговор до 24 часа',
@@ -533,6 +533,7 @@ const TRANSLATIONS = {
       /* ---- Google Reviews ---- */
       'reviews.google_label': 'Google Reviews',
       'reviews.write_review': 'Напиши отзив',
+      'reviews.count_line': 'от 34 отзива в Google',
       'reviews.see_all': 'Виж всички отзиви',
 
       /* ---- Shared: Scroll to top ---- */
@@ -576,7 +577,7 @@ const TRANSLATIONS = {
       'index.meta_desc': 'Специализиран център за PhiBrows микроблейдинг в Силистра. Предлагаме професионален микронидлинг, ламиниране на мигли и естетични процедури. Доверете се на сертифициран опит.',
 
       /* Hero — static */
-      'index.hero.trust_qualifier': '5.0 в Google · 31 отзива',
+      'index.hero.trust_qualifier': '5.0 в Google · 34 отзива',
       'index.hero.title': 'Перфектните вежди, които <br><span class="hero-static__title--accent">винаги сте искали</span>',
       'index.hero.subtitle': 'Микроблейдинг и естетични процедури · Силистра',
       'index.hero.btn_book': 'Запази безплатна консултация',
@@ -789,7 +790,7 @@ const TRANSLATIONS = {
       'procedures.meta_desc': 'Разгледайте нашите процедури — микроблейдинг, микронидлинг, плазма пен, ламиниране и други. Сертифициран специалист в Силистра.',
       'procedures.page_title': 'Процедури за красота, съобразени с вас',
       'procedures.page_subtitle': 'Естетични процедури в Силистра · Beauty Atelier IN',
-      'procedures.intro.trust_pill': '5.0 в Google · 31 отзива',
+      'procedures.intro.trust_pill': '5.0 в Google · 34 отзива',
       'procedures.intro.text': 'Всяка процедура е съобразена с вашите индивидуални нужди и извършена от сертифициран специалист в стерилна среда. Разгледайте нашите услуги и изберете подходящата за вас.',
       'procedures.trust.certified': 'Сертифициран PhiBrows артист',
       'procedures.trust.clients': '250+ доволни клиента',
@@ -1140,7 +1141,7 @@ const TRANSLATIONS = {
       'contact.call_now': 'Call Us Now',
       'contact.email_label': 'Email',
       'contact.address_label': 'Address',
-      'contact.happy_clients': 'Google rating 5.0 ★ from 31+ reviews',
+      'contact.happy_clients': 'Google rating 5.0 ★ from 34+ reviews',
       'contact.msg_ph': 'Write a message...',
       'contact.send_message': 'Book Consultation →',
       'contact.microcopy': 'Free • No commitment • Response within 24 hours',
@@ -1364,6 +1365,7 @@ const TRANSLATIONS = {
       /* ---- Google Reviews ---- */
       'reviews.google_label': 'Google Reviews',
       'reviews.write_review': 'Write a Review',
+      'reviews.count_line': 'from 34 reviews on Google',
       'reviews.see_all': 'See all reviews',
 
       /* ---- Shared: Scroll to top ---- */
@@ -1407,7 +1409,7 @@ const TRANSLATIONS = {
       'index.meta_desc': 'Specialist centre for PhiBrows microblading in Silistra. Professional microneedling, lash lamination and aesthetic treatments. Trust certified expertise.',
 
       /* Hero — static */
-      'index.hero.trust_qualifier': '5.0 on Google · 31 reviews',
+      'index.hero.trust_qualifier': '5.0 on Google · 34 reviews',
       'index.hero.title': 'The perfect brows <br><span class="hero-static__title--accent">you\'ve always wanted</span>',
       'index.hero.subtitle': 'Microblading & aesthetic treatments · Silistra',
       'index.hero.btn_book': 'Book a free consultation',
@@ -1613,7 +1615,7 @@ const TRANSLATIONS = {
       'procedures.meta_desc': 'Explore our procedures — microblading, microneedling, plasma pen, lamination and more. Certified specialist in Silistra.',
       'procedures.page_title': 'Beauty procedures tailored to you',
       'procedures.page_subtitle': 'Aesthetic treatments in Silistra · Beauty Atelier IN',
-      'procedures.intro.trust_pill': '5.0 on Google · 31 reviews',
+      'procedures.intro.trust_pill': '5.0 on Google · 34 reviews',
       'procedures.intro.text': 'Every procedure is tailored to your individual needs, performed by a certified specialist in a sterile environment. Browse our services and find the right one for you.',
       'procedures.trust.certified': 'Certified PhiBrows artist',
       'procedures.trust.clients': '250+ happy clients',

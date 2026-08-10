@@ -45,6 +45,26 @@ fi
 
 echo "✓ Fetched from Google: rating=${RATING}, reviews=${COUNT}"
 
+# ── Monotonic guard ──────────────────────────────────────────────
+# The Places API and the Business Profile dashboard do not always agree:
+# on 2026-08-10 the dashboard showed 34 while this endpoint had been
+# returning 31 unchanged since 2026-07-06. Without this guard a stale or
+# filtered API response silently rewrites the site to a LOWER number and
+# pushes it live, and nobody finds out — the run looks like a success.
+#
+# Reviews going up is routine and stays fully automatic. Reviews going
+# down means Google removed something or the Place ID is resolving to the
+# wrong listing: both deserve a human, so we stop and say so.
+CURRENT=$(grep -o '"reviewCount"[[:space:]]*:[[:space:]]*"[0-9]\+"' index.html \
+          | head -1 | grep -o '[0-9]\+' || echo 0)
+
+if [[ "$CURRENT" -gt 0 && "$COUNT" -lt "$CURRENT" ]]; then
+  echo "::warning::Google Places reports ${COUNT} reviews but the site says ${CURRENT}."
+  echo "::warning::Refusing to lower the count automatically. Check the Business"
+  echo "::warning::Profile dashboard and GOOGLE_PLACE_ID, then re-run this workflow."
+  exit 1
+fi
+
 # ── Bulgarian patterns ──────────────────────────────────────────
 # Pattern A:  "N отзива"  (exact count — index & procedures)
 # Pattern B:  "N+ отзива" (with plus sign — contact page)

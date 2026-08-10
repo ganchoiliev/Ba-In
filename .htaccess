@@ -6,13 +6,21 @@
 ErrorDocument 404 /404.html
 ErrorDocument 403 /404.html
 
-# Enforce HTTPS (uncomment on live server with SSL)
-# RewriteEngine On
-# RewriteCond %{HTTPS} off
-# RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+# Enforce HTTPS  (fallback only)
+# Hostinger's edge (hcdn) already answers http:// with a 301 to https://, so in
+# normal operation this rule never fires. It exists so the site is still
+# https-only if that platform setting is ever toggled off.
+#
+# The X-Forwarded-Proto condition is NOT optional. The edge terminates TLS and
+# proxies to Apache; on that hop %{HTTPS} reads "off" for a request that already
+# arrived securely. Without the second condition this is an infinite redirect
+# loop, not a redirect — which is why the block was left commented out.
+RewriteEngine On
+RewriteCond %{HTTPS} off
+RewriteCond %{HTTP:X-Forwarded-Proto} !=https
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
 # Remove trailing slashes
-RewriteEngine On
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^(.*)/$ /$1 [L,R=301]
 
@@ -21,6 +29,7 @@ RewriteRule ^blog-carousel-2\.html$ /blog.html [L,R=301]
 
 # Security headers
 <IfModule mod_headers.c>
+    Header always set Strict-Transport-Security "max-age=31536000"
     Header always set X-Content-Type-Options "nosniff"
     Header always set X-Frame-Options "SAMEORIGIN"
     Header always set Referrer-Policy "strict-origin-when-cross-origin"
