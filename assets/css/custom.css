@@ -3920,3 +3920,31 @@
 }
 
 .ba-proof .sec-title { margin-bottom: 22px; }
+
+/* ── Skip link ────────────────────────────────────────────────────────────
+   No page had one, and the first four Tab stops on this site are the AI chat
+   widget — before the logo, before the H1. A keyboard or screen-reader user
+   had no way past the header. Hidden until focused, so nothing changes
+   visually for anyone else.
+   ──────────────────────────────────────────────────────────────────────── */
+.skip-link {
+    position: absolute;
+    left: -9999px;
+    top: 0;
+    z-index: 100000;
+    padding: 14px 22px;
+    background: #0A2241;
+    color: #FFFFFF !important;
+    font-family: var(--mediox-font, "Manrope", sans-serif);
+    font-size: 15px;
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: 0 0 12px 0;
+}
+
+.skip-link:focus,
+.skip-link:focus-visible {
+    left: 0 !important;
+    outline: 3px solid #E8C882;
+    outline-offset: -3px;
+}

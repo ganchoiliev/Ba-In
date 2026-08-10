@@ -57,10 +57,19 @@ SED_BG_B="s/[0-9]\++ отзива/${COUNT}+ отзива/g"
 SED_EN_C="s/[0-9]\+ reviews/${COUNT} reviews/g"
 SED_EN_D="s/[0-9]\++ reviews/${COUNT}+ reviews/g"
 
+# Pattern E/F: the JSON-LD numbers. Added because the visible text and the
+# structured data were drifting apart — the page said 31 отзива while
+# "reviewCount" still said 30, and index.html now carries an aggregateRating
+# too. Google reads the schema, so a stale number here is the one that costs.
+SED_LD_COUNT="s/\"reviewCount\"[[:space:]]*:[[:space:]]*\"[0-9]\+\"/\"reviewCount\": \"${COUNT}\"/g"
+SED_LD_RATING="s/\"ratingValue\"[[:space:]]*:[[:space:]]*\"[0-9]\.[0-9]\"/\"ratingValue\": \"${RATING}\"/g"
+
 # ── Apply replacements to HTML files ────────────────────────────
 for FILE in index.html procedures.html; do
   if [[ -f "$FILE" ]]; then
     sed -i "$SED_BG_A" "$FILE"
+    sed -i "$SED_LD_COUNT" "$FILE"
+    sed -i "$SED_LD_RATING" "$FILE"
     echo "  Updated $FILE (BG pattern)"
   fi
 done
@@ -68,6 +77,8 @@ done
 for FILE in contact.html; do
   if [[ -f "$FILE" ]]; then
     sed -i "$SED_BG_B" "$FILE"
+    sed -i "$SED_LD_COUNT" "$FILE"
+    sed -i "$SED_LD_RATING" "$FILE"
     echo "  Updated $FILE (BG contact pattern)"
   fi
 done
