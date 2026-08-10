@@ -39,8 +39,11 @@ function today() {
     };
 }
 
+// Hero images are exported as WebP: markedly smaller files than PNG for the
+// same visual quality, which speeds up the post's LCP. Every browser the site
+// targets supports WebP, so no PNG fallback is needed.
 function slugToHeroPath(slug) {
-    return `assets/images/blog/${slug}-hero.png`;
+    return `assets/images/blog/${slug}-hero.webp`;
 }
 
 // ─── Load topics ────────────────────────────────────────────────────
@@ -81,6 +84,91 @@ function getNextTopic() {
 }
 
 // ─── Generate article content HTML from sections ────────────────────
+// Section headings are emitted as <h3>: the post outline is h1 (page banner)
+// > h2 (article title) > h3 (sections). They used to be <h4>, which put the
+// article's own sections on the same level as the sidebar widget titles.
+// A section's prose. Enriched topics carry `body` (an array of paragraphs); the
+// ones still waiting to be written only carry `hint` -- a one-line note to self
+// -- so fall back to that and keep generating.
+function sectionProse(section, cls) {
+    const paras = (Array.isArray(section.body) && section.body.length)
+        ? section.body
+        : (section.hint ? [section.hint] : []);
+    return paras.map(p => `<p class="${cls}">${p}</p>\n`).join('');
+}
+
+// FAQ block, rendered after the last section. The questions are <h4> because
+// they sit one level under the FAQ's own <h3>.
+function generateFaqBlock(topic, cls) {
+    if (!Array.isArray(topic.faq) || !topic.faq.length) return '';
+    let html = `\n<h3 class="blog-details__inner__title" style="margin-top: 20px;">Често задавани въпроси</h3>\n`;
+    topic.faq.forEach(item => {
+        html += `<h4 style="margin-top: 18px;">${item.q}</h4>\n`;
+        html += `<p class="${cls}">${item.a}</p>\n`;
+    });
+    return html;
+}
+
+// Index of the first occurrence of `phrase` in paragraph text that is not already
+// inside an anchor or an attribute, or -1. Headings are never considered because
+// only <p> regions are scanned.
+function findInParagraph(html, phrase) {
+    const pRe = /<p\b[^>]*>([\s\S]*?)<\/p>/g;
+    let m;
+    while ((m = pRe.exec(html)) !== null) {
+        const inner = m[1];
+        const innerStart = m.index + m[0].length - inner.length - '</p>'.length;
+        let idx = inner.indexOf(phrase);
+        while (idx !== -1) {
+            const before = inner.slice(0, idx);
+            const opened = (before.match(/<a\b/g) || []).length;
+            const closed = (before.match(/<\/a>/g) || []).length;
+            const insideTag = before.lastIndexOf('<') > before.lastIndexOf('>');
+            if (opened === closed && !insideTag) return innerStart + idx;
+            idx = inner.indexOf(phrase, idx + 1);
+        }
+    }
+    return -1;
+}
+
+// Link the first literal mention of each phrase -- once per link, body prose
+// only. A phrase that never appears is skipped silently.
+function applyInternalLinks(blocks, links) {
+    if (!Array.isArray(links) || !links.length) return blocks;
+    const out = blocks.slice();
+    links.forEach(link => {
+        if (!link || !link.href || !link.text) return;
+        for (let b = 0; b < out.length; b++) {
+            const at = findInParagraph(out[b], link.text);
+            if (at < 0) continue;
+            out[b] = out[b].slice(0, at) +
+                     `<a href="${link.href}">${link.text}</a>` +
+                     out[b].slice(at + link.text.length);
+            break;
+        }
+    });
+    return out;
+}
+
+// Google reads FAQ rich results from a standalone FAQPage block. JSON.stringify
+// does the escaping, and `<` is encoded so the payload can never close the
+// <script> element early.
+function buildFaqJsonLd(topic) {
+    if (!Array.isArray(topic.faq) || !topic.faq.length) return '';
+    const data = {
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: topic.faq.map(item => ({
+            '@type': 'Question',
+            name: item.q,
+            acceptedAnswer: { '@type': 'Answer', text: item.a }
+        }))
+    };
+    const json = JSON.stringify(data, null, 4).replace(/</g, '\\u003c');
+    return '    <script type="application/ld+json">\n    ' +
+           json.split('\n').join('\n    ') + '\n    </script>\n';
+}
+
 function generateContentBlock1(topic) {
     let html = '';
     
@@ -91,8 +179,8 @@ function generateContentBlock1(topic) {
     // First 3 sections go in the card content area
     const firstSections = topic.sections.slice(0, 3);
     firstSections.forEach(section => {
-        html += `\n<h4 class="blog-details__inner__title" style="margin-top: 20px;">${section.heading}</h4>\n`;
-        html += `<p class="blog-card-four__text">${section.hint}</p>\n`;
+        html += `\n<h3 class="blog-details__inner__title" style="margin-top: 20px;">${section.heading}</h3>\n`;
+        html += sectionProse(section, 'blog-card-four__text');
     });
     
     return html;
@@ -104,13 +192,16 @@ function generateContentBlock2(topic) {
     // Remaining sections
     const remainingSections = topic.sections.slice(3);
     remainingSections.forEach(section => {
-        html += `\n<h4 class="blog-details__inner__title" style="margin-top: 20px;">${section.heading}</h4>\n`;
-        html += `<p class="blog-details__inner__text">${section.hint}</p>\n`;
+        html += `\n<h3 class="blog-details__inner__title" style="margin-top: 20px;">${section.heading}</h3>\n`;
+        html += sectionProse(section, 'blog-details__inner__text');
     });
     
+    // FAQ, straight after the last section
+    html += generateFaqBlock(topic, 'blog-details__inner__text');
+
     // Closing CTA
     html += `
-<h4 class="blog-details__inner__title" style="margin-top: 20px;">Заключение</h4>
+<h3 class="blog-details__inner__title" style="margin-top: 20px;">Заключение</h3>
 <p class="blog-details__inner__text">Надяваме се, че тази статия ви беше полезна! Ако имате допълнителни въпроси или искате да научите повече, не се колебайте да се свържете с нас.</p>
 <p class="blog-details__inner__text">В Beauty Atelier IN вярваме, че информираният избор е най-красивият. <strong><a href="contact.html" style="color:var(--mediox-base);">Запазете безплатна консултация</a></strong> и нека заедно намерим най-доброто решение за вас.</p>
 
@@ -126,6 +217,9 @@ function buildPost(topic) {
     let html = fs.readFileSync(TEMPLATE, 'utf-8');
     const date = today();
     const heroPath = slugToHeroPath(topic.slug);
+    // The hero's alt text describes the picture, not the article, so it comes
+    // from the topic; older topics without one fall back to the title.
+    const heroAlt = topic.heroAlt || topic.title;
     const fullUrl = `https://ba-in.com/${topic.slug}.html`;
     
     // ── Schema: BlogPosting ──
@@ -148,6 +242,12 @@ function buildPost(topic) {
         `"mainEntityOfPage": {"@type": "WebPage", "@id": "${fullUrl}"}`
     );
     html = html.replace(/"articleSection": "[^"]*"/, `"articleSection": "${topic.category}"`);
+
+    // ── Schema: FAQPage (only when the topic ships questions) ──
+    const faqLd = buildFaqJsonLd(topic);
+    if (faqLd) {
+        html = html.replace('</head>', () => faqLd + '</head>');
+    }
     
     // ── <title> ──
     html = html.replace(
@@ -203,7 +303,7 @@ function buildPost(topic) {
     // ── Hero image ──
     html = html.replace(
         /src="assets\/images\/blog\/pmu-removal-hero\.png"\s*\n\s*alt="[^"]*"/,
-        `src="${heroPath}"\n                                        alt="${topic.title}"`
+        () => `src="${heroPath}"\n                                        alt="${heroAlt}"`
     );
     
     // ── Date badge ──
@@ -217,23 +317,29 @@ function buildPost(topic) {
     );
     
     // ── Blog card title ──
+    // The article title is an <h2> (page outline: h1 banner > h2 article title >
+    // h3 sections), so this must match the <h2> in the template file.
     html = html.replace(
-        /<h3 class="blog-card-four__title">Премахване на Перманентен Грим: Всичко, Което Трябва да Знаете<\/h3>/,
-        `<h3 class="blog-card-four__title">${topic.title}</h3>`
+        /<h2 class="blog-card-four__title">Премахване на Перманентен Грим: Всичко, Което Трябва да Знаете<\/h2>/,
+        `<h2 class="blog-card-four__title">${topic.title}</h2>`
     );
     
     // ── Content block 1 (inside blog-card-four__content__inner) ──
-    const contentBlock1 = generateContentBlock1(topic);
+    let contentBlock1 = generateContentBlock1(topic);
+    let contentBlock2 = generateContentBlock2(topic);
+    // The two blocks are one article, so they share a single internal-link
+    // budget: each phrase is linked at most once across the whole body.
+    [contentBlock1, contentBlock2] = applyInternalLinks(
+        [contentBlock1, contentBlock2], topic.internalLinks);
     html = html.replace(
         /<div class="blog-card-four__content__inner">[\s\S]*?<\/div>\s*<\/div>\s*<\/div>\s*<div class="blog-details__inner">/,
-        `<div class="blog-card-four__content__inner">\n${contentBlock1}\n</div>\n</div>\n</div>\n<div class="blog-details__inner">`
+        () => `<div class="blog-card-four__content__inner">\n${contentBlock1}\n</div>\n</div>\n</div>\n<div class="blog-details__inner">`
     );
     
     // ── Content block 2 (inside blog-details__inner__content) ──
-    const contentBlock2 = generateContentBlock2(topic);
     html = html.replace(
         /<div class="blog-details__inner__content wow fadeInUp" data-wow-duration="1500ms">[\s\S]*?<\/div>\s*<\/div>\s*<div class="blog-details__meta/,
-        `<div class="blog-details__inner__content wow fadeInUp" data-wow-duration="1500ms">\n${contentBlock2}\n</div>\n</div>\n<div class="blog-details__meta`
+        () => `<div class="blog-details__inner__content wow fadeInUp" data-wow-duration="1500ms">\n${contentBlock2}\n</div>\n</div>\n<div class="blog-details__meta`
     );
     
     // ── Categories ──
@@ -281,8 +387,11 @@ function buildPost(topic) {
     
     // ── Footer blog section ──
     html = html.replace(
-        /<img src="assets\/images\/blog\/pmu-removal-hero\.png" style="width: 70px; height: 70px; object-fit: cover;" alt="Премахване на перманентен грим - Beauty Atelier IN">/,
-        `<img src="${heroPath}" style="width: 70px; height: 70px; object-fit: cover;" alt="${topic.title}">`
+        // The template's <img> also carries loading/decoding attributes; without
+        // them in the pattern this replacement silently missed and every generated
+        // post kept the PMU thumbnail in its footer.
+        /<img src="assets\/images\/blog\/pmu-removal-hero\.png" style="width: 70px; height: 70px; object-fit: cover;" alt="[^"]*"([^>]*)>/,
+        (_m, rest) => `<img src="${heroPath}" style="width: 70px; height: 70px; object-fit: cover;" alt="${heroAlt}"${rest}>`
     );
     html = html.replace(
         /href="pmu-removal-guide\.html" data-i18n="shared\.footer\.blog1_title">Правилна процедура<\/a>/,

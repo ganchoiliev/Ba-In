@@ -3948,3 +3948,26 @@
     outline: 3px solid #E8C882;
     outline-offset: -3px;
 }
+
+/* Blog section headings were <h4> and are now <h3> (heading-hierarchy fix).
+   No CSS ever targeted this class, so they rendered at the browser default.
+   Pinned to sit deliberately between the 24px article title and 16px body. */
+h3.blog-details__inner__title {
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.35;
+}
+
+/* FAQ questions inside an article. They are <h4> under the FAQ's <h3>, but a
+   site-wide h4 rule was rendering them at 24px/500 — LARGER and lighter than
+   the 20px/700 section headings they sit beneath, inverting the hierarchy the
+   heading fix just established. Pinned below the section level. */
+.blog-details__inner__content h4,
+.blog-card-four__content__inner h4 {
+    font-size: 17px !important;
+    font-weight: 700 !important;
+    line-height: 1.4;
+    margin-top: 22px;
+    margin-bottom: 6px;
+    color: var(--mediox-black, #0A2241);
+}

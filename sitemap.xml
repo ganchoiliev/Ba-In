@@ -245,4 +245,11 @@
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
+
+    <url>
+        <loc>https://ba-in.com/phibrows-vs-microblading.html</loc>
+        <lastmod>2026-08-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
 </urlset>
