@@ -3428,3 +3428,100 @@
     outline: 3px solid #FFFFFF !important;
     outline-offset: 3px !important;
 }
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   RESULTS GRID — the homepage "Нашата Галерия" section
+
+   4:5 portrait, because brow and lash work is a vertical subject and the
+   previous 3:2 landscape slots were cropping the eye out of its own frame.
+
+   One authored motion moment: the tile lifts and the photograph inside it
+   drifts slightly wider, on an exponential ease-out. The photograph moves
+   further than its frame, which is what makes it read as depth rather than as
+   a hover effect. Everything else on the tile holds still.
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.ba-results {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+@media (max-width: 991px) { .ba-results { grid-template-columns: repeat(2, 1fr); gap: 14px; } }
+@media (max-width: 420px) { .ba-results { gap: 10px; } }
+
+.ba-result {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    border-radius: 16px;
+    background: #0F0F14;
+    border: 1px solid rgba(196, 154, 69, .20);
+    /* Offset and blur, not a zero-offset halo — the tile sits on the page,
+       it does not glow through it. */
+    box-shadow: 0 10px 30px -14px rgba(10, 10, 20, .55);
+    transition: transform .55s cubic-bezier(.16, 1, .3, 1),
+                box-shadow .55s cubic-bezier(.16, 1, .3, 1),
+                border-color .55s ease;
+}
+
+.ba-result img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    transition: transform .8s cubic-bezier(.16, 1, .3, 1);
+}
+
+/* Scrim exists so the caption clears 4.5:1 over any photograph underneath,
+   not for atmosphere. It is sized to the caption, not to the tile. */
+.ba-result::after {
+    content: "";
+    position: absolute;
+    inset: auto 0 0 0;
+    height: 46%;
+    background: linear-gradient(to top, rgba(8, 8, 12, .92) 0%, rgba(8, 8, 12, .52) 48%, rgba(8, 8, 12, 0) 100%);
+    pointer-events: none;
+    transition: opacity .55s ease;
+}
+
+.ba-result__caption {
+    position: absolute;
+    z-index: 2;
+    left: 18px;
+    right: 18px;
+    bottom: 16px;
+    color: #FFFFFF;
+    font-family: var(--mediox-font, "Manrope", sans-serif);
+    font-size: 14.5px;
+    font-weight: 600;
+    line-height: 1.35;
+    letter-spacing: .005em;
+}
+
+.ba-result:hover,
+.ba-result:focus-visible {
+    transform: translateY(-5px);
+    border-color: rgba(196, 154, 69, .58);
+    box-shadow: 0 24px 50px -18px rgba(10, 10, 20, .72);
+}
+
+.ba-result:hover img,
+.ba-result:focus-visible img { transform: scale(1.05); }
+
+.ba-result:focus-visible {
+    outline: 3px solid #0A2241 !important;
+    outline-offset: 3px !important;
+}
+
+@media (max-width: 991px) {
+    .ba-result__caption { left: 14px; right: 14px; bottom: 12px; font-size: 13px; }
+    .ba-result { border-radius: 14px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .ba-result, .ba-result img, .ba-result::after { transition: none; }
+    .ba-result:hover, .ba-result:focus-visible { transform: none; }
+    .ba-result:hover img, .ba-result:focus-visible img { transform: none; }
+}
