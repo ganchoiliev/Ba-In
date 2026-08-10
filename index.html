@@ -1283,224 +1283,36 @@ ul,ol{margin:0;padding:0;list-style:none}
 
 
 
-        <section class="testimonials-three section-space-two">
-            <div class="testimonials-three__bg"
-                style="background-image: url(assets/images/backgrounds/testimonials-bg-3-1.webp?v=2);"></div>
-            <!-- /.testimonials-three__bg -->
+        <!-- ═══ SOCIAL PROOF (merged) ═══════════════════════════════════════════
+             Two sections were doing one job badly. The testimonials carousel gave
+             ONE of three reviews a whole screen and hid the other two behind dots,
+             and the 5.0-from-Google credential sat in a separate strip 888px
+             further down — so the rating and the reviews it summarises never
+             appeared together. Worse, the only gold button in the whole social
+             proof zone said "Напиши отзив": at the moment a stranger is most
+             persuaded, the page asked her to do a favour for existing clients
+             instead of booking.
+
+             Now one section. The credential sits with the evidence, all three
+             reviews are visible at once, and the primary action is Запази час.
+             Writing a review is still there, as a quiet link, for the people who
+             actually came to do that.
+
+             "N отзива" is the exact phrasing scripts/update-review-count.sh
+             rewrites weekly — do not reword it or the count goes stale.
+             ═══════════════════════════════════════════════════════════════════ -->
+        <section class="ba-proof section-space">
             <div class="container">
-                <div class="row gutter-y-60">
-                    <div class="col-xl-5 col-lg-6">
-                        <div class="testimonials-three__content">
-                            <div class="sec-title">
-                                <div class="sec-title__top">
+                <div class="sec-title text-center">
+                    <div class="sec-title__top">
+                        <img src="assets/images/shapes/sec-title-s-1-1.webp?v=2" alt="" class="sec-title__img" loading="lazy" decoding="async">
+                        <span class="sec-title__tagline" data-i18n="index.testimonials.tagline">Какво Казват Нашите Клиенти</span>
+                    </div>
+                    <h2 class="sec-title__title">Нашите клиенти <span>споделят</span></h2>
+                </div>
 
-                                    <img src="assets/images/shapes/sec-title-s-1-1.webp?v=2"
-                                        alt="препоръки от нашите клиенти Beauty Atelier In Силистра"
-                                        class="sec-title__img" loading="lazy">
-
-
-                                    <span class="sec-title__tagline" data-i18n="index.testimonials.tagline">Какво Казват
-                                        Нашите Клиенти</span>
-                                    <!-- /.sec-title__tagline -->
-
-                                </div><!-- /.sec-title__top -->
-                                <h2 class="sec-title__title" data-i18n-html="index.testimonials.title">Нашите Клиенти
-                                    <br>Споделят
-                                </h2><!-- /.sec-title__title -->
-                            </div><!-- /.sec-title -->
-                            <div class="testimonials-three__image">
-                                <div class="testimonials-three__image__inner">
-                                    <img src="assets/images/testimonials/testimonial-quote-3-1.webp?v=2"
-                                        alt="препоръки от нашите клиенти Beauty Atelier In Силистра" loading="lazy">
-                                </div><!-- /.testimonials-three__image__inner -->
-                                <div class="testimonials-three__image__inner">
-                                    <img src="assets/images/testimonials/testimonial-quote-3-2.webp?v=2"
-                                        alt="препоръки от нашите клиенти Beauty Atelier In Силистра" loading="lazy">
-                                </div><!-- /.testimonials-three__image__inner -->
-                            </div><!-- /.testimonials-three__image -->
-                        </div><!-- /.testimonials-three__content -->
-                    </div><!-- /.col-xl-5 col-lg-6 -->
-                    <div class="col-xl-7 col-lg-6">
-                        <div class="testimonials-three__card">
-                            <div class="testimonials-three__card__bg"
-                                style="background-image: url(assets/images/shapes/testimonial-card-bg-3-1.webp?v=2);">
-                            </div>
-                            <div class="testimonials-three__card__inner">
-                                <div class="testimonials-three__thumb mediox-owl__carousel owl-carousel owl-theme"
-                                    data-owl-options='{
-                        "items": 1,
-                        "margin": 50,
-                        "loop": true,
-                        "smartSpeed": 800,
-                        "nav": false,
-                        
-                        "navText": ["<span class=\"icon-arrow-left\"></span>","<span class=\"icon-arrow-right\"></span>"],
-                        "autoplay": true,
-                        "autoplayTimeout": 12000,
-                        "autoplayHoverPause": true,
-                        "center": true,
-                        "responsive": {
-                            "0": {
-                                "items": 3,
-                                "margin": 30
-                            },
-                            "1800": {
-                                "items": 3,
-                                "margin": 50
-                            }
-                        }
-                    }'>
-                                    <a class="item">
-                                        <span class="testimonials-three__thumb__image">
-                                            <img src="assets/images/testimonials/testimonial-thumb-3-1.webp"
-                                                alt="препоръки от нашите клиенти Beauty Atelier In Силистра" loading="lazy">
-                                        </span><!-- /.testimonials-three__thumb__image -->
-                                    </a><!-- /.item -->
-                                    <a class="item">
-                                        <span class="testimonials-three__thumb__image">
-                                            <img src="assets/images/testimonials/testimonial-thumb-3-2.webp"
-                                                alt="препоръки от нашите клиенти Beauty Atelier In Силистра" loading="lazy">
-                                        </span><!-- /.testimonials-three__thumb__image -->
-                                    </a><!-- /.item -->
-                                    <a class="item">
-                                        <span class="testimonials-three__thumb__image">
-                                            <img src="assets/images/testimonials/testimonial-thumb-3-3.webp"
-                                                alt="препоръки от нашите клиенти Beauty Atelier In Силистра" loading="lazy">
-                                        </span><!-- /.testimonials-three__thumb__image -->
-                                    </a><!-- /.item -->
-                                </div><!-- /.testimonials-three__thumb -->
-                                <div class="testimonials-three__carousel mediox-owl__carousel mediox-owl__carousel--basic-nav owl-carousel owl-theme"
-                                    data-owl-options='{
-                            "items": 1,
-                            "margin": 10,
-                            "loop": true,
-                            "smartSpeed": 800,
-                            "nav": false,
-                            
-                            "navText": ["<span class=\"icon-arrow-left\"></span>","<span class=\"icon-arrow-right\"></span>"],
-                            "dots": true,
-                            "autoplay": true,
-                            "autoplayTimeout": 12000,
-                            "autoplayHoverPause": true
-                        }'>
-                                    <div class="item">
-                                        <div class="testimonial-card-three">
-                                            <div class="testimonial-card-three__ratings">
-                                                <div class="mediox-ratings">
-                                                    <span class="mediox-ratings__icon">
-                                                        <i class="icon-star"></i>
-                                                    </span><!-- /.mediox-ratings__icon -->
-                                                    <span class="mediox-ratings__icon">
-                                                        <i class="icon-star"></i>
-                                                    </span><!-- /.mediox-ratings__icon -->
-                                                    <span class="mediox-ratings__icon">
-                                                        <i class="icon-star"></i>
-                                                    </span><!-- /.mediox-ratings__icon -->
-                                                    <span class="mediox-ratings__icon">
-                                                        <i class="icon-star"></i>
-                                                    </span><!-- /.mediox-ratings__icon -->
-                                                    <span class="mediox-ratings__icon">
-                                                        <i class="icon-star"></i>
-                                                    </span><!-- /.mediox-ratings__icon -->
-                                                </div><!-- /.product-ratings -->
-                                            </div><!-- /.testimonial-card-three__ratings -->
-                                            <p class="testimonial-card-three__quote">Very good and professional
-                                                attitude, I was extremely satisfied!</p>
-                                            <!-- /.testimonial-card-three__quote -->
-                                            <div class="testimonial-card-three__identity">
-                                                <h4 class="testimonial-card-three__name">Maria Chavdarova</h4>
-                                                <!-- /.testimonial-card-three__name -->
-                                                <p class="testimonial-card-three__designation">client</p>
-                                                <!-- /.testimonial-card-three__designation -->
-                                            </div><!-- /.testimonial-card-three__identity -->
-                                        </div><!-- /.testimonial-card-three -->
-                                    </div><!-- /.item -->
-                                    <div class="item">
-                                        <div class="testimonial-card-three">
-                                            <div class="testimonial-card-three__ratings">
-                                                <div class="mediox-ratings">
-                                                    <span class="mediox-ratings__icon">
-                                                        <i class="icon-star"></i>
-                                                    </span><!-- /.mediox-ratings__icon -->
-                                                    <span class="mediox-ratings__icon">
-                                                        <i class="icon-star"></i>
-                                                    </span><!-- /.mediox-ratings__icon -->
-                                                    <span class="mediox-ratings__icon">
-                                                        <i class="icon-star"></i>
-                                                    </span><!-- /.mediox-ratings__icon -->
-                                                    <span class="mediox-ratings__icon">
-                                                        <i class="icon-star"></i>
-                                                    </span><!-- /.mediox-ratings__icon -->
-                                                    <span class="mediox-ratings__icon">
-                                                        <i class="icon-star"></i>
-                                                    </span><!-- /.mediox-ratings__icon -->
-                                                </div><!-- /.product-ratings -->
-                                            </div><!-- /.testimonial-card-three__ratings -->
-                                            <p class="testimonial-card-three__quote"
-                                                data-i18n="index.testimonials.t2_quote">Атмосферата е уютна, безупречно
-                                                чиста и изпълнена с положителна енергия. Кара те да се чувстваш добре
-                                                дошъл от самото начало, а отношението е толкова персонализирано, че с
-                                                удоволствие се връщаш отново.</p>
-                                            <!-- /.testimonial-card-three__quote -->
-                                            <div class="testimonial-card-three__identity">
-                                                <h4 class="testimonial-card-three__name">Dian Veselinov</h4>
-                                                <!-- /.testimonial-card-three__name -->
-                                                <p class="testimonial-card-three__designation">client</p>
-                                                <!-- /.testimonial-card-three__designation -->
-                                            </div><!-- /.testimonial-card-three__identity -->
-                                        </div><!-- /.testimonial-card-three -->
-                                    </div><!-- /.item -->
-                                    <div class="item">
-                                        <div class="testimonial-card-three">
-                                            <div class="testimonial-card-three__ratings">
-                                                <div class="mediox-ratings">
-                                                    <span class="mediox-ratings__icon">
-                                                        <i class="icon-star"></i>
-                                                    </span><!-- /.mediox-ratings__icon -->
-                                                    <span class="mediox-ratings__icon">
-                                                        <i class="icon-star"></i>
-                                                    </span><!-- /.mediox-ratings__icon -->
-                                                    <span class="mediox-ratings__icon">
-                                                        <i class="icon-star"></i>
-                                                    </span><!-- /.mediox-ratings__icon -->
-                                                    <span class="mediox-ratings__icon">
-                                                        <i class="icon-star"></i>
-                                                    </span><!-- /.mediox-ratings__icon -->
-                                                    <span class="mediox-ratings__icon">
-                                                        <i class="icon-star"></i>
-                                                    </span><!-- /.mediox-ratings__icon -->
-                                                </div><!-- /.product-ratings -->
-                                            </div><!-- /.testimonial-card-three__ratings -->
-                                            <p class="testimonial-card-three__quote"
-                                                data-i18n="index.testimonials.t3_quote">Каквото и да кажа няма да е
-                                                достатъчно за да изразя колко доволна останах! Удивена съм! Благодаря за
-                                                невероятната трансформация! Възхищавам се на професионализма и
-                                                изключителното внимание към клиента! Благодаря ти отново!</p>
-                                            <!-- /.testimonial-card-three__quote -->
-                                            <div class="testimonial-card-three__identity">
-                                                <h4 class="testimonial-card-three__name">Mihaela Kishisheva</h4>
-                                                <!-- /.testimonial-card-three__name -->
-                                                <p class="testimonial-card-three__designation">client</p>
-                                                <!-- /.testimonial-card-three__designation -->
-                                            </div><!-- /.testimonial-card-three__identity -->
-                                        </div><!-- /.testimonial-card-three -->
-                                    </div><!-- /.item -->
-
-                                </div><!-- /.testimonials-three__carousel -->
-                            </div><!-- /.testimonials-three__card__inner -->
-                        </div><!-- /.testimonials-three__card -->
-                    </div><!-- /.col-xl-7 col-lg-6 -->
-                </div><!-- /.row -->
-            </div><!-- /.container -->
-        </section><!-- /.testimonials-three section-space-two -->
-
-        <!-- Google Reviews CTA -->
-        <section class="google-reviews">
-            <div class="container">
-                <div class="google-reviews__inner">
-                    <div class="google-reviews__badge">
-                        <!-- Google "G" logo -->
-                        <svg class="google-reviews__logo" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"
+                <div class="ba-proof__badge">
+                    <svg class="ba-proof__glogo" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"
                             aria-hidden="true">
                             <path fill="#EA4335"
                                 d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z" />
@@ -1512,26 +1324,50 @@ ul,ol{margin:0;padding:0;list-style:none}
                                 d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.18 1.48-4.97 2.31-8.16 2.31-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z" />
                             <path fill="none" d="M0 0h48v48H0z" />
                         </svg>
-                        <div class="google-reviews__info">
-                            <span class="google-reviews__rating">5.0</span>
-                            <span class="google-reviews__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-                            <span class="google-reviews__label" data-i18n="reviews.google_label">Google Reviews</span>
-                        </div>
-                    </div>
-                    <div class="google-reviews__divider" aria-hidden="true"></div>
-                    <div class="google-reviews__cta">
-                        <a href="https://share.google/LWLt1rNLslWSX71RU" target="_blank" rel="noopener"
-                            class="google-reviews__btn" data-i18n="reviews.write_review">
-                            Напиши отзив
-                        </a>
-                        <a href="https://www.google.com/maps/place/Beauty+Atelier+IN/@44.1160423,27.2608327,20z/data=!4m8!3m7!1s0x40b01f52c690358b:0x84fa30782f20ca61!8m2!3d44.1159617!4d27.2616483!9m1!1b1!16s%2Fg%2F11yf3zyzvy?entry=ttu&g_ep=EgoyMDI2MDMwMi4wIKXMDSoASAFQAw%3D%3D"
-                            target="_blank" rel="noopener" class="google-reviews__see-all" data-i18n="reviews.see_all">
-                            Виж всички отзиви
-                        </a>
-                    </div>
+                    <span class="ba-proof__rating">5.0</span>
+                    <span class="ba-proof__stars" aria-hidden="true">★★★★★</span>
+                    <span class="ba-proof__count" data-i18n="reviews.count_line">от 31 отзива в Google</span>
                 </div>
-            </div>
-        </section><!-- /.google-reviews -->
+
+                <div class="ba-proof__grid">
+                        <figure class="ba-quote">
+                            <div class="ba-quote__stars" aria-label="5 от 5 звезди">★★★★★</div>
+                            <blockquote class="ba-quote__text">Very good and professional attitude, I was extremely satisfied!</blockquote>
+                            <figcaption class="ba-quote__by">
+                                <span class="ba-quote__name">Maria Chavdarova</span>
+                                <span class="ba-quote__role">Клиентка</span>
+                            </figcaption>
+                        </figure>
+                        <figure class="ba-quote">
+                            <div class="ba-quote__stars" aria-label="5 от 5 звезди">★★★★★</div>
+                            <blockquote class="ba-quote__text" data-i18n="index.testimonials.t2_quote">Атмосферата е уютна, безупречно чиста и изпълнена с положителна енергия. Кара те да се чувстваш добре дошъл от самото начало, а отношението е толкова персонализирано, че с удоволствие се връщаш отново.</blockquote>
+                            <figcaption class="ba-quote__by">
+                                <span class="ba-quote__name">Dian Veselinov</span>
+                                <span class="ba-quote__role">Клиент</span>
+                            </figcaption>
+                        </figure>
+                        <figure class="ba-quote">
+                            <div class="ba-quote__stars" aria-label="5 от 5 звезди">★★★★★</div>
+                            <blockquote class="ba-quote__text" data-i18n="index.testimonials.t3_quote">Каквото и да кажа няма да е достатъчно за да изразя колко доволна останах! Удивена съм! Благодаря за невероятната трансформация! Възхищавам се на професионализма и изключителното внимание към клиента! Благодаря ти отново!</blockquote>
+                            <figcaption class="ba-quote__by">
+                                <span class="ba-quote__name">Mihaela Kishisheva</span>
+                                <span class="ba-quote__role">Клиентка</span>
+                            </figcaption>
+                        </figure>
+                </div><!-- /.ba-proof__grid -->
+
+                <div class="ba-proof__actions">
+                    <a href="appointment.html" class="mediox-btn">
+                        <span data-i18n="shared.form.submit">Запази час</span>
+                        <span class="mediox-btn__icon"><i class="icon-up-right-arrow"></i></span>
+                    </a>
+                    <span class="ba-proof__links">
+                        <a href="https://www.google.com/maps/place/Beauty+Atelier+IN/@44.1160423,27.2608327,20z/data=!4m8!3m7!1s0x40b01f52c690358b:0x84fa30782f20ca61!8m2!3d44.1159617!4d27.2616483!9m1!1b1!16s%2Fg%2F11yf3zyzvy?entry=ttu&g_ep=EgoyMDI2MDMwMi4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener" class="ba-proof__link" data-i18n="reviews.see_all">Виж всички отзиви</a>
+                        <a href="https://share.google/LWLt1rNLslWSX71RU" target="_blank" rel="noopener" class="ba-proof__link" data-i18n="reviews.write_review">Напиши отзив</a>
+                    </span>
+                </div>
+            </div><!-- /.container -->
+        </section><!-- /.ba-proof -->
 
         <section class="blog-three section-space-top-two">
             <div class="container">

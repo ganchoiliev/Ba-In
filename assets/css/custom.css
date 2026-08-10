@@ -3779,3 +3779,144 @@
 .work-process-one .sec-title__title span,
 .faq-one .sec-title__tagline,
 .faq-one .sec-title__title span { color: #E0BE79 !important; }
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   SOCIAL PROOF — merged testimonials + Google credential
+
+   Replaces two sections: a carousel showing one of three reviews with the rest
+   behind dots, and a separate rating strip 888px further down. A rating means
+   nothing next to nothing; it means something next to the reviews it counts.
+
+   Same system as the results grid and the service cards — one scrim-free card
+   language, one motion moment, gold from the accessible tokens.
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.ba-proof__badge {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px 14px;
+    margin: 0 0 40px;
+}
+
+.ba-proof__glogo { width: 30px; height: 30px; flex: 0 0 auto; }
+
+.ba-proof__rating {
+    font-size: 30px;
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: -.02em;
+    color: var(--mediox-black, #0A2241);
+}
+
+.ba-proof__stars { font-size: 19px; letter-spacing: 2px; color: var(--ba-gold-ink, #70500C); }
+
+.ba-proof__count {
+    font-size: 15px;
+    font-weight: 600;
+    color: #5A5A5A;
+}
+
+.ba-proof__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+    align-items: stretch;
+}
+
+@media (max-width: 991px) { .ba-proof__grid { grid-template-columns: 1fr; gap: 16px; } }
+
+.ba-quote {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin: 0;
+    padding: 30px 28px 26px;
+    border-radius: 18px;
+    background: #FFFFFF;
+    border: 1px solid rgba(10, 34, 65, .08);
+    box-shadow: 0 12px 30px -18px rgba(10, 10, 20, .38);
+    transition: transform .5s cubic-bezier(.16, 1, .3, 1),
+                box-shadow .5s cubic-bezier(.16, 1, .3, 1),
+                border-color .5s ease;
+}
+
+.ba-quote:hover {
+    transform: translateY(-4px);
+    border-color: rgba(196, 154, 69, .45);
+    box-shadow: 0 24px 46px -20px rgba(10, 10, 20, .5);
+}
+
+.ba-quote__stars { font-size: 15px; letter-spacing: 2px; color: var(--ba-gold-ink, #70500C); }
+
+.ba-quote__text {
+    flex: 1 1 auto;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.7;
+    color: #33383F;
+    /* Body measure — three columns of unbroken review text at full container
+       width would run well past a comfortable line length. */
+    max-width: 46ch;
+}
+
+.ba-quote__by { display: flex; flex-direction: column; gap: 2px; }
+
+.ba-quote__name {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--mediox-black, #0A2241);
+}
+
+.ba-quote__role { font-size: 13.5px; font-weight: 600; color: #7A7A7A; }
+
+.ba-proof__actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    margin-top: 42px;
+}
+
+.ba-proof__links { display: inline-flex; align-items: center; gap: 22px; flex-wrap: wrap; justify-content: center; }
+
+.ba-proof__link {
+    font-size: 14.5px;
+    font-weight: 600;
+    color: #4A4A4A;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-thickness: 1px;
+    transition: color .35s ease;
+}
+
+.ba-proof__link:hover { color: var(--ba-gold-ink, #70500C); }
+
+.ba-proof__link:focus-visible { outline: 3px solid #0A2241 !important; outline-offset: 3px !important; }
+
+@media (max-width: 575px) {
+    .ba-proof__rating { font-size: 26px; }
+    .ba-quote { padding: 24px 22px 22px; }
+    .ba-quote__text { font-size: 15px; }
+    .ba-proof__links { gap: 16px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .ba-quote { transition: none; }
+    .ba-quote:hover { transform: none; }
+}
+
+/* The shared .sec-title__top is a flex row that ignores text-center, so the
+   eyebrow hung left of a centred heading. */
+.ba-proof .sec-title__top {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.ba-proof .sec-title { margin-bottom: 22px; }
