@@ -384,7 +384,7 @@
                     <div class="col-xl-12">
                         <div class="appointment-one__content" id="appointment-form">
                             <h2 class="appointment-one__title" data-i18n="appointment.form_title">Запазете Безплатна Консултация</h2>
-                            <p class="appointment-one__subtitle" data-i18n="appointment.form_subtitle" style="color: rgba(255,255,255,0.8); font-size: 1rem; margin-bottom: 1.5rem;">Отговаряме в рамките на 2 часа. Без ангажимент.</p>
+                            <p class="appointment-one__subtitle" data-i18n="appointment.form_subtitle" style="color: rgba(255,255,255,0.8); font-size: 1rem; margin-bottom: 1.5rem;">Отговаряме в рамките на 24 часа. Без ангажимент.</p>
 
                             <form action="assets/inc/sendemail.php" method="post"
                                 class="appointment-one__form contact-form-validated form-one wow fadeInUp"
@@ -398,20 +398,24 @@
                                 <div class="form-one__group">
 
                                     <div class="form-one__control">
-                                        <input type="text" name="name" placeholder="Вашето Име*" data-i18n-ph="shared.form.name_ph">
+                                        <label class="form-one__label" for="f-name" data-i18n="shared.form.label_name">Вашето име*</label>
+                                        <input id="f-name" type="text" name="name" placeholder="Вашето Име*" data-i18n-ph="shared.form.name_ph">
                                     </div>
 
                                     <div class="form-one__control">
-                                        <input type="email" name="email" placeholder="Имейл*" data-i18n-ph="shared.form.email_ph">
+                                        <label class="form-one__label" for="f-email" data-i18n="shared.form.label_email">Имейл (по избор)</label>
+                                        <input id="f-email" type="email" name="email" placeholder="Имейл" data-i18n-ph="shared.form.email_ph">
                                     </div>
 
                                     <div class="form-one__control">
-                                        <input type="tel" name="phone" placeholder="Телефонен номер" data-i18n-ph="shared.form.phone_ph">
+                                        <label class="form-one__label" for="f-phone" data-i18n="shared.form.label_phone">Телефон*</label>
+                                        <input id="f-phone" type="tel" name="phone" placeholder="Телефонен номер" data-i18n-ph="shared.form.phone_ph">
                                     </div>
 
 
                                     <div class="form-one__control">
-                                        <select class="selectpicker" name="services" aria-label="Type of Service">
+                                        <label class="form-one__label" for="f-services" data-i18n="shared.form.label_service">Процедура</label>
+                                        <select id="f-services" class="selectpicker" name="services">
                                             <option value="" selected data-i18n="shared.form.service_default">Изберете процедура</option>
                                             <option value="Микроблейдинг" data-i18n="shared.form.microblading">Микроблейдинг</option>
                                             <option value="Микронидлинг" data-i18n="shared.form.microneedling">Микронидлинг</option>
@@ -424,14 +428,16 @@
                                     </div>
 
                                     <div class="form-one__control">
-                                        <select class="selectpicker" name="doctor" aria-label="Name a Doctor">
+                                        <label class="form-one__label" for="f-doctor" data-i18n="shared.form.label_doctor">Специалист</label>
+                                        <select id="f-doctor" class="selectpicker" name="doctor">
                                             <option value="" selected data-i18n="shared.form.doctor_default">Вашият специалист</option>
                                             <option value="Илияна Николаева">Илияна Николаева</option>
                                         </select>
                                     </div>
 
                                     <div class="form-one__control form-one__control--full">
-                                        <textarea name="message" placeholder="Пишете тук..." data-i18n-ph="shared.form.message_ph"></textarea>
+                                        <label class="form-one__label" for="f-message" data-i18n="shared.form.label_message">Съобщение (по избор)</label>
+                                        <textarea id="f-message" name="message" placeholder="Пишете тук..." data-i18n-ph="shared.form.message_ph"></textarea>
                                     </div>
 
                                     <div class="form-one__control form-one__control--full">
@@ -439,7 +445,7 @@
                                             <span data-i18n="appointment.form_submit">Запази Консултация →</span>
                                             <span class="mediox-btn__icon"><i class="icon-up-right-arrow"></i></span>
                                         </button>
-                                        <p class="appointment-one__microcopy" data-i18n="appointment.form_microcopy" style="text-align:center; font-size: 0.85rem; color: rgba(255,255,255,0.7); margin-top: 0.75rem;">Безплатно • Без ангажимент • Отговор до 2 часа</p>
+                                        <p class="appointment-one__microcopy" data-i18n="appointment.form_microcopy" style="text-align:center; font-size: 0.85rem; color: rgba(255,255,255,0.7); margin-top: 0.75rem;">Безплатно • Без ангажимент • Отговор до 24 часа</p>
                                     </div>
                                 </div>
 
@@ -781,6 +787,7 @@
     <script defer src="assets/vendors/jquery-ajaxchimp/jquery.ajaxchimp.min.js"></script>
     <script defer src="assets/vendors/jquery-validate/jquery.validate.min.js"></script>
     <script defer src="assets/js/mediox.js"></script>
+    <script defer src="assets/js/form-bg.js"></script>
 
     <!-- AI Chatbot script -->
     <script defer src="assets/js/ai-chat-v2.js"></script>

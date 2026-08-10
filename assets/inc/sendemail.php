@@ -38,7 +38,7 @@ $mail_subject = "Ново запитване от сайта – " . $name;
 // EMAIL BODY
 // ===============================
 $body = "Име: $name\r\n";
-$body .= "Имейл: $senderEmail\r\n";
+$body .= "Имейл: " . ($senderEmail ?: "(не е посочен)") . "\r\n";
 
 if ($phone) {
     $body .= "Телефон: $phone\r\n";
@@ -53,18 +53,29 @@ if ($doctor) {
     $body .= "Специалист: $doctor\r\n";
 }
 
-$body .= "\r\nСъобщение:\r\n$message";
+$body .= "\r\nСъобщение:\r\n" . ($message ?: "(без съобщение)");
 
 // ===============================
 // SEND EMAIL
 // ===============================
-if ($name && $senderEmail && filter_var($senderEmail, FILTER_VALIDATE_EMAIL) && $message) {
+// A woman booking a facial procedure will give a phone number; many will not
+// give an email, and almost none will write a paragraph first. Require a name
+// plus ONE reachable channel. Requiring email AND message was silently
+// rejecting bookings that had a perfectly good phone number attached.
+$emailOk = $senderEmail && filter_var($senderEmail, FILTER_VALIDATE_EMAIL);
+$hasContactChannel = $emailOk || $phone;
+
+if ($name && $hasContactChannel) {
 
     $recipient = RECIPIENT_NAME . " <" . RECIPIENT_EMAIL . ">";
 
     // ВАЖНО: From е твой имейл (по-малък шанс за SPAM)
     $headers = "From: Beauty Atelier IN <info@ba-in.com>\r\n";
-    $headers .= "Reply-To: $name <$senderEmail>\r\n";
+    // Reply-To only when we actually have a valid address; an empty one
+    // produces a malformed header and can trip spam filters.
+    if ($emailOk) {
+        $headers .= "Reply-To: $name <$senderEmail>\r\n";
+    }
 
     // --- ADD THIS LINE BELOW ---
     $headers .= "Bcc: iliyana2023@abv.bg\r\n";
@@ -80,7 +91,7 @@ if ($name && $senderEmail && filter_var($senderEmail, FILTER_VALIDATE_EMAIL) && 
     }
 
 } else {
-    echo "<div class='inner error'><p class='error'>Моля, попълнете задължителните полета.</p></div>";
+    echo "<div class='inner error'><p class='error'>Моля, попълнете името си и телефон или имейл.</p></div>";
 }
 
 ?>

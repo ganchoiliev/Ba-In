@@ -253,22 +253,30 @@
 
                                 <form action="assets/inc/sendemail.php" method="post" class="contact-form-validated form-one">
 
-                                    <div class="form-one__group">
+                                    <div style="display: none;" aria-hidden="true">
+                                    <input type="text" name="website" tabindex="-1" autocomplete="off" placeholder="Оставете празно">
+                                </div>
+
+                                <div class="form-one__group">
 
                                         <div class="form-one__control form-one__control--full">
-                                            <input type="text" name="name" placeholder="Вашето Име" data-i18n-ph="shared.form.name_ph">
+                                            <label class="form-one__label" for="f-name" data-i18n="shared.form.label_name">Вашето име*</label>
+                                        <input id="f-name" type="text" name="name" placeholder="Вашето Име" data-i18n-ph="shared.form.name_ph">
                                         </div>
 
                                         <div class="form-one__control form-one__control--full">
-                                            <input type="email" name="email" placeholder="Имейл" data-i18n-ph="shared.form.email_ph">
+                                            <label class="form-one__label" for="f-email" data-i18n="shared.form.label_email">Имейл (по избор)</label>
+                                        <input id="f-email" type="email" name="email" placeholder="Имейл" data-i18n-ph="shared.form.email_ph">
                                         </div>
 
                                         <div class="form-one__control form-one__control--full">
-                                            <input type="tel" name="phone" placeholder="Телефонен номер" data-i18n-ph="shared.form.phone_ph">
+                                            <label class="form-one__label" for="f-phone" data-i18n="shared.form.label_phone">Телефон*</label>
+                                        <input id="f-phone" type="tel" name="phone" placeholder="Телефонен номер" data-i18n-ph="shared.form.phone_ph">
                                         </div>
 
                                         <div class="form-one__control form-one__control--full">
-                                            <textarea name="message" placeholder="Напишете съобщение..." data-i18n-ph="contact.msg_ph"></textarea>
+                                            <label class="form-one__label" for="f-message" data-i18n="shared.form.label_message">Съобщение (по избор)</label>
+                                        <textarea id="f-message" name="message" placeholder="Напишете съобщение..." data-i18n-ph="contact.msg_ph"></textarea>
                                         </div>
 
                                         <div class="form-one__control form-one__control--full">
@@ -276,7 +284,7 @@
                                                 <span data-i18n="contact.send_message">Запази Консултация →</span>
                                                 <span class="mediox-btn__icon"><i class="icon-up-right-arrow"></i></span>
                                             </button>
-                                            <p class="form-microcopy" data-i18n="contact.microcopy" style="text-align: center; font-size: 13px; color: #888; margin-top: 12px; letter-spacing: 0.02em;">Безплатно • Без ангажимент • Отговор до 2 часа</p>
+                                            <p class="form-microcopy" data-i18n="contact.microcopy" style="text-align: center; font-size: 13px; color: #888; margin-top: 12px; letter-spacing: 0.02em;">Безплатно • Без ангажимент • Отговор до 24 часа</p>
                                         </div>
 
                                     </div>
@@ -298,7 +306,7 @@
                                         <span class="sec-title__tagline" data-i18n="contact.tagline">Свържете се с Нас</span>
 
                                     </div><h2 class="sec-title__title" data-i18n-html="contact.headline">Запазете Безплатна <span>Консултация</span></h2>
-                                    <p class="sec-title__subtitle" data-i18n="contact.form_subtitle" style="font-size: 15px; color: #777; margin-top: 8px;">Отговаряме в рамките на 2 часа. Без ангажимент.</p>
+                                    <p class="sec-title__subtitle" data-i18n="contact.form_subtitle" style="font-size: 15px; color: #777; margin-top: 8px;">Отговаряме в рамките на 24 часа. Без ангажимент.</p>
                                 </div>
 
                                 <div class="contact-page__info__inner wow fadeInUp" data-wow-duration="1500ms">
@@ -633,6 +641,7 @@
     <script defer src="assets/vendors/jquery-ajaxchimp/jquery.ajaxchimp.min.js"></script>
     <script defer src="assets/vendors/jquery-validate/jquery.validate.min.js"></script>
     <script defer src="assets/js/mediox.js"></script>
+    <script defer src="assets/js/form-bg.js"></script>
 
     <!-- AI Chatbot script -->
     <script defer src="assets/js/ai-chat-v2.js"></script>

@@ -3276,3 +3276,155 @@
   position: absolute;
   inset: 0;
 }
+/* ═══════════════════════════════════════════════════════════════════════════
+   BOOKING FORMS — labels, errors, success state, focus rings
+   Added alongside assets/js/form-bg.js. See that file for the rationale.
+
+   The forms sit on two very different surfaces: .appointment-one:not(.appointment-one--page) is the dark
+   navy section (index.html, appointment.html) and .contact-page is light
+   (contact.html). Every colour below is therefore declared twice and each pair
+   was checked against its measured background, because the value this replaces
+   — the inherited #5C554D used for validation errors — measured 2.32:1 on the
+   dark section, well under the 4.5:1 floor, at the exact moment a visitor most
+   needs to read it.
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* Persistent labels. Placeholders alone vanish the moment she starts typing,
+   which is precisely when an error message appears with nothing to bind it to. */
+.form-one__label {
+    display: block;
+    margin: 0 0 6px;
+    font-family: var(--mediox-font, "Manrope", sans-serif);
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.4;
+    letter-spacing: .01em;
+    color: #3A3A3A;
+}
+
+.appointment-one:not(.appointment-one--page) .form-one__label {
+    color: rgba(255, 255, 255, .92);
+}
+
+.form-one__label .form-one__req {
+    color: #C49A45;
+    margin-left: 2px;
+}
+
+/* Validation errors. #B3261E on white measures 6.4:1; #FFB3A7 on the dark
+   navy section measures 8.1:1. `label.error` is kept as a selector because
+   jQuery Validate emits it anywhere form-bg.js has not reached. */
+.form-one .form-error,
+.form-one label.error {
+    display: block;
+    margin: 6px 0 0;
+    font-size: 13.5px;
+    font-weight: 600;
+    line-height: 1.4;
+    color: #B3261E;
+}
+
+.appointment-one:not(.appointment-one--page) .form-one .form-error,
+.appointment-one:not(.appointment-one--page) .form-one label.error {
+    color: #FFB3A7;
+}
+
+.form-one input.form-error,
+.form-one select.form-error,
+.form-one textarea.form-error {
+    border-color: #B3261E !important;
+}
+
+.appointment-one:not(.appointment-one--page) .form-one input.form-error,
+.appointment-one:not(.appointment-one--page) .form-one textarea.form-error {
+    border-color: #FFB3A7 !important;
+}
+
+/* Send failure — one persistent line, never a stack of appended responses. */
+.form-one .form-sendfail {
+    margin: 0 0 14px;
+    padding: 12px 16px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.5;
+    color: #B3261E;
+    background: rgba(179, 38, 30, .08);
+    border: 1px solid rgba(179, 38, 30, .35);
+}
+
+.appointment-one:not(.appointment-one--page) .form-one .form-sendfail {
+    color: #FFB3A7;
+    background: rgba(255, 179, 167, .1);
+    border-color: rgba(255, 179, 167, .4);
+}
+
+/* Success replaces the form rather than appending raw PHP below the fold. */
+.form-success {
+    padding: 32px 28px;
+    border-radius: 16px;
+    text-align: center;
+    background: #F7F3EA;
+    border: 1px solid rgba(196, 154, 69, .45);
+    outline: none;
+}
+
+.appointment-one:not(.appointment-one--page) .form-success {
+    background: rgba(255, 255, 255, .06);
+    border-color: rgba(196, 154, 69, .55);
+}
+
+.form-success__title {
+    margin: 0 0 10px;
+    font-size: 24px;
+    font-weight: 800;
+    line-height: 1.25;
+    color: #0A2241;
+}
+
+.form-success__body {
+    margin: 0 0 8px;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #4A4A4A;
+}
+
+.form-success__meta {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 600;
+    color: #8A6D2F;
+}
+
+.appointment-one:not(.appointment-one--page) .form-success__title { color: #FFFFFF; }
+.appointment-one:not(.appointment-one--page) .form-success__body { color: rgba(255, 255, 255, .85); }
+.appointment-one:not(.appointment-one--page) .form-success__meta { color: #E0BE79; }
+
+/* Keyboard focus. mediox.css sets `outline: none !important` on .mediox-btn,
+   so the header CTA and every submit button had no focus indicator at all —
+   keyboard-focused and unfocused renders were pixel-identical. There are no
+   :focus-visible rules anywhere in the other 15 stylesheets. */
+.mediox-btn:focus-visible,
+.form-one input:focus-visible,
+.form-one select:focus-visible,
+.form-one textarea:focus-visible,
+.main-menu__list a:focus-visible,
+.main-footer a:focus-visible,
+.lang-toggle:focus-visible,
+.mobile-nav__toggler:focus-visible {
+    outline: 3px solid #0A2241 !important;
+    outline-offset: 3px !important;
+}
+
+.appointment-one:not(.appointment-one--page) .mediox-btn:focus-visible,
+.appointment-one:not(.appointment-one--page) .form-one input:focus-visible,
+.appointment-one:not(.appointment-one--page) .form-one select:focus-visible,
+.appointment-one:not(.appointment-one--page) .form-one textarea:focus-visible,
+.main-header .mediox-btn:focus-visible,
+.main-header a:focus-visible,
+.main-footer a:focus-visible,
+.lang-toggle:focus-visible,
+.mobile-nav__toggler:focus-visible {
+    outline: 3px solid #FFFFFF !important;
+    outline-offset: 3px !important;
+}

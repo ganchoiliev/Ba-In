@@ -140,14 +140,14 @@ const TRANSLATIONS = {
       /* ---- Contact page ---- */
       'contact.tagline': 'Свържете се с Нас',
       'contact.headline': 'Запазете Безплатна <span>Консултация</span>',
-      'contact.form_subtitle': 'Отговаряме в рамките на 2 часа. Без ангажимент.',
+      'contact.form_subtitle': 'Отговаряме в рамките на 24 часа. Без ангажимент.',
       'contact.call_now': 'Обадете се сега',
       'contact.email_label': 'Имейл',
       'contact.address_label': 'Адрес',
       'contact.happy_clients': 'Google оценка 5.0 ★ от 31+ отзива',
       'contact.msg_ph': 'Напишете съобщение...',
       'contact.send_message': 'Запази Консултация →',
-      'contact.microcopy': 'Безплатно • Без ангажимент • Отговор до 2 часа',
+      'contact.microcopy': 'Безплатно • Без ангажимент • Отговор до 24 часа',
 
 
       /* ---- Pricing ---- */
@@ -188,7 +188,7 @@ const TRANSLATIONS = {
       'pricing.from_to': 'от – до',
       'pricing.book_consult': 'Запази безплатна консултация',
       'pricing.cta_lead': 'Не сте сигурни коя процедура е за вас?',
-      'pricing.cta_micro': 'Без ангажимент · Отговаряме до 24ч',
+      'pricing.cta_micro': 'Без ангажимент · Отговаряме до 24 часа',
       'pricing.note': 'Цените са в евро и лева. За въпроси или индивидуална оферта се свържете с нас.',
 
       /* ---- Pricing: tabs ---- */
@@ -546,8 +546,8 @@ const TRANSLATIONS = {
 
       /* ---- Shared: Form fields ---- */
       'shared.form.name_ph': 'Вашето Име*',
-      'shared.form.email_ph': 'Имейл*',
-      'shared.form.phone_ph': 'Телефонен номер',
+      'shared.form.email_ph': 'Имейл',
+      'shared.form.phone_ph': 'Телефонен номер*',
       'shared.form.date_ph': 'Изберете дата*',
       'shared.form.service_default': 'Изберете процедура',
       'shared.form.microblading': 'Микроблейдинг',
@@ -560,6 +560,12 @@ const TRANSLATIONS = {
       'shared.form.doctor_default': 'Вашият специалист',
       'shared.form.message_ph': 'Пишете тук...',
       'shared.form.submit': 'Запази час',
+      'shared.form.label_name': 'Вашето име*',
+      'shared.form.label_email': 'Имейл (по избор)',
+      'shared.form.label_phone': 'Телефон*',
+      'shared.form.label_service': 'Процедура',
+      'shared.form.label_doctor': 'Специалист',
+      'shared.form.label_message': 'Съобщение (по избор)',
 
       /* ========================================================
          INDEX.HTML — page-specific strings
@@ -575,7 +581,7 @@ const TRANSLATIONS = {
       'index.hero.subtitle': 'Микроблейдинг и естетични процедури · Силистра',
       'index.hero.btn_book': 'Запази безплатна консултация',
       'index.hero.btn_procedures': 'Процедури',
-      'index.hero.microcopy': 'Без ангажимент · Отговаряме до 1 час',
+      'index.hero.microcopy': 'Без ангажимент · Отговаряме до 24 часа',
       'index.hero.trust1': 'Сертифициран артист',
       'index.hero.trust2': 'Индивидуален подход',
       'index.hero.trust3': '100% стерилно',
@@ -720,9 +726,9 @@ const TRANSLATIONS = {
       'appointment.page_title': 'Запазете Час в Beauty Atelier IN — Силистра',
       'appointment.page_subtitle': 'Микроблейдинг, Микронидлинг и Естетични Процедури • Безплатна Консултация',
       'appointment.form_title': 'Запазете Безплатна Консултация',
-      'appointment.form_subtitle': 'Отговаряме в рамките на 2 часа. Без ангажимент.',
+      'appointment.form_subtitle': 'Отговаряме в рамките на 24 часа. Без ангажимент.',
       'appointment.form_submit': 'Запази Консултация →',
-      'appointment.form_microcopy': 'Безплатно • Без ангажимент • Отговор до 2 часа',
+      'appointment.form_microcopy': 'Безплатно • Без ангажимент • Отговор до 24 часа',
 
       /* ========================================================
          AFTERTREATMENT.HTML
@@ -824,7 +830,7 @@ const TRANSLATIONS = {
       'procedures.cta.text': 'Запазете безплатна консултация и ние ще ви помогнем да изберете най-подходящата процедура за вас.',
       'procedures.cta.btn_book': 'Запази безплатна консултация',
       'procedures.cta.btn_pricing': 'Вижте ценоразпис',
-      'procedures.cta.micro': 'Без ангажимент · Отговаряме до 1 час',
+      'procedures.cta.micro': 'Без ангажимент · Отговаряме до 24 часа',
       'procedures.sticky.btn': 'Запази безплатна консултация',
    },
 
@@ -972,7 +978,7 @@ const TRANSLATIONS = {
       'pricing.from_to': 'from – to',
       'pricing.book_consult': 'Book free consultation',
       'pricing.cta_lead': 'Not sure which treatment is right for you?',
-      'pricing.cta_micro': 'No commitment · We respond within 24h',
+      'pricing.cta_micro': 'No commitment · We respond within 24 hours',
       'pricing.note': 'Prices are shown in euros and Bulgarian lev. For questions or a personalised quote, contact us.',
 
       /* ---- Pricing: tabs ---- */
@@ -1130,14 +1136,14 @@ const TRANSLATIONS = {
       /* ---- Contact page ---- */
       'contact.tagline': 'Get in Touch',
       'contact.headline': 'Book a Free <span>Consultation</span>',
-      'contact.form_subtitle': 'We respond within 2 hours. No commitment.',
+      'contact.form_subtitle': 'We respond within 24 hours. No commitment.',
       'contact.call_now': 'Call Us Now',
       'contact.email_label': 'Email',
       'contact.address_label': 'Address',
       'contact.happy_clients': 'Google rating 5.0 ★ from 31+ reviews',
       'contact.msg_ph': 'Write a message...',
       'contact.send_message': 'Book Consultation →',
-      'contact.microcopy': 'Free • No commitment • Response within 2 hours',
+      'contact.microcopy': 'Free • No commitment • Response within 24 hours',
 
       /* ---- About page ---- */
       'about.experience_text': 'Professional <br> Training <br> &amp; Certificates',
@@ -1167,9 +1173,9 @@ const TRANSLATIONS = {
       'appointment.page_title': 'Book an Appointment at Beauty Atelier IN — Silistra',
       'appointment.page_subtitle': 'Microblading, Microneedling & Aesthetic Procedures • Free Consultation',
       'appointment.form_title': 'Book a Free Consultation',
-      'appointment.form_subtitle': 'We respond within 2 hours. No commitment.',
+      'appointment.form_subtitle': 'We respond within 24 hours. No commitment.',
       'appointment.form_submit': 'Book Consultation →',
-      'appointment.form_microcopy': 'Free • No commitment • Response within 2 hours',
+      'appointment.form_microcopy': 'Free • No commitment • Response within 24 hours',
       'blog_inspiring.page_title': 'Beauty & Inspiration',
       'blog_secrets.page_title': 'The Secrets of Beauty',
       'blog.page_title': 'Blog',
@@ -1371,8 +1377,8 @@ const TRANSLATIONS = {
 
       /* ---- Shared: Form fields ---- */
       'shared.form.name_ph': 'Name*',
-      'shared.form.email_ph': 'Email*',
-      'shared.form.phone_ph': 'Phone Number',
+      'shared.form.email_ph': 'Email',
+      'shared.form.phone_ph': 'Phone Number*',
       'shared.form.date_ph': 'Select a Date*',
       'shared.form.service_default': 'Select a Treatment',
       'shared.form.microblading': 'Microblading',
@@ -1385,6 +1391,12 @@ const TRANSLATIONS = {
       'shared.form.doctor_default': 'Your Specialist',
       'shared.form.message_ph': 'Write your message here...',
       'shared.form.submit': 'Book Now',
+      'shared.form.label_name': 'Your name*',
+      'shared.form.label_email': 'Email (optional)',
+      'shared.form.label_phone': 'Phone*',
+      'shared.form.label_service': 'Treatment',
+      'shared.form.label_doctor': 'Specialist',
+      'shared.form.label_message': 'Message (optional)',
 
       /* ========================================================
          INDEX.HTML — page-specific strings
@@ -1400,7 +1412,7 @@ const TRANSLATIONS = {
       'index.hero.subtitle': 'Microblading & aesthetic treatments · Silistra',
       'index.hero.btn_book': 'Book a free consultation',
       'index.hero.btn_procedures': 'Procedures',
-      'index.hero.microcopy': 'No commitment · We reply within 1 hour',
+      'index.hero.microcopy': 'No commitment · We reply within 24 hours',
       'index.hero.trust1': 'Certified artist',
       'index.hero.trust2': 'Personalised approach',
       'index.hero.trust3': '100% sterile',
@@ -1642,7 +1654,7 @@ const TRANSLATIONS = {
       'procedures.cta.text': 'Book a free consultation and we will help you choose the most suitable procedure for you.',
       'procedures.cta.btn_book': 'Book free consultation',
       'procedures.cta.btn_pricing': 'View pricing',
-      'procedures.cta.micro': 'No commitment · We respond within 1 hour',
+      'procedures.cta.micro': 'No commitment · We respond within 24 hours',
       'procedures.sticky.btn': 'Book free consultation',
    }
 };

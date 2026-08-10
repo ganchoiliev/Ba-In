@@ -504,7 +504,7 @@ ul,ol{margin:0;padding:0;list-style:none}
 
                             <!-- Micro-copy reassurance -->
                             <p class="hero-static__microcopy"
-                                data-i18n="index.hero.microcopy">Без ангажимент · Отговаряме до 1 час</p>
+                                data-i18n="index.hero.microcopy">Без ангажимент · Отговаряме до 24 часа</p>
 
                             <!-- Trust icon bar -->
                             <div class="hero-static__trust-bar">
@@ -837,28 +837,28 @@ ul,ol{margin:0;padding:0;list-style:none}
                     <div class="funfact-one__row">
                         <div class="funfact-one__item">
                             <h3 class="funfact-one__item__number count-box">
-                                <span class="count-text" data-stop="850" data-speed="1500"></span>
+                                <span class="count-text" data-stop="500" data-speed="1500">500</span>
                                 <span>+</span>
                             </h3>
                             <p class="funfact-one__item__title" data-i18n="index.funfact.clients">Клиенти</p>
                         </div><!-- /.funfact-one__item -->
                         <div class="funfact-one__item">
                             <h3 class="funfact-one__item__number count-box">
-                                <span class="count-text" data-stop="3500" data-speed="1500"></span>
+                                <span class="count-text" data-stop="3500" data-speed="1500">3500</span>
                                 <span>+</span>
                             </h3>
                             <p class="funfact-one__item__title" data-i18n="index.funfact.procedures">Процедури</p>
                         </div><!-- /.funfact-one__item -->
                         <div class="funfact-one__item">
                             <h3 class="funfact-one__item__number count-box">
-                                <span class="count-text" data-stop="20" data-speed="1500"></span>
+                                <span class="count-text" data-stop="20" data-speed="1500">20</span>
                                 <span></span>
                             </h3>
                             <p class="funfact-one__item__title" data-i18n="index.funfact.services">Видове услуги</p>
                         </div><!-- /.funfact-one__item -->
                         <div class="funfact-one__item">
                             <h3 class="funfact-one__item__number count-box">
-                                <span class="count-text" data-stop="4" data-speed="1500"></span>
+                                <span class="count-text" data-stop="4" data-speed="1500">4</span>
                                 <span>+</span>
                             </h3>
                             <p class="funfact-one__item__title" data-i18n="index.funfact.experience">Години опит</p>
@@ -1132,27 +1132,35 @@ ul,ol{margin:0;padding:0;list-style:none}
                                 class="appointment-one__form contact-form-validated form-one"
                                >
 
+                                <div style="display: none;" aria-hidden="true">
+                                    <input type="text" name="website" tabindex="-1" autocomplete="off" placeholder="Оставете празно">
+                                </div>
+
                                 <div class="form-one__group">
 
                                     <div class="form-one__control">
-                                        <input type="text" name="name" data-i18n-ph="shared.form.name_ph"
+                                        <label class="form-one__label" for="f-name" data-i18n="shared.form.label_name">Вашето име*</label>
+                                        <input id="f-name" type="text" name="name" data-i18n-ph="shared.form.name_ph"
                                             placeholder="Име*">
                                     </div>
 
                                     <div class="form-one__control">
-                                        <input type="email" name="email" data-i18n-ph="shared.form.email_ph"
-                                            placeholder="Имейл*">
+                                        <label class="form-one__label" for="f-email" data-i18n="shared.form.label_email">Имейл (по избор)</label>
+                                        <input id="f-email" type="email" name="email" data-i18n-ph="shared.form.email_ph"
+                                            placeholder="Имейл">
                                     </div>
 
                                     <div class="form-one__control">
-                                        <input type="tel" name="phone" data-i18n-ph="shared.form.phone_ph"
+                                        <label class="form-one__label" for="f-phone" data-i18n="shared.form.label_phone">Телефон*</label>
+                                        <input id="f-phone" type="tel" name="phone" data-i18n-ph="shared.form.phone_ph"
                                             placeholder="Телефонен номер">
                                     </div>
 
 
                                     <div class="form-one__control">
                                         <!-- FIX: Add name="services" -->
-                                        <select name="services" aria-label="Type of Service">
+                                        <label class="form-one__label" for="f-services" data-i18n="shared.form.label_service">Процедура</label>
+                                        <select id="f-services" name="services">
                                             <option value="" selected data-i18n="shared.form.service_default">Изберете
                                                 процедура</option>
                                             <option value="Микроблейдинг" data-i18n="shared.form.microblading">
@@ -1175,7 +1183,8 @@ ul,ol{margin:0;padding:0;list-style:none}
 
                                     <div class="form-one__control">
                                         <!-- FIX: Add name="doctor" -->
-                                        <select name="doctor" aria-label="Name a Doctor">
+                                        <label class="form-one__label" for="f-doctor" data-i18n="shared.form.label_doctor">Специалист</label>
+                                        <select id="f-doctor" name="doctor">
                                             <option value="" selected data-i18n="shared.form.doctor_default">Вашият
                                                 специалист</option>
                                             <option value="Илияна Николаева">Илияна Николаева</option>
@@ -1183,7 +1192,8 @@ ul,ol{margin:0;padding:0;list-style:none}
                                     </div>
 
                                     <div class="form-one__control form-one__control--full">
-                                        <textarea name="message" data-i18n-ph="shared.form.message_ph"
+                                        <label class="form-one__label" for="f-message" data-i18n="shared.form.label_message">Съобщение (по избор)</label>
+                                        <textarea id="f-message" name="message" data-i18n-ph="shared.form.message_ph"
                                             placeholder="Пишете тук..."></textarea>
                                     </div>
 
@@ -2484,6 +2494,7 @@ ul,ol{margin:0;padding:0;list-style:none}
     <!-- removed: slick.js (unused — OWL Carousel handles all carousels) -->
 
     <script defer src="assets/js/mediox.js"></script>
+    <script defer src="assets/js/form-bg.js"></script>
 
     <!-- Fallback: re-init Owl Carousels if mediox.js missed the load event -->
     <script>
