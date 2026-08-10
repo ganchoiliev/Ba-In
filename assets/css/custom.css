@@ -4121,3 +4121,31 @@ html[lang="bg"] .work-process-one__item__title {
   text-transform: none;
 }
 /* === END GENERATED: bg-sentence-case.py === */
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   Dark-hover buttons need light ink
+
+   The contrast fix above pins filled gold buttons to navy ink, which is right
+   for a gold background and wrong for a black one. The template turns four
+   button contexts black on hover, so navy ink lands on black there: measured
+   1.32:1 on the blog sidebar category pills, where only the count in its own
+   <span> stayed readable.
+
+   Fixing it by out-specifying the template starts a war. Setting the token on
+   the hovered element does not: `color: var(--ba-btn-ink) !important` already
+   reads whatever the element resolves, so the context supplies the answer.
+   Same pattern as the gold text tokens.
+
+   Re-derive after a template update by listing every rule that gives
+   .mediox-btn:hover a background with relative luminance < 0.18.
+   ───────────────────────────────────────────────────────────────────────── */
+.sidebar__categories .mediox-btn:hover,
+.sidebar__tags .mediox-btn:hover,
+.main-slider-two__button-2 .mediox-btn:hover {
+  --ba-btn-ink: #D4AF37;
+}
+
+/* This one the template deliberately takes to white, not gold. */
+.main-slider-three__button--2 .mediox-btn:hover {
+  --ba-btn-ink: #FFFFFF;
+}
