@@ -30,10 +30,22 @@
     // Resolve translations.js against this script's own URL rather than a
     // root-relative literal, so the loader survives being included from a
     // subdirectory (fibromi-blog/, laminirane/, notino/ ...).
-    var selfSrc = document.currentScript && document.currentScript.src;
-    var TRANSLATIONS_URL = selfSrc
-        ? selfSrc.replace(/i18n\.js(\?.*)?$/, 'translations.js')
-        : 'assets/js/translations.js';
+    //
+    // data-translations is stamped by scripts/cache-bust.py and carries the
+    // content hash. It matters: assets are served
+    // `Cache-Control: max-age=31536000, immutable`, and this file is fetched
+    // by script injection rather than from the HTML, so without the attribute
+    // the URL never changes and a returning English visitor is pinned to a
+    // year-old dictionary. The derived path stays as the fallback for any
+    // page the stamper has not reached.
+    var self_ = document.currentScript;
+    var stamped = self_ && self_.getAttribute('data-translations');
+    var selfSrc = self_ && self_.src;
+    var TRANSLATIONS_URL = stamped
+        ? new URL(stamped, document.baseURI).href
+        : (selfSrc
+            ? selfSrc.replace(/i18n\.js(\?.*)?$/, 'translations.js')
+            : 'assets/js/translations.js');
 
     var pending = null;
 

@@ -13,6 +13,18 @@ jobs:
     - name: Get latest code
       uses: actions/checkout@v3
 
+    # Assets are served `Cache-Control: max-age=31536000, immutable`, so a URL
+    # that does not change is a URL the browser will never re-fetch. On
+    # 2026-08-10 that pinned returning visitors to a year-old custom.css while
+    # they received new HTML, and the homepage collapsed into a column of
+    # unstyled images. Stamping content hashes here means it cannot recur even
+    # if someone edits a stylesheet and forgets: the deployed HTML is always
+    # in step with the assets it ships alongside.
+    - name: Stamp asset content hashes
+      run: |
+        python3 scripts/cache-bust.py
+        git --no-pager diff --stat -- '*.html' | tail -1
+
     - name: Deploy via rsync over SSH
       uses: burnett01/rsync-deployments@6.0.0
       with:
