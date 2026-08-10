@@ -3525,3 +3525,257 @@
     .ba-result:hover, .ba-result:focus-visible { transform: none; }
     .ba-result:hover img, .ba-result:focus-visible img { transform: none; }
 }
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   SERVICE CARDS — the four procedure tiles on the homepage
+
+   They were rendering as four identical black rectangles because
+   .services-three__item__bg set opacity: 0.2 over a #0A2241 panel. Good
+   photographs, 80% erased, with a decorative gold blob on top competing for
+   the attention the photograph should have had.
+
+   Same language as the results grid below: photograph full strength, one
+   scrim sized to the text it has to carry, and a single motion moment where
+   the image drifts further than its frame.
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.ba-services {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+@media (max-width: 1199px) { .ba-services { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 575px)  { .ba-services { gap: 12px; } }
+
+.ba-service {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    border-radius: 18px;
+    background: #0A2241;
+    border: 1px solid rgba(196, 154, 69, .18);
+    box-shadow: 0 12px 32px -16px rgba(10, 10, 20, .5);
+    transition: transform .55s cubic-bezier(.16, 1, .3, 1),
+                box-shadow .55s cubic-bezier(.16, 1, .3, 1),
+                border-color .55s ease;
+}
+
+.ba-service img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    transition: transform .8s cubic-bezier(.16, 1, .3, 1);
+}
+
+.ba-service::after {
+    content: "";
+    position: absolute;
+    inset: auto 0 0 0;
+    height: 46%;
+    /* Tuned down from 58%/.94: the first pass read as a navy wash across the
+       lower third and flattened the photograph. This clears 4.5:1 under the
+       title while leaving more of the image intact. */
+    background: linear-gradient(to top, rgba(6, 14, 28, .90) 0%, rgba(6, 14, 28, .48) 52%, rgba(6, 14, 28, 0) 100%);
+    pointer-events: none;
+}
+
+.ba-service__body {
+    position: absolute;
+    z-index: 2;
+    left: 20px;
+    right: 18px;
+    bottom: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.ba-service__title {
+    font-family: var(--mediox-font, "Manrope", sans-serif);
+    font-size: 19px;
+    font-weight: 700;
+    line-height: 1.25;
+    letter-spacing: -.01em;
+    color: #FFFFFF;
+}
+
+/* The affordance is a quiet outline until the card is engaged, so four of
+   them in a row read as one row of photographs rather than four buttons. */
+.ba-service__go {
+    flex: 0 0 auto;
+    width: 36px;
+    height: 36px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 11px;
+    color: #E8C882;
+    border: 1px solid rgba(232, 200, 130, .45);
+    background: rgba(10, 34, 65, .35);
+    transition: background-color .45s ease, color .45s ease, border-color .45s ease;
+}
+
+.ba-service:hover,
+.ba-service:focus-visible {
+    transform: translateY(-5px);
+    border-color: rgba(196, 154, 69, .55);
+    box-shadow: 0 26px 52px -20px rgba(10, 10, 20, .68);
+}
+
+.ba-service:hover img,
+.ba-service:focus-visible img { transform: scale(1.06); }
+
+.ba-service:hover .ba-service__go,
+.ba-service:focus-visible .ba-service__go {
+    background: #E8C882;
+    border-color: #E8C882;
+    color: #0A2241;
+}
+
+.ba-service:focus-visible {
+    outline: 3px solid #FFFFFF !important;
+    outline-offset: 3px !important;
+}
+
+@media (max-width: 575px) {
+    .ba-service__title { font-size: 16px; }
+    .ba-service__body { left: 14px; right: 12px; bottom: 13px; }
+    .ba-service__go { width: 32px; height: 32px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .ba-service, .ba-service img { transition: none; }
+    .ba-service:hover, .ba-service:focus-visible { transform: none; }
+    .ba-service:hover img, .ba-service:focus-visible img { transform: none; }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   GOLD — accessible tokens
+
+   Measured against rendered pixels across six pages, the brand gold was doing
+   two jobs it cannot do:
+
+     white  #FFFFFF on gold  #D4AF37  =  2.10:1   (needs 4.5) — every button
+     gold   #C49A45 on white #FFFFFF  =  2.61:1   (needs 4.5) — every eyebrow
+
+   The fix is not to dilute the gold. It is to stop asking white to sit on it.
+   Brand navy on gold measures 7.58:1, and the codebase already reaches for
+   this on hover (.service-card-two__link:hover — "ЧЕРЕН ТЕКСТ"). Making it the
+   default is more legible AND reads more expensive than washed-out white.
+
+   Gold as TEXT needs its own value, because a fill colour and an ink colour
+   have different jobs. Two tokens, both measured:
+     --ba-gold-ink      #70500C  passes 4.5:1 on every light surface the
+                                 site actually uses: white 7.39, cream 6.81,
+                                 grey #E3E3E1 5.75, sand #DCD1B1 4.86
+     --ba-gold-display  #A87D2A  on white 3.73:1                   (24px+ only)
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+:root {
+    --ba-gold-ink: #70500C;
+    --ba-gold-display: #A87D2A;
+    --ba-btn-ink: #0A2241;
+}
+
+/* Filled gold buttons take navy ink. --border and --white are outline
+   variants on dark ground and are deliberately excluded. */
+.mediox-btn:not(.mediox-btn--border):not(.mediox-btn--white),
+.mediox-btn:not(.mediox-btn--border):not(.mediox-btn--white) .mediox-btn__icon {
+    color: var(--ba-btn-ink) !important;
+}
+
+.mediox-btn:not(.mediox-btn--border):not(.mediox-btn--white):hover,
+.mediox-btn:not(.mediox-btn--border):not(.mediox-btn--white):hover .mediox-btn__icon {
+    color: var(--ba-btn-ink) !important;
+}
+
+/* Gold as small text on light surfaces. */
+.sec-title__tagline,
+.about-three__sm-title,
+.proc-intro__trust-pill span,
+.scroll-to-top__text,
+.pt-cta__micro,
+.proc-cta__micro {
+    color: var(--ba-gold-ink) !important;
+}
+
+/* Gold as large display text — 24px and above, so 3:1 applies. */
+.sec-title__title span,
+.funfact-one__item__number .count-text,
+.funfact-one__item__number {
+    color: var(--ba-gold-display) !important;
+}
+
+/* The Google star row was #F4B400 on #F9F5F0 — 1.70:1, the worst pair on the
+   site, and it carries the rating a first-time visitor is looking for. */
+.google-reviews__stars { color: #B07A00 !important; }
+
+/* ── Gold is context-dependent, so the token has to be ────────────────────
+   The first pass darkened gold globally. That is correct on light surfaces
+   and wrong on dark ones: #8A6412 on #111111 measures 3.52:1, worse than the
+   original. Gold text needs a light value on dark ground and a dark value on
+   light ground — one blanket override cannot serve both.
+
+   Dark contexts are the shorter, more stable list, so they carry the
+   exception. Measured after the change, not assumed.
+   ──────────────────────────────────────────────────────────────────────── */
+
+.faq-two,
+.pt-cta,
+.main-footer,
+.appointment-one:not(.appointment-one--page) {
+    --ba-gold-ink: #E0BE79;
+    --ba-gold-display: #E0BE79;
+}
+
+.faq-two .sec-title__tagline,
+.faq-two .sec-title__title span,
+.pt-cta .pt-cta__micro,
+.pt-cta__micro,
+.main-footer .sec-title__tagline,
+.appointment-one:not(.appointment-one--page) .sec-title__tagline,
+.appointment-one:not(.appointment-one--page) .sec-title__title span {
+    color: #E0BE79 !important;
+}
+
+/* The star row carries the rating a first-time visitor looks for, at 16px,
+   so it needs the full 4.5:1 — #B07A00 only reached 3.44:1 on the cream
+   panel it actually sits on. */
+.google-reviews__stars { color: #70500C !important; }
+
+/* Back-to-top label kept its #D4AF37 through the earlier override, so target
+   the anchor and its children rather than the label class alone. */
+.scroll-to-top,
+.scroll-to-top .scroll-to-top__text,
+.scroll-to-top__text { color: var(--ba-gold-ink, #70500C) !important; }
+
+/* ── Two more contexts, both discovered by measuring rather than reading ──
+   .faq-two__inner is a GOLD panel (#C49A45), so gold-on-gold there needs the
+   near-black ink, not the light one — the previous block had it backwards.
+   .work-process-one and .faq-one are near-black and need the light value.
+   ──────────────────────────────────────────────────────────────────────── */
+
+/* .faq-two__inner reports background-color #C49A45 in the DOM, but the panel
+   RENDERS near-black — an image/overlay sits above the declared colour. The
+   first correction trusted the DOM, set near-black ink, and made the heading
+   almost invisible. Verified against rendered pixels instead: this panel is
+   dark and takes the light gold. Do not "fix" this back by reading the DOM.
+   ──────────────────────────────────────────────────────────────────────── */
+
+.faq-two__inner { --ba-gold-ink: #E0BE79; --ba-gold-display: #E0BE79; }
+
+.faq-two__inner .sec-title__tagline,
+.faq-two__inner .sec-title__title span,
+.faq-two__inner .sec-title__title { color: #E0BE79 !important; }
+
+.work-process-one, .faq-one { --ba-gold-ink: #E0BE79; --ba-gold-display: #E0BE79; }
+
+.work-process-one .sec-title__tagline,
+.work-process-one .sec-title__title span,
+.faq-one .sec-title__tagline,
+.faq-one .sec-title__title span { color: #E0BE79 !important; }

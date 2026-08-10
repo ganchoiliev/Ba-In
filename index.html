@@ -690,66 +690,55 @@ ul,ol{margin:0;padding:0;list-style:none}
                         </div><!-- /.col-lg-6 -->
                     </div><!-- /.row -->
                 </div><!-- /.services-three__top -->
-                <div class="row gutter-y-30">
-                    <div class="col-xl-3 col-md-6">
-                        <div class="services-three__item">
-                            <div class="services-three__item__bg"
-                                style="background-image: url(assets/images/services/service-3-1.webp?v=2);"></div>
-                            <div class="services-three__item__content">
-                                <img src="assets/images/shapes/service-item-shape-3-1.webp?v=2"
-                                    alt="Микроблейдинг на вежди с естествен резултат в Силистра"
-                                    class="services-three__item__shape" width="100" height="100" loading="lazy">
-                                <h3 class="services-three__item__title">
-                                    <a href="microblading.html"
-                                        data-i18n="index.services.microblading">Микроблейдинг</a>
-                                </h3><!-- /.services-three__item__title -->
-                            </div><!-- /.services-three__item__content -->
-                        </div><!-- /.services-three__item -->
-                    </div><!-- /.col-xl-3 col-md-6 -->
-                    <div class="col-xl-3 col-md-6">
-                        <div class="services-three__item">
-                            <div class="services-three__item__bg"
-                                style="background-image: url(assets/images/services/service-3-2.webp?v=2);"></div>
-                            <div class="services-three__item__content">
-                                <img src="assets/images/shapes/service-item-shape-3-2.webp?v=2"
-                                    alt="Microneedling skin rejuvenation in Silistra"
-                                    class="services-three__item__shape" width="100" height="100" loading="lazy">
-                                <h3 class="services-three__item__title">
-                                    <a href="microneedling.html"
-                                        data-i18n="index.services.microneedling">Микронидлинг</a>
-                                </h3><!-- /.services-three__item__title -->
-                            </div><!-- /.services-three__item__content -->
-                        </div><!-- /.services-three__item -->
-                    </div><!-- /.col-xl-3 col-md-6 -->
-                    <div class="col-xl-3 col-md-6">
-                        <div class="services-three__item">
-                            <div class="services-three__item__bg"
-                                style="background-image: url(assets/images/services/service-3-3.webp?v=2);"></div>
-                            <div class="services-three__item__content">
-                                <img src="assets/images/shapes/service-item-shape-3-3.webp?v=2"
-                                    alt="Lash extensions in Silistra" class="services-three__item__shape" width="100" height="100"
-                                    loading="lazy">
-                                <h3 class="services-three__item__title">
-                                    <a href="lashes.html" data-i18n="index.services.lashes">Миглопластика</a>
-                                </h3><!-- /.services-three__item__title -->
-                            </div><!-- /.services-three__item__content -->
-                        </div><!-- /.services-three__item -->
-                    </div><!-- /.col-xl-3 col-md-6 -->
-                    <div class="col-xl-3 col-md-6">
-                        <div class="services-three__item">
-                            <div class="services-three__item__bg"
-                                style="background-image: url(assets/images/services/service-3-4.webp?v=2);"></div>
-                            <div class="services-three__item__content">
-                                <img src="assets/images/shapes/service-item-shape-3-4.webp?v=2"
-                                    alt="Plasma pen skin tightening in Silistra" class="services-three__item__shape" width="100" height="100"
-                                    loading="lazy">
-                                <h3 class="services-three__item__title">
-                                    <a href="plasma.html" data-i18n="index.services.plasma">Плазма пен</a>
-                                </h3><!-- /.services-three__item__title -->
-                            </div><!-- /.services-three__item__content -->
-                        </div><!-- /.services-three__item -->
-                    </div><!-- /.col-xl-3 col-md-6 -->
-                </div><!-- /.row gutter-y-30 -->
+                <!-- ═══ SERVICES (rebuilt) ══════════════════════════════════════════════
+                 These four cards rendered as identical black rectangles. The cause
+                 was one declaration: .services-three__item__bg { opacity: 0.2 }
+                 over a #0A2241 panel — the photographs were there, 80% erased, with
+                 a decorative gold blob layered on top carrying alt text describing a
+                 microblading result it did not depict.
+
+                 Also corrected: the Микроблейдинг card was showing a lash macro.
+                 That photograph now sits on Миглопластика, where it is true, and
+                 Микроблейдинг shows an actual brow.
+
+                 Source photographs are only 270x227, so these are LANCZOS upscales
+                 with a restrained unsharp pass. Higher-resolution originals drop in
+                 at the same filenames with no change to this markup or its CSS.
+                 ═══════════════════════════════════════════════════════════════ -->
+                <div class="ba-services">
+                    <a href="microblading.html" class="ba-service">
+                        <img src="assets/images/services/service-card-1.webp" alt="Микроблейдинг на вежди — завършен резултат"
+                             width="900" height="900" loading="lazy" decoding="async">
+                        <span class="ba-service__body">
+                            <span class="ba-service__title" data-i18n="index.services.microblading">Микроблейдинг</span>
+                            <span class="ba-service__go" aria-hidden="true"><i class="icon-up-right-arrow"></i></span>
+                        </span>
+                    </a>
+                    <a href="microneedling.html" class="ba-service">
+                        <img src="assets/images/services/service-card-2.webp" alt="Микронидлинг терапия на лице в студиото"
+                             width="900" height="900" loading="lazy" decoding="async">
+                        <span class="ba-service__body">
+                            <span class="ba-service__title" data-i18n="index.services.microneedling">Микронидлинг</span>
+                            <span class="ba-service__go" aria-hidden="true"><i class="icon-up-right-arrow"></i></span>
+                        </span>
+                    </a>
+                    <a href="lashes.html" class="ba-service">
+                        <img src="assets/images/services/service-card-3.webp" alt="Миглопластика — обемни мигли отблизо"
+                             width="900" height="900" loading="lazy" decoding="async">
+                        <span class="ba-service__body">
+                            <span class="ba-service__title" data-i18n="index.services.lashes">Миглопластика</span>
+                            <span class="ba-service__go" aria-hidden="true"><i class="icon-up-right-arrow"></i></span>
+                        </span>
+                    </a>
+                    <a href="plasma.html" class="ba-service">
+                        <img src="assets/images/services/service-card-4.webp" alt="Процедура с плазма пен за лифтинг на кожата"
+                             width="900" height="900" loading="lazy" decoding="async">
+                        <span class="ba-service__body">
+                            <span class="ba-service__title" data-i18n="index.services.plasma">Плазма пен</span>
+                            <span class="ba-service__go" aria-hidden="true"><i class="icon-up-right-arrow"></i></span>
+                        </span>
+                    </a>
+                </div><!-- /.ba-services -->
                 <div class="services-two services-two--home3">
                     <div class="services-two__carousel mediox-owl__carousel mediox-owl__carousel--with-shadow mediox-owl__carousel--basic-nav owl-carousel owl-theme"
                         data-owl-options='{
