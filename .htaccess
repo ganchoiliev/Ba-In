@@ -27,6 +27,11 @@ RewriteRule ^(.*)/$ /$1 [L,R=301]
 # Blog page rename redirect
 RewriteRule ^blog-carousel-2\.html$ /blog.html [L,R=301]
 
+# Branded booking short link. Printed materials and pinned social posts say
+# ba-in.com/notino; the partner URL can change without touching anything
+# published. 302 on purpose - do not let browsers cache it permanently.
+RewriteRule ^notino/?$ https://partner.notino.com/api/notino-partner/b2c/redirect/link/O4n2OwPORfjp [L,R=302,NC]
+
 # Security headers
 <IfModule mod_headers.c>
     Header always set Strict-Transport-Security "max-age=31536000"
