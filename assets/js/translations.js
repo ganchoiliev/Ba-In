@@ -472,7 +472,7 @@ const TRANSLATIONS = {
       'service.more_title': 'Допълнителни процедури',
       'sidebar.search_title': 'Търси тук',
       'sidebar.search_ph': 'Търсене...',
-      'sidebar.recent_title': 'Последни постове',
+      'sidebar.recent_title': 'Последни публикации',
       'sidebar.categories_title': 'Категории',
       'sidebar.tags_title': 'Тагове',
       'blog.meta.categories_label': 'Категории:',
