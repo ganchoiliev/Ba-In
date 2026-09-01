@@ -146,7 +146,7 @@ const TRANSLATIONS = {
       'contact.address_label': 'Адрес',
       'contact.happy_clients': 'Google оценка 5.0 ★ от 34+ отзива',
       'contact.msg_ph': 'Напишете съобщение...',
-      'contact.send_message': 'Запази Консултация →',
+      'contact.send_message': 'Запази Консултация',
       'contact.microcopy': 'Безплатно • Без ангажимент • Отговор до 24 часа',
 
 
@@ -188,10 +188,13 @@ const TRANSLATIONS = {
       'pricing.from_to': 'От – до',
       'pricing.book_consult': 'Запази безплатна консултация',
       'pricing.cta_lead': 'Не сте сигурни коя процедура е за вас?',
+      'pricing.cta_notino_pre': 'Предпочитате директно?',
+      'pricing.cta_notino_link': 'Вижте свободните часове в Notino →',
       'pricing.cta_micro': 'Без ангажимент · Отговаряме до 24 часа',
       'pricing.note': 'Цените са в евро и лева. За въпроси или индивидуална оферта се свържете с нас.',
 
       /* ---- Pricing: tabs ---- */
+      'pricing.tab.all': 'Всички',
       'pricing.tab.mb': 'Микроблейдинг',
       'pricing.tab.rem': 'Премахване',
       'pricing.tab.la': 'Оформяне и ламиниране',
@@ -734,7 +737,7 @@ const TRANSLATIONS = {
       'appointment.notino_or': 'или оставете запитване:',
       'appointment.form_title': 'Запазете Безплатна Консултация',
       'appointment.form_subtitle': 'Отговаряме в рамките на 24 часа. Без ангажимент.',
-      'appointment.form_submit': 'Запази Консултация →',
+      'appointment.form_submit': 'Запази Консултация',
       'appointment.form_microcopy': 'Безплатно • Без ангажимент • Отговор до 24 часа',
 
       /* ========================================================
@@ -985,10 +988,13 @@ const TRANSLATIONS = {
       'pricing.from_to': 'from – to',
       'pricing.book_consult': 'Book free consultation',
       'pricing.cta_lead': 'Not sure which treatment is right for you?',
+      'pricing.cta_notino_pre': 'Prefer to book directly?',
+      'pricing.cta_notino_link': 'See available slots on Notino →',
       'pricing.cta_micro': 'No commitment · We respond within 24 hours',
       'pricing.note': 'Prices are shown in euros and Bulgarian lev. For questions or a personalised quote, contact us.',
 
       /* ---- Pricing: tabs ---- */
+      'pricing.tab.all': 'All',
       'pricing.tab.mb': 'Microblading',
       'pricing.tab.rem': 'Removal',
       'pricing.tab.la': 'Shaping & Lamination',
@@ -1150,7 +1156,7 @@ const TRANSLATIONS = {
       'contact.address_label': 'Address',
       'contact.happy_clients': 'Google rating 5.0 ★ from 34+ reviews',
       'contact.msg_ph': 'Write a message...',
-      'contact.send_message': 'Book Consultation →',
+      'contact.send_message': 'Book Consultation',
       'contact.microcopy': 'Free • No commitment • Response within 24 hours',
 
       /* ---- About page ---- */
@@ -1186,7 +1192,7 @@ const TRANSLATIONS = {
       'appointment.notino_or': 'or send an inquiry:',
       'appointment.form_title': 'Book a Free Consultation',
       'appointment.form_subtitle': 'We respond within 24 hours. No commitment.',
-      'appointment.form_submit': 'Book Consultation →',
+      'appointment.form_submit': 'Book Consultation',
       'appointment.form_microcopy': 'Free • No commitment • Response within 24 hours',
       'blog_inspiring.page_title': 'Beauty & Inspiration',
       'blog_secrets.page_title': 'The Secrets of Beauty',

@@ -1096,3 +1096,24 @@
 .page-header--pricing .mediox-breadcrumb li a:hover {
     color: var(--pt-gold-pale);
 }
+
+
+/* ─── "Всички" default view: every panel stacked, readable as one menu ───
+   The old default (one tab, one visible panel) opened the page on the
+   Микроблейдинг panel, which holds a single row - the second-most-visited
+   page looked empty and 36 prices were hidden behind unlabeled tabs. */
+.pt-panel.is-active + .pt-panel.is-active { margin-top: 26px; }
+
+/* Direct-booking line under the consultation CTA */
+.pt-cta__notino {
+    margin: 14px 0 0;
+    font-size: 14px;
+    color: rgba(255, 255, 255, .75);
+}
+.pt-cta__notino a {
+    color: #E0BE79;
+    font-weight: 700;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+.pt-cta__notino a:hover { color: #FFFFFF; }
