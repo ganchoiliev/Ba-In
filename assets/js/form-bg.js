@@ -86,6 +86,16 @@
         $panel.find('.form-success__notino-hint').text(TEXT.successNotinoHint);
         $panel.find('.form-success__notino-label').text(TEXT.successNotino);
 
+        // Conversion signal: GA4 key event (imported into Google Ads).
+        // gtag exists only after cookie consent; guard so the form never breaks.
+        if (typeof window.gtag === 'function') {
+            window.gtag('event', 'generate_lead', {
+                event_category: 'booking',
+                event_label: $form.closest('section').attr('class') || 'form',
+                page_path: window.location.pathname
+            });
+        }
+
         $form.attr('hidden', 'hidden').before($panel);
         // Focus moves so the confirmation is announced and so the visitor is
         // not left staring at the space where the form used to be.

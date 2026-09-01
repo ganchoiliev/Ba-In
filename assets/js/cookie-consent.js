@@ -279,3 +279,20 @@
         init();
     }
 })();
+
+
+/* Outbound Notino booking clicks -> GA4 event 'notino_click'.
+   Delegated on document so every /notino link (header cards, pricing CTA,
+   success panels, partners strip) is covered without per-page wiring.
+   The link opens in a new tab (target=_blank), so no need to delay navigation. */
+document.addEventListener('click', function (e) {
+    var a = e.target && e.target.closest ? e.target.closest('a[href="/notino"], a[href*="ba-in.com/notino"]') : null;
+    if (!a) return;
+    if (typeof window.gtag === 'function') {
+        window.gtag('event', 'notino_click', {
+            event_category: 'booking',
+            event_label: window.location.pathname,
+            transport_type: 'beacon'
+        });
+    }
+}, true);
