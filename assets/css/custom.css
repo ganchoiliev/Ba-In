@@ -4275,3 +4275,22 @@ html[lang="bg"] .work-process-one__item__title {
 .page-header--photo .page-header__subtitle {
     text-shadow: 0 2px 20px rgba(0, 0, 0, .5);
 }
+
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   Page-header typography: fluid scale for long Bulgarian titles
+   The template steps 45→40→35→30px, which still wraps a 60-character title
+   into four heavy lines on a phone - and most traffic is mobile. A fluid
+   clamp lands ~26px at 390px viewport (three balanced lines), unchanged at
+   desktop. Balance keeps the last line from orphaning one word.
+   ───────────────────────────────────────────────────────────────────────── */
+.page-header__title {
+    font-size: clamp(24px, 3.2vw + 13px, 45px) !important;
+    line-height: 1.25;
+    letter-spacing: -0.015em;
+    text-wrap: balance;
+}
+@media (max-width: 575px) {
+    .page-header__subtitle { font-size: 14px !important; letter-spacing: 0.3px; }
+    .page-header__title { margin-bottom: 12px; }
+}
