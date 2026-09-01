@@ -4207,3 +4207,23 @@ html[lang="bg"] .work-process-one__item__title {
   .ba-book-fast { padding: 18px; }
   .ba-book-fast__btn { width: 100%; justify-content: center; }
 }
+
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   Success panel → instant booking (Notino)
+   The enquiry is captured first (the lead is ours), then the confirmation
+   offers the zero-wait path. Rendered by form-bg.js on all three forms.
+   ───────────────────────────────────────────────────────────────────────── */
+.form-success__notino {
+    margin-top: 22px;
+    padding-top: 18px;
+    border-top: 1px solid rgba(196, 154, 69, .35);
+}
+.form-success__notino-hint {
+    margin: 0 0 12px;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #4A4A4A;
+}
+.appointment-one .form-success__notino-hint { color: rgba(255, 255, 255, .8); }
+.form-success__notino-btn { justify-content: center; }

@@ -48,7 +48,9 @@
         failed: 'Съобщението не можа да бъде изпратено. Моля, опитайте отново или ни се обадете на +359 89 339 8390.',
         successTitle: 'Благодарим ви!',
         successBody: 'Получихме запитването ви. Ще се свържем с вас, за да потвърдим удобен час.',
-        successMeta: 'Ако бързате, обадете се на +359 89 339 8390.'
+        successMeta: 'Ако бързате, обадете се на +359 89 339 8390.',
+        successNotino: 'Искате да не чакате? Изберете час сега',
+        successNotinoHint: 'Виждате свободните часове в реално време — през Notino.'
     };
 
     $.extend($.validator.messages, MESSAGES);
@@ -67,6 +69,13 @@
             '<p class="form-success__title"></p>' +
             '<p class="form-success__body"></p>' +
             '<p class="form-success__meta"></p>' +
+            '<div class="form-success__notino">' +
+            '<p class="form-success__notino-hint"></p>' +
+            '<a class="mediox-btn form-success__notino-btn" href="/notino" target="_blank" rel="noopener">' +
+            '<span class="form-success__notino-label"></span>' +
+            '<span class="mediox-btn__icon"><i class="icon-up-right-arrow"></i></span>' +
+            '</a>' +
+            '</div>' +
             '</div>'
         );
         // .text() rather than .html() — the panel is ours, but the habit keeps
@@ -74,6 +83,8 @@
         $panel.find('.form-success__title').text(TEXT.successTitle);
         $panel.find('.form-success__body').text(TEXT.successBody);
         $panel.find('.form-success__meta').text(TEXT.successMeta);
+        $panel.find('.form-success__notino-hint').text(TEXT.successNotinoHint);
+        $panel.find('.form-success__notino-label').text(TEXT.successNotino);
 
         $form.attr('hidden', 'hidden').before($panel);
         // Focus moves so the confirmation is announced and so the visitor is
