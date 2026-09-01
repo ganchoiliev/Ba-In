@@ -4303,3 +4303,73 @@ html[lang="bg"] .work-process-one__item__title {
    ───────────────────────────────────────────────────────────────────────── */
 .progress-box { position: relative; }
 .progress-box__title { padding-right: 56px; }
+
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   Certifications & partners strip (index, about)
+   Replaces two carousels: one spun 5 AI clip-art icons labeled as the brand,
+   the other spun 3 real certification marks padded with duplicates. Three
+   distinct Phi brands plus Notino, static, uniform height - a trust row, not
+   a slideshow.
+   ───────────────────────────────────────────────────────────────────────── */
+.ba-partners { padding: 48px 0 56px; }
+
+.ba-partners__label {
+    text-align: center;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #8A8073;
+    margin: 0 0 26px;
+}
+
+.ba-partners__row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(28px, 6vw, 72px);
+    flex-wrap: wrap;
+}
+
+.ba-partners__logo {
+    height: 34px;
+    width: auto;
+    filter: grayscale(1);
+    opacity: 0.65;
+    transition: opacity 0.3s ease, filter 0.3s ease;
+}
+
+.ba-partners__logo:hover { opacity: 1; filter: grayscale(0); }
+
+.ba-partners__notino {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 6px;
+    font-size: 21px;
+    font-weight: 800;
+    letter-spacing: 0.02em;
+    line-height: 1;
+    color: #5A5A5A;
+    text-decoration: none;
+    border: 2px solid currentColor;
+    border-radius: 6px;
+    padding: 5px 10px 6px;
+    opacity: 0.75;
+    transition: opacity 0.3s ease, color 0.3s ease;
+}
+
+.ba-partners__notino span {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.ba-partners__notino:hover { opacity: 1; color: var(--mediox-black, #0A2241); }
+
+@media (max-width: 575px) {
+    .ba-partners { padding: 36px 0 44px; }
+    .ba-partners__logo { height: 26px; }
+    .ba-partners__notino { font-size: 17px; }
+}

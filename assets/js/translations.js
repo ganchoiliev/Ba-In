@@ -51,6 +51,8 @@ const TRANSLATIONS = {
 
       /* ---- Shared: Header call / CTA ---- */
       'shared.header.call_label': 'Звънни ни',
+      'shared.partners_label': 'Сертификации и партньори',
+      'shared.partners_notino': 'салони',
       'shared.header.book_btn': 'Безплатна Консултация',
 
       /* ---- Shared: Sidebar ---- */
@@ -1013,6 +1015,8 @@ const TRANSLATIONS = {
 
       /* ---- Pricing: tabs ---- */
       'pricing.trust.notino': 'Notino Salons partner',
+      'shared.partners_label': 'Certifications & partners',
+      'shared.partners_notino': 'salons',
       'pricing.tab.all': 'All',
       'pricing.tab.mb': 'Microblading',
       'pricing.tab.rem': 'Removal',
