@@ -4294,3 +4294,12 @@ html[lang="bg"] .work-process-one__item__title {
     .page-header__subtitle { font-size: 14px !important; letter-spacing: 0.3px; }
     .page-header__title { margin-bottom: 12px; }
 }
+
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   Progress boxes (about page): the percentage is absolutely positioned at the
+   title row's right edge, so a long Bulgarian title wraps underneath it and
+   collides ("...процедура" under "95%"). Reserve the number's column.
+   ───────────────────────────────────────────────────────────────────────── */
+.progress-box { position: relative; }
+.progress-box__title { padding-right: 56px; }
