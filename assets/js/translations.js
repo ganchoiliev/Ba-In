@@ -194,6 +194,7 @@ const TRANSLATIONS = {
       'pricing.note': 'Цените са в евро и лева. За въпроси или индивидуална оферта се свържете с нас.',
 
       /* ---- Pricing: tabs ---- */
+      'pricing.trust.notino': 'Notino Салони партньор',
       'pricing.tab.all': 'Всички',
       'pricing.tab.mb': 'Микроблейдинг',
       'pricing.tab.rem': 'Премахване',
@@ -538,6 +539,8 @@ const TRANSLATIONS = {
       /* ---- Google Reviews ---- */
       'reviews.google_label': 'Google Reviews',
       'reviews.write_review': 'Напиши отзив',
+      'reviews.notino_count_line': 'От 13 проверени рецензии в Notino Салони',
+      'reviews.notino_link': 'Отзивите ни в Notino',
       'reviews.count_line': 'От 34 отзива в Google',
       'reviews.see_all': 'Виж всички отзиви',
 
@@ -995,6 +998,7 @@ const TRANSLATIONS = {
       'pricing.note': 'Prices are shown in euros and Bulgarian lev. For questions or a personalised quote, contact us.',
 
       /* ---- Pricing: tabs ---- */
+      'pricing.trust.notino': 'Notino Salons partner',
       'pricing.tab.all': 'All',
       'pricing.tab.mb': 'Microblading',
       'pricing.tab.rem': 'Removal',
@@ -1384,6 +1388,8 @@ const TRANSLATIONS = {
       /* ---- Google Reviews ---- */
       'reviews.google_label': 'Google Reviews',
       'reviews.write_review': 'Write a Review',
+      'reviews.notino_count_line': 'from 13 verified reviews on Notino Salons',
+      'reviews.notino_link': 'Our reviews on Notino',
       'reviews.count_line': 'from 34 reviews on Google',
       'reviews.see_all': 'See all reviews',
 

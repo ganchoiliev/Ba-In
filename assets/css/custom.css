@@ -3797,7 +3797,23 @@
     justify-content: center;
     flex-wrap: wrap;
     gap: 10px 14px;
-    margin: 0 0 40px;
+    margin: 0 0 16px;
+}
+
+/* Second, equal source of the same 5.0: Notino Салони (verified bookings).
+   A link, because the count can be checked in one tap - that is the point. */
+.ba-proof__badge--notino { margin-bottom: 40px; text-decoration: none; }
+.ba-proof__badge--notino:hover .ba-proof__count { color: var(--mediox-black, #0A2241); }
+
+.ba-proof__nlogo {
+    font-size: 21px;
+    font-weight: 800;
+    letter-spacing: .02em;
+    line-height: 1;
+    color: var(--mediox-black, #0A2241);
+    border: 2px solid currentColor;
+    border-radius: 6px;
+    padding: 4px 8px 5px;
 }
 
 .ba-proof__glogo { width: 30px; height: 30px; flex: 0 0 auto; }
@@ -4227,3 +4243,11 @@ html[lang="bg"] .work-process-one__item__title {
 }
 .appointment-one .form-success__notino-hint { color: rgba(255, 255, 255, .8); }
 .form-success__notino-btn { justify-content: center; }
+
+
+/* Notino quotes inside the proof grid: same card, labeled source. */
+.ba-quote--notino .ba-quote__role { color: var(--ba-gold-ink, #70500C); font-weight: 700; }
+.ba-quote--notino .ba-quote__role::before {
+    content: "\2713 ";
+    font-weight: 800;
+}
