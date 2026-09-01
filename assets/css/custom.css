@@ -4251,3 +4251,27 @@ html[lang="bg"] .work-process-one__item__title {
     content: "\2713 ";
     font-weight: 800;
 }
+
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   Real-photo page headers (appointment, procedures, blog, contact)
+   The template flattens every header photo under a 0.8 black wash - fine for
+   stock texture, wasteful for real studio photography. These four use the
+   actual salon photos from the Notino shoot, so the wash becomes a gradient:
+   darkest mid-band where the title sits, lighter above and below so the room
+   reads. Middle stop measured against the brightest interior: ~4:1 for the
+   16px subtitle plus a text shadow; the 48px title clears easily.
+   ───────────────────────────────────────────────────────────────────────── */
+.page-header--photo .page-header__bg::before {
+    background-color: transparent !important;
+    background-image: linear-gradient(180deg,
+        rgba(8, 14, 28, .58) 0%,
+        rgba(8, 14, 28, .74) 46%,
+        rgba(8, 14, 28, .74) 62%,
+        rgba(8, 14, 28, .58) 100%) !important;
+    opacity: 1 !important;
+}
+.page-header--photo .page-header__title,
+.page-header--photo .page-header__subtitle {
+    text-shadow: 0 2px 20px rgba(0, 0, 0, .5);
+}
