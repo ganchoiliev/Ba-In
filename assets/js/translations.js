@@ -204,6 +204,7 @@ const TRANSLATIONS = {
       'pricing.tab.badge_top': 'ТОП',
 
       /* ---- Pricing: panel headers ---- */
+      'pricing.mb_meta': 'Включва персонална консултация и проследяване след процедурата.',
       'pricing.panel.mb': 'Микроблейдинг',
       'pricing.panel.pmu_removal': 'Премахване на перманентен грим',
       'pricing.panel.tattoo_removal': 'Премахване на татуировки',
@@ -1004,6 +1005,7 @@ const TRANSLATIONS = {
       'pricing.tab.badge_top': 'TOP',
 
       /* ---- Pricing: panel headers ---- */
+      'pricing.mb_meta': 'Includes a personal consultation and post-procedure follow-up.',
       'pricing.panel.mb': 'Microblading',
       'pricing.panel.pmu_removal': 'Permanent Makeup Removal',
       'pricing.panel.tattoo_removal': 'Tattoo Removal',
