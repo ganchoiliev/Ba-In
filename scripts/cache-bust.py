@@ -32,7 +32,15 @@ Usage:  python3 scripts/cache-bust.py [--check]
 import re, sys, glob, hashlib, pathlib, collections
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
-REF = re.compile(r'(?P<attr>href|src)="(?P<path>assets/[^"?#]+\.(?:css|js))(?P<query>\?[^"#]*)?"')
+# Images are served under the same immutable policy as CSS and JS, so replacing
+# an image's bytes at a stable path has exactly the failure the header comment
+# describes. Proven on 2026-08-10: the lamination hero was swapped for a real
+# client photograph at the same URL, and every visitor who had loaded the blog
+# earlier that day would have kept the previous file for a year.
+REF = re.compile(
+    r'(?P<attr>href|src)="(?P<path>assets/[^"?#]+\.(?:css|js|webp|jpg|jpeg|png|svg|ico|woff2))'
+    r'(?P<query>\?[^"#]*)?"'
+)
 CHECK = '--check' in sys.argv
 
 _hash = {}

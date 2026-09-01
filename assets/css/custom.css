@@ -3280,7 +3280,7 @@
    BOOKING FORMS — labels, errors, success state, focus rings
    Added alongside assets/js/form-bg.js. See that file for the rationale.
 
-   The forms sit on two very different surfaces: .appointment-one:not(.appointment-one--page) is the dark
+   The forms sit on two very different surfaces: .appointment-one is the dark
    navy section (index.html, appointment.html) and .contact-page is light
    (contact.html). Every colour below is therefore declared twice and each pair
    was checked against its measured background, because the value this replaces
@@ -3302,7 +3302,7 @@
     color: #3A3A3A;
 }
 
-.appointment-one:not(.appointment-one--page) .form-one__label {
+.appointment-one .form-one__label {
     color: rgba(255, 255, 255, .92);
 }
 
@@ -3324,8 +3324,8 @@
     color: #B3261E;
 }
 
-.appointment-one:not(.appointment-one--page) .form-one .form-error,
-.appointment-one:not(.appointment-one--page) .form-one label.error {
+.appointment-one .form-one .form-error,
+.appointment-one .form-one label.error {
     color: #FFB3A7;
 }
 
@@ -3335,8 +3335,8 @@
     border-color: #B3261E !important;
 }
 
-.appointment-one:not(.appointment-one--page) .form-one input.form-error,
-.appointment-one:not(.appointment-one--page) .form-one textarea.form-error {
+.appointment-one .form-one input.form-error,
+.appointment-one .form-one textarea.form-error {
     border-color: #FFB3A7 !important;
 }
 
@@ -3353,7 +3353,7 @@
     border: 1px solid rgba(179, 38, 30, .35);
 }
 
-.appointment-one:not(.appointment-one--page) .form-one .form-sendfail {
+.appointment-one .form-one .form-sendfail {
     color: #FFB3A7;
     background: rgba(255, 179, 167, .1);
     border-color: rgba(255, 179, 167, .4);
@@ -3369,7 +3369,7 @@
     outline: none;
 }
 
-.appointment-one:not(.appointment-one--page) .form-success {
+.appointment-one .form-success {
     background: rgba(255, 255, 255, .06);
     border-color: rgba(196, 154, 69, .55);
 }
@@ -3396,9 +3396,9 @@
     color: #8A6D2F;
 }
 
-.appointment-one:not(.appointment-one--page) .form-success__title { color: #FFFFFF; }
-.appointment-one:not(.appointment-one--page) .form-success__body { color: rgba(255, 255, 255, .85); }
-.appointment-one:not(.appointment-one--page) .form-success__meta { color: #E0BE79; }
+.appointment-one .form-success__title { color: #FFFFFF; }
+.appointment-one .form-success__body { color: rgba(255, 255, 255, .85); }
+.appointment-one .form-success__meta { color: #E0BE79; }
 
 /* Keyboard focus. mediox.css sets `outline: none !important` on .mediox-btn,
    so the header CTA and every submit button had no focus indicator at all —
@@ -3416,10 +3416,10 @@
     outline-offset: 3px !important;
 }
 
-.appointment-one:not(.appointment-one--page) .mediox-btn:focus-visible,
-.appointment-one:not(.appointment-one--page) .form-one input:focus-visible,
-.appointment-one:not(.appointment-one--page) .form-one select:focus-visible,
-.appointment-one:not(.appointment-one--page) .form-one textarea:focus-visible,
+.appointment-one .mediox-btn:focus-visible,
+.appointment-one .form-one input:focus-visible,
+.appointment-one .form-one select:focus-visible,
+.appointment-one .form-one textarea:focus-visible,
 .main-header .mediox-btn:focus-visible,
 .main-header a:focus-visible,
 .main-footer a:focus-visible,
@@ -3728,7 +3728,7 @@
 .faq-two,
 .pt-cta,
 .main-footer,
-.appointment-one:not(.appointment-one--page) {
+.appointment-one {
     --ba-gold-ink: #E0BE79;
     --ba-gold-display: #E0BE79;
 }
@@ -3738,8 +3738,8 @@
 .pt-cta .pt-cta__micro,
 .pt-cta__micro,
 .main-footer .sec-title__tagline,
-.appointment-one:not(.appointment-one--page) .sec-title__tagline,
-.appointment-one:not(.appointment-one--page) .sec-title__title span {
+.appointment-one .sec-title__tagline,
+.appointment-one .sec-title__title span {
     color: #E0BE79 !important;
 }
 
@@ -4121,3 +4121,89 @@ html[lang="bg"] .work-process-one__item__title {
   text-transform: none;
 }
 /* === END GENERATED: bg-sentence-case.py === */
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   Dark-hover buttons need light ink
+
+   The contrast fix above pins filled gold buttons to navy ink, which is right
+   for a gold background and wrong for a black one. The template turns four
+   button contexts black on hover, so navy ink lands on black there: measured
+   1.32:1 on the blog sidebar category pills, where only the count in its own
+   <span> stayed readable.
+
+   Fixing it by out-specifying the template starts a war. Setting the token on
+   the hovered element does not: `color: var(--ba-btn-ink) !important` already
+   reads whatever the element resolves, so the context supplies the answer.
+   Same pattern as the gold text tokens.
+
+   Re-derive after a template update by listing every rule that gives
+   .mediox-btn:hover a background with relative luminance < 0.18.
+   ───────────────────────────────────────────────────────────────────────── */
+.sidebar__categories .mediox-btn:hover,
+.sidebar__tags .mediox-btn:hover,
+.main-slider-two__button-2 .mediox-btn:hover {
+  --ba-btn-ink: #D4AF37;
+}
+
+/* This one the template deliberately takes to white, not gold. */
+.main-slider-three__button--2 .mediox-btn:hover {
+  --ba-btn-ink: #FFFFFF;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   Fast booking path (Notino) on the appointment page
+
+   The form promises an answer within 24 hours; Notino shows live slots and
+   books instantly, so the instant path goes first. The card carries its own
+   navy surface instead of inheriting the page background - the appointment
+   page variants disagree about light/dark (see the --page rescoping above),
+   and a self-contained surface is immune to both.
+   ───────────────────────────────────────────────────────────────────────── */
+.ba-book-fast {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 22px;
+  flex-wrap: wrap;
+  background: #0A2241;
+  border: 1px solid rgba(196, 154, 69, .35);
+  border-radius: 16px;
+  padding: 22px 26px;
+  margin-bottom: 18px;
+}
+.ba-book-fast__text { display: grid; gap: 5px; min-width: 240px; flex: 1 1 300px; }
+.ba-book-fast__title { color: #FFFFFF; font-size: 19px; font-weight: 700; line-height: 1.3; }
+.ba-book-fast__sub { color: rgba(255, 255, 255, .78); font-size: 14.5px; line-height: 1.55; }
+.ba-book-fast__btn { flex: 0 0 auto; }
+/* The --page class claims a light variant, but the rendered background behind
+   the form content is a dark photograph on both variants - measured from
+   pixels, not from the class name. The divider text is light unconditionally. */
+.ba-book-fast__or {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  text-align: center;
+  color: rgba(255, 255, 255, .85);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  margin: 22px 0 18px;
+}
+.ba-book-fast__or::before,
+.ba-book-fast__or::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: rgba(255, 255, 255, .22);
+}
+
+/* The template gives the --page variant a 120px top margin on top of the
+   page-header's own bottom spacing — ~240px of blank white before the form.
+   Half of it is enough to breathe. */
+.appointment-one--page { margin-top: 56px; }
+@media (max-width: 767px) { .appointment-one--page { margin-top: 40px; } }
+@media (max-width: 575px) {
+  .ba-book-fast { padding: 18px; }
+  .ba-book-fast__btn { width: 100%; justify-content: center; }
+}
