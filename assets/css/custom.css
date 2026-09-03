@@ -2,6 +2,18 @@
    CUSTOM OVERRIDES - Beauty Atelier IN
    ====================================================== */
 
+/* Every <img> carries width/height attributes (scripts/img-dimensions.py) so the
+   browser can reserve space before the file arrives. The theme never had a
+   global height:auto, so where CSS only sets width:100% the height attribute
+   stayed fixed and the image stretched (2026-09-03, seen on article heroes and
+   the about portrait on mobile). This keeps the reserved aspect ratio and lets
+   the height follow the width. Class-level rules that set an explicit height
+   still win on specificity. */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
 /* Bootstrap 5 removed .sr-only — re-add for screen-reader-only text */
 .sr-only {
   position: absolute !important;
