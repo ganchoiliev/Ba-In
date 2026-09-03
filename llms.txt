@@ -1,16 +1,57 @@
 # Beauty Atelier IN
 
-> Beauty salon in Silistra, Bulgaria (ул. Отец Паисий 27, 7500 Силистра). Permanent makeup (PhiBrows microblading), anti-age procedures, aftercare treatments. Rated 5.0 from 34 reviews. Run by Iliyana Ilieva, PhiAcademy-certified artist.
+> Козметично студио в Силистра, България (ул. „Отец Паисий“ 27, 7500 Силистра). Перманентен грим на вежди по техника PhiBrows, ламиниране на вежди и мигли със ZOLA, кола маска за лице, микронидлинг и естетични процедури, пиърсинг. Собственик и артист: Илияна Николаева (Iliyana Nikolaeva), сертифицирана от PhiAcademy. 5.0 от 34 отзива в Google. Beauty salon in Silistra, Bulgaria: PhiBrows microblading, ZOLA brow & lash lamination, facial waxing, microneedling, aesthetic treatments, piercing.
 
-- Phone: +359 89 339 8390
-- Hours: Mon–Sat 10:00–18:00
-- Map: https://maps.app.goo.gl/1E4jb3951zqGQFux7
-- Booking: https://ba-in.com/appointment.html
+- Адрес / Address: ул. „Отец Паисий“ 27, 7500 Силистра, България
+- Телефон / Phone: +359 89 339 8390 (WhatsApp: same number)
+- Работно време / Hours: понеделник–събота 10:00–18:00 (Mon–Sat)
+- Онлайн записване / Online booking: https://www.notino.bg/saloni/beauty-atelier-in_3/
+- Карта / Map: https://maps.app.goo.gl/1E4jb3951zqGQFux7
+- Facebook: https://www.facebook.com/IliyanaPhiAcademy/
+- Instagram: https://www.instagram.com/Iliyanailieva.phiacademy/
+- Езици / Languages: български (основен), English on request
 
-## Key pages
-- [About](https://ba-in.com/about.html): the salon and the artist
-- [Appointments](https://ba-in.com/appointment.html): book a visit
-- [Aftertreatment](https://ba-in.com/aftertreatment.html): aftercare guidance
-- [Anti-age 30/40/50](https://ba-in.com/antiage-protseduri-30-40-50.html): procedures by age group
+## Услуги и цени / Services and prices (EUR, September 2026)
+- Перманентен грим на вежди PhiBrows (microblading): 209 €
+- Оформяне на вежди: 10 €; с боя: 13 €
+- Ламиниране на вежди със ZOLA: 29 €
+- Ламиниране на мигли със ZOLA (lash lift + tint, ефект 6–8 седмици): 35 €; вежди + мигли заедно: 60 €
+- Кола маска с шоколад, горна устна (chocolate film wax, upper lip, ~10 мин): 8 €
+- Удължаване на мигли „косъм по косъм“: 45 €; поддръжка 20–30 €
+- Плазма / Non-surgical блефаропластика и корекция на бръчки: 49–179 € според зоната
+- Микронидлинг (Dermapen) и химичен пилинг: 49–159 € според процедурата
+- Пиърсинг с медицинска система: 25–59 €
+Пълен ценоразпис: https://ba-in.com/pricing.html
 
-Site by GoSmartR (https://gosmartr.co.uk).
+## Ключови страници / Key pages
+- [Начало](https://ba-in.com/): overview of the studio
+- [Процедури](https://ba-in.com/procedures.html): all treatments
+- [Ценоразпис](https://ba-in.com/pricing.html): full price list
+- [Микроблейдинг PhiBrows](https://ba-in.com/microblading.html)
+- [Ламиниране на вежди и мигли](https://ba-in.com/laminirane.html)
+- [Микронидлинг](https://ba-in.com/microneedling.html)
+- [Плазма](https://ba-in.com/plasma.html)
+- [Пиърсинг](https://ba-in.com/piercing.html)
+- [Галерия](https://ba-in.com/gallery.html): real client results
+- [За нас](https://ba-in.com/about.html): the artist and the studio
+- [Контакти](https://ba-in.com/contact.html)
+- [Често задавани въпроси](https://ba-in.com/faq.html)
+- [Грижа след процедура](https://ba-in.com/aftertreatment.html)
+
+## Блог / Blog (Bulgarian)
+- [Кола маска с шоколад: защо е по-нежна за лицето](https://ba-in.com/kola-maska-shokolad.html)
+- [Ламиниране с ZOLA: какво прави продуктът с миглите](https://ba-in.com/zola-laminirane-migli.html)
+- [PhiBrows или обикновен микроблейдинг](https://ba-in.com/phibrows-vs-microblading.html)
+- [Антиейдж грижа на 30, 40 и 50](https://ba-in.com/antiage-protseduri-30-40-50.html)
+- [Фиброми и брадавици: премахване](https://ba-in.com/fibromi-premahvane.html)
+- [Защо SPF е задължителен](https://ba-in.com/spf-zashtita-vseki-den.html)
+- [Всички статии](https://ba-in.com/blog.html)
+
+## Факти за цитиране / Facts for citation
+- Единственото студио в Силистра, работещо с професионалната система ZOLA Color Lab за ламиниране (по данни на студиото, 2026).
+- Микроблейдингът се изпълнява по техника PhiBrows от сертифициран PhiAcademy артист.
+- Цените са фиксирани и публични; няма скрити условия. Записване онлайн през Notino или по телефон/WhatsApp.
+
+## Служебно / Meta
+- Sitemap: https://ba-in.com/sitemap.xml
+- Сайт от / Site by GoSmartR (https://gosmartr.co.uk)

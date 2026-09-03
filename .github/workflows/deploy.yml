@@ -22,6 +22,7 @@ jobs:
     # in step with the assets it ships alongside.
     - name: Stamp asset content hashes
       run: |
+        python3 scripts/bundle-css.py
         python3 scripts/cache-bust.py
         git --no-pager diff --stat -- '*.html' | tail -1
 
@@ -35,3 +36,9 @@ jobs:
         remote_port: ${{ secrets.SSH_PORT }}
         remote_user: ${{ secrets.SSH_USERNAME }}
         remote_key: ${{ secrets.SSH_PRIVATE_KEY }}
+
+    # Tell Bing/Yandex/etc. the URLs changed (IndexNow). The key file is served at the root.
+    - name: IndexNow ping
+      if: success()
+      run: node scripts/indexnow-ping.mjs
+      continue-on-error: true

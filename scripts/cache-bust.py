@@ -41,6 +41,9 @@ REF = re.compile(
     r'(?P<attr>href|src)="(?P<path>assets/[^"?#]+\.(?:css|js|webp|jpg|jpeg|png|svg|ico|woff2))'
     r'(?P<query>\?[^"#]*)?"'
 )
+# Inline <style> url() references (self-hosted fonts in the critical CSS) must
+# carry the same stamp as their <link rel="preload">, or the preload is wasted.
+URLREF = re.compile(r"url\((?P<q>['\"]?)(?P<path>assets/[^'\")?#]+\.(?:woff2|webp|jpg|png|svg))(?P<query>\?[^'\")#]*)?(?P=q)\)")
 CHECK = '--check' in sys.argv
 
 _hash = {}
@@ -67,6 +70,18 @@ for html in sorted(ROOT.glob('*.html')):
         return new
 
     out = REF.sub(sub, src)
+
+    def usub(m):
+        global rewrites
+        rel, h = m['path'], digest(m['path'])
+        if h is None:
+            missing[rel] += 1
+            return m.group(0)
+        new = f"url({m['q']}{rel}?v={h}{m['q']})"
+        if new != m.group(0):
+            rewrites += 1
+        return new
+    out = URLREF.sub(usub, out)
 
     # translations.js is injected by i18n.js, not referenced from the HTML, so
     # the loop above never sees it. Stamp its hash onto the i18n.js tag as

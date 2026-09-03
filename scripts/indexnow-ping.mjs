@@ -4,10 +4,6 @@
 const KEY = '6359d279ecb750f4f3faef02240b54f6';
 const HOST = 'ba-in.com';
 
-if (process.env.VERCEL_ENV && process.env.VERCEL_ENV !== 'production') {
-  console.log('[indexnow] non-production build, skipping ping');
-  process.exit(0);
-}
 
 const res = await fetch(`https://${HOST}/sitemap.xml`);
 const xml = await res.text();
