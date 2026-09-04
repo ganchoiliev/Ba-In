@@ -32,6 +32,11 @@ RewriteRule ^blog-carousel-2\.html$ /blog.html [L,R=301]
 # published. 302 on purpose - do not let browsers cache it permanently.
 RewriteRule ^notino/?$ https://partner.notino.com/api/notino-partner/b2c/redirect/link/O4n2OwPORfjp [L,R=302,NC]
 
+# Ads display path. The Google Ads RSA shows ba-in.com/zapazi-chas/silistra;
+# the final URL is appointment.html. Make the displayed path resolve so nothing
+# printed in an ad is a dead link. 301: this mapping is stable.
+RewriteRule ^zapazi-chas(/.*)?$ /appointment.html [L,R=301,NC]
+
 # Security headers
 <IfModule mod_headers.c>
     Header always set Strict-Transport-Security "max-age=31536000"
