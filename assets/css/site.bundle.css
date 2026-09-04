@@ -5385,3 +5385,44 @@ html[lang="bg"] .work-process-one__item__title {
         rgba(8, 14, 28, .38) 100%) !important;
 }
 
+
+/* -----------------------------------------------------------------------------
+   Appointment landing lead — paid-search message-match block.
+   Scoped under .appointment-one__content so text colors beat theme heading
+   rules (.appointment-one__content h2 etc). Mirrors .ba-book-fast tokens.
+   -------------------------------------------------------------------------- */
+.appointment-one__content .ba-lp-lead { margin-bottom: 26px; }
+.appointment-one__content .ba-lp-lead__eyebrow {
+    display: inline-flex; align-items: center; gap: 8px; margin: 0 0 12px;
+    font-size: 12.5px; font-weight: 700; letter-spacing: .10em; text-transform: uppercase; color: #E2C279;
+}
+.appointment-one__content .ba-lp-lead__tick {
+    display: inline-grid; place-items: center; width: 18px; height: 18px; border-radius: 50%;
+    background: rgba(196,154,69,.18); color: #E2C279; font-size: 11px; font-weight: 800;
+}
+.appointment-one__content .ba-lp-lead__title { color:#FFFFFF; font-size:27px; line-height:1.22; font-weight:800; margin:0 0 8px; }
+.appointment-one__content .ba-lp-lead__sub { color:rgba(255,255,255,.80); font-size:15px; line-height:1.55; margin:0 0 20px; max-width:48ch; }
+.appointment-one__content .ba-lp-cards { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-bottom:20px; }
+.appointment-one__content .ba-lp-card {
+    display:flex; flex-direction:column; align-items:flex-start; gap:6px;
+    background:#0A2241; border:1px solid rgba(196,154,69,.35); border-radius:16px; padding:20px 20px 22px;
+    transition:transform .25s ease, border-color .25s ease, box-shadow .25s ease;
+}
+.appointment-one__content .ba-lp-card:hover { transform:translateY(-3px); border-color:rgba(196,154,69,.65); box-shadow:0 14px 30px rgba(0,0,0,.28); }
+.appointment-one__content .ba-lp-card__name { color:#FFFFFF; font-size:17px; font-weight:700; line-height:1.25; }
+.appointment-one__content .ba-lp-card__meta { color:rgba(255,255,255,.72); font-size:13px; line-height:1.5; min-height:40px; }
+.appointment-one__content .ba-lp-card__price { display:flex; align-items:baseline; gap:6px; color:#E2C279; font-size:28px; font-weight:800; letter-spacing:.01em; line-height:1; margin:4px 0 14px; }
+.appointment-one__content .ba-lp-card__price small { font-size:13px; font-weight:600; color:rgba(255,255,255,.6); }
+.appointment-one__content .ba-lp-card__btn { width:100%; justify-content:center; margin-top:auto; }
+.appointment-one__content .ba-lp-card--all { justify-content:space-between; }
+.appointment-one__content .ba-lp-card__link { color:#E2C279; font-size:13.5px; font-weight:700; text-decoration:none; letter-spacing:.02em; margin-bottom:12px; }
+.appointment-one__content .ba-lp-card__link:hover { color:#FFFFFF; }
+.appointment-one__content .ba-lp-trust { display:flex; flex-wrap:wrap; gap:10px 22px; align-items:center; padding-top:2px; }
+.appointment-one__content .ba-lp-trust__item { position:relative; padding-left:18px; color:rgba(255,255,255,.82); font-size:13.5px; font-weight:600; line-height:1.4; }
+.appointment-one__content .ba-lp-trust__item::before { content:"\2713"; position:absolute; left:0; top:1px; color:#E2C279; font-weight:800; font-size:12px; }
+@media (max-width: 767px) {
+    .appointment-one__content .ba-lp-cards { grid-template-columns:1fr; }
+    .appointment-one__content .ba-lp-lead__title { font-size:23px; }
+    .appointment-one__content .ba-lp-card__meta { min-height:0; }
+}
+
