@@ -597,13 +597,13 @@ const TRANSLATIONS = {
          ======================================================== */
 
       /* Page meta */
-      'index.title': 'Beauty Atelier IN | Микроблейдинг и естетични процедури в Силистра',
-      'index.meta_desc': 'Специализиран център за PhiBrows микроблейдинг в Силистра. Предлагаме професионален микронидлинг, ламиниране на мигли и естетични процедури. Доверете се на сертифициран опит.',
+      'index.title': 'Салон за красота в Силистра – микроблейдинг, ламиниране | Beauty Atelier IN',
+      'index.meta_desc': 'Салон за красота в Силистра: PhiBrows микроблейдинг, ламиниране на мигли и вежди със ZOLA, микронидлинг, пробиване на уши. 5.0 в Google. Запазете час онлайн.',
 
       /* Hero — static */
       'index.hero.trust_qualifier': '5.0 в Google · 34 отзива',
       'index.hero.title': 'Перфектните вежди, които <br><span class="hero-static__title--accent">винаги сте искали</span>',
-      'index.hero.subtitle': 'Микроблейдинг и естетични процедури · Силистра',
+      'index.hero.subtitle': 'Салон за красота в Силистра · микроблейдинг, ламиниране и естетични процедури',
       'index.hero.btn_book': 'Запази безплатна консултация',
       'index.hero.btn_procedures': 'Процедури',
       'index.hero.microcopy': 'Без ангажимент · Отговаряме до 24 часа',
@@ -1552,13 +1552,13 @@ const TRANSLATIONS = {
          ======================================================== */
 
       /* Page meta */
-      'index.title': 'Beauty Atelier IN | Microblading & Aesthetic Treatments in Silistra',
+      'index.title': 'Beauty Salon in Silistra – Microblading, Lamination | Beauty Atelier IN',
       'index.meta_desc': 'Specialist centre for PhiBrows microblading in Silistra. Professional microneedling, lash lamination and aesthetic treatments. Trust certified expertise.',
 
       /* Hero — static */
       'index.hero.trust_qualifier': '5.0 on Google · 34 reviews',
       'index.hero.title': 'The perfect brows <br><span class="hero-static__title--accent">you\'ve always wanted</span>',
-      'index.hero.subtitle': 'Microblading & aesthetic treatments · Silistra',
+      'index.hero.subtitle': 'Beauty salon in Silistra · microblading, lamination & aesthetic treatments',
       'index.hero.btn_book': 'Book a free consultation',
       'index.hero.btn_procedures': 'Procedures',
       'index.hero.microcopy': 'No commitment · We reply within 24 hours',
