@@ -5528,3 +5528,14 @@ html[lang="bg"] .work-process-one__item__title {
 .svc-book .svc-book__all:hover { color:#C49A45; }
 @media (max-width:575px) { .svc-book { padding:20px 18px; } .svc-book .svc-book__list li { font-size:15px; } }
 
+/* Brows hub (vezhdi.html) — "which treatment is for you" rows: photo left, text right. */
+.svc-choose { display:grid; gap:22px; margin:18px 0 24px; }
+.svc-choose .svc-choose__item { display:grid; grid-template-columns:200px 1fr; gap:22px; align-items:start; padding:18px; border:1px solid rgba(10,34,65,.1); border-radius:16px; background:#fff; }
+.svc-choose .svc-choose__img { width:200px; height:150px; object-fit:cover; border-radius:12px; }
+.svc-choose .svc-choose__title { color:#0A2241; font-size:20px; font-weight:800; margin:2px 0 8px; }
+.svc-choose .svc-choose__body .service-details__text { margin:0 0 10px; }
+.svc-choose .svc-choose__link { color:#C49A45; font-weight:700; font-size:15px; text-decoration:underline; text-underline-offset:3px; }
+.svc-choose .svc-choose__link:hover { color:#0A2241; }
+@media (max-width:575px) { .svc-choose .svc-choose__item { grid-template-columns:1fr; padding:14px; } .svc-choose .svc-choose__img { width:100%; height:190px; } }
+.svc-book + .service-details__inner-two { margin-top:40px; }
+
