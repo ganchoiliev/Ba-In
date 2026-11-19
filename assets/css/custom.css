@@ -4550,3 +4550,22 @@ html[lang="bg"] .work-process-one__item__title {
 .svc-choose .svc-choose__link:hover { color:#0A2241; }
 @media (max-width:575px) { .svc-choose .svc-choose__item { grid-template-columns:1fr; padding:14px; } .svc-choose .svc-choose__img { width:100%; height:190px; } }
 .svc-book + .service-details__inner-two { margin-top:40px; }
+
+/* =============================================================================
+   Blog article blocks emitted by auto-blog.js: the "Накратко" summary
+   (topic.summary), bullet lists ({ "list": [...] }) and tables ({ "table": ... }).
+   ============================================================================= */
+.blog-summary { margin:20px 0 8px; padding:20px 24px; border-left:4px solid #C49A45; border-radius:0 12px 12px 0; background:#FBF7F0; }
+.blog-summary .blog-summary__title { margin:0 0 10px; color:#0A2241; font-size:18px; font-weight:800; }
+.blog-summary .blog-list { margin-bottom:0; }
+.blog-list { margin:0 0 18px; padding-left:22px; list-style:disc; }
+.blog-list li { margin:0 0 8px; line-height:1.65; color:var(--mediox-text, #5a5f6a); }
+.blog-list li::marker { color:#C49A45; }
+.blog-table__wrap { margin:12px 0 20px; overflow-x:auto; -webkit-overflow-scrolling:touch; }
+.blog-table { width:100%; border-collapse:collapse; font-size:15.5px; }
+.blog-table th, .blog-table td { padding:11px 14px; border-bottom:1px solid rgba(10,34,65,.12); text-align:left; vertical-align:top; }
+.blog-table th { background:#FBF7F0; color:#0A2241; font-weight:800; }
+.blog-table td { color:var(--mediox-text, #5a5f6a); }
+.blog-table th:last-child, .blog-table td:last-child { text-align:right; white-space:nowrap; color:#0A2241; font-weight:700; }
+.svc-related { margin:14px 0 0; }
+.svc-related a { color:#C49A45; font-weight:700; text-decoration:underline; text-underline-offset:3px; }

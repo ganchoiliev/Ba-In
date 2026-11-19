@@ -5,6 +5,7 @@
  *   node auto-blog.js <slug>
  *   node auto-blog.js --list           (show available topics)
  *   node auto-blog.js --next           (pick the next unpublished topic)
+ *   node auto-blog.js --rebuild <slug> (regenerate an existing post, keep its date)
  * 
  * What it does:
  *   1. Reads the topic from blog-topics.json
@@ -91,10 +92,54 @@ function getNextTopic() {
 // ones still waiting to be written only carry `hint` -- a one-line note to self
 // -- so fall back to that and keep generating.
 function sectionProse(section, cls) {
-    const paras = (Array.isArray(section.body) && section.body.length)
+    const items = (Array.isArray(section.body) && section.body.length)
         ? section.body
         : (section.hint ? [section.hint] : []);
-    return paras.map(p => `<p class="${cls}">${p}</p>\n`).join('');
+    return items.map(item => {
+        // A body item is normally a paragraph (string). Two structured forms are
+        // also accepted so a post can carry a bullet list or a small table:
+        //   { "list": ["...", "..."] }
+        //   { "table": { "head": ["A", "B"], "rows": [["1", "2"], ...] } }
+        if (item && typeof item === 'object' && Array.isArray(item.list)) {
+            return `<ul class="blog-list">\n` +
+                item.list.map(li => `    <li>${li}</li>`).join('\n') + `\n</ul>\n`;
+        }
+        if (item && typeof item === 'object' && item.table && Array.isArray(item.table.rows)) {
+            const head = Array.isArray(item.table.head) && item.table.head.length
+                ? `<thead><tr>${item.table.head.map(h => `<th scope="col">${h}</th>`).join('')}</tr></thead>\n`
+                : '';
+            const rows = item.table.rows
+                .map(r => `<tr>${r.map(c => `<td>${c}</td>`).join('')}</tr>`).join('\n');
+            return `<div class="blog-table__wrap"><table class="blog-table">\n${head}<tbody>\n${rows}\n</tbody></table></div>\n`;
+        }
+        return `<p class="${cls}">${item}</p>\n`;
+    }).join('');
+}
+
+// Plain-text length of a generated block, in words, for BlogPosting.wordCount.
+function countWords(html) {
+    const text = html.replace(/<[^>]+>/g, ' ').replace(/&[a-z]+;/g, ' ');
+    return (text.match(/\S+/g) || []).length;
+}
+
+// Pixel size of a hero image (WebP or PNG), or null when the file is not there
+// yet. The builder usually runs before the hero is exported, so callers must
+// cope with null.
+function imageSize(file) {
+    try {
+        const b = fs.readFileSync(file);
+        if (b.toString('ascii', 0, 4) === 'RIFF' && b.toString('ascii', 8, 12) === 'WEBP') {
+            const kind = b.toString('ascii', 12, 16);
+            if (kind === 'VP8X') return { width: 1 + b.readUIntLE(24, 3), height: 1 + b.readUIntLE(27, 3) };
+            if (kind === 'VP8 ') return { width: b.readUInt16LE(26) & 0x3fff, height: b.readUInt16LE(28) & 0x3fff };
+            if (kind === 'VP8L') {
+                const n = b.readUInt32LE(21);
+                return { width: (n & 0x3fff) + 1, height: ((n >>> 14) & 0x3fff) + 1 };
+            }
+        }
+        if (b.readUInt32BE(0) === 0x89504e47) return { width: b.readUInt32BE(16), height: b.readUInt32BE(20) };
+    } catch (e) { /* missing or unreadable: fall through */ }
+    return null;
 }
 
 // FAQ block, rendered after the last section. The questions are <h4> because
@@ -171,51 +216,66 @@ function buildFaqJsonLd(topic) {
 
 function generateContentBlock1(topic) {
     let html = '';
-    
-    // Intro paragraph
+
+    // Intro: the excerpt, then an optional "in short" list (topic.summary).
+    // The builder used to add a stock "В тази статия ще разгледаме..." line
+    // here; it said nothing and every post had to have it removed by hand.
     html += `<p class="blog-card-four__text">${topic.excerpt}</p>\n`;
-    html += `<p class="blog-card-four__text">В тази статия ще разгледаме темата в детайли, за да можете да вземете информирано решение за себе си.</p>\n`;
-    
+    if (Array.isArray(topic.summary) && topic.summary.length) {
+        html += `<div class="blog-summary">\n<h3 class="blog-summary__title">Накратко</h3>\n<ul class="blog-list">\n` +
+            topic.summary.map(li => `    <li>${li}</li>`).join('\n') + `\n</ul>\n</div>\n`;
+    }
+
     // First 3 sections go in the card content area
     const firstSections = topic.sections.slice(0, 3);
     firstSections.forEach(section => {
         html += `\n<h3 class="blog-details__inner__title" style="margin-top: 20px;">${section.heading}</h3>\n`;
         html += sectionProse(section, 'blog-card-four__text');
     });
-    
+
     return html;
 }
 
 function generateContentBlock2(topic) {
     let html = '';
-    
+
     // Remaining sections
     const remainingSections = topic.sections.slice(3);
     remainingSections.forEach(section => {
         html += `\n<h3 class="blog-details__inner__title" style="margin-top: 20px;">${section.heading}</h3>\n`;
         html += sectionProse(section, 'blog-details__inner__text');
     });
-    
+
     // FAQ, straight after the last section
     html += generateFaqBlock(topic, 'blog-details__inner__text');
 
-    // Closing CTA
-    html += `
-<h3 class="blog-details__inner__title" style="margin-top: 20px;">Заключение</h3>
-<p class="blog-details__inner__text">Надяваме се, че тази статия ви беше полезна! Ако имате допълнителни въпроси или искате да научите повече, не се колебайте да се свържете с нас.</p>
-<p class="blog-details__inner__text">В Beauty Atelier IN вярваме, че информираният избор е най-красивият. <strong><a href="contact.html" style="color:var(--mediox-base);">Запазете безплатна консултация</a></strong> и нека заедно намерим най-доброто решение за вас.</p>
+    // Closing: only what the topic supplies (topic.closing, an array of
+    // paragraphs). The stock "Заключение / Надяваме се, че тази статия ви беше
+    // полезна" block is gone for the same reason as the stock intro.
+    if (Array.isArray(topic.closing) && topic.closing.length) {
+        html += '\n' + topic.closing.map(p => `<p class="blog-details__inner__text">${p}</p>\n`).join('');
+    }
 
+    // Booking CTA
+    html += `
 <div style="margin-top: 40px; text-align: center;">
-    <a href="appointment.html" class="mediox-btn" aria-label="Запазете консултация сега"><span>Запази Консултация</span> <span class="mediox-btn__icon"><i class="icon-up-right-arrow"></i></span></a>
+    <a href="appointment.html" class="mediox-btn" aria-label="Запазете час сега"><span>Запази час</span> <span class="mediox-btn__icon"><i class="icon-up-right-arrow"></i></span></a>
 </div>
 `;
     return html;
 }
 
 // ─── Build the blog post HTML ───────────────────────────────────────
-function buildPost(topic) {
+function buildPost(topic, opts = {}) {
     let html = fs.readFileSync(TEMPLATE, 'utf-8');
-    const date = today();
+    const now = today();
+    // `date` is the publish date shown on the page. A rebuild keeps the
+    // original one and only moves dateModified.
+    const date = opts.published || now;
+    // <title>, og:title and twitter:title. topic.seoTitle lets the search
+    // title be shorter than the on-page headline (aim for ~45 characters
+    // before the brand suffix); it falls back to the headline.
+    const pageTitle = `${topic.seoTitle || topic.title} | Beauty Atelier IN`;
     const heroPath = slugToHeroPath(topic.slug);
     // The hero's alt text describes the picture, not the article, so it comes
     // from the topic; older topics without one fall back to the title.
@@ -236,7 +296,7 @@ function buildPost(topic) {
         `"image": "https://ba-in.com/${heroPath}"`
     );
     html = html.replace(/"datePublished": "[\d-]+"/g, `"datePublished": "${date.iso}"`);
-    html = html.replace(/"dateModified": "[\d-]+"/g, `"dateModified": "${date.iso}"`);
+    html = html.replace(/"dateModified": "[\d-]+"/g, `"dateModified": "${now.iso}"`);
     html = html.replace(
         /"mainEntityOfPage": \{"@type": "WebPage", "@id": "https:\/\/ba-in\.com\/pmu-removal-guide\.html"\}/,
         `"mainEntityOfPage": {"@type": "WebPage", "@id": "${fullUrl}"}`
@@ -252,7 +312,7 @@ function buildPost(topic) {
     // ── <title> ──
     html = html.replace(
         /data-i18n="blog_pmu_removal\.title">Премахване на Перманентен Грим: Всичко, Което Трябва да Знаете \| Beauty Atelier IN<\/title>/,
-        `>${topic.title} | Beauty Atelier IN</title>`
+        `>${pageTitle}</title>`
     );
     
     // ── <link rel="canonical"> and alternates ──
@@ -273,7 +333,7 @@ function buildPost(topic) {
     // ── OG tags ──
     html = html.replace(
         /content="Премахване на Перманентен Грим: Всичко, Което Трябва да Знаете \| Beauty Atelier IN" \/>/,
-        `content="${topic.title} | Beauty Atelier IN" />`
+        `content="${pageTitle}" />`
     );
     html = html.replace(
         /content="Лазер, ремувър или салинен разтвор\? Научете кой метод за премахване на перманентен грим е подходящ за вас\." \/>/,
@@ -301,10 +361,26 @@ function buildPost(topic) {
     );
     
     // ── Hero image ──
+    // scripts/cache-bust.py stamps ?v=<hash> onto every asset URL, including the
+    // ones in the template this builder clones. The pattern used to require the
+    // bare .png, so once the template was stamped the swap silently missed and
+    // new posts shipped with the PMU hero. The whole tag is rewritten because
+    // the template's attributes (640x640, loading="lazy") are wrong for a hero:
+    // it is the LCP image, so it must not be lazy and needs its true size.
+    const heroDims = imageSize(path.join(ROOT, heroPath));
+    const heroW = heroDims ? heroDims.width : 1200;
+    const heroH = heroDims ? heroDims.height : 800;
     html = html.replace(
-        /src="assets\/images\/blog\/pmu-removal-hero\.png"\s*\n\s*alt="[^"]*"/,
-        () => `src="${heroPath}"\n                                        alt="${heroAlt}"`
+        /<img src="assets\/images\/blog\/pmu-removal-hero\.png(?:\?v=[0-9a-f]+)?"\s*\n\s*alt="[^"]*"[^>]*>/,
+        () => `<img src="${heroPath}"\n                                        alt="${heroAlt}" decoding="async" fetchpriority="high" width="${heroW}" height="${heroH}">`
     );
+
+    // ── Social cards: the tags the exact-match replacements above do not reach ──
+    html = html.replace(/<meta property="og:image:width" content="[^"]*" \/>/, `<meta property="og:image:width" content="${heroW}" />`);
+    html = html.replace(/<meta property="og:image:height" content="[^"]*" \/>/, `<meta property="og:image:height" content="${heroH}" />`);
+    html = html.replace(/<meta property="og:image:alt" content="[^"]*" \/>/, () => `<meta property="og:image:alt" content="${heroAlt}" />`);
+    html = html.replace(/<meta name="twitter:title" content="[^"]*" \/>/, () => `<meta name="twitter:title" content="${pageTitle}" />`);
+    html = html.replace(/<meta name="twitter:description" content="[^"]*" \/>/, () => `<meta name="twitter:description" content="${topic.metaDescription}" />`);
     
     // ── Date badge ──
     html = html.replace(
@@ -331,6 +407,8 @@ function buildPost(topic) {
     // budget: each phrase is linked at most once across the whole body.
     [contentBlock1, contentBlock2] = applyInternalLinks(
         [contentBlock1, contentBlock2], topic.internalLinks);
+    // The template hard-codes its own wordCount; report this article's.
+    html = html.replace(/"wordCount": \d+/, `"wordCount": ${countWords(contentBlock1 + contentBlock2)}`);
     html = html.replace(
         /<div class="blog-card-four__content__inner">[\s\S]*?<\/div>\s*<\/div>\s*<\/div>\s*<div class="blog-details__inner">/,
         () => `<div class="blog-card-four__content__inner">\n${contentBlock1}\n</div>\n</div>\n</div>\n<div class="blog-details__inner">`
@@ -375,7 +453,7 @@ function buildPost(topic) {
     
     // ── Sidebar: recent posts — update to include this post ──
     html = html.replace(
-        /src="assets\/images\/blog\/pmu-removal-hero\.png"\s*\n\s*alt="Премахване на Перманентен Грим"/,
+        /src="assets\/images\/blog\/pmu-removal-hero\.png(?:\?v=[0-9a-f]+)?"\s*\n\s*alt="Премахване на Перманентен Грим"/,
         `src="${heroPath}"\n                                                    alt="${topic.title}"`
     );
     
@@ -390,14 +468,37 @@ function buildPost(topic) {
         // The template's <img> also carries loading/decoding attributes; without
         // them in the pattern this replacement silently missed and every generated
         // post kept the PMU thumbnail in its footer.
-        /<img src="assets\/images\/blog\/pmu-removal-hero\.png" style="width: 70px; height: 70px; object-fit: cover;" alt="[^"]*"([^>]*)>/,
+        /<img src="assets\/images\/blog\/pmu-removal-hero\.png(?:\?v=[0-9a-f]+)?" style="width: 70px; height: 70px; object-fit: cover;" alt="[^"]*"([^>]*)>/,
         (_m, rest) => `<img src="${heroPath}" style="width: 70px; height: 70px; object-fit: cover;" alt="${heroAlt}"${rest}>`
     );
     html = html.replace(
         /href="pmu-removal-guide\.html" data-i18n="shared\.footer\.blog1_title">Правилна процедура<\/a>/,
         `href="${topic.slug}.html">${topic.title.substring(0, 25)}</a>`
     );
-    
+
+    // ── Self-check ──
+    // Every replacement above is a string match against the template, and a
+    // miss is silent. Look for the template's own words in the two places a
+    // reader or a crawler would see them: <head> and the article body.
+    const headPart = html.slice(0, html.indexOf('</head>'));
+    const bodyStart = html.indexOf('<div class="blog-card-four__content__inner">');
+    const bodyEnd = html.indexOf('<div class="blog-details__meta');
+    const articlePart = bodyStart >= 0 && bodyEnd > bodyStart ? html.slice(bodyStart, bodyEnd) : '';
+    const heroPart = html.slice(Math.max(0, bodyStart - 1500), bodyStart);
+    const residue = [];
+    [['<head>', headPart], ['article body', articlePart], ['hero image', heroPart]].forEach(([where, part]) => {
+        [/pmu-removal/i, /Премахване на Перманентен Грим/, /ремувър/].forEach(re => {
+            if (re.test(part)) residue.push(`${where}: still contains ${re}`);
+        });
+    });
+    if (residue.length) {
+        console.log('  ⚠️  Template text left in the generated post — fix before publishing:');
+        residue.forEach(r => console.log(`      - ${r}`));
+    }
+    if (!heroDims) {
+        console.log(`  ⚠️  Hero image not found at ${heroPath}; assumed 1200x800. After adding it run: node auto-blog.js --rebuild ${topic.slug}`);
+    }
+
     return html;
 }
 
@@ -511,6 +612,10 @@ Usage:
   node auto-blog.js <slug>        Build a specific topic
   node auto-blog.js --list        Show all available topics
   node auto-blog.js --next        Build the next unpublished topic
+  node auto-blog.js --rebuild <slug>
+                                  Regenerate an existing post from blog-topics.json.
+                                  Rewrites only <slug>.html: blog.html and sitemap.xml
+                                  are left alone and the original publish date is kept.
 
 Examples:
   node auto-blog.js laminirane-vezhdi-migli
@@ -524,6 +629,23 @@ Examples:
         return;
     }
     
+    if (args[0] === '--rebuild') {
+        const slug = args[1];
+        const t = slug && loadTopics().topics.find(x => x.slug === slug);
+        const file = slug && path.join(ROOT, `${slug}.html`);
+        if (!t) { console.log(`❌ Topic "${slug}" not found. Use --list to see available topics.`); return; }
+        if (!fs.existsSync(file)) { console.log(`❌ ${slug}.html does not exist yet. Build it first: node auto-blog.js ${slug}`); return; }
+        const old = fs.readFileSync(file, 'utf-8');
+        const m = old.match(/"datePublished": "(\d{4})-(\d{2})-(\d{2})"/);
+        const published = m
+            ? { iso: `${m[1]}-${m[2]}-${m[3]}`, day: m[3], monthBG: BG_MONTHS[parseInt(m[2], 10) - 1], year: m[1] }
+            : today();
+        console.log(`\n🔁 Rebuilding ${slug}.html (published ${published.iso})`);
+        fs.writeFileSync(file, buildPost(t, { published }), 'utf-8');
+        console.log(`  ✅ ${slug}.html rewritten. Now run: python3 scripts/sidebar-recent.py && python3 scripts/cache-bust.py\n`);
+        return;
+    }
+
     let topic;
     
     if (args[0] === '--next') {
@@ -573,7 +695,8 @@ Examples:
     console.log('✅ Blog post built successfully!\n');
     console.log('📋 Next steps:');
     console.log(`  1. 🖼️  Generate hero image and save to: ${slugToHeroPath(topic.slug)}`);
-    console.log(`  2. ✏️  Review & enrich the article content in ${topic.slug}.html`);
+    console.log(`  2. 🔁 After the hero is in place: node auto-blog.js --rebuild ${topic.slug}`);
+    console.log(`     then: python3 scripts/sidebar-recent.py && python3 scripts/cache-bust.py`);
     console.log(`  3. 🔄 git add . && git commit -m "blog: ${topic.slug}" && git push`);
     console.log(`  4. 🌐 Verify on https://ba-in.com/${topic.slug}.html\n`);
 }
