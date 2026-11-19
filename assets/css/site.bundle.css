@@ -5510,3 +5510,21 @@ html[lang="bg"] .work-process-one__item__title {
   .lp-lam .lp-lam__hero { padding:36px 0 30px; }
 }
 
+
+/* =============================================================================
+   Service pages — price + booking box (.svc-book). Sits above the FAQ on
+   lashes / microblading / microneedling / plasma / piercing / removal, which
+   previously showed no price and no booking action in the content column.
+   Prices mirror pricing.html: change them in both places.
+   ============================================================================= */
+.svc-book { margin:36px 0 8px; padding:26px 28px; border:1px solid rgba(196,154,69,.4); border-radius:16px; background:linear-gradient(180deg,#FBF7F0 0%,#ffffff 100%); }
+.svc-book .svc-book__title { margin:0 0 14px; }
+.svc-book .svc-book__list { margin:0 0 20px; padding:0; }
+.svc-book .svc-book__list li { display:flex; justify-content:space-between; align-items:baseline; gap:16px; padding:11px 0; border-bottom:1px solid rgba(10,34,65,.1); color:#0A2241; font-size:16px; line-height:1.4; }
+.svc-book .svc-book__list li:last-child { border-bottom:0; }
+.svc-book .svc-book__list b { color:#C49A45; font-size:18px; font-weight:800; white-space:nowrap; }
+.svc-book .svc-book__actions { display:flex; flex-wrap:wrap; align-items:center; gap:18px; }
+.svc-book .svc-book__all { color:#0A2241; font-weight:700; font-size:15px; text-decoration:underline; text-underline-offset:3px; }
+.svc-book .svc-book__all:hover { color:#C49A45; }
+@media (max-width:575px) { .svc-book { padding:20px 18px; } .svc-book .svc-book__list li { font-size:15px; } }
+
