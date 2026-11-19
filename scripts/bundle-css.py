@@ -45,6 +45,15 @@ SITE = [  # sync everywhere
     'assets/css/google-reviews.css',
     'assets/css/custom.css',
 ]
+# 2026-11 redesign. The homepage is built entirely on the .at-* system
+# (assets/css/atelier.css) and no longer loads the 700 KiB theme bundle: it
+# gets this one small sync file instead. The two widget sheets are the only
+# legacy CSS it still needs.
+HOME = [
+    'assets/css/atelier.css',
+    'assets/css/ai-chat.css',
+    'assets/css/cookie-consent.css',
+]
 
 URL_RE = re.compile(r'url\(\s*(["\']?)([^"\')]+)\1\s*\)')
 
@@ -78,6 +87,7 @@ def build(files, out_name):
 
 build(THEME, 'theme.bundle.css')
 build(SITE, 'site.bundle.css')
+build(HOME, 'home.bundle.css')
 
 LINK = re.compile(r'[ \t]*<link rel="stylesheet" href="(assets/[^"?]+)(\?v=[0-9a-f]+)?"([^>]*)/?>\s*\n?')
 theme_set, site_set = set(THEME), set(SITE)
