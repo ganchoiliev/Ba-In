@@ -35,8 +35,13 @@ RewriteRule ^aftertreatment\.html$ /faq.html [L,R=301]
 
 # Branded booking short link. Printed materials and pinned social posts say
 # ba-in.com/notino; the partner URL can change without touching anything
-# published. 302 on purpose - do not let browsers cache it permanently.
-RewriteRule ^notino/?$ https://partner.notino.com/api/notino-partner/b2c/redirect/link/O4n2OwPORfjp [L,R=302,NC]
+# published. The redirect itself (302, never cached) is sent by api/notino.php,
+# which also counts the click without cookies: Analytics only sees visitors
+# who accept the banner, so its notino_click event undercounts. The partner
+# URL now lives in that file.
+# IF BOOKING EVER BREAKS, put the old line back in place of the one below:
+#   RewriteRule ^notino/?$ https://partner.notino.com/api/notino-partner/b2c/redirect/link/O4n2OwPORfjp [L,R=302,NC]
+RewriteRule ^notino/?$ /api/notino.php [L,NC]
 
 # Ads display path. The Google Ads RSA shows ba-in.com/zapazi-chas/silistra;
 # the final URL is appointment.html. Make the displayed path resolve so nothing
