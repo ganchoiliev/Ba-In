@@ -1,11 +1,9 @@
 /* atelier.js — behaviour for the .at-* design system. Vanilla, no dependencies.
-   Everything degrades to a working page without it: the nav links, the booking
-   links and the results reel (native horizontal scroll) all work with JS off. */
+   Navigation, booking links and native page controls also work with JavaScript off. */
 (function () {
     'use strict';
 
     var doc = document, body = doc.body;
-    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
     /* ---- header hairline once the page has moved ---- */
     var header = doc.getElementById('at-header');
@@ -88,28 +86,6 @@
         }
         render();
     }
-
-    /* ---- results reel: buttons are an enhancement over native scroll ---- */
-    doc.querySelectorAll('[data-at-reel]').forEach(function (reel) {
-        var track = reel.querySelector('.at-reel__track');
-        var scope = reel.closest('section') || reel;
-        var prev = scope.querySelector('[data-at-reel-prev]');
-        var next = scope.querySelector('[data-at-reel-next]');
-        if (!track || !prev || !next) return;
-        var step = function () {
-            var card = track.querySelector('.at-shot');
-            return card ? card.getBoundingClientRect().width + parseFloat(getComputedStyle(track).columnGap || 16) : 320;
-        };
-        var sync = function () {
-            prev.disabled = track.scrollLeft < 8;
-            next.disabled = track.scrollLeft + track.clientWidth > track.scrollWidth - 8;
-        };
-        prev.addEventListener('click', function () { track.scrollBy({ left: -step() * 2, behavior: reduce ? 'auto' : 'smooth' }); });
-        next.addEventListener('click', function () { track.scrollBy({ left: step() * 2, behavior: reduce ? 'auto' : 'smooth' }); });
-        track.addEventListener('scroll', sync, { passive: true });
-        window.addEventListener('resize', sync);
-        sync();
-    });
 
     /* ---- footer year ---- */
     doc.querySelectorAll('.at-year').forEach(function (el) { el.textContent = new Date().getFullYear(); });

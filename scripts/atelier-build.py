@@ -63,6 +63,7 @@ HEAD_BLOCK = '''    <meta name="theme-color" content="#F2EDE6" />
 # The main partials contain the editable page content.
 PAGES = {
     'index': 'home',
+    'about': 'about',
     'procedures': 'procedures',
     'pricing': 'pricing',
     'appointment': 'appointment',
@@ -88,6 +89,8 @@ def build_page(filename, name):
     styles = HEAD_BLOCK
     scripts = ['atelier']
     styles += f'\n    <link rel="stylesheet" href="assets/css/atelier-{name}.css" />'
+    if name == 'home':
+        styles += '\n    <link rel="stylesheet" href="assets/css/atelier-home-sections.css" />'
     if (ROOT / 'assets' / 'js' / f'atelier-{name}.js').is_file():
         scripts.append(f'atelier-{name}')
 

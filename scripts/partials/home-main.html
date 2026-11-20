@@ -1,162 +1,190 @@
 <main id="main">
-
-    <!-- ── Hero ─────────────────────────────────────────────────────────── -->
-    <section class="at-cover" aria-labelledby="at-hero-title">
-        <div class="at-wrap at-cover__grid">
-            <header class="at-cover__heading">
+    <section class="at-front at-on-ink" aria-labelledby="at-hero-title">
+        <div class="at-front__spread">
+            <fieldset class="at-front__album">
+                <legend class="at-sr" data-i18n="home.portrait.photos">Снимки на Илияна</legend>
+                <input class="at-sr at-front__choice" type="radio" id="front-portrait" name="front-photo" checked>
+                <input class="at-sr at-front__choice" type="radio" id="front-work" name="front-photo">
+                <figure class="at-front__photo at-front__photo--portrait">
+                    <img src="assets/images/atelier/iliyana-portrait-800.webp"
+                     srcset="assets/images/atelier/iliyana-portrait-480.webp 480w, assets/images/atelier/iliyana-portrait-800.webp 800w, assets/images/atelier/iliyana-portrait-1280.webp 1280w, assets/images/atelier/iliyana-portrait-1600.webp 1600w"
+                     sizes="(min-width: 1720px) 860px, (min-width: 760px) 50vw, 100vw"
+                     width="1600" height="1600" fetchpriority="high" alt="Илияна Николаева в ателието" data-i18n-alt="home.cover.artist_alt">
+                </figure>
+                <figure class="at-front__photo at-front__photo--work">
+                    <img src="assets/images/atelier/about-work-540.webp" srcset="assets/images/atelier/about-work-540.webp 540w, assets/images/atelier/about-work-1170.webp 1170w"
+                         sizes="(min-width: 1720px) 860px, (min-width: 760px) 50vw, 100vw" width="1170" height="783" loading="lazy" decoding="async"
+                         alt="Илияна работи с ръкавици по веждите на клиентка" data-i18n-alt="home.portrait.work_alt">
+                </figure>
+                <div class="at-front__caption">
+                    <a class="at-front__credit" href="about.html">
+                        <span><strong data-i18n="home.cover.artist">Илияна Николаева</strong><small>Beauty Artist · PhiAcademy</small></span>
+                        {{ARROW}}
+                    </a>
+                    <div class="at-front__picks">
+                        <label for="front-portrait"><img src="assets/images/atelier/portrait-thumb.webp" width="80" height="80" alt=""><span data-i18n="home.portrait.still">Портрет</span></label>
+                        <label for="front-work"><img src="assets/images/atelier/work-thumb.webp" width="80" height="80" alt=""><span data-i18n="home.portrait.action">В действие</span></label>
+                    </div>
+                </div>
+            </fieldset>
+            <div class="at-front__story">
                 <p class="at-kicker" data-i18n="home.kicker">Салон за красота в Силистра</p>
-                <h1 class="at-display" id="at-hero-title" data-i18n-html="home.cover.title">Вежди и мигли, които изглеждат <em>като твои.</em></h1>
-            </header>
-            <p class="at-lede at-cover__intro" data-i18n="home.lede">Ламиниране със ZOLA, микроблейдинг и грижа за кожата при Илияна Николаева, в центъра на Силистра.</p>
-            <div class="at-cover__actions" data-at-bar-start>
-                <a class="at-btn" href="/notino" target="_blank" rel="noopener"><span data-i18n="shared.header.book_btn">Запази час</span>{{ARROW}}</a>
-                <a class="at-link" href="#ceni"><span data-i18n="home.cta_prices">Виж цените</span>{{CHEV}}</a>
-            </div>
-            <div class="at-cover__spread">
-                <a class="at-cover__print at-cover__print--work" href="laminirane.html">
-                    <figure>
-                        <img src="assets/images/atelier/home-lamination-960.webp" srcset="assets/images/atelier/home-lamination-480.webp 480w, assets/images/atelier/home-lamination-960.webp 960w" sizes="(min-width: 1200px) 435px, (min-width: 880px) 34vw, (min-width: 640px) 45vw, 62vw" width="960" height="898" alt="Вежди и мигли на клиентка преди и след ламиниране" data-i18n-alt="home.cover.result_alt" fetchpriority="high" decoding="async">
-                        <figcaption><span data-i18n="home.cover.case">Ламиниране</span><small data-i18n="home.r_ba">преди и след</small></figcaption>
-                    </figure>
-                </a>
-                <a class="at-cover__print at-cover__print--artist" href="about.html">
-                    <figure>
-                        <img src="assets/images/atelier/home-iliyana-520.webp" srcset="assets/images/atelier/home-iliyana-300.webp 300w, assets/images/atelier/home-iliyana-520.webp 520w" sizes="(min-width: 1200px) 220px, (min-width: 880px) 16vw, (min-width: 640px) 25vw, 32vw" width="520" height="665" alt="Илияна Николаева в ателието" data-i18n-alt="home.cover.artist_alt" decoding="async">
-                        <figcaption><span data-i18n="home.cover.artist">Илияна Николаева</span></figcaption>
-                    </figure>
-                </a>
-            </div>
-            <div class="at-proof at-cover__proof">
-                <a href="https://share.google/LWLt1rNLslWSX71RU" target="_blank" rel="noopener"><span class="at-stars" aria-hidden="true">★★★★★</span><span data-i18n="index.hero.trust_qualifier">5.0 в Google · 34 отзива</span></a>
-                <a href="https://www.notino.bg/saloni/beauty-atelier-in_3/" target="_blank" rel="noopener"><span class="at-stars" aria-hidden="true">★★★★★</span><span data-i18n="home.proof_notino">5.0 в Notino · 13 проверени рецензии</span></a>
-            </div>
-        </div>
-    </section>
-
-    <!-- ── Price card ───────────────────────────────────────────────────── -->
-    <section class="at-section at-field-ink at-on-ink at-menu" id="ceni" aria-labelledby="at-menu-title">
-        {{MARK_MENU}}
-        <div class="at-wrap">
-            <header class="at-head at-head--split">
-                <h2 class="at-h2" id="at-menu-title" data-i18n="home.menu_title">Процедури и цени</h2>
-                <div>
-                    <p data-i18n="home.menu_intro">Цените са в евро, без скрити такси. Всяка процедура включва лична консултация.</p>
-                    <a class="at-link" href="pricing.html"><span data-i18n="home.menu_all">Пълен ценоразпис</span>{{CHEV}}</a>
+                <h1 class="at-display" id="at-hero-title" data-i18n-html="home.portrait.title">Вежди, мигли <em>и кожа.</em></h1>
+                <p class="at-front__intro" data-i18n="home.lede">Ламиниране със ZOLA, микроблейдинг и грижа за кожата при Илияна Николаева, в центъра на Силистра.</p>
+                <div class="at-front__actions" data-at-bar-start>
+                    <a class="at-btn" href="/notino" target="_blank" rel="noopener"><span data-i18n="shared.header.book_btn">Запази час</span>{{ARROW}}</a>
+                    <a class="at-link" href="#ceni"><span data-i18n="home.cta_prices">Виж цените</span>{{CHEV}}</a>
                 </div>
-            </header>
-            <div class="at-menu__cols">
-                <div>
-                    <p class="at-menu__group" data-i18n="home.menu_g1">Вежди и мигли</p>
-                    <a class="at-row" href="laminirane.html">
-                        <span class="at-row__name" data-i18n="home.s1">Ламиниране на мигли</span>
-                        <span class="at-row__price">35&nbsp;€</span>
-                        <span class="at-row__meta" data-i18n="home.s1m">ZOLA · около 1 ч · ефект 6–8 седмици</span>
-                    </a>
-                    <a class="at-row" href="laminirane.html">
-                        <span class="at-row__name" data-i18n="home.s2">Ламиниране на вежди</span>
-                        <span class="at-row__price">29&nbsp;€</span>
-                        <span class="at-row__meta" data-i18n="home.s2m">ZOLA · около 45 мин · ефект 6–8 седмици</span>
-                    </a>
-                    <a class="at-row" href="laminirane.html">
-                        <span class="at-row__name" data-i18n="home.s3">Мигли и вежди заедно</span>
-                        <span class="at-row__price">60&nbsp;€</span>
-                        <span class="at-row__meta" data-i18n="home.s3m">Двете процедури в едно посещение · около 1,5 ч</span>
-                    </a>
-                    <a class="at-row" href="vezhdi.html">
-                        <span class="at-row__name" data-i18n="home.s4">Оформяне на вежди</span>
-                        <span class="at-row__price">10&nbsp;€</span>
-                        <span class="at-row__meta" data-i18n="home.s4m">Около 20 мин · с боя 13 €</span>
-                    </a>
-                    <a class="at-row" href="microblading.html">
-                        <span class="at-row__name" data-i18n="home.s5">Микроблейдинг Bold Brows</span>
-                        <span class="at-row__price">209&nbsp;€</span>
-                        <span class="at-row__meta" data-i18n="home.s5m">Техника PhiBrows · около 2 ч · с проследяване след това</span>
-                    </a>
-                    <a class="at-row" href="lashes.html">
-                        <span class="at-row__name" data-i18n="home.s6">Мигли косъм по косъм</span>
-                        <span class="at-row__price">45&nbsp;€</span>
-                        <span class="at-row__meta" data-i18n="home.s6m">Нов комплект · около 1,5 ч · поддръжка от 20 €</span>
-                    </a>
+                <div class="at-front__reviews">
+                    <a href="https://share.google/LWLt1rNLslWSX71RU" target="_blank" rel="noopener"><span class="at-stars" aria-hidden="true">★</span><span aria-hidden="true">Google <b>5.0</b> (34)</span><span class="at-sr" data-i18n="index.hero.trust_qualifier">5.0 в Google · 34 отзива</span></a>
+                    <a href="https://www.notino.bg/saloni/beauty-atelier-in_3/" target="_blank" rel="noopener"><span class="at-stars" aria-hidden="true">★</span><span aria-hidden="true">Notino <b>5.0</b> (13)</span><span class="at-sr" data-i18n="home.proof_notino">5.0 в Notino · 13 проверени рецензии</span></a>
                 </div>
-                <div>
-                    <p class="at-menu__group" data-i18n="home.menu_g2">Кожа и още</p>
-                    <a class="at-row" href="microneedling.html">
-                        <span class="at-row__name" data-i18n="home.s7">Микронидлинг</span>
-                        <span class="at-row__price"><small data-i18n="home.from">от</small>49&nbsp;€</span>
-                        <span class="at-row__meta" data-i18n="home.s7m">Лице 89 € · пакет от 3 процедури с 20% отстъпка</span>
-                    </a>
-                    <a class="at-row" href="plasma.html">
-                        <span class="at-row__name" data-i18n="home.s8">Плазма пен</span>
-                        <span class="at-row__price"><small data-i18n="home.from">от</small>49&nbsp;€</span>
-                        <span class="at-row__meta" data-i18n="home.s8m">Цената зависи от зоната · клепачи, бръчки, лифтинг</span>
-                    </a>
-                    <a class="at-row" href="fibromi-premahvane.html">
-                        <span class="at-row__name" data-i18n="home.s9">Фиброми и милиуми</span>
-                        <span class="at-row__price">19&nbsp;€</span>
-                        <span class="at-row__meta" data-i18n="home.s9m">Цената е за един брой</span>
-                    </a>
-                    <a class="at-row" href="piercing.html">
-                        <span class="at-row__name" data-i18n="home.s10">Пробиване на уши</span>
-                        <span class="at-row__price">59&nbsp;€</span>
-                        <span class="at-row__meta" data-i18n="home.s10m">Система Studex, хипоалергенни обеци · около 15 мин</span>
-                    </a>
-                    <a class="at-row" href="perm-makeup-removal.html">
-                        <span class="at-row__name" data-i18n="home.s11">Премахване на перманентен грим</span>
-                        <span class="at-row__price">79&nbsp;€</span>
-                        <span class="at-row__meta" data-i18n="home.s11m">Phi Removal · вежди, устни или очна линия · около 1 ч</span>
-                    </a>
-                    <a class="at-row" href="kola-maska-shokolad.html">
-                        <span class="at-row__name" data-i18n="home.s12">Кола маска на горна устна</span>
-                        <span class="at-row__price">8&nbsp;€</span>
-                        <span class="at-row__meta" data-i18n="home.s12m">С шоколадов восък · около 10 мин</span>
-                    </a>
-                </div>
-            </div>
-            <div class="at-menu__foot">
-                <a class="at-btn at-btn--gold" href="/notino" target="_blank" rel="noopener"><span data-i18n="shared.header.book_btn">Запази час</span>{{ARROW}}</a>
             </div>
         </div>
     </section>
 
     <!-- ── Results ──────────────────────────────────────────────────────── -->
-    <section class="at-section" aria-labelledby="at-results-title">
+    <section class="at-section at-work" aria-labelledby="at-results-title">
         <div class="at-wrap">
-            <header class="at-head at-head--split">
+            <header class="at-work__heading">
                 <div>
                     <h2 class="at-h2" id="at-results-title" data-i18n="home.results_title">Резултати от ателието</h2>
-                    <p style="margin-top:18px" data-i18n="home.results_intro">Снимки на реални клиенти, правени в ателието.</p>
+                    <p data-i18n="home.results_intro">Снимки на реални клиенти, правени в ателието.</p>
                 </div>
-                <div class="at-reel__nav">
-                    <button type="button" class="at-reel__btn" data-at-reel-prev aria-label="Предишни снимки" data-i18n-aria="home.prev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 6-6 6 6 6"/></svg></button>
-                    <button type="button" class="at-reel__btn" data-at-reel-next aria-label="Следващи снимки" data-i18n-aria="home.next">{{CHEV}}</button>
-                </div>
+                <a class="at-link" href="gallery.html"><span data-i18n="home.results_all">Цялата галерия</span>{{CHEV}}</a>
             </header>
-        </div>
-        <div class="at-reel" data-at-reel>
-            <div class="at-reel__track" tabindex="0" role="group" aria-label="Снимки преди и след" data-i18n-aria="home.results_aria">
-                <figure class="at-shot"><div class="at-shot__img"><img src="assets/images/atelier/result-brows-lashes-lamination.webp" width="1000" height="1696" loading="lazy" decoding="async" alt="Вежди и мигли, преди и след"></div><figcaption><span data-i18n="home.r_both">Вежди и мигли</span><span data-i18n="home.r_ba">преди и след</span></figcaption></figure>
-                <figure class="at-shot"><div class="at-shot__img"><img src="assets/images/atelier/result-lash-lamination-1.webp" width="1000" height="923" loading="lazy" decoding="async" alt="Мигли, преди и след"></div><figcaption><span data-i18n="home.r_lashes">Мигли</span><span data-i18n="home.r_ba">преди и след</span></figcaption></figure>
-                <figure class="at-shot"><div class="at-shot__img"><img src="assets/images/atelier/result-lash-lamination-2.webp" width="1000" height="932" loading="lazy" decoding="async" alt="Мигли, преди и след"></div><figcaption><span data-i18n="home.r_lashes">Мигли</span><span data-i18n="home.r_ba">преди и след</span></figcaption></figure>
-                <figure class="at-shot"><div class="at-shot__img"><img src="assets/images/atelier/result-brow-lamination-1.webp" width="1000" height="1111" loading="lazy" decoding="async" alt="Вежди, преди и след"></div><figcaption><span data-i18n="home.r_brows">Вежди</span><span data-i18n="home.r_ba">преди и след</span></figcaption></figure>
-                <figure class="at-shot"><div class="at-shot__img"><img src="assets/images/atelier/result-lash-lamination-3.webp" width="1000" height="1152" loading="lazy" decoding="async" alt="Мигли, преди и след"></div><figcaption><span data-i18n="home.r_lashes">Мигли</span><span data-i18n="home.r_ba">преди и след</span></figcaption></figure>
-                <figure class="at-shot"><div class="at-shot__img"><img src="assets/images/atelier/result-brow-shaping-1.webp" width="1000" height="735" loading="lazy" decoding="async" alt="Вежди, преди и след"></div><figcaption><span data-i18n="home.r_brows">Вежди</span><span data-i18n="home.r_ba">преди и след</span></figcaption></figure>
-                <figure class="at-shot"><div class="at-shot__img"><img src="assets/images/atelier/result-lash-lamination-4.webp" width="1000" height="1326" loading="lazy" decoding="async" alt="Мигли, преди и след"></div><figcaption><span data-i18n="home.r_lashes">Мигли</span><span data-i18n="home.r_ba">преди и след</span></figcaption></figure>
-                <figure class="at-shot"><div class="at-shot__img"><img src="assets/images/atelier/result-brow-lamination-2.webp" width="1000" height="1084" loading="lazy" decoding="async" alt="Вежди, преди и след"></div><figcaption><span data-i18n="home.r_brows">Вежди</span><span data-i18n="home.r_ba">преди и след</span></figcaption></figure>
-                <figure class="at-shot"><div class="at-shot__img"><img src="assets/images/atelier/result-brow-shaping-2.webp" width="1000" height="738" loading="lazy" decoding="async" alt="Вежди, преди и след"></div><figcaption><span data-i18n="home.r_brows">Вежди</span><span data-i18n="home.r_ba">преди и след</span></figcaption></figure>
+            <div class="at-work__selection">
+                <a class="at-work__case at-work__case--lead" href="laminirane.html#results">
+                    <img src="assets/images/atelier/portfolio-brows-960.webp" srcset="assets/images/atelier/portfolio-brows-480.webp 480w, assets/images/atelier/portfolio-brows-960.webp 960w" sizes="(min-width: 1240px) 580px, (min-width: 760px) 46vw, 92vw" width="960" height="503" loading="lazy" decoding="async" alt="Подредени вежди с отчетлива извивка след ламиниране" data-i18n-alt="home.work.brows_alt">
+                    <h3><span data-i18n="home.s2">Ламиниране на вежди</span>{{CHEV}}</h3>
+                </a>
+                <a class="at-work__case" href="lashes.html">
+                    <img src="assets/images/atelier/directory-lashes-600.webp" srcset="assets/images/atelier/directory-lashes-300.webp 300w, assets/images/atelier/directory-lashes-600.webp 600w" sizes="(min-width: 1240px) 280px, (min-width: 760px) 23vw, 44vw" width="600" height="657" loading="lazy" decoding="async" alt="Миглопластика с обем, отблизо" data-i18n-alt="directory.result_alt">
+                    <h3><span data-i18n="directory.extensions.title">Миглопластика</span>{{CHEV}}</h3>
+                </a>
+                <a class="at-work__case" href="microblading.html">
+                    <img src="assets/images/atelier/portfolio-touchup-600.webp" srcset="assets/images/atelier/portfolio-touchup-320.webp 320w, assets/images/atelier/portfolio-touchup-600.webp 600w" sizes="(min-width: 1240px) 280px, (min-width: 760px) 23vw, 44vw" width="600" height="750" loading="lazy" decoding="async" alt="Формата на веждите на клиентка след ретуш на микроблейдинг" data-i18n-alt="home.work.touchup_alt">
+                    <h3><span data-i18n="directory.microblading.title">Микроблейдинг</span>{{CHEV}}</h3>
+                </a>
             </div>
+            <details class="at-work__archive">
+                <summary><span data-i18n="home.results_aria">Снимки преди и след</span><span class="at-disclosure-sign" aria-hidden="true"></span></summary>
+                <div class="at-work__contacts">
+                    <a href="assets/images/atelier/result-brows-lashes-lamination.webp"><figure><img src="assets/images/atelier/result-brows-lashes-lamination.webp" width="1000" height="1696" loading="lazy" decoding="async" alt=""><figcaption><span data-i18n="home.r_both">Вежди и мигли</span><span data-i18n="home.r_ba">преди и след</span></figcaption></figure></a>
+                    <a href="assets/images/atelier/result-lash-lamination-1.webp"><figure><img src="assets/images/atelier/result-lash-lamination-1.webp" width="1000" height="923" loading="lazy" decoding="async" alt=""><figcaption><span data-i18n="home.r_lashes">Мигли</span><span data-i18n="home.r_ba">преди и след</span></figcaption></figure></a>
+                    <a href="assets/images/atelier/result-lash-lamination-2.webp"><figure><img src="assets/images/atelier/result-lash-lamination-2.webp" width="1000" height="932" loading="lazy" decoding="async" alt=""><figcaption><span data-i18n="home.r_lashes">Мигли</span><span data-i18n="home.r_ba">преди и след</span></figcaption></figure></a>
+                    <a href="assets/images/atelier/result-brow-lamination-1.webp"><figure><img src="assets/images/atelier/result-brow-lamination-1.webp" width="1000" height="1111" loading="lazy" decoding="async" alt=""><figcaption><span data-i18n="home.r_brows">Вежди</span><span data-i18n="home.r_ba">преди и след</span></figcaption></figure></a>
+                    <a href="assets/images/atelier/result-lash-lamination-3.webp"><figure><img src="assets/images/atelier/result-lash-lamination-3.webp" width="1000" height="1152" loading="lazy" decoding="async" alt=""><figcaption><span data-i18n="home.r_lashes">Мигли</span><span data-i18n="home.r_ba">преди и след</span></figcaption></figure></a>
+                    <a href="assets/images/atelier/result-brow-shaping-1.webp"><figure><img src="assets/images/atelier/result-brow-shaping-1.webp" width="1000" height="735" loading="lazy" decoding="async" alt=""><figcaption><span data-i18n="home.r_brows">Вежди</span><span data-i18n="home.r_ba">преди и след</span></figcaption></figure></a>
+                    <a href="assets/images/atelier/result-lash-lamination-4.webp"><figure><img src="assets/images/atelier/result-lash-lamination-4.webp" width="1000" height="1326" loading="lazy" decoding="async" alt=""><figcaption><span data-i18n="home.r_lashes">Мигли</span><span data-i18n="home.r_ba">преди и след</span></figcaption></figure></a>
+                    <a href="assets/images/atelier/result-brow-lamination-2.webp"><figure><img src="assets/images/atelier/result-brow-lamination-2.webp" width="1000" height="1084" loading="lazy" decoding="async" alt=""><figcaption><span data-i18n="home.r_brows">Вежди</span><span data-i18n="home.r_ba">преди и след</span></figcaption></figure></a>
+                    <a href="assets/images/atelier/result-brow-shaping-2.webp"><figure><img src="assets/images/atelier/result-brow-shaping-2.webp" width="1000" height="738" loading="lazy" decoding="async" alt=""><figcaption><span data-i18n="home.r_brows">Вежди</span><span data-i18n="home.r_ba">преди и след</span></figcaption></figure></a>
+                </div>
+            </details>
         </div>
-        <div class="at-wrap" style="margin-top:clamp(28px,4vw,44px)">
-            <a class="at-link" href="gallery.html"><span data-i18n="home.results_all">Цялата галерия</span>{{CHEV}}</a>
+    </section>
+
+    <!-- ── Price card ───────────────────────────────────────────────────── -->
+    <section class="at-section at-field-ink at-on-ink at-menu at-service-menu" id="ceni" aria-labelledby="at-menu-title">
+        <div class="at-wrap at-service-menu__layout">
+            <header class="at-service-menu__intro">
+                <h2 class="at-h2" id="at-menu-title" data-i18n="home.menu_title">Процедури и цени</h2>
+                <div>
+                    <p data-i18n="home.menu_intro">Цените са в евро, без скрити такси. Всяка процедура включва лична консултация.</p>
+                    <a class="at-link" href="pricing.html"><span data-i18n="home.menu_all">Пълен ценоразпис</span>{{CHEV}}</a>
+                </div>
+                <a class="at-btn at-btn--gold" href="/notino" target="_blank" rel="noopener"><span data-i18n="shared.header.book_btn">Запази час</span>{{ARROW}}</a>
+            </header>
+            <div class="at-service-menu__groups">
+                <details class="at-service-menu__group">
+                    <summary>
+                        <span class="at-service-menu__category" data-i18n="home.menu_g1">Вежди и мигли</span>
+                        <span class="at-service-menu__example" data-i18n="home.work.menu_example1">Оформяне на вежди 10 € · Ламиниране на мигли 35 €</span>
+                        <span class="at-disclosure-sign" aria-hidden="true"></span>
+                    </summary>
+                    <div class="at-service-menu__rows">
+                        <a class="at-row" href="laminirane.html">
+                            <span class="at-row__name" data-i18n="home.s1">Ламиниране на мигли</span>
+                            <span class="at-row__price">35&nbsp;€</span>
+                            <span class="at-row__meta" data-i18n="home.s1m">ZOLA · около 1 ч · ефект 6–8 седмици</span>
+                        </a>
+                        <a class="at-row" href="laminirane.html">
+                            <span class="at-row__name" data-i18n="home.s2">Ламиниране на вежди</span>
+                            <span class="at-row__price">29&nbsp;€</span>
+                            <span class="at-row__meta" data-i18n="home.s2m">ZOLA · около 45 мин · ефект 6–8 седмици</span>
+                        </a>
+                        <a class="at-row" href="laminirane.html">
+                            <span class="at-row__name" data-i18n="home.s3">Мигли и вежди заедно</span>
+                            <span class="at-row__price">60&nbsp;€</span>
+                            <span class="at-row__meta" data-i18n="home.s3m">Двете процедури в едно посещение · около 1,5 ч</span>
+                        </a>
+                        <a class="at-row" href="vezhdi.html">
+                            <span class="at-row__name" data-i18n="home.s4">Оформяне на вежди</span>
+                            <span class="at-row__price">10&nbsp;€</span>
+                            <span class="at-row__meta" data-i18n="home.s4m">Около 20 мин · с боя 13 €</span>
+                        </a>
+                        <a class="at-row" href="microblading.html">
+                            <span class="at-row__name" data-i18n="home.s5">Микроблейдинг Bold Brows</span>
+                            <span class="at-row__price">209&nbsp;€</span>
+                            <span class="at-row__meta" data-i18n="home.s5m">Техника PhiBrows · около 2 ч · с проследяване след това</span>
+                        </a>
+                        <a class="at-row" href="lashes.html">
+                            <span class="at-row__name" data-i18n="home.s6">Мигли косъм по косъм</span>
+                            <span class="at-row__price">45&nbsp;€</span>
+                            <span class="at-row__meta" data-i18n="home.s6m">Нов комплект · около 1,5 ч · поддръжка от 20 €</span>
+                        </a>
+                    </div>
+                </details>
+                <details class="at-service-menu__group">
+                    <summary>
+                        <span class="at-service-menu__category" data-i18n="home.menu_g2">Кожа и още</span>
+                        <span class="at-service-menu__example" data-i18n="home.work.menu_example2">Микронидлинг от 49 € · Пробиване на уши 59 €</span>
+                        <span class="at-disclosure-sign" aria-hidden="true"></span>
+                    </summary>
+                    <div class="at-service-menu__rows">
+                        <a class="at-row" href="microneedling.html">
+                            <span class="at-row__name" data-i18n="home.s7">Микронидлинг</span>
+                            <span class="at-row__price"><small data-i18n="home.from">от</small>49&nbsp;€</span>
+                            <span class="at-row__meta" data-i18n="home.s7m">Лице 89 € · пакет от 3 процедури с 20% отстъпка</span>
+                        </a>
+                        <a class="at-row" href="plasma.html">
+                            <span class="at-row__name" data-i18n="home.s8">Плазма пен</span>
+                            <span class="at-row__price"><small data-i18n="home.from">от</small>49&nbsp;€</span>
+                            <span class="at-row__meta" data-i18n="home.s8m">Цената зависи от зоната · клепачи, бръчки, лифтинг</span>
+                        </a>
+                        <a class="at-row" href="fibromi-premahvane.html">
+                            <span class="at-row__name" data-i18n="home.s9">Фиброми и милиуми</span>
+                            <span class="at-row__price">19&nbsp;€</span>
+                            <span class="at-row__meta" data-i18n="home.s9m">Цената е за един брой</span>
+                        </a>
+                        <a class="at-row" href="piercing.html">
+                            <span class="at-row__name" data-i18n="home.s10">Пробиване на уши</span>
+                            <span class="at-row__price">59&nbsp;€</span>
+                            <span class="at-row__meta" data-i18n="home.s10m">Система Studex, хипоалергенни обеци · около 15 мин</span>
+                        </a>
+                        <a class="at-row" href="perm-makeup-removal.html">
+                            <span class="at-row__name" data-i18n="home.s11">Премахване на перманентен грим</span>
+                            <span class="at-row__price">79&nbsp;€</span>
+                            <span class="at-row__meta" data-i18n="home.s11m">Phi Removal · вежди, устни или очна линия · около 1 ч</span>
+                        </a>
+                        <a class="at-row" href="kola-maska-shokolad.html">
+                            <span class="at-row__name" data-i18n="home.s12">Кола маска на горна устна</span>
+                            <span class="at-row__price">8&nbsp;€</span>
+                            <span class="at-row__meta" data-i18n="home.s12m">С шоколадов восък · около 10 мин</span>
+                        </a>
+                    </div>
+                </details>
+            </div>
         </div>
     </section>
 
     <!-- ── Iliyana ──────────────────────────────────────────────────────── -->
     <section class="at-section at-field-sand" aria-labelledby="at-about-title">
         <div class="at-wrap at-about__grid">
-            <div class="at-about__portrait">
-                <img src="assets/images/atelier/iliyana-cutout.webp" width="1000" height="1001" loading="lazy" decoding="async" alt="Илияна Николаева, Beauty Artist">
-                <p class="at-about__sign">Илияна Николаева<small>Beauty Artist · PhiAcademy</small></p>
-            </div>
+            <figure class="at-work-profile">
+                <img src="assets/images/atelier/profile-certificate-1000.webp" srcset="assets/images/atelier/profile-certificate-480.webp 480w, assets/images/atelier/profile-certificate-1000.webp 1000w" sizes="(min-width: 1240px) 490px, (min-width: 900px) 39vw, (min-width: 640px) 70vw, 92vw" width="1000" height="938" loading="lazy" decoding="async" alt="Илияна Николаева със сертификат от обучението по PhiLings" data-i18n-alt="home.work.practitioner_alt">
+                <figcaption><span data-i18n="home.cover.artist">Илияна Николаева</span><small>Beauty Artist · PhiAcademy</small></figcaption>
+            </figure>
             <div class="at-about__copy">
                 <h2 class="at-h2" id="at-about-title" data-i18n="home.about_title">Едни ръце, от консултацията до резултата</h2>
                 <p class="at-lede" data-i18n="home.about_text">Над четири години работя с вежди, мигли и кожа и съм сертифицирана към PhiAcademy по техниките PhiBrows и Bold Brows. Преди всяка процедура гледам формата на лицето, кожата и какво точно искаш да постигнеш. Чак тогава започваме.</p>
