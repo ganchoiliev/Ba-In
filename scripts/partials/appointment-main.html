@@ -1,0 +1,103 @@
+<main id="main">
+    <section class="at-booking" aria-labelledby="booking-title">
+        <div class="at-wrap at-booking__grid">
+            <div class="at-booking__copy">
+                <p class="at-kicker" data-i18n="home.kicker">Салон за красота в Силистра</p>
+                <h1 class="at-display" id="booking-title" data-i18n="booking.title">Запази час при Илияна</h1>
+                <p class="at-lede" data-i18n="booking.intro">Избери процедура и свободен час в Notino. Ще получиш потвърждение веднага.</p>
+                <div class="at-booking__actions" data-at-bar-start>
+                    <a class="at-btn" href="/notino" target="_blank" rel="noopener"><span data-i18n="home.visit_book">Запази час в Notino</span>{{ARROW}}</a>
+                    <a class="at-link" href="#appointment-form"><span data-i18n="booking.callback_link">Заяви обаждане</span></a>
+                </div>
+                <div class="at-booking__lamination">
+                    <h2 class="at-h3" data-i18n="booking.lamination">Ламиниране със ZOLA</h2>
+                    <dl>
+                        <div><dt data-i18n="appointment.lp_lash_name">Ламиниране на мигли</dt><dd>35&nbsp;€</dd></div>
+                        <div><dt data-i18n="appointment.lp_brow_name">Ламиниране на вежди</dt><dd>29&nbsp;€</dd></div>
+                        <div><dt data-i18n="home.s3">Мигли и вежди заедно</dt><dd>60&nbsp;€</dd></div>
+                    </dl>
+                    <a class="at-link" href="pricing.html"><span data-i18n="home.menu_all">Пълен ценоразпис</span>{{CHEV}}</a>
+                </div>
+            </div>
+            <figure class="at-booking__place at-on-ink">
+                <img src="assets/images/backgrounds/appointment-header-real.webp" width="1920" height="1174" alt="" decoding="async" fetchpriority="high">
+                <figcaption>
+                    <a href="https://maps.app.goo.gl/1E4jb3951zqGQFux7" target="_blank" rel="noopener"><span data-i18n="shared.at.address_short">ул. „Отец Паисий“ 27, Силистра</span>{{ARROW}}</a>
+                    <span data-i18n="appointment.lp_trust_hours">Пон–Съб · 09:00–18:00</span>
+                </figcaption>
+            </figure>
+        </div>
+    </section>
+
+    <section class="at-callback" id="appointment-form" aria-labelledby="callback-title" data-at-bar-stop>
+        <div class="at-wrap at-callback__grid">
+            <div class="at-callback__copy">
+                <h2 class="at-h2" id="callback-title" data-i18n="booking.callback_title">Да ти се обадя?</h2>
+                <p class="at-lede" data-i18n="booking.callback_intro">Остави име и телефон. Ще ти се обадя до 24 часа, за да уточним процедурата и удобен час.</p>
+                <a class="at-callback__phone" href="tel:+359893398390">{{PHONE}}<span>+359 89 339 8390</span></a>
+                <div class="at-callback__messengers">
+                    <a href="https://wa.me/359893398390" target="_blank" rel="noopener">WhatsApp</a>
+                    <a href="viber://chat?number=%2B359893398390">Viber</a>
+                    <a href="https://m.me/IliyanaPhiAcademy" target="_blank" rel="noopener">Messenger</a>
+                </div>
+            </div>
+            <div class="at-callback__body">
+                <form class="at-callback__form" id="callback-form" action="assets/inc/sendemail.php" method="post">
+                    <div hidden><label>Website <input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
+                    <input type="hidden" name="doctor" value="Илияна Николаева">
+                    <div class="at-callback__pair">
+                        <div class="at-callback__field">
+                            <label for="f-name" data-i18n="booking.name">Име</label>
+                            <input id="f-name" name="name" type="text" autocomplete="name" required>
+                            <span id="f-name-error" class="at-callback__error" data-i18n="booking.name_error" hidden>Въведи името си.</span>
+                        </div>
+                        <div class="at-callback__field">
+                            <label for="f-phone" data-i18n="home.visit_tel_label">Телефон</label>
+                            <input id="f-phone" name="phone" type="tel" autocomplete="tel" minlength="6" required>
+                            <span id="f-phone-error" class="at-callback__error" data-i18n="booking.phone_error" hidden>Въведи телефонен номер с поне 6 цифри.</span>
+                        </div>
+                    </div>
+                    <div class="at-callback__field">
+                        <label for="f-services" data-i18n="booking.service">Процедура (по избор)</label>
+                        <select id="f-services" name="services">
+                            <option value="" data-i18n="booking.undecided">Ще уточним по телефона</option>
+                            <option value="Ламиниране" data-i18n="shared.form.lamination">Ламиниране</option>
+                            <option value="Оформяне на вежди" data-i18n="home.s4">Оформяне на вежди</option>
+                            <option value="Микроблейдинг" data-i18n="shared.form.microblading">Микроблейдинг</option>
+                            <option value="Миглопластика" data-i18n="shared.form.lashes">Миглопластика</option>
+                            <option value="Микронидлинг" data-i18n="shared.form.microneedling">Микронидлинг</option>
+                            <option value="Плазма пен" data-i18n="shared.form.plasma">Плазма пен</option>
+                            <option value="Фиброми и милиуми" data-i18n="home.s9">Фиброми и милиуми</option>
+                            <option value="Пробиване на уши" data-i18n="shared.form.piercing">Пробиване на уши</option>
+                            <option value="Премахване на перманентен грим" data-i18n="shared.form.perm_removal">Премахване на перманентен грим</option>
+                            <option value="Кола маска на горна устна" data-i18n="home.s12">Кола маска на горна устна</option>
+                        </select>
+                    </div>
+                    <div class="at-callback__field">
+                        <label for="f-email" data-i18n="shared.form.label_email">Имейл (по избор)</label>
+                        <input id="f-email" name="email" type="email" autocomplete="email">
+                        <span id="f-email-error" class="at-callback__error" data-i18n="booking.email_error" hidden>Въведи валиден имейл адрес или остави полето празно.</span>
+                    </div>
+                    <div class="at-callback__field">
+                        <label for="f-message" data-i18n="shared.form.label_message">Съобщение (по избор)</label>
+                        <textarea id="f-message" name="message" rows="3"></textarea>
+                    </div>
+                    <div class="at-callback__failure" id="callback-failure" role="alert" hidden>
+                        <p data-i18n="booking.failed">Запитването не беше изпратено. Опитай отново или се обади на</p>
+                        <a href="tel:+359893398390">+359 89 339 8390</a>
+                    </div>
+                    <button class="at-btn" type="submit">
+                        <span data-submit-label data-i18n="home.visit_form">Изпрати запитване</span>
+                        <span data-pending-label data-i18n="booking.pending" hidden>Изпращане…</span>
+                        {{CHEV}}
+                    </button>
+                </form>
+                <div id="callback-success" class="at-callback__success" tabindex="-1" role="status" hidden>
+                    <h3 class="at-h3" data-i18n="booking.success">Благодаря за запитването!</h3>
+                    <p data-i18n="booking.success_detail">Ще ти се обадя до 24 часа на посочения телефон. Ако предпочиташ да избереш час веднага, можеш да го направиш в Notino.</p>
+                    <a class="at-link" href="/notino" target="_blank" rel="noopener"><span data-i18n="home.visit_book">Запази час в Notino</span>{{ARROW}}</a>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>

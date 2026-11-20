@@ -95,7 +95,9 @@
 
     function markToggle(lang) {
         document.querySelectorAll('.lang-toggle__option').forEach(function (el) {
-            el.classList.toggle('active', el.getAttribute('data-lang') === lang);
+            var selected = el.getAttribute('data-lang') === lang;
+            el.classList.toggle('active', selected);
+            if (el.tagName === 'BUTTON') el.setAttribute('aria-pressed', String(selected));
         });
     }
 
@@ -129,6 +131,10 @@
         document.querySelectorAll('[data-i18n-ph]').forEach(function (el) {
             var v = dict[el.getAttribute('data-i18n-ph')];
             if (v !== undefined) el.placeholder = v;
+        });
+        document.querySelectorAll('[data-i18n-alt]').forEach(function (el) {
+            var v = dict[el.getAttribute('data-i18n-alt')];
+            if (v !== undefined) el.alt = v;
         });
         document.querySelectorAll('[data-i18n-aria]').forEach(function (el) {
             var v = dict[el.getAttribute('data-i18n-aria')];

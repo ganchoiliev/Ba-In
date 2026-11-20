@@ -1,24 +1,13 @@
 #!/usr/bin/env python3
-"""
-atelier-build.py — stamp the shared chrome (header, drawer, footer, booking bar)
-into pages, and assemble index.html from its partials.
+"""Assemble the homepage, treatment directory, price list and booking page.
 
-WHY (2026-11 redesign). The site is 40+ hand-written .html files with no include
-system, so the header and footer were copy-pasted into every one and drifted.
-The new chrome lives once, in scripts/partials/, and this script writes it
-between marker comments:
+Edit the main content and shared navigation in scripts/partials/. Each output
+page owns its search metadata above the at:head marker. To produce the final,
+cache-stamped HTML, run these commands in order:
 
-    <!-- at:header --> … <!-- /at:header -->
-    <!-- at:footer --> … <!-- /at:footer -->
-
-Edit the partial, run this, commit. Idempotent: a second run changes nothing.
-
-index.html is assembled whole: the <head> metadata that already exists in the
-file (schema, consent mode, title, meta, Open Graph) is kept byte for byte, and
-only the stylesheet block and the <body> are generated.
-
-Usage:  python3 scripts/atelier-build.py            # index.html
-        python3 scripts/bundle-css.py && python3 scripts/cache-bust.py
+    python3 scripts/atelier-build.py
+    python3 scripts/bundle-css.py
+    python3 scripts/cache-bust.py
 """
 import re, sys, pathlib
 
@@ -70,45 +59,46 @@ HEAD_BLOCK = '''    <meta name="theme-color" content="#F2EDE6" />
     </style>
     <link rel="stylesheet" href="assets/css/home.bundle.css" />'''
 
-def widget(html):
-    """The WhatsApp / Viber / Messenger widget markup, reused as it stands."""
-    m = re.search(r'<div class="contact-widget" id="contact-widget">.*?</button>\s*</div>', html, flags=re.S)
-    return m.group(0) if m else ''
+# Page-specific metadata stays above the at:head marker in each HTML file.
+# The main partials contain the editable page content.
+PAGES = {
+    'index': 'home',
+    'procedures': 'procedures',
+    'pricing': 'pricing',
+    'appointment': 'appointment',
+}
 
-def build_home():
-    f = ROOT / 'index.html'
-    s = f.read_text(encoding='utf-8')
-    if '<!-- at:head -->' in s:
-        keep = s[:s.index('<!-- at:head -->')]
-    else:
-        cut = s.index('<!-- Hero image now uses')
-        keep = s[:cut]
-        # the viewport gains viewport-fit=cover so the booking bar can sit in the
-        # home-indicator safe area on iPhones (env(safe-area-inset-bottom))
-        keep = keep.replace('content="width=device-width, initial-scale=1.0"',
-                            'content="width=device-width, initial-scale=1, viewport-fit=cover"')
-    wid = widget(s)
-    tr = re.search(r'data-translations="([^"]+)"', s)
-    translations = tr.group(1) if tr else 'assets/js/translations.js'
-    body = '\n'.join([
-        '<body class="at-page at-home">',
+
+def build_page(filename, name):
+    page = ROOT / (filename + '.html')
+    previous = page.read_text(encoding='utf-8')
+    metadata, marker, _ = previous.partition('<!-- at:head -->')
+    if not marker:
+        sys.exit(f'{page.name}: missing at:head marker after page metadata')
+
+    styles = HEAD_BLOCK
+    scripts = ['atelier']
+    if name != 'home':
+        styles += f'\n    <link rel="stylesheet" href="assets/css/atelier-{name}.css" />'
+        if (ROOT / 'assets' / 'js' / f'atelier-{name}.js').is_file():
+            scripts.append(f'atelier-{name}')
+
+    body = [
+        f'<body class="at-page at-{name}">',
         region('header', HEADER),
-        render(read('home-main.html')).rstrip(),
+        render(read(f'{name}-main.html')).rstrip(),
         region('footer', FOOTER),
-        '    <script defer src="assets/js/atelier.js"></script>',
-        '    <script defer src="assets/js/ai-chat-v2.js"></script>',
-        '    <script defer src="assets/js/i18n.js" data-translations="%s"></script>' % translations,
-        '    <script defer src="assets/js/cookie-consent.js"></script>',
-        '</body>',
-        '</html>',
-        '',
-    ])
-    out = keep.rstrip() + '\n\n<!-- at:head -->\n' + HEAD_BLOCK + '\n<!-- /at:head -->\n</head>\n\n' + body
-    if out != s:
-        f.write_text(out, encoding='utf-8')
-        print('  wrote index.html (%d KiB, was %d KiB)' % (len(out) // 1024, len(s) // 1024))
-    else:
-        print('  index.html unchanged')
+    ]
+    for script in scripts + ['ai-chat-v2', 'i18n', 'cookie-consent']:
+        dictionary = ' data-translations="assets/js/translations.js"' if script == 'i18n' else ''
+        body.append(f'    <script defer src="assets/js/{script}.js"{dictionary}></script>')
+    body.extend(['</body>', '</html>', ''])
+    output = metadata.rstrip() + '\n\n' + region('head', styles) + '\n</head>\n\n' + '\n'.join(body)
+    if output != previous:
+        page.write_text(output, encoding='utf-8')
+        print(f'  wrote {page.name}')
+
 
 if __name__ == '__main__':
-    build_home()
+    for filename, name in PAGES.items():
+        build_page(filename, name)

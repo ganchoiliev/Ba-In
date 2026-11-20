@@ -85,7 +85,7 @@ SED_LD_COUNT="s/\"reviewCount\"[[:space:]]*:[[:space:]]*\"[0-9]\+\"/\"reviewCoun
 SED_LD_RATING="s/\"ratingValue\"[[:space:]]*:[[:space:]]*\"[0-9]\.[0-9]\"/\"ratingValue\": \"${RATING}\"/g"
 
 # ── Apply replacements to HTML files ────────────────────────────
-for FILE in index.html procedures.html; do
+for FILE in scripts/partials/home-main.html scripts/partials/procedures-main.html index.html procedures.html; do
   if [[ -f "$FILE" ]]; then
     sed -i "$SED_BG_A" "$FILE"
     sed -i "$SED_LD_COUNT" "$FILE"
@@ -119,7 +119,7 @@ if [[ -n "$RATING" ]]; then
   # English: "on Google"  (rating appears before "on Google")
   SED_RATING_EN="s/[0-9]\.[0-9] on Google/${RATING} on Google/g"
 
-  for FILE in index.html procedures.html assets/js/translations.js; do
+  for FILE in scripts/partials/home-main.html scripts/partials/procedures-main.html index.html procedures.html assets/js/translations.js; do
     if [[ -f "$FILE" ]]; then
       sed -i "$SED_RATING_BG" "$FILE"
       sed -i "$SED_RATING_EN" "$FILE"

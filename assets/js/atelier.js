@@ -51,10 +51,10 @@
                 burger.focus();
             }
         });
-        // keep focus inside the open drawer + the header that carries its close button
+        // Close the disclosure when keyboard focus moves to another control.
         doc.addEventListener('focusin', function (e) {
             if (burger.getAttribute('aria-expanded') !== 'true') return;
-            if (!drawer.contains(e.target) && !(header && header.contains(e.target))) burger.focus();
+            if (!drawer.contains(e.target) && !(header && header.contains(e.target))) setOpen(false);
         });
         var mq = window.matchMedia('(min-width: 1120px)');
         var onMq = function () { if (mq.matches) setOpen(false); };
@@ -73,6 +73,7 @@
         var render = function () {
             var on = past && !atBooking;
             bar.classList.toggle('is-on', on);
+            bar.toggleAttribute('inert', !on);
             body.classList.toggle('at-bar-on', on);
         };
         var start = doc.querySelector('[data-at-bar-start]');

@@ -41,6 +41,9 @@ REF = re.compile(
     r'(?P<attr>href|src)="(?P<path>assets/[^"?#]+\.(?:css|js|webp|jpg|jpeg|png|svg|ico|woff2))'
     r'(?P<query>\?[^"#]*)?"'
 )
+# srcset candidates must rotate with the fallback src when responsive photos change.
+SRCSET = re.compile(r'\bsrcset="([^"]*)"')
+CANDIDATE = re.compile(r'(?P<path>assets/[^\s,?#]+\.(?:webp|jpe?g|png))(?:\?v=[0-9a-f]+)?(?=\s|,|$)')
 # Inline <style> url() references (self-hosted fonts in the critical CSS) must
 # carry the same stamp as their <link rel="preload">, or the preload is wasted.
 URLREF = re.compile(r"url\((?P<q>['\"]?)(?P<path>assets/[^'\")?#]+\.(?:woff2|webp|jpg|png|svg))(?P<query>\?[^'\")#]*)?(?P=q)\)")
@@ -70,6 +73,20 @@ for html in sorted(ROOT.glob('*.html')):
         return new
 
     out = REF.sub(sub, src)
+
+    def candidate(m):
+        global rewrites
+        path = m['path']
+        version = digest(path)
+        if version is None:
+            missing[path] += 1
+            return m.group(0)
+        url = f'{path}?v={version}'
+        if url != m.group(0):
+            rewrites += 1
+        return url
+
+    out = SRCSET.sub(lambda m: 'srcset="' + CANDIDATE.sub(candidate, m[1]) + '"', out)
 
     def usub(m):
         global rewrites

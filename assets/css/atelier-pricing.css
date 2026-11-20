@@ -1,0 +1,202 @@
+/* The price list shares the homepage typography, colours and gutters. */
+.at-pricing__mast {
+  border-block-end: 1px solid var(--at-line);
+}
+.at-pricing__mast-inner {
+  display: grid;
+  align-items: center;
+  gap: clamp(28px, 6vw, 88px);
+  padding-block: clamp(32px, 4vw, 58px);
+}
+.at-pricing__intro .at-display {
+  font-size: clamp(3rem, 6vw, 5.5rem);
+}
+.at-pricing__intro .at-lede {
+  margin-block-start: 16px;
+  max-width: 40ch;
+}
+.at-pricing__booking { margin-block-start: 22px; }
+
+.at-pricing__layout {
+  display: grid;
+  gap: 32px;
+  padding-block: clamp(24px, 4vw, 68px) clamp(52px, 6vw, 88px);
+}
+.at-price-nav {
+  align-self: start;
+  min-width: 0;
+}
+.at-price-nav__heading,
+.at-price-nav__toggle,
+.at-pricetable thead th {
+  color: var(--at-muted);
+  font: 650 .82rem/1.3 var(--at-ui);
+}
+.at-price-nav__heading { margin-block-end: 10px; }
+.at-price-nav ul { border-block-start: 1px solid var(--at-line); }
+.at-price-nav li { border-block-end: 1px solid var(--at-line); }
+.at-price-nav a,
+.at-price-nav__toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  min-height: 45px;
+  width: 100%;
+  padding: 9px 2px;
+  text-align: start;
+}
+.at-price-nav a {
+  font-size: .98rem;
+  line-height: 1.35;
+}
+.at-price-nav a:hover,
+.at-price-nav a[aria-current="location"] { color: var(--at-bronze); }
+.at-price-nav a[aria-current="location"] { font-weight: 700; }
+.at-price-nav svg { width: 17px; height: 17px; flex: none; }
+.at-price-nav a svg { color: var(--at-bronze); }
+.at-price-nav__toggle svg { transform: rotate(90deg); }
+.at-price-nav__toggle[aria-expanded="true"] svg { transform: rotate(-90deg); }
+.at-price-nav__toggle[hidden] { display: none; }
+
+.at-pricing__groups { min-width: 0; }
+.at-price-group + .at-price-group { margin-block-start: clamp(40px, 5vw, 72px); }
+.at-price-group__head {
+  border-block-start: 2px solid var(--at-ink);
+  padding-block: 17px 12px;
+}
+.at-price-group__head .at-h2 {
+  font-size: clamp(1.85rem, 3.2vw, 3rem);
+  text-wrap: initial;
+}
+.at-price-group__sub {
+  margin-block: 26px 4px;
+  font: 500 clamp(1.35rem, 2vw, 1.7rem)/1.2 var(--at-display);
+}
+.at-price-group__head + .at-price-group__sub { margin-block-start: 6px; }
+.at-price-group__method,
+.at-price-group__note {
+  color: var(--at-muted);
+  font-size: .94rem;
+}
+.at-price-group__note {
+  border-inline-start: 2px solid var(--at-champagne);
+  margin-block-start: 16px;
+  padding-inline-start: 12px;
+}
+.at-pricetable {
+  width: 100%;
+  border-collapse: collapse;
+  font-variant-numeric: lining-nums tabular-nums;
+}
+.at-pricetable :is(th, td) {
+  padding: 13px 4px;
+  border-block-end: 1px solid var(--at-line);
+  text-align: start;
+  vertical-align: top;
+}
+.at-pricetable :is(th, td):first-child { padding-inline-start: 0; }
+.at-pricetable :is(th, td):last-child { padding-inline-end: 0; }
+.at-pricetable thead th { padding-block: 10px; }
+.at-pricetable tbody th {
+  font: 580 1rem/1.42 var(--at-ui);
+  color: var(--at-ink);
+}
+.at-pricetable tbody th small {
+  display: block;
+  max-width: 52ch;
+  margin-block-start: 2px;
+  color: var(--at-muted);
+  font: 450 .86rem/1.46 var(--at-ui);
+}
+.at-pricetable :is(td, th):nth-child(2) {
+  width: clamp(52px, 9vw, 110px);
+  color: var(--at-muted);
+  font-size: .87rem;
+  white-space: nowrap;
+  text-align: end;
+}
+.at-pricetable :is(td, th):last-child {
+  width: clamp(66px, 9vw, 108px);
+  text-align: end;
+  white-space: nowrap;
+}
+.at-pricetable td:last-child {
+  font: 400 clamp(1.2rem, 1.6vw, 1.5rem)/1.1 var(--at-display);
+  color: var(--at-ink);
+}
+.at-pricing__consult {
+  background: var(--at-ink);
+  border-block-end: 1px solid var(--at-ink-line);
+}
+.at-pricing__consult-inner {
+  display: grid;
+  align-items: center;
+  gap: 24px;
+  padding-block: clamp(40px, 5vw, 72px);
+}
+.at-pricing__consult-inner p {
+  max-width: 62ch;
+  margin-block-start: 12px;
+  color: var(--at-cream-muted);
+}
+.at-pricing__consult-actions p { font-size: .86rem; }
+
+@media (min-width: 800px) {
+  .at-pricing__mast-inner { grid-template-columns: 1.2fr .85fr; }
+  .at-pricing__mast-inner::after {
+    content: "";
+    align-self: stretch;
+    min-height: 210px;
+    background: var(--at-sand) url("../images/backgrounds/pricing-header-real-2.webp") center 55% / cover;
+  }
+  .at-pricing__layout {
+    grid-template-columns: minmax(175px, .32fr) minmax(0, 1fr);
+    gap: clamp(48px, 8vw, 120px);
+  }
+  .at-price-nav {
+    position: sticky;
+    top: calc(var(--at-header-h) + 22px);
+    max-height: calc(100dvh - var(--at-header-h) - 44px);
+    overflow-y: auto;
+    padding: 4px;
+  }
+  .at-pricing__consult-inner { grid-template-columns: 1fr auto; gap: 42px; }
+}
+@media (max-width: 799px) {
+  .at-price-nav.is-enhanced {
+    position: sticky;
+    top: var(--at-header-h);
+    z-index: 3;
+    margin-inline: calc(-1 * var(--at-gutter));
+    padding-inline: var(--at-gutter);
+    background: var(--at-cream);
+    border-block-end: 1px solid var(--at-line);
+  }
+  .at-price-nav.is-enhanced .at-price-nav__heading {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+  }
+  .at-price-nav__toggle {
+    display: flex;
+    min-height: 48px;
+    color: var(--at-ink);
+    font-size: .96rem;
+    font-weight: 650;
+  }
+  .at-price-nav.is-enhanced ul {
+    position: absolute;
+    inset: 100% 0 auto;
+    max-height: min(52dvh, 360px);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    padding: 0 var(--at-gutter) 8px;
+    background: var(--at-paper);
+    box-shadow: 0 12px 18px -16px var(--at-ink);
+  }
+  .at-pricing__layout:has(.is-enhanced) { padding-block-start: 0; gap: 22px; }
+  .at-pricing__layout:has(.is-enhanced) .at-price-group { scroll-margin-block-start: 48px; }
+}

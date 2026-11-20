@@ -123,13 +123,13 @@
         bannerEl.innerHTML =
             '<span class="cookie-banner__icon" aria-hidden="true">&#127850;</span>' +
             '<div class="cookie-banner__text">' +
-                '<p>' + t('cookie.text', 'Използваме бисквитки за анализ на трафика (Google Analytics), за да подобряваме сайта.') + '</p>' +
-                '&nbsp;<a href="Privacy-policy.html">' + t('cookie.learn_more', 'Поверителност') + '</a>' +
+                '<p data-i18n="cookie.text">' + t('cookie.text', 'Използваме бисквитки за анализ на трафика (Google Analytics), за да подобряваме сайта.') + '</p>' +
+                '&nbsp;<a href="Privacy-policy.html" data-i18n="cookie.learn_more">' + t('cookie.learn_more', 'Поверителност') + '</a>' +
             '</div>' +
             '<div class="cookie-banner__actions">' +
-                '<button class="cookie-btn cookie-btn--accept" id="cookie-accept-all">' + t('cookie.accept_all', 'Приемам всички') + '</button>' +
-                '<button class="cookie-btn cookie-btn--decline" id="cookie-decline-all">' + t('cookie.decline_all', 'Отказвам всички') + '</button>' +
-                '<button class="cookie-btn cookie-btn--customize" id="cookie-customize">' + t('cookie.customize', 'Настройки') + '</button>' +
+                '<button class="cookie-btn cookie-btn--accept" id="cookie-accept-all" data-i18n="cookie.accept_all">' + t('cookie.accept_all', 'Приемам всички') + '</button>' +
+                '<button class="cookie-btn cookie-btn--decline" id="cookie-decline-all" data-i18n="cookie.decline_all">' + t('cookie.decline_all', 'Отказвам всички') + '</button>' +
+                '<button class="cookie-btn cookie-btn--customize" id="cookie-customize" data-i18n="cookie.customize">' + t('cookie.customize', 'Настройки') + '</button>' +
             '</div>';
 
         document.body.appendChild(bannerEl);
@@ -144,34 +144,34 @@
         modalEl.innerHTML =
             '<div class="cookie-modal__overlay"></div>' +
             '<div class="cookie-modal__panel">' +
-                '<h3 class="cookie-modal__title">' + t('cookie.customize', 'Настройки') + '</h3>' +
+                '<h3 class="cookie-modal__title" data-i18n="cookie.customize">' + t('cookie.customize', 'Настройки') + '</h3>' +
 
                 '<div class="cookie-category">' +
                     '<div class="cookie-category__header">' +
-                        '<span class="cookie-category__title">' + t('cookie.necessary_title', 'Необходими') + '</span>' +
-                        '<label class="cookie-toggle cookie-toggle--disabled"><input type="checkbox" checked disabled /><span class="cookie-toggle__slider"></span></label>' +
+                        '<span class="cookie-category__title" id="cookie-label-necessary" data-i18n="cookie.necessary_title">' + t('cookie.necessary_title', 'Необходими') + '</span>' +
+                        '<label class="cookie-toggle cookie-toggle--disabled"><input type="checkbox" aria-labelledby="cookie-label-necessary" checked disabled /><span class="cookie-toggle__slider"></span></label>' +
                     '</div>' +
-                    '<p class="cookie-category__desc">' + t('cookie.necessary_desc', 'Основни бисквитки за работата на сайта. Не могат да бъдат изключени.') + '</p>' +
+                    '<p class="cookie-category__desc" data-i18n="cookie.necessary_desc">' + t('cookie.necessary_desc', 'Основни бисквитки за работата на сайта. Не могат да бъдат изключени.') + '</p>' +
                 '</div>' +
 
                 '<div class="cookie-category">' +
                     '<div class="cookie-category__header">' +
-                        '<span class="cookie-category__title">' + t('cookie.analytics_title', 'Аналитични') + '</span>' +
-                        '<label class="cookie-toggle"><input type="checkbox" id="cookie-toggle-analytics" /><span class="cookie-toggle__slider"></span></label>' +
+                        '<span class="cookie-category__title" id="cookie-label-analytics" data-i18n="cookie.analytics_title">' + t('cookie.analytics_title', 'Аналитични') + '</span>' +
+                        '<label class="cookie-toggle"><input type="checkbox" aria-labelledby="cookie-label-analytics" id="cookie-toggle-analytics" /><span class="cookie-toggle__slider"></span></label>' +
                     '</div>' +
-                    '<p class="cookie-category__desc">' + t('cookie.analytics_desc', 'Google Analytics — анализ на трафика и подобряване на сайта.') + '</p>' +
+                    '<p class="cookie-category__desc" data-i18n="cookie.analytics_desc">' + t('cookie.analytics_desc', 'Google Analytics — анализ на трафика и подобряване на сайта.') + '</p>' +
                 '</div>' +
 
                 '<div class="cookie-category">' +
                     '<div class="cookie-category__header">' +
-                        '<span class="cookie-category__title">' + t('cookie.marketing_title', 'Маркетингови') + '</span>' +
-                        '<label class="cookie-toggle"><input type="checkbox" id="cookie-toggle-marketing" /><span class="cookie-toggle__slider"></span></label>' +
+                        '<span class="cookie-category__title" id="cookie-label-marketing" data-i18n="cookie.marketing_title">' + t('cookie.marketing_title', 'Маркетингови') + '</span>' +
+                        '<label class="cookie-toggle"><input type="checkbox" aria-labelledby="cookie-label-marketing" id="cookie-toggle-marketing" /><span class="cookie-toggle__slider"></span></label>' +
                     '</div>' +
-                    '<p class="cookie-category__desc">' + t('cookie.marketing_desc', 'Рекламни бисквитки за персонализирани оферти.') + '</p>' +
+                    '<p class="cookie-category__desc" data-i18n="cookie.marketing_desc">' + t('cookie.marketing_desc', 'Рекламни бисквитки за персонализирани оферти.') + '</p>' +
                 '</div>' +
 
                 '<div class="cookie-modal__actions">' +
-                    '<button class="cookie-btn cookie-btn--accept" id="cookie-save-prefs">' + t('cookie.save_preferences', 'Запази настройките') + '</button>' +
+                    '<button class="cookie-btn cookie-btn--accept" id="cookie-save-prefs" data-i18n="cookie.save_preferences">' + t('cookie.save_preferences', 'Запази настройките') + '</button>' +
                 '</div>' +
             '</div>';
 
