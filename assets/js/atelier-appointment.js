@@ -3,7 +3,18 @@
     'use strict';
 
     var form = document.getElementById('callback-form');
-    if (!form || !window.fetch || !window.FormData || !window.URLSearchParams) return;
+    if (!form || !window.URLSearchParams) return;
+
+    var service = new URLSearchParams(window.location.search).get('service');
+    var select = form.elements.services;
+    if (service && select && !select.value) {
+        var option = Array.from(select.options).find(function (item) {
+            return item.dataset.service === service;
+        });
+        if (option) option.selected = true;
+    }
+
+    if (!window.fetch || !window.FormData) return;
 
     var button = form.querySelector('[type="submit"]');
     var failure = document.getElementById('callback-failure');

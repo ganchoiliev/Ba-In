@@ -16,6 +16,7 @@
             <button type="button" class="at-price-nav__toggle" aria-expanded="false" aria-controls="price-links" hidden><span data-i18n="priceguide.choose">Избери категория</span>{{CHEV}}</button>
             <ul id="price-links">
                 <li><a id="tab-la" href="#pt-la"><span data-i18n="pricing.tab.la">Оформяне и ламиниране</span>{{CHEV}}</a></li>
+                <li><a href="#price-sub-lashes"><span data-i18n="pricing.sub.lashes">Миглопластика</span>{{CHEV}}</a></li>
                 <li><a id="tab-mb" href="#pt-mb"><span data-i18n="pricing.tab.mb">Микроблейдинг</span>{{CHEV}}</a></li>
                 <li><a id="tab-rem" href="#pt-rem"><span data-i18n="pricing.tab.rem">Премахване</span>{{CHEV}}</a></li>
                 <li><a id="tab-pp" href="#pt-pp"><span data-i18n="pricing.tab.pp">Плазма пен и лифтинг</span>{{CHEV}}</a></li>
@@ -57,13 +58,17 @@
                         </tr>
                     </tbody>
                 </table>
-                <h3 id="price-sub-lashes" class="at-price-group__sub" data-i18n="pricing.sub.lashes">Миглопластика</h3>
-                <table class="at-pricetable" aria-labelledby="price-sub-lashes">
+            </section>
+            <section class="at-price-group" id="price-sub-lashes" aria-labelledby="price-title-lashes" tabindex="-1">
+                <header class="at-price-group__head">
+                    <h2 id="price-title-lashes" class="at-h2" data-i18n="pricing.sub.lashes">Миглопластика</h2>
+                </header>
+                <table class="at-pricetable" aria-labelledby="price-title-lashes">
                     <thead><tr><th scope="col" data-i18n="priceguide.treatment">Процедура</th><th scope="col" data-i18n="priceguide.duration">Време</th><th scope="col" data-i18n="priceguide.price">Цена</th></tr></thead>
                     <tbody>
                         <tr>
                             <th scope="row"><span data-i18n="pricing.svc.lash_set">Поставяне на нов комплект мигли</span><small data-i18n="pricing.desc.lash_set">Мигли „косъм по косъм“</small></th>
-                            <td><span data-i18n="pricing.dur.1_5h">~1.5ч</span></td><td>45&nbsp;€</td>
+                            <td><span data-i18n="pricing.dur.1_5h">~1.5ч</span></td><td>50&nbsp;€</td>
                         </tr>
                         <tr>
                             <th scope="row"><span data-i18n="pricing.svc.lash_fill2">Поддръжка на мигли — 2 седмици</span></th>
@@ -287,12 +292,11 @@
     <section class="at-pricing__consult at-on-ink" aria-labelledby="price-consult-title">
         <div class="at-wrap at-pricing__consult-inner">
             <div>
-                <h2 class="at-h2" id="price-consult-title" data-i18n="pricing.book_consult">Запази безплатна консултация</h2>
-                <p data-i18n="priceguide.consult">Илияна е сертифициран PhiBrows специалист и работи с оригинални продукти на PhiBrows и BioRePeel. Попитай за индивидуална оферта или за грижата след процедурата.</p>
+                <h2 class="at-h2" id="price-consult-title" data-i18n="booking.title">Запази час при Илияна</h2>
+                <p data-i18n="booking.intro">Избери процедура и свободен час в Notino. Ще получиш потвърждение веднага.</p>
             </div>
             <div class="at-pricing__consult-actions" data-at-bar-stop>
-                <a class="at-btn at-btn--gold" href="appointment.html"><span data-i18n="priceguide.consult_action">Заяви консултация</span>{{CHEV}}</a>
-                <p data-i18n="pricing.cta_micro">Без ангажимент · Отговаряме до 24 часа</p>
+                <a class="at-btn at-btn--gold" href="/notino" target="_blank" rel="noopener"><span data-i18n="home.visit_book">Запази час в Notino</span>{{ARROW}}</a>
             </div>
         </div>
     </section>

@@ -1,0 +1,108 @@
+.at-address {
+    padding-block: clamp(30px, 5.4vw, 80px) clamp(32px, 5.5vw, 82px);
+}
+.at-address__layout, .at-visit-plan__layout {
+    display: grid;
+    gap: 22px;
+}
+.at-address__title { display: grid; gap: 16px; }
+.at-address__title h1 {
+    font-size: clamp(2.8rem, 6vw, 5.4rem);
+    line-height: 1;
+    letter-spacing: -.035em;
+}
+.at-address__details { display: grid; gap: 16px; }
+.at-address__details address {
+    max-width: 23ch;
+    font: 400 clamp(1.4rem, 2vw, 1.85rem)/1.24 var(--at-display);
+}
+.at-address__details address a:hover,
+.at-visit-plan__contacts a:hover {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+.at-address__details p { font-weight: 600; }
+.at-address__details small {
+    display: block;
+    font-size: .88rem;
+    color: var(--at-muted);
+    font-weight: 450;
+}
+.at-address__actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px clamp(15px, 2vw, 30px);
+}
+.at-address__photo img {
+    display: block;
+    width: 100%;
+    height: auto;
+    background: var(--at-sand);
+}
+.at-address__photo figcaption {
+    padding-block: 8px;
+    font-size: .84rem;
+    color: var(--at-muted);
+}
+.at-visit-plan {
+    padding-block: clamp(38px, 5.6vw, 88px);
+    background: var(--at-paper);
+    border-top: 1px solid var(--at-line);
+}
+.at-visit-plan__booking {
+    display: grid;
+    align-content: start;
+    justify-items: start;
+    gap: 18px;
+}
+.at-visit-plan__booking > p { max-width: 37ch; }
+.at-visit-plan__contacts { width: 100%; border-top: 1px solid var(--at-line); }
+.at-visit-plan__contacts li {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 3px 10px;
+    padding-block: 6px;
+    border-bottom: 1px solid var(--at-line);
+}
+.at-visit-plan__contacts li > span { color: var(--at-muted); font-size: .85rem; }
+.at-visit-plan__contacts a, .at-visit-plan__enquiry, .at-visit-plan__map a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+}
+.at-visit-plan__enquiry, .at-visit-plan__map a {
+    color: var(--at-bronze);
+    text-underline-offset: 4px;
+    text-decoration: underline;
+    font-size: .9rem;
+}
+.at-visit-plan__map iframe {
+    display: block;
+    width: 100%;
+    height: clamp(245px, 30vw, 408px);
+    border: 1px solid var(--at-line);
+    background: var(--at-sand);
+}
+.at-visit-plan__map a { gap: 7px; }
+.at-visit-plan__map svg { width: 14px; height: 14px; }
+@media (max-width: 399px) {
+    .at-address__actions .at-btn { padding-inline: 14px; }
+    .at-address__actions :is(.at-btn,.at-link) { font-size: .93rem; }
+}
+@media (min-width: 780px) {
+    .at-address__layout, .at-visit-plan__layout {
+        grid-template-columns: minmax(0,.86fr) minmax(0,1.14fr);
+        column-gap: clamp(36px, 5.2vw, 76px);
+    }
+    .at-address__layout {
+        grid-template-areas: "title photo" "facts photo";
+        align-content: center;
+    }
+    .at-address__title { grid-area: title; align-self: end; }
+    .at-address__details { grid-area: facts; align-self: start; gap: 22px; }
+    .at-address__photo { grid-area: photo; align-self: center; }
+    .at-visit-plan__booking { align-self: center; }
+}

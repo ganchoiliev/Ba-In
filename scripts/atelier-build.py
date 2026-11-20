@@ -64,6 +64,7 @@ HEAD_BLOCK = '''    <meta name="theme-color" content="#F2EDE6" />
 PAGES = {
     'index': 'home',
     'about': 'about',
+    'contact': 'contact',
     'procedures': 'procedures',
     'pricing': 'pricing',
     'appointment': 'appointment',

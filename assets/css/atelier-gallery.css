@@ -52,6 +52,15 @@ html:has(.at-viewer[open]) { overflow: hidden; }
 .at-viewer__media img { touch-action: pinch-zoom; }
 .at-viewer__foot { align-items: center; padding-block: 12px; }
 .at-viewer__foot p { font-size: .95rem; line-height: 1.4; }
+.at-viewer__description { min-width: 0; }
+.at-viewer__treatments { display: flex; flex-wrap: wrap; column-gap: 20px; }
+.at-viewer__treatments a {
+    display: inline-flex; align-items: center; gap: 6px; min-height: 44px;
+    color: var(--at-champagne); font: 600 .9rem/1.35 var(--at-ui);
+    text-decoration: underline; text-underline-offset: 3px;
+}
+.at-viewer__treatments a:hover { color: var(--at-cream); }
+.at-viewer__treatments svg { width: 14px; height: 14px; flex: none; }
 .at-viewer__nav { display: flex; align-items: center; gap: 8px; flex: none; font-variant-numeric: tabular-nums; font-size: .9rem; }
 .at-viewer__nav button { border: 1px solid #776f63; border-radius: 50%; }
 .at-viewer__nav svg { width: 16px; height: 16px; }

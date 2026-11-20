@@ -7,6 +7,7 @@
     const dialog = document.getElementById('galleryViewer');
     const media = document.getElementById('galleryMedia');
     const caption = document.getElementById('galleryCaption');
+    const treatmentLinks = dialog.querySelectorAll('[data-treatment]');
     const links = Array.from(grid.querySelectorAll('.at-photo'));
     const batch = 12;
     let filtered = [];
@@ -91,6 +92,10 @@
         const text = link.querySelector('.at-photo__caption');
         caption.classList.toggle('at-photo__caption--translated', text.classList.contains('at-photo__caption--translated'));
         caption.replaceChildren(...Array.from(text.children, span => span.cloneNode(true)));
+        const services = (link.dataset.treatments ?? link.dataset.category).split(' ');
+        for (const anchor of treatmentLinks) {
+            anchor.hidden = !services.includes(anchor.dataset.treatment);
+        }
         document.getElementById('galleryPosition').textContent = (current + 1) + ' / ' + filtered.length;
         document.querySelector('.at-viewer__nav').hidden = filtered.length === 1;
     }

@@ -174,8 +174,33 @@ counts.videos = videos.length;
 const labels = {all: 'Всички', ...catLabels};
 const choices = ['all', ...categories, 'videos'].filter(category => counts[category] > 0)
     .map(category => `<option value="${category}" data-count="${counts[category]}" data-i18n="gallery.filter.${category}">${labels[category]}</option>`);
+// The filter groups describe the collection. A particular photograph or clip
+// can show a different service, two services, or simply a moment at the studio.
+const treatmentOverrides = {
+    'cleaning_eyebrows.jpg': 'brow-shaping',
+    'cleaning_eyebrows_first_time.jpg': 'brow-shaping',
+    'eyebrows_cleaning.jpg': 'brow-shaping',
+    'eyebrows_cleaning1.jpg': 'brow-shaping',
+    'eyebrows_cleaning11.jpg': 'brow-shaping',
+    'eyebrows_cleaning3.jpg': 'brow-shaping',
+    'eyebrows_cleaning_firstime.jpg': 'brow-shaping',
+    'eyevrows_cleaning.jpg': 'brow-shaping',
+    'first_time_eyebrows.jpg': 'brow-shaping',
+    'lamination5.jpg': 'lamination brow-shaping',
+    'lamination_eyebrows_cleaning.jpg': 'lamination brow-shaping',
+    'lamination_first_cleaning_eyebrows.jpg': 'lamination brow-shaping',
+    'eyelashes.png': 'lashes',
+    'video-01.mp4': 'lamination lashes',
+    'video-10.mp4': '',
+    'video-17.mp4': '',
+    'video-18.mp4': 'microblading',
+    'video-44.mp4': ''
+};
+
 const cards = items.map((item, index) => {
     const category = item.category;
+    const treatments = treatmentOverrides[item.file];
+    const override = treatments === undefined ? '' : ` data-treatments="${treatments}"`;
     const translation = english[item.file];
     const caption = escapeHtml(item.caption);
     const englishText = translation ? `<span lang="en">${escapeHtml(translation)}</span>` : '';
@@ -183,7 +208,7 @@ const cards = items.map((item, index) => {
     const id = item.video ? ` id="gallery-vid-${item.index}"` : '';
     const play = item.video ? '<span class="at-photo__play" aria-hidden="true">▶</span><span class="at-sr" data-i18n="atelier.gallery_video">Видео</span>' : '';
     const priority = index === 0 ? 'fetchpriority="high"' : 'loading="lazy"';
-    return `<a class="at-photo"${id} href="${escapeHtml(item.source)}" data-category="${category}" data-kind="${item.video ? 'video' : 'photo'}">
+    return `<a class="at-photo"${id} href="${escapeHtml(item.source)}" data-category="${category}"${override} data-kind="${item.video ? 'video' : 'photo'}">
                     <span class="at-photo__image"><img src="${escapeHtml(item.preview)}" ${priority} decoding="async" alt="">${play}</span>
                     <span class="at-photo__category" data-i18n="gallery.filter.${category}">${catLabels[category]}</span>
                     <span class="at-photo__caption${languages}"><span lang="bg">${caption}</span>${englishText}</span>
