@@ -170,12 +170,22 @@
     text-wrap: pretty;
 }
 
+/* The booking button and the proof that backs it are one group: the ratings
+   sit directly under the buttons, with no rule between them. */
+.at-front__close {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: clamp(6px, .9vw, 12px);
+    width: 100%;
+    margin-top: clamp(20px, 2.8vw, 38px);
+}
+
 .at-front__actions {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     gap: 12px clamp(18px, 2.1vw, 33px);
-    margin-block: clamp(18px, 2.65vw, 36px);
 }
 
 .at-front__actions .at-btn {
@@ -189,43 +199,86 @@
     --bd: var(--front-accent);
 }
 
-.at-front__reviews {
+.at-front__proof {
     display: flex;
     flex-wrap: wrap;
-    gap: 0 18px;
-    width: 100%;
-    padding-top: 8px;
-    border-top: 1px solid #65584f;
+    align-items: center;
+    gap: 0 12px;
+    margin: 0;
+    color: #eaded3;
+    font-size: clamp(.84rem, .95vw, .94rem);
+    line-height: 1.3;
 }
 
-.at-front__reviews a {
+.at-front__score {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 9px;
+    margin-right: 2px;
+}
+
+.at-front__score .at-stars {
+    color: var(--front-accent);
+    font-size: .8em;
+    letter-spacing: .16em;
+}
+
+.at-front__score b {
+    font: 400 1.36em/1 var(--at-display);
+    color: var(--front-text);
+}
+
+/* The two sources never split: when the row is too narrow the stars take
+   the first line and both sources share the second. */
+.at-front__srcs {
     display: inline-flex;
     align-items: center;
-    gap: 7px;
+    gap: 0 12px;
+    white-space: nowrap;
+}
+
+.at-front__proof a {
+    display: inline-flex;
+    align-items: center;
     min-height: 44px;
-    font-size: clamp(.79rem, .95vw, .92rem);
-    color: #eaded3;
+    color: inherit;
 }
 
-.at-front__reviews a:hover {
+.at-front__proof a + a::before {
+    content: "\00B7";
+    margin-right: 12px;
+    color: #a3958a;
+}
+
+.at-front__src {
     text-decoration: underline;
+    text-decoration-color: rgba(234, 222, 211, .38);
+    text-decoration-thickness: 1px;
+    text-underline-offset: 4px;
+    transition: color .2s, text-decoration-color .2s;
 }
 
-.at-front__reviews .at-stars {
+.at-front__proof a:hover .at-front__src {
     color: var(--front-accent);
-    letter-spacing: .045em;
+    text-decoration-color: currentColor;
 }
 
 @media (max-width: 399px) {
     .at-front__caption { padding-inline: 15px; }
     .at-front__actions .at-btn { min-height: 47px; padding-inline: 17px; }
-    .at-front__reviews { gap: 0 12px; }
 }
 
 @media (max-width: 399px), (min-width: 680px) and (max-width: 980px) {
     .at-front__actions { gap: 9px 14px; }
     .at-front__actions .at-btn { padding-inline: 14px; }
     .at-front__actions :is(.at-btn, .at-link) { font-size: .94rem; }
+    /* Narrow columns: tighten the ratings so they hold one line where they can. */
+    .at-front__proof { font-size: .8rem; }
+    .at-front__proof,
+    .at-front__srcs { gap: 0 8px; }
+    .at-front__proof a + a::before { margin-right: 8px; }
+    .at-front__score { gap: 7px; margin-right: 0; }
+    .at-front__score .at-stars { letter-spacing: .08em; }
 }
 
 @media (max-width: 679px) {
@@ -249,15 +302,21 @@
     .at-front__picks img { width: 32px; height: 30px; }
     .at-front__picks label { min-height: 44px; gap: 3px; }
     .at-front__story { padding-top: 19px; }
-    .at-front__actions { margin-block: 14px; }
+    .at-front__close { margin-top: 15px; gap: 3px; }
 }
 @media (max-width: 359px) {
+    /* Smallest phones: the button goes above the paragraph so it stays on the
+       first screen. The wrapper steps aside so its two children can be ordered. */
+    .at-front__close { display: contents; }
     .at-front__actions { order: 1; margin-block: 4px 12px; }
     .at-front__intro { order: 2; }
-    .at-front__reviews { order: 3; margin-top: 14px; }
+    .at-front__proof { order: 3; margin-top: 6px; }
 }
 @media (min-width: 510px) and (max-width: 679px) {
+    /* One column on a wide screen: let the paragraph run as wide as the
+       headline above it, so the right half is not left empty. */
     .at-front h1 { font-size: clamp(3.6rem, 8vw, 4.6rem); }
+    .at-front__intro { max-width: 54ch; font-size: 1.02rem; }
 }
 
 @media (min-width: 680px) {
