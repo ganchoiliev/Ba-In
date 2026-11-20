@@ -299,8 +299,16 @@ if (!empty($last_user_message)) {
    $log_entry .= "BOT:  " . $ai_message . "\n";
    $log_entry .= str_repeat("-", 50) . "\n";
 
-   // Запазваме в текстов файл в същата папка
-   @file_put_contents(__DIR__ . '/chat_logs.txt', $log_entry, FILE_APPEND);
+   // The log lives in ba-in-data/ beside the web root, next to the Notino click
+   // log. It used to be written into this folder, where every deploy deleted
+   // it: the deploy runs rsync --delete, which removes anything on the server
+   // that is not in the repository.
+   $log_dir = dirname($_SERVER['DOCUMENT_ROOT']) . '/ba-in-data';
+   if (!is_dir($log_dir)) {
+      @mkdir($log_dir, 0700, true);
+   }
+   $log_file = is_dir($log_dir) ? $log_dir . '/chat_logs.txt' : __DIR__ . '/chat_logs.txt';
+   @file_put_contents($log_file, $log_entry, FILE_APPEND | LOCK_EX);
 }
 // ---------------------------------------
 
