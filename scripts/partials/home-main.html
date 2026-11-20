@@ -6,10 +6,15 @@
                 <input class="at-sr at-front__choice" type="radio" id="front-portrait" name="front-photo" checked>
                 <input class="at-sr at-front__choice" type="radio" id="front-work" name="front-photo">
                 <figure class="at-front__photo at-front__photo--portrait">
-                    <img src="assets/images/atelier/iliyana-studio-portrait-800.webp"
+                    <picture>
+                        <source media="(max-width: 679px)" type="image/webp"
+                                srcset="assets/images/atelier/iliyana-studio-portrait-wide-800.webp 800w, assets/images/atelier/iliyana-studio-portrait-wide-1200.webp 1200w"
+                                sizes="100vw" width="1200" height="883">
+                        <img src="assets/images/atelier/iliyana-studio-portrait-800.webp"
                      srcset="assets/images/atelier/iliyana-studio-portrait-480.webp 480w, assets/images/atelier/iliyana-studio-portrait-800.webp 800w, assets/images/atelier/iliyana-studio-portrait-1280.webp 1280w"
                      sizes="(min-width: 1720px) 860px, (min-width: 680px) 50vw, 100vw"
                      width="1250" height="1570" fetchpriority="high" alt="Портрет на Илияна Николаева" data-i18n-alt="home.portrait.plain_alt">
+                    </picture>
                 </figure>
                 <figure class="at-front__photo at-front__photo--work">
                     <img src="assets/images/atelier/about-work-540.webp" srcset="assets/images/atelier/about-work-540.webp 540w, assets/images/atelier/about-work-1170.webp 1170w"
@@ -29,7 +34,7 @@
             </fieldset>
             <div class="at-front__story">
                 <p class="at-kicker" data-i18n="home.kicker">Салон за красота в Силистра</p>
-                <h1 class="at-display" id="at-hero-title" data-i18n-html="home.portrait.title">Вежди, мигли <em>и кожа.</em></h1>
+                <h1 class="at-display" id="at-hero-title" data-i18n-html="home.portrait.title">Вежди, мигли <span>и кожа.</span></h1>
                 <p class="at-front__intro" data-i18n="home.lede">Ламиниране със ZOLA, микроблейдинг и грижа за кожата при Илияна Николаева, в центъра на Силистра.</p>
                 <div class="at-front__close">
                     <div class="at-front__actions" data-at-bar-start>

@@ -30,6 +30,12 @@
     inset: 0;
 }
 
+.at-front__photo picture {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
 .at-front__photo img {
     width: 100%;
     height: 100%;
@@ -157,9 +163,9 @@
     text-wrap: initial;
 }
 
-.at-front h1 em {
-    color: var(--front-accent);
-    font-weight: 400;
+/* The headline is one sentence in one colour. The span only keeps its last
+   words together and gives them their own line on wide screens. */
+.at-front h1 span {
     white-space: nowrap;
 }
 
@@ -291,14 +297,17 @@
     .at-front__photo {
         position: relative;
         inset: auto;
-        aspect-ratio: 1.75;
+        aspect-ratio: 1.36;
     }
-    .at-front__photo--portrait img { object-position: 50% 17%; }
+    /* Phones get their own, wider cut of the portrait (see the <picture> in
+       the page), already in this frame's proportions: head, shoulders and
+       wall, not a close-up. The name and the photo switch lie over the foot
+       of the photo, so the taller frame costs the booking button nothing. */
+    .at-front__photo--portrait img { object-position: 50% 50%; }
     .at-front__caption {
-        position: static;
-        align-items: center;
-        padding: 6px var(--at-gutter);
-        background: #1b1c1c;
+        align-items: end;
+        padding: 34px var(--at-gutter) 7px;
+        background: linear-gradient(transparent, rgba(12, 12, 12, .5) 38%, rgba(12, 12, 12, .86));
     }
     .at-front__picks img { width: 32px; height: 30px; }
     .at-front__picks label { min-height: 44px; gap: 3px; }
@@ -333,7 +342,7 @@
     .at-front__picks img { width: 51px; height: 48px; }
     .at-front__story { padding: clamp(30px, 4.75vw, 84px); }
     .at-front h1 { font-size: clamp(3.25rem, 5.8vw, 6.35rem); }
-    .at-front h1 em { display: block; }
+    .at-front h1 span { display: block; }
 }
 
 .at-home-visit__photos {
