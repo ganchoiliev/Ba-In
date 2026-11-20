@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Assemble the homepage, treatment directory, price list and booking page.
+"""Assemble the pages that use the atelier design system.
 
 Edit the main content and shared navigation in scripts/partials/. Each output
 page owns its search metadata above the at:head marker. To produce the final,
@@ -66,6 +66,15 @@ PAGES = {
     'procedures': 'procedures',
     'pricing': 'pricing',
     'appointment': 'appointment',
+    'gallery': 'gallery',
+    'laminirane': 'lamination',
+    'vezhdi': 'treatment',
+    'microblading': 'treatment',
+    'microneedling': 'treatment',
+    'piercing': 'treatment',
+    'lashes': 'treatment',
+    'plasma': 'treatment',
+    'perm-makeup-removal': 'treatment',
 }
 
 
@@ -78,15 +87,20 @@ def build_page(filename, name):
 
     styles = HEAD_BLOCK
     scripts = ['atelier']
-    if name != 'home':
-        styles += f'\n    <link rel="stylesheet" href="assets/css/atelier-{name}.css" />'
-        if (ROOT / 'assets' / 'js' / f'atelier-{name}.js').is_file():
-            scripts.append(f'atelier-{name}')
+    styles += f'\n    <link rel="stylesheet" href="assets/css/atelier-{name}.css" />'
+    if (ROOT / 'assets' / 'js' / f'atelier-{name}.js').is_file():
+        scripts.append(f'atelier-{name}')
 
+    partial = filename if name == 'treatment' else name
+    detail = name in ('treatment', 'lamination')
+    nav_target = 'procedures' if detail else filename
+    current = 'true' if detail else 'page'
+    nav_link = f'href="{nav_target}.html" data-i18n="shared.nav.'
+    header = HEADER.replace(nav_link, f'aria-current="{current}" ' + nav_link)
     body = [
         f'<body class="at-page at-{name}">',
-        region('header', HEADER),
-        render(read(f'{name}-main.html')).rstrip(),
+        region('header', header),
+        render(read(f'{partial}-main.html')).rstrip(),
         region('footer', FOOTER),
     ]
     for script in scripts + ['ai-chat-v2', 'i18n', 'cookie-consent']:

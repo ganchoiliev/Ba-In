@@ -1,12 +1,19 @@
 const fs = require('fs');
 const path = require('path');
 
-const imgDir = 'c:/xampp/htdocs/ba-in/assets/images/gallery-page';
-const vidDir = 'c:/xampp/htdocs/ba-in/assets/images/videos';
+// After adding media and editing captions, run node build-gallery-page.js,
+// then the project's atelier, bundle and cache-stamp scripts. Use --thumbnails
+// to optimize new photo previews with Python/Pillow before building the partial.
+const root = __dirname;
+const imgDir = path.join(root, 'assets/images/gallery-page');
+const vidDir = path.join(root, 'assets/images/videos');
+const partial = path.join(root, 'scripts/partials/gallery-main.html');
 
 // ── Image categorization ──
 function categorizeImage(filename) {
     const f = filename.toLowerCase();
+    // Two non-published microblading originals also exist in the asset folder.
+    if (f === 'microblading3.jpg' || f === 'microblading4.jpg') return null;
     if (f.includes('studio_newyear') || f.includes('vaucher')) return null;
     if (f.includes('certificate') || f.includes('cource') || f.includes('course') || f.includes('given_cert') || f.includes('group_people')) return 'studio';
     if (f.startsWith('iliyana') || f === 'iliyana2.jpg' || f === 'mila_savova_my_teacher.jpg' || f.includes('iliyana_with') || f.includes('iliyana_working') || f.includes('iliyana_certificate')) return 'studio';
@@ -47,29 +54,6 @@ const catLabels = {
     'studio': 'Студио',
     'videos': 'Видеа'
 };
-
-// ── Load descriptions ──
-const descriptions = JSON.parse(fs.readFileSync('c:/xampp/htdocs/ba-in/assets/data/gallery-descriptions.json', 'utf-8'));
-function getDesc(file) {
-    return descriptions[file] || descriptions[file.toLowerCase()] || '';
-}
-
-// ── Read and categorize images ──
-const images = fs.readdirSync(imgDir)
-    .filter(f => /\.(jpg|jpeg|png|webp)$/i.test(f))
-    .map(f => ({ file: f, category: categorizeImage(f) }))
-    .filter(i => i.category !== null);
-
-const groups = {};
-images.forEach(img => {
-    if (!groups[img.category]) groups[img.category] = [];
-    groups[img.category].push(img.file);
-});
-
-// ── Read videos ──
-const videos = fs.readdirSync(vidDir)
-    .filter(f => /\.mp4$/i.test(f) && !f.includes('(1)'))
-    .sort();
 
 // ── Video categories and descriptions ──
 const videoMeta = {
@@ -124,297 +108,96 @@ const videoMeta = {
     48: { cat: 'lamination', desc: 'Пакетна цена \u2014 ламиниране на мигли и вежди + боядисване + ботокс терапия' }
 };
 
-// ── Count per category (images + videos that belong to each) ──
-const categoryOrder = ['microblading', 'lashes', 'lamination', 'microneedling', 'plasma', 'piercing', 'pmu-removal', 'studio'];
-const counts = { all: images.length + videos.length };
-categoryOrder.forEach(c => {
-    const imgCount = (groups[c] || []).length;
-    const vidCount = videos.filter((f, i) => (videoMeta[i] || {}).cat === c).length;
-    counts[c] = imgCount + vidCount;
+const descriptions = require('./assets/data/gallery-descriptions.json');
+const english = require('./assets/data/gallery-descriptions-en.json');
+const categories = Object.keys(catLabels).filter(category => category !== 'videos');
+const featured = [
+    'laminirane-migli-predi-sled-2026-09.jpg', 'iliyana_working.jpg', 'eyelashesh15.jpg',
+    'studio-interior-07.jpg', 'microblading2.jpg', 'eyebrows_cleaning1.jpg',
+];
+
+function escapeHtml(value) {
+    return String(value).replace(/[&<>"']/g, character => ({
+        '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+    })[character]);
+}
+
+const photos = fs.readdirSync(imgDir).sort()
+    .filter(file => /\.(?:jpe?g|png|webp)$/i.test(file))
+    .map(file => {
+        const category = categorizeImage(file);
+        const source = 'assets/images/gallery-page/' + file;
+        const preview = 'assets/images/gallery-thumbs/' + file + '.webp';
+        return {
+            file, category, source, video: false,
+            preview,
+            caption: descriptions[file] || descriptions[file.toLowerCase()] || catLabels[category]
+        };
+    })
+    .filter(item => item.category);
+
+if (process.argv.includes('--thumbnails')) {
+    const {execFileSync} = require('child_process');
+    execFileSync('python3', [path.join(root, 'scripts/gallery-thumbnails.py'), ...photos.map(item => item.file)], {stdio: 'inherit'});
+}
+for (const photo of photos) {
+    if (!fs.existsSync(path.join(root, photo.preview))) photo.preview = photo.source;
+}
+
+photos.sort((left, right) => {
+    const rank = item => {
+        const position = featured.indexOf(item.file);
+        return position < 0 ? featured.length + categories.indexOf(item.category) : position;
+    };
+    return rank(left) - rank(right);
 });
-counts['videos'] = videos.length;
 
-// ── Generate filter buttons ──
-function filterButtons() {
-    let html = '';
-    html += `                    <button class="gallery-filter__btn active" data-filter="all" data-i18n="gallery.filter.all">Всички <span class="gallery-filter__count">${counts.all}</span></button>\n`;
-    categoryOrder.forEach(cat => {
-        if (counts[cat] > 0) {
-            html += `                    <button class="gallery-filter__btn" data-filter="${cat}" data-i18n="gallery.filter.${cat}">${catLabels[cat]} <span class="gallery-filter__count">${counts[cat]}</span></button>\n`;
-        }
+const videos = fs.readdirSync(vidDir).sort()
+    .filter(file => /\.mp4$/i.test(file) && !file.includes('(1)'))
+    .map(file => {
+        // The filename fixes each poster and caption even if a clip is removed.
+        const number = /^video-(\d+)\.mp4$/i.exec(file);
+        if (!number) throw new Error('Use a numbered video filename: ' + file);
+        const index = Number(number[1]) - 1;
+        const meta = videoMeta[index] || {cat: 'studio', desc: 'Видео от ателието'};
+        const preview = 'assets/images/video-thumbs/vid-thumb-' + String(index).padStart(2, '0') + '.jpg';
+        if (!fs.existsSync(path.join(root, preview))) throw new Error('Missing video poster: ' + preview);
+        return {file, category: meta.cat, source: 'assets/images/videos/' + file,
+            preview, video: true, index, caption: meta.desc};
     });
-    html += `                    <button class="gallery-filter__btn" data-filter="videos" data-i18n="gallery.filter.videos">Видеа <span class="gallery-filter__count">${counts.videos}</span></button>\n`;
-    return html;
+
+const items = [...photos, ...videos];
+const counts = Object.fromEntries(categories.map(category => [category, 0]));
+for (const item of items) counts[item.category]++;
+counts.all = items.length;
+counts.videos = videos.length;
+const labels = {all: 'Всички', ...catLabels};
+const choices = ['all', ...categories, 'videos'].filter(category => counts[category] > 0)
+    .map(category => `<option value="${category}" data-count="${counts[category]}" data-i18n="gallery.filter.${category}">${labels[category]}</option>`);
+const cards = items.map((item, index) => {
+    const category = item.category;
+    const translation = english[item.file];
+    const caption = escapeHtml(item.caption);
+    const englishText = translation ? `<span lang="en">${escapeHtml(translation)}</span>` : '';
+    const languages = translation ? ' at-photo__caption--translated' : '';
+    const id = item.video ? ` id="gallery-vid-${item.index}"` : '';
+    const play = item.video ? '<span class="at-photo__play" aria-hidden="true">▶</span><span class="at-sr" data-i18n="atelier.gallery_video">Видео</span>' : '';
+    const priority = index === 0 ? 'fetchpriority="high"' : 'loading="lazy"';
+    return `<a class="at-photo"${id} href="${escapeHtml(item.source)}" data-category="${category}" data-kind="${item.video ? 'video' : 'photo'}">
+                    <span class="at-photo__image"><img src="${escapeHtml(item.preview)}" ${priority} decoding="async" alt="">${play}</span>
+                    <span class="at-photo__category" data-i18n="gallery.filter.${category}">${catLabels[category]}</span>
+                    <span class="at-photo__caption${languages}"><span lang="bg">${caption}</span>${englishText}</span>
+                </a>`;
+});
+
+let out = fs.readFileSync(partial, 'utf8');
+for (const [region, lines] of [['filters', choices], ['items', cards]]) {
+    const start = '<!-- gallery:' + region + ' -->';
+    const end = '<!-- /gallery:' + region + ' -->';
+    const from = out.indexOf(start), to = out.indexOf(end);
+    if (from < 0 || to <= from) throw new Error('Missing gallery partial region: ' + region);
+    const indent = out.slice(out.lastIndexOf('\n', from) + 1, from);
+    out = out.slice(0, from + start.length) + '\n' + indent + lines.join('\n' + indent) + '\n' + indent + out.slice(to);
 }
-
-// ── Generate image cards ──
-function imageCards() {
-    let html = '';
-    categoryOrder.forEach(cat => {
-        if (!groups[cat]) return;
-        groups[cat].forEach(file => {
-            const src = `assets/images/gallery-page/${file}`;
-            const label = catLabels[cat];
-            const desc = getDesc(file);
-            const altText = desc || (label + ' – Beauty Atelier IN');
-            html += `
-                    <div class="gallery-item" data-category="${cat}" data-desc="${desc.replace(/"/g, '&quot;')}">
-                        <div class="gallery-card">
-                            <div class="gallery-card__img">
-                                <img src="${src}" alt="${altText}" loading="lazy">
-                            </div>
-                            <div class="gallery-card__overlay">
-                                <a href="${src}" class="gallery-popup-trigger" aria-label="Увеличи снимка">
-                                    <span class="gallery-card__zoom"><i class="icon-search"></i></span>
-                                </a>
-                            </div>
-                            <div class="gallery-card__info">
-                                <span class="gallery-card__cat">${label}</span>
-                                ${desc ? '<div class="gallery-card__desc">' + desc + '</div>' : ''}
-                            </div>
-                        </div>
-                    </div>
-`;
-        });
-    });
-    return html;
-}
-
-// ── Generate video cards ──
-function videoCards() {
-    let html = '';
-    videos.forEach((file, i) => {
-        const rawSrc = `assets/images/videos/${file}`;
-        const thumbName = `vid-thumb-${String(i).padStart(2, '0')}.jpg`;
-        const thumbSrc = `assets/images/video-thumbs/${thumbName}`;
-        const id = `gallery-vid-${i}`;
-        const meta = videoMeta[i] || { cat: 'studio', desc: '' };
-        const cats = `videos ${meta.cat}`;
-        const desc = meta.desc;
-        html += `
-                    <div class="gallery-item" data-category="${cats}" data-desc="${desc.replace(/"/g, '&quot;')}">
-                        <div class="gallery-card gallery-card--video">
-                            <div class="gallery-card__img">
-                                <img src="${thumbSrc}" alt="${desc || 'Видео \u2014 Beauty Atelier IN'}" loading="lazy">
-                            </div>
-                            <div class="gallery-card__overlay gallery-card__overlay--video">
-                                <a href="#${id}" class="gallery-video-popup" aria-label="Пусни видео">
-                                    <span class="gallery-card__play">
-                                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-                                    </span>
-                                </a>
-                            </div>
-                            <div class="gallery-card__info">
-                                <span class="gallery-card__cat">${catLabels[meta.cat] || 'Видео'}</span>
-                                ${desc ? '<div class="gallery-card__desc">' + desc + '</div>' : ''}
-                            </div>
-                        </div>
-                        <div id="${id}" class="mfp-hide">
-                            <div class="gallery-video-inline" data-video-src="${rawSrc}">
-                                <div class="gallery-video-loader"></div>
-                            </div>
-                            ${desc ? '<div class="gallery-video-desc">' + desc + '</div>' : ''}
-                        </div>
-                    </div>
-`;
-    });
-    return html;
-}
-
-// ── Read gallery.html template ──
-const template = fs.readFileSync('c:/xampp/htdocs/ba-in/gallery.html', 'utf-8');
-
-// ── Find the gallery section and replace it ──
-const gallerySection = `        <!-- ========================= GALLERY SECTION ========================= -->
-        <section class="gallery-page section-space">
-            <div class="container">
-                <!-- Section title -->
-                <div class="sec-title text-center wow fadeInUp" data-wow-duration="1500ms">
-                    <div class="sec-title__top">
-                        <img src="assets/images/shapes/sec-title-s-1-1.webp" alt="" class="sec-title__img">
-                        <h6 class="sec-title__tagline" data-i18n="gallery.section_tagline">Резултати от процедури</h6>
-                    </div>
-                    <h2 class="sec-title__title" data-i18n-html="gallery.section_title">Нашата <span>Галерия</span></h2>
-                </div>
-
-                <!-- Filter buttons -->
-                <div class="gallery-filter" id="galleryFilter">
-${filterButtons()}                </div>
-
-                <!-- Stats -->
-                <div class="gallery-stats">
-                    <span data-i18n="gallery.filter.all">Показани</span>: <span class="gallery-stats__num" id="galleryShown">12</span> / <span class="gallery-stats__num" id="galleryTotal">${counts.all}</span>
-                </div>
-
-                <!-- Gallery grid -->
-                <div class="gallery-grid" id="galleryGrid">
-${imageCards()}${videoCards()}
-                </div>
-
-                <!-- Load more -->
-                <div class="gallery-load-more">
-                    <button class="gallery-load-more__btn" id="galleryLoadMore" data-i18n="gallery.load_more">
-                        Зареди още
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
-                    </button>
-                </div>
-            </div>
-        </section>
-        <!-- ========================= /GALLERY SECTION ========================= -->`;
-
-// Replace the old gallery section
-const startMarker = '        <!-- ========================= GALLERY SECTION =========================';
-const endMarker = '        <!-- ========================= /GALLERY SECTION ========================= -->';
-
-const startIdx = template.indexOf(startMarker);
-const endIdx = template.indexOf(endMarker) + endMarker.length;
-
-let newContent;
-if (startIdx !== -1 && endIdx > startIdx) {
-    newContent = template.substring(0, startIdx) + gallerySection + template.substring(endIdx);
-} else {
-    console.error('Could not find gallery section markers!');
-    process.exit(1);
-}
-
-// ── Update the inline script ──
-const oldScript = `    <!-- Gallery filter + video lightbox -->
-    <script>
-    (function($){
-        // Gallery filter
-        var $filterBtns = $('#galleryFilter li');
-        var $items = $('#galleryGrid .gallery-item');
-
-        $filterBtns.on('click', function(){
-            $filterBtns.removeClass('active');
-            $(this).addClass('active');
-
-            var filter = $(this).attr('data-filter');
-
-            $items.each(function(){
-                var cats = $(this).attr('data-category') || '';
-                if (filter === 'all' || cats.indexOf(filter) !== -1) {
-                    $(this).fadeIn(300);
-                } else {
-                    $(this).fadeOut(300);
-                }
-            });
-        });
-
-        // Video lightbox (for self-hosted MP4 videos)
-        $('.gallery-video-popup').magnificPopup({
-            type: 'inline',
-            midClick: true,
-            callbacks: {
-                open: function() {
-                    var $video = this.content.find('video');
-                    if ($video.length) $video[0].play();
-                },
-                close: function() {
-                    var $video = this.content.find('video');
-                    if ($video.length) { $video[0].pause(); $video[0].currentTime = 0; }
-                }
-            }
-        });
-    })(jQuery);
-    </script>`;
-
-const newScript = `    <!-- Gallery: filter, load-more, video lightbox -->
-    <script>
-    (function($){
-        var ITEMS_PER_PAGE = 12;
-        var $allItems = $('#galleryGrid .gallery-item');
-        var $filterBtns = $('#galleryFilter .gallery-filter__btn');
-        var $loadMoreBtn = $('#galleryLoadMore');
-        var $shownEl = $('#galleryShown');
-        var $totalEl = $('#galleryTotal');
-        var currentFilter = 'all';
-        var currentShown = 0;
-
-        function getFiltered() {
-            if (currentFilter === 'all') return $allItems;
-            return $allItems.filter('[data-category="' + currentFilter + '"]');
-        }
-
-        function showPage(reset) {
-            var $filtered = getFiltered();
-            var total = $filtered.length;
-
-            if (reset) {
-                currentShown = 0;
-                $allItems.addClass('is-hidden');
-            }
-
-            var end = Math.min(currentShown + ITEMS_PER_PAGE, total);
-            $filtered.slice(currentShown, end).removeClass('is-hidden');
-            currentShown = end;
-
-            $shownEl.text(currentShown);
-            $totalEl.text(total);
-
-            if (currentShown >= total) {
-                $loadMoreBtn.prop('disabled', true).text($loadMoreBtn.attr('data-i18n-done') || 'Няма повече');
-            } else {
-                $loadMoreBtn.prop('disabled', false).text($loadMoreBtn.attr('data-i18n-text') || 'Зареди още');
-            }
-
-            // Re-init Magnific Popup for newly visible items
-            initPopups();
-        }
-
-        // Filter click
-        $filterBtns.on('click', function(){
-            $filterBtns.removeClass('active');
-            $(this).addClass('active');
-            currentFilter = $(this).attr('data-filter');
-            showPage(true);
-        });
-
-        // Load More click
-        $loadMoreBtn.attr('data-i18n-text', $loadMoreBtn.text());
-        $loadMoreBtn.attr('data-i18n-done', 'Няма повече');
-        $loadMoreBtn.on('click', function(){ showPage(false); });
-
-        // Magnific Popup
-        function initPopups() {
-            $('.gallery-item:not(.is-hidden) .img-popup').magnificPopup({
-                type: 'image',
-                gallery: { enabled: true, navigateByImgClick: true, preload: [1, 1] },
-                mainClass: 'mfp-fade',
-                removalDelay: 300
-            });
-
-            $('.gallery-item:not(.is-hidden) .gallery-video-popup').magnificPopup({
-                type: 'inline',
-                midClick: true,
-                mainClass: 'mfp-fade',
-                removalDelay: 300,
-                callbacks: {
-                    open: function() {
-                        var v = this.content.find('video')[0];
-                        if (v) v.play();
-                    },
-                    close: function() {
-                        var v = this.content.find('video')[0];
-                        if (v) { v.pause(); v.currentTime = 0; }
-                    }
-                }
-            });
-        }
-
-        // Initial load
-        showPage(true);
-
-        // Preload video poster frames: seek to 0.5s
-        $allItems.find('.gallery-card--video video').each(function(){
-            this.currentTime = 0.5;
-        });
-    })(jQuery);
-    </script>`;
-
-newContent = newContent.replace(oldScript, newScript);
-
-fs.writeFileSync('c:/xampp/htdocs/ba-in/gallery.html', newContent, 'utf-8');
-console.log('gallery.html rebuilt successfully!');
-console.log(`Total items: ${counts.all} (${images.length} images + ${videos.length} videos)`);
-Object.keys(counts).forEach(k => console.log(`  ${k}: ${counts[k]}`));
+fs.writeFileSync(partial, out);
+console.log(`Gallery: ${photos.length} photographs, ${videos.length} videos.`);

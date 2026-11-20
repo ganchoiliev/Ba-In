@@ -1,29 +1,34 @@
 <main id="main">
 
     <!-- ── Hero ─────────────────────────────────────────────────────────── -->
-    <section class="at-hero" aria-labelledby="at-hero-title">
-        <div class="at-wrap at-hero__grid">
-            <div class="at-hero__copy">
-                <p class="at-kicker" style="--i:0" data-i18n="home.kicker">Салон за красота в Силистра</p>
-                <h1 class="at-display" id="at-hero-title" style="--i:1" data-i18n="home.title">Вежди и мигли, които изглеждат като твои.</h1>
-                <p class="at-lede" style="--i:2" data-i18n="home.lede">Ламиниране със ZOLA, микроблейдинг и грижа за кожата при Илияна Николаева, в центъра на Силистра.</p>
-                <div class="at-hero__cta" style="--i:3" data-at-bar-start>
-                    <a class="at-btn" href="/notino" target="_blank" rel="noopener"><span data-i18n="shared.header.book_btn">Запази час</span>{{ARROW}}</a>
-                    <a class="at-btn at-btn--ghost" href="#ceni" data-i18n="home.cta_prices">Виж цените</a>
-                </div>
-                <div class="at-proof" style="--i:4">
-                    <a href="https://share.google/LWLt1rNLslWSX71RU" target="_blank" rel="noopener"><span class="at-stars" aria-hidden="true">★★★★★</span><span data-i18n="index.hero.trust_qualifier">5.0 в Google · 34 отзива</span></a>
-                    <a href="https://www.notino.bg/saloni/beauty-atelier-in_3/" target="_blank" rel="noopener"><span class="at-stars" aria-hidden="true">★★★★★</span><span data-i18n="home.proof_notino">5.0 в Notino · 13 проверени рецензии</span></a>
-                </div>
+    <section class="at-cover" aria-labelledby="at-hero-title">
+        <div class="at-wrap at-cover__grid">
+            <header class="at-cover__heading">
+                <p class="at-kicker" data-i18n="home.kicker">Салон за красота в Силистра</p>
+                <h1 class="at-display" id="at-hero-title" data-i18n-html="home.cover.title">Вежди и мигли, които изглеждат <em>като твои.</em></h1>
+            </header>
+            <p class="at-lede at-cover__intro" data-i18n="home.lede">Ламиниране със ZOLA, микроблейдинг и грижа за кожата при Илияна Николаева, в центъра на Силистра.</p>
+            <div class="at-cover__actions" data-at-bar-start>
+                <a class="at-btn" href="/notino" target="_blank" rel="noopener"><span data-i18n="shared.header.book_btn">Запази час</span>{{ARROW}}</a>
+                <a class="at-link" href="#ceni"><span data-i18n="home.cta_prices">Виж цените</span>{{CHEV}}</a>
             </div>
-            <div class="at-hero__media">
-                <div class="at-hero__room">
-                    <img src="assets/images/atelier/room-lounge-1600.webp" srcset="assets/images/atelier/room-lounge-900.webp 900w, assets/images/atelier/room-lounge-1600.webp 1623w" sizes="(min-width:1000px) 75vw, 100vw" width="1623" height="977" alt="Ателието на Beauty Atelier IN в Силистра: светъл диван, огледало и стена с цветя" fetchpriority="high" decoding="async">
-                </div>
-                <figure class="at-hero__result">
-                    <img src="assets/images/atelier/result-lash-lamination-1.webp" width="1000" height="923" alt="Ламиниране на мигли, преди и след" loading="eager" decoding="async" style="aspect-ratio:1000/923">
-                    <figcaption data-i18n="home.result_caption">Ламиниране на мигли</figcaption>
-                </figure>
+            <div class="at-cover__spread">
+                <a class="at-cover__print at-cover__print--work" href="laminirane.html">
+                    <figure>
+                        <img src="assets/images/atelier/home-lamination-960.webp" srcset="assets/images/atelier/home-lamination-480.webp 480w, assets/images/atelier/home-lamination-960.webp 960w" sizes="(min-width: 1200px) 435px, (min-width: 880px) 34vw, (min-width: 640px) 45vw, 62vw" width="960" height="898" alt="Вежди и мигли на клиентка преди и след ламиниране" data-i18n-alt="home.cover.result_alt" fetchpriority="high" decoding="async">
+                        <figcaption><span data-i18n="home.cover.case">Ламиниране</span><small data-i18n="home.r_ba">преди и след</small></figcaption>
+                    </figure>
+                </a>
+                <a class="at-cover__print at-cover__print--artist" href="about.html">
+                    <figure>
+                        <img src="assets/images/atelier/home-iliyana-520.webp" srcset="assets/images/atelier/home-iliyana-300.webp 300w, assets/images/atelier/home-iliyana-520.webp 520w" sizes="(min-width: 1200px) 220px, (min-width: 880px) 16vw, (min-width: 640px) 25vw, 32vw" width="520" height="665" alt="Илияна Николаева в ателието" data-i18n-alt="home.cover.artist_alt" decoding="async">
+                        <figcaption><span data-i18n="home.cover.artist">Илияна Николаева</span></figcaption>
+                    </figure>
+                </a>
+            </div>
+            <div class="at-proof at-cover__proof">
+                <a href="https://share.google/LWLt1rNLslWSX71RU" target="_blank" rel="noopener"><span class="at-stars" aria-hidden="true">★★★★★</span><span data-i18n="index.hero.trust_qualifier">5.0 в Google · 34 отзива</span></a>
+                <a href="https://www.notino.bg/saloni/beauty-atelier-in_3/" target="_blank" rel="noopener"><span class="at-stars" aria-hidden="true">★★★★★</span><span data-i18n="home.proof_notino">5.0 в Notino · 13 проверени рецензии</span></a>
             </div>
         </div>
     </section>
@@ -130,6 +135,7 @@
         <div class="at-reel" data-at-reel>
             <div class="at-reel__track" tabindex="0" role="group" aria-label="Снимки преди и след" data-i18n-aria="home.results_aria">
                 <figure class="at-shot"><div class="at-shot__img"><img src="assets/images/atelier/result-brows-lashes-lamination.webp" width="1000" height="1696" loading="lazy" decoding="async" alt="Вежди и мигли, преди и след"></div><figcaption><span data-i18n="home.r_both">Вежди и мигли</span><span data-i18n="home.r_ba">преди и след</span></figcaption></figure>
+                <figure class="at-shot"><div class="at-shot__img"><img src="assets/images/atelier/result-lash-lamination-1.webp" width="1000" height="923" loading="lazy" decoding="async" alt="Мигли, преди и след"></div><figcaption><span data-i18n="home.r_lashes">Мигли</span><span data-i18n="home.r_ba">преди и след</span></figcaption></figure>
                 <figure class="at-shot"><div class="at-shot__img"><img src="assets/images/atelier/result-lash-lamination-2.webp" width="1000" height="932" loading="lazy" decoding="async" alt="Мигли, преди и след"></div><figcaption><span data-i18n="home.r_lashes">Мигли</span><span data-i18n="home.r_ba">преди и след</span></figcaption></figure>
                 <figure class="at-shot"><div class="at-shot__img"><img src="assets/images/atelier/result-brow-lamination-1.webp" width="1000" height="1111" loading="lazy" decoding="async" alt="Вежди, преди и след"></div><figcaption><span data-i18n="home.r_brows">Вежди</span><span data-i18n="home.r_ba">преди и след</span></figcaption></figure>
                 <figure class="at-shot"><div class="at-shot__img"><img src="assets/images/atelier/result-lash-lamination-3.webp" width="1000" height="1152" loading="lazy" decoding="async" alt="Мигли, преди и след"></div><figcaption><span data-i18n="home.r_lashes">Мигли</span><span data-i18n="home.r_ba">преди и след</span></figcaption></figure>
@@ -206,8 +212,13 @@
     <!-- ── Visit / book ─────────────────────────────────────────────────── -->
     <section class="at-section at-field-ink at-on-ink" id="zapazi" aria-labelledby="at-visit-title">
         <div class="at-wrap at-visit__grid">
-            <div class="at-visit__photo">
+            <div class="at-home-visit__photos">
+                <figure class="at-home-visit__inside">
+                    <img src="assets/images/atelier/room-lounge-900.webp" srcset="assets/images/atelier/room-lounge-900.webp 900w, assets/images/atelier/room-lounge-1600.webp 1623w" sizes="(min-width:900px) 38vw, 66vw" width="900" height="542" alt="Салонът на Beauty Atelier IN в Силистра" data-i18n-alt="home.cover.room_alt" loading="lazy" decoding="async">
+                </figure>
+                <div class="at-visit__photo at-home-visit__outside">
                 <img src="assets/images/atelier/house.webp" srcset="assets/images/atelier/house-800.webp 800w, assets/images/atelier/house.webp 1400w" sizes="(min-width:900px) 50vw, 100vw" width="1400" height="843" loading="lazy" decoding="async" alt="Къщата на ул. „Отец Паисий“ 27 в Силистра, в която е ателието">
+                </div>
             </div>
             <div class="at-visit__copy">
                 <h2 class="at-h2" id="at-visit-title" data-i18n="home.visit_title">Ела в ателието</h2>

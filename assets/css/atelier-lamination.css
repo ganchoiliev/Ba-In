@@ -1,0 +1,148 @@
+/* A dark cover frames the single result. The comparisons below keep both
+   halves of each original photograph visible at their natural proportions. */
+.at-lam-cover {
+  background: var(--at-ink);
+}
+.at-lam-cover__grid {
+  display: grid;
+  align-items: stretch;
+}
+.at-lam-cover__copy {
+  padding-block: clamp(22px, 4vw, 62px) clamp(28px, 4.5vw, 66px);
+  display: grid;
+  align-content: center;
+  justify-items: start;
+  gap: clamp(16px, 2vw, 28px);
+}
+.at-lam-cover__copy h1 { max-width: 12ch; }
+.at-lam-back {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  gap: 10px;
+  font-size: .9rem;
+  color: var(--at-cream-muted);
+}
+.at-lam-back:hover { color: var(--at-cream); }
+.at-lam-cover .at-lede {
+  max-width: 37ch;
+  color: var(--at-cream-muted);
+}
+.at-lam-prices {
+  width: min(100%, 410px);
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  border-block: 1px solid #474239;
+  padding-block: 12px 14px;
+}
+.at-lam-prices dt {
+  color: var(--at-cream-muted);
+  font: 550 .875rem/1.4 var(--at-ui);
+}
+.at-lam-prices dd {
+  margin-top: 1px;
+  font: 550 clamp(1.15rem, 1.2vw + .85rem, 1.7rem)/1.35 var(--at-ui);
+  color: var(--at-cream);
+  font-variant-numeric: tabular-nums;
+}
+.at-lam-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 4px 22px; }
+.at-lam-cover__photo {
+  margin-inline: calc(-1 * var(--at-gutter));
+  overflow: hidden;
+}
+.at-lam-cover__photo img {
+  width: 100%;
+  height: 100%;
+  max-height: 380px;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  object-position: 48% 50%;
+}
+.at-lam-results { background: var(--at-paper); }
+.at-lam-viewer {
+  min-width: 0;
+  border: 0;
+  margin: 22px 0 0;
+  padding: 0;
+}
+.at-lam-viewer > label {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 84px;
+  min-height: 44px;
+  margin-right: 3px;
+  padding-inline: 20px;
+  border: 1px solid #8c8273;
+  border-radius: 999px;
+  font: 600 .95rem/1 var(--at-ui);
+  cursor: pointer;
+}
+.at-lam-viewer input:checked + label {
+  background: var(--at-ink);
+  color: var(--at-cream);
+  border-color: var(--at-ink);
+}
+.at-lam-viewer input:focus-visible + label {
+  outline: 2px solid var(--at-bronze);
+  outline-offset: 3px;
+}
+.at-lam-example { display: none; }
+#lash-result:checked ~ .at-lam-example--lash,
+#brow-result:checked ~ .at-lam-example--brow {
+  display: grid;
+  align-items: center;
+  gap: clamp(22px, 6vw, 90px);
+  margin-top: clamp(24px, 4vw, 52px);
+}
+.at-lam-example__print { margin: 0; }
+.at-lam-example__print img {
+  width: 100%;
+  height: auto;
+  max-height: 520px;
+  object-fit: contain;
+  object-position: left center;
+}
+.at-lam-example__print figcaption {
+  margin-top: 8px;
+  color: var(--at-muted);
+  font-size: .875rem;
+}
+.at-lam-example__text, .at-lam-care__text {
+  display: grid;
+  align-content: start;
+  justify-items: start;
+  gap: 16px;
+  max-width: 32em;
+}
+.at-lam-example__text p { max-width: 32em; }
+.at-lam-care { background: var(--at-sand); }
+.at-lam-care__grid { display: grid; gap: 36px; }
+.at-lam-visit {
+  border-block: 1px solid #a59a87;
+  padding-block: 22px 10px;
+}
+.at-lam-visit dl { margin-top: 16px; }
+.at-lam-visit dl > div {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 18px;
+  padding-block: 9px;
+  border-top: 1px solid #c4b9a8;
+}
+.at-lam-visit dd { text-align: right; }
+.at-lam-visit p { color: var(--at-muted); font-size: .9rem; margin-top: 12px; }
+@media (min-width: 760px) {
+  .at-lam-example { grid-template-columns: minmax(0, 1fr) minmax(0, .9fr); }
+  .at-lam-care__grid { grid-template-columns: 1fr .8fr; gap: clamp(45px, 8vw, 120px); align-items: start; }
+}
+@media (min-width: 900px) {
+  .at-lam-cover__grid { grid-template-columns: minmax(0, .92fr) minmax(0, 1.08fr); }
+  .at-lam-cover__copy { padding-right: clamp(30px, 4vw, 70px); }
+  .at-lam-cover__photo {
+    margin-inline: 0 min(calc(-1 * var(--at-gutter)), calc((var(--at-max) - 100vw) / 2));
+    position: relative;
+  }
+  .at-lam-cover__photo img { position: absolute; inset: 0; max-height: none; }
+}

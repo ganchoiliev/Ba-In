@@ -101,7 +101,8 @@
 @font-face{font-family:"Manrope";font-style:normal;font-weight:200 800;font-display:swap;src:url('assets/fonts/manrope/manrope-latin-ext.woff2?v=3911b66d') format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
 @font-face{font-family:"Manrope";font-style:normal;font-weight:200 800;font-display:swap;src:url('assets/fonts/manrope/manrope-latin.woff2?v=a30ddcd3') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
     </style>
-    <link rel="stylesheet" href="assets/css/home.bundle.css?v=d5394e52" />
+    <link rel="stylesheet" href="assets/css/home.bundle.css?v=a3b7b80c" />
+    <link rel="stylesheet" href="assets/css/atelier-home.css?v=f86ce645" />
 <!-- /at:head -->
 </head>
 
@@ -136,7 +137,7 @@
 <div class="at-drawer at-on-ink" id="at-drawer" aria-hidden="true">
     <nav class="at-drawer__nav" data-i18n-aria="atelier.mobile_nav" aria-label="Мобилна навигация">
         <ul>
-            <li style="--i:0"><a href="index.html" data-i18n="shared.nav.home">Начало</a></li>
+            <li style="--i:0"><a aria-current="page" href="index.html" data-i18n="shared.nav.home">Начало</a></li>
             <li style="--i:1"><a href="procedures.html" data-i18n="shared.nav.procedures">Процедури</a></li>
             <li style="--i:2"><a href="pricing.html" data-i18n="shared.nav.pricing">Ценоразпис</a></li>
             <li style="--i:3"><a href="about.html" data-i18n="shared.nav.about">За нас</a></li>
@@ -157,29 +158,34 @@
 <main id="main">
 
     <!-- ── Hero ─────────────────────────────────────────────────────────── -->
-    <section class="at-hero" aria-labelledby="at-hero-title">
-        <div class="at-wrap at-hero__grid">
-            <div class="at-hero__copy">
-                <p class="at-kicker" style="--i:0" data-i18n="home.kicker">Салон за красота в Силистра</p>
-                <h1 class="at-display" id="at-hero-title" style="--i:1" data-i18n="home.title">Вежди и мигли, които изглеждат като твои.</h1>
-                <p class="at-lede" style="--i:2" data-i18n="home.lede">Ламиниране със ZOLA, микроблейдинг и грижа за кожата при Илияна Николаева, в центъра на Силистра.</p>
-                <div class="at-hero__cta" style="--i:3" data-at-bar-start>
-                    <a class="at-btn" href="/notino" target="_blank" rel="noopener"><span data-i18n="shared.header.book_btn">Запази час</span><svg class="at-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
-                    <a class="at-btn at-btn--ghost" href="#ceni" data-i18n="home.cta_prices">Виж цените</a>
-                </div>
-                <div class="at-proof" style="--i:4">
-                    <a href="https://share.google/LWLt1rNLslWSX71RU" target="_blank" rel="noopener"><span class="at-stars" aria-hidden="true">★★★★★</span><span data-i18n="index.hero.trust_qualifier">5.0 в Google · 34 отзива</span></a>
-                    <a href="https://www.notino.bg/saloni/beauty-atelier-in_3/" target="_blank" rel="noopener"><span class="at-stars" aria-hidden="true">★★★★★</span><span data-i18n="home.proof_notino">5.0 в Notino · 13 проверени рецензии</span></a>
-                </div>
+    <section class="at-cover" aria-labelledby="at-hero-title">
+        <div class="at-wrap at-cover__grid">
+            <header class="at-cover__heading">
+                <p class="at-kicker" data-i18n="home.kicker">Салон за красота в Силистра</p>
+                <h1 class="at-display" id="at-hero-title" data-i18n-html="home.cover.title">Вежди и мигли, които изглеждат <em>като твои.</em></h1>
+            </header>
+            <p class="at-lede at-cover__intro" data-i18n="home.lede">Ламиниране със ZOLA, микроблейдинг и грижа за кожата при Илияна Николаева, в центъра на Силистра.</p>
+            <div class="at-cover__actions" data-at-bar-start>
+                <a class="at-btn" href="/notino" target="_blank" rel="noopener"><span data-i18n="shared.header.book_btn">Запази час</span><svg class="at-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+                <a class="at-link" href="#ceni"><span data-i18n="home.cta_prices">Виж цените</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></a>
             </div>
-            <div class="at-hero__media">
-                <div class="at-hero__room">
-                    <img src="assets/images/atelier/room-lounge-1600.webp?v=c47def96" srcset="assets/images/atelier/room-lounge-900.webp?v=a29d9c8b 900w, assets/images/atelier/room-lounge-1600.webp?v=c47def96 1623w" sizes="(min-width:1000px) 75vw, 100vw" width="1623" height="977" alt="Ателието на Beauty Atelier IN в Силистра: светъл диван, огледало и стена с цветя" fetchpriority="high" decoding="async">
-                </div>
-                <figure class="at-hero__result">
-                    <img src="assets/images/atelier/result-lash-lamination-1.webp?v=04f99a6b" width="1000" height="923" alt="Ламиниране на мигли, преди и след" loading="eager" decoding="async" style="aspect-ratio:1000/923">
-                    <figcaption data-i18n="home.result_caption">Ламиниране на мигли</figcaption>
-                </figure>
+            <div class="at-cover__spread">
+                <a class="at-cover__print at-cover__print--work" href="laminirane.html">
+                    <figure>
+                        <img src="assets/images/atelier/home-lamination-960.webp?v=228a73af" srcset="assets/images/atelier/home-lamination-480.webp?v=370380fe 480w, assets/images/atelier/home-lamination-960.webp?v=228a73af 960w" sizes="(min-width: 1200px) 435px, (min-width: 880px) 34vw, (min-width: 640px) 45vw, 62vw" width="960" height="898" alt="Вежди и мигли на клиентка преди и след ламиниране" data-i18n-alt="home.cover.result_alt" fetchpriority="high" decoding="async">
+                        <figcaption><span data-i18n="home.cover.case">Ламиниране</span><small data-i18n="home.r_ba">преди и след</small></figcaption>
+                    </figure>
+                </a>
+                <a class="at-cover__print at-cover__print--artist" href="about.html">
+                    <figure>
+                        <img src="assets/images/atelier/home-iliyana-520.webp?v=16da5c57" srcset="assets/images/atelier/home-iliyana-300.webp?v=04361ce1 300w, assets/images/atelier/home-iliyana-520.webp?v=16da5c57 520w" sizes="(min-width: 1200px) 220px, (min-width: 880px) 16vw, (min-width: 640px) 25vw, 32vw" width="520" height="665" alt="Илияна Николаева в ателието" data-i18n-alt="home.cover.artist_alt" decoding="async">
+                        <figcaption><span data-i18n="home.cover.artist">Илияна Николаева</span></figcaption>
+                    </figure>
+                </a>
+            </div>
+            <div class="at-proof at-cover__proof">
+                <a href="https://share.google/LWLt1rNLslWSX71RU" target="_blank" rel="noopener"><span class="at-stars" aria-hidden="true">★★★★★</span><span data-i18n="index.hero.trust_qualifier">5.0 в Google · 34 отзива</span></a>
+                <a href="https://www.notino.bg/saloni/beauty-atelier-in_3/" target="_blank" rel="noopener"><span class="at-stars" aria-hidden="true">★★★★★</span><span data-i18n="home.proof_notino">5.0 в Notino · 13 проверени рецензии</span></a>
             </div>
         </div>
     </section>
@@ -286,6 +292,7 @@
         <div class="at-reel" data-at-reel>
             <div class="at-reel__track" tabindex="0" role="group" aria-label="Снимки преди и след" data-i18n-aria="home.results_aria">
                 <figure class="at-shot"><div class="at-shot__img"><img src="assets/images/atelier/result-brows-lashes-lamination.webp?v=45bc949a" width="1000" height="1696" loading="lazy" decoding="async" alt="Вежди и мигли, преди и след"></div><figcaption><span data-i18n="home.r_both">Вежди и мигли</span><span data-i18n="home.r_ba">преди и след</span></figcaption></figure>
+                <figure class="at-shot"><div class="at-shot__img"><img src="assets/images/atelier/result-lash-lamination-1.webp?v=04f99a6b" width="1000" height="923" loading="lazy" decoding="async" alt="Мигли, преди и след"></div><figcaption><span data-i18n="home.r_lashes">Мигли</span><span data-i18n="home.r_ba">преди и след</span></figcaption></figure>
                 <figure class="at-shot"><div class="at-shot__img"><img src="assets/images/atelier/result-lash-lamination-2.webp?v=b4cb8b2b" width="1000" height="932" loading="lazy" decoding="async" alt="Мигли, преди и след"></div><figcaption><span data-i18n="home.r_lashes">Мигли</span><span data-i18n="home.r_ba">преди и след</span></figcaption></figure>
                 <figure class="at-shot"><div class="at-shot__img"><img src="assets/images/atelier/result-brow-lamination-1.webp?v=b278dfc0" width="1000" height="1111" loading="lazy" decoding="async" alt="Вежди, преди и след"></div><figcaption><span data-i18n="home.r_brows">Вежди</span><span data-i18n="home.r_ba">преди и след</span></figcaption></figure>
                 <figure class="at-shot"><div class="at-shot__img"><img src="assets/images/atelier/result-lash-lamination-3.webp?v=81595f72" width="1000" height="1152" loading="lazy" decoding="async" alt="Мигли, преди и след"></div><figcaption><span data-i18n="home.r_lashes">Мигли</span><span data-i18n="home.r_ba">преди и след</span></figcaption></figure>
@@ -362,8 +369,13 @@
     <!-- ── Visit / book ─────────────────────────────────────────────────── -->
     <section class="at-section at-field-ink at-on-ink" id="zapazi" aria-labelledby="at-visit-title">
         <div class="at-wrap at-visit__grid">
-            <div class="at-visit__photo">
+            <div class="at-home-visit__photos">
+                <figure class="at-home-visit__inside">
+                    <img src="assets/images/atelier/room-lounge-900.webp?v=a29d9c8b" srcset="assets/images/atelier/room-lounge-900.webp?v=a29d9c8b 900w, assets/images/atelier/room-lounge-1600.webp?v=c47def96 1623w" sizes="(min-width:900px) 38vw, 66vw" width="900" height="542" alt="Салонът на Beauty Atelier IN в Силистра" data-i18n-alt="home.cover.room_alt" loading="lazy" decoding="async">
+                </figure>
+                <div class="at-visit__photo at-home-visit__outside">
                 <img src="assets/images/atelier/house.webp?v=459339d2" srcset="assets/images/atelier/house-800.webp?v=76c13c89 800w, assets/images/atelier/house.webp?v=459339d2 1400w" sizes="(min-width:900px) 50vw, 100vw" width="1400" height="843" loading="lazy" decoding="async" alt="Къщата на ул. „Отец Паисий“ 27 в Силистра, в която е ателието">
+                </div>
             </div>
             <div class="at-visit__copy">
                 <h2 class="at-h2" id="at-visit-title" data-i18n="home.visit_title">Ела в ателието</h2>
@@ -510,9 +522,9 @@
     <a class="at-bar__alt at-bar__alt--icon" href="https://wa.me/359893398390?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D0%B5%D0%B9%D1%82%D0%B5%2C%20%D0%B1%D0%B8%D1%85%20%D0%B8%D1%81%D0%BA%D0%B0%D0%BB%D0%B0%20%D0%B4%D0%B0%20%D0%B7%D0%B0%D0%BF%D0%B8%D1%88%D0%B0%20%D1%87%D0%B0%D1%81." target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.64.08-.3-.15-1.26-.46-2.4-1.48-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.18.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.91-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.88 1.21 3.07.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.7.62.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2-1.41.25-.7.25-1.29.18-1.42-.08-.12-.27-.2-.57-.35M12.05 21.79h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.89 9.89-9.89 2.64 0 5.12 1.03 6.99 2.9a9.83 9.83 0 0 1 2.89 6.99c0 5.45-4.44 9.89-9.88 9.89m8.41-18.3A11.82 11.82 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.89c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.88 11.88 0 0 0 5.69 1.45c6.55 0 11.89-5.34 11.89-11.9 0-3.17-1.24-6.16-3.48-8.41"/></svg></a>
 </div>
 <!-- /at:footer -->
-    <script defer src="assets/js/atelier.js?v=eedc1317"></script>
+    <script defer src="assets/js/atelier.js?v=f7d1318f"></script>
     <script defer src="assets/js/ai-chat-v2.js?v=bf62ea73"></script>
-    <script defer src="assets/js/i18n.js?v=6ebc90ae" data-translations="assets/js/translations.js?v=a6fd6c09"></script>
+    <script defer src="assets/js/i18n.js?v=6ebc90ae" data-translations="assets/js/translations.js?v=7f5643f7"></script>
     <script defer src="assets/js/cookie-consent.js?v=48420352"></script>
 </body>
 </html>

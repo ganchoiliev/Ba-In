@@ -4,15 +4,8 @@
 (function () {
     'use strict';
 
-    var doc = document, root = doc.documentElement, body = doc.body;
+    var doc = document, body = doc.body;
     var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-    /* ---- current page ---- */
-    var here = (location.pathname.split('/').pop() || 'index.html').toLowerCase();
-    doc.querySelectorAll('.at-nav a, .at-drawer__nav a').forEach(function (a) {
-        var href = (a.getAttribute('href') || '').toLowerCase();
-        if (href === here) a.setAttribute('aria-current', 'page');
-    });
 
     /* ---- header hairline once the page has moved ---- */
     var header = doc.getElementById('at-header');

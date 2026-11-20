@@ -9,8 +9,8 @@
                pale wood). Bona Nova display, Manrope UI. Tapered hairlines
                lifted from the logo lockup. Prices set like an atelier card.
    STORY       Who and where -> what and how much -> proof -> trust -> book.
-   FIRST VIEW  Statement in Bona Nova on cream, one booking action, the room
-               photo with a real before/after result laid over its corner.
+   FIRST VIEW  Statement in Bona Nova on cream, one booking action, a client result
+               alongside a portrait of the artist.
    FORM        Editorial price-list site. Sections are fields (cream / ink /
                sand), never cards in a grid.
 
@@ -64,7 +64,7 @@
 
 /* ---------- base (only on pages built entirely on this system) ----------
    Element rules sit inside :where() so they carry no specificity: a component
-   rule such as .at-hero__room img{height:100%} must always beat img{height:auto}. */
+   rule such as .at-post__img img{height:100%} must always beat img{height:auto}. */
 body.at-page{margin:0;background:var(--at-cream);color:var(--at-text);font-family:var(--at-ui);font-size:17px;font-weight:450;line-height:1.6;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overflow-x:clip}
 :where(body.at-page) *,:where(body.at-page) *::before,:where(body.at-page) *::after{box-sizing:border-box}
 html:has(body.at-page){-webkit-text-size-adjust:100%;text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-top:calc(var(--at-header-h) + 16px);-webkit-tap-highlight-color:transparent;background:var(--at-cream)}
@@ -136,8 +136,8 @@ body.at-locked{overflow:hidden}
 .at-nav ul{display:flex;align-items:center;gap:clamp(14px,2vw,30px);margin:0;padding:0;list-style:none}
 .at-nav a{position:relative;display:block;padding:10px 0;font:550 .95rem/1 var(--at-ui);color:var(--at-ink);text-decoration:none;white-space:nowrap}
 .at-nav a::after{content:"";position:absolute;left:0;right:0;bottom:2px;height:1px;background:var(--at-bronze);transform:scaleX(0);transform-origin:left;transition:transform .4s var(--at-ease)}
-.at-nav a:hover::after,.at-nav a[aria-current="page"]::after{transform:scaleX(1)}
-.at-nav a[aria-current="page"]{color:var(--at-bronze)}
+.at-nav a:hover::after,.at-nav a[aria-current]::after{transform:scaleX(1)}
+.at-nav a[aria-current]{color:var(--at-bronze)}
 .at-header__tools{display:flex;align-items:center;gap:10px;margin-left:auto}
 .at-header__tel{display:none;font:600 .95rem/1 var(--at-ui);color:var(--at-ink);text-decoration:none;white-space:nowrap;font-variant-numeric:tabular-nums}
 .at-header__tel:hover{color:var(--at-bronze)}
@@ -172,7 +172,7 @@ body.at-locked{overflow:hidden}
 .at-drawer.is-open{visibility:visible;opacity:1;clip-path:inset(0);transition:clip-path .55s var(--at-ease),opacity .2s,visibility 0s}
 .at-drawer ul{margin:0;padding:0;list-style:none}
 .at-drawer__nav a{display:flex;align-items:baseline;justify-content:space-between;padding:13px 0;border-bottom:1px solid var(--at-ink-line);font:400 clamp(1.7rem,7.4vw,2.3rem)/1.15 var(--at-display);color:var(--at-cream);text-decoration:none}
-.at-drawer__nav a[aria-current="page"]{color:var(--at-champagne)}
+.at-drawer__nav a[aria-current]{color:var(--at-champagne)}
 .at-drawer__nav li{opacity:0;transform:translateY(14px);transition:opacity .5s var(--at-ease),transform .6s var(--at-ease)}
 .at-drawer.is-open .at-drawer__nav li{opacity:1;transform:none;transition-delay:calc(.12s + var(--i,0)*.045s)}
 .at-drawer__foot{margin-top:auto;padding-top:28px;display:grid;gap:14px}
@@ -191,6 +191,7 @@ body.at-nav-open #ai-chat-fab,body.at-nav-open .at-bar{visibility:hidden}
 
 @media (max-width:370px){
   .at-header .at-logo svg{height:23px}
+  .at-header .at-burger{margin-right:0}
   .at-header__tools{gap:0}
   .at-bar .at-bar__book,.at-bar .at-bar__alt{padding-inline:10px;gap:5px}
   .at-bar .at-bar__alt--icon{padding:0;width:44px}
@@ -234,57 +235,18 @@ body.at-nav-open #ai-chat-fab,body.at-nav-open .at-bar{visibility:hidden}
 .at-on-ink .at-head p{color:var(--at-cream-muted)}
 @media (min-width:900px){.at-head--split{grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);align-items:end;gap:48px}.at-head--split>:last-child{justify-self:end}}
 
-/* ---------- hero ---------- */
-.at-hero{padding:clamp(28px,5vw,64px) 0 clamp(56px,8vw,112px);overflow:clip}
-.at-hero__grid{display:grid;gap:clamp(36px,6vw,72px);align-items:center}
-.at-hero__copy{display:grid;gap:22px;justify-items:start}
-.at-hero__copy .at-display{margin-top:2px}
-.at-hero__cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:6px}
+/* ---------- responsive type and rating links ---------- */
 @media (max-width:400px){.at-logo svg{height:29px}.at-header__tools{gap:4px}.at-header__in{gap:10px}}
 @media (max-width:380px){.at-display{font-size:2.2rem}}
 @media (min-width:1000px) and (max-width:1199.98px){.at-display{font-size:3.25rem}}
 
-@media (max-width:480px){.at-hero__cta{width:100%;flex-wrap:nowrap}.at-hero__cta .at-btn{flex:1 1 0;padding-inline:14px}.at-proof a:nth-child(n+2){display:none}.at-hero__copy{gap:18px}}
+@media (max-width:480px){.at-proof a:nth-child(n+2){display:none}}
 .at-proof{display:flex;flex-wrap:wrap;align-items:center;gap:0 22px;margin-top:0;font-size:.95rem;color:var(--at-muted)}
 .at-proof a{display:inline-flex;align-items:center;gap:8px;min-height:44px;color:inherit;text-decoration:none}
 .at-proof a:hover{color:var(--at-ink)}
 .at-proof b{font-weight:700;color:var(--at-ink);font-variant-numeric:tabular-nums}
 .at-stars{color:var(--at-bronze);letter-spacing:.12em;font-size:.86em}
 .at-on-ink .at-stars{color:var(--at-champagne)}
-.at-hero__media{position:relative;margin-inline:calc(-1*var(--at-gutter));}
-.at-hero__room{position:relative;aspect-ratio:4/5;overflow:hidden;background:var(--at-sand)}
-.at-hero__room img{width:100%;height:100%;object-fit:cover;object-position:27% 50%}
-.at-hero__result{position:absolute;left:var(--at-gutter);bottom:-34px;width:min(44%,230px);background:var(--at-paper);padding:8px 8px 0;box-shadow:0 22px 44px -22px rgba(16,17,17,.55),0 2px 6px rgba(16,17,17,.08)}
-.at-hero__result img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:50% 0}
-.at-hero__result figcaption{padding:9px 4px 10px;font:600 .78rem/1.3 var(--at-ui);letter-spacing:.04em;color:var(--at-muted)}
-.at-hero__mark{position:absolute;right:calc(var(--at-gutter) - 6px);top:-22px;width:64px;height:auto;z-index:2}
-@media (max-width:999.98px){
-  .at-hero__room{aspect-ratio:16/10}
-  .at-hero__room img{object-position:50% 55%}
-  .at-hero__result{width:clamp(126px,36vw,200px);bottom:-24px}
-}
-@media (min-width:1000px){
-  .at-hero__grid{grid-template-columns:minmax(0,1.12fr) minmax(0,.88fr)}
-  .at-hero__copy{padding-right:clamp(0px,3vw,48px)}
-  .at-hero__media{margin:0 calc(-1*var(--at-gutter)) 0 0}
-  .at-hero__room{aspect-ratio:auto;height:min(76vh,720px);min-height:500px}
-  .at-hero__result{left:-56px;bottom:56px;width:230px}
-  .at-hero__mark{right:auto;left:-38px;top:44px;width:76px}
-}
-@media (min-width:1400px){.at-hero__media{margin-right:calc((100vw - var(--at-max))/-2)}}
-
-/* hero entrance: the one authored moment. Pure CSS keyframes with fill-mode
-   "both", so nothing depends on a script arriving: with JS blocked, slow or
-   failed the hero still ends fully visible. */
-@media (prefers-reduced-motion:no-preference){
-  .at-hero__room{animation:at-wipe 1.25s var(--at-ease) .05s both}
-  .at-hero__room img{animation:at-settle 1.9s var(--at-ease) .05s both}
-  .at-hero__result{animation:at-rise 1s var(--at-ease) .6s both}
-  .at-hero__copy>*{animation:at-rise .9s var(--at-ease) both;animation-delay:calc(var(--i,0)*70ms)}
-}
-@keyframes at-wipe{from{clip-path:inset(100% 0 0 0)}to{clip-path:inset(0)}}
-@keyframes at-settle{from{transform:scale(1.12)}to{transform:none}}
-@keyframes at-rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
 
 /* ---------- price card (services) ---------- */
 .at-menu{position:relative;overflow:clip}

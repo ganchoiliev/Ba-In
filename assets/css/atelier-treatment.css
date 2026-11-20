@@ -1,0 +1,207 @@
+.at-service-cover {
+    padding-block: clamp(20px, 4vw, 64px) clamp(32px, 4.5vw, 68px);
+}
+.at-service-cover__grid,
+.at-service-reading__grid,
+.at-service-questions__grid {
+    display: grid;
+    align-items: start;
+    gap: clamp(28px, 5vw, 80px);
+}
+.at-service-cover__copy {
+    align-self: center;
+    display: grid;
+    justify-items: start;
+    gap: clamp(14px, 1.8vw, 26px);
+    min-width: 0;
+}
+.at-service-back {
+    display: inline-flex;
+    align-items: center;
+    gap: .6em;
+    min-height: 44px;
+    color: var(--at-bronze);
+    font-size: .94rem;
+    font-weight: 650;
+}
+.at-service-back span[aria-hidden] {
+    font-size: 1.2em;
+}
+.at-service-back:hover,
+.at-service-plate figcaption a:hover {
+    text-decoration: underline;
+    text-underline-offset: .25em;
+}
+.at-service-cover__copy h1 {
+    max-width: 16ch;
+    text-wrap: balance;
+}
+.at-service-cover__copy .at-lede {
+    max-width: 35em;
+}
+.at-service-offer {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    gap: 0 15px;
+    align-items: baseline;
+    padding-block: 13px 2px;
+    border-top: 1px solid var(--at-line);
+    min-width: min(100%, 15rem);
+    color: var(--at-ink);
+}
+.at-service-offer__label {
+    grid-column: 1 / -1;
+    font: 600 .875rem/1.4 var(--at-ui);
+    color: var(--at-muted);
+}
+.at-service-offer strong {
+    font: 550 clamp(1.6rem, 2vw, 2.1rem)/1.4 var(--at-ui);
+    letter-spacing: -.045em;
+    font-variant-numeric: tabular-nums;
+}
+.at-service-offer__duration {
+    font-size: .94rem;
+    color: var(--at-muted);
+}
+.at-service-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 4px 20px;
+}
+.at-service-actions .at-link {
+    font-size: .95rem;
+}
+.at-service-plate {
+    width: 100%;
+}
+.at-service-plate__mat {
+    display: grid;
+    place-items: center;
+    padding: clamp(15px, 2.3vw, 34px);
+    background-color: var(--at-sand);
+    border-radius: var(--at-radius);
+}
+.at-service-plate__mat img {
+    display: block;
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    max-height: clamp(248px, 70vw, 480px);
+    object-fit: contain;
+}
+.at-service-plate figcaption {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 12px;
+    padding-block-start: 4px;
+    color: var(--at-muted);
+    font-size: .875rem;
+    line-height: 1.45;
+}
+.at-service-plate figcaption a {
+    display: inline-flex;
+    align-items: center;
+    flex: none;
+    gap: 5px;
+    min-height: 44px;
+    font-weight: 650;
+    color: var(--at-bronze);
+}
+.at-service-plate figcaption svg { width: 13px; height: 13px; }
+
+.at-service-reading {
+    background: var(--at-paper);
+    border-block: 1px solid var(--at-line);
+}
+.at-service-reading,
+.at-service-questions {
+    padding-block: clamp(46px, 6.5vw, 96px);
+}
+.at-service-story { max-width: 41rem; }
+.at-service-story h2,
+.at-service-questions h2 {
+    max-width: 17ch;
+    font-size: clamp(2.05rem, 4.3vw, 3.3rem);
+}
+.at-service-story p { margin-top: 18px; }
+.at-service-story h3 {
+    margin-top: 28px;
+    font: 400 1.45rem/1.2 var(--at-display);
+}
+.at-service-story p a {
+    color: var(--at-bronze);
+    text-decoration: underline;
+    text-underline-offset: .2em;
+}
+.at-service-story > .at-link { margin-top: 5px; }
+
+.at-treatment-prices {
+    min-width: 0;
+    padding-top: 18px;
+    border-top: 2px solid var(--at-bronze);
+    scroll-margin-block-start: 10px;
+}
+.at-treatment-prices table {
+    width: 100%;
+    margin-block: 18px 8px;
+    border-collapse: collapse;
+    text-align: left;
+    font-size: clamp(.875rem, .85vw + .5rem, 1rem);
+}
+.at-treatment-prices th,
+.at-treatment-prices td {
+    padding: 12px 8px;
+    border-bottom: 1px solid var(--at-line);
+    line-height: 1.4;
+    vertical-align: baseline;
+}
+.at-treatment-prices tr > :first-child { padding-left: 0; }
+.at-treatment-prices tr > :last-child { padding-right: 0; text-align: right; }
+.at-treatment-prices thead th {
+    color: var(--at-muted);
+    font-size: .8rem;
+    font-weight: 550;
+}
+.at-treatment-prices tbody th { font-weight: 550; }
+.at-treatment-prices td { white-space: nowrap; font-variant-numeric: tabular-nums; }
+.at-treatment-prices td:first-of-type { color: var(--at-muted); font-size: .875rem; }
+.at-treatment-prices td:last-of-type { font-weight: 700; }
+.at-treatment-prices__note { color:var(--at-muted); font-size: .9rem; }
+
+.at-service-questions .at-link { margin-top: 12px; }
+.at-service-questions summary span { min-width: 0; }
+.at-service-related {
+    padding-block: clamp(32px, 4.5vw, 64px);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px clamp(30px, 8vw, 120px);
+    align-items: baseline;
+}
+.at-service-related ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px 26px;
+}
+
+@media (min-width: 860px) {
+    .at-service-cover__grid { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: center; }
+    .at-service-plate__mat { min-height: clamp(320px, 36vw, 500px); }
+    .at-service-plate__mat img { max-height: clamp(310px, 32vw, 432px); }
+    .at-service-reading__grid { grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); }
+    .at-service-questions__grid { grid-template-columns: minmax(0, .78fr) minmax(0, 1.22fr); }
+}
+@media (max-width: 859px) {
+    .at-service-cover__copy { gap: 14px; }
+    .at-service-cover__copy .at-display { font-size: clamp(2.5rem, 6.5vw, 3.5rem); }
+    .at-service-plate__mat { padding: 14px; }
+    .at-service-offer { grid-template-columns: auto auto 1fr; align-items: baseline; column-gap: 12px; padding-block: 9px 0; }
+    .at-service-offer__label { grid-column: auto; }
+    .at-service-plate figcaption { font-size: .8rem; }
+}
+@media (max-width: 420px) {
+    .at-service-actions { gap: 2px 15px; }
+    .at-service-actions .at-btn { min-height: 48px; padding-inline: 17px; }
+    .at-service-actions .at-link { gap: 4px; font-size: .875rem; }
+}
