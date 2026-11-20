@@ -232,12 +232,15 @@
     .at-front__album {
         height: auto;
     }
+    /* A short, wide frame: the booking button has to be on the first screen of
+       a small phone (390x664 with Safari's bars), and the frame ends above the
+       logo that is printed across the lower half of the portrait. */
     .at-front__photo {
         position: relative;
         inset: auto;
-        height: clamp(235px, 76vw, 510px);
+        aspect-ratio: 1.85;
     }
-    .at-front__photo--portrait img { object-position: 48% 12%; }
+    .at-front__photo--portrait img { object-position: 50% 0; }
     .at-front__caption {
         position: static;
         align-items: center;
@@ -264,7 +267,17 @@
         min-height: clamp(490px, 46vw, 724px);
     }
     .at-front__album { height: auto; }
-    .at-front__photo--portrait img { object-position: 45% 35%; }
+    /* Head and shoulders only: the portrait file carries the logo across the
+       chest, and the header already shows it. 175% tall shows the top 57%. */
+    .at-front__photo--portrait img {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        width: auto;
+        max-width: none;
+        height: 175%;
+        transform: translateX(-47%);
+    }
     .at-front__caption {
         padding: 60px clamp(24px, 3vw, 52px) clamp(20px, 2.4vw, 38px);
     }

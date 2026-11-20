@@ -66,6 +66,9 @@
             bar.classList.toggle('is-on', on);
             bar.toggleAttribute('inert', !on);
             body.classList.toggle('at-bar-on', on);
+            // before the first scroll the chat button would sit on the hero's own
+            // buttons on a small phone, so it waits until the hero has gone
+            body.classList.toggle('at-top', !past);
         };
         var start = doc.querySelector('[data-at-bar-start]');
         var stop = doc.querySelector('[data-at-bar-stop]');
@@ -85,6 +88,13 @@
             }, { rootMargin: '0px 0px -72px 0px' }).observe(stop);
         }
         render();
+    }
+
+    /* ---- homepage price groups ----
+       The first group is open in the HTML. On a wide screen there is room for
+       all of them, and a closed list there is just an empty black field. */
+    if (window.matchMedia('(min-width: 900px)').matches) {
+        doc.querySelectorAll('.at-service-menu__group').forEach(function (d) { d.open = true; });
     }
 
     /* ---- footer year ---- */

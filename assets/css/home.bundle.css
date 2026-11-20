@@ -72,6 +72,13 @@ html:has(body.at-page){-webkit-text-size-adjust:100%;text-size-adjust:100%;scrol
 :where(body.at-page) :is(ul,ol){list-style:none}
 :where(body.at-page) a{color:inherit;text-decoration:none}
 :where(body.at-page) button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer}
+/* Bona Nova's default figures are old-style: "10 €" reads as "1o €" and
+   "7500" as "75oo". Prices and addresses must never do that, so lining figures
+   are forced everywhere. It is a font-feature and !important because the
+   `font` shorthand, used all over this system, resets font-variant-numeric and
+   font-feature-settings on the element it is declared on. tabular-nums set
+   through font-variant-numeric still applies on top. */
+:where(body.at-page),:where(body.at-page) *{font-feature-settings:"lnum" 1!important}
 body.at-locked{overflow:hidden}
 @media (prefers-reduced-motion:reduce){html:has(body.at-page){scroll-behavior:auto}}
 
@@ -119,18 +126,20 @@ body.at-locked{overflow:hidden}
 .at-on-ink .at-link:hover{color:var(--at-champagne)!important;border-color:var(--at-champagne)}
 
 /* ---------- header ---------- */
-.at-header{position:sticky;top:0;z-index:1000;background:rgba(242,237,230,.94);font-family:var(--at-ui);color:var(--at-ink);border-bottom:1px solid transparent;transition:border-color .3s,box-shadow .3s}
-@supports ((-webkit-backdrop-filter:blur(1px)) or (backdrop-filter:blur(1px))){.at-header{background:rgba(242,237,230,.82);-webkit-backdrop-filter:saturate(1.4) blur(14px);backdrop-filter:saturate(1.4) blur(14px)}}
+.at-header{position:sticky;top:0;z-index:1000;background:var(--at-cream);font-family:var(--at-ui);color:var(--at-ink);border-bottom:1px solid transparent;transition:border-color .3s,box-shadow .3s}
+/* The header is opaque on purpose. A translucent cream bar turned muddy grey
+   whenever an ink section scrolled under it. */
 .at-header.is-stuck{border-bottom-color:var(--at-line)}
 .at-header *,.at-header *::before,.at-header *::after{box-sizing:border-box}
 .at-header__in{display:flex;align-items:center;gap:20px;height:var(--at-header-h)}
 .at-logo{display:inline-flex;align-items:center;flex:none;color:var(--at-ink);text-decoration:none}
 .at-logo svg{display:block;height:34px;width:auto}
+.at-header .at-logo svg{height:36px}
 .at-logo .a{fill:var(--at-champagne-deep)}
 .at-logo .w{fill:currentColor}
 .at-on-ink .at-logo,.at-on-ink.at-logo{color:var(--at-cream)}
 .at-on-ink .at-logo .a{fill:var(--at-champagne)}
-@media (min-width:1120px){.at-logo svg{height:40px}}
+@media (min-width:1120px){.at-logo svg{height:40px}.at-header .at-logo svg{height:44px}}
 .at-nav{display:none;margin-left:auto}
 .at-nav ul{display:flex;align-items:center;gap:clamp(14px,2vw,30px);margin:0;padding:0;list-style:none}
 .at-nav a{position:relative;display:block;padding:10px 0;font:550 .95rem/1 var(--at-ui);color:var(--at-ink);text-decoration:none;white-space:nowrap}
@@ -143,7 +152,7 @@ body.at-locked{overflow:hidden}
 .at-header__book{display:none}
 @media (min-width:1120px){.at-nav{display:block}.at-header__tools{margin-left:clamp(8px,2vw,28px)}.at-header__book{display:inline-flex}.at-burger{display:none!important}}
 @media (min-width:1120px) and (max-width:1279.98px){
-  .at-header .at-logo svg{height:34px}
+  .at-header .at-logo svg{height:38px}
   .at-header__in{gap:14px}
   .at-nav ul{gap:16px}
   .at-header__tools{margin-left:0}
@@ -155,6 +164,8 @@ body.at-locked{overflow:hidden}
 .at-lang .lang-toggle__option{min-width:44px;min-height:44px;padding:8px 6px;border-radius:var(--at-radius);color:inherit;background:none;border:0;font:inherit;letter-spacing:inherit;cursor:pointer}
 .at-lang .lang-toggle__option.active{color:var(--at-ink);text-decoration:underline;text-underline-offset:6px;text-decoration-thickness:1px}
 .at-lang .lang-toggle__divider{opacity:.4}
+@media (max-width:1119.98px){.at-header .at-lang{display:none}}
+.at-drawer__meta .at-lang{margin-left:-10px;font-size:.875rem}
 .at-on-ink .at-lang{color:var(--at-cream-muted)}
 .at-on-ink .at-lang .lang-toggle__option.active{color:var(--at-cream);text-decoration-color:var(--at-champagne)}
 
@@ -189,7 +200,7 @@ body.at-nav-open #ai-chat-fab,body.at-nav-open .at-bar{visibility:hidden}
 @media (prefers-reduced-motion:reduce){.at-drawer,.at-drawer__nav li{transition:none!important}}
 
 @media (max-width:370px){
-  .at-header .at-logo svg{height:23px}
+  .at-header .at-logo svg{height:32px}
   .at-header .at-burger{margin-right:0}
   .at-header .at-header__tools{gap:0}
   .at-header .at-header__in{gap:6px}
@@ -222,6 +233,7 @@ body.at-nav-open #ai-chat-fab,body.at-nav-open .at-bar{visibility:hidden}
   body.at-has-bar #ai-chat-fab{bottom:calc(var(--at-bar-h) + 14px + var(--at-safe-b))!important;right:14px!important;width:50px!important;height:50px!important;transition:bottom .5s var(--at-ease)}
   body.at-has-bar:not(.at-bar-on) #ai-chat-fab{bottom:calc(16px + var(--at-safe-b))!important}
   body.at-has-bar .scroll-to-top{display:none!important}
+  body.at-has-bar.at-top #ai-chat-fab{opacity:0;visibility:hidden;pointer-events:none}
 }
 #ai-chat-fab{background:var(--at-ink)!important;box-shadow:0 0 0 1px rgba(199,168,126,.55),0 8px 24px -8px rgba(16,17,17,.5)!important}
 #ai-chat-fab svg{fill:var(--at-champagne)!important}
@@ -236,7 +248,7 @@ body.at-nav-open #ai-chat-fab,body.at-nav-open .at-bar{visibility:hidden}
 @media (min-width:900px){.at-head--split{grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);align-items:end;gap:48px}.at-head--split>:last-child{justify-self:end}}
 
 /* ---------- responsive type and rating links ---------- */
-@media (max-width:400px){.at-logo svg{height:29px}.at-header__tools{gap:4px}.at-header__in{gap:10px}}
+@media (max-width:400px){.at-header__tools{gap:4px}.at-header__in{gap:10px}}
 @media (max-width:380px){.at-display{font-size:2.2rem}}
 @media (min-width:1000px) and (max-width:1199.98px){.at-display{font-size:3.25rem}}
 

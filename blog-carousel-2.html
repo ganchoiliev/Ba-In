@@ -43,7 +43,7 @@
         gtag('set','url_passthrough',true);
     </script>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <title data-i18n="blog.title">Нашият Блог | Съвети за Красота от Beauty Atelier IN</title>
     <link rel="canonical" href="https://ba-in.com/blog.html">
     <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicons/apple-touch-icon.png?v=4b9b5737" />
@@ -73,158 +73,82 @@
     <meta name="keywords"
         content="блог за красота, съвети микроблейдинг, грижа за кожата блог, естетични процедури силистра, beauty atelier in новини" />
 
-    <link rel="stylesheet" href="assets/fonts/manrope/manrope.css?v=21b000fe" />
-
-    <link rel="stylesheet" href="assets/vendors/bootstrap/css/bootstrap.min.css?v=7f1d37f0" />
-    <link rel="stylesheet" href="assets/vendors/bootstrap-select/bootstrap-select.min.css?v=5921db34" />
-    <link rel="stylesheet" href="assets/vendors/animate/animate.min.css?v=dec0a3fb" />
-    <link rel="stylesheet" href="assets/vendors/fontawesome/css/fa-subset.min.css?v=1132d848" />
-    <link rel="stylesheet" href="assets/vendors/jarallax/jarallax.css?v=57603d3b" />
-    <link rel="stylesheet" href="assets/vendors/jquery-magnific-popup/jquery.magnific-popup.css?v=45d1f5f6" />
-    <link rel="stylesheet" href="assets/vendors/mediox-icons/style.css?v=af45cfb4" />
-    <link rel="stylesheet" href="assets/vendors/owl-carousel/css/owl.carousel.min.css?v=521410e1" />
-    <link rel="stylesheet" href="assets/vendors/owl-carousel/css/owl.theme.default.min.css?v=924b0dc6" />
-
-    <link rel="stylesheet" href="assets/css/mediox.css?v=83bfcde5" />
-
+<!-- at:head -->
+    <meta name="theme-color" content="#F2EDE6" />
+    <meta name="color-scheme" content="light" />
+    <link rel="preload" as="font" type="font/woff2" href="assets/fonts/bona-nova/bona-nova-cyrillic-400-normal.woff2?v=1191c16b" crossorigin>
+    <link rel="preload" as="font" type="font/woff2" href="assets/fonts/manrope/manrope-cyrillic.woff2?v=c268b459" crossorigin>
+    <style>
+@font-face{font-family:"Bona Nova";font-style:normal;font-weight:400;font-display:swap;src:url('assets/fonts/bona-nova/bona-nova-cyrillic-400-normal.woff2?v=1191c16b') format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+@font-face{font-family:"Bona Nova";font-style:normal;font-weight:400;font-display:swap;src:url('assets/fonts/bona-nova/bona-nova-latin-400-normal.woff2?v=b7aa3adb') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"Bona Nova";font-style:italic;font-weight:400;font-display:swap;src:url('assets/fonts/bona-nova/bona-nova-cyrillic-400-italic.woff2?v=d939d2eb') format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+@font-face{font-family:"Bona Nova";font-style:italic;font-weight:400;font-display:swap;src:url('assets/fonts/bona-nova/bona-nova-latin-400-italic.woff2?v=52d165ad') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"Manrope";font-style:normal;font-weight:200 800;font-display:swap;src:url('assets/fonts/manrope/manrope-cyrillic.woff2?v=c268b459') format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+@font-face{font-family:"Manrope";font-style:normal;font-weight:200 800;font-display:swap;src:url('assets/fonts/manrope/manrope-latin-ext.woff2?v=3911b66d') format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:"Manrope";font-style:normal;font-weight:200 800;font-display:swap;src:url('assets/fonts/manrope/manrope-latin.woff2?v=a30ddcd3') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+    </style>
+    <link rel="stylesheet" href="assets/css/home.bundle.css?v=40152eef" />
+    <link rel="stylesheet" href="assets/css/atelier-article.css?v=06d9d695" />
+    <script>document.documentElement.classList.add('at-js')</script>
+<!-- /at:head -->
     <!-- AI Chatbot styles -->
-    <link rel="stylesheet" href="assets/css/site.bundle.css?v=7c9af6d0" />
-<link rel="stylesheet" href="assets/css/i18n.css?v=e4d653f2" />
-    </head>
+</head>
 
-<body>
-<a class="skip-link" href="#main">Към основното съдържание</a>
-    <div class="page-wrapper">
-
-
-        <div class="topbar-one">
-            <div class="container-fluid">
-                <div class="topbar-one__inner">
-                    <ul class="list-unstyled topbar-one__info">
-                        <li>
-                            <span class="topbar-one__info__icon">
-                                <i class="icon-location"></i>
-                            </span>
-                            <a href="https://maps.app.goo.gl/1E4jb3951zqGQFux7"
-                                data-i18n="shared.topbar.address">Силистра център, ул. "Отец Паисий" 27, 7500 Силистра,
-                                България</a>
-                        </li>
-                        <li>
-                            <span class="topbar-one__info__icon topbar-one__info__icon--email">
-                                <i class="icon-email"></i>
-                            </span>
-                            <a href="mailto:info@ba-in.com">info@ba-in.com</a>
-                        </li>
-                        <li>
-                            <span class="topbar-one__info__icon">
-                                <i class="icon-telephone"></i>
-                            </span>
-                            <a href="tel:+359893398390">+359 89 339 8390</a>
-                        </li>
-                    </ul>
-                    <div class="topbar-one__right">
-                        <button class="lang-toggle" id="lang-toggle" data-i18n-aria="shared.aria.lang_switch"
-                            aria-label="Смени езика">
-                            <span class="lang-toggle__option active" data-lang="bg">БГ</span>
-                            <span class="lang-toggle__divider">|</span>
-                            <span class="lang-toggle__option" data-lang="en">EN</span>
-                        </button>
-                        <div class="social-links">
-                            <a href="https://www.facebook.com/IliyanaPhiAcademy">
-                                <i class="fab fa-facebook-f" aria-hidden="true"></i>
-                                <span class="sr-only">Facebook</span>
-                            </a>
-                            <a href="https://www.instagram.com/Iliyanailieva.phiacademy/">
-                                <i class="fab fa-instagram" aria-hidden="true"></i>
-                                <span class="sr-only">Instagram</span>
-                            </a>
-                            <a href="https://www.tiktok.com/@iliqna_ilieva4">
-                                <i class="fab fa-tiktok" aria-hidden="true"></i>
-                                <span class="sr-only">Tik Tok</span>
-                            </a>
-                            <a href="https://share.google/LWLt1rNLslWSX71RU">
-                                <i class="fab fa-google" aria-hidden="true"></i>
-                                <span class="sr-only">Google</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
+<body class="at-page at-legacy">
+<!-- at:header -->
+<a class="at-skip" href="#main" data-i18n="shared.skip">Към основното съдържание</a>
+<header class="at-header" id="at-header">
+    <div class="at-wrap at-header__in">
+        <a class="at-logo" href="index.html" data-i18n-aria="atelier.home_label" aria-label="Beauty Atelier IN – начало"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1245 210" aria-hidden="true" focusable="false"><g class="w"><path d="M257.76,204.93l0.05,1.94h-59.03l0.02-1.94h2.46c6.75,0,12.25-5.36,12.44-12.06V73.21 c-0.23-6.65-5.72-12.23-12.44-12.23h-2.46l-0.02-1.94h59.03l-0.05,1.94h-2.46c-6.79,0-12.3,5.46-12.44,12.21v119.55 c0.14,6.75,5.65,12.21,12.46,12.21H257.76z"/><rect x="130.56" y="117.06" width="83.13" height="8.18"/><path d="M101.32,204.93h-3.59l-0.03,1.94h58.9l-0.03-1.94h-3.59c-6.55,0-11.87-5.25-11.99-11.77V27.28V3.41 L43.31,137.78V13.72C43.43,7.2,48.75,1.95,55.3,1.95h3.58L58.92,0L0,0l0.03,1.94h3.59c6.5,0,11.78,5.17,11.99,11.61v147.63v30.12 l97.71-134.24v136.15C113.16,199.71,107.86,204.93,101.32,204.93z"/></g><g><path class="w" d="M325.48,71.51c15.76,0,24.42,7.53,24.47,18.8c-0.04,9.54-6.12,15.27-12.46,17.09 c11.97,1.78,19.28,10.55,19.27,21.69c0,12.7-9.45,21.14-26.2,21.14h-27.4l0.02-1.12h1.42c3.91,0,7.09-3.11,7.2-7V79.6 c0-3.88-3.29-6.98-7.22-6.98h-1.4l-0.02-1.12L325.48,71.51z M330.15,146.12c11.54,0.05,18.18-6.47,18.17-17.84 c0.01-16.85-14.5-19.67-25.38-19.64l-0.03-1.06c6.86,0.03,18.55-2,18.59-16.46c-0.04-10.17-5.78-16.01-16.44-16h-5.95v71.01 H330.15z"/><path class="w" d="M417.32,150.22H370.7l0.02-1.12h1.42c3.93,0,7.13-3.15,7.2-7.07V79.06c-0.38-3.62-3.44-6.44-7.16-6.44h-1.42 l-0.02-1.12h32.86c4.85-0.05,11.32-1.17,13.41-2.05v3.29v1.88v9.03l-1.14-0.02v-2c0-3.57-2.78-6.48-6.3-6.69h-22.93v34.77h19 c3.01-0.06,5.44-2.51,5.44-5.54v-1.66l1.1-0.01v17.8l-1.1-0.01v-1.66c0-2.99-2.37-5.42-5.32-5.54h-19.12v33.7h16.13 c11.91,0,16.49-6.16,19.96-14.73h1.12L417.32,150.22z"/><path class="w" d="M502.12,142.02c2.27,5.01,6.43,7.08,9.88,7.08h0.94v1.12h-25.32v-1.11h0.99c2.9,0,5.92-2.56,4.27-7.06 l-7.19-19.15h-30.29l-7.53,19.22c-1.59,4.46,1.41,6.99,4.3,6.99h0.99v1.11h-22.63v-1.12h1.01c3.42,0,7.58-2.07,9.85-7.07 l25.5-60.51c0,0,4.16-9.11,4.16-11.58h1.01L502.12,142.02z M484.41,119.52l-13.55-36.09l-14.15,36.09H484.41z"/><path class="w" d="M593.25,71.5v1.12h-1.83c-3.16,0-5.74,2.21-5.94,5.31v44.47c0,17.63-12.12,29.39-30.31,29.39 c-18.71,0-31.19-11.68-31.19-29.19V78.19c-0.06-3.23-2.7-5.57-5.94-5.57h-1.83V71.5h22.84v1.12h-1.83c-3.19,0-5.79,2.25-5.93,5.4 v42.93c0,16.38,9.55,27.31,23.88,27.31c15.02,0,25.04-10.34,25.06-25.85V78.04c-0.14-3.15-2.74-5.41-5.94-5.41h-1.83V71.5 L593.25,71.5z"/><path class="w" d="M655.43,71.39c4.86-0.03,11.44-1.16,13.54-2.05v14.14l-1.13-0.02v-2c0-3.61-2.84-6.54-6.41-6.7h-21.31v67.36 c0.12,3.87,3.3,6.98,7.2,6.98h1.42l0.02,1.12h-24.62l0.02-1.12h1.42c3.87,0,7.03-3.06,7.2-6.89V74.76h-21.33 c-3.57,0.16-6.41,3.09-6.41,6.7v2l-1.13,0.02V69.34c2.1,0.89,8.68,2.02,13.54,2.05H655.43z"/><path class="w" d="M749.49,71.5v1.13h-1.57c-4.69,0-8.88,3.09-11.28,6.53L714.4,115.1v26.93c0.07,3.92,3.27,7.07,7.2,7.07h1.42 l0.02,1.12h-24.6l0.02-1.12h1.42c3.91,0,7.09-3.12,7.2-7.01v-27.1l-21.41-35.8c-2.18-3.45-6.6-6.57-11.31-6.57h-1.53V71.5h27.65 v1.12h-1.42c-3.29,0-5.59,3.79-3.94,6.98l16.85,31.47l17.92-31.48l0.06-0.11c1.75-3.17-0.97-6.86-4-6.86h-1.42V71.5L749.49,71.5z "/><path class="w" d="M852.5,142.02c2.27,5.01,6.43,7.08,9.88,7.08h0.94v1.12h-25.32v-1.11h0.99c2.9,0,5.92-2.56,4.27-7.06 l-7.19-19.15h-30.29l-7.53,19.22c-1.59,4.46,1.41,6.99,4.3,6.99h0.99v1.11h-22.63v-1.12h1.01c3.42,0,7.58-2.07,9.85-7.07 l25.5-60.51c0,0,4.16-9.11,4.16-11.58h1.01L852.5,142.02z M834.8,119.52l-13.55-36.09l-14.15,36.09H834.8z"/><path class="w" d="M910.8,71.39c4.86-0.03,11.44-1.16,13.54-2.05v14.14l-1.13-0.02v-2c0-3.61-2.84-6.54-6.41-6.7h-21.31v67.36 c0.12,3.87,3.3,6.98,7.2,6.98h1.42l0.02,1.12H879.5l0.02-1.12h1.42c3.87,0,7.03-3.06,7.2-6.89V74.76h-21.33 c-3.57,0.16-6.41,3.09-6.41,6.7v2l-1.13,0.02V69.34c2.1,0.89,8.68,2.02,13.54,2.05H910.8z"/><path class="w" d="M982.7,150.22h-46.62l0.02-1.12h1.42c3.93,0,7.13-3.15,7.2-7.07V79.06c-0.38-3.62-3.44-6.44-7.16-6.44h-1.42 l-0.02-1.12h32.86c4.85-0.05,11.32-1.17,13.41-2.05v3.29v1.88v9.03l-1.14-0.02v-2c0-3.57-2.78-6.48-6.3-6.69h-22.93v34.77h19 c3.01-0.06,5.44-2.51,5.44-5.54v-1.66l1.1-0.01v17.8l-1.1-0.01v-1.66c0-2.99-2.37-5.42-5.32-5.54h-19.12v33.7h16.13 c11.91,0,16.49-6.16,19.96-14.73h1.12L982.7,150.22z"/><path class="w" d="M1055.82,132.06l-6.55,18.17h-46.62l0.02-1.12h1.42c3.93,0,7.13-3.15,7.2-7.07V79.7 c-0.07-3.92-3.27-7.07-7.2-7.07h-1.42l-0.02-1.12h24.6l-0.02,1.12h-1.42c-3.94,0-7.13,3.15-7.2,7.07v67.08h16.13 c11.91,0,16.49-6.16,19.96-14.73L1055.82,132.06z"/><path class="w" d="M1091.56,150.22h-24.6l0.02-1.12h1.42c3.94,0,7.13-3.15,7.2-7.07V79.64c-0.1-3.89-3.28-7.02-7.2-7.02h-1.42 l-0.02-1.13h24.6l-0.02,1.13h-1.42c-3.91,0-7.09,3.12-7.2,7v62.41c0.07,3.92,3.27,7.07,7.2,7.07h1.42L1091.56,150.22z"/><path class="w" d="M1154.4,150.22h-46.62l0.02-1.12h1.42c3.94,0,7.13-3.15,7.2-7.07V79.06c-0.38-3.62-3.44-6.44-7.16-6.44 h-1.42l-0.02-1.12h32.86c4.85-0.05,11.32-1.17,13.41-2.05v3.29v1.88v9.03l-1.14-0.02v-2c0-3.57-2.78-6.48-6.3-6.69h-22.93v34.77 h19c3.01-0.06,5.44-2.51,5.44-5.54v-1.66l1.1-0.01v17.8l-1.1-0.01v-1.66c0-2.99-2.37-5.42-5.32-5.54h-19.12v33.7h16.13 c11.91,0,16.49-6.16,19.96-14.73h1.12L1154.4,150.22z"/><path class="w" d="M1204.68,71.5c13.63,0,21.98,8.03,21.98,21.14c0,10.89-8.29,21.44-19.1,21.44c2.41,1.11,5.87,4.84,8.05,7.91 c0,0,9.7,13.84,14.05,18.6c4.53,4.94,8.69,8.45,15.3,8.5v1.13h-6.17c-10.47,0-16.09-5.64-19.62-9.86 c-1.28-1.53-13.95-19.96-14.82-21.05c-2.94-3.69-6.22-7.59-10.33-7.59v-1.04c0,0,2.56,0.05,5.94-0.04 c5.83-0.16,14.36-1.55,17.55-11.68c0.49-1.58,0.78-4.27,0.71-6.73c-0.28-10.17-5.58-16.69-13.95-17.14 c-5.73-0.31-12.54-0.03-14-0.09v67.02c0.07,3.92,3.27,7.07,7.2,7.07h1.42l0.02,1.12h-24.57l0.02-1.12h1.42 c3.92,0,7.1-3.13,7.2-7.02V79.69c-0.07-3.92-3.27-7.07-7.2-7.07h-1.42l-0.02-1.12L1204.68,71.5z"/></g></svg></a>
+        <nav class="at-nav" data-i18n-aria="atelier.main_nav" aria-label="Основна навигация">
+            <ul>
+                <li><a href="procedures.html" data-i18n="shared.nav.procedures">Процедури</a></li>
+                <li><a href="pricing.html" data-i18n="shared.nav.pricing">Ценоразпис</a></li>
+                <li><a href="about.html" data-i18n="shared.nav.about">За нас</a></li>
+                <li><a href="gallery.html" data-i18n="shared.nav.gallery">Галерия</a></li>
+                <li><a aria-current="true" href="blog.html" data-i18n="shared.nav.blog">Блог</a></li>
+                <li><a href="contact.html" data-i18n="shared.nav.contact">Контакти</a></li>
+            </ul>
+        </nav>
+        <div class="at-header__tools">
+            <a class="at-header__tel" href="tel:+359893398390">089 339 8390</a>
+            <div class="at-lang lang-toggle" role="group" data-i18n-aria="shared.aria.lang_switch" aria-label="Смени езика">
+                <button type="button" class="lang-toggle__option active" data-lang="bg" aria-label="Български">БГ</button>
+                <span class="lang-toggle__divider" aria-hidden="true">/</span>
+                <button type="button" class="lang-toggle__option" data-lang="en" aria-label="English">EN</button>
             </div>
+            <a class="at-btn at-btn--sm at-header__book" href="/notino" target="_blank" rel="noopener"><span data-i18n="shared.header.book_btn">Запази час</span><svg class="at-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+            <button type="button" class="at-burger" id="at-burger" aria-controls="at-drawer" aria-expanded="false" data-i18n-aria="atelier.menu" aria-label="Меню"><span></span><span></span><span></span></button>
         </div>
-        <header class="main-header sticky-header sticky-header--normal">
-            <div class="container-fluid">
-                <div class="main-header__inner">
-                    <div class="main-header__logo logo-retina">
-                        <a href="index.html">
-                            <img src="assets/images/logo-dark.webp?v=cdfda3f4" alt="Beauty Atelier IN logo" width="164">
-                        </a>
-                    </div>
-                    <div class="main-header__right">
-                        <div class="main-header__sidebar-btn sidebar-btn__toggler">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                        </div>
-                        <nav class="main-header__nav main-menu">
-                            <ul class="main-menu__list">
-
-                                <li>
-                                    <a href="index.html" data-i18n="shared.nav.home">Начало</a>
-
-                                </li>
-
-
-
-                                <li>
-                                    <a href="procedures.html" data-i18n="shared.nav.procedures">Процедури</a>
-                                </li>
-
-                                <li>
-                                    <a href="pricing.html" data-i18n="shared.nav.pricing">Ценоразпис</a>
-                                </li>
-
-                                <li>
-                                    <a href="about.html" data-i18n="shared.nav.about">За нас</a>
-                                </li>
-
-                                <li>
-                                    <a href="gallery.html" data-i18n="shared.nav.gallery">Галерия</a>
-                                </li>
-
-                                <li>
-                                    <a href="blog.html" data-i18n="shared.nav.blog">Блог</a>
-                                </li>
-
-
-                                <li>
-                                    <a href="contact.html" data-i18n="shared.nav.contact">Контакти</a>
-                                </li>
-                            </ul>
-                        </nav>
-                        <div class="mobile-nav__btn mobile-nav__toggler">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                        </div>
-                        <div class="main-header__call">
-                            <span class="main-header__call__icon">
-                                <i class="icon-telephone"></i>
-                            </span>
-                            <div class="main-header__call__content">
-                                <p class="main-header__call__title" data-i18n="shared.header.call_label">Звънни ни</p>
-                                <h4 class="main-header__call__number">
-                                    <a href="tel:+359893398390">+359 89 339 8390</a>
-                                </h4>
-                            </div>
-                        </div><a href="appointment.html" class="mediox-btn main-header__btn">
-                            <span data-i18n="shared.header.book_btn">Запази час</span>
-                            <span class="mediox-btn__icon"><i class="icon-up-right-arrow"></i></span>
-                        </a>
-                    </div>
-                </div>
+    </div>
+</header>
+<div class="at-drawer at-on-ink" id="at-drawer" aria-hidden="true">
+    <nav class="at-drawer__nav" data-i18n-aria="atelier.mobile_nav" aria-label="Мобилна навигация">
+        <ul>
+            <li style="--i:0"><a href="index.html" data-i18n="shared.nav.home">Начало</a></li>
+            <li style="--i:1"><a href="procedures.html" data-i18n="shared.nav.procedures">Процедури</a></li>
+            <li style="--i:2"><a href="pricing.html" data-i18n="shared.nav.pricing">Ценоразпис</a></li>
+            <li style="--i:3"><a href="about.html" data-i18n="shared.nav.about">За нас</a></li>
+            <li style="--i:4"><a href="gallery.html" data-i18n="shared.nav.gallery">Галерия</a></li>
+            <li style="--i:5"><a aria-current="true" href="blog.html" data-i18n="shared.nav.blog">Блог</a></li>
+            <li style="--i:6"><a href="contact.html" data-i18n="shared.nav.contact">Контакти</a></li>
+        </ul>
+    </nav>
+    <div class="at-drawer__foot">
+        <a class="at-btn at-btn--gold" href="/notino" target="_blank" rel="noopener"><span data-i18n="shared.header.book_btn">Запази час</span><svg class="at-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+        <div class="at-drawer__meta">
+            <div class="at-lang lang-toggle" role="group" data-i18n-aria="shared.aria.lang_switch" aria-label="Смени езика">
+                <button type="button" class="lang-toggle__option active" data-lang="bg" aria-label="Български">БГ</button>
+                <span class="lang-toggle__divider" aria-hidden="true">/</span>
+                <button type="button" class="lang-toggle__option" data-lang="en" aria-label="English">EN</button>
             </div>
-        </header>
-        <main id="main">
+            <a href="tel:+359893398390">+359 89 339 8390</a>
+            <a href="https://maps.app.goo.gl/1E4jb3951zqGQFux7" target="_blank" rel="noopener" data-i18n="shared.at.address_short">ул. „Отец Паисий“ 27, Силистра</a>
+        </div>
+    </div>
+</div>
+<!-- /at:header -->
+<main id="main">
         <section class="page-header">
             <div class="container-fluid">
                 <div class="page-header__inner">
@@ -683,405 +607,83 @@
             </div>
         </section>
         </main>
-
-        <footer class="main-footer section-space-top">
-            <div class="main-footer__bg" style="background-image: url(assets/images/shapes/footer-bg.webp?v=d69b2a6c);"></div>
-            <div class="container">
-                <div class="footer-divider"></div>
-                <div class="row gutter-y-40">
-                    <div class="col-xl-4 col-lg-6 col-md-7 wow fadeInUp" data-wow-duration="1500ms"
-                        data-wow-delay="00ms">
-                        <div class="footer-widget footer-widget--about">
-                            <div class="footer-widget__logo logo-retina">
-                                <a href="index.html">
-                                    <img src="assets/images/logo-light.webp?v=4b2c31c5" alt="Beauty Atelier In Силистра"
-                                        width="164">
-                                </a>
-                            </div>
-                            <p class="footer-widget__about-text" data-i18n="shared.footer.tagline">Мястото, където
-                                красотата среща прецизността!</p>
-                            <p class="footer-widget__about-text">Beauty Atelier IN - Iliyana Nikolaeva, Silistra</p>
-                            <a href="appointment.html" class="footer-widget__btn">
-                                <span>свържи се с нас</span>
-                                <span class="footer-widget__btn__icon"><i class="icon-up-right-arrow"></i></span>
-                            </a>
-                            <div class="social-links">
-                                <a href="https://www.facebook.com/IliyanaPhiAcademy/">
-                                    <i class="fab fa-facebook-f" aria-hidden="true"></i>
-                                    <span class="sr-only">Facebook</span>
-                                </a>
-
-                                <a href="https://www.instagram.com/Iliyanailieva.phiacademy/">
-                                    <i class="fab fa-instagram" aria-hidden="true"></i>
-                                    <span class="sr-only">Instagram</span>
-                                </a>
-
-                                <a href="https://www.tiktok.com/@iliqna_ilieva4">
-                                    <i class="fab fa-tiktok" aria-hidden="true"></i>
-                                    <span class="sr-only">Tiktok</span>
-                                </a>
-
-                                <a href="https://share.google/LWLt1rNLslWSX71RU">
-                                    <i class="fab fa-google" aria-hidden="true"></i>
-                                    <span class="sr-only">Google</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-2 col-lg-3 col-md-5 wow fadeInUp" data-wow-duration="1500ms"
-                        data-wow-delay="100ms">
-                        <div class="footer-widget footer-widget--links">
-                            <h2 class="footer-widget__title" data-i18n-html="shared.footer.procedures_title">Нашите
-                                <span>Процедури</span>
-                            </h2>
-                            <ul class="list-unstyled footer-widget__links">
-                                <li><a href="microblading.html"
-                                        data-i18n="shared.footer.proc.microblading">Микроблейдинг</a></li>
-                                <li><a href="microneedling.html"
-                                        data-i18n="shared.footer.proc.microneedling">Микронидлинг</a></li>
-                                <li><a href="lashes.html" data-i18n="shared.footer.proc.lashes">Миглопластика</a></li>
-                                <li><a href="plasma.html" data-i18n="shared.footer.proc.plasma">Плазма пен</a></li>
-                                <li><a href="laminirane.html" data-i18n="shared.proc.lamination">Ламиниране</a></li><li><a href="vezhdi.html" data-i18n="shared.proc.vezhdi">Вежди</a></li>
-                                <li><a href="piercing.html" data-i18n="shared.proc.probiwane">Пробиване на уши</a></li>
-                                <li><a href="perm-makeup-removal.html"
-                                        data-i18n="shared.footer.proc.perm_removal">Премахване на перманентен грим</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-xl-2 col-lg-3 col-md-5 wow fadeInUp" data-wow-duration="1500ms"
-                        data-wow-delay="200ms">
-                        <div class="footer-widget footer-widget--links">
-                            <h2 class="footer-widget__title" data-i18n-html="shared.footer.quick_links_title">Бързи
-                                <span>връзки</span>
-                            </h2>
-                            <ul class="list-unstyled footer-widget__links">
-                                <li><a href="about.html" data-i18n="shared.nav.about">За нас</a></li>
-                                <li><a href="procedures.html" data-i18n="shared.nav.procedures">Процедури</a></li>
-                                <li><a href="pricing.html" data-i18n="shared.nav.pricing">Ценоразпис</a></li>
-                                <li><a href="blog.html" data-i18n="shared.nav.blog">Блог</a></li>
-                                <li><a href="appointment.html" data-i18n="shared.footer.link.appointment">Запази час</a>
-                                </li>
-                                <li><a href="gallery.html" data-i18n="shared.footer.link.gallery">Галерия</a></li>
-                                <li><a href="faq.html" data-i18n="shared.footer.link.faq">Често Задавани Въпроси</a>
-                                </li>
-                                <li><a href="contact.html" data-i18n="shared.nav.contact">Контакти</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-xl-4 col-lg-6 col-md-7 wow fadeInUp" data-wow-duration="1500ms"
-                        data-wow-delay="300ms">
-                        <div class="footer-widget footer-widget--blog">
-                            <h2 class="footer-widget__title" data-i18n-html="shared.footer.blog_title">блог &
-                                <span>новини</span>
-                            </h2>
-                            <ul class="footer-widget__posts list-unstyled">
-                                <li class="footer-widget__posts__item">
-                                    <div class="footer-widget__posts__image">
-                                        <img src="assets/images/blog/1.webp?v=c4160df6" style="width: 70px; height: 70px; object-fit: cover;" alt="Правилната процедура за лице" loading="lazy" decoding="async" width="370" height="260">
-                                    </div><!-- /.footer-widget__posts__image -->
-                                    <div class="footer-widget__posts__content">
-                                        <div class="footer-widget__posts__meta">
-                                            <a href="about.html">
-                                                <span class="footer-widget__posts__meta__icon">
-                                                    <i class="icon-user"></i>
-                                                </span><!-- /.footer-widget__posts__meta__icon -->
-                                                <span data-i18n="blog.author_short">От И. Николаева</span>
-                                            </a>
-                                        </div><!-- /.footer-widget__posts__meta -->
-                                        <h4 class="footer-widget__posts__title">
-                                            <a href="choosing-right-facial.html"
-                                                data-i18n="shared.footer.blog1_title">Правилна процедура</a>
-                                        </h4><!-- /.footer-widget__posts__title -->
-                                    </div><!-- /.footer-widget__posts__content -->
-                                </li>
-                                <li class="footer-widget__posts__item">
-                                    <div class="footer-widget__posts__image">
-                                        <img src="assets/images/blog/microneedling-preview.webp?v=fba3044c"
-                                            style="width: 70px; height: 70px; object-fit: cover;"
-                                            alt="Микронидлинг – Пълен Наръчник" loading="lazy" decoding="async" width="640" height="640">
-                                    </div><!-- /.footer-widget__posts__image -->
-                                    <div class="footer-widget__posts__content">
-                                        <div class="footer-widget__posts__meta">
-                                            <a href="about.html">
-                                                <span class="footer-widget__posts__meta__icon">
-                                                    <i class="icon-user"></i>
-                                                </span><!-- /.footer-widget__posts__meta__icon -->
-                                                <span data-i18n="blog.author_short">От И. Николаева</span>
-                                            </a>
-                                        </div><!-- /.footer-widget__posts__meta -->
-                                        <h4 class="footer-widget__posts__title">
-                                            <a href="beauty-inspiring.html"
-                                                data-i18n="shared.footer.blog2_title">Красотата & Вдъхновението</a>
-                                        </h4><!-- /.footer-widget__posts__title -->
-                                    </div><!-- /.footer-widget__posts__content -->
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="main-footer__bottom">
-                    <div class="main-footer__info">
-                        <div class="main-footer__info__bg"
-                            style="background-image: url(assets/images/backgrounds/footer-contact-bg.webp?v=0b671746);"></div>
-                        <div class="row main-footer__info__row gutter-y-40">
-                            <div class="main-footer__info__col-1 wow fadeInUp" data-wow-duration="1500ms"
-                                data-wow-delay="00ms">
-                                <div class="main-footer__contact">
-                                    <span class="main-footer__contact__icon">
-                                        <i class="icon-location"></i>
-                                    </span>
-                                    <div class="main-footer__contact__content">
-                                        <p class="main-footer__contact__title" data-i18n="shared.footer.address_label">
-                                            Адрес</p>
-                                        <h4 class="main-footer__contact__text">
-                                            <a href="https://maps.app.goo.gl/1E4jb3951zqGQFux7"
-                                                data-i18n="shared.topbar.address">Силистра център, ул. "Отец Паисий" 27,
-                                                7500 Силистра, България</a>
-                                        </h4>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="main-footer__info__col-2 wow fadeInUp" data-wow-duration="1500ms"
-                                data-wow-delay="100ms">
-                                <div class="main-footer__contact">
-                                    <span class="main-footer__contact__icon">
-                                        <i class="icon-email"></i>
-                                    </span>
-                                    <div class="main-footer__contact__content">
-                                        <p class="main-footer__contact__title" data-i18n="shared.footer.email_label">
-                                            Изпрати ни имейл</p>
-                                        <h4 class="main-footer__contact__text">
-                                            <a href="mailto:info@ba-in.com">info@ba-in.com</a>
-                                        </h4>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="main-footer__info__col-3 wow fadeInUp" data-wow-duration="1500ms"
-                                data-wow-delay="200ms">
-                                <div class="main-footer__contact">
-                                    <span class="main-footer__contact__icon">
-                                        <i class="icon-telephone"></i>
-                                    </span>
-                                    <div class="main-footer__contact__content">
-                                        <p class="main-footer__contact__title" data-i18n="shared.footer.call_label">
-                                            Звънни ни</p>
-                                        <h4 class="main-footer__contact__text">
-                                            <a href="tel:+359893398390">+359893398390</a>
-                                        </h4>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="main-footer__copyright">
-                        <span class="footer-cr__copy">&copy; Copyright <span class="dynamic-year"></span> Beauty Atelier
-                            IN.</span>
-                        <span class="footer-cr__links">
-                            <a href="Privacy-policy.html" data-i18n="shared.footer.privacy">Поверителност</a>
-                            <span class="footer-cr__sep">|</span>
-                            <a href="termsandconditions.html" data-i18n="shared.footer.terms">Общи условия</a>
-                            <span class="footer-cr__sep">|</span>
-                            <a href="#" id="manage-cookies" data-i18n="cookie.manage">Настройки за бисквитки</a>
-                        </span>
-                        <span class="footer-cr__credit">
-                            <span data-i18n="shared.footer.designed_by">Дизайн и разработка от</span>
-                            <a href="https://gosmartr.co.uk" target="_blank" rel="noopener noreferrer">GoSmartR</a>
-                        </span>
-                    </div>
+<!-- at:footer -->
+<footer class="at-footer at-on-ink">
+    <div class="at-wrap">
+        <div class="at-footer__top">
+            <div class="at-footer__brand">
+                <a class="at-logo" href="index.html" data-i18n-aria="atelier.home_label" aria-label="Beauty Atelier IN – начало"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1245 216" aria-hidden="true" focusable="false"><g class="a"><path d="M257.76,204.93l0.05,1.94h-59.03l0.02-1.94h2.46c6.75,0,12.25-5.36,12.44-12.06V73.21 c-0.23-6.65-5.72-12.23-12.44-12.23h-2.46l-0.02-1.94h59.03l-0.05,1.94h-2.46c-6.79,0-12.3,5.46-12.44,12.21v119.55 c0.14,6.75,5.65,12.21,12.46,12.21H257.76z"/><rect x="130.56" y="117.06" width="83.13" height="8.18"/><path d="M101.32,204.93h-3.59l-0.03,1.94h58.9l-0.03-1.94h-3.59c-6.55,0-11.87-5.25-11.99-11.77V27.28V3.41 L43.31,137.78V13.72C43.43,7.2,48.75,1.95,55.3,1.95h3.58L58.92,0L0,0l0.03,1.94h3.59c6.5,0,11.78,5.17,11.99,11.61v147.63v30.12 l97.71-134.24v136.15C113.16,199.71,107.86,204.93,101.32,204.93z"/></g><g><g><path class="w" d="M325.48,71.51c15.76,0,24.42,7.53,24.47,18.8c-0.04,9.54-6.12,15.27-12.46,17.09 c11.97,1.78,19.28,10.55,19.27,21.69c0,12.7-9.45,21.14-26.2,21.14h-27.4l0.02-1.12h1.42c3.91,0,7.09-3.11,7.2-7V79.6 c0-3.88-3.29-6.98-7.22-6.98h-1.4l-0.02-1.12L325.48,71.51z M330.15,146.12c11.54,0.05,18.18-6.47,18.17-17.84 c0.01-16.85-14.5-19.67-25.38-19.64l-0.03-1.06c6.86,0.03,18.55-2,18.59-16.46c-0.04-10.17-5.78-16.01-16.44-16h-5.95v71.01 H330.15z"/><path class="w" d="M417.32,150.22H370.7l0.02-1.12h1.42c3.93,0,7.13-3.15,7.2-7.07V79.06c-0.38-3.62-3.44-6.44-7.16-6.44h-1.42 l-0.02-1.12h32.86c4.85-0.05,11.32-1.17,13.41-2.05v3.29v1.88v9.03l-1.14-0.02v-2c0-3.57-2.78-6.48-6.3-6.69h-22.93v34.77h19 c3.01-0.06,5.44-2.51,5.44-5.54v-1.66l1.1-0.01v17.8l-1.1-0.01v-1.66c0-2.99-2.37-5.42-5.32-5.54h-19.12v33.7h16.13 c11.91,0,16.49-6.16,19.96-14.73h1.12L417.32,150.22z"/><path class="w" d="M502.12,142.02c2.27,5.01,6.43,7.08,9.88,7.08h0.94v1.12h-25.32v-1.11h0.99c2.9,0,5.92-2.56,4.27-7.06 l-7.19-19.15h-30.29l-7.53,19.22c-1.59,4.46,1.41,6.99,4.3,6.99h0.99v1.11h-22.63v-1.12h1.01c3.42,0,7.58-2.07,9.85-7.07 l25.5-60.51c0,0,4.16-9.11,4.16-11.58h1.01L502.12,142.02z M484.41,119.52l-13.55-36.09l-14.15,36.09H484.41z"/><path class="w" d="M593.25,71.5v1.12h-1.83c-3.16,0-5.74,2.21-5.94,5.31v44.47c0,17.63-12.12,29.39-30.31,29.39 c-18.71,0-31.19-11.68-31.19-29.19V78.19c-0.06-3.23-2.7-5.57-5.94-5.57h-1.83V71.5h22.84v1.12h-1.83c-3.19,0-5.79,2.25-5.93,5.4 v42.93c0,16.38,9.55,27.31,23.88,27.31c15.02,0,25.04-10.34,25.06-25.85V78.04c-0.14-3.15-2.74-5.41-5.94-5.41h-1.83V71.5 L593.25,71.5z"/><path class="w" d="M655.43,71.39c4.86-0.03,11.44-1.16,13.54-2.05v14.14l-1.13-0.02v-2c0-3.61-2.84-6.54-6.41-6.7h-21.31v67.36 c0.12,3.87,3.3,6.98,7.2,6.98h1.42l0.02,1.12h-24.62l0.02-1.12h1.42c3.87,0,7.03-3.06,7.2-6.89V74.76h-21.33 c-3.57,0.16-6.41,3.09-6.41,6.7v2l-1.13,0.02V69.34c2.1,0.89,8.68,2.02,13.54,2.05H655.43z"/><path class="w" d="M749.49,71.5v1.13h-1.57c-4.69,0-8.88,3.09-11.28,6.53L714.4,115.1v26.93c0.07,3.92,3.27,7.07,7.2,7.07h1.42 l0.02,1.12h-24.6l0.02-1.12h1.42c3.91,0,7.09-3.12,7.2-7.01v-27.1l-21.41-35.8c-2.18-3.45-6.6-6.57-11.31-6.57h-1.53V71.5h27.65 v1.12h-1.42c-3.29,0-5.59,3.79-3.94,6.98l16.85,31.47l17.92-31.48l0.06-0.11c1.75-3.17-0.97-6.86-4-6.86h-1.42V71.5L749.49,71.5z "/><path class="w" d="M852.5,142.02c2.27,5.01,6.43,7.08,9.88,7.08h0.94v1.12h-25.32v-1.11h0.99c2.9,0,5.92-2.56,4.27-7.06 l-7.19-19.15h-30.29l-7.53,19.22c-1.59,4.46,1.41,6.99,4.3,6.99h0.99v1.11h-22.63v-1.12h1.01c3.42,0,7.58-2.07,9.85-7.07 l25.5-60.51c0,0,4.16-9.11,4.16-11.58h1.01L852.5,142.02z M834.8,119.52l-13.55-36.09l-14.15,36.09H834.8z"/><path class="w" d="M910.8,71.39c4.86-0.03,11.44-1.16,13.54-2.05v14.14l-1.13-0.02v-2c0-3.61-2.84-6.54-6.41-6.7h-21.31v67.36 c0.12,3.87,3.3,6.98,7.2,6.98h1.42l0.02,1.12H879.5l0.02-1.12h1.42c3.87,0,7.03-3.06,7.2-6.89V74.76h-21.33 c-3.57,0.16-6.41,3.09-6.41,6.7v2l-1.13,0.02V69.34c2.1,0.89,8.68,2.02,13.54,2.05H910.8z"/><path class="w" d="M982.7,150.22h-46.62l0.02-1.12h1.42c3.93,0,7.13-3.15,7.2-7.07V79.06c-0.38-3.62-3.44-6.44-7.16-6.44h-1.42 l-0.02-1.12h32.86c4.85-0.05,11.32-1.17,13.41-2.05v3.29v1.88v9.03l-1.14-0.02v-2c0-3.57-2.78-6.48-6.3-6.69h-22.93v34.77h19 c3.01-0.06,5.44-2.51,5.44-5.54v-1.66l1.1-0.01v17.8l-1.1-0.01v-1.66c0-2.99-2.37-5.42-5.32-5.54h-19.12v33.7h16.13 c11.91,0,16.49-6.16,19.96-14.73h1.12L982.7,150.22z"/><path class="w" d="M1055.82,132.06l-6.55,18.17h-46.62l0.02-1.12h1.42c3.93,0,7.13-3.15,7.2-7.07V79.7 c-0.07-3.92-3.27-7.07-7.2-7.07h-1.42l-0.02-1.12h24.6l-0.02,1.12h-1.42c-3.94,0-7.13,3.15-7.2,7.07v67.08h16.13 c11.91,0,16.49-6.16,19.96-14.73L1055.82,132.06z"/><path class="w" d="M1091.56,150.22h-24.6l0.02-1.12h1.42c3.94,0,7.13-3.15,7.2-7.07V79.64c-0.1-3.89-3.28-7.02-7.2-7.02h-1.42 l-0.02-1.13h24.6l-0.02,1.13h-1.42c-3.91,0-7.09,3.12-7.2,7v62.41c0.07,3.92,3.27,7.07,7.2,7.07h1.42L1091.56,150.22z"/><path class="w" d="M1154.4,150.22h-46.62l0.02-1.12h1.42c3.94,0,7.13-3.15,7.2-7.07V79.06c-0.38-3.62-3.44-6.44-7.16-6.44 h-1.42l-0.02-1.12h32.86c4.85-0.05,11.32-1.17,13.41-2.05v3.29v1.88v9.03l-1.14-0.02v-2c0-3.57-2.78-6.48-6.3-6.69h-22.93v34.77 h19c3.01-0.06,5.44-2.51,5.44-5.54v-1.66l1.1-0.01v17.8l-1.1-0.01v-1.66c0-2.99-2.37-5.42-5.32-5.54h-19.12v33.7h16.13 c11.91,0,16.49-6.16,19.96-14.73h1.12L1154.4,150.22z"/><path class="w" d="M1204.68,71.5c13.63,0,21.98,8.03,21.98,21.14c0,10.89-8.29,21.44-19.1,21.44c2.41,1.11,5.87,4.84,8.05,7.91 c0,0,9.7,13.84,14.05,18.6c4.53,4.94,8.69,8.45,15.3,8.5v1.13h-6.17c-10.47,0-16.09-5.64-19.62-9.86 c-1.28-1.53-13.95-19.96-14.82-21.05c-2.94-3.69-6.22-7.59-10.33-7.59v-1.04c0,0,2.56,0.05,5.94-0.04 c5.83-0.16,14.36-1.55,17.55-11.68c0.49-1.58,0.78-4.27,0.71-6.73c-0.28-10.17-5.58-16.69-13.95-17.14 c-5.73-0.31-12.54-0.03-14-0.09v67.02c0.07,3.92,3.27,7.07,7.2,7.07h1.42l0.02,1.12h-24.57l0.02-1.12h1.42 c3.92,0,7.1-3.13,7.2-7.02V79.69c-0.07-3.92-3.27-7.07-7.2-7.07h-1.42l-0.02-1.12L1204.68,71.5z"/></g><g><g><path class="a" d="M563.08,215.4v-25.72h2.72v25.72H563.08z"/><path class="a" d="M586.67,215.4v-25.72h2.72v23.37h14.41v2.35H586.67z"/><path class="a" d="M620.81,215.4v-25.72h2.72v25.72H620.81z"/><path class="a" d="M650.54,215.4v-9.55l0.62,1.69l-10.92-17.86h2.9l9.59,15.69h-1.54l9.59-15.69h2.72l-10.92,17.86l0.62-1.69 v9.55H650.54z"/><path class="a" d="M674.61,215.4l11.76-25.72h2.68l11.76,25.72h-2.87l-10.8-24.14h1.1l-10.8,24.14H674.61z M679.23,208.52 l0.81-2.2H695l0.81,2.2H679.23z"/><path class="a" d="M717.57,215.4v-25.72h2.24l17.75,22.34h-1.18v-22.34h2.68v25.72h-2.24l-17.71-22.34h1.18v22.34H717.57z"/><path class="a" d="M755.82,215.4l11.76-25.72h2.68l11.76,25.72h-2.87l-10.8-24.14h1.1l-10.8,24.14H755.82z M760.45,208.52 l0.81-2.2h14.96l0.81,2.2H760.45z"/><path class="a" d="M820.9,215.4v-25.72h2.24l17.75,22.34h-1.18v-22.34h2.68v25.72h-2.24l-17.71-22.34h1.18v22.34H820.9z"/><path class="a" d="M863.27,215.4v-25.72h2.72v25.72H863.27z"/><path class="a" d="M886.86,215.4v-25.72h2.72v25.72H886.86z M889.21,209l-0.11-3.31l15.58-16.02h3.12l-11.35,11.91l-1.54,1.65 L889.21,209z M905.35,215.4l-11.1-12.79l1.84-1.98l12.49,14.77H905.35z"/><path class="a" d="M935.81,215.62c-1.94,0-3.73-0.32-5.38-0.97c-1.65-0.65-3.09-1.57-4.3-2.76c-1.21-1.19-2.16-2.57-2.83-4.15 s-1.01-3.31-1.01-5.2c0-1.89,0.34-3.62,1.01-5.2c0.67-1.58,1.62-2.96,2.83-4.15c1.21-1.19,2.64-2.11,4.28-2.76 c1.64-0.65,3.44-0.97,5.4-0.97c1.94,0,3.72,0.33,5.37,0.97c1.64,0.65,3.07,1.56,4.28,2.74c1.21,1.18,2.16,2.56,2.83,4.15 c0.67,1.59,1.01,3.33,1.01,5.22c0,1.89-0.34,3.63-1.01,5.22c-0.67,1.59-1.62,2.98-2.83,4.15c-1.21,1.18-2.64,2.09-4.28,2.74 C939.53,215.29,937.74,215.62,935.81,215.62z M935.81,213.19c1.54,0,2.97-0.26,4.28-0.79c1.31-0.53,2.45-1.27,3.42-2.24 c0.97-0.97,1.72-2.1,2.26-3.38c0.54-1.29,0.81-2.7,0.81-4.25c0-1.54-0.27-2.96-0.81-4.24c-0.54-1.29-1.29-2.41-2.26-3.38 c-0.97-0.97-2.11-1.71-3.42-2.24c-1.31-0.53-2.74-0.79-4.28-0.79c-1.54,0-2.98,0.26-4.3,0.79c-1.32,0.53-2.47,1.27-3.44,2.24 c-0.97,0.97-1.73,2.1-2.28,3.38c-0.55,1.29-0.83,2.7-0.83,4.24c0,1.52,0.28,2.93,0.83,4.23c0.55,1.3,1.31,2.43,2.28,3.4 c0.97,0.97,2.11,1.72,3.44,2.24C932.83,212.93,934.27,213.19,935.81,213.19z"/><path class="a" d="M967.89,215.4v-25.72h2.72v23.37h14.41v2.35H967.89z"/></g><g><polygon class="a" points="308.6,202.53 507.92,199.98 507.92,205.09 "/><polygon class="a" points="1040.17,199.98 1239.5,202.53 1040.17,205.09 "/></g></g></g></svg></a>
+                <p data-i18n="shared.footer.tagline">Мястото, където красотата среща прецизността!</p>
+                <div class="at-footer__social">
+                    <a href="https://www.facebook.com/IliyanaPhiAcademy/" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 22v-8h2.7l.4-3.2h-3.1V8.7c0-.9.3-1.5 1.6-1.5h1.6V4.3c-.3 0-1.3-.1-2.4-.1-2.4 0-4 1.400-4 4.100v2.500H7.600V14h2.700v8z"/></svg></a>
+                    <a href="https://www.instagram.com/Iliyanailieva.phiacademy/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 7.300a4.700 4.700 0 1 0 0 9.400 4.700 4.700 0 0 0 0-9.400m0 7.700a3 3 0 1 1 0-6 3 3 0 0 1 0 6m6-7.900a1.100 1.100 0 1 1-2.200 0 1.100 1.100 0 0 1 2.200 0M21 8.200c0-1.300-.4-2.500-1.300-3.400C18.800 3.800 17.600 3.500 16.300 3.400 14.900 3.300 9.100 3.300 7.700 3.400 6.400 3.500 5.200 3.800 4.300 4.700 3.400 5.700 3 6.900 3 8.200c-.1 1.400-.1 6.200 0 7.600 0 1.300.400 2.500 1.300 3.400.900.900 2.100 1.300 3.400 1.300 1.400.100 7.200.100 8.600 0 1.300 0 2.500-.400 3.400-1.300.900-.900 1.300-2.100 1.300-3.400.100-1.400.100-6.200 0-7.600m-2 9.300a3 3 0 0 1-1.700 1.700c-1.200.500-4 .400-5.300.400s-4.100.100-5.300-.400A3 3 0 0 1 5 17.500c-.500-1.200-.400-4.200-.400-5.500s-.100-4.300.400-5.500A3 3 0 0 1 6.700 4.800c1.200-.500 4-.400 5.300-.400s4.100-.100 5.300.400A3 3 0 0 1 19 6.500c.500 1.200.400 4.200.400 5.500s.100 4.300-.400 5.500"/></svg></a>
+                    <a href="https://www.tiktok.com/@iliqna_ilieva4" target="_blank" rel="noopener" aria-label="TikTok"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.600 5.800A4.300 4.300 0 0 1 15.500 3h-3.100v12.400a2.600 2.600 0 1 1-2.600-2.700c.300 0 .500 0 .800.100V9.700a5.700 5.700 0 1 0 4.900 5.700V9a7.300 7.300 0 0 0 4.300 1.400V7.300a4.300 4.300 0 0 1-3.200-1.500"/></svg></a>
+                    <a href="https://share.google/LWLt1rNLslWSX71RU" target="_blank" rel="noopener" aria-label="Google"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.600 12.200c0-.700-.100-1.300-.200-1.900H12v3.700h5.400a4.600 4.600 0 0 1-2 3v2.500h3.200c1.900-1.700 3-4.300 3-7.300M12 22c2.700 0 5-.900 6.600-2.400l-3.200-2.500c-.900.600-2 1-3.400 1-2.600 0-4.800-1.800-5.600-4.100H3.100v2.600A10 10 0 0 0 12 22M6.400 14a6 6 0 0 1 0-3.900V7.400H3.100a10 10 0 0 0 0 9zM12 5.900c1.500 0 2.800.500 3.800 1.500l2.900-2.900A10 10 0 0 0 3.100 7.400L6.400 10c.800-2.400 3-4.100 5.600-4.100"/></svg></a>
                 </div>
             </div>
-        </footer>
-    </div>
-    <div class="mobile-nav__wrapper">
-        <div class="mobile-nav__overlay mobile-nav__toggler"></div>
-        <div class="mobile-nav__content">
-            <span class="mobile-nav__close mobile-nav__toggler"><i class="icon-close"></i></span>
-
-            <div class="logo-box logo-retina">
-                <a href="index.html" aria-label="logo image"><img src="assets/images/logo-light.webp?v=4b2c31c5" width="164"
-                        alt="Beauty Atelier In Силистра лого" //></a>
-            </div>
-            <div class="mobile-nav__container"></div>
-
-            <div class="mobile-nav__lang">
-                <div class="lang-toggle" role="group" aria-label="Language selector">
-                    <button class="lang-toggle__option active" data-lang="bg" aria-label="Bulgarian">BG</button>
-                    <button class="lang-toggle__option" data-lang="en" aria-label="English">EN</button>
-                </div>
-            </div>
-
-            <ul class="mobile-nav__contact list-unstyled">
-                <li>
-                    <span class="mobile-nav__contact__icon">
-                        <i class="fa fa-envelope"></i>
-                    </span>
-                    <a href="mailto:info@ba-in.com">info@ba-in.com</a>
-                </li>
-                <li>
-                    <span class="mobile-nav__contact__icon">
-                        <i class="fa fa-phone-alt"></i>
-                    </span>
-                    <a href="tel:+359 89 339 8390">+359 89 339 8390</a>
-                </li>
-            </ul>
-            <div class="social-links">
-                <a href="https://www.facebook.com/IliyanaPhiAcademy/">
-                    <i class="fab fa-facebook-f" aria-hidden="true"></i>
-                    <span class="sr-only">Facebook</span> </a> <a
-                    href="https://www.instagram.com/Iliyanailieva.phiacademy/">
-
-                    <i class="fab fa-instagram" aria-hidden="true"></i>
-
-                    <span class="sr-only">Instagram</span>
-                </a> <a href="https://www.tiktok.com/@iliqna_ilieva4">
-                    <i class="fab fa-tiktok" aria-hidden="true"></i>
-
-                    <span class="sr-only">Tik Tok</span> </a> <a href="https://share.google/LWLt1rNLslWSX71RU">
-                    <i class="fab fa-google" aria-hidden="true"></i> <span class="sr-only">Google</span> </a>
-            </div>
-        </div>
-    </div>
-    <div class="search-popup">
-        <div class="search-popup__overlay search-toggler"></div>
-        <div class="search-popup__content">
-            <form role="search" method="get" class="search-popup__form" action="javascript:void(0)">
-                <input type="text" id="search" placeholder="Търсене..." />
-                <button type="submit" aria-label="search submit" class="mediox-btn">
-                    <i class="icon-search"></i>
-                </button>
-            </form>
-        </div>
-    </div>
-    <aside class="sidebar-one">
-        <div class="sidebar-one__overlay sidebar-btn__toggler"></div>
-        <div class="sidebar-one__content">
-            <span class="sidebar-one__close sidebar-btn__toggler"><i class="icon-close"></i></span>
-            <div class="sidebar-one__logo sidebar-one__item logo-retina">
-                <a href="index.html" aria-label="logo image"><img src="assets/images/logo-light.webp?v=4b2c31c5" width="164"
-                        alt="Beauty Atelier In Силистра лого" //>
-                </a>
-            </div>
-            <div class="sidebar-one__about sidebar-one__item">
-                <p class="sidebar-one__about__text" data-i18n="shared.sidebar.about_text"> С внимание към всеки детайл и
-                    индивидуален подход към всеки клиент,
-                    ние създаваме не просто визия, а самочувствие. Довери се на сертифициран професионалист с опит!</p>
-            </div>
-            <div class="sidebar-one__info sidebar-one__item">
-                <h4 class="sidebar-one__title">Contact</h4>
-                <ul class="sidebar-one__info__list">
-                    <li>
-                        <span class="sidebar-one__info__icon sidebar-one__info__icon--location">
-                            <i class="icon-location"></i>
-                        </span>
-                        <address>Силистра център, ул. "Отец Паисий" 27, 7500 Силистра, България</address>
-                    </li>
-                    <li>
-                        <span class="sidebar-one__info__icon">
-                            <i class="icon-paper-plane"></i>
-                        </span>
-                        <a href="mailto:info@ba-in.com">info@ba-in.com</a>
-                    </li>
-                    <li>
-                        <span class="sidebar-one__info__icon">
-                            <i class="icon-telephone"></i>
-                        </span>
-                        <a href="tel:+359 89 339 8390">+359 89 339 8390</a>
-                    </li>
+            <div>
+                <h2 data-i18n="shared.at.footer_procedures">Процедури</h2>
+                <ul>
+                    <li><a href="laminirane.html" data-i18n="shared.proc.lamination">Ламиниране</a></li>
+                    <li><a href="vezhdi.html" data-i18n="shared.proc.vezhdi">Вежди</a></li>
+                    <li><a href="microblading.html" data-i18n="shared.footer.proc.microblading">Микроблейдинг</a></li>
+                    <li><a href="lashes.html" data-i18n="shared.footer.proc.lashes">Миглопластика</a></li>
+                    <li><a href="microneedling.html" data-i18n="shared.footer.proc.microneedling">Микронидлинг</a></li>
+                    <li><a href="plasma.html" data-i18n="shared.footer.proc.plasma">Плазма пен</a></li>
+                    <li><a href="piercing.html" data-i18n="shared.proc.probiwane">Пробиване на уши</a></li>
+                    <li><a href="perm-makeup-removal.html" data-i18n="shared.footer.proc.perm_removal">Премахване на перманентен грим</a></li>
                 </ul>
             </div>
-            <div class="social-links sidebar-one__item">
-                <a href="https://www.facebook.com/IliyanaPhiAcademy/">
-                    <i class="fab fa-facebook-f" aria-hidden="true"></i>
-                    <span class="sr-only">Facebook</span>
-                </a>
-                <a href="https://www.instagram.com/Iliyanailieva.phiacademy/">
-                    <i class="fab fa-instagram" aria-hidden="true"></i>
-                    <span class="sr-only">Instagram</span>
-                </a>
-                <a href="https://www.tiktok.com/@iliqna_ilieva4">
-                    <i class="fab fa-tiktok" aria-hidden="true"></i>
-                    <span class="sr-only">Tik Tok</span>
-                </a>
-                <a href="https://share.google/LWLt1rNLslWSX71RU">
-                    <i class="fab fa-google" aria-hidden="true"></i>
-                    <span class="sr-only">Google</span>
-                </a>
+            <div>
+                <h2 data-i18n="shared.at.footer_atelier">Ателието</h2>
+                <ul>
+                    <li><a href="about.html" data-i18n="shared.footer.link.about">За нас</a></li>
+                    <li><a href="pricing.html" data-i18n="shared.footer.link.pricing">Ценоразпис</a></li>
+                    <li><a href="gallery.html" data-i18n="shared.footer.link.gallery">Галерия</a></li>
+                    <li><a href="blog.html" data-i18n="shared.footer.link.blog">Блог</a></li>
+                    <li><a href="faq.html" data-i18n="shared.footer.link.faq">Често Задавани Въпроси</a></li>
+                    <li><a href="appointment.html" data-i18n="shared.footer.link.appointment">Запази час</a></li>
+                    <li><a href="contact.html" data-i18n="shared.footer.link.contact">Контакти</a></li>
+                </ul>
             </div>
-            <div class="sidebar-one__newsletter sidebar-one__item">
-                <label class="sidebar-one__title" for="sidebar-email" data-i18n="shared.sidebar.newsletter_label">
-                    новини и промоции</label>
-                <form action="#" class="sidebar-one__newsletter__inner mc-form"
-                    data-url="https://chimpstatic.com/mcjs-connected/js/users/1abfa449aa1046d4856948589/477d40922746e4f1cdcaa8e9e.js">
-                    <input type="email" name="EMAIL" id="sidebar-email" class="sidebar-one__newsletter__input"
-                        placeholder="Email Address">
-                    <button type="submit" class="sidebar-one__newsletter__btn"><span class="icon-email"
-                            aria-hidden="true"></span></button>
-                </form>
-                <div class="mc-form__response"></div>
+            <div>
+                <h2 data-i18n="shared.at.footer_visit">Посети ни</h2>
+                <address>
+                    <a href="https://maps.app.goo.gl/1E4jb3951zqGQFux7" target="_blank" rel="noopener" data-i18n="shared.at.address_full">ул. „Отец Паисий“ 27, 7500 Силистра</a>
+                    <a href="tel:+359893398390">+359 89 339 8390</a>
+                    <a href="mailto:info@ba-in.com">info@ba-in.com</a>
+                    <span data-i18n="shared.at.hours">Понеделник–събота, 09:00–18:00. След 18:00 по уговорка.</span>
+                </address>
+                <div class="at-footer__chat">
+                    <a href="https://wa.me/359893398390" target="_blank" rel="noopener">WhatsApp</a>
+                    <a href="viber://chat?number=%2B359893398390">Viber</a>
+                    <a href="https://m.me/IliyanaPhiAcademy" target="_blank" rel="noopener">Messenger</a>
+                </div>
             </div>
         </div>
-    </aside><a href="#" data-target="html" class="scroll-to-target scroll-to-top">
-        <span class="scroll-to-top__text" data-i18n="shared.scroll_top">Начало</span>
-        <span class="scroll-to-top__wrapper"><span class="scroll-to-top__inner"></span></span>
-    </a>
-
-    <script defer src="assets/vendors/jquery/jquery-3.7.0.min.js?v=d8f9afbf"></script>
-    <script defer src="assets/vendors/jquery-ajaxchimp/jquery.ajaxchimp.min.js?v=2dcc9f69"></script>
-    <script defer src="assets/js/mediox.js?v=baa7a213"></script>
-
-    <!-- AI Chatbot script -->
-    <script defer src="assets/js/ai-chat-v2.js?v=bf62ea73"></script>
-
-<!-- WhatsApp / Viber Contact Widget -->
-    <div class="contact-widget" id="contact-widget">
-        <div class="contact-widget__options">
-            <a href="https://wa.me/359893398390?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D0%B5%D0%B9%D1%82%D0%B5%2C%20%D0%B1%D0%B8%D1%85%20%D0%B8%D1%81%D0%BA%D0%B0%D0%BB%D0%B0%20%D0%B4%D0%B0%20%D0%B7%D0%B0%D0%BF%D0%B8%D1%88%D0%B0%20%D1%87%D0%B0%D1%81."
-                class="contact-widget__option contact-widget__option--whatsapp" target="_blank"
-                rel="noopener noreferrer" aria-label="WhatsApp">
-                <span class="contact-widget__option__icon">
-                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path
-                            d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
-                    </svg>
-                </span>
-                <span data-i18n="widget.whatsapp">WhatsApp</span>
-            </a>
-            <a href="viber://chat?number=%2B359893398390" class="contact-widget__option contact-widget__option--viber"
-                aria-label="Viber">
-                <span class="contact-widget__option__icon">
-                    <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
-                        <path
-                            d="M440.5 401C469.1 364.5 487 318 487 266 487 131.2 384.8 22 256.5 22 128.2 22 26 131.2 26 266c0 134.8 102.2 244 230.5 244 19 0 37.6-2.1 55.4-6.3 35.5 29.8 77.5 41.5 119.5 45.3 4.2.4 8-2.6 8.5-6.8.5-4.2-2.3-8.2-6.4-9-33.1-6.4-63.5-22.3-85.3-46.7-1.1-1.3-2.1-2.7-3.1-4.2-.6-1-1.4-1.9-2.3-2.8l-1.3-1.3c2.3-2.4 4.7-4.8 7-7.2zm-280.1-278.4c-9.1-13.8-24.1-23.7-40.8-26.6-1.5-.3-3-.4-4.5-.4-12.7 0-24.6 5.3-33 14.9L64.2 130c-5.2 6.1-8.1 13.9-8.1 21.9 0 54 26 122.1 76.5 174.5C183.1 378.8 251.2 404.9 305.2 404.9c8 0 15.8-2.9 21.9-8.1l19.5-17.9c9.6-8.4 15-20.3 15-33 0-1.5-.1-3-.4-4.5-2.9-16.8-12.8-31.7-26.6-40.8l-27.4-18c-8.9-5.9-20.3-6.5-29.8-1.5-3.3 1.7-6.2 4.1-8.5 7.1l-14.5 19.3c-2 .9-4.1 1.6-6.3 2-25.7 4.9-52.9-10.6-64-33.7-4.1-8.6-4-18.4.3-26.9l19.3-14.5c3-2.3 5.4-5.2 7.1-8.5 5.1-9.5 4.5-20.8-1.5-29.8l-18-27.4zm100.9 9c0 1.9-1.5 3.5-3.5 3.5-34.9 0-63.3 28.4-63.3 63.3 0 1.9-1.5 3.5-3.5 3.5s-3.5-1.5-3.5-3.5c0-38.8 31.5-70.3 70.3-70.3 1.9 0 3.5 1.5 3.5 3.5zm23.8-36c0 1.9-1.5 3.5-3.5 3.5-54.8 0-99.3 44.5-99.3 99.3 0 1.9-1.5 3.5-3.5 3.5s-3.5-1.5-3.5-3.5c0-58.6 47.7-106.3 106.3-106.3 1.9 0 3.5 1.5 3.5 3.5z" />
-                    </svg>
-                </span>
-                <span data-i18n="widget.viber">Viber</span>
-            </a>
-            <a href="https://m.me/IliyanaPhiAcademy" class="contact-widget__option contact-widget__option--messenger"
-                aria-label="Messenger" target="_blank" rel="noopener noreferrer">
-                <span class="contact-widget__option__icon">
-                    <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
-                        <path
-                            d="M256.55 8C116.52 8 8 110.34 8 248.57c0 72.3 29.71 134.78 78.07 177.94 8.35 7.51 6.63 11.86 8.05 58.23A19.92 19.92 0 0 0 122 502.31c52.91-23.3 53.59-25.14 62.56-22.7C337.85 521.8 504 423.7 504 248.57 504 110.34 396.59 8 256.55 8zm149.24 185.13l-73 115.57a37.37 37.37 0 0 1-53.91 9.93l-58.08-43.47a15 15 0 0 0-18 0l-78.37 59.44c-10.46 7.93-24.16-4.6-17.11-15.67l73-115.57a37.36 37.36 0 0 1 53.91-9.93l58.06 43.46a15 15 0 0 0 18 0l78.41-59.38c10.44-7.98 24.39 4.53 17.09 15.62z"
-                            fill="white" />
-                    </svg>
-                </span>
-                <span data-i18n="widget.messenger">Messenger</span>
-            </a>
+        <div class="at-footer__base">
+            <span>&copy; <span class="at-year">2026</span> Beauty Atelier IN · Iliyana Nikolaeva</span>
+            <nav data-i18n-aria="atelier.legal_nav" aria-label="Правна информация">
+                <a href="Privacy-policy.html" data-i18n="shared.footer.privacy">Поверителност</a>
+                <a href="termsandconditions.html" data-i18n="shared.footer.terms">Общи условия</a>
+                <a href="#" id="manage-cookies" data-i18n="cookie.manage">Настройки за бисквитки</a>
+            </nav>
+            <span><span data-i18n="shared.footer.designed_by">Дизайн и разработка от</span> <a href="https://gosmartr.co.uk" target="_blank" rel="noopener">GoSmartR</a></span>
         </div>
-        <button class="contact-widget__toggle" aria-label="Contact via WhatsApp or Viber">
-            <svg class="icon-wa" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path
-                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
-            </svg>
-            <span class="icon-close-widget">&#10005;</span>
-        </button>
     </div>
-    <script defer src="assets/js/i18n.js?v=6ebc90ae" data-translations="assets/js/translations.js?v=8463c965"></script>
-
-
+</footer>
+<div class="at-bar at-on-ink" id="at-bar" inert>
+    <a class="at-bar__book" href="/notino" target="_blank" rel="noopener"><span data-i18n="shared.header.book_btn">Запази час</span><svg class="at-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+    <a class="at-bar__alt" href="tel:+359893398390"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2Z"/></svg><span data-i18n="shared.at.call">Обади се</span></a>
+    <a class="at-bar__alt at-bar__alt--icon" href="https://wa.me/359893398390?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D0%B5%D0%B9%D1%82%D0%B5%2C%20%D0%B1%D0%B8%D1%85%20%D0%B8%D1%81%D0%BA%D0%B0%D0%BB%D0%B0%20%D0%B4%D0%B0%20%D0%B7%D0%B0%D0%BF%D0%B8%D1%88%D0%B0%20%D1%87%D0%B0%D1%81." target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.64.08-.3-.15-1.26-.46-2.4-1.48-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.18.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.91-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.88 1.21 3.07.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.7.62.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2-1.41.25-.7.25-1.29.18-1.42-.08-.12-.27-.2-.57-.35M12.05 21.79h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.89 9.89-9.89 2.64 0 5.12 1.03 6.99 2.9a9.83 9.83 0 0 1 2.89 6.99c0 5.45-4.44 9.89-9.88 9.89m8.41-18.3A11.82 11.82 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.89c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.88 11.88 0 0 0 5.69 1.45c6.55 0 11.89-5.34 11.89-11.9 0-3.17-1.24-6.16-3.48-8.41"/></svg></a>
+</div>
+<!-- /at:footer -->
+<!-- at:scripts -->
+    <script defer src="assets/js/atelier.js?v=ade1cb8c"></script>
+    <script defer src="assets/js/atelier-legacy.js?v=ad2cb0e6"></script>
+    <script defer src="assets/js/ai-chat-v2.js?v=bf62ea73"></script>
+    <script defer src="assets/js/i18n.js?v=6ebc90ae" data-translations="assets/js/translations.js?v=09e1a5d3"></script>
     <script defer src="assets/js/cookie-consent.js?v=48420352"></script>
-    <script defer src="assets/js/contact-widget.js?v=5c825d91"></script>
+<!-- /at:scripts -->
 </body>
-
 </html>
