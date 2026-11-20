@@ -27,6 +27,12 @@ RewriteRule ^(.*)/$ /$1 [L,R=301]
 # Blog page rename redirect
 RewriteRule ^blog-carousel-2\.html$ /blog.html [L,R=301]
 
+# Thin placeholder posts removed 2026-11-20 (55-70 words and stock photos each).
+# Send their old URLs somewhere useful instead of a 404.
+RewriteRule ^beauty-secrets\.html$ /blog.html [L,R=301]
+RewriteRule ^beauty-inspiring\.html$ /blog.html [L,R=301]
+RewriteRule ^aftertreatment\.html$ /faq.html [L,R=301]
+
 # Branded booking short link. Printed materials and pinned social posts say
 # ba-in.com/notino; the partner URL can change without touching anything
 # published. 302 on purpose - do not let browsers cache it permanently.

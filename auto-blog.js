@@ -146,9 +146,9 @@ function imageSize(file) {
 // they sit one level under the FAQ's own <h3>.
 function generateFaqBlock(topic, cls) {
     if (!Array.isArray(topic.faq) || !topic.faq.length) return '';
-    let html = `\n<h3 class="blog-details__inner__title" style="margin-top: 20px;">Често задавани въпроси</h3>\n`;
+    let html = `\n<h3 class="blog-details__inner__title">Често задавани въпроси</h3>\n`;
     topic.faq.forEach(item => {
-        html += `<h4 style="margin-top: 18px;">${item.q}</h4>\n`;
+        html += `<h4>${item.q}</h4>\n`;
         html += `<p class="${cls}">${item.a}</p>\n`;
     });
     return html;
@@ -229,7 +229,7 @@ function generateContentBlock1(topic) {
     // First 3 sections go in the card content area
     const firstSections = topic.sections.slice(0, 3);
     firstSections.forEach(section => {
-        html += `\n<h3 class="blog-details__inner__title" style="margin-top: 20px;">${section.heading}</h3>\n`;
+        html += `\n<h3 class="blog-details__inner__title">${section.heading}</h3>\n`;
         html += sectionProse(section, 'blog-card-four__text');
     });
 
@@ -242,7 +242,7 @@ function generateContentBlock2(topic) {
     // Remaining sections
     const remainingSections = topic.sections.slice(3);
     remainingSections.forEach(section => {
-        html += `\n<h3 class="blog-details__inner__title" style="margin-top: 20px;">${section.heading}</h3>\n`;
+        html += `\n<h3 class="blog-details__inner__title">${section.heading}</h3>\n`;
         html += sectionProse(section, 'blog-details__inner__text');
     });
 
@@ -258,7 +258,7 @@ function generateContentBlock2(topic) {
 
     // Booking CTA
     html += `
-<div style="margin-top: 40px; text-align: center;">
+<div class="at-figure">
     <a href="appointment.html" class="mediox-btn" aria-label="Запазете час сега"><span>Запази час</span> <span class="mediox-btn__icon"><i class="icon-up-right-arrow"></i></span></a>
 </div>
 `;
@@ -468,8 +468,8 @@ function buildPost(topic, opts = {}) {
         // The template's <img> also carries loading/decoding attributes; without
         // them in the pattern this replacement silently missed and every generated
         // post kept the PMU thumbnail in its footer.
-        /<img src="assets\/images\/blog\/pmu-removal-hero\.png(?:\?v=[0-9a-f]+)?" style="width: 70px; height: 70px; object-fit: cover;" alt="[^"]*"([^>]*)>/,
-        (_m, rest) => `<img src="${heroPath}" style="width: 70px; height: 70px; object-fit: cover;" alt="${heroAlt}"${rest}>`
+        /<img src="assets\/images\/blog\/pmu-removal-hero\.png(?:\?v=[0-9a-f]+)?"(?: style="[^"]*"| width="70" height="70")? alt="[^"]*"([^>]*)>/,
+        (_m, rest) => `<img src="${heroPath}" width="70" height="70" alt="${heroAlt}"${rest}>`
     );
     html = html.replace(
         /href="pmu-removal-guide\.html" data-i18n="shared\.footer\.blog1_title">Правилна процедура<\/a>/,
@@ -513,7 +513,7 @@ function updateBlogPage(topic) {
                             <div class="col-md-12" data-category="${topic.category.replace(/ /g, ' ')}">
                                 <div class="blog-card-four wow fadeInUp" data-wow-duration='1500ms' data-wow-delay='00ms'>
                                     <div class="blog-card-four__image">
-                                        <img src="${heroPath}" alt="${topic.title}" style="width: 100%; height: auto; object-fit: cover; aspect-ratio: 518/350;">
+                                        <img src="${heroPath}" alt="${topic.title}" width="518" height="350" loading="lazy" decoding="async">
                                         <a href="${topic.slug}.html" class="blog-card-four__image__link"><span class="sr-only">${topic.title}</span></a>
                                         <time datetime="${date.iso}" class="blog-card-four__date">
                                             <span class="blog-card-four__date__day">${date.day}</span>

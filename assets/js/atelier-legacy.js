@@ -39,6 +39,12 @@
             });
         };
         filters.forEach(function (link) {
+            // counts come from the cards on the page, so they stay right when a post is added
+            var f = link.getAttribute('data-filter'), count = link.querySelector('.at-count'), n = 0;
+            cards.forEach(function (card) {
+                if (f === 'all' || (card.getAttribute('data-category') || '').split(' ').indexOf(f) !== -1) n++;
+            });
+            if (count) count.textContent = '(' + n + ')';
             link.setAttribute('role', 'button');
             link.setAttribute('aria-pressed', link.classList.contains('active') ? 'true' : 'false');
             link.addEventListener('click', function (e) {

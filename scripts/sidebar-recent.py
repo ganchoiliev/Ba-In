@@ -32,7 +32,7 @@ def short(h, t):
 def item(d, h, t, i):
     return f'''                                        <li class="sidebar__posts__item">
                                             <div class="sidebar__posts__image">
-                                                <img src="{i}" style="width:70px;height:70px;object-fit:cover;" alt="{html.escape(t)}" loading="lazy" decoding="async">
+                                                <img src="{i}" width="70" height="70" alt="{html.escape(t)}" loading="lazy" decoding="async">
                                             </div>
                                             <div class="sidebar__posts__content">
                                                 <div class="sidebar__posts__meta"><a href="about.html"><span class="sidebar__posts__meta__icon"><i class="icon-user"></i></span><span data-i18n="blog.meta.author">От И. Николаева</span></a></div>

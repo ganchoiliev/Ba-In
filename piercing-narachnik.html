@@ -117,7 +117,7 @@
 @font-face{font-family:"Manrope";font-style:normal;font-weight:200 800;font-display:swap;src:url('assets/fonts/manrope/manrope-latin.woff2?v=a30ddcd3') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
     </style>
     <link rel="stylesheet" href="assets/css/home.bundle.css?v=40152eef" />
-    <link rel="stylesheet" href="assets/css/atelier-article.css?v=06d9d695" />
+    <link rel="stylesheet" href="assets/css/atelier-article.css?v=5a4f144b" />
     <script>document.documentElement.classList.add('at-js')</script>
 <!-- /at:head -->
     <!-- AI Chatbot styles -->
@@ -181,8 +181,7 @@
         <section class="page-header">
             <div class="container-fluid">
                 <div class="page-header__inner">
-                    <div class="page-header__bg"
-                        style="background-image: url(assets/images/backgrounds/page-header-bg.webp?v=9e1f5e56);"></div>
+                    <div class="page-header__bg"></div>
                     <div class="container">
                         <div class="page-header__content">
                             <h1 class="page-header__title">Пиърсинг: Пълен Наръчник</h1>
@@ -208,8 +207,7 @@
                         <div class="blog-details">
                             <div class="blog-card-four wow fadeInUp" data-wow-duration="1500ms">
                                 <div class="blog-card-four__image">
-                                    <img src="assets/images/blog/piercing/1.jpg?v=ec388314"
-                                        style="max-height: 750px; object-fit: contain; object-position: center;"
+                                    <img class="at-img-contain" src="assets/images/blog/piercing/1.jpg?v=ec388314"
                                         alt="Пробиване на уши със Studex System 75 – безопасна и стерилна процедура в Beauty Atelier IN Силистра" loading="lazy" decoding="async" width="1170" height="1383">
                                     <div class="blog-card-four__date">
                                         <span class="blog-card-four__date__day">26</span>
@@ -318,35 +316,35 @@
 
                                 <h3 class="blog-details__inner__title wow fadeInUp" data-wow-duration="1500ms">Ценоразпис на нашите пиърсинг услуги</h3>
                                 <div class="wow fadeInUp" data-wow-duration="1500ms">
-                                    <table style="width:100%;border-collapse:collapse;margin:20px 0;font-size:15px;">
-                                        <thead><tr style="background:var(--mediox-base,#C49A45);color:#fff;">
-                                            <th style="padding:12px 16px;text-align:left;border-radius:8px 0 0 0;">Услуга</th>
-                                            <th style="padding:12px 16px;text-align:center;">Продължителност</th>
-                                            <th style="padding:12px 16px;text-align:right;border-radius:0 8px 0 0;">Цена</th>
+                                    <table>
+                                        <thead><tr>
+                                            <th>Услуга</th>
+                                            <th class="at-center">Продължителност</th>
+                                            <th class="at-num">Цена</th>
                                         </tr></thead>
                                         <tbody>
-                                            <tr style="border-bottom:1px solid #eee;"><td style="padding:12px 16px;">Пробиване на уши със Studex</td><td style="padding:12px 16px;text-align:center;">~15 мин</td><td style="padding:12px 16px;text-align:right;font-weight:700;color:var(--mediox-base,#C49A45);">59 &euro;</td></tr>
-                                            <tr style="border-bottom:1px solid #eee;background:#fafafa;"><td style="padding:12px 16px;">Поставяне на обеца</td><td style="padding:12px 16px;text-align:center;">~10 мин</td><td style="padding:12px 16px;text-align:right;font-weight:700;color:var(--mediox-base,#C49A45);">25 &euro;</td></tr>
-                                            <tr style="border-bottom:1px solid #eee;"><td style="padding:12px 16px;">Поставяне на обеца на носа</td><td style="padding:12px 16px;text-align:center;">~15 мин</td><td style="padding:12px 16px;text-align:right;font-weight:700;color:var(--mediox-base,#C49A45);">45 &euro;</td></tr>
-                                            <tr style="border-bottom:1px solid #eee;background:#fafafa;"><td style="padding:12px 16px;">Пиърсинг на хрущяла на ухото</td><td style="padding:12px 16px;text-align:center;">~15 мин</td><td style="padding:12px 16px;text-align:right;font-weight:700;color:var(--mediox-base,#C49A45);">49 &euro;</td></tr>
-                                            <tr><td style="padding:12px 16px;">Обеци за бебета по домовете</td><td style="padding:12px 16px;text-align:center;">&ndash;</td><td style="padding:12px 16px;text-align:right;font-weight:700;color:var(--mediox-base,#C49A45);">20 &euro;</td></tr>
+                                            <tr><td>Пробиване на уши със Studex</td><td class="at-center">~15 мин</td><td class="at-num">59 &euro;</td></tr>
+                                            <tr><td>Поставяне на обеца</td><td class="at-center">~10 мин</td><td class="at-num">25 &euro;</td></tr>
+                                            <tr><td>Поставяне на обеца на носа</td><td class="at-center">~15 мин</td><td class="at-num">45 &euro;</td></tr>
+                                            <tr><td>Пиърсинг на хрущяла на ухото</td><td class="at-center">~15 мин</td><td class="at-num">49 &euro;</td></tr>
+                                            <tr><td>Обеци за бебета по домовете</td><td class="at-center">&ndash;</td><td class="at-num">20 &euro;</td></tr>
                                         </tbody>
                                     </table>
-                                    <p class="blog-card-four__text" style="font-size:14px;font-style:italic;">Всички цени включват стерилни консумативи и хипоалергенни обеци. <a href="pricing.html">Вижте пълния ценоразпис</a>.</p>
+                                    <p class="blog-card-four__text">Всички цени включват стерилни консумативи и хипоалергенни обеци. <a href="pricing.html">Вижте пълния ценоразпис</a>.</p>
                                 </div>
 
                                 <h3 class="blog-details__inner__title wow fadeInUp" data-wow-duration="1500ms">Готови ли сте за нов пиърсинг?</h3>
                                 <p class="blog-card-four__text wow fadeInUp" data-wow-duration="1500ms">В Beauty Atelier IN всяка процедура се извършва с максимална прецизност, стерилност и внимание към вашия комфорт. Работим със сертифицирана система Studex System 75, 100% хипоалергенни обеци и предлагаме уникалната услуга за едновременно пробиване с двама специалисти. Не оставяйте нещо толкова важно в ръцете на случайността.</p>
-                                <div class="wow fadeInUp" data-wow-duration="1500ms" style="text-align:center;margin:30px 0;">
-                                    <a href="appointment.html" class="mediox-btn" style="display:inline-flex;"><span>Запази час за пиърсинг</span><span class="mediox-btn__icon"><i class="icon-up-right-arrow"></i></span></a>
+                                <div class="wow fadeInUp at-figure" data-wow-duration="1500ms">
+                                    <a href="appointment.html" class="mediox-btn"><span>Запази час за пиърсинг</span><span class="mediox-btn__icon"><i class="icon-up-right-arrow"></i></span></a>
                                 </div>
 
                                 <!-- Specialist Card -->
                                 <div class="mn-specialist-card wow fadeInUp" data-wow-duration="1000ms">
-                                    <div class="mn-specialist-card__img"><img src="assets/images/blog/piercing/4.jpg?v=c8a87798" alt="Илияна Илиева – сертифициран специалист по пиърсинг, Beauty Atelier IN" loading="lazy" width="1170" height="1557"></div>
+                                    <div class="mn-specialist-card__img"><img src="assets/images/blog/piercing/4.jpg?v=c8a87798" alt="Илияна Николаева – сертифициран специалист по пиърсинг, Beauty Atelier IN" loading="lazy" width="1170" height="1557"></div>
                                     <div class="mn-specialist-card__body">
                                         <div class="mn-specialist-card__badge">&#10022; Вашият специалист</div>
-                                        <h3 class="mn-specialist-card__name">Илияна Илиева</h3>
+                                        <h3 class="mn-specialist-card__name">Илияна Николаева</h3>
                                         <p class="mn-specialist-card__title">Сертифициран специалист по пиърсинг със система Studex<br>Beauty Atelier IN &#8212; Силистра</p>
                                         <div class="mn-specialist-card__certs"><span class="mn-cert-badge">Studex</span><span class="mn-cert-badge mn-cert-badge--gold">Piercing</span></div>
                                         <blockquote class="mn-specialist-card__quote">&#8222;Всяко пробиване при мен е с максимална хигиена и индивидуален подход &#8211; особено когато клиентите ми са най-малките. За мен няма рутинна процедура.&#8220;</blockquote>
@@ -362,24 +360,24 @@
                                         <div class="mn-results-divider"><span></span><i>&#9733;</i><span></span></div>
                                     </div>
                                     <div class="mn-result-featured wow fadeInUp" data-wow-duration="1200ms">
-                                        <div class="mn-result-featured__img-wrap" style="max-height:none;"><img src="assets/images/blog/piercing/1.jpg?v=ec388314" style="object-fit:contain;object-position:center;" alt="Пробиване на уши на бебе със Studex &#8211; Beauty Atelier IN" loading="lazy" decoding="async" width="1170" height="1383"></div>
+                                        <div class="mn-result-featured__img-wrap"><img class="at-img-contain" src="assets/images/blog/piercing/1.jpg?v=ec388314" alt="Пробиване на уши на бебе със Studex &#8211; Beauty Atelier IN" loading="lazy" decoding="async" width="1170" height="1383"></div>
                                         <div class="mn-result-featured__badge"><span class="mn-badge mn-badge--skin">Бебе</span><span class="mn-badge mn-badge--sessions">Studex System 75</span></div>
                                     </div>
-                                    <div class="mn-results-grid" style="grid-template-columns:repeat(2,1fr);">
+                                    <div class="mn-results-grid mn-results-grid--two">
                                         <div class="mn-result-card wow fadeInUp" data-wow-duration="1000ms">
-                                            <div class="mn-result-card__img-wrap" style="height:380px;"><img src="assets/images/blog/piercing/2.jpg?v=6c1b1ce1" style="object-position: center 20%;" alt="Пробиване на уши за деца" loading="lazy" width="1440" height="1736"><div class="mn-result-card__overlay"><span class="mn-card-num">02</span></div></div>
+                                            <div class="mn-result-card__img-wrap mn-result-card__img-wrap--tall"><img class="at-pos-top" src="assets/images/blog/piercing/2.jpg?v=6c1b1ce1" alt="Пробиване на уши за деца" loading="lazy" width="1440" height="1736"><div class="mn-result-card__overlay"><span class="mn-card-num">02</span></div></div>
                                             <div class="mn-result-card__body"><div class="mn-card-badges"><span class="mn-badge mn-badge--zone">Дете</span><span class="mn-badge mn-badge--sessions">Обеци</span></div><p class="mn-card-desc">Деликатно пробиване с хипоалергенни обеци</p></div>
                                         </div>
                                         <div class="mn-result-card wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="100ms">
-                                            <div class="mn-result-card__img-wrap" style="height:380px;"><img src="assets/images/blog/piercing/3.jpg?v=620c84ab" style="object-position: center 20%;" alt="Стилен пиърсинг с обеци" loading="lazy" width="1439" height="1832"><div class="mn-result-card__overlay"><span class="mn-card-num">03</span></div></div>
+                                            <div class="mn-result-card__img-wrap mn-result-card__img-wrap--tall"><img class="at-pos-top" src="assets/images/blog/piercing/3.jpg?v=620c84ab" alt="Стилен пиърсинг с обеци" loading="lazy" width="1439" height="1832"><div class="mn-result-card__overlay"><span class="mn-card-num">03</span></div></div>
                                             <div class="mn-result-card__body"><div class="mn-card-badges"><span class="mn-badge mn-badge--zone">Ухо</span><span class="mn-badge mn-badge--sessions">Стил</span></div><p class="mn-card-desc">Елегантна комбинация от обеци</p></div>
                                         </div>
                                     </div>
                                     <div class="mn-more-clients wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="150ms">
                                         <div class="mn-more-clients__header"><span class="mn-more-divider"></span><span class="mn-more-label">Видео от процедури</span><span class="mn-more-divider"></span></div>
-                                        <div style="display:grid;grid-template-columns:1fr;gap:20px;max-width:480px;margin:0 auto;">
-                                            <div style="border-radius:14px;overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,0.1);"><video src="assets/images/blog/piercing/video1.mp4" controls playsinline preload="auto" style="width:100%;display:block;"></video></div>
-                                            <div style="border-radius:14px;overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,0.1);"><video src="assets/images/blog/piercing/video2.mp4" controls playsinline preload="auto" style="width:100%;display:block;"></video></div>
+                                        <div class="at-stack">
+                                            <div class="at-media"><video src="assets/images/blog/piercing/video1.mp4" controls playsinline preload="auto"></video></div>
+                                            <div class="at-media"><video src="assets/images/blog/piercing/video2.mp4" controls playsinline preload="auto"></video></div>
                                         </div>
                                     </div>
                                     <div class="mn-trust-strip wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="100ms">
@@ -412,9 +410,9 @@
                                 </div>
                             </div>
 
-                            <div class="blog-details__share wow fadeInUp" data-wow-duration="1500ms" style="display:flex;gap:12px;align-items:center;flex-wrap:wrap;">
-                                <a href="https://www.facebook.com/sharer/sharer.php?u=https://ba-in.com/piercing-narachnik.html" target="_blank" rel="noopener noreferrer" class="mediox-btn" style="background-color:#1877f2;border-color:#1877f2;color:#fff;padding:12px 25px;font-size:14px;">
-                                    <span data-i18n-html="blog.meta.share_fb"><i class="fab fa-facebook-f" style="margin-right:8px;"></i> Сподели във Facebook</span>
+                            <div class="blog-details__share wow fadeInUp" data-wow-duration="1500ms">
+                                <a href="https://www.facebook.com/sharer/sharer.php?u=https://ba-in.com/piercing-narachnik.html" target="_blank" rel="noopener noreferrer" class="mediox-btn">
+                                    <span data-i18n-html="blog.meta.share_fb"><i class="fab fa-facebook-f"></i> Сподели във Facebook</span>
                                 </a>
                             </div>
                         </div>
@@ -438,7 +436,7 @@
                                     <ul class="sidebar__posts list-unstyled">
                                         <li class="sidebar__posts__item">
                                             <div class="sidebar__posts__image">
-                                                <img src="assets/images/blog/zima-mikronidling-piling-plazma-pen-hero.webp?v=10565bbb" style="width:70px;height:70px;object-fit:cover;" alt="Защо зимата е най-доброто време за микронидлинг, пилинг и плазма пен" loading="lazy" decoding="async">
+                                                <img src="assets/images/blog/zima-mikronidling-piling-plazma-pen-hero.webp?v=10565bbb" width="70" height="70" alt="Защо зимата е най-доброто време за микронидлинг, пилинг и плазма пен" loading="lazy" decoding="async">
                                             </div>
                                             <div class="sidebar__posts__content">
                                                 <div class="sidebar__posts__meta"><a href="about.html"><span class="sidebar__posts__meta__icon"><i class="icon-user"></i></span><span data-i18n="blog.meta.author">От И. Николаева</span></a></div>
@@ -447,7 +445,7 @@
                                         </li>
                                         <li class="sidebar__posts__item">
                                             <div class="sidebar__posts__image">
-                                                <img src="assets/images/blog/kola-maska-shokolad-hero.webp?v=c9a14797" style="width:70px;height:70px;object-fit:cover;" alt="Кола маска с шоколад: защо е по-нежна за лицето и какво да очаквате" loading="lazy" decoding="async">
+                                                <img src="assets/images/blog/kola-maska-shokolad-hero.webp?v=c9a14797" width="70" height="70" alt="Кола маска с шоколад: защо е по-нежна за лицето и какво да очаквате" loading="lazy" decoding="async">
                                             </div>
                                             <div class="sidebar__posts__content">
                                                 <div class="sidebar__posts__meta"><a href="about.html"><span class="sidebar__posts__meta__icon"><i class="icon-user"></i></span><span data-i18n="blog.meta.author">От И. Николаева</span></a></div>
@@ -456,7 +454,7 @@
                                         </li>
                                         <li class="sidebar__posts__item">
                                             <div class="sidebar__posts__image">
-                                                <img src="assets/images/blog/zola-laminirane-migli-hero.webp?v=6e4bfb4e" style="width:70px;height:70px;object-fit:cover;" alt="Ламиниране с ZOLA: какво прави продуктът с миглите ви и защо това има значение" loading="lazy" decoding="async">
+                                                <img src="assets/images/blog/zola-laminirane-migli-hero.webp?v=6e4bfb4e" width="70" height="70" alt="Ламиниране с ZOLA: какво прави продуктът с миглите ви и защо това има значение" loading="lazy" decoding="async">
                                             </div>
                                             <div class="sidebar__posts__content">
                                                 <div class="sidebar__posts__meta"><a href="about.html"><span class="sidebar__posts__meta__icon"><i class="icon-user"></i></span><span data-i18n="blog.meta.author">От И. Николаева</span></a></div>
@@ -501,13 +499,12 @@
                                             data-i18n="sidebar.tag.aesthetic_proc">естетични процедури</a>
                                     </div>
                                 </div>
-                                <div class="sidebar__single"
-                                    style="background: var(--mediox-gray); padding: 30px; border-radius: 8px; text-align: center;">
-                                    <h4 class="sidebar__title" style="margin-bottom: 15px;">Запази час за пиърсинг
+                                <div class="sidebar__single at-aside-cta">
+                                    <h4 class="sidebar__title">Запази час за пиърсинг
                                     </h4>
-                                    <p style="font-size: 14px; margin-bottom: 20px; color: var(--mediox-text);">
+                                    <p class="at-caption">
                                         Безопасно пробиване със Studex в Beauty Atelier IN</p>
-                                    <a href="appointment.html" class="mediox-btn" style="display: inline-flex;">
+                                    <a href="appointment.html" class="mediox-btn">
                                         <span>Запази час сега</span>
                                         <span class="mediox-btn__icon"><i class="icon-up-right-arrow"></i></span>
                                     </a>
@@ -593,7 +590,7 @@
 <!-- /at:footer -->
 <!-- at:scripts -->
     <script defer src="assets/js/atelier.js?v=ade1cb8c"></script>
-    <script defer src="assets/js/atelier-legacy.js?v=ad2cb0e6"></script>
+    <script defer src="assets/js/atelier-legacy.js?v=d8d73aca"></script>
     <script defer src="assets/js/ai-chat-v2.js?v=bf62ea73"></script>
     <script defer src="assets/js/i18n.js?v=6ebc90ae" data-translations="assets/js/translations.js?v=09e1a5d3"></script>
     <script defer src="assets/js/cookie-consent.js?v=48420352"></script>

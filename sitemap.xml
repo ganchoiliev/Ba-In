@@ -113,12 +113,6 @@
     <priority>0.85</priority>
   </url>
 
-  <url>
-    <loc>https://ba-in.com/aftertreatment.html</loc>
-    <lastmod>2026-08-10</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.7</priority>
-  </url>
 
   <url>
     <loc>https://ba-in.com/microblading-guide.html</loc>
@@ -141,19 +135,7 @@
     <priority>0.7</priority>
   </url>
 
-  <url>
-    <loc>https://ba-in.com/beauty-secrets.html</loc>
-    <lastmod>2026-08-10</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.6</priority>
-  </url>
 
-  <url>
-    <loc>https://ba-in.com/beauty-inspiring.html</loc>
-    <lastmod>2026-08-10</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.6</priority>
-  </url>
 
   <url>
     <loc>https://ba-in.com/microblading-for-all-ages.html</loc>
