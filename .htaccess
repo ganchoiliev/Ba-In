@@ -24,6 +24,14 @@ RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^(.*)/$ /$1 [L,R=301]
 
+# Build tooling is kept in the repository and the deploy copies the whole
+# repository to the server, so without this anyone could read the scripts,
+# the blog topic list and the editor settings at ba-in.com/scripts/... etc.
+# 403 for all of it; the site itself never requests these.
+RewriteRule ^(scripts|\.claude|\.github)(/|$) - [F,L,NC]
+RewriteRule ^(auto-blog\.js|build-gallery-page\.js|blog-topics\.json|README\.md)$ - [F,L,NC]
+RewriteRule \.(py|ps1|sh|mjs)$ - [F,L,NC]
+
 # Blog page rename redirect
 RewriteRule ^blog-carousel-2\.html$ /blog.html [L,R=301]
 
