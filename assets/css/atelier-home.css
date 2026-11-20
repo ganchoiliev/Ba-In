@@ -1,6 +1,7 @@
 /* The homepage pairs a portrait of Iliyana with a photograph of her at work. */
 .at-front {
-    --front-dark: #322b28;
+    /* The brand's own ink, the same as the logo, the cards and the header button. */
+    --front-dark: var(--at-ink);
     --front-text: #fbf6ef;
     --front-accent: #e0bb93;
     color: var(--front-text);
@@ -297,7 +298,7 @@
         position: static;
         align-items: center;
         padding: 6px var(--at-gutter);
-        background: #251f1d;
+        background: #1b1c1c;
     }
     .at-front__picks img { width: 32px; height: 30px; }
     .at-front__picks label { min-height: 44px; gap: 3px; }
